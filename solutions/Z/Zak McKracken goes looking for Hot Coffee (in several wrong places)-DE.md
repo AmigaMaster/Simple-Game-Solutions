@@ -2,27 +2,35 @@
 
 | Version | Autoren                                   | Datum      |
 |:-------:| ------------------------------------------|-----------:|
-|   1.0   | Amiga Master (AmigaMaster-NG@t-online.de) | 31.12.2019 |
+|  1.01   | Amiga Master (AmigaMaster-NG@t-online.de) | 01.01.2020 |
 
 Geschrieben für Spielversion 1.1 vom 26.12.2019
 
+Zak McKracken goes looking for Hot Coffee (in several wrong places) ist ein Prequel zu [Zak McKracken: between time and space](http://www.mckracken.net/cms/between-timespace-2.html)
+
 Das Spiel kann kostenlos bei [Itchi](https://ogni-xr21.itch.io/zak-mckracken-goes-looking-for-hot-coffee-in-several-wrong-places) heruntergeladen werden.
 
-## 1. Steuerung
+## 1. Historie
+
+2020-01-01, V1.01
+
+- Alternative Lösungswege und Hinweise nach Input vom Entwickler des Spiels (Ogni) hinzugefügt. Danke Ogni!
+
+## 2. Steuerung
 
 Im Startbildschirm kann oben rechts zwischen englischen und deutschen Texten umgeschaltet werden. Wenn ein Spielstand geladen wird, wird automatisch die Sprache genutzt, mit der der Spielstand erstellt wurde.
 
 Zak wird mittels linker Maustaste bewegt, die rechte Maustaste dient zum anschauen von Objekten. Per Doppelklick wird eine vordefinierte Standardaktion ausgeführt, z. B. mit einer Person geredet oder eine Tür geöffnet.
 
-Um weitere mögliche Aktionen auszuführen, muss die linke Maustaste auf einem Objekt gedrückt gehalten werden. Es öffnet sich ein Menü, in dem verschiedene Aktionen auswählbar sind. Drücken und Ziehen sind in diesem Menü derselbe Punkt, man muss dazu den Punkt auswählen und dann die Maus etwas nach rechts (drücken) beziehungsweise links (ziehen) bewegen.
+Um weitere mögliche Tätigkeiten auszuführen, muss die linke Maustaste auf einem Objekt gedrückt gehalten werden. Es öffnet sich ein Menü, in dem verschiedene Aktionen auswählbar sind. Drücken und Ziehen sind hier in einem einzelnen Punkt vereint, gewechselt wird zwischen beiden, indem man die Maus etwas nach rechts (drücken) beziehungsweise links (ziehen) bewegt.
 
-Mittels Escape oder F5 kann das Spiel gespeichert und geladen werden.
+Das Spiel kann mittels den Tasten Escape oder F5 gespeichert und geladen werden.
 
-## 2. Zak's Wohnung
+## 3. Zak's Wohnung
 
 Wir beginnen in Zak's Wohnung.
 
-### 2.1. Wohnzimmer
+### 3.1. Wohnzimmer
 
 - Öffne oberste Schublade unter dem Herd
 - Schaue in Schublade (`Buttermesser`)
@@ -36,7 +44,7 @@ Wir beginnen in Zak's Wohnung.
 - Benutze Fernbedienung mit Fernseher
 - Verlasse Raum Richtung Westen ins Schlafzimmer
 
-### 2.2. Schlafzimmer
+### 3.2. Schlafzimmer
 
 - Benutze Bett (*Traumsequenz startet*)
   - Verlasse Raum **3 Mal** Richtung Westen
@@ -45,13 +53,13 @@ Wir beginnen in Zak's Wohnung.
   - Benutze Zak im Bett
 - Verlasse Raum Richtung Westen
 
-### 2.3. Wohnzimmer
+### 3.3. Wohnzimmer
 
 - Nehme linkes Kissen vom Sofa
 - Nehme Cash Card
 - Verlasse Wohnung
 
-## 3. 13th Avenue
+## 4. 13th Avenue
 
 - Benutze `Briefkastenschlüssel` mit Briefkasten
 - Nehme Briefe (`Briefe`)
@@ -61,7 +69,7 @@ Wir beginnen in Zak's Wohnung.
 - Nehme Schachtel Backsoda (`Backsoda`)
 - Gehe ins Haarstudio
 
-### 3.1. Artificial Hair Bros.
+### 4.1. Artificial Hair Bros.
 
 - Rede mit Stanislav, benutze alle Dialogoptionen
 - Benutze `Backsoda` mit Ameisen
@@ -71,15 +79,15 @@ Wir beginnen in Zak's Wohnung.
   - Energisch nach dem Hut fragen, bis man diesen automatisch nimmt
 - Verlasse Haarstudio nach Norden und gehe zu
 
-## 4. Zak's Wohnung
+## 5. Zak's Wohnung
 
-### 4.1. Wohnzimmer
+### 5.1. Wohnzimmer
 
 - Nehme linkes Kissen vom Sofa
 - Benutze `Schere` mit Spalt im Sofa (`Cash Card`)
 - Verlasse Wohnung und gehe wieder zurück zu
 
-### 4.2. Artificial Hair Bros.
+### 5.2. Artificial Hair Bros.
 
 - Rede mit Stanislav und lasse Dir die Haare schneiden. Gehe alle Dialogoptionen durch. Nutze zuletzt:
   - Ich liebe Baumärkte!
@@ -90,15 +98,15 @@ Wir beginnen in Zak's Wohnung.
 - Nehme Haare (`Haare`)
 - Verlasse Haarstudio
 
-## 5. 13th Avenue
+## 6. 13th Avenue
 
 - Benutze Haltestellenschild
 
-## 6. National Infiltrator
+## 7. National Infiltrator
 
 - Öffne Tür und betrete Redaktion
 
-### 6.1. Redaktion
+### 7.1. Redaktion
 
 - Schließe Tür
 - Schaue an Baum
@@ -110,30 +118,31 @@ Wir beginnen in Zak's Wohnung.
 - Schau an `Farbenlehre`
 - Verlasse Redaktion und verlasse die Straße Richtung Westen. Reise zum
 
-## 7. Flughafen
+## 8. Flughafen
 
 - Nehme den einzelnen Flyer vom Zeitungsstand neben der Eingangstür (`Sonic Fanclub Flyer`)
 - Schaue an `Sonic Fanclub Flyer`
-- Benutze `Schere` mit Spalt in linkem Sofa (`Brille`)
+- Benutze `Schere` mit Spalt *beiden* Sofas (`Brille`)
+  > **Hinweis**: In welchem Sofa die Brille zu finden ist, wird zufällig festgelegt.
 - Verlasse Flughafen und Reise zur
 
-## 8. 13th Avenue
+## 9. 13th Avenue
 
 - Betrete Zak's Wohnung und dort sein Schlafzimmer
 
-### 8.1. Schlafzimmer
+### 9.1. Schlafzimmer
 
 - Schaue in unterste Schublade (`Gummi-Stöpsel`)
 - Benutze `Schere` mit `Gummi-Stöpsel` (`Gumminase`)
 - Gehe ins
 
-## 9. Wohnzimmer
+## 10. Wohnzimmer
 
 - Benutze Telefon
 - Benutze `Sushi im Goldfischglas` mit Spülbecken (`Leeres Goldfischglas`)
 - Verlasse Wohnung
 
-## 10. 13th Avenue
+## 11. 13th Avenue
 
 - Benutze `Briefkastenschlüssel` mit Briefkasten
 - Nehme Päckchen (`Päckchen`)
@@ -141,11 +150,11 @@ Wir beginnen in Zak's Wohnung.
 - Benutze `Sonic the Hedgehog` mit `Leeres Goldfischglas` (`Sonic im Glas`)
 - Reise zum
 
-## 11. National Infiltrator
+## 12. National Infiltrator
 
 - Öffne Tür und betrete Redaktion
 
-### 11.1. Redaktion
+### 12.1. Redaktion
 
 - Schließe Tür
 - Benutze `Sonic im Glas` mit Tisch
@@ -156,7 +165,7 @@ Wir beginnen in Zak's Wohnung.
 - Benutze `Nasenbrille` mit `Hut` (`Caponierverkleidung`)
 - Verlasse Redaktion
 
-## 12. National Infiltrator
+## 13. National Infiltrator
 
 - Benutze `Caponierverkleidung`
 - Benutze Bank und warte bis der Caponier sich setzt (`Sprössling`)
@@ -167,42 +176,42 @@ Wir beginnen in Zak's Wohnung.
 - Nehme blauer Kristall (`Blauer Kristall`)
 - Betrete Redaktion
 
-### 12.1. Redaktion
+### 13.1. Redaktion
 
 - Benutze `Blauer Kristall` mit Eichhörnchen
 - Doppelklicke auf ein Eichhörnchen und wähle als Dialogoptionen diejenige mit den Herzen (diese ändert sich bei jedem Gespräch) und beende danach das Gespräch durch Auswahl der letzten Dialogoption.
 - Gehe ins Loch im Baum
 - Zurück zu Zak wechseln
-  > Ziel ist es, dass die Eichhörnchen verliebt sind. Das geschieht jedoch erst, nachdem wir zu Zak zurückgekehrt sind. Falls es Probleme gibt, den oberen Ablauf nochmals versuchen.
+  > **Info**: Ziel ist es, dass die Eichhörnchen verliebt sind. Das geschieht jedoch erst, nachdem wir zu Zak zurückgekehrt sind. Falls es Probleme gibt, den oberen Ablauf nochmals versuchen.
 - Rede mit Deborah:
   - Wegen meines Ausflugs zum Nordpol...
   - Könntest Du mir einen Flug arrangieren? (`Kaffeetasse`)
 - Reise zum
 
-## 13. Flughafen
+## 14. Flughafen
 
 - Benutze Terminal und wähle Nordpol als Ziel (`Flugticket`)
 - Verlasse Flughafen durch Tür im Westen
 
-## 14. Nordpol Terminal
+## 15. Nordpol Terminal
 
 - Gehe Richtung Osten und drücke den Schnee **3 Mal**
 - Verlasse Bild nach Osten
 
-## 15. Nordpol Schneelandschaft
+## 16. Nordpol Schneelandschaft
 
 - Gehe Richtung Osten und schaue an Ankh Gravur
 - Benutze `Gelber Buntstift` mit Ankh Gravur
 - Benutze `Blauer Kristall` mit Mysteriöse Würfel
 - Gehe zu Schacht
 
-### 15.1. Projektionsraum
+### 16.1. Projektionsraum
 
 - Schaue an Anzeige
 - Nehme grüner Kristall (`Grüner Kristall`)
 - Verlasse Raum Richtung Osten
 
-### 15.2. Höhle
+### 16.2. Höhle
 
 Farbenrätsel:  
 In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, grün und blau einzufärben. **Die Reihenfolge ist hierbei egal**.
@@ -210,12 +219,11 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
 - Benutze `Blauer Kristall` mit linkem Kristall
 - Benutze `Blauer Kristall` mit mittlerem Kristall
 - Benutze `Blauer Kristall` mit rechtem Kristall
-- Benutze `Blauer Kristall` mit mittlerem Kristall
-- Benutze `Blauer Kristall` mit rechtem Kristall
+- Benutze `Blauer Kristall` mit linkem Kristall
 - Gehe durch das Portal  
   > **Hinweis:** Das Portal hat keine Hotspotanzeige, einfach auf die elektrischen Entladungen klicken.
 
-## 16. Garten
+## 17. Garten
 
 - Nehme Blume (`Blume`)
 - Rede mit Kind, benutze alle Dialogoptionen
@@ -224,7 +232,7 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
   - Willst Du diese Puppe haben? (`Weißer Kristall`)
 - Verlasse Garten Richtung Westen
 
-### 16.1. Projektionsraum
+### 17.1. Projektionsraum
 
 - Benutze `Weißer Kristall` mit Ablage
 - Benutze `Grüner Kristall` mit Ablage
@@ -233,18 +241,24 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
 - Nehme Gelber Kristall (`Gelber Kristall`)
 - Nehme Grüner Kristall (`Grüner Kristall`)
 - Nehme Blauer Kristall (`Blauer Kristall`)
-- Verlasse Projektionsraum Richtung Westen
+  > **Hinweis**: Gelber Kristall  
+  Ganz wie in Zak 1 kann man sich ab hier auch mit dem gelben Kristall teleportieren, man kommt so an die mit X auf der Anzeige gekennzeichneten Orte (Jordanien, San Francisco, Nordpol).
+  >
+  >Sobald der Kristall rot ist, geht das jedoch nicht mehr.
+- Verlasse Projektionsraum Richtung Westen (oder: Benutze `Gelber Kristall`)
 
-## 17. Flughafen
+## 18. Flughafen
 
 - Benutze Terminal und wähle Jordanien als Ziel (`Flugticket`)
 - Verlasse Flughafen durch Tür im Westen
 
-## 18. Jordanien
+## 19. Jordanien
 
 - Gehe Richtung Esel
 - Benutze Esel
 - Benutze `Blume` mit Esel (Der Weg zum Felsvorsprung ist nun frei)
+  > **Info**: Es gibt insgesamt 4 Möglichkeiten den Esel zu bewegen:  
+  > Benutzen, Drücken, Ziehen, blauen Kristall benutzen, Blüte 1 füttern, Blüte 2 füttern.
 - Gehe zum unteren Felsvorsprung
 - Benutze unteren Felsvorsprung
 - Benutze mittleren Felsvorsprung
@@ -253,7 +267,7 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
 - Benutze oberen Felsvorsprung
 - Gehe in die Mitte Richtung Tempel
 
-### 18.1. Riesige Urne
+### 19.1. Riesige Urne
 
 - Benutze `Gelber Buntstift` mit Ankh Gravur
 - Benutze `Gelber Kristall` mit Urne
@@ -263,16 +277,16 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
   - "Der Halsknochen hängt am Kopfknochen"
   - **Schnell** während das Skelett tanzt
     - Benutze `Gelber Buntstift` mit Ankh Gravur
-      > Falls die Zeit nicht ausreicht einfach nochmals das Skelett ansprechen und nochmals versuchen.
+      > **Info**: Falls die Zeit nicht ausreicht einfach nochmals das Skelett ansprechen und nochmals versuchen.
     - Benutze `Roter Kristall` mit Urne
 - Klettere wieder herunter (Benutze alle drei Felsvorsprünge) und verlasse Jordanien Richtung Osten
 
-## 19. Flughafen
+## 20. Flughafen
 
 - Benutze Terminal und wähle Nordpol als Ziel (`Flugticket`)
 - Verlasse Flughafen durch Tür im Westen
 
-## 20. Projektionsraum
+## 21. Projektionsraum
 
 - Benutze `Roter Kristall` mit Ablage
 - Benutze `Grüner Kristall` mit Ablage
@@ -281,12 +295,12 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
 - Nehme `Grüner Kristall` (`Grüner Kristall`)
 - Verlasse Raum Richtung Nordwesten
 
-## 21. Flughafen
+## 22. Flughafen
 
 - Benutze Terminal und wähle Mexiko als Ziel (`Flugticket`)
 - Verlasse Flughafen durch Tür im Westen
 
-## 22. Flugzeug
+## 23. Flugzeug
 
 - Man erhält automatisch `Erdnüsse` und `Mountain Blue`
 - Stehe auf
@@ -301,7 +315,7 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
 - Nehme Plastiktüte (`Leuchtstab`)
 - Öffne alle Gepäckfächer (Das verschafft uns mehr Zeit für unsere Aufgaben im Personalbereich der Stewardess)
   - *Optional*: Schließe alle Fenster, um noch mehr Zeit für die folgenden Aktionen zu haben  
-    > **NOTIZ**: Das Öffnen der Gepäckfächer und schließen der Fenster erst dann starten, wenn die Stewardess gerade wieder in ihren Personalbereich zurückkehrt. So hat man ausreichend Zeit alles vorzubereiten.
+    > **Hinweis**: Das Öffnen der Gepäckfächer und schließen der Fenster erst dann starten, wenn die Stewardess gerade wieder in ihren Personalbereich zurückkehrt. So hat man ausreichend Zeit alles vorzubereiten.
 - Warte, bis die Stewardess aus dem Personalbereich kommt, dann *schnell bevor die Stewardess zurückkommt*:
   - Öffne Schrank
   - Nehme Styroporbecher (`Styroporbecher`)
@@ -312,7 +326,7 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
   - Öffne `Handtasche` (`Spielkarten`, `Feuerzeug`, `Roter Luftballon`, `Decke`)
   - ***WICHTIG***: Benutze `Handtasche` mit Gepäckfach
   - Schließe Gepäckfach
-    > Falls man es nicht schafft, die Handtasche wieder zurückzulegen, werden einem die Dinge aus der Handtasche wieder abgenommen und man muss es noch Mal versuchen.
+    > **Hinweis**: Falls man es nicht schafft, die Handtasche wieder zurückzulegen, werden einem die Dinge aus der Handtasche wieder abgenommen und man muss es noch Mal versuchen.
 - Gehe im Flugzeug nach hinten (links) zur Toilette
 - Öffne Tür
   - Öffne Toilette
@@ -328,7 +342,6 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
   - Benutze `Mountain Blue` mit `Backsoda`
   - Benutze `Mountain Blue` mit `Wasserstoffperoxid`
   - Verlasse Toilette
-- Warte, bis die Stewardess den Personalbereich verlässt (Im Zweifel wieder nachhelfen, indem Gepäckfächer geöffnet werden), dann
   - Öffne Mikrowelle
   - Benutze `Mountain Blue` mit Mikrowelle
   - Öffne Mikrowelle
@@ -340,16 +353,16 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
   - Schließe alle Fenster
   - Benutze `Decke (stark leuchtend)`
 
-## 23. Flughafen Mexiko
+## 24. Flughafen Mexiko
 
 - Öffne Tür im Osten und verlasse Flughafen
 
-## 24. Pyramide
+## 25. Pyramide
 
 - Nehme Knochenhaufen (`Knochen`)
 - Verlasse Bild Richtung Norden zur Pyramidenspitze
 
-### 24.1. Pyramidenspitze
+### 25.1. Pyramidenspitze
 
 - Rede mit Caponier
 - Rede mit Archäologe
@@ -357,7 +370,7 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
   - Im Dialog kann gefahrlos alles durchprobiert werden. Der Caponier lässt sich nicht davon abbringen, dass der Fund näher untersucht werden muss.
 - Reise zurück zum Flughafen Mexiko
 
-## 25. Flughafen Mexiko
+## 26. Flughafen Mexiko
 
 - Rede mit beiden Caponiern im Vordergrund. Einer wird Agent XR22 erwähnen.
 - Warte bis Agent XR22 sich auf den Stuhl setzt
@@ -368,22 +381,24 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
 - Nehme Steintafel (`Steintafel`)
 - Öffne Tür im Osten und verlasse Flughafen
 
-## 26. Pyramide
+## 27. Pyramide
 
 - Verlasse Bild Richtung Norden zur Pyramidenspitze
 
-### 26.1. Pyramidenspitze
+### 27.1. Pyramidenspitze
 
 - Rede mit Archäologe, benutze alle Dialogoptionen
 - Benutze `Gelber Buntstift` mit Seltsame Markierung
 - Benutze Eingang
 
-#### 26.1.1. In der Pyramide
+#### 27.1.1. In der Pyramide
 
 - Benutze `Feuerzeug` mit Feuerschale **3 mal**
+  > **Info**: Alternativlösung  
+    Benutze `Decke (stark leuchtend)` mit ???
 - Reise zurück zum Flughafen
 
-## 27. Flughafen Mexiko
+## 28. Flughafen Mexiko
 
 - Benutze `Steintafel` mit `Buttermesser`
 - Benutze `Steintafel` mit Zeichnung
@@ -391,26 +406,44 @@ In der Höhle gibt es drei anfangs inaktive Kristalle. Ziel ist es, diese rot, g
 - Benutze Terminal und wähle San Francisco als Ziel (`Flugticket`)
 - Öffne Tür im Westen und verlasse den Flughafen
 
-## 28. Flughafen San Francisco
+## 29. Flughafen San Francisco
 
 - Verlasse Flughafen durch Tür im Osten und reise zum
 
-## 29. National Infiltrator
+## 30. National Infiltrator
 
 - Öffne Tür und betrete Redaktion
 
-### 29.1. Redaktion
+### 30.1. Redaktion
 
 - Rede mit Deborah und wähle Dialogoption
   - Die Caponier haben von einem Flug nach Zürich gesprochen...
 
-## 30. Zürich
+## 31. Zürich
 
-Zak steht rechts im Bild im Schatten. Sobald er entdeckt oder einem Caponier zu nahe kommt, wird die Szene wieder zurückgesetzt und beginnt erneut. Das Ziel ist es, sich an den Caponiern ungesehen vorbeizuschleichen. In den dunklen Ecken und Gebäuden kann Zak sich verstecken.
+Zak steht rechts im Bild im Schatten. Sobald er entdeckt wird oder einem Caponier zu nahe kommt, wird die Szene wieder zurückgesetzt und beginnt erneut. Das Ziel ist es, sich an den Caponiern ungesehen vorbeizuschleichen. In den dunklen Ecken und Gebäuden kann Zak sich verstecken. Es gibt hier zwei Lösungswege
 
-- Warten bis der Caponier vor dem Hangar nach Westen geht, dann *schnell in den Hangar im Schatten verstecken*, dabei ihm aber auch nicht zu Nahe kommen
-- Benutze `Decke (stark leuchtend)`
-- Benutze `Luftballon` mit Gasflasche (`Roter Luftballon`)
-- Gehe hinter die Paletten
-- Benutze `Roter Luftballon` mit `Decke (stark leuchtend)`
-- Verlasse Szene durch westliche Tür
+- Warten bis der Caponier vor dem Hangar nach Westen geht, dann *schnell in den Hangar im Schatten verstecken*, ihm dabei aber auch nicht zu nahe kommen
+  > **Hinweis**: Wenn benötigt, nutzt einen Doppelklick, damit Zak sich etwas schneller bewegt.
+
+ 1. Einfacher 'Rätsel'-Lösungsweg
+    - Benutze `Decke (stark leuchtend)`
+    - Benutze `Luftballon` mit Gasflasche (`Roter Luftballon`)
+    - Gehe hinter die Paletten
+    - Benutze `Roter Luftballon` mit `Decke (stark leuchtend)`
+    - Verlasse Szene durch westliche Tür
+
+ 2. Etwas schwierigerer Schleichweg  
+    Nach jeder erfolgreichen Schleicheinlage speichern, ansonsten muss die Szene von vorne begonnen werden.
+    - Im Hangar angekommen zu den Gasflaschen gehen und ***speichern***
+    - Vom Hangar muss man ungesehen **hinter das Heck des linken Flugzeugs** schleichen  
+      Das Ganze ist nicht so einfach, da die drei Caponier unterschiedlich lange Wege haben und jeder der drei Zak entdecken kann. Nach erfolgreicher Schleicheinlage auch hier ***speichern***.  
+      > **Hinweis**: Achtet primär auf auf den *Caponier im blauen Arbeitsanzug*. Während sich dieser zum Flugzeug hin bewegt, schätzt die Bewegung der beiden anderen ein. Der 'Blaumann' darf gerade erst am Flugzeug angekommen sein, nur dann kann sich Zak zeitlich noch erfolgreich an ihm vorbeischleichen.
+      >
+    - Zuletzt vom Flugzeug zur Tür schleichen. Hierbei wieder auf den Caponier am Zaun und den im Blaumann achten.
+      - benutze `Vaseline` mit Tür
+      - Verlasse Szene durch westliche Tür
+
+## 32. Post Credits Szene
+
+- Doppelklick auf die leuchtende Sphäre
