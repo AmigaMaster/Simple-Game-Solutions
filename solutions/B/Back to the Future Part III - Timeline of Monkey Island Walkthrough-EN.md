@@ -2,7 +2,7 @@
 
 | Version | Author                                    | Date       |
 |:-------:| ------------------------------------------|-----------:|
-|  1.0    | Amiga Master (AmigaMaster-NG@t-online.de) | 02.01.2020 |
+|  1.01   | Amiga Master (AmigaMaster-NG@t-online.de) | 08.01.2020 |
 
 Download the free game from [Daniele Spadoni Blog](https://danielespadoni82.blogspot.com/2019/03/blog-post.html)
 
@@ -19,11 +19,11 @@ Keyboard shortcuts:
 
 ## 2. Lyon Estates
 
-- Look at jacket (`Walkie-Talkie`, `Grays Sports Almanac`)
-- Look at bush (`Bucket`)
-- Use `Walkie-Talkie` with DeLorean
-- Use `Grays Sports Almanac` with `bucket`
-- Use `matchbook` with `bucket`
+- LOOK AT jacket (`Walkie-Talkie`, `Grays Sports Almanac`)
+- LOOK AT bush (`Bucket`)
+- USE `Walkie-Talkie` with DeLorean
+- USE `Grays Sports Almanac` with `bucket`
+- USE `matchbook` with `bucket`
 
 ## 3. X Marks the Spot
 
@@ -31,13 +31,13 @@ Keyboard shortcuts:
 
 ## 4. Big Tree
 
-- Look at hoverboard
-- Look at hole (`DeLorean radar off`)
+- LOOK AT hoverboard
+- LOOK AT hole (`DeLorean radar off`)
 - Exit east path
 
 ### 4.1. Bus stop
 
-- Get `matches` lying below the bus stop
+- PICK UP `matches` lying below the bus stop
 - Exit north
 
 ### 4.2. Street
@@ -46,12 +46,12 @@ Keyboard shortcuts:
 
 ### 4.3. Beach
 
-- Get key below the sun lounger (`key`)
+- PICK UP key below the sun lounger (`key`)
 - Exit south path
 
 ### 4.4. Street
 
-- Use `key` with door (`fishing pole`)
+- USE `key` with door (`fishing pole`)
 - Exit south to the beach
 
 ### 4.5. Beach
@@ -60,9 +60,9 @@ Keyboard shortcuts:
 
 ### 4.6. Pier
 
-- Look at sea
-- Use `fishing pole` with sea (`Dynamite`)
-- Use `Walkie-Talkie` with DeLorean radar (`DeLorean radar on`)
+- LOOK AT sea
+- USE `fishing pole` with sea (`Dynamite`)
+- USE `Walkie-Talkie` with DeLorean radar (`DeLorean radar on`)
 - Exit south to the beach
 
 ### 4.7. Beach
@@ -79,13 +79,13 @@ Keyboard shortcuts:
 
 ## 5. X Marks the Spot
 
-- Use `matches` with `dynamite` (`Dynamite ON`)
-- Use `Dynamite` with X marks the spot
+- USE `matches` with `dynamite` (`Dynamite ON`)
+- USE `Dynamite` with X marks the spot
 - Exit west X marks the spot
 
 ## 6. DeLorean
 
-- Get Plants (`Yellow petal`)
+- PICK UP Plants (`Yellow petal`)
 - Exit east
 
 ## 7. Lights
@@ -94,17 +94,17 @@ Keyboard shortcuts:
 
 ### 7.1. Boat
 
-- Look at sign
+- LOOK AT sign
 - Exit down into the hatch
 
 ### 7.2. Lower Deck
 
-- Get Axe (`Axe`)
+- PICK UP Axe (`Axe`)
 - Exit down into the hatch
 
 ### 7.3. Bottom Deck
 
-- Use `Axe` with Black Chest (`Rope`, `Key`)
+- USE `Axe` with Black Chest (`Rope`, `Key`)
 - Exit up using the ladder
 
 ### 7.4. Lower Deck
@@ -125,7 +125,7 @@ Keyboard shortcuts:
 
 ### 9.1. Street to the city
 
-- Open door to the Scumm Bar
+- OPEN door to the Scumm Bar
 
 ### 9.2. Scumm Bar
 
@@ -133,14 +133,14 @@ Keyboard shortcuts:
 
 ### 9.3. Workshop
 
-- Get Radiation Suit (`Radiation Suit`)
-- Get Pieces of eight (`Pieces of eight`)
-- Look at plan
+- PICK UP Radiation Suit (`Radiation Suit`)
+- PICK UP Pieces of eight (`Pieces of eight`)
+- LOOK AT plan
 - Exit east door
 
 ### 9.4. Clock Tower
 
-- Talk to dog
+- TALK TO dog
 - Exit north alleyway
 
 ### 9.5. Church Square
@@ -153,9 +153,9 @@ Keyboard shortcuts:
 
 ### 9.7. Elevator
 
-- Use lever (`Lever`)
-- Look at Toolkit (`Keys`)
-- Look at both `keys`
+- USE lever (`Lever`)
+- LOOK AT Toolkit (`Keys`)
+- LOOK AT both `keys`
 - Exit north door
 
 ### 9.8. Alley
@@ -168,7 +168,7 @@ Keyboard shortcuts:
 
 ### 9.10. Govenors Mansion
 
-- User `Lever` with door
+- USE `Lever` with door
 - Enter door
 
 ### 9.11. Inside Govenors Mansion
@@ -177,7 +177,7 @@ Keyboard shortcuts:
 
 ### 9.12. Exhibition Room
 
-- Get Red Button (`Red Button`)
+- PICK UP Red Button (`Red Button`)
 - Exit east door
 
 ### 9.13. Inside Govenors Mansion
@@ -194,8 +194,8 @@ Keyboard shortcuts:
 
 ### 9.16. Warehouse
 
-- Get wooden ladder left to the door (`Wooden ladder`)
-- Use bell on the desk
+- PICK UP wooden ladder left to the door (`Wooden ladder`)
+- USE bell on the desk
 - Exit west door
 
 ### 9.17. Church Square
@@ -204,13 +204,13 @@ Keyboard shortcuts:
 
 ### 9.18. Clock Tower
 
-- Use `Voodoo Key` with Voodoo door (2nd door east of the church tower)
+- USE `Voodoo Key` with Voodoo door (2nd door east of the church tower)
 
 ### 9.19. Voodoo Home
 
-- Get Chalice (`Grail`)
-- Look at basket (`Pins`)
-- Talk to Statue
+- PICK UP Chalice (`Grail`)
+- LOOK AT basket (`Pins`)
+- TALK TO Statue
 - Exit west door
 
 ### 9.20. Clock Tower
@@ -223,14 +223,14 @@ Keyboard shortcuts:
 
 ### 9.22. Scumm Bar
 
-- Talk to Cook
+- TALK TO Cook
 - Exit east door
 
 ### 9.23. Kitchen
 
-- Get Glass bottle (`Kork`)
-- Get Mug (`Mug`)
-- Use `Grail` with barrel
+- PICK UP Glass bottle (`Kork`)
+- PICK UP Mug (`Mug`)
+- USE `Grail` with barrel
 - Exit west door
 
 ### 9.24. Scumm Bar
@@ -251,25 +251,25 @@ Keyboard shortcuts:
 
 ### 10.1. Forest
 
-- Look at stump
-- Use stump
+- LOOK AT stump
+- USE stump
 
 ### 10.2. Catacombs
 
-- Use Crumbling hole
+- USE Crumbling hole
 
 ### 10.3. Grave
 
-- Look at coffin (`Refrigerator Magnet`)
-- Use Pins with Refrigerator Magnet (`Pin + Magnet`)
-- Use Pin + Magnet with cork (`Cork + Pin`)
+- LOOK AT coffin (`Refrigerator Magnet`)
+- USE Pins with Refrigerator Magnet (`Pin + Magnet`)
+- USE Pin + Magnet with cork (`Cork + Pin`)
 - Exit north through Crumbling Hole
 
 ### 10.4. Catacombs
 
-- Look at Sign
-- Look at first key ('It says -Dinky- on it')
-- Use Key with east door
+- LOOK AT Sign
+- LOOK AT first key ('It says -Dinky- on it')
+- USE `Key` with east door
 
 ### 10.5. Dinky Island
 
@@ -277,11 +277,11 @@ Keyboard shortcuts:
 
 ### 10.6. Dinky Island Beach
 
-- Talk to Wally
-- Use `Grail + Grog` with still (`Grail + Holy water`)
-- Use `Mug` with Ocean (`Mug + Sea water`)
-- Use `Cork + Pin` with `Mug + Sea water` (`Compass`)
-- Use rowboat
+- TALK TO Wally
+- USE `Grail + Grog` with still (`Grail + Holy water`)
+- USE `Mug` with Ocean (`Mug + Sea water`)
+- USE `Cork + Pin` with `Mug + Sea water` (`Compass`)
+- USE rowboat
 
 ## 11. Sea Map
 
@@ -292,9 +292,9 @@ Keyboard shortcuts:
 
 ### 11.1. Clearing
 
-- Talk to Employee
+- TALK TO Employee
 - Exit west to the Beach
-- Use Rowboat
+- USE Rowboat
 - Exit north ocean
 - Enter beach
 - Enter Jungle
@@ -302,29 +302,29 @@ Keyboard shortcuts:
 
 ### 11.2. Village
 
-- Use wooden ladder at the hut with the hanging skeleton
-- Use wooden ladder
+- USE wooden ladder at the hut with the hanging skeleton
+- USE wooden ladder
 
 ### 11.3. Hut
 
-- Get `Bark of wood trunk + bamboo` (`Bark of wood trunk`, `Bamboo`)
-- Get Ticket (`Ticket`)
-- Get Banana (`Banana`)
-- Get Coconut (`Coconut`)
-- Look at `Ticket`
-- Use `Bamboo` with `Pulley` (`Pulley+Bamboo`)
-- Use `Axe` with `coconut` (`Coconut peel`)
-- Use `Coconut peel` with `Bark of wood` (`Bark of wood+Coconut`)
-- Use `Pulley+Bamboo` with `Animal Casing` (`Pulley+Bamboo+Animal`)
-- Use `Rope` with `Bark of wood+Coconut` (`Wood+Coconut+Rope`)
-- Use `Pulley+Bamboo+Animal` with `Wood+Coconut+Rope` (`Oxygen tank OFF`)
+- PICK UP `Bark of wood trunk + bamboo` (`Bark of wood trunk`, `Bamboo`)
+- PICK UP Ticket (`Ticket`)
+- PICK UP Banana (`Banana`)
+- PICK UP Coconut (`Coconut`)
+- LOOK AT `Ticket`
+- USE `Bamboo` with `Pulley` (`Pulley+Bamboo`)
+- USE `Axe` with `coconut` (`Coconut peel`)
+- USE `Coconut peel` with `Bark of wood` (`Bark of wood+Coconut`)
+- USE `Pulley+Bamboo` with `Animal Casing` (`Pulley+Bamboo+Animal`)
+- USE `Rope` with `Bark of wood+Coconut` (`Wood+Coconut+Rope`)
+- USE `Pulley+Bamboo+Animal` with `Wood+Coconut+Rope` (`Oxygen tank OFF`)
 - Exit east door
 
 ### 11.4. Village
 
 - Exit east path
 - Enter Beach
-- Use Rowboat
+- USE Rowboat
 - Exit south ocean
 - Enter beach
 - Enter Jungle
@@ -332,7 +332,7 @@ Keyboard shortcuts:
 
 ### 11.5. Clearing
 
-- Use `Ticket` with Employee
+- USE `Ticket` with Employee
 - Exit east into Gigantic Monkey Head
 
 ### 11.6. Inside Monkey Head
@@ -341,16 +341,16 @@ Keyboard shortcuts:
 
 ### 11.7. Hall
 
-- Use `Stargate Key` on door
+- USE `Stargate Key` on door
 - Exit north door
 
 ### 11.8. Stargate Room
 
-- Look at Machine
-- Use `pieces of eight` with slot in the machine
-- Use `Oxygen tank OFF` with machine (`Oxygen tank ON`)
-- Use `red button` with device
-- Use `oxygen tank ON` with `Radiation Suit` (`Space Suit`)
+- LOOK AT Machine
+- USE `pieces of eight` with slot in the machine
+- USE `Oxygen tank OFF` with machine (`Oxygen tank ON`)
+- USE `red button` with device
+- USE `oxygen tank ON` with `Radiation Suit` (`Space Suit`)
 - Exit north through Stargate
 
 ## 12. Mars
@@ -363,7 +363,7 @@ Keyboard shortcuts:
 
 ### 12.2. Huge Face
 
-- Use left of the three buttons
+- USE left of the three buttons
 - Exit west to Landing site
 
 ### 12.3. Landing Site
@@ -372,17 +372,17 @@ Keyboard shortcuts:
 
 ### 12.4. Hideout
 
-- Use button at the east door
+- USE button at the east door
 - Exit east door
 
 ### 12.5. Sleeping Room
 
-- Get can of gas (`Gas Can`)
+- PICK UP can of gas (`Gas Can`)
 - Exit west door
 
 ### 12.6. Hideout
 
-- Use button at the north door
+- USE button at the north door
 - Exit north door
 
 ### 12.7. Landing Site
@@ -399,20 +399,20 @@ Keyboard shortcuts:
 
 ### 12.10. Pyramid Door
 
-- Use `Walkman` with `Crystal Sphere` (`Walkman + Record`)
+- USE `Walkman` with `Crystal Sphere` (`Walkman + Record`)
 - Exit north door
 
 ### 12.11. Cage Room
 
-- Talk to Green Tentacle
-- Get `Fuse`
-- Look at face
-- Use `Walkman + Record` with Face
+- TALK TO Green Tentacle
+- PICK UP `Fuse`
+- LOOK AT face
+- USE `Walkman + Record` with Face
 - Exit north door
 
 ### 12.12. Control Room
 
-- Get Button (`Button`)
+- PICK UP Button (`Button`)
 - Exit west door
 
 ### 12.13. Cage Room
@@ -441,8 +441,8 @@ Keyboard shortcuts:
 
 ### 12.19. Mars
 
-- Use `Button` with Device
-- exit north through Stargate
+- USE `Button` with Device
+- Exit north through Stargate
 
 ### 12.20. Stargate Room
 
@@ -460,7 +460,7 @@ Keyboard shortcuts:
 
 - Exit west to the beach
 - Go to beach
-- Use rowboat
+- USE rowboat
 - Exit north east Ocean
 
 ## 13. Sea Map
@@ -485,13 +485,13 @@ Keyboard shortcuts:
 
 ### 13.5. DeLorean
 
-- Use `Yellow Petal` with `Banana` (`Banana with condiment`)
+- USE `Yellow Petal` with `Banana` (`Banana with condiment`)
 - Exit east path
 
 ### 13.6. Sword Masters
 
-- Talk to Carla
-- Use `Grail + Holy Water` with Dr. Emmet Lathrop Brown
+- TALK TO Carla
+- USE `Grail + Holy Water` with Dr. Emmet Lathrop Brown
 
 ### 13.7. Lights
 
@@ -499,10 +499,10 @@ Keyboard shortcuts:
 
 ### 13.8. Path
 
-- Use `hoverboard` with Three Headed Monkey
-- Get Ghost Trap (`Ghost Trap`)
+- USE `hoverboard` with Three Headed Monkey
+- PICK UP Ghost Trap (`Ghost Trap`)
 - Exit east path
 
 ### 13.9. Lights
 
-- Use `Ghost Trap` with William "Dogfish" Tannen
+- USE `Ghost Trap` with William "Dogfish" Tannen
