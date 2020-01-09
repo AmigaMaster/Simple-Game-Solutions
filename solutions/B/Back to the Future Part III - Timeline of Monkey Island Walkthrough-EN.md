@@ -2,7 +2,7 @@
 
 | Version | Author                                    | Date       |
 |:-------:| ------------------------------------------|-----------:|
-|  1.01   | Amiga Master (AmigaMaster-NG@t-online.de) | 08.01.2020 |
+|  1.02   | Amiga Master (AmigaMaster-NG@t-online.de) | 09.01.2020 |
 
 Download the free game from [Daniele Spadoni Blog](https://danielespadoni82.blogspot.com/2019/03/blog-post.html)
 
@@ -506,3 +506,11 @@ Keyboard shortcuts:
 ### 13.9. Lights
 
 - USE `Ghost Trap` with William "Dogfish" Tannen
+
+-------------------------------------------------------------------------------
+
+## 20. Video Walkthrough
+
+Back to the Future Part III - Timeline of Monkey Island Walkthrough (English) (PC, Win)
+
+[![Walkthrough](https://img.youtube.com/vi/BGHFN5EzexQ/0.jpg)](https://www.youtube.com/watch?v=BGHFN5EzexQ)
