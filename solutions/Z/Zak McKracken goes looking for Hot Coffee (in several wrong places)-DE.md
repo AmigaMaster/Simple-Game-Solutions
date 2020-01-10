@@ -1,8 +1,8 @@
 # Zak McKracken goes looking for Hot Coffee (in several wrong places) Lösung
 
-| Version | Autoren                                   | Datum      |
-|:-------:| ------------------------------------------|-----------:|
-|  1.02   | Amiga Master (AmigaMaster-NG@t-online.de) | 08.01.2020 |
+| Version | Date       | Author                                    |
+|:-------:|------------|-------------------------------------------|
+|  1.02   | 08.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 Geschrieben für Spielversion 1.1 vom 26.12.2019
 

@@ -1,8 +1,8 @@
 # Back to the Future Part IV : The Multitasking crystal Walkthrough
 
-| Version | Author                                    | Date       |
-|:-------:| ------------------------------------------|-----------:|
-|  1.0    | Amiga Master (AmigaMaster-NG@t-online.de) | 09.01.2020 |
+| Version | Date       | Author                                    |
+|:-------:|------------|-------------------------------------------|
+|  1.0    | 09.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 Download the free game from [Daniele Spadoni Blog](https://danielespadoni82.blogspot.com/2019/03/blog-post_15.html)
 
