@@ -174,6 +174,7 @@ Unless otherwise described:
     Press the buttons in order *E3, A2, D3, B1*.  
 
     **Carvings Solution**
+
     |:::|*A*|*B*|*C*|*D*|*E*|
     |:-:|:-:|:-:|:-:|:-:|:-:|
     | 1 |   |4th|   |   |   |
