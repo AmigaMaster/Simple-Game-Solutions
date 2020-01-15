@@ -172,6 +172,7 @@ Unless otherwise described:
   - Final solution:  
     Imagine the carvings as a table, lines numbered 1-3 and columns A-E.  
     Press the buttons in order *E3, A2, D3, B1*.  
+
     **Carvings Solution**
     |:::|*A*|*B*|*C*|*D*|*E*|
     |:-:|:-:|:-:|:-:|:-:|:-:|
