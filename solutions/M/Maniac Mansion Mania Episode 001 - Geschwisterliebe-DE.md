@@ -2,12 +2,11 @@
 
 | Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
-|  1.0    | 15.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|  1.01   | 17.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Download der Spieleserie auf der offiziellen
+[![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
-![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)  
-[Maniac Mansion Mania Homepage](https://www.maniac-mansion-mania.com)
+Download der Spieleserie auf der offiziellen [Homepage](https://www.maniac-mansion-mania.com)
 
 Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spannende Welt von Maniac Mansion weiterleben zu lassen und um neue Facetten zu erweitern. Die ganze Serie funktioniert im Episodenformat, damit jeder Entwickler seine eigene kleine Geschichte ins Universum von Maniac Mansion einbauen kann.
 
@@ -130,7 +129,7 @@ und schauen dort in
 
 - Verlasse durch rechten Durchgang
 
-### 1.13. Flur Eingang
+### 1.13. Flur Eingangsbereich
 
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
