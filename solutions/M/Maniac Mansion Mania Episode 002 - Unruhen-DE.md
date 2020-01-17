@@ -67,13 +67,13 @@ und schauen dort in
 - BENUTZE `Fernbedienung` mit Fernseher
 - Gehe zu
 
-## 2. Flur Obergeschoss
+### 2. Flur Obergeschoss
 
 - BENUTZE `Kleiderbügel` mit `Besenstiel` (`Haken am Stiel`)
 - BENUTZE `Haken am Stiel` mit Luke
 - Zurück in
 
-### 2.1. Bernard's Zimmer
+#### 2.1. Bernard's Zimmer
 
 - BENUTZE Computer
 - Gehe zum
@@ -82,7 +82,7 @@ und schauen dort in
 
 - Verlasse durch rechten Durchgang
 
-## 3. Flur Eingangsbereich
+### 3. Flur Eingangsbereich
 
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
@@ -93,12 +93,12 @@ und schauen dort in
 - ÖFFNE `Paket` (`Gasmaske`)
 - Gehe zu
 
-## 5. Flur Erdgeschoss
+### 5. Flur Erdgeschoss
 
 - BENUTZE `Nudelzange` mit Wäschekorb (`Gefrierbeutel mit Socken`)
 - Gehe zu
 
-## 6. Flur Obergeschoss
+### 6. Flur Obergeschoss
 
 - BENUTZE `Gefrierbeutel mit Socken` mit Luke
 - Verlasse durch Luke
@@ -107,6 +107,6 @@ und schauen dort in
 
 ## 7. Video Walkthrough
 
-Maniac Mansion Mania Episode 2: Unruhen Lösung (Deutsch) (PC, Win) - Unkommentiert
+Maniac Mansion Mania Episode 002: Unruhen Lösung (Deutsch) (PC, Win) - Unkommentiert
 
-[![Walkthrough](https://img.youtube.com/vi/9DuGTuiWDqk/0.jpg)](https://www.youtube.com/watch?v=qip4Xg49DuGTuiWDqkIQCU)
+[![Walkthrough](https://img.youtube.com/vi/9DuGTuiWDqk/0.jpg)](https://www.youtube.com/watch?v=9DuGTuiWDqk)
