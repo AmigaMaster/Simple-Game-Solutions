@@ -2,11 +2,9 @@
 
 | Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
-|  1.0    | 14.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|  1.01   | 20.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Geschrieben für Spielversion 1.1 vom 26.12.2019
-
-Zak McKracken: Between Time and Space - Director's Cut ist ein inoffizieller Nachfolger zu  Prequel zu Zak McKracken and the Alien Mindbenders.
+Zak McKracken: Between Time and Space - Director's Cut ist ein inoffizieller Nachfolger zum 1988 veröffentlichten Zak McKracken and the Alien Mindbenders.
 
 Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/between-timespace-2.html) heruntergeladen werden.
 
@@ -212,7 +210,9 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - SCHAU AN verblichene Zeichen
 - BENUTZE `gelber Buntstift` mit verblichene Zeichen
   - Hier die Zeichnung von der Steintafel *nachzeichnen* und danach auf den kleinen runden Stein klicken  
+
     Zeichnung:
+
     ``` text
     | /\/
     | \/\
@@ -270,6 +270,7 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 > Die Inventargegenstände können aber trotzdem ausgewählt werden, das muss nun aber blind geschehen!  
 
 > **ACHTUNG:** Sobald Zak anfängt zu frieren, muss der gefüllte Kaffeebecher benutzt werden
+>
 > - BENUTZE `gefüllter Kaffeebecher`
 
 - Ihr erhaltet automatisch `gefüllter Kaffeebecher`
@@ -301,7 +302,8 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 2. **'Böses' Ende**
    - BENUTZE `geöffnete Vaselinetube` mit Sonnenöl
    - NIMM Vaselinetube (`Vaseline`)
-- Reise nach
+
+- Reise zum
 
 ## 22. Flughafen Paris
 
@@ -430,7 +432,8 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 ### 34.2. Zak's Wohnzimmer
 
 > **HINWEIS:** Fernseher  
-> Sobald der Fernseher bei den folgenden Aktionen blitzt und Zak das mit 'Was soll das denn?' kommentiert
+> Sobald der Fernseher bei den folgenden Aktionen blitzt und Zak das mit 'Was soll das denn?' kommentiert  
+>
 > - BENUTZE Fernseher
 
 - SCHAU AN Telefon
