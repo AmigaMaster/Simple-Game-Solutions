@@ -36,7 +36,7 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - BENUTZE `Sicherung` mit Sicherungskasten
 - Gehe zu Ladeluke
   > **HINWEIS:** Diese Aktion muss ausgeführt werden, ansonsten kann die Plane nicht mit der Luke benutzt werden.
-- Benutze `Plane`mit Ladeluke
+- Benutze `Plane` mit Ladeluke
 - Gehe zu Ladeluke
 
 ### 2.1. Zak's Schlafzimmer
@@ -606,7 +606,7 @@ Dialogsequenz:
 - DRÜCKE goldener Umhang
 - DRÜCKE farbener Anzug
 - NIMM Schnuller (`Schnuller`)
-- BENUTZE `Schnuller`mit "Der King"
+- BENUTZE `Schnuller` mit "Der King"
 - NIMM Schlüssel (`gebogenes Metallstück`)
 - DRÜCKE Portraitbild des King
 - Gehe zurück in den
@@ -663,7 +663,7 @@ Dialogsequenz:
 
 #### 50.1.1. Zimmer des Kings
 
-- Benutze `Augapfel eines Caponiers`mit Safe
+- Benutze `Augapfel eines Caponiers` mit Safe
 - NIMM blauer Kristall (`Blauer Kristall`)
 - Zurück zur
 
