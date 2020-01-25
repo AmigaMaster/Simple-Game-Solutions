@@ -1,13 +1,15 @@
 # Simple Game Solutions
 
-Game solutions written in easy-to-read and easy-to-write plain text format, optional using markdown for text formatting.
-
 ``` text
 ╔═╗┬┌┬┐┌─┐┬  ┌─┐  ╔═╗┌─┐┌┬┐┌─┐  ╔═╗┌─┐┬  ┬ ┬┌┬┐┬┌─┐┌┐┌┌─┐
 ╚═╗││││├─┘│  ├┤   ║ ╦├─┤│││├┤   ╚═╗│ ││  │ │ │ ││ ││││└─┐
 ╚═╝┴┴ ┴┴  ┴─┘└─┘  ╚═╝┴ ┴┴ ┴└─┘  ╚═╝└─┘┴─┘└─┘ ┴ ┴└─┘┘└┘└─┘
               ( The Raw Elegance of Text )
 ```
+
+Game solutions written in easy-to-read and easy-to-write plain text format, optional using markdown for text formatting.
+
+![Hits](https://hitcounter.pythonanywhere.com/count/tag.svg?url=https%3A%2F%2Fgithub.com%2FAmigaMaster%2FSimple-Game-Solutions)
 
 ## Table of Contents <!-- omit in toc -->
 
