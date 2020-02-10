@@ -1,6 +1,6 @@
 # Maniac Mansion Mania 002: Unruhen Lösung
 
-| Version | Date       | Author                                    |
+| Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
 |  1.0    | 17.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 

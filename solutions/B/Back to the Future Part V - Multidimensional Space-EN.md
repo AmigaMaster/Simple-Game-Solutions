@@ -1,8 +1,8 @@
 # Back to the Future Part V - Multidimensional Space Walkthrough
 
-| Version | Author                                    | Date       |
-|:-------:| ------------------------------------------|-----------:|
-|  1.0    | Amiga Master (AmigaMaster-NG@t-online.de) | 10.01.2020 |
+| Version | Date       | Author                                    |
+|:-------:|------------|-------------------------------------------|
+|   1.0   | 10.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 Download the free game from [Daniele Spadoni Blog](https://danielespadoni82.blogspot.com/2019/07/the-fan-game-back-to-future-part-v.html)
 

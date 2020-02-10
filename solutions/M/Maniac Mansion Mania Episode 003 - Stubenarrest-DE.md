@@ -1,6 +1,6 @@
 # Maniac Mansion Mania Episode 003: Stubenarrest Lösung
 
-| Version | Date       | Author                                    |
+| Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
 |  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 

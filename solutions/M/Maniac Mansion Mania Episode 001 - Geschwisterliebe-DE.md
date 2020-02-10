@@ -1,6 +1,6 @@
 # Maniac Mansion Mania 001: Geschwisterliebe Lösung
 
-| Version | Date       | Author                                    |
+| Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
 |  1.01   | 17.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 

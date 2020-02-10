@@ -2,7 +2,7 @@
 
 | Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
-|  1.0    | 13.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.0   | 13.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 Download the game for free from [AMINET](http://aminet.net/package/game/role/relics1_5)
 

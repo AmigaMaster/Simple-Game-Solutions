@@ -1,6 +1,6 @@
 # Maniac Mansion Mania Episode 016: Meteor Family - Die Rückkehr des Meteoriten Lösung
 
-| Version | Date       | Author                                    |
+| Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
 |  1.0    | 20.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 

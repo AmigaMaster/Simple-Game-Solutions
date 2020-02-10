@@ -1,6 +1,6 @@
 # Maniac Mansion Mania Episode 014: Ed's Rache für den Hamsterbraten Lösung
 
-| Version | Date       | Author                                    |
+| Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
 |  1.0    | 19.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 

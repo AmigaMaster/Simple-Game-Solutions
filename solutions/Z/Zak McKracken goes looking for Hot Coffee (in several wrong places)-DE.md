@@ -1,6 +1,6 @@
 # Zak McKracken goes looking for Hot Coffee (in several wrong places) Lösung
 
-| Version | Date       | Author                                    |
+| Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
 |  1.03   | 11.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 

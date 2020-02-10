@@ -1,8 +1,8 @@
 # Indiana Jones and the Fountain of Youth Demo Walkthrough
 
-| Version | Author                                    | Date       |
-|:-------:| ------------------------------------------|-----------:|
-|  1.0    | Amiga Master (AmigaMaster-NG@t-online.de) | 15.01.2020 |
+| Version | Date       | Author                                    |
+|:-------:|------------|-------------------------------------------|
+|   1.0   | 15.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 Download the free game from [Adventure Game Studios](https://www.adventuregamestudio.co.uk/site/games/game/724)
 

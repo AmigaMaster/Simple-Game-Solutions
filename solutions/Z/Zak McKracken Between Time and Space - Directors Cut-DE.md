@@ -1,6 +1,6 @@
 # Zak McKracken: Between Time and Space - Director's Cut Lösung
 
-| Version | Date       | Author                                    |
+| Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
 |  1.01   | 20.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
