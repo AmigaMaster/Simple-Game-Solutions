@@ -13,7 +13,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 Die Edgar Verleihungen krönen die besten Episoden einer Staffel. Die Abstimmung erfolgt durch die Spieler und Forenbenutzer und das Ganze wird in Form einer Preisverleihung präsentiert.
 
 **HINWEIS:**  
-Teil 1 der Edgar Awards ist eine selbstlaufendes Spiel - es sind keine Interaktionen notwendig.
+Teil 1 der Edgar Awards ist ein selbstablaufendes Spiel - es sind keine Interaktionen notwendig.
 
 ## 1. Bühne
 
