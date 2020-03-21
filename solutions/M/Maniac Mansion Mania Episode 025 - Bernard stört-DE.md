@@ -307,6 +307,6 @@ im
 
 ## 17. Video Walkthrough
 
-Maniac Mansion Mania Episode 024: Time Machine Lösung (Deutsch) (PC, Win) - Unkommentiert
+Maniac Mansion Mania Episode 025: Bernard stört Lösung (Deutsch) (PC, Win) - Unkommentiert
 
-[![Walkthrough](https://img.youtube.com/vi/N26qB0zX5nQ/0.jpg)](https://www.youtube.com/watch?v=N26qB0zX5nQ)
+[![Walkthrough](https://img.youtube.com/vi/ljQpq7syyF8/0.jpg)](https://www.youtube.com/watch?v=ljQpq7syyF8)
