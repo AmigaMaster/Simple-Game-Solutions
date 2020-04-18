@@ -305,7 +305,7 @@ Thank you to [traveltissues](https://steamcommunity.com/id/traveltissues/) for t
 
 ### 4.11. Iron Square
 
-- go to iron square and then to Glenn's, ask Anna about Jonatan's boat (Anna will either give you Patrik's address immediately or you may need to ask her about Patrik first)
+- go to iron square and then to Glenn's, ask Anna about jonatan's boat (Anna will either give you Patrik's address immediately or you may need to ask her about Patrik first)
 
 ### 4.12. Patrik's Flat
 
@@ -332,3 +332,11 @@ Thank you to [traveltissues](https://steamcommunity.com/id/traveltissues/) for t
 - leave the cabin
 
 ### 4.16. End of Part 3
+
+---
+
+## 5. Walkthrough Video
+
+The Samaritan Paradox Lösung (Deutsch) (PC, Win)
+
+[![Walkthrough](https://img.youtube.com/vi/dJngK8GJJWk/0.jpg)](https://www.youtube.com/watch?v=dJngK8GJJWk)
