@@ -27,7 +27,7 @@ You can SAVE and LOAD at any time. On some platforms you are required to enter a
 
 Use the HELP command to get some basic overview how to play the game.
 
-## 2. DAY 1
+## 2. Day 1
 
 ### 2.1. Forsaken Path
 
