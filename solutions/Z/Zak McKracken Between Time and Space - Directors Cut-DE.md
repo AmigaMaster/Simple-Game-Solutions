@@ -2,6 +2,7 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
+|  1.02   | 06.07.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 |  1.01   | 20.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 Zak McKracken: Between Time and Space - Director's Cut ist ein inoffizieller Nachfolger zum 1988 veröffentlichten Zak McKracken and the Alien Mindbenders.
@@ -269,7 +270,7 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 > Sobald Zak das erste mal zu frieren anfängt (Er sagt dann 'Brrr... es ist eiskalt hier'), wird das Inventar ausgeblendet und bleibt unsichtbar.  
 > Die Inventargegenstände können aber trotzdem ausgewählt werden, das muss nun aber blind geschehen!  
 
-> **ACHTUNG:** Sobald Zak anfängt zu frieren, muss der gefüllte Kaffeebecher benutzt werden
+> **ACHTUNG:** Sobald Zak anfängt zu frieren, muss der gefüllte Kaffeebecher benutzt werden!
 >
 > - BENUTZE `gefüllter Kaffeebecher`
 
@@ -540,8 +541,10 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
   > <details><summary>*** Klicke um die Fundorte zu sehen ***
   > </summary>
   >  Blauer Pfeil: Zwischen Dachrinne und weiß-blauem Topf<br>
-  >  Grüner Pfeil: Direkt links neben dem Gitter im Boden neben dem grünen Kasten<br>
-  >  Roter  Pfeil: Zwischen getorftem Beet und rotem Blumenkasten
+  >  Roter  Pfeil: Zwischen getorftem Beet und rotem Blumenkasten<br>
+  > Grüner Pfeil:<br>
+  >- Entweder direkt links neben dem Gitter im Boden neben dem grünen Kasten oder<br>
+  >- im Labor unterhalb des Käfigs bzw unter dem Destillierapparat
   >  </details>
 - BENUTZE `Caponier Schaedel und Tolle`
 - Gehe zu vorderer Hausbereich

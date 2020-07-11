@@ -204,7 +204,7 @@ Es gibt jetzt zwei Möglichkeiten:
 
 - BENUTZE `Briefpapier` mit Tür rechts hinten
 
-## 5. Alternatives Ende: Entscheidung für Britney**
+## 5. Alternatives Ende: Entscheidung für Britney
 
 - 'DU hast recht. Ich liebe Britney, wollte dich aber nicht verletzen'
 
