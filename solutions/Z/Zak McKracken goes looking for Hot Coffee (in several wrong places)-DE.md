@@ -23,7 +23,7 @@ Das Spiel kann kostenlos bei [Itchi](https://ogni-xr21.itch.io/zak-mckracken-goe
 - Auszuführende Aktionen sind jetzt in GROSSBUCHSTABEN geschrieben
 - weitere kleine Korrekturen und Ergänzungen
 
-2020-01-11, V1.02
+2020-01-11, V1.03
 
 - Videolink hinzugefügt
 - Kleinere Anpassungen
