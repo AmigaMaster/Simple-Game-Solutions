@@ -3,6 +3,7 @@
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 01.06.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.01  | 02.04.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -711,7 +712,7 @@ und fristen unser Dasein im
     - <details><summary>
       *** SPOILER *** Klicken für die Lösung
       </summary>
-      Nur Ein und Zwei ergibt 2121 - multipliziert mit 2 ergibt die Kombination "4242"
+      Nur Einsen und Zweien ergibt "2121" - multipliziert mit 2 ergibt das die Kombination "4242"
       </details>
 - Gehe zum
 
