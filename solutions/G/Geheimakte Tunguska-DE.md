@@ -1,8 +1,8 @@
-# Geheimakte Tunguska Lösung - Pre-Release
+# Geheimakte Tunguska Lösung
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
-|   0.9   | 15.07.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.0   | 08.08.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 ## 1. Allgemeines
 
@@ -1346,3 +1346,11 @@ Max:
 - SCHAU AN Anzeigetafel
 - BENUTZE `Handy` mit Maschine
 - BENUTZE Kamera mit Kran
+
+--------------------------------------------------------------------------------
+
+## 19. Video Walkthrough
+
+Geheimakte Tunguska (Deutsch) (PC, Win) [60 FPS] - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/J48r1wfRrms/0.jpg)](https://www.youtube.com/watch?v=J48r1wfRrms)
