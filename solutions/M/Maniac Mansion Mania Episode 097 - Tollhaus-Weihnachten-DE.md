@@ -337,7 +337,7 @@ Wir spielen ab hier Eddel, die Mutter von Edna und Stiefmutter von Dr. Fred.
 - BENUTZE `Rettungsreifen` mit Wasser im Pool
 - BENUTZE `Pappplakat` mit Rettungsreifen
 - BENUTZE `viel Geschenkpapier` mit Rettungsreifen mit Pappe
-- BENUTZE `Zippofeuerzeug` mit GEschenkpapier auf Pappe
+- BENUTZE `Zippofeuerzeug` mit Geschenkpapier auf Pappe
 - DRÜCKE brennendes Papier auf Reifen
 
 --------------------------------------------------------------------------------
