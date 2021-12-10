@@ -3,8 +3,9 @@
 | Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 31.03.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.01  | 04.12.2021 | Amiga Master, update download link        |
 
-Download the free game from [Daniele Spadoni Blog](https://danielespadoni82.blogspot.com/2020/02/the-pixel-has-you.html)
+Download the free game from [Daniele Spadoni Deviant Art page](https://www.deviantart.com/spadoni-production/art/THE-PIXEL-HAS-YOU-844671187)
 
 Keyboard shortcuts:
 
