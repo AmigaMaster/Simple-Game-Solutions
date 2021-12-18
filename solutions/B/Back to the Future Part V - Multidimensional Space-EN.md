@@ -1,10 +1,11 @@
 # Back to the Future Part V - Multidimensional Space Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 10.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author
+|:-------:|------------|-------------------------------------------
+|   1.01  | 10.12.2021 | Amiga Master, fix download link
+|   1.0   | 10.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
-Download the free game from [Daniele Spadoni Blog](https://danielespadoni82.blogspot.com/2019/07/the-fan-game-back-to-future-part-v.html)
+Download the free game from [Daniele Spadoni's Deviant Art Page](https://www.deviantart.com/spadoni-production/art/TFG-Back-to-the-Future-ALTERNATIVE-TRILOGY-844670970)
 
 Keyboard shortcuts:
 
