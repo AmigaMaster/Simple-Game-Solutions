@@ -881,4 +881,4 @@ Keyboard shortcuts:
 
 The Pixel has you Disk 1 Walkthrough (English) (PC, Win) - No Commentary
 
-[![Walkthrough](https://img.youtube.com/vi/oBeRhvvzEOc/0.jpg)](https://www.youtube.com/watch?oBeRhvvzEOc)
+[![Walkthrough](https://img.youtube.com/vi/oBeRhvvzEOc/0.jpg)](https://www.youtube.com/watch?v=oBeRhvvzEOc)

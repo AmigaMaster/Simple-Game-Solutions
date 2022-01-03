@@ -261,4 +261,4 @@ Andrea:
 
 The Goonies Walkthrough (English) (PC, Win) - No Commentary
 
-[![Walkthrough](https://img.youtube.com/vi/XSQc2grKf0s/0.jpg)](https://www.youtube.com/watch?XSQc2grKf0s)
+[![Walkthrough](https://img.youtube.com/vi/XSQc2grKf0s/0.jpg)](https://www.youtube.com/watch?v=XSQc2grKf0s)

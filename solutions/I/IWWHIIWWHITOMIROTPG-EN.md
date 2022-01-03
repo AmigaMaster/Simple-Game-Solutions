@@ -40,4 +40,4 @@ Click on the bones icon to close the inventory screen.
 
 IWWHIIWWHITOMIROTPG - The Game! Lösung (Englisch ) (PC, Win) - Unkommentiert
 
-[![Walkthrough](https://img.youtube.com/vi/cSbYMBABPOo/0.jpg)](https://www.youtube.com/watch?cSbYMBABPOo)
+[![Walkthrough](https://img.youtube.com/vi/cSbYMBABPOo/0.jpg)](https://www.youtube.com/watch?v=cSbYMBABPOo)

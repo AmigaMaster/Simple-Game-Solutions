@@ -700,4 +700,4 @@ Keyboard shortcuts:
 
 Ghostbusters and the Secret of Monkey Island Walkthrough (English) (PC, Win) - No Commentary
 
-[![Walkthrough](https://img.youtube.com/vi/_1ZSfe2Ro64/0.jpg)](https://www.youtube.com/watch?_1ZSfe2Ro64)
+[![Walkthrough](https://img.youtube.com/vi/_1ZSfe2Ro64/0.jpg)](https://www.youtube.com/watch?v=_1ZSfe2Ro64)
