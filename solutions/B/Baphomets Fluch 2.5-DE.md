@@ -2,7 +2,7 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
-|   1.0   | 05.01.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.0   | 05.01.2022 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 Download des kostenlosen Spiels auf der offiziellen [Homepage](http://www.baphometsfluch25.de/downloads/vollversion.htm) oder auf der [ScummVM Seite](https://www.scummvm.org/games).
 In beiden Fällen muss unbedingt das [Update](http://baphometsfluch25.de/downloads/sonstiges/BS25_patch000_multilingual.zip) heruntergeladen und ins Spielverzeichnis entpackt werden, ansonsten gibt es noch einige Fehler, die es unmöglich machen das Spiel zu vervollständigen.
