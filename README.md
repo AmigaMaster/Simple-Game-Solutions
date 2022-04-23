@@ -210,7 +210,7 @@ Required: No
 This is an optional parameter only used, when you add additional files like pictures. Use a short descriptive name like "map_mars" or "puzzle_stonedisc".
 
 **Language Code**:  
-Required: Only if file is language dependent
+Required: Only if the file is language dependent
 
 Each file requires a language code. If a file is language independent you can omit the code.
 
@@ -236,7 +236,7 @@ Zak McKracken and the Alien Mindbenders-map_mars.png
 
 ## 7. Tips and Tricks
 
-If you are unsure how to implement something in markdown so is stays readable, see the following tips I experienced while writing my first solutions.
+If you are unsure how to implement something in markdown so it stays readable, see the following tips I experienced while writing my first solutions.
 
 ### 7.1. Inserting Web Links
 
@@ -274,13 +274,14 @@ You can use Unicode to get symbols and some color into your text. However, pleas
 
 1. **Do not** use unicode characters  
    This may sound strange but the best option is to *not* use unicode characters. Use ANSI letters and numbers only, this is the safest way the document stays readable in plain text view.  
-   > **Note:** Even modern OS do not support all current unicode characters and you usually end up with a grey rectangle instead.
+   > **Note:** Even modern operating systems do not support all current unicode characters and you usually end up with a grey rectangle instead.
 
 2. Use sparingly  
-   Unicode requires the file to be in UTF-8 format. There are editors which does not support UTF and display ANSI instead. They will display some rubbish characters instead of your icon. For example the unicode red circle becomes "`ðŸ”´`"
+   Unicode requires the file to be in UTF-8 format. There are editors which do not support UTF and display ANSI instead. They will display some rubbish characters instead of your icon. For example the unicode red circle becomes "`ðŸ”´`"
 
 3. Always use additional highlighting elements  
-   Some text viewers and editors do not support colors, so your shiny unicode icon will appear as a grey or even black and white icon. So use markdown native elements like quotes, *cursive* or **bold**.
+   Some text viewers and editors do not support colors, so your shiny unicode icon will appear as a grey or even black and white icon. So use markdown native elements like `embedded code`, *cursive* or **bold**.
+   >You can also use quotes but they require a new line and cannot be displayed inline.
 
 Short table of usable unicode characters
 
