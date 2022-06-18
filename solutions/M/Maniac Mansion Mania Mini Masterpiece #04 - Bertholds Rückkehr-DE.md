@@ -79,3 +79,11 @@ Die Mini Masterpieces sind kleine, auf maximal 10 Aktionen beschränkte Folgen o
 ### 1.13. Flur Eingangsbereich
 
 - BENUTZE `Schlüssel` mit Tür
+
+--------------------------------------------------------------------------------
+
+## 2. Video Walkthrough
+
+Maniac Mansion Mania Mini Masterpiece #04: Bertholds Rückkehr Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/VrmXieaaa9I/0.jpg)](https://www.youtube.com/watch?v=VrmXieaaa9I)
