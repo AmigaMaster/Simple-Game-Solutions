@@ -1,10 +1,10 @@
-# Void Quest Walkthrough
+# Void Quest - Walkthrough
 
-| Version | Datum      | Autor                                     |
+| Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 06.04.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Download des Spiels von [Gamejolt](https://gamejolt.com/games/VoidQuest/257270)
+Download the game for free at [Gamejolt](https://gamejolt.com/games/VoidQuest/257270)
 
 ## 1. General
 
