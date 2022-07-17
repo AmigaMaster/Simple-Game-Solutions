@@ -146,7 +146,7 @@
 - PICK UP Cable (`Cable`)
 - USE `Cable` with Computer Screen
 
-## 2. Haven, 1 Day Earlier
+## 2. One Day Earlier
 
 ### 2.1. Street
 
@@ -187,7 +187,7 @@
 - USE `Doener Kebab` with Lilith (`Credit Crystal`)
 - USE `Credit Crystal` with Thunder Lanovich
 
-## 3. Haven, Present Day
+## 3. Present Day
 
 ### 3.1. Cyberspace
 
@@ -348,7 +348,7 @@
 
 - PICK UP all 16 disk records from the ground
 
-## 5. Haven, Present Day
+## 5. Present Day
 
 - "I'm not at liberty to reveal my motives at this moment."
 - "Then you'll miss your chance of getting rid of that voice in your head."
@@ -392,7 +392,7 @@
 - USE Computer
 - USE VR Plug
 
-## 6. Haven, Two Days Later
+## 6. Bar, Two Days Later
 
 ### 6.1. Maintenance Room
 
