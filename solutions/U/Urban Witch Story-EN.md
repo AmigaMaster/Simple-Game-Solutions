@@ -8,7 +8,7 @@ Get the game for free at [Itch.io](https://postmodernadventures.itch.io/urban-wi
 
 ## 1. General
 
-- When there is a TALK TO action in this solution, also make sure you talk to everyone about everything until no new dialogue options appear and they begin to repeat themselves. This includes talking to someone several times.
+- When there is a TALK TO action in this solution, make sure you talk to everyone about everything until no new dialogue options appear and they begin to repeat themselves. This includes talking to someone several times.
 - You can use your `Notebook` in your inventory to get information about the current tasks and progress.
 
 ## 2. Leroy and Angela's House
@@ -240,7 +240,7 @@ Get the game for free at [Itch.io](https://postmodernadventures.itch.io/urban-wi
 
 ## 14. Lot
 
-- LOOK AT Drum (`Rope`)
+- USE Drum (`Rope`)
 - USE `Pillow` with `Pistol` (`Pistol with pillow`)
 - USE `Pistol with pillow` with Car
 - USE Car (`Ice pick`, `Diamond`)
@@ -362,7 +362,7 @@ Get the game for free at [Itch.io](https://postmodernadventures.itch.io/urban-wi
 
 #### 20.2.6. Warehouse Temple
 
-- LOOK AT Body
+- USE Body
   - "What have you done to these poor people?"
   - "You're sick."
   - "I've been looking for you all night."
@@ -375,3 +375,11 @@ Get the game for free at [Itch.io](https://postmodernadventures.itch.io/urban-wi
 - "Give me your gun!"
 - "We're running out of road!"
 - "I got it!"
+
+--------------------------------------------------------------------------------
+
+## 8. Video Walkthrough
+
+
+
+[![Walkthrough](https://img.youtube.com/vi/2ibZz4BQm7Q/0.jpg)](https://www.youtube.com/watch?v=2ibZz4BQm7Q)
