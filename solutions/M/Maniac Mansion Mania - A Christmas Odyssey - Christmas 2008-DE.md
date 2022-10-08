@@ -1,8 +1,9 @@
 # Maniac Mansion Mania - A Christmas Odyssey - Christmas 2008 - Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 22.10.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor                                                |
+|:-------:|------------|------------------------------------------------------|
+|   1.01  | 09.10.2022 | Amiga Master, Easter Egg hinzugefügt. Danke an LilaQ |
+|   1.0   | 22.10.2021 | Amiga Master (AmigaMaster-NG@t-online.de)            |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -14,8 +15,9 @@ Die Festivitäten sind Episoden abseits der normalen Hauptreihe, die zu Weihnach
 
 ## 1. Titelbildschirm
 
-- >EASTER EGG:
+- >EASTER EGGS:
   >- Mehrfach Rechts-Klick auf Bernard
+  >- Auf den Baumstumpf klicken
 
 ## 2. Bernards Haus
 
