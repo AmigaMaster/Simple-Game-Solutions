@@ -1,4 +1,9 @@
-# Gibbous - A Cthulhu Adventure Walkthrough
+# Gibbous - A Cthulhu Adventure - Walkthrough
+
+| Version | Date       | Author                                    |
+|:-------:|------------|-------------------------------------------|
+|   1.01  | 09.10.2022 | Amiga Master, Add video link              |
+|   1.0   | 05.06.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 ## 1. Prologue
 
@@ -900,3 +905,9 @@
 - USE Detonator
 - LOOK AT Detonator
 - USE cat with Escape
+
+## 19. Video Walkthrough
+
+Gibbous - A Cthulhu Adventure Walkthrough (German/English) (PC, Win) [60 FPS] - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/dPpV3LBHDTY/0.jpg)](https://www.youtube.com/watch?v=dPpV3LBHDTY)
