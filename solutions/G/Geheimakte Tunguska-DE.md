@@ -159,7 +159,7 @@ Generelle Tipps:
 - BENUTZE Klingel
 - VERLASSE DIE Haustüransicht und gehe über den Weg links in den Garten
 
-### 8.3. Hinter dem haus
+### 8.3. Hinter dem Haus
 
 - NIMM Besenstiel (`Besenstiel`)
 - SCHAU AN Fensterspalt
@@ -544,7 +544,7 @@ Generelle Tipps:
 - NIMM Ammoniak (neben der linken Tür) (`Ammoniak`)
 - NIMM Stethoskop (`Stethoskop`)
 - NIMM Spritze (unten im Bild) (`Spritze`)
-- NIMM SKalpell (`Skalpell`)
+- NIMM Skalpell (`Skalpell`)
 - BENUTZE rechte Tür
 - BENUTZE `Stethoskop` mit rechter Tür
 - VERLASSE durch rechte Tür
@@ -599,7 +599,7 @@ Max:
 - BENUTZE `Blasrohr` mit `Betäubungsmittel` (`Vergiftetes Blasrohr`)
 - BENUTZE Keil (mit dem die dicke Tür links festgestellt wurde)
 - BENUTZE `Vergiftetes Blasrohr` mit Guckloch
-- BENUTZE Pinwand (`Reißzwecke`)
+- BENUTZE Pinnwand (`Reißzwecke`)
 - BENUTZE `Schaumstoff` mit Schüssel (`Käseschwamm`)
 
 ### 12.12. Hinterhof
@@ -742,7 +742,7 @@ Max:
 - BENUTZE Generator
 - NIMM Petroleumlampe (`Petroleumlampe`)
 - NIMM Schlauch (`Schlauch`)
-- VERLASSERIchtung Norden
+- VERLASSE Richtung Norden
 
 ### 14.5. LKW-Wrack
 
@@ -1083,7 +1083,7 @@ Max:
 - BENUTZE `Brennende Fackel` mit Feuerstelle
 - BENUTZE `Goldmünze` mit `Zange` (`Zange mit Goldmünze`)
 - BENUTZE `Zange mit Goldmünze` mit Feuerstelle (`Zange mit glühender Goldmünze`)
-- BENUTZE `Zange mit glühender Goldmünze` mit eiserne Jungrau (`Zange mit glühendem Goldring`)
+- BENUTZE `Zange mit glühender Goldmünze` mit eiserne Jungfrau (`Zange mit glühendem Goldring`)
 - BENUTZE `Zange mit glühendem Goldring` mit `Becher mit Wasser` (`Goldring`)
 - BENUTZE `Regenrinne` mit Streckbank
 - NIMM Regenrinnen (`Regenrinnen`)
