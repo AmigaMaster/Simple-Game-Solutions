@@ -2,7 +2,7 @@
 
 | Version | Datum      | Autor
 |:-------:|------------|------
-|   0.9   | 08.10.2022 | Amiga Master (AmigaMaster-NG@t-online.de)
+|   1.0   | 05.01.2023 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 ## 1. Quizkarten und Fragen
 
@@ -190,32 +190,45 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 |-----------------------------------------------------|------------------------
 | Am Ende von Monkey Island 1 wurde LeChuck besieg... | Malzbier
 | An der Tür des Toilettenhäuschens ist...            | Ein Mond
+| Aufgrund von Skorbut müssen alle Schiffe nördlic... | Limetten
 | Blood Island ist die Heimat von:                    | Dem Meistersuppe-Hotel
 | Chuckies Freundin heißt:                            | Dee
 | Chuckies Freundin liebt:                            | Ihre Steinschleuder
 | Das erste Spiel, das das SCUMM-System verwendete:   | Maniac Mansion
 | Das Geisterhuhn mit Verdauungsproblemen heißt:      | Molly
+| Das Paar im Park füttert...                         | Eine Ente
+| Das Spiel Monkey Island hieß früher...              | Mutiny on Monkey Island
+| Das ursprüngliche Monkey Island wurde erstmals v... | IBM PC
 | Das Wappen auf dem Brrr-Muda-Eisschloss zeigt fo... | Ein Schwert und zwei Fische
 | Dave Grossman begann seine Arbeit bei Lucasfilm ... | 1989
 | David Fox begann seine Arbeit bei Lucasfilm Game... | 1982
+| Dee schwafelt endlos von...                         | Ankern
+| Der Mêlée-Island-Zirkus wurde geleitet von:         | Den Fettucini Brothers
+| Der Name der Voodoo-Lady lautet...                  | Corina
 | Der Name des Sheriffs in Monkey Island 1 war:       | Shinetop
 | Der offizielle Name des Voodoo-Ladens lautet...     | Internationaler Markt für Mojo
-| Der Mêlée-Island-Zirkus wurde geleitet von:         | Den Fettucini Brothers
+| Der Papagei auf dem Siegel von Brrr Muda Island...  | Schwerter
 | Der Scurvydog-Verkäufer...                          | Ist kurzsichtig
+| Der Vogel am Strand von Scurvy Island ist ein...    | Scharlachroter, gefiederter Spitz- und Schnabelvogel
 | Der Vulkan auf Monkey Island ist gefüllt mit...     | Wasser
 | Die Abkürzung für die Marley-Skorbut-Stiftung la... | SBuPL
 | Die Blumen bei der Bank sind...                     | Lila
 | Die Ente im Park kann hiermit gefüttert werden:     | Brot
 | Die Entwicklung des ursprünglichen Monkey Island... | 9 Monate
+| Die Flaggen auf dem Rummelplatz sind...             | Rot und gelb
 | Die Mad Monkey! war...                              | Ein Schiff mit einer affenförmigen Galionsfigur
 | Die Produktion von Monkey Island 1 fand hier statt: | Skywalker Ranch
+| Die Produktion von Monkey Island 2 fand hier statt: | A Building
 | Guybrush trägt...                                   | Boxershorts
 | Guybrush versucht oft, die Leute mit folgendem S... | Hinter dir! Ein dreiköpfiger Affe!
 | Herman Toothrot tauchte zuerst auf in:              | Secret of Monkey Island
 | Im hinteren Teil der Scumm Bar ist...               | Die Küche
 | Im Park gibt es...                                  | Alles davon
+| Im Scurvydog-Laden ist...                           | Eine riesige Fliege
 | In welchem Raum bewegt sich der Boden ständig?      | LeChucks Kabine
 | Käpt'n Kate Capsize...                              | Wurde zu Unrecht wegen erfundener Anschuldigungen inhaftiert
+| Largo LaGrandes Slogan war...                       | Wo du auch hingehst, an See oder an Land...
+| Morgan LeFlay tauchte zuerst auf in...              | Tales of Monkey Island
 | Nach welchem Wort fragt der Kurator beim Kreuzwo... | Pirat
 | Odina ist die ____ amtierende Königin von Brrr M... | Neunte
 | Ron Gilbert begann seine Arbeit bei Lucasfilm Ga... | 1985
@@ -225,20 +238,27 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 | Wallys Laden befindet sich auf:                     | Der Unteren Straße
 | Was befindet sich neben einer Sackgasse auf Terr... | Ein schiefer Baum
 | Was davon ist nicht im Park?                        | Wippe
+| Was davon kann man auf dem Meeresboden nicht finden | Einen Walknochen
 | Was ist ein echter Schädelname?                     | Do-rothy
 | Was ist in einem Baum am Strand von Monkey Islan... | L + E
 | Was ist vorne auf der Kiste im Laderaum abgebildet? | Kreuz
 | Was kann man nicht auf dem Meeresboden finden?      | Einen alten Taucheranzug
 | Was mag Guybrush überhaupt nicht?                   | Pilze
+| Was sagt Guybrush, wenn er auf einer Insel ankommt? | Nichts
 | Was steht auf dem Schild am Affenkopf?              | Privateigentum
 | Was steht auf dem Schild am Tor von Terror Island?  | XYZZY
 | Welche der folgenden Dinge kann man im Scurvydog... | Heiße Wiener!
+| Welche der folgenden Inseln ist keine Insel in M... | Reef Island
 | Welche dieser Personen wurde nicht von einer rie... | Marquis De Singe
+| Welche dieser Zutaten braucht man nicht, um eine... | Etwas vom Brot
+| Welche Meerestiere kann man im Fischladen auf Me... | Tintenfisch
+| Welche dieser Zutaten braucht man nicht, um nach... | Hefe
 | Welcher Kuchen ist nicht Otis' Lieblingskuchen?     | Käsekuchen
 | Welcher Vogel befindet sich auf dem Gipfel von B... | Papagei
 | Welches der folgenden Bücher findet sich nicht i... | Piraterie für Laien
 | Welches ferne Meerestier kann man vom Krähennest... | Hai
-| Wer hatte in Monkey Island 2 ein Glasbodenboot?     | Käpt'n Dread
+| Welches Tier ist auf dem Schiff von Bella Fisher... | Ein Hund
+| Wer hatte in Monkey Island 2 ein Glasbodenboot?     | Kate Capsize
 | Wer ist der Herausgeber der Pirate Times?           | Conrad Lee
 | Wer ist der hiesige Experte für LOOM?               | Cobb
 | Wessen Brautschleier findet man in LeChucks Kabine? | Elaines
@@ -250,17 +270,23 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 | Wie viele Bücher mit Titeln stehen im Bücherrega... | Sieben
 | Wie viele Einsiedlerkrebse haben sich auf Barebo... | Zwei
 | Wie viele Fackeln brennen anfangs auf Brrr Muda?    | Zehn
+| Wie viele Fenster sind im Haus d. Gouv. beleuchtet? | Achtzehn
 | Wie viele Fische befinden sich in dem Fischschwa... | Elf
 | Wie viele Fragen enthält das Zollformular von Br... | 33
+| Wie viele Gefangene befinden sich im Eissteinbruch? | 21
+| Wie viele Heißluftballons kann man vom Park aus...  | Zwei
 | Wie viele Krähen befinden sich im Krähennest von... | Null
+| Wie viele Mopp-Bäume gibt es?                       | Zwei
+| Wie viele Papageien befinden sich neben dem Scur... | Einer
+| Wie viele Piraten sind zu Beginn in der Scumm-Bar?  | Acht
 | Wie viele Schiffsmasten sind auf der Straße mit ... | Drei
 | Wie viele Skelette befinden sich im Wasser am St... | Zwei
-| Wie viele Steinaffen gibt es im ersten  Ring?       | Vier
+| Wie viele Steinaffen kann man höchstens im erste... | Vier
 | Wie viele Steinaffen gibt es im dritten Ring?       | Drei
 | Wie viele Steinaffen gibt es im zweiten Ring?       | Drei
 | Wie viele tote Piraten befinden sich in dem verl... | Drei
 | Wie viele verschiedene Geckos kann man am Affenk... | Acht
-| Wo befindet sich Cogg Island?                       | Die korrekte Antwort wird erst im zweiten Spieldurchlauf angezeigt (Koordinate)
+| Wo befindet sich Cogg Island?                       | Die korrekte Antwort wird erst im zweiten Spieldurchlauf angezeigt und ist eine Koordinate im Stil von "J.8"
 | Wo kann man Gestrüpp finden?                        | Terror Island
 
 ## 2. Vor dem Start
@@ -291,7 +317,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 #### 3.1.5. Scurvydogs
 
-- >Trophäe: Pegleg
+- >Trophäe: Holzbein
   >- GIB `Schlüssel zum Plumpsklo` an Verkäufer
 - GIB `falschen Fuffziger` an Verkäufer (`Scurvydog`)
 - Verlasse den Platz Richtung Osten
@@ -303,7 +329,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - REDE MIT dem Paar
 - BENUTZE Korb
 - **SCHNELL:** NIMM Brot (`Brot`)
-- BENUTZE `Brot` mit Glücksente
+- BENUTZE `Brot` mit Ente
 - BENUTZE Schwertkampf
 - SCHAU AN Igitt (den Fleck auf dem Boden)
 - NIMM roten Klecks (`roten Klecks`)
@@ -314,7 +340,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - NIMM Münze neben dem Brunnen (`Münze`)
 - BENUTZE `Münze` mit Brunnen
   - Einen beliebigen Wunsch äußern
-- >Trophäe: Lucky Duck
+- >Trophäe: Glücksente
   >- BENUTZE `vierblättriges Kleeblatt` mit Ente
 - ÖFFNE Tor und gehe weiter nach rechts
 
@@ -325,7 +351,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 #### 4.1.1. Ausguck
 
 - REDE MIT Späher
-  - >Trophäe: Bragging 1/15
+  - >Trophäe: Prahlerei 1/15
     >- Über das Geheimnis von Monkey Island reden
 - GEHE nach unten zu den Docks
 
@@ -337,18 +363,20 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 ##### 4.1.2.1. Scumm Bar
 
-- REDE MIT drei Piraten am Tisch und der Piratin neben der Tür
-  - >Trophäe: Bragging 2/15
+- REDE MIT neuen Piratenanführern
+  - >Trophäe: Prahlerei 2/15
     >- Über das Geheimnis von Monkey Island reden
-- REDE MIT dem Piraten links am Tisch
-  - >Trophäe: Bragging 3/15
+- REDE MIT drei Piraten am Tisch
+  - >Trophäe: Prahlerei 3/15
+    >- Über das Geheimnis von Monkey Island reden
+- REDE MIT der Piratin links am Tisch
+  - >Trophäe: Prahlerei 4/15
     >- Über das Geheimnis von Monkey Island reden
 - REDE MIT der Piratin neben der Tür
-  - >Trophäe: Bragging 4/15
+  - >Trophäe: Prahlerei 5/15
     >- Über das Geheimnis von Monkey Island reden
 - NIMM Quizbuch (`Quizbuch`)
-  - Eine Übersicht über alle Fragen und Antworten gibt es am Ende dieser Lösung
-- REDE MIT neuen Piratenanführern
+  - Eine Übersicht über alle Fragen und Antworten gibt es im vorherigen Kapitel dieser Lösung.
 
 #### 4.1.3. Docks
 
@@ -360,13 +388,18 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 ##### 4.1.4.1. Scumm Bar
 
+- REDE MIT Cobb
+  - >Trophäe: Prahlerei 6/15
+    >- Über das Geheimnis von Monkey Island reden
+  - >Trophäe: Fan-Service
+    >- So lange nerven, bis er über Loom erzählt
 - ÖFFNE rechte Tür
 - GEHE nach rechts in die Küche
 
 ##### 4.1.4.2. Küche
 
 - REDE MIT Koch
-  - >Trophäe: Bragging 5/15
+  - >Trophäe: Prahlerei 7/15
     >- Über das Geheimnis von Monkey Island reden
 - ÖFFNE RECHTE Tür
 - NIMM Schnur (`Schnur`)
@@ -377,6 +410,10 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 #### 4.1.6. Untere Straße
 
+- REDE MIT Männer ohne Moral (Piraten)!
+  - >Trophäe: Prahlerei ?/15
+    >- Über das Geheimnis von Monkey Island reden
+    >- **INFO:** Es kann sein, dass das hier noch nicht möglich ist. Dann ergibt sich die Chance erst in Kapitel 4.
 - SCHAU AN Plakette an der Statue
   - **MERKE:** Ort der heldenhaften Taten (Variiert bei jedem Durchgang)
 - SCHAU AN Flugblatt
@@ -384,8 +421,8 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 ##### 4.1.6.1. Internationaler Markt von Mojo
 
-- >Trophäe: Bragging 6/15
-  >- Über das Geheimnis von Monkey Island reden
+- >Trophäe: Prahlerei 8/15
+  >- **ACHTUNG:** Das Gespräch SOFORT mit der Frage nach dem Geheimnis von Monkey Island beginnen!
 - REDE MIT Voodoo-Lady
 - SCHAU AN Frosch
 - NIMM Frosch (`Vergebungsfrosch`)
@@ -395,17 +432,14 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 #### 4.1.7. Untere Straße
 
-- REDE MIT Männer ohne Moral (Piraten) ***
-  - >Trophäe: Bragging 7/15
-    >- Über das Geheimnis von Monkey Island reden
 - BETRETE Wally's Laden
 
 ##### 4.1.7.1. Wally's Maps-n-More
 
 - REDE MIT Wally
-  - >Trophäe: Bragging 8/15
+  - >Trophäe: Prahlerei 9/15
     >- Über das Geheimnis von Monkey Island reden
-- >Trophäe: Cartography Nerd
+- >Trophäe: Kartografie-Nerd
   >- SCHAU AN Karte voller Monster
   >- SCHAU AN gemusterte Karte
   >- SCHAU AN Kisten
@@ -444,7 +478,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 ##### 4.1.9.1. Schlosserin
 
 - REDE MIT Schlosserin
-  - >Trophäe: Bragging 9/15
+  - >Trophäe: Prahlerei 10/15
     >- Über das Geheimnis von Monkey Island reden
 
 #### 4.1.10. Obere Straße
@@ -453,36 +487,34 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 ##### 4.1.10.1. Gefängnis
 
-- >Trophäe: Bragging 10/15
+- >Trophäe: Prahlerei 11/15
   >- Über das Geheimnis von Monkey Island reden
 - REDE MIT Stan
-  - >Trophäe: Bragging 11/15
+  - >Trophäe: Prahlerei 12/15
     >- Über das Geheimnis von Monkey Island reden
 - BENUTZE `Doppelmonokel` mit beiden Schlössern (`Seriennummer`)
 
-#### 4.1.11. Obere Straße
-
-- BETRETE die Seitengasse um Karten zu sammeln
-
-##### 4.1.11.1. Schlosserin
+##### 4.1.10.2. Schlosserin
 
 - BENUTZE `Seriennummer` mit Schlosserin (`Schlüssel für die Gefängniszelle`)
 
-##### 4.1.11.2. Gefängnis
+##### 4.1.10.3. Gefängnis
 
 - BENUTZE `Schlüssel für die Gefängniszelle` mit Otis Schloss
 
-#### 4.1.12. Obere Straße
+#### 4.1.11. Obere Straße
 
 - BETRETE Haus der Gouverneurin ganz links
 
-##### 4.1.12.1. Haus der Gouverneurin
+##### 4.1.11.1. Haus der Gouverneurin
 
 - "Alles, nur nicht dein Essen!"
-- >Trophäe: Bragging 12/15
+- >Trophäe: Prahlerei 13/15
   >- Über das Geheimnis von Monkey Island reden
 - SCHAU AN Plüschtier
 - NIMM Plüschtier (`Plüschtier`)
+- SCHAU AN "Am Ende der Planke" im Bücherregal
+- NIMM "Am Ende der Planke"
 - BENUTZE `Feder` mit `Vergebungsfrosch`
   - "Liebe Carla"
   - "Tut mir leid, dass ich das Buch, dass ich mir ausgeliehen habe, verloren habe"
@@ -491,66 +523,60 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
   - "Ich verspreche, mich in Zukunft zu bessern" (`beschriebener Vergebungsfrosch`)
 - GIB `beschriebener Vergebungsfrosch` an Carla
 - NIMM Zutaten-Buch von Barbie LeFlay (`Zutaten-Buch von Barbie LeFlay`)
-- REDE MIT Carla
-  - Nach Schuldscheinen fragen
-  - "lokale Unternehmen wieder aufbauen" (`Schuldschein`)
 
-#### 4.1.13. Obere Straße
+#### 4.1.12. Obere Straße
 
 - BETRETE den Weg hinten neben dem Haus der Gouverneurin
 
-#### 4.1.14. Werft
+#### 4.1.13. Werft
 
 - SCHAU AN seltsame Masse
 - NIMM Schwamm (`Schwamm`)
 
-#### 4.1.15. Wald
+#### 4.1.14. Wald
 
 - BETRETE Museum
 
-##### 4.1.15.1. Museum
+##### 4.1.14.1. Museum
 
 - REDE MIT Museumskurator
-  - >Trophäe: Bragging 13/15
+  - >Trophäe: Prahlerei 14/15
     >- Über das Geheimnis von Monkey Island reden
 - BENUTZE `Doppelmonokel` mit Schloss (`Seriennummer`)
 
-###### 4.1.15.1.1. Lagerraum
+###### 4.1.14.1.1. Lagerraum
 
 - NIMM Cracker-Mischung (`Cracker-Mischung`)
 
-#### 4.1.16. Docks
+#### 4.1.15. Docks
 
-##### 4.1.16.1. Scumm Bar
+##### 4.1.15.1. Scumm Bar
 
-- REDE MIT Cobb
-  - >Trophäe: Bragging 14/15
-    >- Über das Geheimnis von Monkey Island reden
-  - >Trophäe: Fan Service
-    >- So lange nerven, bis er über Loom erzählt
+- REDE MIT sauber aussehendem Piraten
 
-###### 4.1.16.1.1. Küche
+###### 4.1.15.1.1. Küche
 
 - REDE MIT Koch
 - BENUTZE `Zutaten-Buch von Barbie LeFlay` mit Koch
-- >Trophäe: Mop Heist
+- >Trophäe: Mopp-Raub
   >- Nimm Mopp
   >- Verlasse die Küche
+  >- Verlasse die Scumm Bar
 - BENUTZE `Messer` mit Moppstiel (`Holzsplitter`)
 
-#### 4.1.17. Untere Straße
+#### 4.1.16. Untere Straße
 
-##### 4.1.17.1. Wallys Maps-n-More
+##### 4.1.16.1. Wallys Maps-n-More
 
 - GIB `Holzsplitter` an Wally (`Karte zum Mopp-Baum`)
 
-#### 4.1.18. Wald
+#### 4.1.17. Wald
 
 - BETRETE den tiefen, dunklen Wald
 - BENUTZE `Messer` mit fleischfressende Pflanze (`fleischfressende Pflanze`)
 - BENUTZE `Messer` mit violette Blumen (`lila Blume`)
 
-##### 4.1.18.1. Wald Labyrinth
+##### 4.1.17.1. Wald Labyrinth
 
 - Das Labyrinth ist bei jedem Spieldurchlauf anders
 - Die Richtung auf der Karte entspricht nicht der Richtung im Spiel
@@ -558,42 +584,44 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - Entweder eine fleischfressende Pflanze oder eine lila Glockenblume oder eine hellgrün leuchtende Pflanze
 - Folge den Pflanzen
 
-###### 4.1.18.1.1. Mopp-Baum
+###### 4.1.17.1.1. Mopp-Baum
 
 - BENUTZE `Messer` mit Mopp-Baum (`Moppstiel`)
-- >Trophäe: Mop Trop
-  >- **SPEICHERN** und alle vier möglichen Moppvarianten zusammenbauen
-  >- BENUTZE `Moppstiel` mit `Plüschtier` (`Mopp`)
-  >- BENUTZE `Moppstiel` mit `Schwamm` (`Mopp`)
-  >- BENUTZE `Moppstiel` mit `Schrumpfkopf` (`Mopp`)
-  >- BENUTZE `Moppstiel` mit `Schnur` (`Mopp`)
+- **ACHTUNG:** Den Mopp noch nicht zusammenbauen (Plüschtier, Schwamm, Schrumpfkopf, Schnur nicht mit benutzen), ansonsten ist die Mop Top Trophäe unnötig langwierig zu erreichen!
 
-#### 4.1.19. Obere Straße
+#### 4.1.18. Obere Straße
 
-##### 4.1.19.1. Schlosserin
+##### 4.1.18.1. Schlosserin
 
 - GIB `Seriennummer` an Schlosserin (`Schlüssel für die Museumsvitrine`)
 - GIB `Cracker-Mischung` an Schlosserin (`Cracker`)
 
-#### 4.1.20. Wald
+#### 4.1.19. Wald
 
-##### 4.1.20.1. Museum
+##### 4.1.19.1. Museum
 
 - BENUTZE `Cracker` mit Papagei
 - BENUTZE `Schlüssel für die Museumsvitrine` mit Schloss
 - NIMM Augenklappe (`Augenklappe`)
 
-#### 4.1.21. Untere Straße
+#### 4.1.20. Untere Straße
 
-##### 4.1.21.1. Internationaler Markt von Mojo
+##### 4.1.20.1. Internationaler Markt von Mojo
 
 - GIB `Augenklappe` an Voodoo-Lady
 - GIB `fleischfressende Pflanze` an Voodoo-Lady (`verzauberte Augenklappe`)
 
-#### 4.1.22. Anlegestelle
+#### 4.1.21. Anlegestelle
 
 - BENUTZE `verzauberte Augenklappe`
-- BENUTZE `Mopp` mit Quartiermeister
+- >Trophäe: Moppkopf
+  >- **SPEICHERN** und alle vier möglichen Moppvarianten zusammenbauen
+  >- BENUTZE `Moppstiel` mit `Plüschtier` (`Mopp`)
+  >- BENUTZE `Mopp` mit Quartiermeister und Cutscene abwarten
+  >- Spielstand laden und mit den folgenden Kombinationen wiederholen:
+  >- BENUTZE `Moppstiel` mit `Schwamm` (`Mopp`)
+  >- BENUTZE `Moppstiel` mit `Schrumpfkopf` (`Mopp`)
+  >- BENUTZE `Moppstiel` mit `Schnur` (`Mopp`)
 
 ## 5. Teil II: Eine gefährliche Reise
 
@@ -612,10 +640,14 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - ÖFFNE Kiste
 - REDE MIT Murray
 - NIMM Mopp
-  - >Trophäe: Super Swabbie
+  - >Trophäe: Super-Schrubbie
     >- WISCHE Schmierfett auf **20 mal**
   - BENUTZE alle drei Schrauben am Bullauge (einfetten)
   - LEGE den Mopp zurück
+  - >Trophäe: Ordnungsfanatiker (1/2)
+    >- **ACHTUNG:** Es muss mindestens ein weiterer Gegenstand JETZT eingefettet werden, ansonsten ist die Trophäe nicht mehr erreichbar!
+    >- WISCHE Schmierfett auf
+    >- FETTE einen oder mehrere Gegenstände ein
 - BENUTZE `Messer` mit allen drei Schrauben vom Bullauge (`Schrauben`)
 - NIMM Mopp
   - WISCHE Schmierfett auf
@@ -630,7 +662,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 #### 5.1.3. Deck
 
 - >Trophäe: Free Wally 1/3
-  >- BENUTZE `Doppelmonokel` mit Fesseln ganz links am Deck (`Seriennummer`)
+  >- BENUTZE `Doppelmonokel` mit Fesseln ganz links am Deck (ohne Hotspotanzeige!) (`Seriennummer`)
 - Gehe nach rechts
 - GEHE ins Schiff
 
@@ -657,13 +689,13 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 #### 5.1.8. Krähennest
 
 - BENUTZE Fernrohr
-  - DREHE nach rechts bis zur Szene
+  - DREHE nach rechts bis zur Cutscene
 
 #### 5.1.9. Deck
 
 - REDE MIT Quartiermeister (über alles reden)
 - GIB `Einführungsbroschüre` an Quartiermeister
-- REDE MIT Apple Bob (über alles reden)
+- REDE MIT Apple Bob (über alles reden, er liest gerne)
 
 #### 5.1.10. Krähennest
 
@@ -682,15 +714,15 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 #### 5.1.13. Schiffsrumpf
 
 - Gehe nach links
-- SCHAU AN Ruder
+- SCHAU AN Ruder (Guybrush klettert nach unten)
 
 #### 5.1.14. Ruder
 
 - SCHAU AN Gullet
 - NIMM Messer (`antikes Messer`)
-- >Trophäe: Dead Dead Dead
+- >Trophäe: Tot Tot Tot
   >- **SPEICHERN**
-  >- Alle Timer abwarten
+  >- Alle Timer ablaufen lassen bis man wieder im Hauptmenü ist
 
 #### 5.1.15. Unterdeck
 
@@ -716,16 +748,16 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 #### 5.1.19. Laderaum
 
-- >Trophäe: Neat Freak
+- >Trophäe: Ordnungsfanatiker (2/2)
   >3. BENUTZE `Bericht des ersten Schrubbers` mit Bullauge
-  >4. BENUTZE `Bericht des ersten Schrubbers` mit jedem anderen eingefetteten Gegenstand
+  >4. BENUTZE `Bericht des ersten Schrubbers` mit jedem anderen eingefetteten Gegenstand - HINWEIS: Hierzu muss am Anfang des Kapitels mindestens ein zusätzlicher Gegenstand eingefettet worden sein!
   >5. BENUTZE `Hühnerfutter` mit Geisterhuhn, verlasse den Laderaum und kehre zurück
   >5.1 BENUTZE `Bericht des ersten Schrubbers` mit Hühnermist
 
 #### 5.1.20. Ruder
 
 - >Trophäe: Neat Freak
-  >6. BENUTZE `Bericht des ersten Schrubbers` mit Gullet
+  >6. BENUTZE `Bericht des ersten Schrubbers` mit Gullet am Ruder unter Wasser
 
 #### 5.1.21. Deck
 
@@ -750,7 +782,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 - BENUTZE `Messer` mit glühendem Stab neben der Kanone (`glühender Stab`)
 - BENUTZE `Brennendes Alaska` mit `glühender Stab`
-- >Trophäe: Hot Headed
+- >Trophäe: Hitzköpfig
   >- ISS `Brennendes Alaska` **4 mal**
 
 #### 5.1.25. Krähennest
@@ -761,7 +793,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 #### 5.1.26. Deck
 
 - GIB `Witzebuch` an Apple Bob
-- BENUTZE Glocke
+- BENUTZE Glocke (oben rechts am Schiff)
 - BENUTZE Glocke **2 mal**
 
 #### 5.1.27. LeChucks Kabine
@@ -782,16 +814,14 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 ### 6.1. Unter Wasser
 
-- **ACHTUNG:** im zweiten und dritten Bildschirm sind Sammelkarten versteckt! Diese unbedingt mitnehmen
-- Gehe nach rechts und sammel die Karte
-- Einen Szenenwechsel weiter auch die Karte aufnehmen
+- **ACHTUNG:** im zweiten und dritten Bildschirm können Sammelkarten versteckt sein! Diese unbedingt mitnehmen.
 - Immer weiter nach rechts gehen
 
 ### 6.2. Monkey Island
 
 #### 6.2.1. Strand
 
-- >Trophäe: Not Bitter
+- >Trophäe: Nicht bitter
   >- SCHAU AN Herz im Baum
   >- TRITT Herz im Baum **5 mal**
 - SCHAU AN Murray? (`Schädel`)
@@ -831,16 +861,12 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
   - Hilfe anbieten
   - Wähle einen Reim auf "Getier"
   - Wähle etwas, was wächst
-  - Wähle einen Reim auch Pack
+  - Wähle einen Reim auf Pack
 - REDE MIT Gullet
   - Die Gedichte zeigen lassen
 - GIB `Visitenkarte` an Gullet (`Gedichte von Gullet`)
 
-#### 6.2.8. Vulkanstrand
-
-- BENUTZE Messer mit sehr toter Tintenfisch (`Tentakel`)
-
-#### 6.2.9. Roter Beerenstrauch
+#### 6.2.8. Roter Beerenstrauch
 
 - SCHAU AN `LeChucks Karte`
   1. Beginne deine Suche am roten Beerenstrauch
@@ -851,38 +877,37 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - SCHAU AN Schaufel
 - NIMM Schaufel
 
-#### 6.2.10. Gigantischer Affenkopf
+#### 6.2.9. Gigantischer Affenkopf
 
-- REDE MIT Teamkollegen (`Verkleidungsgedicht`)
+- REDE MIT Teamkollegen
+  - "Fehlende Verkleidung für das Schiff" (`Verkleidungsgedicht`)
 - Gehe nach rechts zu Murray
 - NIMM Armknochen (`Armknochen`)
 
-#### 6.2.11. Le Chucks Schiff
+#### 6.2.10. Le Chucks Schiff
 
-##### 6.2.11.1. Schiffsrumpf
+##### 6.2.10.1. Schiffsrumpf
 
 - BENUTZE `Verkleidungsgedicht`
 
-##### 6.2.11.2. Deck
+##### 6.2.10.2. Deck
 
 - BENUTZE Glocke
 
-##### 6.2.11.3. Unterdeck
+##### 6.2.10.3. Unterdeck
 
 - SCHAU AN Blatt links auf dem Fass
 - NIMM Noten (`Notenblatt`)
 - SCHAU AN Notenblatt
   - **MERKE:** Noten: Do, Do, Mi, So, Fa, Fa, Re
-- REDE MIT Flair
 
-##### 6.2.11.4. Kombüse
+##### 6.2.10.4. Kombüse
 
 - REDE MIT Putra
   - Sie als die beste Chefköchin loben
-- GIB `Tentakel` an Putra
-- NIMM Tentakel mit Gänseblümchensoße (`Tentakel mit Gänseblümchensoße`)
+  - Nach LeChucks Lieblingsrezept fragen
 
-##### 6.2.11.5. LeChucks Kabine
+##### 6.2.10.5. LeChucks Kabine
 
 - NIMM LeChucks Tagebuch (`LeChucks Tagebuch`)
 - SCHAU AN `LeChucks Tagebuch`  
@@ -891,7 +916,18 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
     - Am Ende des Tagebuchs ändert er ihn auf einen alten Slogan
     - Mit Hilfe des Datums erhält man den aktuell gültigen Slogan
 
-#### 6.2.12. Gigantischer Affenkopf
+#### 6.2.11. Vulkanstrand
+
+- BENUTZE Messer mit sehr toter Tintenfisch (`Tentakel`)
+
+#### 6.2.12. Le Chucks Schiff
+
+##### 6.2.12.1. Kombüse
+
+- GIB `Tentakel` an Putra
+- NIMM Tentakel mit Gänseblümchensoße (`Tentakel mit Gänseblümchensoße`)
+
+#### 6.2.13. Gigantischer Affenkopf
 
 - REDE MIT Teamkollegen
 - LeChucks Musik:
@@ -902,16 +938,18 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - Slogan:
   - Diesen Wort für Wort angeben. Den Slogan bekommt man aus `LeChucks Tagebuch` (`entschlüsselte Karte`)
 
-#### 6.2.13. Dschungel
+#### 6.2.14. Dschungel
 
 - NIMM Handbuch (`Schiffsreparaturhandbuch`)
 - NIMM Murray (`Murray`)
 
-#### 6.2.14. Gigantischer Affenkopf
+#### 6.2.15. Gigantischer Affenkopf
 
-- NIMM alle Schädel (`Schädel`, `Schädel`, `Schädel`, `Schädel`, `Schädel`, `Schädel`)
+- >Trophäe: Klar Schiff
+  >- NIMM alle Schädel (`Schädel`, `Schädel`, `Schädel`, `Schädel`, `Schädel`, `Schädel`)
+  >- **INFO:** Die Trophäe wird freigeschaltet, wenn man wieder in Mêlée Island angelegt hat.
 
-#### 6.2.15. Schiffswrack
+#### 6.2.16. Schiffswrack
 
 - REDE MIT Elaine
 - BENUTZE `Schiffsreparaturhandbuch` mit Schiffswrack
@@ -924,9 +962,6 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 - SCHAU AN Kochbuch
 - NIMM Kochbuch
-- SCHAU AN Krug
-- NIMM exotischen Drink (`exotischen Drink`)
-- TRINKE `exotischen Drink` (`leerer Grogkrug`)
 
 #### 7.1.2. Untere Straße
 
@@ -951,12 +986,28 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - REDE MIT ehemaligem Piratenanführer an der Theke
   - Kaufe einen beliebigen Fisch (`Fisch`)
 - REDE MIT ehemaligem Piratenanführer am Tisch unten
-  - >Trophäe: Bragging 15/15
+  - >Trophäe: Prahlerei 15/15
     >- Über das Geheimnis von Monkey Island reden
-- >Trophäe: Bookworm 1/5
+    >- **INFO:** Es kann sein, dass man bereits in Kapitel 1 mit den drei ehemaligen Piratenanführern über Monkey Island sprechen kann. Dann ist das Gespräch hier nicht mehr möglich.
+- >Trophäe: Bücherwurm 1/5
   >- SCHAU AN pinkfarbenes Buch hinten auf dem Regal "Am Ende der Planke"
+- >Trophäe: Auf der Flucht
+  >- Verlasse und betrete den Laden so oft, bis der gelbe Beulensauger entkommen ist. Dieser bewegt sich nur in kleinen Schritten und es sind ca 40-50 Wiederholungen nötig.
 
-#### 7.1.4. Docks
+#### 7.1.4. Obere Straße
+
+##### 7.1.4.1. Haus der Gouverneurin
+
+- >Trophäe: Bücherwurm 2/5
+  >- SCHAU AN pinkfarbenes Buch im Regal
+- REDE MIT Carla
+  - Nach Schuldscheinen fragen
+  - "lokale Unternehmen wieder aufbauen" (`Schuldschein`)
+- >Trophäe: Entlastung
+  >- GIB `Münzbörse` an Carla
+- NIMM `Die Endlose Geschichte der Reise, die nicht enden wollte` (`Die Endlose Geschichte der Reise, die nicht enden wollte`)
+
+#### 7.1.5. Docks
 
 - BENUTZE `Seeteufel-Köder` mit Piratin
   - "von einem Wal verschluckt"
@@ -964,39 +1015,34 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
   - "Blockade durchbrochen"
   - "Schiff von Wal verschluckt!"
   - **MERKE:** Geschichte muss etwas über die Umstände und Umgebung verraten
-
-#### 7.1.5. Obere Straße
-
-##### 7.1.5.1. Gefängnis
-
-- REDE MIT Otis
-
-##### 7.1.5.2. Schlosserin
-
-- >Trophäe: Bookworm 2/5
-  >- SCHAU AN pinkfarbenes Buch rechts im Fenster
-- BENUTZE `Seeteufel-Köder` mit Schlosserin
-  - **MERKE:** Geschichte braucht ein dramatisches Ende
-- GIB `Seriennummer` (von den Fesseln auf LeChucks Schiff) an Schlosserin (`Fesselschlüssel`)
+- GIB `Schuldschein` an Koch
+- NIMM Kochbuch (`Zutaten von Barbie LeFlay`)
 
 #### 7.1.6. Obere Straße
 
+##### 7.1.6.1. Gefängnis
+
+- REDE MIT Otis
+
+##### 7.1.6.2. Schlosserin
+
+- >Trophäe: Bücherwurm 3/5
+  >- SCHAU AN elegantes Buch rechts im Fenster
+- BENUTZE `Seeteufel-Köder` mit Schlosserin
+  - **MERKE:** Geschichte braucht ein dramatisches Ende
+- GIB `Seriennummer` (von den Fesseln auf LeChucks Schiff) an Schlosserin (`LeShip-Fesselschlüssel`)
+
+#### 7.1.7. Obere Straße
+
 - REDE MIT Späher vor der Villa der Gouverneurin
-- >Trophäe: Neat Freak
+- >Trophäe: Geduldiger Bürger
   >- In der Schlange vor der Villa **3 Minuten** warten
 
-##### 7.1.6.1. Haus der Gouverneurin
+#### 7.1.8. Wald
 
-- >Trophäe: Bookworm 3/5
-  >- SCHAU AN pinkfarbenes Buch im Regal
-- >Trophäe: Relief Pitcher
-  >- GIB `Münzbörse` an Carla
+##### 7.1.8.1. Museum
 
-#### 7.1.7. Wald
-
-##### 7.1.7.1. Museum
-
-- >Trophäe: Promise Keeper
+- >Trophäe: Versprochen ist versprochen
   >- GIB `Verkleidungsgedicht` an Museumskurator
 - SCHAU AN Flagge
 - GIB `Cracker` an roter Papagei
@@ -1004,7 +1050,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - BENUTZE `Schlüssel für die Museumsvitrine` mit Schloss
 - NIMM Flagge (`Flagge`)
 
-#### 7.1.8. Docks
+#### 7.1.9. Docks
 
 - SCHAU AN `Flagge` (`nachgemachte Flagge`)
 - BENUTZE dein Schiff
@@ -1014,7 +1060,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 #### 7.2.1. Strand
 
 - SCHAU AN Vogel auf dem Schild
-- Verlasse Richtung Inselinneres
+- VERLASSE Richtung Inselinneres
 
 #### 7.2.2. Lager
 
@@ -1042,7 +1088,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 #### 7.4.1. Stadtzentrum
 
-- VERLASSE Richtung Inselzentrum
+- VERLASSE Richtung Inselzentrum und zum Eissteinbruch
 
 #### 7.4.2. Wachposten
 
@@ -1068,10 +1114,10 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 - SCHAU AN kleines Ding vor dem Brennholz
 - NIMM Streichholzschachtel (`Streichhölzer`)
-- >Trophäe: Bookworm 4/5
-  >- SCHAU AN pinkfarbenes Buch
+- >Trophäe: Bücherwurm 4/5
+  >- SCHAU AN lila Buch
 - REDE MIT Eiskönigin
-  - Wettbewerb der Intelligenz starten
+  - Wettbewerb der Intelligenz starten und abwarten
 
 #### 7.4.4. Stadtzentrum
 
@@ -1098,18 +1144,11 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 ### 7.5. Mêlée Island
 
-#### 7.5.1. Docks
+#### 7.5.1. Obere Straße
 
-- GIB `Schuldschein` an Koch
-- NIMM Kochbuch (`Zutaten von Barbie LeFlay`)
+##### 7.5.1.1. Toller Hecht
 
-#### 7.5.2. Obere Straße
-
-##### 7.5.2.1. Toller Hecht
-
-- >Trophäe: On The Lam
-  >- Den Laden so lange verlassen und betreten, bis der Beulensauger durch die Tür gekrochen ist.
-- >Trophäe: Trophy Fisher
+- >Trophäe: Trophäen-Fischer
   >- BENUTZE `Seeteufel-Köder` mit Piratenanführer am Tisch unten rechts
   >- Piratenjäger
   >- Wal
@@ -1120,12 +1159,12 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - REDE MIT ehemaligem Piratenanführer an der Theke
   - Kaufe den für den Wettbewerb notwendigen Fisch (`Fisch`)
 
-##### 7.5.2.2. Haus der Gouverneurin
+##### 7.5.1.2. Haus der Gouverneurin
 
 - GIB `Zutaten von Barbie LeFlay` an Carla
 - NIMM `Die Endlose Geschichte der Reise, die nicht enden wollte` (`Die Endlose Geschichte der Reise, die nicht enden wollte`)
 
-#### 7.5.3. Werft
+#### 7.5.2. Werft
 
 - SCHAU AN Bild
 - NIMM Bild (`Bild`)
@@ -1176,7 +1215,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - BENUTZE `Fisch` mit Möwe
 - NIMM Bild (`Bild`)
 - SCHAU AN `Bild`
-  - Platziere das `Bild` von Guybrush links und das `Bild` von Stan rechts im Rahmen
+  - Platziere das `Bild` von Stan und das `Bild` von Guybrush rechts im Rahmen
 
 ### 7.9. Brrr Muda
 
@@ -1186,7 +1225,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 #### 7.9.2. Eissteinbruch
 
-- >Trophäe: Dental Samaritan
+- >Trophäe: Zahnärztlicher Samariter
   >- GIB `Stans Zahnbürste` an Stan
 - REDE MIT Stan (`richterliche Anordnung`)
 - BENUTZE `Doppelmonokel` mit Stans Füßen (`Stans Seriennummer`)
@@ -1237,101 +1276,108 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 ### 7.15. Treibendes Schiff
 
-- >Trophäe: Ahoy There
-  >- "Ahoi" **20 mal**
+- >Trophäe: Ahoi!
+  >- "Ahoi" **21 mal**
 - REDE über alles
 - GIB `Skorbut-Flugblatt` an Piraten
 - KLETTER an Bord
-- >Trophäe: Flag Facsimile
+- >Trophäe: Flaggen-Faksimile
   >- BENUTZE `nachgemachte Flagge` mit Flagge (`Flagge`)
 
-### 7.16. Mêlée Island
+### 7.16. Cogg Island
 
-#### 7.16.1. Wald
+- >Trophäe: Cogg Island
+  >- Für diese Trophäe muss man das Spiel einmal durchgespielt und mit Elaine mitgegangen sein.
+  >- SCHAU AN Quizbuch, Seite 9, Frage 2
+  >- Sind beide Voraussetzungen erfüllt, so wird eine Antwort durch eine Koordinate, z. B. J.8 ersetzt
+  >- **ACHTUNG:** Spiel speichern
+  >- Zur Koordinate segeln und tauchen
+  >- Zur Lichtung gehen
+  >- SCHAU AN Schild
+  >- Spielstand laden
 
-##### 7.16.1.1. Museum
+### 7.17. Mêlée Island
+
+#### 7.17.1. Wald
+
+##### 7.17.1.1. Museum
 
 - BENUTZE `Doppelmonokel` mit Schloss an der Lagertür
-- ÖFFNE Schloss an der Vitrine
+- ÖFFNE Schloss an der Vitrine und renne in den Lagerraum
 
-###### 7.16.1.1.1. Lagerraum
+###### 7.17.1.1.1. Lagerraum
 
 - NIMM Flagge (`Flagge`)
 
-#### 7.16.2. Docks
+#### 7.17.2. Docks
 
-- NIMM exotischen Drink (`exotischen Drink`)
+- NIMM exotischer Drink (`exotischer Drink`)
 - **SCHNELL:** Renne in den tollen Hecht
 
-#### 7.16.3. Obere Straße
+#### 7.17.3. Obere Straße
 
-##### 7.16.3.1. Toller Hecht
+##### 7.17.3.1. Toller Hecht
 
-- TRINKE `exotischen Drink` (`leerer Grogkrug`)
+- TRINKE `exotischer Drink` (`leerer Grogkrug`)
 - REDE MIT ehemaligem Piratenanführer am Tisch unten
   - "Rülpswettbewerb"
   - "RÜÜÜÜRÜÜÜÜRRÜÜRRÜÜÜLPS!" (`Kugelfisch`)  
     **INFO:** Falls die Dialogoption fehlt, war der exotische Drink nicht mehr frisch genug. Dann das Ganze wiederholen.
 - BENUTZE `Flagge` mit `Flagge`
 
-### 7.17. Geheimer Angelplatz
+### 7.18. Geheimer Angelplatz
 
-#### 7.17.1. Schiff
+#### 7.18.1. Schiff
 
 - BENUTZE Anker
 - BENUTZE `Kugelfisch` (`aufgeblasener Kugelfisch`)
 - KLETTER den Anker hinunter
 - BENUTZE `aufgeblasener Kugelfisch`
 
-#### 7.17.2. Bella Fishers Schiff
+#### 7.18.2. Bella Fishers Schiff
 
 - NIMM goldener Schlüssel (`goldener Schlüssel`)
 - BENUTZE Ankerkette
 
-#### 7.17.3. Schiff
+#### 7.18.3. Schiff
 
 - BENUTZE Anker
 
-### 7.18. Seekarte
+### 7.19. Seekarte
 
-- >Trophäe: Deep Sea Diver
+- >Trophäe: Tiefseetaucher
   >- Fahre mit dem Schiff an beliebige Stellen auf dem Meer und tauche dort hinab
   >- Es müssen alle verschiedenen Unterwasserlandschaften entdeckt werden:
-  >  1. Bella Fishers Schiff am geheimen Angelplatz wie oben beschrieben
-  >  2. Dunkelblau mit kleinem Felsen im Vordergrund, auf dem eine Pflanze wächst
-  >  3. Türkis mit Krabbe
-  >  4. Blaugrün mit Krabbe und Pflanzen im Vordergrund
-  >  5. Türkis mit Felsen im Vordergrund und lafender Krabbe und Fischgräten
-  >  6. Blaugrün ohne Krabbe mit Pflanzen im Vordergrund
+  >  1. Leerer Boden mit vielen großen Meerespflanzen überall
+  >  2. Leerer Boden mit Steinformationen an einigen Stellen
+  >  3. Meeresboden mit Überresten darauf und eine Krabbe die hin und her wandert
+  >  4. Boden mit einem Seetangwald und einer Krabbe
+  >  5. Bella Fishers Schiff am geheimen Angelplatz wie oben beschrieben
 
-### 7.19. Terror Island
+### 7.20. Terror Island
 
-#### 7.19.1. Anlegestelle
+#### 7.20.1. Anlegestelle
 
-- BETRETE den Wald oben und gehe nach rechts
+- BETRETE den Wald oben
 
-#### 7.19.2. Unglücklicher Ort
+#### 7.20.2. Unglücklicher Ort
 
 - SCHAU AN silberner Schlüssel
 - NIMM silberner Schlüssel (`Silberschlüssel`)
 
-#### 7.19.3. Geheimnisvolle Lichtung
+#### 7.20.3. Geheimnisvolle Lichtung
 
 - NIMM Lampe (`Lampe`)
 
-### 7.20. LeChucks Schiff
+### 7.21. LeChucks Schiff
 
-#### 7.20.1. Krähennest
+#### 7.21.1. Krähennest
 
 - BENUTZE `Lampe` mit Flambe
 
-### 7.21. Terror Island
+### 7.22. Terror Island
 
-#### 7.21.1. Schleimige Grotte
-
-- Mögliche Quizkarte einsammeln
-
-#### 7.21.2. Verschlungener Pfad
+#### 7.22.1. Verschlungener Pfad
 
 - Folge dem Pfad nach rechts
 - SCHAU AN Schild an der Tür
@@ -1339,11 +1385,11 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - BENUTZE `Silberschlüssel` mit Schloss
 - BETRETE die Höhle
 
-##### 7.21.2.1. Höhleneingang
+##### 7.22.1.1. Höhleneingang
 
 - Gehe nach rechts und BETRETE das Labyrinth
 
-##### 7.21.2.2. Höhlenlabyrinth
+##### 7.22.1.2. Höhlenlabyrinth
 
 - Zufällig durch die Gänge laufen
 - Immer auf den Boden achten und die Zettel aufheben **5 mal** (`skurrile Notizen`)
@@ -1358,60 +1404,66 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
   - Es gibt diese jedoch mehrfach
   - Lösung: BENUTZE `Schild`
   - BETRETE die Höhle erneut und folge jetzt den Symbolen
+    1. Der Frühling kam...
+    2. Ihre letzte gemeinsame Sommernacht...
+    3. In diesen klaren Herbstnächten...
+    4. Jeder Sonnen- und Mondaufgang...
+    5. Die Suche...
 
-##### 7.21.2.3. Grube der Qualen
+##### 7.22.1.3. Grube der Qualen
 
 - SPRINGE ins Wasser
 
-##### 7.21.2.4. Unter Wasser
+##### 7.22.1.4. Unter Wasser
 
 - GEHE nach rechts tiefer hinein
 
-##### 7.21.2.5. Tiefer in der Höhle
+##### 7.22.1.5. Tiefer in der Höhle
 
 - SCHAU AN Schild
 
-##### 7.21.2.6. Einsiedlerhöhle
+##### 7.22.1.6. Einsiedlerhöhle
 
-- >Trophäe: Bookworm 5/5
+- >Trophäe: Bücherwurm 5/5
   >- SCHAU AN pinkfarbenes Etwas unter dem Bett
 - SCHAU AN goldener Schlüssel
+- Optional alles anschauen und erst dann den nächsten Schritt durchführen
 - NIMM goldener Schlüssel
 - BENUTZE `Schild`
 
-### 7.22. Mêlée Island
+### 7.23. Mêlée Island
 
-#### 7.22.1. Obere Straße
+#### 7.23.1. Obere Straße
 
-- REDE MIT Widey Bones
+- REDE MIT Widey Bones im Fenster
 
-##### 7.22.1.1. Schlosserin
+##### 7.23.1.1. Schlosserin
 
 - REDE MIT Schlosserin
   - Frage nach ihrer Mutter Mrs. Smith
   - Biete viel Geld für den Schlüssel (`Nachlassverfügung`)
 
-### 7.23. Brrr Muda
+### 7.24. Brrr Muda
 
-#### 7.23.1. Gerichtsgebäude
+#### 7.24.1. Gerichtsgebäude
 
 - GIB `Nachlassverfügung` an Richter (`goldener Schlüssel`)
 
-### 7.24. LeChucks Schiff
+### 7.25. LeChucks Schiff
 
-#### 7.24.1. Laderaum
+#### 7.25.1. Laderaum
 
 - SCHAU AN goldener Schlüssen im Huhn hinten rechts
 - NIMM Hühnerfutter (`Geisterhühnerfutter`)
 - BENUTZE `Geisterhühnerfutter` mit Huhn hinten links
-- LAderaum verlassen und wiederkehren
+- Laderaum verlassen und wiederkehren
 - NIMM goldener Schlüssel (`goldener Schlüssel`)
 
-### 7.25. Mêlée Island
+### 7.26. Mêlée Island
 
-#### 7.25.1. Untere Straße
+#### 7.26.1. Untere Straße
 
-##### 7.25.1.1. Internationaler Markt von Mojo
+##### 7.26.1.1. Internationaler Markt von Mojo
 
 - BENUTZE alle 5 Schlüssel mit den Schlössern
 
@@ -1421,8 +1473,8 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 #### 8.1.1. Lavasee
 
-- >Trophäe: Free Wally 3/3
-  >- BENUTZE `Fesselschlüssel` mit Fesseln
+- >Trophäe: Befreie Wally 3/3
+  >- BENUTZE `LeShip-Fesselschlüssel` mit Fesseln
 - REDE MIT Wally
 - SPRINGE in die Lava
 - BETRETE den Torbogen
@@ -1436,6 +1488,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 - BENUTZE `leerer Grogkrug` mit Statue
 - SCHAU AN Stein rechts neben der Statue auf dem Boden
+  - **HINWEIS:** Sollte hier kein Stein sein, alle anderen Räume abklappern und dort einsammeln - das gilt auch für die nachfolgenden Ebenen.
 - NIMM Münze (`Steingoldstück`)
 - BETRETE rechte Tür
 
@@ -1544,7 +1597,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
   - Nach vier weiteren Jahren auf hoher See: Das Datum **4 mal** anklicken
   - Drei Schritte rechts: Das äußere Rad **3 mal** drehen
   - und zwei links: Das innere Rad **2 mal** drehen
-  - Die Sscheibe wird nach oben gezogen
+  - Die Scheibe wird nach oben gezogen
 - BENUTZE Tür
 
 #### 8.1.22. Seitengasse
@@ -1553,18 +1606,18 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 #### 8.1.23. Obere Straße
 
-- BENUTZE `Stans Schlüsselring` mit Schalter bei der Schlosserin, beim Gefängnis, bei der Kirche und beim tollen Hecht
+- BENUTZE `Stans Schlüsselring` mit Schalter beim Gefängnis, bei der Kirche und beim tollen Hecht. Die Schlosserin noch aktiv belassen.
 - NIMM Schlüssel von der Schlosserin (`Schlüssel zu Stand protziger Truhe`)
 - BENUTZE `Schlüssel zu Stand protziger Truhe` mit Stans protziger Truhe (`T-Shirt`)
-- **SPEICHERN**
 - BENUTZE alle vier Schalter, so dass die Attraktionen ausgeschaltet sind
-- REDE MIT Elaine
-  - REDE über alles
-  - "Ich bin bereit zu gehen."
-- >Trophäe: Don't Believe
+- **ACHTUNG:** SPIEL SPEICHERN
+- >Trophäe: Ich glaube es nicht
   >- BETRETE die Seitengasse
   >- BENUTZE 'Stans Schlüsselring` mit Tür
   >- BETRETE die Tür und laufe den Weg ganz nach oben bis zum Affenkopf
+- REDE MIT Elaine
+  - REDE über alles
+  - "Ich bin bereit zu gehen."
 
 ## 9. Epilog
 
