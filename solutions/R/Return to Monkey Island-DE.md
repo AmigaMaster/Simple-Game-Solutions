@@ -2,7 +2,7 @@
 
 | Version | Datum      | Autor
 |:-------:|------------|------
-|   1.0   | 05.01.2023 | Amiga Master (AmigaMaster-NG@t-online.de)
+|  1.02   | 14.01.2023 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 ## 1. Quizkarten und Fragen
 
@@ -641,13 +641,13 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - REDE MIT Murray
 - NIMM Mopp
   - >Trophäe: Super-Schrubbie
-    >- WISCHE Schmierfett auf **20 mal**
+    >- WISCHE Gegenstände **20 mal** - Es braucht nicht immer der Fettfleck zu sein, auch bereits saubere Gegenstände zählen.
   - BENUTZE alle drei Schrauben am Bullauge (einfetten)
-  - LEGE den Mopp zurück
   - >Trophäe: Ordnungsfanatiker (1/2)
-    >- **ACHTUNG:** Es muss mindestens ein weiterer Gegenstand JETZT eingefettet werden, ansonsten ist die Trophäe nicht mehr erreichbar!
+    >- **ACHTUNG:** Zusätzlich zu den Schrauben muss mindestens ein weiterer Gegenstand JETZT eingefettet werden, ansonsten ist die Trophäe nicht mehr erreichbar!
     >- WISCHE Schmierfett auf
     >- FETTE einen oder mehrere Gegenstände ein
+  - LEGE den Mopp zurück
 - BENUTZE `Messer` mit allen drei Schrauben vom Bullauge (`Schrauben`)
 - NIMM Mopp
   - WISCHE Schmierfett auf
@@ -720,9 +720,6 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 - SCHAU AN Gullet
 - NIMM Messer (`antikes Messer`)
-- >Trophäe: Tot Tot Tot
-  >- **SPEICHERN**
-  >- Alle Timer ablaufen lassen bis man wieder im Hauptmenü ist
 
 #### 5.1.15. Unterdeck
 
@@ -815,6 +812,9 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 ### 6.1. Unter Wasser
 
 - **ACHTUNG:** im zweiten und dritten Bildschirm können Sammelkarten versteckt sein! Diese unbedingt mitnehmen.
+- >Trophäe: Tot Tot Tot
+  >- **SPEICHERN**
+  >- Hin- und herlaufen bis alle Timer abgelaufen sind und man wieder im Hauptmenü ist
 - Immer weiter nach rechts gehen
 
 ### 6.2. Monkey Island
@@ -992,9 +992,13 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - >Trophäe: Bücherwurm 1/5
   >- SCHAU AN pinkfarbenes Buch hinten auf dem Regal "Am Ende der Planke"
 - >Trophäe: Auf der Flucht
-  >- Verlasse und betrete den Laden so oft, bis der gelbe Beulensauger entkommen ist. Dieser bewegt sich nur in kleinen Schritten und es sind ca 40-50 Wiederholungen nötig.
+  >- Verlasse und betrete den Laden so oft, bis der gelbe Beulensauger entkommen ist. Dieser bewegt sich nur in kleinen Schritten und es sind ca 40 Wiederholungen nötig.
 
 #### 7.1.4. Obere Straße
+
+- REDE MIT Späher vor der Villa der Gouverneurin
+- >Trophäe: Geduldiger Bürger
+  >- In der Schlange vor der Villa **3 Minuten** warten
 
 ##### 7.1.4.1. Haus der Gouverneurin
 
@@ -1005,7 +1009,6 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
   - "lokale Unternehmen wieder aufbauen" (`Schuldschein`)
 - >Trophäe: Entlastung
   >- GIB `Münzbörse` an Carla
-- NIMM `Die Endlose Geschichte der Reise, die nicht enden wollte` (`Die Endlose Geschichte der Reise, die nicht enden wollte`)
 
 #### 7.1.5. Docks
 
@@ -1017,6 +1020,11 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
   - **MERKE:** Geschichte muss etwas über die Umstände und Umgebung verraten
 - GIB `Schuldschein` an Koch
 - NIMM Kochbuch (`Zutaten von Barbie LeFlay`)
+
+##### 7.1.5.1. Haus der Gouverneurin
+
+- GIB `Zutaten von Barbie LeFlay` an Carla
+- NIMM `Die Endlose Geschichte der Reise, die nicht enden wollte` (`Die Endlose Geschichte der Reise, die nicht enden wollte`)
 
 #### 7.1.6. Obere Straße
 
@@ -1032,11 +1040,17 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
   - **MERKE:** Geschichte braucht ein dramatisches Ende
 - GIB `Seriennummer` (von den Fesseln auf LeChucks Schiff) an Schlosserin (`LeShip-Fesselschlüssel`)
 
-#### 7.1.7. Obere Straße
+##### 7.1.6.3. Haus der Gouverneurin
 
-- REDE MIT Späher vor der Villa der Gouverneurin
-- >Trophäe: Geduldiger Bürger
-  >- In der Schlange vor der Villa **3 Minuten** warten
+- GIB `Zutaten von Barbie LeFlay` an Carla
+- NIMM `Die Endlose Geschichte der Reise, die nicht enden wollte` (`Die Endlose Geschichte der Reise, die nicht enden wollte`)
+
+#### 7.1.7. Werft
+
+- SCHAU AN Bild
+- NIMM Bild (`Bild`)
+- >Trophäe: Dental Samaritan 1/2
+  >- NIMM Zahnbürste (`Stans Zahnbürste`)
 
 #### 7.1.8. Wald
 
@@ -1082,7 +1096,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 
 ### 7.3. Zoll
 
-- Das Formular kann einfach akzeptiert (letzten Punkt ankreuzen) und unterschrieben werden
+- Letzten Punkt ankreuzen und unterschreiben
 
 ### 7.4. Brrr Muda
 
@@ -1142,11 +1156,24 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - SCHAU AN Wettbewerbsschild
   - **MERKE:** Fischart - diese wechselt bei jedem Spieldurchlauf
 
-### 7.5. Mêlée Island
+### 7.5. LeChucks Schiff
 
-#### 7.5.1. Obere Straße
+#### 7.5.1. Deck
 
-##### 7.5.1.1. Toller Hecht
+- REDE MIT Apple Bob
+- BENUTZE `Seeteufel-Köder` mit Apple Bob
+  - Man soll längere Umschreibungen benutzen
+- GIB `Die Endlose Geschichte der Reise, die nicht enden wollte` an Apple Bob (`Witzebuch`)
+
+#### 7.5.2. Kombüse
+
+- NIMM Dämonenpfefferstreuer (`Dämonenpfeffer`)
+
+### 7.6. Mêlée Island
+
+#### 7.6.1. Obere Straße
+
+##### 7.6.1.1. Toller Hecht
 
 - >Trophäe: Trophäen-Fischer
   >- BENUTZE `Seeteufel-Köder` mit Piratenanführer am Tisch unten rechts
@@ -1158,31 +1185,6 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - NIMM Flagge (`Flagge`)
 - REDE MIT ehemaligem Piratenanführer an der Theke
   - Kaufe den für den Wettbewerb notwendigen Fisch (`Fisch`)
-
-##### 7.5.1.2. Haus der Gouverneurin
-
-- GIB `Zutaten von Barbie LeFlay` an Carla
-- NIMM `Die Endlose Geschichte der Reise, die nicht enden wollte` (`Die Endlose Geschichte der Reise, die nicht enden wollte`)
-
-#### 7.5.2. Werft
-
-- SCHAU AN Bild
-- NIMM Bild (`Bild`)
-- >Trophäe: Dental Samaritan 1/2
-  >- NIMM Zahnbürste (`Stans Zahnbürste`)
-
-### 7.6. LeChucks Schiff
-
-#### 7.6.1. Deck
-
-- REDE MIT Apple Bob
-- BENUTZE `Seeteufel-Köder` mit Apple Bob
-  - Man soll längere Umschreibungen benutzen
-- GIB `Die Endlose Geschichte der Reise, die nicht enden wollte` an Apple Bob (`Witzebuch`)
-
-#### 7.6.2. Kombüse
-
-- NIMM Dämonenpfefferstreuer (`Dämonenpfeffer`)
 
 ### 7.7. Brrr Muda
 
@@ -1628,3 +1630,34 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - Verfolge die neuen Geschichten bis zu einem Brief
 - BENUTZE Siegel **3 mal**
 - ÖFFNE Brief
+
+## Verschiedene Enden
+
+1. Mit Elaine + dem Geheimnis gehen
+    - "Freunde sind das Geheimnis"
+
+2. Ohne Schlüssel zurückgehen
+
+3. Zurückgehen ohne die Truhe geöffnet zu haben
+    - Schlüssel nehmen und durch die Hintertür gehen
+
+4. Mit dem Geheimnis zurückkehren
+    - Truhe öffnen und durch Hintertür
+
+5. Ohne Schlüssel mit Elaine gehen
+    - "Mit Edelsteinen und Rubinen und Gold gefüllt"
+
+6. Mit Elaine gehen ohne die Truhe zu öffnen
+    - Schlüssel nehmen und gehen
+
+7. Mit Elaine + dem Geheimnis gehen
+    - "Mit Edelsteinen, Rubinen und Gold gefüllt"
+
+8. Mit Elaine + dem Geheimnis gehen
+    - "Mom hatte recht."
+
+9. Mit Elaine + dem Geheimnis gehen
+    - "Ich habe mir das nicht ausgedacht."
+
+10. Mit Elaine + dem Geheimnis gehen
+    - "Es gibt nicht eine Antwort auf die Frage"
