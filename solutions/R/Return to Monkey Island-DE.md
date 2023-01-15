@@ -1631,7 +1631,7 @@ Quizkarten erscheinen dynamisch an verschiedenen Fundorten, auch an Stellen, an 
 - BENUTZE Siegel **3 mal**
 - ÖFFNE Brief
 
-## Verschiedene Enden
+## 10. Mögliche Enden
 
 1. Mit Elaine + dem Geheimnis gehen
     - "Freunde sind das Geheimnis"
