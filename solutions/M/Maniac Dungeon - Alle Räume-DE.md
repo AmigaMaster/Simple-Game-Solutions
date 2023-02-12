@@ -1,0 +1,33 @@
+# Maniac Dungeon - Lösung
+
+| Version | Datum      | Autor                                     |
+|:-------:|------------|-------------------------------------------|
+|   1.0   | 07.10.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
+
+[![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
+
+Download der Spieleserie auf der offiziellen [Homepage](https://www.maniac-mansion-mania.com)
+
+Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spannende Welt von Maniac Mansion weiterleben zu lassen und um neue Facetten zu erweitern. Die ganze Serie funktioniert im Episodenformat, damit jeder Entwickler seine eigene kleine Geschichte ins Universum von Maniac Mansion einbauen kann.
+
+Die Maniac Dungeon Reihe umfasst jeweils einen Raum pro Episode und ist ein Spinoff der Hauptreihe, das sich nicht fest an das Regelwerk halten muss.
+
+## 1. Raum 01 - The great Escape from Maniac Dungeon
+
+- >EASTER EGG:
+  >- Verschiedene Aktionen mit Razor und Bernard durchführen, wenn diese noch auf dem Boden liegen
+- SCHAU AN Stahlsicherheitstür
+- NIMM Schädel (`Stock`)
+- >EASTER EGG:
+  >- In die finstere Ecke gehen. Dazu etwas links neben den Hotspot der finsteren Ecke klicken.
+- BENUTZE `Stock` mit finstere Ecke (`Riechsalz`)
+- BENUTZE `Riechsalz` mit ohnmächtige Razor
+- REDE MIT Razor
+  - "Hast du irgendwas Brauchbares bei dir?" (`Haarspange`)
+- BENUTZE `Haarspange` mit Stahlsicherheitstür
+
+### 1.1. Video Walkthrough
+
+Maniac Dungeon Raum 01: The great Escape from Maniac Dungeon Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/FouMxpS91yc/0.jpg)](https://www.youtube.com/watch?v=FouMxpS91yc)
