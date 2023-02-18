@@ -31,3 +31,25 @@ Die Maniac Dungeon Reihe umfasst jeweils einen Raum pro Episode und ist ein Spin
 Maniac Dungeon Raum 01: The great Escape from Maniac Dungeon Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/FouMxpS91yc/0.jpg)](https://www.youtube.com/watch?v=FouMxpS91yc)
+
+--------------------------------------------------------------------------------
+
+## 2. Raum 02 - Der Bunker
+
+- REDE MIT Weird Ed
+  - "Kannst du mir deine Sachen zur Verfügung stellen?" (`Haarspange`, `Riechsalz`, `Stock`)
+- DRÜCKE Schalter
+- BENUTZE `Stock` mit Schalter
+- REDE MIT Charlie
+  - "Hast du irgendetwas nützliches bei dir, was mir weiterhelfen könnte?" (`Gleitcreme`)
+- BENUTZE `Gleitcreme` mit Dartpfeil (`Dartpfeil`)
+- BENUTZE `Dartpfeil` mit Stuhl (`Schlüssel`)
+- BENUTZE `Schlüssel` mit Schrank (`Megafon`, `Schallplatte`)
+- BENUTZE `Schallplatte` mit Plattenspieler
+- BENUTZE `Megafon` mit Plattenspieler
+
+### 2.1. Video Walkthrough
+
+Maniac Dungeon Raum 02: Der Bunker Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/kjO-ofeg46Y/0.jpg)](https://www.youtube.com/watch?v=kjO-ofeg46Y)
