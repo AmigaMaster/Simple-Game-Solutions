@@ -53,3 +53,35 @@ Maniac Dungeon Raum 01: The great Escape from Maniac Dungeon Lösung (Deu) (PC, 
 Maniac Dungeon Raum 02: Der Bunker Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/kjO-ofeg46Y/0.jpg)](https://www.youtube.com/watch?v=kjO-ofeg46Y)
+
+--------------------------------------------------------------------------------
+
+## 3. Raum 03 - Der Verbindungstunnel
+
+- REDE MIT Bernard (`Gleitcreme`)
+- >EASTER EGG:
+  >- BENUTZE `Gleitcreme` mit Razor
+- BENUTZE `Gleitcreme` mit Fackel (`Fackel`)
+- NIMM weißer Stein (hinter Bernard) (`Stein`, `Streichholz`)
+- BENUTZE `Fackel` mit Loch
+- BENUTZE `Streichholz` mit `Fackel` (`Fackel (brennt)`)
+- BENUTZE `Fackel (brennt)` mit Loch
+- REDE MIT Charlie
+  - "Kommst du mit meinen Hamster suchen?"
+- REDE MIT Razor
+- ÖFFNE Schott
+- BENUTZE `Schlüssel` mit Schott
+- REDE MIT Achmed (`Spitzhacke`, `Hammer`, `Schaufel`)
+- BENUTZE `Riechsalz` mit Weird Ed
+- REDE MIT Weird Ed (`Gleitcreme`)
+- BENUTZE `Gleitcreme` mit Schott
+- BENUTZE `Spitzhacke` mit Schott
+- GIB `Spitzhacke` an Weird Ed
+- GIB `Hammer` an Achmed
+- BENUTZE `Schaufel` mit Schott
+
+### 3.1. Video Walkthrough
+
+Maniac Dungeon Raum 03: Der Verbindungstunnel Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/gZpEVukMkOY/0.jpg)](https://www.youtube.com/watch?v=gZpEVukMkOY)
