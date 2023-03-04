@@ -85,3 +85,33 @@ Maniac Dungeon Raum 02: Der Bunker Lösung (Deu) (PC, Win) - Unkommentiert
 Maniac Dungeon Raum 03: Der Verbindungstunnel Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/gZpEVukMkOY/0.jpg)](https://www.youtube.com/watch?v=gZpEVukMkOY)
+
+--------------------------------------------------------------------------------
+
+## 4. Raum 04 - Die Grotte
+
+- >EASTER EGGS:
+  >- Im Titelbildschirm auf die verschiedenen Textpassagen klicken
+  >- BENUTZE Lichtschalter
+  >- Alle Verben an allen Personen ausprobieren
+- NIMM Gemälde (`Gemälde`)
+- BENUTZE `Lukenöffner` mit Kabel (rechts oben an der Wand)
+- NIMM Kabel (rechts an der Wand)
+- SCHAU AN Kabel (hinten an der Wand)
+- REDE MIT Bernard
+- REDE MIT Razor
+  - "Hast du irgendein Baumaterial?"
+  - "Dieses schöne Gemälde biete ich an." (`Haarklammern`)
+- GIB `Haarklammern` an Bernard
+- REDE MIT Bernard
+  - "Gibst du mir nun die Stromquelle?"
+- BENUTZE `Lukenöffner` mit Bernard (`Perpetuum Mobile`)
+- BENUTZE `Perpetuum Mobile` mit Kabel (hinten an der Wand)
+- NIMM Schlüsselkarte (`Schlüsselkarte`)
+- BENUTZE `Schlüsselkarte` mit Kartenleser
+
+### 4.1. Video Walkthrough
+
+Maniac Dungeon Raum 04: Die Grotte Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/K9RCM4apA0U/0.jpg)](https://www.youtube.com/watch?v=K9RCM4apA0U)
