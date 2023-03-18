@@ -115,3 +115,38 @@ Maniac Dungeon Raum 03: Der Verbindungstunnel Lösung (Deu) (PC, Win) - Unkommen
 Maniac Dungeon Raum 04: Die Grotte Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/K9RCM4apA0U/0.jpg)](https://www.youtube.com/watch?v=K9RCM4apA0U)
+--------------------------------------------------------------------------------
+
+## 5. Raum 05 - Tief unter der Erde
+
+- >EASTER EGG:
+  >- Alle Inventargegenstände mit allen Personen benutzen.  
+  >  **ACHTUNG:** Den Hamster NICHT mit Weird Ed benutzen oder geben ohne gespeichert zu haben!
+- NIMM Hamster am Spieß (`Lukenöffner`, `Hamster`)
+- BENUTZE `Lukenöffner` mit Loch (`Riechsalz`)
+- BENUTZE `Riechsalz` mit Achmed
+- >EASTER EGG:
+  >- SPEICHERN
+  >- GIB `Hamster` an Weird Ed
+- REDE MIT Achmed (`Spitzhacke`)
+- REDE MIT Razor
+- BENUTZE `Spitzhacke` mit Truhe (`Voodoo-Puppe`, `Spielzeugpistole`, `Kondom`, `Gummi-Ente`, `200 Bleistifte`, `Kleber`)
+- BENUTZE `Kleber` mit Truhe
+- BENUTZE `Kleber` mit `200 Bleistifte`  
+  **HINWEIS:** Dieses muss versucht werden, ansonsten geht es im Spiel nicht weiter.
+- >EASTER EGGS:
+  >- BENUTZE `Dartpfeil` mit `Voodoo-Puppe` **4 mal**
+  >- BENUTZE diverse Inventargegenstände mit Tür
+- ÖFFNE Tür
+- REDE MIT Razor
+  - "Um nochmal auf dein Bild zu kommen..."
+- GIB `Voodoo-Puppe` an Razor (`Gemälde`)
+- BENUTZE `Gemälde` mit Tür
+- BENUTZE `Kleber` mit `200 Bleistifte`
+- BENUTZE `Lukenöffner` mit Einstieg
+
+### 5.1. Video Walkthrough
+
+Maniac Dungeon Raum 05: Tief unter der Erde Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/kgJpIao7PV4/0.jpg)](https://www.youtube.com/watch?v=kgJpIao7PV4)
