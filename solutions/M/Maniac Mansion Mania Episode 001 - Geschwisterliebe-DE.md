@@ -1,8 +1,9 @@
 # Maniac Mansion Mania 001: Geschwisterliebe Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|  1.01   | 17.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|---------|------------|------
+|  1.02   | 22.03.2023 | Amiga Master (AmigaMaster-NG@t-online.de), remove some needless lines
+|  1.01   | 17.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -83,12 +84,10 @@ und schauen dort in
 - ÖFFNE Hängeschrank
 - NIMM Honig (`Honig`)
 - ÖFFNE `Honig`
-- GEHE ZU
 
 ### 1.8. Flur Obergeschoss
 
-- BENUTZE `Kerze` mit Tür
-- GEHE ZU
+- BENUTZE `Kerze` mit (linker) Tür
 
 #### 1.8.1. Küche
 
@@ -99,7 +98,6 @@ und schauen dort in
 - BENUTZE `Briefmarke` mit `Briefumschlag`
 - ÖFFNE Kühlschrank
 - NIMM `Kerze` (`Kerze`)
-- GEHE ZU
 
 ### 1.9. Flur Erdgeschoss
 
@@ -111,19 +109,16 @@ und schauen dort in
 - NIMM rechtes Sitzkissen (`rechtes Sitzkissen`)
 - NIMM Fernbedienung (`Fernbedienung`)
 - BENUTZE `Fernbedienung` mit Fernseher
-- GEHE ZU
 
 ### 1.11. Flur Obergeschoss
 
 - BENUTZE `Kerze` mit (linker) Tür
-- Verlasse durch (linke) Tür
 
 #### 1.11.1. Britney's Zimmer
 
 - NIMM Britneys Tagebuch (`Britneys Tagebuch`)
 - BENUTZE `Britneys Tagebuch` mit `Briefumschlag`
 - BENUTZE `Kugelschreiber` mit `Briefumschlag`
-- GEHE ZU
 
 ### 1.12. Wohnzimmer
 
@@ -143,8 +138,12 @@ und schauen dort in
 
 --------------------------------------------------------------------------------
 
-## 3. Video Walkthrough
+## 3. Video Walkthroughs
 
 Maniac Mansion Mania 001: Geschwisterliebe Lösung (DEU) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/qip4Xg4IQCU/0.jpg)](https://www.youtube.com/watch?v=qip4Xg4IQCU)
+
+Maniac Mansion Mania 001: Geschwisterliebe (Talkie) Lösung (DEU) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/qip4Xg4IQCU/0.jpg)](https://www.youtube.com/watch?v=qip4Xg4IQCU)
