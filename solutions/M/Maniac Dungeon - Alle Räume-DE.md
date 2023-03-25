@@ -150,3 +150,88 @@ Maniac Dungeon Raum 04: Die Grotte Lösung (Deu) (PC, Win) - Unkommentiert
 Maniac Dungeon Raum 05: Tief unter der Erde Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/kgJpIao7PV4/0.jpg)](https://www.youtube.com/watch?v=kgJpIao7PV4)
+
+--------------------------------------------------------------------------------
+
+## 6. Raum 06 - The Race
+
+### 6.1. Allgemeines
+
+- Alle Zeitlimits können ablaufen, ohne dass etwas schlimmes passiert.
+- Auch alle Rennen können verloren werden. Der Lösungsweg wird dadurch mit Ausnahme des ersten Rennens nur verlängert.
+
+### 6.2. Vorbereitung
+
+- Zeitlimit: 2 Minuten. Falls die Zeit abläuft, fällt nur das Trainingsrennen aus.
+- BENUTZE `Kostüm` mit Red Tentacle
+- BENUTZE `Gummiente` mit Red Tentacle (`Lenkrad`)
+- BENUTZE `Lenkrad` mit `Lukenöffner` (`Lenkstange`)
+- BENUTZE `Lenkstange` mit Trojanisches Pferd
+
+### 6.3. Rennen 1
+
+- Man steuert den Wagen mit den Cursor / Pfeiltasten. Nach oben zum beschleunigen und links, rechts zum lenken.
+
+#### 6.3.1. Rennen 1 verloren
+
+- BENUTZE Eingangstür (`blutiger Nagel`)
+- BENUTZE `blutiger Nagel` mit Tor (links am Bildschirmrand) (`gebogener Nagel`)
+- BENUTZE `gebogener Nagel` mit Schuppen
+- BENUTZE Schuppen (`Motor`)
+- BENUTZE `Motor` mit Trojanisches Pferd
+
+#### 6.3.2. Rennen 1 gewonnen
+
+- ÖFFNE rotes Auto
+- REDE MIT Razor
+- BENUTZE `Dartpfeil` mit rotes Auto
+- NIMM rotes Auto (`Motor`)
+- BENUTZE `Motor` mit Trojanisches Pferd
+
+### 6.4. Rennen 2
+
+- Zeitlimit: 5 Minuten. Das Zeitlimit hat keinerlei Auswirkung auf den Spielverlauf.
+
+#### 6.4.1. Rennen 2 verloren
+
+- NIMM Hautabschaber (hinter Joe Morrison) (`Hautabschaber`)
+- BENUTZE `Hautabschaber` mit Holzpfosten **3 mal** (`3 Holzfasern`)
+- BENUTZE `3 Holzfasern` mit `Haarspange` (`Spange mit Fasern`)
+- BENUTZE `Spange mit Fasern` (`Schlinge`)
+- Der weitere Verlauf wie unter "Rennen 2 gewonnen" beschrieben
+
+#### 6.4.2. Rennen 2 gewonnen
+
+- REDE MIT Busfahrer
+- BENUTZE Eingangstür
+- BENUTZE `Schlinge` mit `Hamster (tot)`
+- BENUTZE `Hamster (tot)` mit Ritualplatz
+- NIMM Holzpfosten (`Pfosten`)
+- BENUTZE `Pfosten` mit Ritualplatz
+- BENUTZE `Schlinge` mit Ritualplatz
+- BENUTZE `Hamster (tot)` mit Ritualplatz
+- BENUTZE Eingangstür (`Selbstgebrannter`)
+- BENUTZE `Selbstgebrannter` mit Busfahrer (`Reifen`)
+- BENUTZE `Reifen` mit Trojanisches Pferd mit Motor
+
+### 6.5. Rennen 3
+
+#### 6.5.1. Rennen 3 verloren
+
+- BENUTZE Holzpfosten
+- ÖFFNE Hintertür (`Der kleine Nekromant`)
+- Der weitere Verlauf wie unter "Rennen 3 gewonnen" beschrieben
+
+#### 6.5.2. Rennen 3 gewonnen
+
+- BENUTZE `Der kleine Nekromant` mit Ritualplatz
+- REDE MIT Razor
+- BENUTZE `Pistole`
+- BENUTZE `Pistole` mit Razor
+- BENUTZE `Der kleine Nekromant` mit Red Tentacle
+
+### 6.6. Video Walkthrough
+
+Maniac Dungeon Raum 06: The Race Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/1WAx42EF8rQ/0.jpg)](https://www.youtube.com/watch?v=1WAx42EF8rQ)
