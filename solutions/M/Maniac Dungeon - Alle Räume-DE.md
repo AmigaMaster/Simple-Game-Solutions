@@ -235,3 +235,62 @@ Maniac Dungeon Raum 05: Tief unter der Erde Lösung (Deu) (PC, Win) - Unkommenti
 Maniac Dungeon Raum 06: The Race Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/1WAx42EF8rQ/0.jpg)](https://www.youtube.com/watch?v=1WAx42EF8rQ)
+
+--------------------------------------------------------------------------------
+
+## 7. Raum 07 - Das unheimliche Wesen aus einem fremden Raum (V. 2.0)
+
+### 7.1. Titelbildschirm
+
+- >EASTER EGG:
+  >- KLICKE auf den ein Pixel großen hellen Stern unter dem D vom Wort Dungeon
+
+### 7.2. Höhle
+
+- >EASTER EGGS:
+  >- BENUTZE Inventargegenstände mit Razor und Bernard
+  >- SCHAU AN gelbe Brause (das gelbe Reagenzglas)
+- NIMM Stein (`Stab`)
+- SCHAU AN Inschrift (links neben dem Durchbruch auf der rechten Seite)
+  - **MERKE:** `ZOA`
+- ZIEHE Poster (`GigerPhone (TM)`)
+- NIMM Reagenzgläser
+- BENUTZE `GigerPhone (TM)` mit Bernard (`Zettel`)
+- SCHAU AN `Zettel`
+  - **MERKE:** Ausgehend von D4, 3 Osten, 2 Nord, 1 West, 2 Süd, 4 West, 3 Nord
+- ZIEHE Tisch
+- BENUTZE Tisch
+- SCHAU AN Loch (eines der Löcher oberhalb des Tisches)  
+  **RÄTSEL:** Löcher  
+  Die Hinweise auf dem Zettel geben uns den Weg zum passenden Loch. Die Spalten entsprechend dabei den Buchstaben, die Zeilen den Zahlen.
+  - Ausgehend von D4 den Hinweis vom Zettel verfolgen: 3 Osten, 2 Nord, 1 West, 2 Süd, 4 West, 3 Nord
+  - Das gesuchte Loch ist das zweite in der ersten Reihe, also B1
+- BENUTZE `Schraubenzieher` mit Loch (`noch ein Zettel`)
+- BENUTZE `Stab` mit Loch
+- BENUTZE Boden
+- SCHAU AN `noch ein Zettel`  
+  **MERKE:**
+  - `YS`
+  - begonnen wird immer von der gegenüberliegenden Seite des Nestes
+  - man ersetze jedes erste Zeichen (Buchstaben) mit dem zweiten und streiche den letzten (Buchstaben)
+- SCHAU AN Inschrift (rechts neben dem geheimnisvollen Loch auf der linken Seite)
+  - **MERKE:** `UI`
+- **RÄTSEL:** Code  
+  Alle Hinweise und Inschriften ergeben sich wie folgt:
+  - Beginnt auf der gegenüberliegende Seite des Nestes: `ZOA`, `YS`, `UI`
+  - Jedes erste Zeichen mit dem zweiten ersetzen und letztes streichen. Hiermit sind die Buchstaben im Alphabet gemeint und das immer der folgende Buchstabe genutzt werden soll - aus A wird also B, aus B C usw. Der letzte Buchstabe im Alphabet soll ersatzlos gestrichen werden: Aus `ZOAYSUI` wird somit `PBZTVJ`
+  - Nochmals muss der letzte Buchstabe gestrichen werden: `PBTVJ`
+- BENUTZE Tresor
+  - `PBTVJ`
+- NIMM Zettel(?) (`schon wieder ein Zettel`)
+- SCHAU AN `schon wieder ein Zettel`
+- BENUTZE `Schraubenzieher` mit Ding mit Öffnung (`Gurubuli`)
+- BENUTZE `Gurubuli` mit Razor
+- Dr. Fred spricht automatisch mit dem Gurubuli. Man kann über alles reden, die korrekte Frage und Abschluss des Spiels ist aber
+  - "Gibt es noch einen anderen Weg aus diesem Raum?"
+
+### 7.3. Video Walkthrough
+
+Maniac Dungeon Raum 07: Das unheimliche Wesen aus einem fremden Raum V2.0 Lösung (Deu) (PC, Win)
+
+[![Walkthrough](https://img.youtube.com/vi/MclZq03DH5I/0.jpg)](https://www.youtube.com/watch?v=MclZq03DH5I)
