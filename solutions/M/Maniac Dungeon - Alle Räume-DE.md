@@ -294,3 +294,55 @@ Maniac Dungeon Raum 06: The Race Lösung (Deu) (PC, Win) - Unkommentiert
 Maniac Dungeon Raum 07: Das unheimliche Wesen aus einem fremden Raum V2.0 Lösung (Deu) (PC, Win)
 
 [![Walkthrough](https://img.youtube.com/vi/MclZq03DH5I/0.jpg)](https://www.youtube.com/watch?v=MclZq03DH5I)
+
+--------------------------------------------------------------------------------
+
+## 8. Raum 08 - Die Brücke
+
+- >EASTER EGGS:
+  >- SCHAU AN Hammer
+  >- ALLE Inventargegenstände mit allen Personen benutzen
+  >- Die verschiedenen Verben mit allen Personen durchprobieren
+- NIMM Becher (`Becher (leer)`)
+- NIMM Hammer (`Hammer`)
+- BENUTZE `Hammer` mit Wand
+- BENUTZE `Becher (leer)` mit Wasserfall (`Becher (voll)`)
+- BENUTZE `Becher (voll)` mit unten
+- WECHSEL ZU Razor
+
+Razor:
+
+- **SCHALTERRÄTSEL:**
+  - Razor hat Zugriff auf 6 Schalter
+  - Die 5 Schalter in der ersten Reihe definieren, welche Plattform der Brücke oben aktiviert wird. Wird ein Schalter aktiviert, so wird die Plattform oben "umgeschaltet". Ist sie vorhanden, wird sie entfernt und ist sie nicht vorhanden, so erscheint sie.
+  - Der einzelne Knopf in der zweiten Reihe aktiviert den Aufzug.
+  - Der Aufzug kann nur oben ankommen, wenn Plattform 3 NICHT vorhanden ist.
+  - Nachdem Razor unten die Schalter entsprechend ausgewählt hat, muss Bernard oben den Hebel ziehen.
+  - Ausgehend vom initialen Stand, müssen Schalter 1, 4 und der Aufzug aktiviert werden und Razor muss sich in den Aufzug stellen, damit Razor oben ankommt und die Brücke vollständig ist.
+  - WECHSEL ZU Bernard und ZIEHE Hebel
+- >EASTER EGG:
+  >- Mit Razor auf eine Plattform stellen, die verschwindet und dann mit Bernard den Hebel ziehen.
+
+Bernard:
+
+- Stelle dich in den Aufzug
+
+Razor:
+
+- ZIEHE Hebel
+
+Bernard:
+
+- BENUTZE sehr komplizierte Schaltung
+- In den Aufzug stellen
+
+Razor:
+
+- ZIEHE Hebel
+- Nach rechts in den Durchgang gehen
+
+### 8.1. Video Walkthrough
+
+Maniac Dungeon Raum 08: Die Brücke Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/6pnCcSwtV28/0.jpg)](https://www.youtube.com/watch?v=6pnCcSwtV28)
