@@ -346,3 +346,52 @@ Razor:
 Maniac Dungeon Raum 08: Die Brücke Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/6pnCcSwtV28/0.jpg)](https://www.youtube.com/watch?v=6pnCcSwtV28)
+
+--------------------------------------------------------------------------------
+
+## 9. Raum 09 - Und dann gab's wirklich echt überhaupt gar keins mehr, ehrlich
+
+- >EASTER EGGS:
+  >- ALLE Inventargegenstände mit allen Personen benutzen
+  >- Die verschiedenen Verben mit allen Personen durchprobieren
+- NIMM festes Objekt (unten rechts im Bildschirm) (`Stein`, `Knochen`)
+- ZIEHE merkwürdige Stelle (rechts im Bild)
+- NIMM merkwürdige Stelle
+- REDE MIT Bernard
+  - "Bernard, wegen diesem Stoff da hinten..." (`Büstenhalter`)
+- BENUTZE `Büstenhalter` mit `Knochen` (`BH-Fackel`)
+- BENUTZE `BH-Fackel` mit Pfütze (unten im Bild, etwa auf Höhe des "z" vom Benutzen Verb) (`Fackel mit Petroleum`)
+- BENUTZE `Stein` mit Metalltür (links im Bild)
+- BENUTZE `Stein` mit `BH-Fackel` (`Fackel`)
+- DRÜCKE Knopf
+- Gehe nach rechts
+- REDE MIT Sandy
+- NIMM Krug (`Krug`)
+- Gehe weiter nach rechts
+- >EASTER EGG:
+  - **ACHTUNG:** Speichern
+  - BENUTZE tiefe Schlucht **4 mal**
+- NIMM Knochenhaufen (`Spritze`)
+- NIMM Spiegel
+- BENUTZE `Stein` mit Felswand (`Kalkstaub`)
+- BENUTZE `Krug` mit Wasserrohr (`Krug mit Wasser`)
+- BENUTZE `Krug mit Wasser` mit `Kalkstaub` (`Krug mit Kalkwasser`)
+- >EASTER EGG:
+  >- BENUTZE imposante Orgel
+- ZIEHE roter Teppich
+- Betrete die Bodenplatte
+- BENUTZE `Krug mit Kalkwasser` mit `Spritze` (`Spritze mit Kalkwasser`)
+- BENUTZE `Spritze mit Kalkwasser` mit Razor (`Spritze`)
+- BENUTZE `Krug mit Kalkwasser` mit `Spritze` (`Spritze mit Kalkwasser`)
+- BENUTZE `Spritze mit Kalkwasser` mit Bernard (`Spritze`)
+- REDE MIT Bernard oder Razor
+  - "Wegen dieser Platte im Boden..."
+- Gehe nach rechts und betrete die Bodenplatte
+- >EASTER EGG:
+  >- Im Endbildschirm auf EXIT klicken
+
+### 9.1. Video Walkthrough
+
+Maniac Dungeon Raum 09: Und dann gab's wirklich echt überhaupt gar keins mehr, ehrlich (Deu/PC/ Win)
+
+[![Walkthrough](https://img.youtube.com/vi/pbrmNxePgAw/0.jpg)](https://www.youtube.com/watch?v=pbrmNxePgAw)
