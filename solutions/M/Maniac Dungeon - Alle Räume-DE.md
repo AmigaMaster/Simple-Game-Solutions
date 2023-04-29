@@ -115,6 +115,7 @@ Maniac Dungeon Raum 03: Der Verbindungstunnel Lösung (Deu) (PC, Win) - Unkommen
 Maniac Dungeon Raum 04: Die Grotte Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/K9RCM4apA0U/0.jpg)](https://www.youtube.com/watch?v=K9RCM4apA0U)
+
 --------------------------------------------------------------------------------
 
 ## 5. Raum 05 - Tief unter der Erde
@@ -395,3 +396,44 @@ Maniac Dungeon Raum 08: Die Brücke Lösung (Deu) (PC, Win) - Unkommentiert
 Maniac Dungeon Raum 09: Und dann gab's wirklich echt überhaupt gar keins mehr, ehrlich (Deu/PC/ Win)
 
 [![Walkthrough](https://img.youtube.com/vi/pbrmNxePgAw/0.jpg)](https://www.youtube.com/watch?v=pbrmNxePgAw)
+
+--------------------------------------------------------------------------------
+
+## 10. Raum 10 - Die neue Gefahr
+
+### 10.1. Titelbildschirm
+
+- >EASTER EGG:
+  >- Mehrfach auf einen der beiden Buchstaben "s" klicken
+
+### 10.2. Höhle
+
+- Nach links gehen
+
+Hamster:
+
+- >EASTER EGG:
+  >- Nach links durch das Loch, aus dem der Hamster gekommen ist
+- BENUTZE Feldspat (`Feldspat`)
+- DRÜCKE unscheinbarer Stein (`langer Faden`)
+- BENUTZE `langer Faden` mit zerbrochene Platte
+- SCHAU AN zerbrochene Platte
+- NIMM zerbrochene Platte (`schöne Münze`)
+- BENUTZE `schöne Münze` mit Abdeckung
+- BENUTZE `Feldspat` mit Kabel
+- Gehe nach links, bis es in einem der Löcher in der Wand funkelt
+- SCHAU AN Funkeln
+- REDE MIT Razor (`Eisenstab`)
+- GIB Eisenstab ein Bernard
+
+Bernard:
+
+- BENUTZE `Eisenstab` mit `Brocken`
+- SCHAU AN Türzarge (`Schlüssel`)
+- BENUTZE `Schlüssel` mit Tür
+
+### 10.3. Video Walkthrough
+
+Maniac Dungeon Raum 10: Die neue Gefahr Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/enFXBW_32Z8/0.jpg)](https://www.youtube.com/watch?v=enFXBW_32Z8)
