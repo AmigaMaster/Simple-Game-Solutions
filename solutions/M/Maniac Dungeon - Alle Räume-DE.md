@@ -437,3 +437,35 @@ Bernard:
 Maniac Dungeon Raum 10: Die neue Gefahr Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/enFXBW_32Z8/0.jpg)](https://www.youtube.com/watch?v=enFXBW_32Z8)
+
+--------------------------------------------------------------------------------
+
+## 11. Raum 11 - Die  vergrabene Gruft
+
+- DRÜCKE Loser Stein (rechts in der Wand)
+  - **MERKE:** Schachfigurenkombination `Springer, Bauer, Turm`
+- BENUTZE Steine (hinten in der Wand)
+  - Die Schachfigurenkombination in umgekehrter Reihenfolge einstellen `Turm, Bauer, Springer`
+  - Nahansicht verlassen
+- REDE MIT Weird Ed
+- **HINWEIS:** Danach sollte Razor ausflippen und wir steuern sie ab sofort
+
+Razor:
+
+- NIMM MEtallstange (vom verschütteten Eingang links) (`Stange`)
+- REDE MIT Weird Ed (`seltsam riechender Käse`)
+- REDE MIT Bernard (`Riechsalz`, `Stift`)
+- BENUTZE `Riechsalz` mit `Stift` (`Stift mit Riechsalz`)
+- BENUTZE `seltsam riechender Käse` mit `Stift mit Riechsalz` (`Stift mit ... Gebräu`)
+- BENUTZE `Stift mit ... Gebräu` mit Leuchterstatue
+- NIMM Säge (`Säge`)
+- BENUTZE `Säge` mit einem der Särge
+- BENUTZE `Stange` mit demselben Sarg
+- SCHAU AN mittlerer Sarg (`Schlüssel`)
+- BENUTZE `Schlüssel` mit Schlüsselloch
+
+### 11.1. Video Walkthrough
+
+Maniac Dungeon Raum 11: Die vergrabene Gruft Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/qub3LG9fEV4/0.jpg)](https://www.youtube.com/watch?v=qub3LG9fEV4)

@@ -10,17 +10,22 @@ Download der Spieleserie auf der offiziellen [Homepage](https://www.maniac-mansi
 
 Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spannende Welt von Maniac Mansion weiterleben zu lassen und um neue Facetten zu erweitern. Die ganze Serie funktioniert im Episodenformat, damit jeder Entwickler seine eigene kleine Geschichte ins Universum von Maniac Mansion einbauen kann.
 
+## 1. Titelbildschirm
+
+- >**EASTER EGG:**
+  >- Klicke auf Britney
+
 Wir beginnen in
 
-## 1. Bernard's Haus
+## 2. Bernard's Haus
 
 und befinden uns im
 
-### 1.1. Flur Obergeschoss
+### 2.1. Flur Obergeschoss
 
 und spielen Britney in
 
-#### 1.1.1. Britney's Zimmer
+#### 2.1.1. Britney's Zimmer
 
 - NIMM Zettel (`Packzettel`)
 - ÖFFNE Kommode
@@ -29,13 +34,13 @@ und spielen Britney in
 - ÖFFNE Tür
 - Verlasse Zimmer
 
-### 1.2. Flur Obergeschoss
+### 2.2. Flur Obergeschoss
 
 - NIMM Handtuch (`rotes Handtuch`)
 - ÖFFNE Tür (hinten links)
 - Verlasse durch Tür (hinten links)
 
-#### 1.2.1. Badezimmer
+#### 2.2.1. Badezimmer
 
 - NIMM blaue Zahnbuerste (`blaue Zahnbürste`)
 - NIMM lila Zahnbuerste (`lila Zahnbürste`)
@@ -43,12 +48,12 @@ und spielen Britney in
 - BENUTZE Wasserhahn (von der Badewanne)
 - Verlasse Badezimmer
 
-### 1.3. Flur Obergeschoss
+### 2.3. Flur Obergeschoss
 
 - ÖFFNE Tür (hinten rechts)
 - Verlasse durch Tür (hinten rechts)
 
-#### 1.3.1. Elternschlafzimmer
+#### 2.3.1. Elternschlafzimmer
 
 - BENUTZE Lichtschalter
 - ÖFFNE (linkes) Nachtschränkchen
@@ -57,13 +62,13 @@ und spielen Britney in
 - NIMM Kondome (`Kondome`)
 - Verlasse Elternschlafzimmer
 
-### 1.4. Flur Obergeschoss
+### 2.4. Flur Obergeschoss
 
 - ÖFFNE (rechte) Tür
 - Verlasse durch (rechte) Tür
 - Gehe nach unten
 
-### 1.5. Flur Erdgeschoss
+### 2.5. Flur Erdgeschoss
 
 - ÖFFNE rechte Kommodentür
 - NIMM Kugelschreiber (`Kugelschreiber`)
@@ -72,7 +77,7 @@ und spielen Britney in
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
 
-#### 1.5.1. Küche
+#### 2.5.1. Küche
 
 - ÖFFNE Kühlschrank
 - NIMM Lappen (`lila Tanga`)
@@ -91,7 +96,7 @@ und spielen Britney in
 - BENUTZE `Kondome` mit `Glas mit rotem Fruchtmus` (`fruchtige Kondome`)
 - Gehe zurück in den
 
-### 1.6. Flur Erdgeschoss
+### 2.6. Flur Erdgeschoss
 
 - SCHAU AN Schlüsselloch (Tür hinten links)
 - BENUTZE `Packzettel` mit Tür (hinten links)
@@ -102,18 +107,18 @@ und spielen Britney in
 - ÖFFNE Tür (hinten links)
 - Verlasse durch Tür (hinten links)
 
-#### 1.6.1. Abstellkammer
+#### 2.6.1. Abstellkammer
 
 - NIMM Desinfektionsmittel (`Desinfektionsmittel`)
 - BENUTZE `Desinfektionsmittel` mit `blaue Zahnbürste` (`desinfizierte Zahnbürste`)
 - Verlasse Abstellkammer
 
-### 1.7. Flur Erdgeschoss
+### 2.7. Flur Erdgeschoss
 
 - ÖFFNE (rechte) Tür
 - Verlasse durch (rechte Tür)
 
-### 1.8. Wohnzimmer
+### 2.8. Wohnzimmer
 
 - NIMM linkes Sitzkissen (`linkes Sitzkissen`)
 - NIMM Fernbedienung (`Fernbedienung`)
@@ -125,19 +130,19 @@ und spielen Britney in
 - NIMM kleiner Schlüssel (`kleiner Schlüssel`)
 - Verlasse durch Durchgang hinten rechts
 
-### 1.9. Flur Eingangsbereich
+### 2.9. Flur Eingangsbereich
 
 - NIMM weißer BH (`weißer BH`)
 - ÖFFNE (linke) Tür
 - Verlasse Haus durch (linke) Tür
 
-## 2. Bernard's Haus
+## 3. Bernard's Haus
 
 - SCHAU AN Paket
 - ÖFFNE Paket (`Bowlingkugel`)
 - Gehe ins
 
-#### 2.0.1. Badezimmer
+#### 3.0.1. Badezimmer
 
 - ÖFFNE Waschmaschine
 - BENUTZE `lila Tanga` mit Luke
@@ -150,18 +155,18 @@ und spielen Britney in
 - BENUTZE `Bowlingkugel` mit Lüftungsschacht
 - Gehe nach unten in die Abstellkammer
 
-#### 2.0.2. Abstellkammer
+#### 3.0.2. Abstellkammer
 
 - NIMM Lukenöffner (`Lukenöffner`)
 - BENUTZE `Lukenöffner` mit schwarzes Etwas (`schwarzer Spitzen-BH`)
 - Gehe nach oben in den
 
-### 2.1. Flur Obergeschoss
+### 3.1. Flur Obergeschoss
 
 - BENUTZE `Lukenöffner` mit Luke
 - Verlasse Flur durch Luke
 
-#### 2.1.1. Dachboden
+#### 3.1.1. Dachboden
 
 - SCHAU AN Stecker
 - ZIEHE Lautsprecher
@@ -173,7 +178,7 @@ und spielen Britney in
 - BENUTZE `Discman` mit Stecker
 - Gehe in die
 
-#### 2.1.2. Küche
+#### 3.1.2. Küche
 
 - >**EASTER EGG Vorbereitung:**
   >- BENUTZE `rechtes Sitzkissen` mit Mixer
@@ -182,14 +187,14 @@ und spielen Britney in
   >- NIMM Mixer (`gehäckselte Polsterreste`)
   >- Gehe in
 
-#### 2.1.3. Bernard's Zimmer
+#### 3.1.3. Bernard's Zimmer
 
 - >**EASTER EGG:**
   >- BENUTZE `gehäckselte Polsterreste` mit Bett
 - NIMM Kissen (`Kissen`)
 - Gehe ins
 
-#### 2.1.4. Badezimmer
+#### 3.1.4. Badezimmer
 
 - BENUTZE `lila Wasserfarbe` mit Badewanne
 - BENUTZE `Kissen` mit Badewanne (`lila Kissen`)
@@ -199,7 +204,7 @@ und spielen Britney in
 - BENUTZE `Lippenstift` mit `Schminkkästchen`
 - Gehe auf den
 
-#### 2.1.5. Dachboden
+#### 3.1.5. Dachboden
 
 - SCHAU AN `Nagellackentferner`
 - BENUTZE `Nagellackentferner` mit `Desinfektionsmittel` (`stark blubbernde Säure`)
@@ -207,7 +212,7 @@ und spielen Britney in
 - ÖFFNE Karton (`Corsage`)
 - Gehe in die
 
-#### 2.1.6. Küche
+#### 3.1.6. Küche
 
 - ÖFFNE Mikrowelle
 - BENUTZE `Corsage` mit Mikrowelle
@@ -217,7 +222,7 @@ und spielen Britney in
 - NIMM Corsage (`Corsage`)
 - Gehe nach oben in
 
-#### 2.1.7. Britney's Zimmer
+#### 3.1.7. Britney's Zimmer
 
 - BENUTZE `kleiner Schlüssel` mit pinker Kofferpacken
 - ÖFFNE pinker Koffer
@@ -227,7 +232,7 @@ und spielen Britney in
 
 --------------------------------------------------------------------------------
 
-## 3. Video Walkthrough
+## 4. Video Walkthrough
 
 Maniac Mansion Mania Episode 090: Kofferpacken Lösung (Deutsch) (PC, Win) - Unkommentiert
 
