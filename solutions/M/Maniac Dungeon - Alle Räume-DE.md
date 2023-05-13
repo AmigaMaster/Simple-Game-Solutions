@@ -469,3 +469,49 @@ Razor:
 Maniac Dungeon Raum 11: Die vergrabene Gruft Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/qub3LG9fEV4/0.jpg)](https://www.youtube.com/watch?v=qub3LG9fEV4)
+
+--------------------------------------------------------------------------------
+
+## 12. Raum 12 - Die Holozelle
+
+- DRÜCKE Terminal
+- REDE MIT Terminal
+  - >EASTER EGGS:
+    >- Wünsche dir "Einen Helden!"
+    >- Wünsche dir "Frauen!"
+    >- BENUTZE Badehandtuch
+  - Wünsche dir "Wissen!"
+- NIMM blaues Buch (`Buch`)
+- ÖFFNE `Buch`
+  - Alle Kapitel durchlesen
+- REDE MIT Weird Ed
+  - "Ich brauche mal deinen Hamster." (`Hamster`)
+- REDE MIT Terminal
+  - Wünsche dir "Werkzeuge!"
+- NIMM Schraubenzieher (`Schraubenzieher`)
+- NIMM Brechstange (`Brechstange`)
+- NIMM Nähkästchen (`Nähkästchen`)
+- ÖFFNE `Nähkästchen` (`Nähkästchen (offen)`, `Nadel und Faden`)
+- NIMM Schere (`Schere`)
+- NIMM Wäscheklammer (`Wäscheklammer`)
+- BENUTZE `Schraubenzieher` mit Terminal
+- BENUTZE `Hamster` mit Terminal
+- REDE MIT Weird Ed
+  - "Ich brauche mal deinen Hamster." (`Hamster`)
+  - "Ich bräuchte mal ein Stück Stoff von deiner Uniform."
+- BENUTZE `Schere` mit Weird Ed (`Uniformfetzen`)
+- BENUTZE `Nadel und Faden` mit `Uniformfetzen` (`kleine Uniform`)
+- BENUTZE `kleine Uniform` mit `Hamster` (`Hamster (getarnt)`)
+- BENUTZE `Hamster (getarnt)` mit Terminal
+- BENUTZE `Wäscheklammer` mit `Brechstange` (`Brechstange mit Klammer`)
+- REDE MIT Terminal
+  - Wünsche dir "Einen Ausgang!"
+- ÖFFNE `Brechstange mit Klammer` (`Wäscheklammer`, `Brechstange`)
+- BENUTZE `Brechstange` mit Tür
+
+### 12.1. Video Walkthrough
+
+Maniac Dungeon Raum 12: Die Holozelle (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/V4I92Enggzc/0.jpg)](https://www.youtube.com/watch?v=V4I92Enggzc)
+
