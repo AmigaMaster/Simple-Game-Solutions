@@ -515,3 +515,35 @@ Maniac Dungeon Raum 12: Die Holozelle (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/V4I92Enggzc/0.jpg)](https://www.youtube.com/watch?v=V4I92Enggzc)
 
+--------------------------------------------------------------------------------
+
+## 13. Raum 13 - Der Trockenraum
+
+- NIMM Draht (`Draht`)
+- NIMM Stab (`Stab`)
+- SCHAU AN (rechte) Tür
+- BENUTZE (rechte) Tür
+- REDE MIT Weird Ed
+- REDE MIT Razor
+- BENUTZE `Stab` mit Mauseloch (`Hamster`)
+- BENUTZE `Stab` mit `Hamster` (`Stab (Loch)`)
+- BENUTZE `Stab (Loch)` mit `Draht` (`Stab (Draht)`)
+- BENUTZE `Stab (Draht)` mit Luke
+- SCHLIESSE `Stab (Draht)` (`Stab (Gebogener Haken)`)
+- BENUTZE `Stab (Gebogener Haken)` mit Säge
+- NIMM Säge (`Säge`)
+- ÖFFNE `Stab (Gebogener Haken)` (`Stab (Draht)`)
+- ÖFFNE `Stab (Draht)` (`Stab (Loch)`)
+- BENUTZE `Stab (Loch)` mit Säge (`Stab (Säge)`)
+- BENUTZE `Stab (Säge)` mit (rechter) Tür
+- REDE MIT Razor
+  - "Siehst du die Tür dort hinten?"
+  - "Kannst du mir die Tür nicht mal eben aufsägen?"
+- GIB `Stab (Säge)` an Razor
+- Verlasse den Raum durch die (rechte) Tür
+
+### 13.1. Video Walkthrough
+
+Maniac Dungeon Raum 13: Der Trockenraum (Deu) (PC, Win) [60 FPS] - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/OO6GHK_Js8U/0.jpg)](https://www.youtube.com/watch?v=OO6GHK_Js8U)
