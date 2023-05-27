@@ -547,3 +547,34 @@ Maniac Dungeon Raum 12: Die Holozelle (Deu) (PC, Win) - Unkommentiert
 Maniac Dungeon Raum 13: Der Trockenraum (Deu) (PC, Win) [60 FPS] - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/OO6GHK_Js8U/0.jpg)](https://www.youtube.com/watch?v=OO6GHK_Js8U)
+
+--------------------------------------------------------------------------------
+
+## 14. Raum 14 - Vor der Tür
+
+- REDE MIT Bernard
+- BENUTZE `Stab` mit Kamera
+- NIMM Kameraüberreste (`Draht`)
+- NIMM Trümmer (`Hammer`, `Kompass`, `Batterien`)
+- ÖFFNE `Kompass` (`Magnet`)
+- BENUTZE `Draht` mit Bernard
+- BENUTZE `Batterien` mit Bernard
+- BENUTZE `Magnet` mit Bernard
+- BENUTZE `Stab` mit Bernard (`Bernoulli Detektor`)
+- Gehe nach rechts neben die Tür
+- BENUTZE `Bernoulli Detektor`
+  - Der Mauspfeil ändert sich und glüht jetzt rot
+  - Zeige mit dem Mauspfeil rechts neben die Metalltür auf den Hotspot "Metall unter den Steinen"
+- BENUTZE `Hammer` mit Metall unter dem Stein
+- BENUTZE `Hammer` mit Sicherungskasten
+- BENUTZE `Bernoulli Detektor` mit Sicherungskasten
+- BENUTZE `Hammer` mit `Säge` (`Metallsplitter`)
+- BENUTZE `Metallsplitter` mit Sicherungskasten
+- BENUTZE Schalttafel
+- Verlasse den Raum durch die Sicherheitstür
+
+### 14.1. Video Walkthrough
+
+Maniac Dungeon Raum 14: Vor der Tür (Deu) (PC, Win) [60 FPS] - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/fKts2B6BXIM/0.jpg)](https://www.youtube.com/watch?v=fKts2B6BXIM)
