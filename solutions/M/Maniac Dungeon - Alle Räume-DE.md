@@ -578,3 +578,62 @@ Maniac Dungeon Raum 13: Der Trockenraum (Deu) (PC, Win) [60 FPS] - Unkommentiert
 Maniac Dungeon Raum 14: Vor der Tür (Deu) (PC, Win) [60 FPS] - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/fKts2B6BXIM/0.jpg)](https://www.youtube.com/watch?v=fKts2B6BXIM)
+
+--------------------------------------------------------------------------------
+
+## 15. Raum 15 - Die unterirdische Kulturstätte
+
+### 15.1. Titelbildschirm
+
+- >EASTER EGG:
+  >- Kurz warten, bevor man das Spiel startet
+
+### 15.2. Bibliothek
+
+- SCHAU AN Buch (auf dem Tisch) (`VVW`)
+- REDE MIT Bibliothekar
+- SCHAU AN Namensschild
+  - **MERKE:** Die Ausrichtung der einzelnen Zeilen: `Links`, `rechts`, `rechts`, `links`, `rechts`
+- REDE MIT Razor (`Hammer`)
+- BENUTZE Karteikasten
+  - >EASTER EGGS:
+    >- Alle Buchtitel durchprobieren und alle Bücher im Inventar öffnen
+    >- Unter "Zukunftsliteratur, Science Fiction", das Buch "Do Androids Dream of Electric Hamster? (P. K. Dikk) nehmen und mit Ed benutzen.
+  - "Fantasy, Legenden, Märchen, Magie"
+  - "Der Mythos weißer Magie (Unb. Autor)" ((rotes) `Buch`)
+- BENUTZE `Buch` mit Bibliothekar
+- BENUTZE `VVW` mit Bibliothekar
+- **SCHNELL:** BENUTZE `Hammer` mit Schädel
+- DRÜCKE Pflanze
+- NIMM Schlüssel (`Schlüssel`)
+- >EASTER EGG:
+  >- BENUTZE `Schlüssel` mit Informationstheke
+  >- NIMM Schlüssel (`Schlüssel`)
+- BENUTZE `Schlüssel` mit Geheimfach
+- BENUTZE Tresor
+  - Kombination ist die Ausrichtung der einzelnen Zeilen auf dem Namensschild
+  - `Links`, `rechts`, `rechts`, `links`, `rechts` ((schwarzes) `Buch`)
+- BENUTZE (schwarzes) `Buch` mit Bibliothekar
+- BENUTZE (schwarzes) `Buch` mit (rotem) `Buch` (`Fake-Buch`)
+- BENUTZE `Fake-Buch` mit Bibliothekar
+- BENUTZE Karteikasten
+  - "Gegenwartsliteratur"
+  - weitere Titel
+  - "Interessante Reime zum Aufweichen von Käse (Harry ---)" ((hellrotes) `Buch`)
+- BENUTZE (hellrotes) `Buch` mit Ed
+- REDE MIT Ed
+  - "Nein, denn der war zu teuer mir."
+  - "Wir wollen dich aus der Trance entführen."
+  - "Aber nur der Reim entweicht deinem Mund."
+- BENUTZE Karteikasten
+  - "Abhandlungen, Essays"
+  - "In Rekordzeit zur Powerfrau (Unb. weibl. Autor)" ((dunkelrotes) `Buch`)
+- >EASTER EGG:
+  >- Nachdem man das Buch "In Rekordzeit zur Powerfrau" erhalten hat, nochmals den Karteikasten benutzen und unter "Abhandlungen, Essays" das Buch "Webseiten vergangener Tage (Unb. Autor)" auswählen
+- BENUTZE (dunkelrotes) `Buch` mit Razor
+
+### 15.3. Video Walkthrough
+
+Maniac Dungeon Raum 15: Die unterirdische Kulturstätte (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/xihq32Djpa8/0.jpg)](https://www.youtube.com/watch?v=xihq32Djpa8)
