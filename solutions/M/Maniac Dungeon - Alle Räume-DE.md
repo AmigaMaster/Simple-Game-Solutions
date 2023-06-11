@@ -637,3 +637,56 @@ Maniac Dungeon Raum 14: Vor der Tür (Deu) (PC, Win) [60 FPS] - Unkommentiert
 Maniac Dungeon Raum 15: Die unterirdische Kulturstätte (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/xihq32Djpa8/0.jpg)](https://www.youtube.com/watch?v=xihq32Djpa8)
+
+--------------------------------------------------------------------------------
+
+## 16. Raum 16 - Die U-Bahn-Station
+
+- >EASTER EGGS:
+  >- Alle Verben mit Razor und Weird Ed durchgehen
+  >- Alle Inventargegenstände mit Razor benutzen
+- REDE MIT Weird Ed
+  - "Möchtest Du eben übernehmen?"
+
+Weird Ed:
+
+- DRÜCKE Pepsi-Automat
+- NIMM Gummihandschuhe (`Gummihandschuhe`)
+- BENUTZE `Gummihandschuhe` mit Mülleimer **3 mal** (`Metallstange`, `Sprühdose`, `Briefmarke`)
+- BENUTZE `Metallstange` mit marode Wand (`Metallstange (verbogen)`)
+- NIMM Streitaxt (`Streitaxt`)
+- BENUTZE `Streitaxt` mit Ticket-Automat
+- NIMM Ticket (`Ticket`)
+- NIMM Münzen (`Quarters`)
+- >EASTER EGG:
+  >- BENUTZE `Sprühdose` mit Razor
+- GIB `Quarters` an Bernard (`49 Quarters`)
+- GIB `Metallstange (verbogen)` an Bernard
+- GIB `Gummihandschuhe` an Bernard
+- WECHSEL ZU Bernard
+
+Bernard:
+
+- BENUTZE `49 Quarters` mit Pepsi-Automat (`Pepsi-Dose`, `47 Quarters`)
+- BENUTZE `Gummihandschuhe` mit Mülleimer **3 mal** (`Akkus`, `Haken`, `Kugelschreiber`)
+- BENUTZE `Haken` mit `Metallstange` (`gebogener Enterhaken`)
+- BENUTZE `gebogener Enterhaken` mit Grog-Automat (`Grogflasche`)
+- >EASTER EGGS:
+  >- BENUTZE `Kugelschreiber` mit Spruch
+  >- BENUTZE `gebogener Enterhaken` mit Loch
+- BENUTZE `Grogflasche` mit Metallplatte (`leere Grogflasche`)
+- SCHAU AN Fahrplan  
+  **MERKE:** Das Layout der drei Bahnlinien violett, grün und orange
+- BENUTZE Steuerkonsole
+  - >EASTER EGGS:
+    >- Violett OBEN, orange OBEN RECHTS, grün UNTEN RECHTS
+    >- Violett UNTEN LINKS, orange OBEN RECHTS, grün OBEN
+  - Violett OBEN RECHTS, orange RECHTS, grün OBEN RECHTS
+- Optional: Mit allen reden
+- BENUTZE `Ticket` mit Sandy
+
+### 16.1. Video Walkthrough
+
+Maniac Dungeon Raum 16: Die U-Bahn-Station (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/rR6NejPkrVQ/0.jpg)](https://www.youtube.com/watch?v=rR6NejPkrVQ)

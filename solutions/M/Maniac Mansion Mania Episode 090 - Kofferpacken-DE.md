@@ -2,6 +2,7 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
+|   1.01  | 13.05.2023 | Amiga Master (AmigaMaster-NG@t-online.de) |
 |   1.0   | 17.12.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
@@ -176,6 +177,8 @@ und spielen Britney in
 - NIMM Wasserfarbkasten (`lila Wasserfarbe`)
 - ÖFFNE Superpanzerband
 - BENUTZE `Discman` mit Stecker
+- ZIEHE Lautsprecher
+- BENUTZE Discman
 - Gehe in die
 
 #### 3.1.2. Küche
@@ -232,8 +235,12 @@ und spielen Britney in
 
 --------------------------------------------------------------------------------
 
-## 4. Video Walkthrough
+## 4. Video Walkthroughs
 
 Maniac Mansion Mania Episode 090: Kofferpacken Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/nGt9X0Vax30/0.jpg)](https://www.youtube.com/watch?v=nGt9X0Vax30)
+
+Maniac Mansion Mania Episode 090: Kofferpacken (Talkie) Lösung (Deutsch) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/bCUGkja5sTI/0.jpg)](https://www.youtube.com/watch?v=bCUGkja5sTI)
