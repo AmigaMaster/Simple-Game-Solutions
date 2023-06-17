@@ -690,3 +690,39 @@ Bernard:
 Maniac Dungeon Raum 16: Die U-Bahn-Station (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/rR6NejPkrVQ/0.jpg)](https://www.youtube.com/watch?v=rR6NejPkrVQ)
+
+--------------------------------------------------------------------------------
+
+## 17. Raum 17 - Wahnsinnsfahrt im Geisterzug
+
+- Gehe nach rechts
+- REDE MIT Jeff
+- Gehe ganz nach rechts
+- SCHAU AN Loch
+- REDE MIT Jeff
+- Gehe zum Loch
+- ÖFFNE (rechte) Tür
+- NIMM Schlüssel (`Schlüssel`)
+- Gehe ganz nach links
+- BENUTZE `Schlüssel` mit (linker) Tür
+- NIMM Schlüssel ((gelber) `Schlüssel`)
+- Gehe ganz nach rechts
+- BENUTZE (gelber) `Schlüssel` mit Schrank (`grünes Top`)
+- ÖFFNE Klotür
+- SCHAU AN Papierfetzen (unten auf dem Toilettenboden) (`Papierfetzen`)
+- Gehe ganz nach rechts
+- BENUTZE `Papierfetzen` mit Koffer (`Walkie-Talkie`, `Walkie-Talkie`, `Handbuch`)
+- Gehe ganz nach links
+- BENUTZE `Handbuch` mit Cockpit
+- >EASTER EGG:
+  >- Gehe in den Wagon links vom Loch
+  >- BENUTZE `Taschenlampe` mit verdächtiger Sitzplatz
+- Gehe in den Wagon links von Razor
+- BENUTZE `Taschenlampe` mit verdächtiger Sitzplatz (`Schlüsselkarte`)
+- Gehe nach links ins Führerhaus
+
+### 17.1. Video Walkthrough
+
+Maniac Dungeon Raum 17: Wahnsinnsfahrt im Geisterzug (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/hGyhEtX_oIM/0.jpg)](https://www.youtube.com/watch?v=hGyhEtX_oIM)
