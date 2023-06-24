@@ -766,4 +766,4 @@ Maniac Dungeon Raum 17: Wahnsinnsfahrt im Geisterzug (Deu) (PC, Win) - Unkomment
 
 Maniac Dungeon Raum 18: Die perfekte Welle (Deu) (PC, Win) - Unkommentiert
 
-[![Walkthrough](https://img.youtube.com/vi/hGyhEtX_oIM/0.jpg)](https://www.youtube.com/watch?v=hGyhEtX_oIM)
+[![Walkthrough](https://img.youtube.com/vi/m6jE66ejYyM/0.jpg)](https://www.youtube.com/watch?v=m6jE66ejYyM)
