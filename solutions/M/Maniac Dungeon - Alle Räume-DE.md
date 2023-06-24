@@ -726,3 +726,44 @@ Maniac Dungeon Raum 16: Die U-Bahn-Station (Deu) (PC, Win) - Unkommentiert
 Maniac Dungeon Raum 17: Wahnsinnsfahrt im Geisterzug (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/hGyhEtX_oIM/0.jpg)](https://www.youtube.com/watch?v=hGyhEtX_oIM)
+
+--------------------------------------------------------------------------------
+
+## 18. Raum 18 - Die perfekte Welle
+
+- >EASTER EGG:
+  >- Gehe die Leiter hinab
+- BENUTZE `Tequila` mit Pool (`leere Flasche mit Wurm`)
+- SCHAU AN Aquarium
+- SCHAU AN Loch (im Aquarium)
+- SCHAU AN Schriftzug (unter dem Aquarium)
+- BENUTZE Mikrofon
+- BENUTZE `leere Flasche mit Wurm` mit Schrank (`Tequilawurm`, `Scherbe`)
+- BENUTZE `Hamster` mit Schrank
+- BENUTZE `Hamster` mit Loch (im Schrank) (`Faden`, `Lippenstift`)
+- >EASTER EGG:
+  >- BENUTZE `Lippenstift` mit Wasserhahn
+- BENUTZE `Lippenstift` mit Spiegel
+- NIMM Stück Draht (`Draht`)
+- BENUTZE `Draht` mit `Faden` (`Faden mit Haken`)
+- BENUTZE `Tequilawurm` mit `Faden mit Haken` (`Wurm am Haken`)
+- BENUTZE `Wurm am Haken` mit Loch (im Aquarium) (`Fisch`)
+- BENUTZE `Fisch` mit Mikrofon
+- >EASTER EGG:
+  >- BENUTZE `Lippenstift` mit Bademeister
+- REDE MIT Bademeister
+- DRÜCKE Klospülung
+- NIMM Seife (`Seife`)
+- BENUTZE `Seife` mit Pool  
+  **HINWEIS:** Der Bademeister darf Ed dabei nicht sehen. Die Aktion ausführen, wenn der Bademeister auf die Fliege starrt.
+- REDE MIT Bernard
+- ZIEHE Razor
+- BENUTZE `Scherbe` mit Razor
+- >EASTER EGG:
+  >- Am Ende auf EXIT klicken
+
+### 18.1. Video Walkthrough
+
+Maniac Dungeon Raum 18: Die perfekte Welle (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/hGyhEtX_oIM/0.jpg)](https://www.youtube.com/watch?v=hGyhEtX_oIM)
