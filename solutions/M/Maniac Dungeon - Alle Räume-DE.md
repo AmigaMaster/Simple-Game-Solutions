@@ -767,3 +767,41 @@ Maniac Dungeon Raum 17: Wahnsinnsfahrt im Geisterzug (Deu) (PC, Win) - Unkomment
 Maniac Dungeon Raum 18: Die perfekte Welle (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/m6jE66ejYyM/0.jpg)](https://www.youtube.com/watch?v=m6jE66ejYyM)
+
+--------------------------------------------------------------------------------
+
+## 19. Raum 19 - Weihnachts-Edition
+
+- >EASTER EGG:
+  >- NIMM Loch  
+  >  **HINWEIS:** Das muss die erste Aktion mit dem Loch sein.
+- REDE MIT Razor
+- REDE MIT Bernard (`Funkgerät`)
+- SCHAU AN Loch
+  - Das Gedicht ist im Grunde egal, es muss nur weihnachtlich sein (`Taschenlampe`)
+- REDE MIT Bernard (`Lukenöffner`)
+- BENUTZE `Lukenöffner` mit seltsames Ding (`Fernbedienung`)
+- ÖFFNE `Funkgerät` (`Batterien`)
+- BENUTZE `Batterien` mit `Fernbedienung`
+- BENUTZE `Fernbedienung`
+- BENUTZE Tastatur  
+  Hinweise:
+  - Der Code ist ein Datum
+  - Zu welcher Zeit spielt die Episode?
+  - Der Code deutet auf Weihnachten hin
+  - Der Code lautet `2412`
+- ÖFFNE Tür
+- SCHAU AN Geheimfach (Bernard deutet mittlerweile darauf)
+- ÖFFNE `Fernbedienung` (`Batterien`)
+- BENUTZE `Batterien` mit `Taschenlampe`
+- BENUTZE `Taschenlampe` mit Geheimfach (`Säge`)
+- BENUTZE `Säge` mit Weihnachtsbaum
+- NIMM Schlüssel (`Schlüssel`)
+- BENUTZE `Schlüssel` mit Tür
+
+### 19.1. Video Walkthrough
+
+Maniac Dungeon Raum 19: Weihnachts-Edition (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/-lNiq6iA6o4/0.jpg)](https://www.youtube.com/watch?v=-lNiq6iA6o4)
+
