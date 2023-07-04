@@ -2,6 +2,7 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
+|  1.01   | 14.06.2023 | Amiga Master (AmigaMaster-NG@t-online.de) |
 |  1.0    | 17.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
@@ -76,6 +77,7 @@ und schauen dort in
 #### 2.1. Bernard's Zimmer
 
 - BENUTZE Computer
+- BENUTZE `Kreditkarte` mit Computer
 - Gehe zum
 
 ### 2.2. Wohnzimmer
@@ -110,3 +112,7 @@ und schauen dort in
 Maniac Mansion Mania Episode 002: Unruhen Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/9DuGTuiWDqk/0.jpg)](https://www.youtube.com/watch?v=9DuGTuiWDqk)
+
+Maniac Mansion Mania Episode 002: Unruhen (Talkie) Lösung (Deutsch) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/8L5U3yxc0n8/0.jpg)](https://www.youtube.com/watch?v=8L5U3yxc0n8)
