@@ -805,3 +805,84 @@ Maniac Dungeon Raum 19: Weihnachts-Edition (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/-lNiq6iA6o4/0.jpg)](https://www.youtube.com/watch?v=-lNiq6iA6o4)
 
+--------------------------------------------------------------------------------
+
+## 20. Raum 20 - Die Pharaonen-Grabkammer
+
+### 20.1. Titelbildschirm
+
+- >EASTER EGG:
+  >- KLICKE auf Credits **8 mal**
+
+### 20.2. Grabkammer
+
+- >EASTER EGGS:
+  >- REDE MIT Razor
+  >- "Kannst du mit deinem Banjo ein Lied spielen?" **6 mal**
+  >- **ACHTUNG:** SPEICHERN
+  >- Das Schalterrätsel lösen, bevor man den Hinweis entdeckt (Kann mit einem neuen Spiel direkt zu Beginn durchgeführt werden). Der Code befindet sich weiter unten in dieser Lösung, einfach nach Schalterrätsel suchen.
+- NIMM Band (rechts unten am Sarkophag) (`Bandage`)
+- NIMM Goldberg **2 mal** (`Krummstab`, `Goldschale`)
+- NIMM Brot (`Brot`)
+- NIMM Weizen (`Weizen`)
+- BENUTZE Horn
+- NIMM Kiste
+- BENUTZE `Batterien` mit `Taschenlampe`
+- BENUTZE `Taschenlampe` mit (linkem) Loch
+- BENUTZE `Lukenöffner` mit (linkem) Loch (`1. Papyros-Hälfte`)
+- BENUTZE `Goldschale` mit (linkem) Gefäß (`gefüllte Goldschale`)
+- BENUTZE `Brot` mit `gefüllte Goldschale` (`Goldschale`, `Brotstückchen`, `Scheibe`)
+- BENUTZE `Goldschale` mit (linkem) Gefäß (`gefüllte Goldschale`)  
+  **HINWEIS:** Wir benötigen die Schale mit Wasser später noch
+- BENUTZE `Scheibe` mit Eingravierung (links neben dem Schalter, die rechte, runde Gravur in der Wand)
+- BENUTZE `Taschenlampe` mit (hinterem) Loch
+- BENUTZE `Krummstab` mit (rechtem) Gefäß (`verklebter Krummstab`)
+- BENUTZE `verklebter Krummstab` mit `Weizen` (`Pfeifenreiniger`)
+- BENUTZE `1. Papyros-Hälfte` mit (rechtem) Gefäß
+- BENUTZE `Bandage` mit (rechtem) Gefäß (`verklebte Bandage`)
+- NIMM Hamster (`Hamster`)
+- SCHAU AN Inschrift
+- BENUTZE `Brotstückchen` mit (hinterem) Loch
+- BENUTZE `verklebte Bandage` mit `Hamster` (`geklebter Hamster`)
+- BENUTZE `geklebter Hamster` mit (hinterem) Loch (`2. Papyros-Hälfte`)
+- BENUTZE `1. Papyros-Hälfte` mit `2. Papyros-Hälfte` (`Papyros-Rolle`)
+- REDE MIT Razor
+- SCHAU AN Inschrift (in der Säule rechts)
+- REDE MIT Bernard  
+  **MERKE:** Schalterrätsel:  
+  Gleichgewicht verloren `Waage`, Nahrungsquellen versiegen kein Essen `Hand`, erwärmte `Sonne`, `Wasser`, wo man auch sah Dürre `Auge`, Land verlassen Menschen in die weite Welt `Beine`
+- DRÜCKE `Waage`, `Hand`, `Sonne`, `Wasser`, `Auge`, `Beine`
+- REDE MIT Charlie (`Blasrohr`)  
+  **HINWEIS:** Man benötigt die gefüllte Goldschale, damit der folgende Dialog während des Gesprächs auswählbar ist
+  - "Hier ist frisches Wasser, Charlie."
+- BENUTZE `Blasrohr` mit Horn
+- REDE MIT Razor
+  - "Könntest du nochmal ins Horn blasen?"
+- BENUTZE `Pfeifenreiniger` mit Horn
+- REDE MIT Razor
+  - "Könntest du nochmal ins Horn blasen?"
+- BENUTZE `Pfeifenreiniger` mit Horn
+- REDE MIT Razor
+- REDE MIT Pharao
+- ÖFFNE `Taschenlampe` (`Batterien`)
+- BENUTZE `Batterien` mit `Fernbedienung`
+- BENUTZE `Fernbedienung` mit Rubin
+- REDE MIT Razor
+  - "Kannst du mit deinem Banjo ein Lied spielen?"
+- NIMM Ankh (`Ankh`)
+- BENUTZE `Ankh` mit Einkerbung (rechts neben der großen Tür in der Wand)
+- SCHAU AN Loch (unter der Einkerbung) (`Hebel`)
+- BENUTZE `Hebel` mit (rechtem) Gefäß (`klebriger Hebel`)
+- BENUTZE `klebriger Hebel` mit Hebel
+- ZIEHE Hebel
+- REDE MIT Bernard
+- REDE MIT Razor
+- REDE MIT Charlie
+- REDE MIT Razor
+  - "Charlie will den Hebel nicht umlegen."
+
+### 20.3. Video Walkthrough
+
+Maniac Dungeon Raum 20: Die Pharaonen-Grabkammer (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/lzCVwE5dpnk/0.jpg)](https://www.youtube.com/watch?v=lzCVwE5dpnk)
