@@ -886,3 +886,58 @@ Maniac Dungeon Raum 19: Weihnachts-Edition (Deu) (PC, Win) - Unkommentiert
 Maniac Dungeon Raum 20: Die Pharaonen-Grabkammer (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/lzCVwE5dpnk/0.jpg)](https://www.youtube.com/watch?v=lzCVwE5dpnk)
+
+--------------------------------------------------------------------------------
+
+## 21. Raum 21 - Durch Raum (21) und Zeit
+
+- >EASTER EGGS:
+  >- Man kann diverse Inventargegenstände mit Razor benutzen
+- SCHAU AN `Notizen` (alles lesen) (`Plan`)
+- SCHAU AN `Plan`
+- ZIEHE Gemälde
+- REDE MIT Razor
+  - "Ich kann das Bild nicht einreißen."
+- REDE MIT Razor
+  - "Ich brauche ein Haar von einer Bestie." (`Haar`)
+- ÖFFNE (rechten) Schrank (`Hamsterduden`)
+- >EASTER EGG:
+  >- Der `Hamsterduden` kann mit allem benutzt werden
+- BENUTZE `Hamsterduden` mit `Plan` (`Stoffschein`)
+- NIMM Blatt (`Blatt`)
+- NIMM Sanduhr (`Sanduhr`)
+- NIMM Uhr (`Defekte Uhr`)
+- REDE MIT Bernard
+- NIMM Antrieb (`Gummiband`, `Holzrad`)
+- BENUTZE `Defekte Uhr` mit Steinplatte (`Leere Uhr`)
+- BENUTZE `Lukenöffner` mit Fass Batterie (`Kaputter Lukenöffner`)
+- >EASTER EGG:
+  >- **ACHTUNG:** SPEICHERN
+  >- BENUTZE `Kaputter Lukenöffner` mit Bernard
+- BENUTZE `Batterien` mit Loch (`Knopfbatterien`)
+- BENUTZE `Knopfbatterien` mit `Leere Uhr` (`Uhr`)
+- ÖFFNE `Sanduhr` (`Offene Sanduhr`)
+- BENUTZE `Offene Sanduhr` mit Wassertank
+- BENUTZE `Blatt` mit `Offene Sanduhr` (`Unvollständiges Mittel`)
+- BENUTZE `Haar` mit `Unvollständiges Mittel`
+- BENUTZE `Unvollständiges Mittel` mit Kerze
+- REDE MIT Razor (`Bart`)
+  - "Schau mal meinen Bart an!"
+- BENUTZE `Stoffschein` mit `Holzrad` (`Holzrad mit Stoffschein`)
+- BENUTZE `Gummiband` mit Safe (`Gummiband Ende`)
+- BENUTZE `Gummiband Ende` mit Tür (`Nadel`)
+- REDE MIT Razor (`Gummiband`)
+- >EASTER EGG:
+  >- BENUTZE `Gummiband` mit Maschine
+- BENUTZE `Nadel` mit `Holzrad mit Stoffschein` (`Handschuh`)
+- BENUTZE `Handschuh` mit Bernard
+- BENUTZE `Bart` mit `Hamster` (`Kuscheliger Hamster`)
+- BENUTZE `Kuscheliger Hamster` mit Eisschrank (`Hamster`, `Edtonium`)
+- BENUTZE `Edtonium` mit Maschine
+- BENUTZE `Uhr` mit Maschine
+
+### 21.1. Video Walkthrough
+
+Maniac Dungeon Raum 21: Durch Raum (21) und Zeit (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/0MHN9yWorM4/0.jpg)](https://www.youtube.com/watch?v=0MHN9yWorM4)
