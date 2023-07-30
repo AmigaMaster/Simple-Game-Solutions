@@ -6,6 +6,9 @@
 
 Get the free game at [https://thrive.itch.io/frontier-fugitive](https://thrive.itch.io/frontier-fugitive)
 
+> **NOTE:** For my walkthrough with a perfect score, I got my own wanted poster on the games homepage 💖
+> [![AmigaMaster_Wanted-Poster](https://img.itch.zone/aW1hZ2UvMjEwODQzNi8xMjk3MDg4MC5wbmc=/347x500/NDYoMr.png)](https://thrive.itch.io/frontier-fugitive)
+
 ## 1. Desert
 
 - Walk east until you pass the bottles
