@@ -66,6 +66,6 @@ Get the free game at [https://thrive.itch.io/frontier-fugitive](https://thrive.i
 
 ## 5. Video Walkthrough
 
-Frontier Fugitive 🌟Best Ending🌟 Walkthrough (German / English ) (PC, Win) [60 FPS] - No Commentary
+Frontier Fugitive (Perfect Fugitive) Walkthrough (German / English) (PC, Win) [60 FPS] - No Commentary
 
-[![Walkthrough](https://img.youtube.com/vi/P65qu2Gwq1s/0.jpg)](https://www.youtube.com/watch?v=P65qu2Gwq1s)
+[![Walkthrough](https://img.youtube.com/vi/xL2auHn5SZU/0.jpg)](https://www.youtube.com/watch?v=xL2auHn5SZU)
