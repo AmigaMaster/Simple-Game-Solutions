@@ -1,8 +1,9 @@
 # Hollywood Monsters - Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 04.01.2022 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author                                    
+|:-------:|------------|-------------------------------------------
+|   1.01  | 19.08.2023 | Amiga Master (AmigaMaster-NG@t-online.de), update globe riddle
+|   1.0   | 04.01.2022 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 Hollywood Monsters is a rare game by Pendulo Studios which was available in Spanish and Italian only. There is an English patch available for the Spanish version at [Mediafire](http://www.mediafire.com/?3huzgxi8rcarquj)
 
@@ -35,7 +36,7 @@ Hollywood Monsters is a rare game by Pendulo Studios which was available in Span
 
 ### 2.5. Entrance Hall
 
-- While Joseph is talking
+- While Joseph is talking to the plant
   - PICK UP notepad (`page`)
 - OPEN right door
 - Enter right door
@@ -55,7 +56,7 @@ Hollywood Monsters is a rare game by Pendulo Studios which was available in Span
 - **SAVE the game**
 - GIVE `glass` to Bruno
   - **QUICK** PICK UP key from Brunos belt (`key`)
-    *NOTE*: Is is quite hard to get the key because you only have about 1 second to select PICK UP from the menu and click on the hotspot. If you fail, load your game. If you have no save game, simply get another glass from the table on the terrace and fill it with the punch bowl and retry.
+    *NOTE*: It is quite hard to get the key because you only have about 1 second to select PICK UP from the menu and click on the hotspot. If you fail, load your saved game. If you have no save game, simply get another glass from the table on the terrace and fill it with the punch bowl and retry.
 - USE `key` with left door
 
 ### 2.9. Office
@@ -84,7 +85,7 @@ Hollywood Monsters is a rare game by Pendulo Studios which was available in Span
 
 ### 2.14. Garden
 
-- Go to the warehouse
+- Go to the warehouse (you will talk to Otto)
 
 ### 2.15. Secretary's Office
 
@@ -173,7 +174,7 @@ Ron:
 - USE left lever
 - USE right lever
 - USE `chain` with hook
-- USE right lever
+- USE right lever (it does not work anymore, you need to find another way)
 
 ### 2.28. Main Hall
 
@@ -203,7 +204,7 @@ Ron:
 
 - PICK UP umbrella (`umbrella`)
 - TALK TO secretary (Taffy)
-  - Also TALK TO Mr. Hannover about everything
+  - TALK TO Mr. Hannover about everything
 - Wait until Taffy brushes her hair
   - **QUICK** PICK UP magnifying glass (`magnifying glass`)
 - Exit and travel to
@@ -623,7 +624,7 @@ Ron:
 - **Puzzle:** Tiles
   - Select two tiles and they swap place
   - You can do this with any two tiles on the board
-  - USE `parchment` with mural
+  - USE `papyrus` with mural
   - When you place a tile in the correct place, it locks in.
   - Note, that the design is symmetrical
   - When you successfully placed one tile, put the mirror of the tile on the opposite
@@ -775,11 +776,12 @@ Ron:
 
 ### 21.6. Library
 
-- LOOK AT all four frames and note all dates and order them by age:
-  - 05.02.1901
-  - 02.08.1902
-  - 03.11.1903
-  - 04.04.1904
+- LOOK AT all four frames and note all dates and positions on the wall and order them by age:
+  - 05.02.1901 (lower left)
+  - 02.08.1902 (lower right)
+  - 03.11.1903 (upper left)
+  - 04.04.1904 (upper right)
+  - **NOTE:** That only the day is written and spoken as a number.
 - LOOK AT globe
   - There are 3 buttons on the base of the globe
   - The days of the dates from the frames are important
@@ -897,7 +899,7 @@ Ron:
 
 - LOOK AT `poster`
 - USE `Swiss army knife - scissors` with `poster` (`photo of Robert Feynman`)
-- GIVE `can of paint` wo Sue
+- GIVE `can of paint` to Sue
 - GIVE `Swiss army knife` to Sue
 - Switch to Sue
 
@@ -964,6 +966,7 @@ Sue:
 - USE push button
 - OPEN `makeup kit` (`multicolored nail polish`)
 - USE push button
+  - Can you do me a favour?
   - Ask Jerry to paint your toes
 
 Ron:
