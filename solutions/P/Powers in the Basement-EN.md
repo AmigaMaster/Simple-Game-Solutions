@@ -1,35 +1,37 @@
 # Powers in the Basement - Walkthrough
 
-| Version  | Date       | Author                                    |
-|:--------:|------------|-------------------------------------------|
-| 0.9 beta | 18.09.2022 |  (AmigaMaster-NG@t-online.de)             |
+|  Version  | Date       | Author                                    |
+|:---------:|------------|-------------------------------------------|
+| 0.91 beta | 21.08.2023 | (AmigaMaster-NG@t-online.de)              |
 
 Get the free game at [Itch.io](https://illiteratecodegames.itch.io/powers-in-the-basement)
 
 ## Notes & History
 
+V0.91
+
+- Add easter egg official hint 3
+
+V0.9
+
+- first release
+
 ### Notes
 
-- Things to do are marked with three ?
+- Things to do are marked with three questionmarks `???`
 
-### V0.9 Work-in-progress
+### V0.91 Work-in-progress
 
 - Game is solvable
-- All 6 crosswords and jokes completed
-- All 3 relics completed (need to verify them)
-- 4 out of 5 red herrings (need to identify and verify them)
+- 6/6 crosswords and jokes completed
+- 3/3 relics completed (need to verify them)
+- 4/5 red herrings (need to identify and verify them)
 - Easter egg hints
-  1. You need to use your hands. Both hands.
+  1. You need to use your hands. Both hands - The Egg is there where you are. It’s in your hands… both hands!
   2. It requires a bit of video games pop culture.
-  3. Possibly has something to do with Masters of the Universe and we need to get the sword?
-  - Do you need to get the sword?
-  - Cheat code from the original game?
-  	- `Right, Circle, Up, Left, X` (Invulnerability)?
-    -	`Down, Right, X, Circle, Down` (Unlimited Grayskull Power)?
-    - `X, Left, Up, Circle, Down` (Unlock All Levels)?
-    - `Circle, Right, X, Up, X` (Double Damage)?
-    - Requires a Game controller as input?
-    - Konami Cheat Code? `up, up, down, down, left, right, left, right, B, A and Start`
+  3. Castlevania, Frogger, and The Simpsons
+  - Requires a Game controller as input?
+  - Konami Cheat Code? `up, up, down, down, left, right, left, right, B, A and Start`
 
 ## 1. Bedroom
 
