@@ -146,4 +146,4 @@ Maniac Mansion Mania 001: Geschwisterliebe Lösung (DEU) (PC, Win) - Unkommentie
 
 Maniac Mansion Mania 001: Geschwisterliebe (Talkie) Lösung (DEU) (PC, Win) - Unkommentiert
 
-[![Walkthrough](https://img.youtube.com/vi/qip4Xg4IQCU/0.jpg)](https://www.youtube.com/watch?v=qip4Xg4IQCU)
+[![Walkthrough](https://img.youtube.com/vi/T5P3Az7LBRQ/0.jpg)](https://www.youtube.com/watch?v=T5P3Az7LBRQ)
