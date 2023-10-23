@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------
 |   1.0   | 10.12.2021 | Amiga Master (AmigaMaster-NG@t-online.de)
 
-Download the free game from [Daniele Spadoni's Deviant Art Page](https://www.deviantart.com/spadoni-production/art/TFG-Zak-McKracken-2-aMaMatAM-854424078)
+Download the free game from [Daniele Spadoni's Archive.org Page](https://archive.org/details/tfg-zak2)
 
 Keyboard shortcuts:
 

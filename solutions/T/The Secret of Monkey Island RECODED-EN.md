@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 06.01.2022 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Download the free game from [Daniele Spadoni's Deviant Art Page](https://www.deviantart.com/spadoni-production/art/TFG-The-Secret-of-Monkey-Island-RECODED-893487909)
+Download the free game from [Daniele Spadoni's Archive.org Page](https://archive.org/details/tfg-mi-recoded)
 
 Keyboard shortcuts:
 

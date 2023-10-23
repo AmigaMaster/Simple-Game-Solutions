@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 01.07.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Download the free game from [Daniele Spadoni's Deviant Art Page](https://www.deviantart.com/spadoni-production/art/TFG-I-ll-Be-Back-to-the-Future-With-a-Terminator-879895751)
+Download the free game from [Daniele Spadoni's Archive.org Page](https://archive.org/details/tfg-ibbttfwat)
 
 Keyboard shortcuts:
 

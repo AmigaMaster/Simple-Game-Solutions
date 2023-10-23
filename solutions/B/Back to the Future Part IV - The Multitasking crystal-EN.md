@@ -5,7 +5,7 @@
 |  1.01   | 10.12.2021 | Amiga Master, fix download link
 |  1.0    | 09.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
-Download the free game from [Daniele Spadoni's Deviant Art Page](https://www.deviantart.com/spadoni-production/art/TFG-Back-to-the-Future-ALTERNATIVE-TRILOGY-844670970)
+Download the free game from [Daniele Spadoni's Archive.org Page](https://archive.org/details/tfg-bttf-iv)
 
 Keyboard shortcuts:
 

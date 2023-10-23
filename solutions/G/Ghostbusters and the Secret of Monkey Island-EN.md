@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 01.04.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Download the free game from [Daniele Spadoni's Deviant Art Page](https://www.deviantart.com/spadoni-production/art/Ghostbusters-and-the-Secret-of-Monkey-Island-857177193)
+Download the free game from [Daniele Spadoni's Archive.org Page](https://archive.org/details/tfg-ghostbusters-mi)
 
 Keyboard shortcuts:
 
