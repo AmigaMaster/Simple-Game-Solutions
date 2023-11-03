@@ -1,222 +1,286 @@
 # Powers in the Basement - Walkthrough
 
-|  Version  | Date       | Author                                    |
-|:---------:|------------|-------------------------------------------|
-| 0.91 beta | 21.08.2023 | (AmigaMaster-NG@t-online.de)              |
+| Version | Date       | Author                                    |
+|:-------:|------------|-------------------------------------------|
+|  0.95   | 10.09.2023 | (AmigaMaster-NG@t-online.de)              |
 
 Get the free game at [Itch.io](https://illiteratecodegames.itch.io/powers-in-the-basement)
 
-## Notes & History
+## 1. Notes & History
 
-V0.91
+### 1.1. V0.95
+
+- Add 5th red herring
+
+### 1.2. V0.91
 
 - Add easter egg official hint 3
 
-V0.9
+### 1.3. V0.9
 
-- first release
+- First release
 
-### Notes
-
-- Things to do are marked with three questionmarks `???`
-
-### V0.91 Work-in-progress
+### 1.4. Notes
 
 - Game is solvable
 - 6/6 crosswords and jokes completed
-- 3/3 relics completed (need to verify them)
-- 4/5 red herrings (need to identify and verify them)
-- Easter egg hints
-  1. You need to use your hands. Both hands - The Egg is there where you are. It’s in your hands… both hands!
-  2. It requires a bit of video games pop culture.
-  3. Castlevania, Frogger, and The Simpsons
-  - Requires a Game controller as input?
-  - Konami Cheat Code? `up, up, down, down, left, right, left, right, B, A and Start`
+- 3/3 relics completed (need to identify them)
+- 5/5 red herrings (need to identify them)
 
-## 1. Bedroom
+## 2. Bedroom
 
 - OPEN wardrobe
 - LOOK AT clothes
-- LOOK AT pennant
-- PICK UP socks (`sock`)
+- PICK UP sock (`sock`)
 - PICK UP clothes (`candies`)
 - USE `candies` (`mothballs`)
+- PICK UP slingshot (`slingshot`)
+- PICK UP pants (`frayed pants`)
+- PICK UP candle (`candle`)
 - PICK UP magnifying glass (`magnifying glass`)
 - PICK UP notebook (`notebook`)
 - PULL `notebook` (`sheet of paper`)
 - PICK UP pencil (`unusable pencil`)
-- PICK UP candle (`candle`)
-- PICK UP slingshot (`slingshot`)
-- USE `slingshot` on action figure
-- PICK UP pants (`frayed pants`)
+- LOOK AT all books:
+  1. Comic collection
+  2. Fairy tales book
+  3. Complicated tome
+  4. School book
+  5. Disappointing book
+  6. Math book
 - OPEN door
+- EXIT through door
 
-## 2. Entrance
+## 3. Entrance
 
 - ENTER kitchen
 
-## 3. Kitchen
+## 4. Kitchen
 
-- PICK UP beans (`beans`)
 - PICK UP cheese (`cheese`)
-- PICK UP bread (`bread`)
-  - NOTE: **Red herring**???
 - PICK UP salami (`salami`)
-- NOTE: **Red herring**???
-- PICK UP pair of bellows (`pair of bellows`)
+  - **NOTE:** Red herring???
+- PICK UP bread (`bread`)
+  - **NOTE:** Red herring???
 - PICK UP box of low-calorie energy bars (`low-calorie energy bar`)
+- PICK UP beans (`beans`)
+- LOOK AT all books:
+  7. Whimsical book
+  8. Monotonous book
+  9. Ethereal book
+  10. Regional cookbook
 - PICK UP spoon (`spoon`)
 - PICK UP pot (`pot`)
-- TALK TO cat
+- PICK UP pair of bellows (`pair of bellows`)
+- PICK UP chili peppers
+- TALK TO cat about everything
 - ENTER living room
 
-## 4. Living Room
+## 5. Living Room
 
 - TALK TO Grandma
+  - "What are you doing?"
   - Help her solving 6 crosswords:
     1. Tiny female relative: Minimum!
     2. Birds when they stick together: Velcrows!
     3. It's a burden for the knight: Baconcheeseburger!
-    4. It wipes the bottom of the sea: Mermaid!
+    4. It wipes the bottom of the sea: Mer...maid!
     5. It looks like a noodle but it's not: Impasta!
     6. The city where the best ninjas come from: Madrid!
+  - Talk about everything else
+- USE `slingshot` on bas-relief
+- USE `slingshot` on horn
+- USE `beans` on slingshot (`loaded slingshot`)
+- USE `loaded slingshot` on horn
 - USE `mothballs` on Grandpa
 - PICK UP dead flies (`flies`)
+- LOOK AT all books:
+  11. Personal development book
+  12. Gardening book
+  13. Heavy book
+  14. Fruitless book
+  15. Cryptic book
+  16. Law book
+  17. Tour guide
+  18. Sticky book
+  19. Hefty book
+  20. Grimoire
+  21. Magic book
+  22. Fitness book
+  23. Philosophy book
+  24. Technical manual
+  25. Colossal book
+  26. Self-defense manual
+  27. Old book
+  28. Science fiction book
+  29. Book for old people
+  30. Agile book
+  31. Botany book
+  32. Stinky book
+  33. Do-it-yourself book
+  34. Astronomy book
+  35. Abstruse book
+  36. Edification book
+  37. Handbook
+  38. Autocratic guide
+  39. Self-help book
+  40. Proselytism book
 
-## 5. Entrance
+## 6. Entrance
 
 - ENTER basement
 
-## 6. Basement
+## 7. Basement
 
 - PICK UP handbook between the small door and the stairs (`handbook`)
-- USE `handbook`
-  - NOTE: **Red herring**
-- PICK UP tongs (`tongs`)
+- LOOK AT `handbook` (40th book)
+- OPEN `handbook`
+  - **NOTE:** Red herring
 - PICK UP hockey stick (`hockey stick`)
-- OPEN small door
+- PICK UP tongs (`tongs`)
 - OPEN fuse-holder small door
+- LOOK AT fuse
 - PICK UP fuse
-- PICK UP file (`file`)
-- PICK UP piece of pipe (`piece of pipe`)
 - PICK UP hammer (`hammer`)
-- USE fedora hat **relict**???
-- LOOK AT fake beard **relict**???
+- PICK UP piece of pipe (`piece of pipe`)
+- PICK UP file (`file`)
+- PICK UP fedora hat
+  - **NOTE:** Relict 1/3
+- LOOK AT fake beard
+  - **NOTE:** Relict 2/3
+- LOOK AT rubbery feathered pulleyed object
+  - **NOTE:** Relict 3/3
 - USE `frayed pants` on spinning wheel
 - USE spinning wheel
 - PICK UP rubberband (`rubberband`)
 - Climb up the ladder
-- PICK UP rope (`rope`)
-- PUSH anvil
-- Climb down
-
-## 7. Entrance
-
-- USE `hammer` on nail (above the portrait left to the closed door)
-- PICK UP portrait (`portrait`)
-- NOTE: **Red herring**???
-- USE `hammer` on nail (`nail`)
-- USE `file` on `nail` (`shortened nail`)
-- NOTE: **Red herring**???
-- USE `rubberband` on `slingshot` (`upgraded slingshot`)
-- LOOK AT beans
-- USE `beans` on `upgraded slingshot` (`loaded upgraded slingshot`)
-
-## 8. Bedroom
-
-- USE `hockey stick` on old junk (`teddy bear`, `mug`) **2 times**
-  - NOTE: Teddy bear is a **Red herring**???
-
-## 9. Kitchen
-
-- USE `mug` on liquor (`mug full of liquor`)
-
-## 10. Basement
-
-- USE `mug full of liquor` on anvil
-- PUSH anvil
-- LOOK AT wooden board
-- USE `rope` on wooden board
+  - PICK UP rope (`rope`)
+  - USE `rope` on wooden board
+  - PUSH anvil
 - USE dangling rope
 - PICK UP broken board (`wood`)
 - PICK UP rope (`rope`)
-- USE `rope` on anvil
-- USE dangling rope
-- PICK UP rope (`rope`)
-- USE anvil
-- USE `candle` on torch (`lit candle`)
+
+## 8. Entrance
+
+- PICK UP portrait (`portrait`)
+- USE `hammer` on nail (`nail`)
+- **ATTENTION:** DO NOT USE the `file` on the `nail` (`shortened nail`) until you tried to put the mail into the fuse holder
+- USE `rubberband` on `slingshot` (`upgraded slingshot`)
+- USE `beans` on `upgraded slingshot` (`loaded upgraded slingshot`)
+
+## 9. Bedroom
+
+- USE `hockey stick` on under the bed (`teddy bear`, `mug`) **3 times**
+
+## 10. Kitchen
+
+- USE `mug` on liquor (`mug full of liquor`)
 
 ## 11. Living Room
 
 - TALK TO Grandma
   - "Where's the hamster?"
-- Sometimes Grandma puts her pencil on the table
-  - **QUICK:** USE `unusable pencil` on pencil (`pencil`)
-- USE `wood` on fireplace
-- USE `lit candle` on wooden board
-- USE `pencil` on fire
-- PICKUP residue of pencil
-  - NOTE: Repeat this **several times**
-- USE `tongs` on residue of pencil (`lead`)
+  - "Can you lend me your pencil?" (Only appears when you have opened the fuse holder small door)
 - USE `loaded upgraded slingshot` on horn (`Phallarhorn`, `upgraded slingshot`)
 - USE `Phallarhorn`
 - TALK TO rat
-- USE `beans` on `upgraded slingshot` (`loaded upgraded slingshot`)
 
-## 12. Kitchen
+## 12. Entrance
 
 - USE `Phallarhorn`
-- USE `tongs` on rat
-- USE `sock` on cheese (`stinking mousetrap`)
+- USE `flies` on carnivorous plant
+- PICK UP hamster (`hamster`)
 
 ## 13. Basement
 
-- USE `lead` on fuse holder
-- USE `Phallarhorn`
-- USE `stinking mousetrap` on rat
+- USE `hamster` on flywheel
+- LOOK AT hamster
+- Climb up the ladder
+  - USE `mug full of liquor` on anvil
+  - PUSH anvil
+  - USE `rope` on anvil
+- USE dangling rope
+- PICK UP rope (`rope`)
+- USE anvil
+  - PICK UP torch
+  - USE `candle` on torch (`lit candle`)
+  - USE anvil
 
-## 14. Entrance
+## 14. Basement
 
-- USE `Phallarhorn`
-- USE `flies` on carnivorous plant`
-- PICK UP hamster (`hamster`)
-
-## 15. Living Room
-
-- TALK TO Grandma
-  - "What are you doing?" **6 times**
-- USE `piece of pipe` on `pair of bellows` (`pulmonary aid`)
-- USE `pulmonary aid` on `Phallarhorn` (`Mighty Roar from Hell (TM)`)
-- USE `Mighty Roar from Hell (TM)`
-
-## 16. Basement
-
+- USE `nail` on fuse holder (nail is too long)
+- USE `file` on `nail` (`nail`)
+- USE (shortened) `nail` on fuse holder
+  - **NOTE:** Red herring
+- USE `sheet of paper` on barbecue
+- USE `lit candle` on barbecue
+- PULL `notebook` (`sheet of paper`)
 - USE `sheet of paper` on barbecue
 - USE `magnifying glass` on window
-- USE `hamster` on `flywheel`
+- PULL `notebook` (`sheet of paper`)
 - USE `pot` on barbecue
 - LOOK AT plate
-  - NOTE: Feed Code "L4 A6 E12"
+  - NOTE: Feed Code "L5 A6 E12"
 - LOOK AT energizing feed
   - NOTE: `24` units per measuring cup
-- LOOK AT lubricating feed
-  - NOTE: `10` units per measuring cup
 - LOOK AT anabolic feed
   - NOTE: `3` units per measuring cup
+- LOOK AT lubricating feed
+  - NOTE: `10` units per measuring cup
+- USE `mug` on energizing feed (`mug full of energizing feed`)
+- USE `spoon` on pot (it will fail and you need to restart)
 - USE `mug` on energizing feed (`mug full of energizing feed`) **again**
 - USE `mug full of energizing feed` on pot (24 units)
-- USE `mug` on lubricating feed (`mug full of lubricating feed`)
-- USE `mug full of lubricating feed` on pot (10 units)
 - USE `mug` on `anabolic feed` (`mug full of anabolic feed`)
 - USE `mug full of anabolic feed` on pot (3 units) **4 times which then are 12 units**
+- USE `mug` on lubricating feed (`mug full of lubricating feed`)
+- USE `mug full of lubricating feed` on pot (10 units)
+units**
 - USE `spoon` on pot
 - USE `mug` on pot (`dose of feed`)
+- USE `dose of feed` on weary hamster
 - USE `low-calorie energy bar`
 - GIVE `low-calorie energy bar` to weary hamster
 - USE `dose of feed` on weary hamster
 
-## 17. Kitchen
+## 15. Kitchen
+
+- USE `Phallarhorn`
+- TALK TO cat
+  - "Pretend you're alive! Go catch some rats!"
+
+## 16. Living Room
+
+- Sometimes Grandma puts her pencil on the table
+  - **QUICK:** PICK UP pencil (from the table)
+  - **QUICK:** USE `unusable pencil` on pencil (`pencil`)
+- TALK TO Grandma
+  - "What are you doing?" **6 times**
+- USE `tongs` on `pencil`
+- USE `wood` on fireplace
+- USE `lit candle` on wooden board
+- USE `pencil` on fire
+- PICKUP residue of pencil
+  - **NOTE:** Repeat this **4 times**
+- USE `tongs` on residue of pencil (`lead`)
+- USE `Phallarhorn`
+- USE `tongs` on rat
+- USE `sock` on cheese (`stinking mousetrap`)
+- USE `Phallarhorn`
+- USE `stinking mousetrap` on rat
+  - **NOTE:** Red herring
+- USE `piece of pipe` on `horn` (`horn with adapter`)
+- USE `pair of bellows` on `horn with adapter` (`Mighty Roar from Hell (TM)`)
+- USE `Mighty Roar from Hell (TM)`
+
+## 17. Basement
+
+- USE `lead` on fuse holder
+
+## 18. Kitchen
 
 - TALK TO Grandma
 - LOOK AT laundry basket (`crumpled T-shirt`)
 - GIVE `crumpled T-shirt` to Grandma (`chainmail T-shirt`)
+- USE `chainmail T-shirt`
