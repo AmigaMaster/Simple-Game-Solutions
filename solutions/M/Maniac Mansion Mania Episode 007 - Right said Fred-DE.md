@@ -126,3 +126,7 @@ und schauen dort in
 Maniac Mansion Mania Episode 007: Right said Fred!?! Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/ilYMGBA5Gz4/0.jpg)](https://www.youtube.com/watch?v=ilYMGBA5Gz4)
+
+Maniac Mansion Mania Episode 007: Right said Fred!?! (Talkie) Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/vvj9ilPHuNo/0.jpg)](https://www.youtube.com/watch?v=vvj9ilPHuNo)
