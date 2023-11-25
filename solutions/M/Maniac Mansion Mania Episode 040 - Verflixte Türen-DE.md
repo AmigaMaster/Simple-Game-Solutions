@@ -2,6 +2,7 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
+|  1.01   | 04.09.2023 | Amiga Master (AmigaMaster-NG@t-online.de) |
 |  1.0    | 01.02.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
@@ -121,7 +122,7 @@ im
 ### 3.1. Dach
 
 - Nähere dich dem Schornstein
-- SCHAU AN Nest (`Geldbeutel`, `Ring`)
+- SCHAU AN Nest (`Schlüsselbund`, `Geldbeutel`, `Ring`)
 - NIMM Nest (`Nest`)
 - ÖFFNE `Geldbeutel` (`20 Dollar`)
 - Verlasse das Dach nach unten
@@ -192,7 +193,8 @@ im
 
 ### 8.2. Wohnzimmer
 
-- BENUTZE `Kästchen` (aus der Garage) mit Stelle (auf dem Kamin)
+- >**EASTER EGG:**
+  >- BENUTZE `Kästchen` (aus der Garage) mit Stelle (auf dem Kamin) (schaltet einen zusätzlichen Abspann frei)
 - Wieder in die
 
 ## 9. Garage
@@ -211,3 +213,7 @@ im
 Maniac Mansion Mania Episode 040: Verflixte Türen Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/nbLcw7YO8BA/0.jpg)](https://www.youtube.com/watch?v=nbLcw7YO8BA)
+
+Maniac Mansion Mania Episode 040: Verflixte Türen (Talkie) Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/nwaBPDJdsqc/0.jpg)](https://www.youtube.com/watch?v=nwaBPDJdsqc)
