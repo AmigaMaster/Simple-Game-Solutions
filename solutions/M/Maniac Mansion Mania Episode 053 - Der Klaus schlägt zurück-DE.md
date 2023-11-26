@@ -19,7 +19,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 
 - BENUTZE `rohe Gewalt` mit Eimer
 - NIMM Buch (`Buch der 101 Streiche`)
-- Verlasse Bildschirm Richtung Westen
+- Verlasse Bildschirm Richtung Westen oder Osten
 
 ### 2.1. Klaus' Zimmer
 
@@ -60,11 +60,11 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 #### 2.5.1. Dr. Tears' Zimmer
 
 - REDE MIT Dr. Tears
-- Verlasse Zimmer und gehe zurück zum
+- Verlasse Zimmer und gehe zurück zur
 
 ### 2.6. Schule, erste Etage
 
-- Verlasse Richtung Westen
+- Verlasse Richtung Norden
 
 ### 2.7. Schule, Treppenhaus erste Etage
 
@@ -80,7 +80,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 
 ## 3. Eingang Schule
 
-- >**EASTER EGG:** Koordinaten
+- >**EASTER EGG:**
   >- SCHAU AN Flaggenmast
 - Verlasse Szene Richtung Westen
 
@@ -113,9 +113,10 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 ### 7.1. S-MART
 
 - REDE MIT Lasmiranda
+- NIMM Karton voll Luftballons (`Karton voll Luftballons`)
 - SCHAU AN Telefon
   - **Telefonnummer merken**
-    >555-8008
+    >z. B. `555-8008`
 - BENUTZE `Mobiltelefon`
   - >**EASTER EGG:** Telefonnummern
     >Probiert die Telefonnummern aus dem originalen Maniac Mansion Poster sowie einige bekannte Sonderrufnummern aus:
@@ -127,7 +128,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
     >- 555-0190
     >- 555-0900
   - Wähle die oben gemerkte Rufnummer
-    >555-8008
+    > z. B. `555-8008`
 - **Schnell, während Lasmiranda abgelenkt ist**:
   - NIMM Gummistiefel (`Gummistiefel`, `stromloses Mobiltelefon`)
 - >**EASTER EGG:** Kettensäge
@@ -150,7 +151,8 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 ### 9.2. Schule, Flur Erdgeschoss
 
 - >**EASTER EGG:** Mädchentoilette
-  >- ÖFFNE Tür zur Mädchentoilette **5 Mal**
+  >- ÖFFNE Tür zur Mädchentoilette
+  >- BETRETE Mädchentoilette **5 Mal**
 - ÖFFNE Tür zur Jungentoilette
 - Betrete Jungentoilette
 
@@ -200,7 +202,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 - REDE MIT Michael
   - 'Hast du vielleicht in letzter Zeit etwas unansehnliches fotografiert?'
   - 'Hier, ich habe deine Kamera'
-- Gehe im Erdgeschoss in die
+- Gehe zurück ins Erdgeschoss in die
 
 #### 9.7.1. Jungentoilette
 
@@ -278,12 +280,6 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 ### 10.6. Schule, Flurende erste Etage
 
 - SCHAU AN `Buch der 101 Streiche`
-- Reise zum
-
-## 11. S-MART
-
-- NIMM Karton voll Luftballons (`Karton voll Luftballons`)
-- Reise zurück zur
 
 #### 11.0.1. Schule, Jungentoilette
 
@@ -483,3 +479,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 Maniac Mansion Mania Episode 053: Der Klaus schlägt zurück Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/dRGjdiH6gPM/0.jpg)](https://www.youtube.com/watch?v=dRGjdiH6gPM)
+
+Maniac Mansion Mania Episode 053: Der Klaus schlägt zurück (Talkie) Lösung (Deu) (PC, Win) - Unkomm.
+
+[![Walkthrough](https://img.youtube.com/vi/d2uUxDWbsTg/0.jpg)](https://www.youtube.com/watch?v=d2uUxDWbsTg)
