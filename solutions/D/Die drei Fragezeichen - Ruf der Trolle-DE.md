@@ -152,7 +152,7 @@
 - SCHAU AN hinter den Transporter
   - BENUTZE Halloweenfigur `2/3 Halloweenfiguren`
   - NIMM Rad unten im Bild `2/3 Räder`
-- BETRETE die Freiluftwerkstatt hinten im Norden
+- BETRETE die Freiluftwerkstatt hinten
 
 ##### 1.1.15.1. Freiluftwerkstatt
 
@@ -241,7 +241,7 @@
 
 - BENUTZE `18/18 Bauteile` mit Werkbank
 1. BENUTZE `3/3 Räder`mit der Hinterachse **2 Mal**
-2. BENUTZE `3/3 Rahmenteile` mit vorderem Teil
+2. BENUTZE `1/1 Fahrradrahmen` mit mittlerem Teil
 3. BENUTZE `1/1 Räder` mit Vorderachse
 4. BENUTZE `Kette` mit Zahnrad
 5. BENUTZE `2/2 Pedale` mit Zahnrad **2 Mal**
@@ -313,7 +313,7 @@
 #### 2.1.1. Vor dem blauen Wohnwagen
 
 - SCHAU AN Audrey
-  - REDE MIT Audrey **3 Mal**
+  - REDE MIT Audrey **2 Mal**
 - SCHAU AN Holzpfahl
 - BETRETE Wohnwagen
 
@@ -333,10 +333,10 @@
 
 ##### 2.1.3.1. Weiß-Roter Wohnwagen
 
-- REDE MIT Audrey **5 Mal**
+- REDE MIT Elenya **5 Mal**
 - SCHAU AN Bücher im Bücherregal
-- BENUTZE `Brief mit Runen-Alphabet` mit Audrey
-- REDE MIT Audrey **3 Mal**
+- BENUTZE `Brief mit Runen-Alphabet` mit Elenya
+- REDE MIT Elenya **3 Mal**
 
 ### 2.2. Trailer Park Eingang
 
@@ -423,7 +423,7 @@
     - Level 3: O, N, N, W, N, S, W, O, N, W, N, O
     - Level 4: S, W, N, O, S, W, N, O, N, W, N, O, W, S, W, S, O, N
     - Level 5: N, O, S, W, N, O, S, O, S, N, O, S, W, W, N, O, S, O, N
-  - BENUTZE Computer **7 Mal**
+  - BENUTZE Computer **6 Mal**
   - RÄTSEL: Runen
     - Setze mit Hilfe des Runenbriefs die Buchstaben korrekt ein
     - `Huldige dem Troll, dem Koenig, dem Folk`
@@ -477,10 +477,6 @@
 
 - BENUTZE `rotes Smartphone`
   - DRÜCKE Senden Knopf oben rechts
-- SCHAU AN Tafel links neben der Treppe zum Haus hinten
-  - SCHAU AN Text
-- SCHAU AN Blumenbeet rechts neben der Treppe
-  - SCHAU AN Fußspuren
 - GEHE nach hinten rechts zum Hauseingang
 
 ### 3.2. Hof
@@ -489,10 +485,19 @@
 
 #### 3.2.1. Frauenverein, Büro
 
-- REDE MIT Eudora **3 Mal**
-  - **HINWEISE:**
-    1. Man muss die Tafel vor dem Haus angesehen haben
-    2. Vor dem Haus müssen die Fußspuren und die geklauten Blumen angesehen worden sein
+- REDE MIT Eudora
+
+### 3.3. Parkplatz
+
+- SCHAU AN Tafel links neben der Treppe zum Haus hinten
+  - SCHAU AN Text
+- SCHAU AN Blumenbeet rechts neben der Treppe
+  - SCHAU AN Fußspuren
+- GEHE nach hinten zum Hauseingang
+
+#### 3.3.1. Frauenverein, Büro
+
+- REDE MIT Eudora **2 Mal**
   - Aufgabe: `35 Kürbisse` sammeln (ohne Gesicht)
   - NIMM Kürbis unter dem Schreibtisch `1/35 Kürbisse`
 - NIMM fünf Kürbisse auf dem Boden `6/35 Kürbisse`
@@ -501,9 +506,9 @@
   - NIMM Kürbis `8/35 Kürbisse`
 - Verlasse das Büro durch die schräge Tür mittig
 
-### 3.3. Hof
+### 3.4. Hof
 
-- SCHAU AN linke Blumenkübel
+- SCHAU AN Blumenkübel
   - NIMM vier Kürbisse `12/35 Kürbisse`
 - SCHAU AN Brunnen
   - NIMM zwei Kürbisse `14/35 Kürbisse`
@@ -512,7 +517,7 @@
   - NIMM zwei Kürbisse `19/35 Kürbisse`
 - BETRETE linke Tür
 
-#### 3.3.1. Frauenverein, Küche
+#### 3.4.1. Frauenverein, Küche
 
 - NIMM vier Kürbisse vom Boden `23/35 Kürbisse`
 - SCHAU AN Rednerpult
@@ -523,7 +528,7 @@
   - NIMM Kürbis aus der Abstellkammer `26/35 Kürbisse`
 - Hinaus und zurück zum Parkplatz
 
-### 3.4. Parkplatz
+### 3.5. Parkplatz
 
 - NIMM drei Kürbisse `29/35 Kürbisse`
 - SCHAU AN Garten
@@ -533,7 +538,7 @@
 - SCHAU AN Eingang zum Gebäude links
   - NIMM zwei Kürbisse `35/35 Kürbisse`
 
-#### 3.4.1. Frauenverein, Küche
+#### 3.5.1. Frauenverein, Küche
 
 - BENUTZE `35 Kürbisse` mit Herd
 - ÖFFNE Tür zur Abstellkammer hinten links
@@ -545,7 +550,7 @@
 - ÖFFNE Tür zur Abstellkammer hinten links
   - NIMM Spendenkarte rechts auf der Kiste mit dem Staubsaugerschlauch `1/12 Spendenkarten`
 
-#### 3.4.2. Frauenverein, Büro
+#### 3.5.2. Frauenverein, Büro
 
 - NIMM Spendenkarte rechts neben dem Schreibtisch unter dem Blumentopf `2/12 Spendenkarten`
 - SCHAU AN Tür hinten rechts
@@ -567,27 +572,26 @@
 - SCHAU AN Tür ganz rechts und verlasse die Nahansicht `2/5 Telefonate`
   - Wiederholen, bis man vier Telefonate belauscht hat `4/5 Telefonate`
 
-#### 3.4.3. Frauenverein, Küche
+#### 3.5.3. Frauenverein, Küche
 
 - BENUTZE `12 Spendenkarten` und weise die passende Kiste zu
 
-#### 3.4.4. Frauenverein, Büro
+#### 3.5.4. Frauenverein, Büro
 
 - `5/5 Telefonate`
-- REDE MIT Eudora
 - BENUTZE `5 Telefonate` mit Eudora
-- REDE MIT Eudora **2 Mal**
+- REDE MIT Eudora
 - NIMM Schlüssel (`Schlüssel`)
 - SCHAU AN rechte Tür
   - BENUTZE `Schlüssel` mit Tür
   - BENUTZE Schlüssel
 
-#### 3.4.5. Frauenverein, Küche
+#### 3.5.5. Frauenverein, Küche
 
 - SCHAU AN Tür hinten links
   - NIMM Ölkännchen `Ölkännchen`
 
-#### 3.4.6. Frauenverein, Büro
+#### 3.5.6. Frauenverein, Büro
 
 - SCHAU AN rechte Tür
   - BENUTZE `Ölkännchen` mit Tür
@@ -645,7 +649,7 @@
   - BENUTZE `Rundschreiben` mit Eudora
 - VERLASSE das Gebäude
 
-### 3.5. Parkplatz
+### 3.6. Parkplatz
 
 - BENUTZE `rotes Smartphone`
 - BENUTZE Fahrrad
@@ -756,8 +760,12 @@
 ##### 4.3.1.1. Kleine Höhle
 
 - SCHAU AN Stollen
+  - SCHAU AN Lore **2 Mal**
   - BENUTZE `blaues Smartphone` mit Dunkelheit im Stollen
-  - VERLASSE die Höhle und folge den Hinweisen nach draußen
+- SCHAU AN Durchgang hinten rechts
+  - SCHAU AN untere Schienen
+  - VERLASSE den Durchgang und es sollten Stimmen zu hören sein
+- VERLASSE die Höhle und folge den Hinweisen nach draußen
 
 #### 4.3.2. Höhleneingang
 
@@ -778,33 +786,35 @@
 
 - Aufgabe: `8 Hinweise` finden
 - SCHAU AN grünen Ballon `1/8 Hinweise`
-- SCHAU AN Fahrrad rechts an der Wand
-  - DRÜCKE Auge des Hundes
-  - SCHAU AN grünen Ballon `2/8 Hinweise`
 - BETRETE den Schrottplatz
 
 #### 5.1.1. Schrottplatz Eingang
 
-- SCHAU an grünen Ballon **2 Mal** `3//8 Hinweise` & `4/8 Hinweise`
-- Versuche nach unten Richtung Zentrale zu gehen `5/8 Hinweise`
+- SCHAU an grünen Ballon **3 Mal** `2/8 Hinweise` & `3/8 Hinweise` & `4/8 Hinweise`
 
-##### 5.1.1.1. Freiluftwerkstatt
+### 5.2. Vor dem Schrottplatz
+
+- SCHAU AN Fahrrad rechts an der Wand
+  - DRÜCKE Auge des Hundes
+  - SCHAU AN grünen Ballon `5/8 Hinweise`
+
+##### 5.2.0.1. Freiluftwerkstatt
 
 - SCHAU AN Holzfüße
-- REDE MIT Onkel Titus **2 Mal** `6/8 Hinweise`
+- REDE MIT Onkel Titus **4 Mal** `6/8 Hinweise`
 
-#### 5.1.2. Vor dem Haus
+#### 5.2.1. Vor dem Haus
 
 - REDE mit Tante Mathilda **2 Mal** `7/8 Hinweise` & `8/8 Hinweise`
 - BENUTZE `8 Hinweise` mit Tante Mathilda
 
-#### 5.1.3. Schrottplatz Eingang
+#### 5.2.2. Schrottplatz Eingang
 
-##### 5.1.3.1. Freiluftwerkstatt
+##### 5.2.2.1. Freiluftwerkstatt
 
 - BENUTZE `8 Hinweise` mit Onkel Titus
 
-#### 5.1.4. Vor dem Haus
+#### 5.2.3. Vor dem Haus
 
 - REDE MIT Page
   - Aufgabe: `14 Fragen`
@@ -823,20 +833,20 @@
   13. Vater
   14. Botschaften `14/14 Fragen`
 
-#### 5.1.5. Schrottplatz Eingang
+#### 5.2.4. Schrottplatz Eingang
 
-##### 5.1.5.1. Freiluftwerkstatt
+##### 5.2.4.1. Freiluftwerkstatt
 
 - BENUTZE `14 Fragen` mit Onkel Titus
 - VERLASSE den Schrottplatz
 
-### 5.2. Vor dem Schrottplatz
+### 5.3. Vor dem Schrottplatz
 
 - BETRETE den Schrottplatz
 
-#### 5.2.1. Schrottplatz Eingang
+#### 5.3.1. Schrottplatz Eingang
 
-##### 5.2.1.1. Freiluftwerkstatt
+##### 5.3.1.1. Freiluftwerkstatt
 
 - Aufgabe: `4 Teile für die Schutzausrüstungen`
 - Aufgabe: `3 Atemschutzgeräte`
@@ -852,7 +862,7 @@
 - NIMM Maske links hinten aus dem Regal `2/3 Atemschutzgeräte`
 - NIMM zwei Schlüpfschuhe links hinten aus dem Regal `4/6 Schlüpfschuhe`
 
-#### 5.2.2. Schrottplatz Eingang
+#### 5.3.2. Schrottplatz Eingang
 
 - NIMM einen Schlüpfschuh über dem rechten Außenspiegel des Transporters `5/6 Schlüpfschuhe`
 - NIMM einen Handschuh aus dem Kassenhäuschen `5/6 Handschuhe`
@@ -863,95 +873,97 @@
   - ÖFFNE Schranktür unten links
   - NIMM Kittel `3/3 Kittel` & `3/4 Teile für die Schutzausrüstung`
 
-#### 5.2.3. Vor dem Haus
+#### 5.3.3. Vor dem Haus
 
 - NIMM Handschuh von der Veranda ganz rechts `3/3 Handschuhe` & `4/4 Teile für die Schutzausrüstung`
 
-#### 5.2.4. Schrottplatz Eingang
+#### 5.3.4. Schrottplatz Eingang
 
-##### 5.2.4.1. Freiluftwerkstatt
+##### 5.3.4.1. Freiluftwerkstatt
 
 - BENUTZE `4/4 Teile für die Schutzausrüstung` mit Bodenluke
 - BENUTZE Holzplatte
 - ÖFFNE Gitter
 
-#### 5.2.5. Zentrale
+#### 5.3.5. Zentrale
 
-##### 5.2.5.1. Vorderer Bereich, Küche
+##### 5.3.5.1. Vorderer Bereich, Küche
 
 - BENUTZE Dachluke **2 Mal**
 
-##### 5.2.5.2. Vorderer Bereich, Büro
+##### 5.3.5.2. Vorderer Bereich, Büro
 
 - Aufgabe: `9 Computerteile`
-- NIMM PC-Gehäuse `1/9 Computerteilen`
-- NIMM Monitor `2/9 Computerteilen`
-- NIMM Tastatur `3/9 Computerteilen`
-- NIMM Maus `4/9 Computerteilen`
-- NIMM WLAN Router `5/9 Computerteilen`
-- NIMM Steckdosenleiste `6/9 Computerteilen`
-- NIMM Drucker `7/9 Computerteilen`
-- ÖFFNE rechten Schrank
-- NIMM Abdeckung `8/9 Computerteilen`
-- BENUTZE Stuhl
-- NIMM Kabeltrommel `9/9 Computerteilen`
+- SCHAU AN Schreibtisch
+  - NIMM PC-Gehäuse `1/9 Computerteilen`
+  - NIMM Monitor `2/9 Computerteilen`
+  - NIMM Tastatur `3/9 Computerteilen`
+  - NIMM Maus `4/9 Computerteilen`
+  - NIMM WLAN Router `5/9 Computerteilen`
+  - NIMM Steckdosenleiste `6/9 Computerteilen`
+  - ÖFFNE rechten Schrank
+  - NIMM Abdeckung `7/9 Computerteilen`
+  - BENUTZE Stuhl
+  - NIMM Kabeltrommel `8/9 Computerteilen`
+- NIMM Drucker `9/9 Computerteilen`
 - NIMM Akten vom Boden **6 Mal** (`Ausweis`)
 - VERLASSE die Zentrale über die Bodenluke
 
-### 5.3. Vor dem Schrottplatz
+### 5.4. Vor dem Schrottplatz
 
 - BENUTZE `9 Computerteile` mit Rikscha
 - BENUTZE Rikscha
 - **MINISPIEL:** Rikscha fahren
   - Weiche einfach den Hindernissen aus
 
-### 5.4. Trailer Park Eingang
+### 5.5. Trailer Park Eingang
 
 - REDE MIT Audrey
 - BENUTZE `Notiz` mit Audrey
 - BENUTZE `Rundschreiben` mit Audrey
 - BENUTZE `Ausweis` mit Audrey
+- BETRETE den Weiß-Rot-Weißen Wohnwagen
 - BENUTZE Rikscha (`9 Computerteile`)
-- BETRETE den Weiß-Rot-Weißen Wohnwagen **2 Mal**
+- BETRETE den Weiß-Rot-Weißen Wohnwagen
 
-#### 5.4.1. Dreckiger Wohnwagen, vorderer Bereich
+#### 5.5.1. Dreckiger Wohnwagen, vorderer Bereich
 
 - BENUTZE `9 Computerteile` mit Tisch (`Kabeltrommel`)
 - GEHE in die Abstellkammer hinten im Wohnwagen
 
-#### 5.4.2. Dreckiger Wohnwagen, Abstellkammer
+#### 5.5.2. Dreckiger Wohnwagen, Abstellkammer
 
 - BENUTZE `Kabeltrommel` mit Steckdose
 
-#### 5.4.3. Dreckiger Wohnwagen, vorderer Bereich
+#### 5.5.3. Dreckiger Wohnwagen, vorderer Bereich
 
 - BENUTZE Stecker
 - BENUTZE Computer
 - SCHAU AN Monitor
 
-### 5.5. Trailer Park Eingang
+### 5.6. Trailer Park Eingang
 
 - REDE MIT Audrey
 - Aufgabe: `3 Passworthinweise`
 - GEHE nach links zum Uhrgarten
 
-#### 5.5.1. Uhrgarten
+#### 5.6.1. Uhrgarten
 
 - NIMM Papier aus dem Kürbis in der Mitte des Beets `1/3 Passworthinweise`
 
-#### 5.5.2. Vor dem Cafe
+#### 5.6.2. Vor dem Cafe
 
 - NIMM Papier über dem Route 66 Schild `2/3 Passworthinweise`
 
-#### 5.5.3. Duschen
+#### 5.6.3. Duschen
 
 - NIMM Schild links neben dem Tapir `3/3 Passworthinweise` & `Passwort`
 
-### 5.6. Trailer Park Eingang
+### 5.7. Trailer Park Eingang
 
 - BENUTZE `Passwort` mit Audrey
 
-#### 5.6.1. Dreckiger Wohnwagen, vorderer Bereich
+#### 5.7.1. Dreckiger Wohnwagen, vorderer Bereich
 
 - BENUTZE Schreibtisch
   - BENUTZE PC
@@ -959,12 +971,12 @@
   - BENUTZE Monitor
 - VERLASSE den Wohnwagen
 
-### 5.7. Trailer Park Eingang
+### 5.8. Trailer Park Eingang
 
 - REDE MIT Audrey **2 Mal**
 - BETRETE den Wohnwagen unten rechts
 
-#### 5.7.1. Dreckiger Wohnwagen, vorderer Bereich
+#### 5.8.1. Dreckiger Wohnwagen, vorderer Bereich
 
 - BENUTZE Schreibtisch
   - BENUTZE PC
@@ -989,7 +1001,7 @@
 - BENUTZE Monitor **7 Mal**
 - BENUTZE PC **4 Mal** (`Verpackter PC`)
 
-### 5.8. Trailer Park Eingang
+### 5.9. Trailer Park Eingang
 
 - BENUTZE `Verpackter PC` mit Rikscha
 - BENUTZE Rikscha
@@ -1028,11 +1040,11 @@
 #### 6.2.1. Einfahrt
 
 - Aufgabe: `10 Hinweise` finden
-- BENUTZE blaue Regentonne **2 Mal** (`Deckel`)
+- GEHE zur Garage (funktioniert noch nicht)
 - SCHAU AN Fußabdrücke `1/10 Hinweise`
 - SCHAU AN Auto `2/10 Hinweise`
 - SCHAU AN die Kurven der Einfahrt `3/10 Hinweise`
-- Versuche in Richtung Haus zu gehen
+- BENUTZE blaue Regentonne **2 Mal** (`Deckel`)
 - BENUTZE `Deckel` mit Kanone
   - **MINISPIEL:** Wehre die fliegenden Eier ab
   - SCHAU AN Gartentruhe `4/10 Hinweise`
@@ -1103,6 +1115,8 @@
   - ÖFFNE Tür im Hintergrund
   - NIMM Smartphone vom Boden (`Graues Smartphone`)
   - NIMM Schürhaken von der Werkzeughalterung (`Schürhaken`)
+- GEHE nach unten
+  - BENUTZE Tür
 - GEHE nach oben
 
 #### 6.2.6. Oberer Flur
@@ -1111,11 +1125,23 @@
   - ÖFFNE rechten Schrank
   - BENUTZE Kleidung
   - VERLASSE Schlafzimmer
+- BENUTZE mittlere Tür
 - BENUTZE linke Tür
   - Durchsuche das Kinderzimmer
   - VERLASSE das Kinderzimmer
+    **HINWEIS:** Jetzt müssen stimmen zu hören sein.
 - BENUTZE Deckel des Aquariums
 - BENUTZE Dachluke
+
+#### 6.2.7. Wohnzimmer
+
+- SCHAU AN Couch
+  - ÖFFNE Tür im Hintergrund
+  - NIMM Smartphone vom Boden (`Graues Smartphone`)
+  - NIMM Schürhaken von der Werkzeughalterung (`Schürhaken`)
+
+#### 6.2.8. Oberer Flur
+
 - BENUTZE `Schürhaken` mit Dachluke
 - BETRETE Dachboden
   - SCHAU AN Kiste mit Indiana Jones Zubehör
@@ -1123,7 +1149,7 @@
   - BENUTZE `graues Smartphone` mit Zwillinge
   - REDE MIT Zwillinge **2 Mal** (`Schlüssel`)
 
-#### 6.2.7. Wohnzimmer
+#### 6.2.9. Wohnzimmer
 
 - GEHE nach unten
   - BENUTZE `Schlüssel` mit Kellertür
@@ -1132,13 +1158,13 @@
   - VERLASSE die Nahansicht
 - VERLASSE das Haus
 
-#### 6.2.8. Einfahrt
+#### 6.2.10. Einfahrt
 
 - REDE MIT Cotta **2 Mal**
-- SCHAU AN Auto im Hintergrund `4/8 Hinweise`
+- SCHAU AN Personen im Garten `4/8 Hinweise`
 - REDE MIT Cotta
 
-#### 6.2.9. Wohnzimmer
+#### 6.2.11. Wohnzimmer
 
 - SCHAU AN Cotta
   - REDE MIT Elenya `5/8 Hinweise`
@@ -1168,7 +1194,7 @@
       4. Beine: Ohne
 - VERLASSE das Haus
 
-#### 6.2.10. Einfahrt
+#### 6.2.12. Einfahrt
 
 - VERLASSE das Gelände durch die Einfahrt
 
@@ -1200,33 +1226,39 @@
 
 ##### 7.2.1.1. Kleine Höhle
 
-- NIMM Sicherung von den Zwergen auf der rechten Seite `1/7 Sicherungen`
 - SCHAU AN linken Gang
-  - NIMM Sicherung vom Boden neben dem Hocker `2/7 Sicherungen`
-  - NIMM Sicherung vom Steinofen (links neben dem Topf auf dem Ofen) `3/7 Sicherungen`
 - SCHAU AN rechten Gang
-  - NIMM Sicherung vom Boden auf der linken Seite `4/7 Sicherungen`
 
 ### 7.3. Trollbrücke
 
-- NIMM Sicherung vom Stein unterhalb der orangenen Fässer `5/7 Sicherungen`
+- NIMM Sicherung vom Stein unterhalb der orangenen Fässer `1/7 Sicherungen`
 - SCHAU AN Trollhand auf dem Auto
-  - NIMM Sicherung `6/7 Sicherungen`
+  - NIMM Sicherung `2/7 Sicherungen`
 - SCHAU AN Trollhand auf dem Boden
-  - NIMM Sicherung bei den Pilzen (`7/7 Sicherungen`)
+  - NIMM Sicherung bei den Pilzen (`3/7 Sicherungen`)
 
 #### 7.3.1. Höhleneingang
 
 - SCHAU AN Eisenbahn
   - SCHAU AN Kuh. **HINWEIS:** Es fehlen jetzt beide Hörner.
   - ÖFFNE Stromkasten
-  - Aufgabe `1 Sicherung` finden `7/8 Sicherungen`
+  - Aufgabe `1 Sicherung` finden `4/8 Sicherungen`
+
+##### 7.3.1.1. Kleine Höhle
+
+- NIMM Sicherung von den Zwergen auf der rechten Seite `5/8 Sicherungen`
+- SCHAU AN linken Gang
+  - NIMM Sicherung vom Boden neben dem Hocker `6/8 Sicherungen`
+  - NIMM Sicherung vom Steinofen (links neben dem Topf auf dem Ofen) `7/8 Sicherungen`
+- SCHAU AN rechten Gang
+  - NIMM Sicherung vom Boden auf der linken Seite `4/8 Sicherungen`
 
 ### 7.4. Trollbrücke
 
 - SCHAU AN Mann
   - REDE MIT Mann **3 Mal** (`Korb`)
   - Aufgabe: `15 Steinpilze` sammeln
+  - SCHAU AN Korb **2 Mal**
   - VERLASSE die Nahansicht
 - NIMM Pilz rechts unten mittig zwischen den vier Steinen `1/15 Steinpilze`
 - SCHAU AN Trollhand auf dem Auto
@@ -1473,9 +1505,3 @@
   | Titus     | Alle, die an dieser Trollfabrik ... | Zustimmen
 
 --------------------------------------------------------------------------------
-
-## 9. Video Walkthrough
-
-
-
-[![Walkthrough](https://img.youtube.com/vi/TwKLyfs7ss/0.jpg)](https://www.youtube.com/watch?v=)
