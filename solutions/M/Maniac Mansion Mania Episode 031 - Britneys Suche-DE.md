@@ -2,6 +2,7 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
+|  1.01   | 12.12.2023 | Amiga Master (AmigaMaster-NG@t-online.de) |
 |  1.0    | 25.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
@@ -90,38 +91,61 @@ und werfen einen Blick in
 - ÖFFNE Truhe
 - SCHAU AN Truhe (`Schraubstock`, `Schraubzwinge`)
 - BENUTZE `Umschlag mit Salz` mit `Brausedose` (`Säure im Glas`)
-- Gehe zum
+- Für die Talkieversion mit dem schweren Schwierigkeitsgrad gibt es jetzt ein weiteres Rätsel:
 
-### 3.1. Flur Obergeschoss
+--------------------------------------------------------------------------------
+
+## 4. Keller
+
+- BENUTZE `Schraubstock` mit Werkbank
+- BENUTZE `Schraubzwinge` mit Werkbank
+- BENUTZE `Draht (ungerichtet)` mit Schraubstock
+- BENUTZE `Zange` mit Schraubstock (`Draht (gerichtet)`)
+- BENUTZE `Draht (gerichtet)` mit Schraubstock
+- NIMM Schraubstock (`Dietrich`)
+
+--------------------------------------------------------------------------------
+
+### 4.1. Flur Obergeschoss
 
 - BENUTZE `Säure im Glas` mit rechter Tür
 - ÖFFNE rechte Tür
 - Verlasse Flur durch rechte Tür
 
-#### 3.1.1. Bernard's Zimmer
+#### 4.1.1. Bernard's Zimmer
 
-- BENUTZE `Säure im Glas` mit rechter Schublade
+--------------------------------------------------------------------------------
+- Für Originalversion oder Talkieversion mit normalem Schwierigkeitsgrad:
+  - BENUTZE `Säure im Glas` mit rechter Schublade
+--------------------------------------------------------------------------------
+- Für Talkieversion mit schwerem Schwierigkeitsgrad:
+  - BENUTZE `Dietrich` mit rechter Schublade
+--------------------------------------------------------------------------------
 - ÖFFNE rechte Schublade
 - SCHAU AN rechte Schublade (`Lukenöffner`)
 - Verlasse Zimmer
 
-### 3.2. Flur Obergeschoss
+### 4.2. Flur Obergeschoss
 
 - BENUTZE `Lukenöffner` mit Luke
 - Verlasse Flur durch Luke
 
-#### 3.2.1. Dachboden
+#### 4.2.1. Dachboden
 
 - ÖFFNE Schachtel
 
-#### 3.2.2. Britney's Zimmer
+#### 4.2.2. Britney's Zimmer
 
 - ÖFFNE Kleiner Schrank
 
 --------------------------------------------------------------------------------
 
-## 4. Video Walkthrough
+## 5. Video Walkthrough
 
 Maniac Mansion Mania Episode 031: Britneys Suche Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/JRelpE4xCNI/0.jpg)](https://www.youtube.com/watch?v=JRelpE4xCNI)
+
+Maniac Mansion Mania Episode 031: Britneys Suche (Talkie) Lösung (Deutsch) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/3QpPTXwFypE/0.jpg)](https://www.youtube.com/watch?v=3QpPTXwFypE)
