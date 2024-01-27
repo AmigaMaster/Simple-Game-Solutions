@@ -96,7 +96,7 @@ Meteorhead ist ein Spinoff der Maniac Mansion Mania Reihe, in der Bernard einen 
 - >EASTER EGG:
   >- links zur Klotür gehen
 - BENUTZE `L-Kraft` mit Pflanzendünger (`Pflanzendünger`)
-- `Pflanzendünger` mit Bohnenranke
+- BENUTZE `Pflanzendünger` mit Bohnenranke
 
 ## 13. Weltraum
 
