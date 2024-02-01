@@ -6,28 +6,28 @@
 
 Get the free game at [Itch.io](https://illiteratecodegames.itch.io/powers-in-the-basement)
 
-## 1. Notes & History
+## 1. History
 
-### 1.1. V0.95
+V0.95
 
 - Add 5th red herring
 
-### 1.2. V0.91
+V0.91
 
 - Add easter egg official hint 3
 
-### 1.3. V0.9
+V0.9
 
 - First release
 
-### 1.4. Notes
+## 2. Notes
 
 - Game is solvable
 - 6/6 crosswords and jokes completed
 - 3/3 relics completed (need to identify them)
 - 5/5 red herrings (need to identify them)
 
-## 2. Bedroom
+## 3. Bedroom
 
 - OPEN wardrobe
 - LOOK AT clothes
@@ -51,11 +51,11 @@ Get the free game at [Itch.io](https://illiteratecodegames.itch.io/powers-in-the
 - OPEN door
 - EXIT through door
 
-## 3. Entrance
+## 4. Entrance
 
 - ENTER kitchen
 
-## 4. Kitchen
+## 5. Kitchen
 
 - PICK UP cheese (`cheese`)
 - PICK UP salami (`salami`)
@@ -76,7 +76,7 @@ Get the free game at [Itch.io](https://illiteratecodegames.itch.io/powers-in-the
 - TALK TO cat about everything
 - ENTER living room
 
-## 5. Living Room
+## 6. Living Room
 
 - TALK TO Grandma
   - "What are you doing?"
@@ -126,11 +126,11 @@ Get the free game at [Itch.io](https://illiteratecodegames.itch.io/powers-in-the
   39. Self-help book
   40. Proselytism book
 
-## 6. Entrance
+## 7. Entrance
 
 - ENTER basement
 
-## 7. Basement
+## 8. Basement
 
 - PICK UP handbook between the small door and the stairs (`handbook`)
 - LOOK AT `handbook` (40th book)
@@ -161,7 +161,7 @@ Get the free game at [Itch.io](https://illiteratecodegames.itch.io/powers-in-the
 - PICK UP broken board (`wood`)
 - PICK UP rope (`rope`)
 
-## 8. Entrance
+## 9. Entrance
 
 - PICK UP portrait (`portrait`)
 - USE `hammer` on nail (`nail`)
@@ -169,15 +169,15 @@ Get the free game at [Itch.io](https://illiteratecodegames.itch.io/powers-in-the
 - USE `rubberband` on `slingshot` (`upgraded slingshot`)
 - USE `beans` on `upgraded slingshot` (`loaded upgraded slingshot`)
 
-## 9. Bedroom
+## 10. Bedroom
 
 - USE `hockey stick` on under the bed (`teddy bear`, `mug`) **3 times**
 
-## 10. Kitchen
+## 11. Kitchen
 
 - USE `mug` on liquor (`mug full of liquor`)
 
-## 11. Living Room
+## 12. Living Room
 
 - TALK TO Grandma
   - "Where's the hamster?"
@@ -186,13 +186,13 @@ Get the free game at [Itch.io](https://illiteratecodegames.itch.io/powers-in-the
 - USE `Phallarhorn`
 - TALK TO rat
 
-## 12. Entrance
+## 13. Entrance
 
 - USE `Phallarhorn`
 - USE `flies` on carnivorous plant
 - PICK UP hamster (`hamster`)
 
-## 13. Basement
+## 14. Basement
 
 - USE `hamster` on flywheel
 - LOOK AT hamster
@@ -207,7 +207,7 @@ Get the free game at [Itch.io](https://illiteratecodegames.itch.io/powers-in-the
   - USE `candle` on torch (`lit candle`)
   - USE anvil
 
-## 14. Basement
+## 15. Basement
 
 - USE `nail` on fuse holder (nail is too long)
 - USE `file` on `nail` (`nail`)
@@ -244,13 +244,13 @@ units**
 - GIVE `low-calorie energy bar` to weary hamster
 - USE `dose of feed` on weary hamster
 
-## 15. Kitchen
+## 16. Kitchen
 
 - USE `Phallarhorn`
 - TALK TO cat
   - "Pretend you're alive! Go catch some rats!"
 
-## 16. Living Room
+## 17. Living Room
 
 - Sometimes Grandma puts her pencil on the table
   - **QUICK:** PICK UP pencil (from the table)
@@ -274,11 +274,11 @@ units**
 - USE `pair of bellows` on `horn with adapter` (`Mighty Roar from Hell (TM)`)
 - USE `Mighty Roar from Hell (TM)`
 
-## 17. Basement
+## 18. Basement
 
 - USE `lead` on fuse holder
 
-## 18. Kitchen
+## 19. Kitchen
 
 - TALK TO Grandma
 - LOOK AT laundry basket (`crumpled T-shirt`)
