@@ -14,7 +14,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 
 Es gibt Aktionen im Spiel, die sind nur mit einem der drei Charaktere möglich. Die Inventargegenstände lassen sich jederzeit und auch ohne das die Charaktere sich gegenüberstehen mittels der Portraits untereinander tauschen.
 
-Jeder der drei Charaktere hat ein besonderes Verb (PRÜFE, FLIRTE. TRETE), welche an bestimmten Stellen benötigt werden. Zudem verhalten sie sich unterschiedliche, wenn man gewisse Aktionen ausführt und auch untereinander ausprobiert. Insbesondere das PRÜFE Verb von Dr. Fred gibt zusätzliche Hinweise zu Gegenständen.
+Jeder der drei Charaktere hat ein besonderes Verb (PRÜFE, FLIRTE. TRETE), welche an bestimmten Stellen benötigt werden. Zudem verhalten sie sich unterschiedlich, wenn man gewisse Aktionen ausführt und auch untereinander ausprobiert. Insbesondere das PRÜFE Verb von Dr. Fred gibt zusätzliche Hinweise zu Gegenständen.
 
 Grundsätzlich gibt es viele Kommentare und Anspielungen, wenn man Familie Edison mit ihren unterschiedlichen Aktionen auf die Spielwelt loslässt. Es lohnt sich unbedingt *ohne* Lösung zu spielen, um möglichst viel von diesen versteckten Dialogen mitzubekommen.
 
