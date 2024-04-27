@@ -109,7 +109,7 @@ Meteorhead ist ein Spinoff der Maniac Mansion Mania Reihe, in der Bernard einen 
 ## 16. Poseidons Marzipanbaum
 
 - >EASTER EGGS:
-  >- DRÜCKE Erinnere dich-Beere **so lange wiederholen, bis man keine Lust mehr hat - es gibt 27 verschiedene Erinnerungen
+  >- DRÜCKE Erinnere dich-Beere **so lange wiederholen, bis man keine Lust mehr hat** - es gibt 27 verschiedene Erinnerungen
   >- A-KRAFT Spionin
 - REDE MIT Vogelmama Man
 - BENUTZE `L-Kraft` mit Marzipankartoffelbaum

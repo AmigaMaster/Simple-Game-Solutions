@@ -51,3 +51,7 @@ Die Mini Masterpieces sind kleine, auf maximal 10 Aktionen beschränkte Folgen o
 Maniac Mansion Mania Mini Masterpiece #01: Eds Paket Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/oKvDzpt0gGw/0.jpg)](https://www.youtube.com/watch?v=oKvDzpt0gGw)
+
+Maniac Mansion Mania Mini Masterpiece #01: Eds Paket (Talkie) Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/ISGQ2_KrvT8/0.jpg)](https://www.youtube.com/watch?v=ISGQ2_KrvT8)
