@@ -12,9 +12,9 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 
 ## 1. Vorwort
 
-Es gibt Aktionen im Spiel, die sind nur mit einem der drei Charaktere möglich. Die Inventargegenstände lassen sich jederzeit und auch ohne das die Charaktere sich gegenüberstehen mittels der Portraits untereinander tauschen.
+Es gibt Aktionen im Spiel, die sind nur mit einem der drei Charaktere möglich. Die Inventargegenstände lassen sich jederzeit und auch ohne dass die Charaktere sich gegenüberstehen, mittels der Portraits untereinander tauschen.
 
-Jeder der drei Charaktere hat ein besonderes Verb (PRÜFE, FLIRTE. TRETE), welche an bestimmten Stellen benötigt werden. Zudem verhalten sie sich unterschiedlich, wenn man gewisse Aktionen ausführt und auch untereinander ausprobiert. Insbesondere das PRÜFE Verb von Dr. Fred gibt zusätzliche Hinweise zu Gegenständen.
+Jeder der drei Charaktere hat ein besonderes Verb PRÜFE, FLIRTE, TRETE, welche an bestimmten Stellen benötigt werden. Zudem verhalten sie sich unterschiedlich, wenn man gewisse Aktionen ausführt und auch untereinander ausprobiert. Insbesondere das PRÜFE Verb von Dr. Fred gibt zusätzliche Hinweise zu Gegenständen.
 
 Grundsätzlich gibt es viele Kommentare und Anspielungen, wenn man Familie Edison mit ihren unterschiedlichen Aktionen auf die Spielwelt loslässt. Es lohnt sich unbedingt *ohne* Lösung zu spielen, um möglichst viel von diesen versteckten Dialogen mitzubekommen.
 
@@ -94,7 +94,7 @@ Dr. Fred:
 
 ## 10. Vor dem Geldspeicher
 
-- BENUTZE `Koffer mi Falschgeld` mit Albert
+- BENUTZE `Koffer mit Falschgeld` mit Albert
 - NIMM Objekt im Gras (`Schraubenzieher`)
 - SCHAU AN `Boulevard-Zeitung`
   - BENUTZE `I <3 Ed Aufkleber` mit Wink Smiley Artikel
@@ -252,6 +252,7 @@ Dr. Fred:
 Weird Ed:
 
 - NIMM Honig (`Honigreste im Glas`)
+- GIB `Honigreste im Glas` an Dr. Fred
 - WECHSEL ZU Dr. Fred
 
 Dr. Fred:
@@ -273,12 +274,12 @@ Dr. Fred:
 - BENUTZE `Transformator` mit Mikrowelle
 - NIMM Mikrowelle
 - ÖFFNE Klappe (unter dem Kühlschrank)
-- Falls Es in der Küche steht:
+- Falls Ed in der Küche steht:
   - WECHSEL ZU Weird Ed
   - WECHSEL ZU Dr. Fred
 - NIMM Käse (`Erdbeerkäse`)
 - BENUTZE `Erdbeerkäse` mit Mikrowelle
-- Falls Weird Ed *nicht* in der Küche ist, hole ihn in die Küche
+- Falls Ed *nicht* in der Küche ist, hole ihn in die Küche
 - SCHLIESSE Mikrowelle
 - BENUTZE Mikrowelle
 - ÖFFNE Mikrowelle
@@ -320,7 +321,7 @@ Dr. Fred:
   - **HINWEIS:** Die Toilette kann Dr. Fred nur benutzen, wenn der zuvor den `Kaviar` gegessen hat
 - BENUTZE `Dose Pepsi` mit Toilette
 - BENUTZE `Pömpel` mit Toilette
-- BENUTZE HIghtech-Spülung
+- BENUTZE Hightech-Spülung
 - BENUTZE echte Ming-Vase mit Toilette
 - Verlasse Toilette
 
@@ -352,14 +353,14 @@ Dr. Fred:
 - ÖFFNE (linke) Tür
 - Verlasse Flur durch (linke) Tür
 
-#### 11.4.1. Edernezer's Büro
+#### 11.4.1. Edenezer's Büro
 
 - REDE über alles
 - WECHSEL ZU Edna
 
 Edna:
 
-- REDE MIT Onkel Edernezer
+- REDE MIT Onkel Edenezer
   - "Kann ich dir vielleicht etwas gutes tun?"
   - "Du bist doch bestimmt hungrig."
   - "In deinem Kühlschrank ist aber nur so Bio-Zeugs."
@@ -371,7 +372,6 @@ Edna:
     >**HINWEIS:**
     >Es gibt zwei Rezepte die sich in einer Zutat unterscheiden und einen leicht anderen Lösungsweg benötigen.  
     >Das eine Rezept wird mit `Knoblauch` abgeschmeckt, das andere mit `Salz`.  
-
     Die restlichen Zutaten sind identisch:
     - 250g Weiße Bohnen
     - 250g rote Bohnen
@@ -485,7 +485,7 @@ Weird Ed:
 
 #### 13.0.2. Bibliothek
 
-- BENUTZE `Joint` mit chuck die Pflanze
+- BENUTZE `Joint` mit Chuck die Pflanze
 - SCHAU AN geöffnete Klappe (`Murmeln`)
 - WECHSEL ZU Dr. Fred
 
@@ -561,7 +561,7 @@ Weird Ed:
 
 - BENUTZE `Entenangel` mit Dachfenster
 
-#### 14.1.1. Edernezer's Büro
+#### 14.1.1. Edenezer's Büro
 
 - >**INFO:**  
    Ziel ist es mit der Ente die goldene Münze vom Sockel zu stoßen. Hierzu das Seil mittels LASSE Angel ab bis kurz über den Boden absenken. Das dann benötigt Verb ist bei jedem Versuch anders. Hier klappte es in der Regel mit TANZE ZU Goldtaler, wenn das Seil im Linksschwung den tiefsten Punkt erreicht hat.
@@ -576,10 +576,10 @@ Dr. Fred:
 - ÖFFNE (linke) Tür
 - Verlasse Flur durch (linke) Tür
 
-#### 14.2.1. Edernezer's Büro
+#### 14.2.1. Edenezer's Büro
 
 - ÖFFNE Lüftungsgitter
-- Verlasse Das Büro schnell wieder
+- Verlasse das Büro schnell wieder
 - WECHSEL ZU Edna
 
 Edna:
@@ -610,7 +610,7 @@ Edna:
 
 Dr. Fred:
 
-#### 15.0.4. Edernezer's Büro
+#### 15.0.4. Edenezer's Büro
 
 - SCHAU AN Abdruck (im Schreibtisch)
 - NIMM Goldtaler (`Goldtaler`)
@@ -645,29 +645,34 @@ Ab hier ist es möglich das Spiel mit jeder der drei Charaktere zu beenden. Die 
 
 - GEHE ins
 
-#### 16.1.1. Schlafzimmer
+#### 16.1.1. Geldspeicher Flur zum Tresor
+
+- BENUTZE `Schlüssel` mit Schlüsselloch
+- BETRETE Tresortür und Verlasse den Tresorraum direkt wieder
+
+#### 16.1.2. Schlafzimmer
 
 - NIMM Leiter (`Leiter`)
 - GEHE in den
 
-#### 16.1.2. Im Tresor
+#### 16.1.3. Im Tresor
 
 - BENUTZE `Leiter` mit sensationelle Menge Geld
 - BENUTZE Leiter
 - BENUTZE `Entenangel` mit Leiter
 
-#### 16.1.3. Bushaltestelle
+#### 16.1.4. Bushaltestelle
 
 - Verlasse Richtung Osten
 
-#### 16.1.4. Brücke
+#### 16.1.5. Brücke
 
 - NIMM Anhängebolzen (`Haltebolzen`)
 - NIMM Kabel
 - Gehe nach Osten zu den Panzerknackern bis die Cutscene abgespielt wird
 - Gehe zurück zur
 
-#### 16.1.5. Bushaltestelle
+#### 16.1.6. Bushaltestelle
 
 - NIMM Plakat (`Streifen Klebeband`)
 - SCHAU AN Abfallbehälter (`Schere`)
@@ -675,7 +680,7 @@ Ab hier ist es möglich das Spiel mit jeder der drei Charaktere zu beenden. Die 
 - BENUTZE `Maschendraht` mit `Haltebolzen` (`Transformator`)
 - Verlasse Bushaltestelle durch Maschendrahtzaun
 
-#### 16.1.6. Tümpel
+#### 16.1.7. Tümpel
 
 - PRÜFE verdreckter Tümpel
 - BENUTZE `Angel` mit verdreckter Tümpel (`Mikrowelle`)
@@ -683,7 +688,7 @@ Ab hier ist es möglich das Spiel mit jeder der drei Charaktere zu beenden. Die 
   >- BENUTZE `Angel` mit verdreckter Tümpel **insgesamt 5 Mal**
 - GEHE zur
 
-#### 16.1.7. Brücke
+#### 16.1.8. Brücke
 
 - BENUTZE `Mikrowelle` mit Kabel
 - BENUTZE `Transformator` mit Mikrowelle
