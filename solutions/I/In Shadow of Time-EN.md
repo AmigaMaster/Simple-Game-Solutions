@@ -1061,4 +1061,4 @@ Arrow up / down  Scroll inventory
 
 In Shadow of Time - Unveröffentlichtes Spiel Lösung (Englisch) (Amiga, AGA) [50 FPS] - Unkommentiert
 
-[![Walkthrough](https://img.youtube.com/vi/b2LjCiVBu_c /0.jpg)](https://www.youtube.com/watch?v=b2LjCiVBu_c )
+[![Walkthrough](https://img.youtube.com/vi/b2LjCiVBu_c/0.jpg)](https://www.youtube.com/watch?v=b2LjCiVBu_c)
