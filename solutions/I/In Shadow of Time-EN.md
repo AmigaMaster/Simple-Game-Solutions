@@ -1,6 +1,6 @@
 # In Shadow of Time - Walkthrough
 
-| Version | Datum      | Autor                                     |
+| Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 02.07.2023 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
