@@ -1,6 +1,6 @@
 # Alluvium Walkthrough
 
-| Version | Datum      | Autor                                     |
+| Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 10.04.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
