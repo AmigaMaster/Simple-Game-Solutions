@@ -1,8 +1,9 @@
 # Maniac Mansion Mania Episode 100: Money Mansion Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 23.02.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|:-------:|------------|-------------------------------------------
+|   1.01  | 14.07.2024 | Amiga Master (AmigaMaster-NG@t-online.de), Talkieversion hinzugefügt
+|   1.0   | 23.02.2021 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -825,6 +826,10 @@ Ab hier ist es möglich das Spiel mit jeder der drei Charaktere zu beenden. Die 
 --------------------------------------------------------------------------------
 
 ## 17. Video Walkthrough
+
+Maniac Mansion Mania Episode 100: Money Mansion (Talkie) Lösung (Deutsch) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/_5u8kOAXobg/0.jpg)](https://www.youtube.com/watch?v=_5u8kOAXobg)
 
 Maniac Mansion Mania Episode 100: Money Mansion Lösung (Deutsch) (PC, Win) - Unkommentiert
 
