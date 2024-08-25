@@ -1,4 +1,4 @@
-# Maniac Mansion Mania Trash - Wink Smiley sucht den Trash-Millionär - Bloody Halloween Version - Lösung
+# Maniac Mansion Mania Trash - Wink Smiley sucht den Trash-Millionär - Lösung
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
@@ -12,55 +12,48 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 
 Trash umfasst Episoden, die sich an keine Spielregeln halten oder in irgendeiner anderen Art mehr oder weniger von der Norm abweichen.
 
-## 1. Quizantworten - Teil 1
+## 1. Quizantworten
 
-1. Welche Musik läuft im Intro zu "Escape from MM"?  
-   "A) Die Musik aus der MM-TV-Serie"
+1. In was pinkelt Bernard bei "Herrschaft der Futanaris 1"?  
+   "A) In einen Blumentopf."
 
-2. Welches Spiel verfügt über 3 Schwierigkeitsgrade?  
-   "A) Ohne Titel"
+2. Was fand Kevin in der Pyramide in NoGUI?  
+   "C) Ein Zero Point Modul."
 
-3. Aus welchem Horrorklassiker stammt der Begriff "Redrum"?  
-   "B) Shining"
+3. Wer ist der "angebliche" Autor von Bernard muss mahl?  
+   "C) Killermücke."
 
-4. Welchen exotischen Ort erreicht man auf der Insel in "Hääää, ich glaub, ich spinne!"?  
-   "D) Schweinebucht"
+4. Welcher Edison war in "Jagd auf rotes Tentakel" vor der Villa begraben?  
+   "D) Jed."
 
-5. Welcher Autor hat einen ätzenden Gastauftritt in einer Halloween-Episode?  
-   "D) Orange"
+5. Wer trat ihnen in Herrschaft der Futanaris 2 auf die Füße?  
+   "B) Jeff."
 
-## 2. Toilette
+6. Wer flickte Professor Dilkmore in Frühjahrsputz wieder zusammen?  
+   "B) Jeff."
 
-- SCHAU AN Mülleimer (`Gummihandschuhe`)
-- SCHAU AN (rechtes) Pissoir
-- BENUTZE `Gummihandschuhe` mit (rechtem) Pissoir
+7. Wer brachte Lucas in F**king Vista! sein Paket??  
+   "C) Syd."
 
-## 3. Quizantworten - Teil 2
+8. Wer war der erste Kandidat bei Wink Smiley sucht den MMMMillionär?  
+   "C) Jeff."
 
-6. Wer ist die zweite Person, die in "Redrum" getötet wird?  
-   "A) Bernard"
+9. Nach was fragt Bernard sie in Bernard muss 2 mahl?  
+   "A) Ob der Dickzi-kloh-serviss schon da war."
 
-7. Wo finden wir Bernards Vater in "Day of the Dead"?  
-   "B) im Kühlschrank"
+10. An was hat sich der Rentner verschluckt, den Laverne dank unserer letzten Sendung operieren darf?  
+    "A) An einem Rehbraten."
 
-8. Wer wird im Startscreen zu "Day of the Dead" mit einem Hammer getötet?  
-   "C) Wendy"
+11. An welchem Wochentag spielt Rettet Sandy?  
+    "A) Samstag."
 
-9. Was kommt Sandy im Hausflur vor ihrem Zimmer entgegen?  
-   "D) eine Spinne"
-
-10. Was verkauft der S-Mart zu Halloween?  
-    "A) Halloween-Masken"
-
-11. Welche Farbe haben die Sofakissen in Wendys Haus, wie man sie in "Ohne Titel" zu Gesicht bekommt?  
-    "D) Gelb"
-
-12. Es ist egal, wie man auf die Frage antwortet.
+12. Für was bedankt sich Syd bei Gott, wenn man bei Herrschaft der Futanaris 1 die Versionsnummer anklickt?  
+    "D) Das LucasFan schon gestorben ist."
 
 --------------------------------------------------------------------------------
 
 ## 4. Video Walkthrough
 
-Maniac Mansion Mania Trash: Wink Smiley sucht den MMM-Millionär - Bloody Halloween Version (PC, Win)
+Maniac Mansion Mania Trash: Wink Smiley sucht den Trash-Millionär Lösung (Deutsch) (PC, Win) - Unk.
 
 [![Walkthrough](https://img.youtube.com/vi/qhy0S0tRNlY/0.jpg)](https://www.youtube.com/watch?v=qhy0S0tRNlY)
