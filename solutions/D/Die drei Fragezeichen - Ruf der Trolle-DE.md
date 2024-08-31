@@ -1505,3 +1505,9 @@
   | Titus     | Alle, die an dieser Trollfabrik ... | Zustimmen
 
 --------------------------------------------------------------------------------
+
+## 9. Video Walkthrough
+
+Die drei ??? 15 - Ruf der Trolle Lösung (Deutsch) (PC, Win) [60 FPS] - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/ElF39PkuNWc/0.jpg)](https://www.youtube.com/watch?v=ElF39PkuNWc)
