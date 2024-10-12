@@ -1,8 +1,9 @@
 # Maniac Mansion Mania Episode 032: The Secret of Maniac Mansion Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|  1.0    | 25.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor                                                                   |
+|:-------:|------------|-------------------------------------------------------------------------|
+|  1.01   | 06.09.2024 | Amiga Master (AmigaMaster-NG@t-online.de): Talkie Videolink hinzugefügt |
+|  1.0    | 25.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)                               |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -71,3 +72,7 @@ und befinden uns in der
 Maniac Mansion Mania Episode 032: The Secret of Maniac Mansion Lösung (Deutsch) (PC, Win) - Unkomm.
 
 [![Walkthrough](https://img.youtube.com/vi/iLyRaXJB9O8/0.jpg)](https://www.youtube.com/watch?v=iLyRaXJB9O8)
+
+Maniac Mansion Mania Episode 032: The Secret of Maniac Mansion (Talkie) Lösung (Deutsch) (PC, Win)
+
+[![Walkthrough](https://img.youtube.com/vi/Sxr_CkaFPek/0.jpg)](https://www.youtube.com/watch?v=Sxr_CkaFPek)
