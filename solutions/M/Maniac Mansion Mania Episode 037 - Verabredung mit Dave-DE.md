@@ -27,7 +27,7 @@ und dort in
 ##### 1.1.1.1. Sandy's Zimmer
 
 - ÖFFNE Schrank
-- NIMM ein beliebiges Outfit (`Outfit`)
+- NIMM rotes Outfit (`Outfit`)
 - ÖFFNE Tür
 - Verlasse Zimmer
 
@@ -175,14 +175,14 @@ und dort in
 - REDE MIT Tür rechts oben
 
 >**HINWEIS:** Verschiedene Enden  
-Es gibt jetzt zwei Möglichkeiten:
+Es gibt jetzt drei Möglichkeiten:
 
 --------------------------------------------------------------------------------
 
 ## 3. Entscheidung für Sandy
 
 - 'Natürlich liebe ich dich.'
-- Gehe in d$ie
+- Gehe in die
 
 ##### 3.0.1.1. Küche
 
@@ -204,13 +204,31 @@ Es gibt jetzt zwei Möglichkeiten:
 
 - BENUTZE `Briefpapier` mit Tür rechts hinten
 
-## 5. Alternatives Ende: Entscheidung für Britney
+--------------------------------------------------------------------------------
 
-- 'DU hast recht. Ich liebe Britney, wollte dich aber nicht verletzen'
+## 5. Alternatives Ende: Britney
+
+- 'Es ist nicht so wie du denkst'
+- Gehe vor das Haus
+
+## 6. Sandy's Haus
+
+- VERLASSE in Richtung Osten zu nebenan
+
+## 7. Haus der Bernoullis
+
+- DRÜCKE Klingel
+- VERLASSE nach Westen zu zurück zum Haus
 
 --------------------------------------------------------------------------------
 
-## 6. Video Walkthrough
+## 8. Alternatives Ende 2: Entscheidung für Britney
+
+- 'Du hast recht. Ich liebe Britney, wollte dich aber nicht verletzen'
+
+--------------------------------------------------------------------------------
+
+## 9. Video Walkthrough
 
 Maniac Mansion Mania Episode 037: Verabredung mit Dave Lösung (Deutsch) (PC, Win) - Unkommentiert
 
