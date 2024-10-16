@@ -144,7 +144,7 @@ im
 ### 4.2. Gang
 
 - ÖFFNE Tür links vom Penner
-- Verlasse Gag durch Tür links vom Penner
+- Verlasse Gang durch Tür links vom Penner
 
 #### 4.2.1. Apotheke
 
