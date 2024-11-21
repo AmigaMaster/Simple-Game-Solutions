@@ -107,13 +107,13 @@ Die Halloween Episoden sind eine eigene, separate Reihe, bei denen die Regeln de
 
 ### 4.12. Eingangshalle, oberer Bereich
 
-- SCHAU AN (links) Tür **3 mal**
+- SCHAU AN (linke) Tür **3 mal**
 - BENUTZE `Axt` mit (linker) Tür (`Kamera`)
 
 ### 4.13. Kraftraum
 
 - >EASTER EGG:
-  >- BENUTZE Kraft-O-Mat **mehr fach wiederholen**  
+  >- BENUTZE Kraft-O-Mat **mehrfach wiederholen**  
   > **HINWEIS:** Nur möglich, wenn man den Kraft-O-Mat bisher nur ein mal benutzt hat!
 - Verlasse Raum durch (rechte) Tür
 
