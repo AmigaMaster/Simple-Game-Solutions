@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |  1.0    | 07.11.2024 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Download der Spieleserie von [itch.io](https://bean-adventure-agency.itch.io/the-booze-of-monkey-island)
+Download des Spiels von [itch.io](https://bean-adventure-agency.itch.io/the-booze-of-monkey-island)
 
 ## 1. Ville de la Booty
 
@@ -117,3 +117,11 @@ Download der Spieleserie von [itch.io](https://bean-adventure-agency.itch.io/the
 - BENUTZE `Wäscheklammer` mit Ignatius Käse
 - VERLASSE und BETRETE die Bar
 - REDE MIT Ignatius Käse
+
+--------------------------------------------------------------------------------
+
+## 13. Video Walkthrough
+
+The Booze of Monkey Island Lösung (Deutsch) (PC, Win) [4k, 60 FPS] - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/dIHjqhCRgwg/0.jpg)](https://www.youtube.com/watch?v=dIHjqhCRgwg)
