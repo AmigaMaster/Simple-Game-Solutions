@@ -1,4 +1,4 @@
-# Loco Motive - Walkthrough
+# Loco Motive (Game Jam Version) - Walkthrough
 
 | Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
