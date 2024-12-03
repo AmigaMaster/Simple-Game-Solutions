@@ -1,6 +1,6 @@
 # Simple Game Solutions
 
-``` text
+```text
 ╔═╗┬┌┬┐┌─┐┬  ┌─┐  ╔═╗┌─┐┌┬┐┌─┐  ╔═╗┌─┐┬  ┬ ┬┌┬┐┬┌─┐┌┐┌┌─┐
 ╚═╗││││├─┘│  ├┤   ║ ╦├─┤│││├┤   ╚═╗│ ││  │ │ │ ││ ││││└─┐
 ╚═╝┴┴ ┴┴  ┴─┘└─┘  ╚═╝┴ ┴┴ ┴└─┘  ╚═╝└─┘┴─┘└─┘ ┴ ┴└─┘┘└┘└─┘
@@ -14,10 +14,11 @@ Game solutions written in easy-to-read and easy-to-write plain text format, opti
 ## Table of Contents <!-- omit in toc -->
 
 - [1. Getting Started](#1-getting-started)
-  - [1.1. Download](#11-download)
-  - [1.2. Clone](#12-clone)
-    - [1.2.1. Windows](#121-windows)
-    - [1.2.2. MacOS, Linux, Unix](#122-macos-linux-unix)
+  - [1.1. Direct Web Access](#11-direct-web-access)
+  - [1.2. Download](#12-download)
+  - [1.3. Clone](#13-clone)
+    - [1.3.1. Windows](#131-windows)
+    - [1.3.2. MacOS, Linux, Unix](#132-macos-linux-unix)
 - [2. Contributing](#2-contributing)
 - [3. License](#3-license)
 - [4. Acknowledgments](#4-acknowledgments)
@@ -40,13 +41,17 @@ Game solutions written in easy-to-read and easy-to-write plain text format, opti
 
 ## 1. Getting Started
 
-Simple as it is, just start browsing this site by clicking on the [solutions](https://github.com/AmigaMaster/Simple-Game-Solutions/tree/master/solutions) folder.
+There are different ways to access the walkthroughs.
 
-### 1.1. Download
+### 1.1. Direct Web Access
 
-You can always download the latest version as a ZIP file [here](https://github.com/AmigaMaster/Simple-Game-Solutions/archive/master.zip)
+Just click on the [solutions](https://github.com/AmigaMaster/Simple-Game-Solutions/tree/master/solutions) folder.
 
-### 1.2. Clone
+### 1.2. Download
+
+You can always download the latest version as a [ZIP file](https://github.com/AmigaMaster/Simple-Game-Solutions/archive/master.zip)
+
+### 1.3. Clone
 
 You can clone this repo to your local machine using the repository link
 
@@ -54,7 +59,7 @@ You can clone this repo to your local machine using the repository link
 https://github.com/AmigaMaster/Simple-Game-Solutions.git
 ```
 
-#### 1.2.1. Windows
+#### 1.3.1. Windows
 
 On Windows, I recommend using TortoiseGIT which integrates into the Windows graphical user interface:
 
@@ -64,11 +69,11 @@ On Windows, I recommend using TortoiseGIT which integrates into the Windows grap
 
 3. You can now right-click on or in any folder and select `Git Clone...`  
 
-4. In the URL field, copy the repository link provided above.
+4. In the URL field, copy and paste the repository link `https://github.com/AmigaMaster/Simple-Game-Solutions.git`.
 
 5. Click on the OK button.
 
-#### 1.2.2. MacOS, Linux, Unix
+#### 1.3.2. MacOS, Linux, Unix
 
 Use the package manager provided by your OS distribution to install GIT. Then clone the repository to a directory of your choice.
 
