@@ -1,4 +1,4 @@
-# Maniac Mansion Mania Episode 041: Das neue Jugendschutzgesetz Lösung
+# Maniac Mansion Mania Episode 041: Das neue Jugendschutzgesetz (V2.0) - Lösung
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
@@ -136,6 +136,6 @@ und dort in
 
 ## 11. Video Walkthrough
 
-Maniac Mansion Mania Episode 041: Das neue Jugendschutzgesetz Lösung (Deutsch) (PC, Win) - Unkomm.
+Maniac Mansion Mania Episode 041: Das neue Jugendschutzgesetz V2 Lösung (Deutsch) (PC, Win) - Unkomm
 
 [![Walkthrough](https://img.youtube.com/vi/x7M-F2bKozw/0.jpg)](https://www.youtube.com/watch?v=x7M-F2bKozw)
