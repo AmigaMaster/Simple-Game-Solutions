@@ -2,7 +2,7 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
-|   1.0   | 09.12.2024 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.01  | 10.12.2024 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 ## 1. Vorwort
 
@@ -263,7 +263,7 @@
 
 - REDE MIT Barbette
 - REDE MIT Victoria
-- BENUTZE `Schwarze Perücke` mit Schaufensterpuppe (`Schwarze schicke Perücke`)
+- BENUTZE `Schwarze Perücke` mit Victoria (`Schwarze schicke Perücke`)
 - NIMM Kurbel (`Kurbel`)
 - NIMM Haken (`Haken`)
 - BENUTZE `Haken` mit `Angelrute` (`Angelrute`)
@@ -279,25 +279,25 @@
 #### 17.1.1. Schlafgemach
 
 - BENUTZE `Kurbel` mit seltsame Maschine
-- BENUTZE `Vogelkäfig` mit Ratte (`Zombie Ratte`)
+- BENUTZE `Vogelkäfig` mit Ratte (`Zombie-Ratte`)
 
 ### 17.2. Theater
 
-- BENUTZE `Zombie Ratte` mit Käse
-- NIMM Parfum (`Parfum`)
-- BENUTZE `Parfum` mit `Liebesbrief` (`Parfümierter Liebesbrief`)
+- BENUTZE `Zombie-Ratte` mit Käse
+- NIMM Parfüm (`Parfümflasche`)
+- BENUTZE `Parfümflasche` mit `Liebesbrief` (`Parfümierter Liebesbrief`)
 
 ### 17.3. Versteck
 
 - BENUTZE `Schwarze schicke Perücke` mit Andrew
 - BENUTZE `Parfümierter Liebesbrief` mit Andrew
-- NIMM heiliges Relikt (`Gummispielzeug`)
+- NIMM heiligen Schatz (`Kauspielzeug`)
 
 ### 17.4. Saal
 
 #### 17.4.1. Schatzkammer
 
-- BENUTZE `Gummispielzeug` mit gigantischer Krake
+- BENUTZE `Kauspielzeug` mit Riesenkrake
 
 #### 17.4.2. Gang
 
@@ -311,9 +311,13 @@
 
 ### 18.1. Dach
 
-- FLIEGE ZU mittlerem Gargoyle
-  - Fledermaussymbol **2 mal**
-- FLIEGE ZU linkem Gargoyle
-  - Vampir **2 Mal**
-- FLIEGE zu rechtem Gargoyle
-  - Fledermaussymbol **2 mal**
+- FLIEGE nach Poppy und je nachdem welcher Gegenstand der Oktopus an seinem Arm hat, wie folgt die Wasserspeier anfliegen:
+  - Schwert:
+    - FLIEGE ZU mittlerem Wasserspeier
+    - Fledermaus
+  - Kauspielzeug:
+    - FLIEGE zu rechtem Wasserspeier
+    - Fledermaus
+  - Axt:
+    - FLIEGE ZU linkem Wasserspeier
+    - Vampir
