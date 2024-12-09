@@ -2,11 +2,13 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
-|   0.9   | 24.11.2024 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.0   | 09.12.2024 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 ## 1. Vorwort
 
-**ACHTUNG:** Das Spiel hat einen Dead-End Bug wenn die Perücke mit der Friseurin benutzt wird: Es verschwinden alle Inventargegenstände mit Ausnahme der Perücke. Es bleibt nichts anderes übrig, als das Spiel von neuem zu beginnen.
+**ACHTUNG:** Wenn das Spiel mit deutscher Textausgabe gespielt wird, unbedingt die neueste Version 1.12 nutzen. In älteren Versionen gibt es einen Dead-End Bug wenn die Perücke mit der Friseurin benutzt wird und es verschwinden alle Inventargegenstände mit Ausnahme der Perücke. Es bleibt nichts anderes übrig, als das Spiel von neuem zu beginnen.
+
+**INFO:** Wer seinen Spielstand sichern möchte, der findet ihn unter `%APPDATA%\Godot\app_userdata\Champy the Useless Vampire`.
 
 ## 2. Wohnung
 
@@ -85,7 +87,6 @@
 #### 3.6.1. Musikzimmer
 
 - BENUTZE `Durchlöcherte Klavierrolle` mit selbstspielende Orgel (`Skelettschlüssel`)
-- **ACHTUNG:** Fehler: NICHT den Vogelkäfig nehmen!
 - NIMM Vogelkäfig (`Vogelkäfig`)
 
 ### 3.7. Saal
@@ -214,6 +215,7 @@
   - BENUTZE `Skelettschlüssel` mit Schatzkammer
   - BENUTZE `Sonnenschlüssel` mit Schatzkammer
   - BENUTZE `Mondschlüssel` mit Schatzkammer
+  - Die Reihenfolge der Länder ist den verschiedenen Bildern von Dracula an seinen Urlaubsoirten zu entnehmen.
   - BENUTZE `Ägypten, 1501` (mitte unten)
   - BENUTZE `China, 1602` (rechts)
   - BENUTZE `Südamerika, 1703` (unten links)
@@ -261,7 +263,6 @@
 
 - REDE MIT Barbette
 - REDE MIT Victoria
-- **ACHTUNG:** Fehler im Spiel: NICHT die `schwarze Perücke` mit Victoria oder der Schaufensterpuppe benutzen!
 - BENUTZE `Schwarze Perücke` mit Schaufensterpuppe (`Schwarze schicke Perücke`)
 - NIMM Kurbel (`Kurbel`)
 - NIMM Haken (`Haken`)
@@ -275,11 +276,7 @@
 
 ### 17.1. Saal
 
-#### 17.1.1. Musikzimmer
-
-- NIMM Vogelkäfig (`Vogelkäfig`)
-
-#### 17.1.2. Schlafgemach
+#### 17.1.1. Schlafgemach
 
 - BENUTZE `Kurbel` mit seltsame Maschine
 - BENUTZE `Vogelkäfig` mit Ratte (`Zombie Ratte`)
