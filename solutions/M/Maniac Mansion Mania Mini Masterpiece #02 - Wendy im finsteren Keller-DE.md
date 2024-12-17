@@ -48,3 +48,7 @@ Die Mini Masterpieces sind kleine, auf maximal 10 Aktionen beschränkte Folgen o
 Maniac Mansion Mania Mini Masterpiece #02: Wendy im finsteren Keller Lösung (Deu) (PC, Win) - Unkom.
 
 [![Walkthrough](https://img.youtube.com/vi/u4NbuBvi9kk/0.jpg)](https://www.youtube.com/watch?v=u4NbuBvi9kk)
+
+Maniac Mansion Mania Mini Masterpiece #02 (V2.0): Wendy im finsteren Keller Lösung (Deu) (PC, Win)
+
+[![Walkthrough](https://img.youtube.com/vi/NwSkKjYDkSU/0.jpg)](https://www.youtube.com/watch?v=NwSkKjYDkSU)
