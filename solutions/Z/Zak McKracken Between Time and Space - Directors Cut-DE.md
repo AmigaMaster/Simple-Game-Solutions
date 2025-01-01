@@ -2,13 +2,18 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
-|  1.03   | 02.01.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Deluxe Edition & Hinweise für schweren Schwierigkeitsgrad hinzugefügt. |
+|  1.04   | 01.01.2025 | Amiga Master (AmigaMaster-NG@t-online.de), nach Hinweisen von LogicDeLuxe, dem Entwickler des Spiels - Vielen lieben Dank dafür! |
+|  1.03   | 31.12.2024 | Amiga Master (AmigaMaster-NG@t-online.de), Deluxe Edition & Hinweise für schweren Schwierigkeitsgrad hinzugefügt. |
 |  1.02   | 06.07.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 |  1.01   | 20.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Zak McKracken: Between Time and Space - Director"s Cut ist ein inoffizieller Nachfolger zum 1988 veröffentlichten Zak McKracken and the Alien Mindbenders.
+Zak McKracken: Between Time and Space - Director's Cut / Deluxe Edition ist ein inoffizieller Nachfolger zum 1988 veröffentlichten Zak McKracken and the Alien Mindbenders.
 
-Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/between-timespace-2.html) heruntergeladen werden.
+**Download der neuesten Deluxe Edition:**
+Die neue, fehlerbereinigte Deluxe Edition kann kostenlos auf der [Homepage des Entwicklers](https://www.gratissaugen.de/ultimatetalkies/zak_btas_de.html#deluxe) heruntergeladen werden.
+
+Download der alten Version:
+Die alte Version findet man auf der [Projektseite](http://www.mckracken.net/cms/between-timespace-2.html).
 
 ## 1. Allgemeine Hinweise
 
@@ -39,14 +44,14 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - ÖFFNE Sicherungskasten
 - BENUTZE `Sicherung` mit Sicherungskasten
 - GEHE ZU Ladeluke
-  > **HINWEIS:** Diese Aktion muss ausgeführt werden, ansonsten kann die Plane nicht mit der Luke benutzt werden.
+  >**HINWEIS:** Diese Aktion muss ausgeführt werden, ansonsten kann die Plane nicht mit der Luke benutzt werden.
 - BENUTZE `Plane` mit Ladeluke
 - GEHE ZU Ladeluke
 
 ### 2.1. Zak's Schlafzimmer
 
 - Wähle Schwierigkeitsgrad "Yeah, baby, I like it HARD"
-  > **INFO:** Das Spiel hat zum Teil andere Lösungswege für den einfacheren Schwierigkeitsgrad. Aktionen für den schweren Teil sind mit **SCHWER:** hervorgehoben.
+  >**INFO:** Das Spiel hat zum Teil andere Lösungswege für den einfacheren Schwierigkeitsgrad. Aktionen für den schweren Teil sind mit **SCHWER:** hervorgehoben.
 - ZIEHE Kordel
 - NIMM Glühbirne (`kaputte Glühbirne`)
 - ÖFFNE geschlossene Tür
@@ -107,7 +112,7 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - ZIEHE Kordel
 - ÖFFNE oberste Schublade
 - SCHAU AN oberste Schublade (`Kartenspiel`)
-- SCHAU an `Kartenspiel` (`Cashcard`)
+- SCHAU an `Kartenspiel` (`CashCard`)
 - VERLASSE Wohnung
 
 ## 5. 13th Avenue
@@ -128,6 +133,8 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
   - Sag mal, Jerry, könntest Du mir mal Dein Messer leihen?
 - BENUTZE `beschmiertes Buttermesser` mit Titan Cutter Messer (`Titan Cutter Messer`)
 - SCHAU AN Papierkorb (`zerknüllter Zeitungsausschnitt`)
+- **SCHWER:**
+  - ÖFFNE `zerknüllter Zeitungsausschnitt`
 - SCHAU AN `zerknüllter Zeitungsausschnitt`
 - REDE MIT Sekretärin
 
@@ -143,15 +150,17 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 
 - SCHAU AN bärtiger Fluggast
   - KLICKE in der Nahansicht auf seinen Bart. Nummer `1138` merken
-- >Deluxe Edition:
-  >- ZIEHE Bart. Nummer `1138` merken
+- >Deluxe Edition, nur für die deutsche Version:
+  >- Sofern er im Deluxe Menü auf "gesprächig" eingestellt ist:
+  >   - REDE MIT bärtiger Fluggast
+  >- ZIEHE Bart
+  >   - **MERKE:** Nummer `1138`
 - SCHAU AN Koffer
   - Kombination `1138` einstellen
 - NIMM Leuchtendes Objekt (`Strahlendes Objekt`)
-- ÖFFNE mittleren Oberschrank
-- >Deluxe Edition:
-  >- ÖFFNE alle Oberschränke, auch den über der Stewardess.
+- ÖFFNE alle Oberschränke, auch den über der Stewardess
 - NIMM Decke (`weiße Decke`)
+  - **INFO:** In der Deluxe Version befindet sich die Decke immer im Oberschrank, den man zuletzt öffnet.
 - ÖFFNE die restlichen Oberschränke im Passagierbereich
 - REDE MIT Stewardess, rede über
   - Ich würde gerne schlafen, aber es ist zu hell hier. (`Schlaftablette`)
@@ -188,7 +197,8 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - NIMM Knochenhaufen **4 Mal** (`viele, kleine Knochen`, `mittelgroßer Schädel`)
 - NIMM Schaufel (`Schäufelchen`)
 - **LEICHT:**
-  - DRÜCKE Gerüst (`Brecheisen`)
+  - DRÜCKE Gerüst
+  - NIMM Brechstange (`Brecheisen`)
 - **SCHWER:**
   - DRÜCKE Sessel
   - NIMM Brechstange (`Brecheisen`)
@@ -231,7 +241,7 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
   - BENUTZE `Brecheisen` mit Stein (rechts in der Wand, neben der Zeichnung) (`Steintafel`)
   - BENUTZE `Steintafel` mit `Steintafel` (`vollständige Steintafel`)
   - SCHAU AN `vollständige Steintafel`
-    > **HINWEIS:** Das Muster auf der Steintafel merken. Es ist in jedem Spieldurchlauf anders.
+    >**HINWEIS:** Das Muster auf der Steintafel merken. Es ist in jedem Spieldurchlauf anders.
 
 ## 16. Vor der Pyramide
 
@@ -276,9 +286,9 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - SCHAU AN EI
 - NIMM EI
 - SCHAU AN Feder
+- BENUTZE Rohr
 - **LEICHT:** NIMM FEDER (`Feder`)
 - **SCHWER:**
-  - BENUTZE Rohr
   - NIMM FEDER **5 Mal** (so lange, bis die Feder aus dem Pfadfinderlager verschwindet)
 
 ## 18. Flughafen Mexiko
@@ -290,20 +300,22 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 
 ## 19. Das Fliegen / Nordpol
 
-> **ACHTUNG:** Zufallsrätsel
-> Irgendwann im Laufe des Spiels (das geschieht *dynamisch*) hat das Navigationsgerät des Flugzeugs eine Fehlfunktion und ihr macht eine Zwischenlandung am **Nordpol**. Die Lösung findet ihr in diesem Abschnitt.
+>**HINWEIS:** Zufallsrätsel
+>Beim 6. Flug gibt es einen Zwischenfall und man landet nicht am gewünschten Zielort.
 
-### 19.1. Nordpol (zufälliges Reiseziel)
+### 19.1. Nordpol
 
-> **HINWEIS:** Fehler im Spiel
-> Sobald Zak das erste mal zu frieren anfängt (Er sagt dann "Brrr... es ist eiskalt hier"), wird das Inventar ausgeblendet und bleibt unsichtbar.
-> Die Inventargegenstände können aber trotzdem ausgewählt werden, das muss nun aber blind geschehen!
+>**HINWEIS:** Fehler in der Originalversion. *Der Fehler ist in der Deluxe Version behoben*
+>Sobald Zak das erste mal zu frieren anfängt (Er sagt dann "Brrr... es ist eiskalt hier"), wird das Inventar ausgeblendet und bleibt unsichtbar.
+>Die Inventargegenstände können aber trotzdem ausgewählt werden, das muss nun aber blind geschehen!
 
-> **ACHTUNG:** Sobald Zak anfängt zu frieren, muss der gefüllte Kaffeebecher benutzt werden!
+>**ACHTUNG:** Sobald Zak anfängt zu frieren, muss der gefüllte Kaffeebecher benutzt werden!
 > - BENUTZE `gefüllter Kaffeebecher`
 
-- Ihr erhaltet automatisch `gefüllter Kaffeebecher`
+- Man erhält automatisch `gefüllter Kaffeebecher`
 - NIMM Skier (`Skier`)
+- **ACHTUNG:** Wichtig, ansonsten stirbt man sofort:
+  - BENUTZE `gefüllter Kaffeebecher`
 - BENUTZE `Skier` mit Bach (rechts in Bild)
 - DRÜCKE Schneemann
 - NIMM Kerosin-Kanister
@@ -323,7 +335,7 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - REDE MIT Annie
 - BENUTZE `Zeitung` mit Annie (`Buch der Umgangsformen`)
 
-> **INFO:** Es gibt hier zwei Lösungswege:
+>**INFO:** Es gibt hier zwei Lösungswege:
 
 1. **Gutes Ende**
    - BENUTZE `Schäufelchen` mit Jacques
@@ -368,6 +380,10 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - GEHE ZU Seitenstraße
 
 ## 26. Seitenstraße
+
+>**HINWEIS:** Fehler in der Originalversion. *Der Fehler ist in der Deluxe Version behoben*
+>- Spiel **SPEICHERN**
+>Es gibt Konstellationen, bei denen man die Küchenschabe nicht zurück erhält.
 
 - SCHAU AN Fenster
 - BENUTZE `Küchenschabe` mit Fenster
@@ -443,9 +459,9 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - REDE MIT rechter Metallplatte
 - NIMM großer Menschenknochen (`großer Schädel`)
 - NIMM kleiner Menschenschädel (`kleiner Schädel`)
-- BENUTZE `kleiner Schädel` mit Geheimfach (links)
-- BENUTZE `großer Schädel` mit Geheimfach (mitte)
-- BENUTZE `mittelgroßer Schädel` mit Geheimfach (rechts)
+- BENUTZE `kleiner Schädel` mit Geheimfach (Deluxe Edition: Links)
+- BENUTZE `großer Schädel` mit Geheimfach (Deluxe Edition: Mitte)
+- BENUTZE `mittelgroßer Schädel` mit Geheimfach (Deluxe Edition: Rechts)
 - NIMM länglicher Schädel (`Schädel`)
 - Reise nach
 
@@ -473,8 +489,8 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 
 ### 35.2. Zak's Wohnzimmer
 
-> **HINWEIS:** Fernseher
-> Sobald der Fernseher bei den folgenden Aktionen blitzt und Zak das mit "Was soll das denn?" kommentiert:
+>**HINWEIS:** Fernseher
+>Sobald der Fernseher bei den folgenden Aktionen blitzt und Zak das mit "Was soll das denn?" kommentiert:
 > - BENUTZE Fernseher
 - SCHAU AN Telefon
 - BENUTZE `Titan Cutter Messer` mit `Schädel` (`Caponierkopf ausgehöhlt`)
@@ -518,8 +534,8 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - **SCHWER:**
   - NIMM Äste (`Y-förmiger Ast`)
 - SCHAU AN Termiten
-  > **ACHTUNG:** Easter Egg
-  > Spiel **SPEICHERN** und die Termiten NEHMEN
+  >**ACHTUNG:** Easter Egg
+  >Spiel **SPEICHERN** und die Termiten NEHMEN
 - NIMM angefressener Düngesack (`Düngesack`)
 - NIMM Kaugummi (`Kaugummi`)
 - BENUTZE `Kaugummi` (`gekautes Kaugummi`)
@@ -567,7 +583,8 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 
 ## 44. Gartenhaus
 
-- BENUTZE `Caponier Schädel und Tolle` (aufsetzen)
+- **ACHTUNG:** BENUTZE `Caponier Schädel und Tolle` (absetzen)
+- BENUTZE `französischer Bart` (absetzen)
 - BENUTZE `Erdnuss` mit fleischfressende Pflanze
 - SCHAU AN Rückwand
 - BENUTZE `Holzauge` mit Zerkleinerer
@@ -582,16 +599,20 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - NIMM Coladose (`Locadose`)
 - SCHAU AN getorftes Beet
 - NIMM drei Pfeile (`blauer Pfeil`, `roter Pfeil`, `grüner Pfeil`)
-  > **HINWEIS:** Pfeile  (SPOILER, wer selbst suchen möchte überspringt diesen Teil)
-  > Diese sind schwer zu entdecken, da sehr klein und alle von anderen Gegenständen zum Großteil verdeckt.
-  > <details><summary>*** Klicke um die Fundorte zu sehen ***
-  > </summary>
-  >  Blauer Pfeil: Zwischen Dachrinne und weiß-blauem Topf<br>
-  >  Roter  Pfeil: Zwischen getorftem Beet und rotem Blumenkasten<br>
-  > Grüner Pfeil:<br>
-  >- Entweder direkt links neben dem Gitter im Boden neben dem grünen Kasten oder<br>
-  >- im Labor unterhalb des Käfigs bzw. unter dem Destillierapparat
-  >  </details>
+  >**HINWEIS:** Pfeile  (SPOILER, wer selbst suchen möchte überspringt diesen Teil)
+  >Diese sind schwer zu entdecken, da sehr klein und alle von anderen Gegenständen zum Teil verdeckt.
+  ><details><summary>*** Klicke um die Fundorte zu sehen ***
+  ></summary>
+  >Blauer Pfeil:
+  >  - Zwischen Dachrinne und weiß-blauem Topf<br>
+  >  - Deluxe Edition weitere Möglichkeit: Im Büro am linken Tischbein unter dem Papier.<br>
+  >Roter  Pfeil:
+  >  - Zwischen getorftem Beet und rotem Blumenkasten<br>
+  >  - Deluxe Edition weitere Möglichkeit: Im Büro an den Welteroberungsplänen.<br>
+  >Grüner Pfeil:<br>
+  >  - Entweder direkt links neben dem Gitter im Boden neben dem grünen Kasten oder<br>
+  >  - im Labor unterhalb des Käfigs bzw. unter dem Destillierapparat
+  ></details>
 - BENUTZE `Caponier Schädel und Tolle`
 - GEHE ZU vorderer Hausbereich
 
@@ -599,6 +620,7 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 
 - **LEICHT:**
   - NIMM Kabel (`Kabel`)
+  - NIMM Stab (vorne am Regal)
 - **SCHWER:**
   - SCHLIESSE geöffnete Tür
   - NIMM Kabel (`Kabel`)
@@ -748,8 +770,8 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - Fliege im Bild nach oben (Bild scrollt in die Baumkrone)
 - DRÜCKE Eierschalen
 - NIMM Vogelbeeren (`Vogelbeeren`)
-  > **HINWEIS:** Fehler im Spiel
-  > Um wieder nach unten zu kommen, muss man erst nach oben fliegen, bis der Bildschirm nach oben scrollt.
+  >**HINWEIS:** Fehler im Spiel
+  >Um wieder nach unten zu kommen, muss man erst nach oben fliegen, bis der Bildschirm nach oben scrollt.
 - GIB `Vogelbeeren` an Zak
 - Fliege durch Dachfenster
 
