@@ -1,11 +1,12 @@
-# Zak McKracken: Between Time and Space - Director's Cut Lösung
+# Zak McKracken: Between Time and Space - Director's Cut & Deluxe Edition Lösung
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
+|  1.03   | 02.01.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Deluxe Edition & Hinweise für schweren Schwierigkeitsgrad hinzugefügt. |
 |  1.02   | 06.07.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 |  1.01   | 20.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Zak McKracken: Between Time and Space - Director's Cut ist ein inoffizieller Nachfolger zum 1988 veröffentlichten Zak McKracken and the Alien Mindbenders.
+Zak McKracken: Between Time and Space - Director"s Cut ist ein inoffizieller Nachfolger zum 1988 veröffentlichten Zak McKracken and the Alien Mindbenders.
 
 Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/between-timespace-2.html) heruntergeladen werden.
 
@@ -18,6 +19,8 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - Wie so oft in Adventures macht es nur Spaß und auch Sinn, sich alles anzuschauen. Sollte man im Spiel mal nicht weiterkommen, so hilft das Tagebuch, das jeweils das aktuelle Ziel beschreibt.
 
 - Wenn nicht anders beschrieben, sind in den Gesprächen immer alle Dialogoptionen durchzugehen.
+
+- Die am 24.12.2024 veröffentlichte Deluxe Edition ändert einige, wenige Rätsel im Spiel. In dieser Lösung wird explizit auf diese Rätsel hingewiesen.
 
 ## 2. Flugzeug
 
@@ -35,15 +38,15 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - ZIEHE Hebel
 - ÖFFNE Sicherungskasten
 - BENUTZE `Sicherung` mit Sicherungskasten
-- Gehe zu Ladeluke
+- GEHE ZU Ladeluke
   > **HINWEIS:** Diese Aktion muss ausgeführt werden, ansonsten kann die Plane nicht mit der Luke benutzt werden.
-- Benutze `Plane` mit Ladeluke
-- Gehe zu Ladeluke
+- BENUTZE `Plane` mit Ladeluke
+- GEHE ZU Ladeluke
 
 ### 2.1. Zak's Schlafzimmer
 
 - Wähle Schwierigkeitsgrad "Yeah, baby, I like it HARD"
-  > **INFO:** Das Spiel hat zum Teil andere Lösungswege für den einfacheren Schwierigkeitsgrad. Diese Lösung behandelt aktuell nur den schwierigen Teil.
+  > **INFO:** Das Spiel hat zum Teil andere Lösungswege für den einfacheren Schwierigkeitsgrad. Aktionen für den schweren Teil sind mit **SCHWER:** hervorgehoben.
 - ZIEHE Kordel
 - NIMM Glühbirne (`kaputte Glühbirne`)
 - ÖFFNE geschlossene Tür
@@ -51,10 +54,15 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 ### 2.2. Zak's Wohnzimmer
 
 - ZIEHE Sitzkissen (`Buttermesser`)
-- NIMM Fernbedienung (`Fernbedienung`)
-- BENUTZE `Fernbedienung` mit Fernseher
-- ÖFFNE Spülschrank
-- NIMM Weichspüler (`Weichspüler`)
+- **SCHWER:**
+  - NIMM Fernbedienung (`Fernbedienung`)
+  - BENUTZE `Fernbedienung` mit Fernseher
+- **SCHWER:**
+  - ÖFFNE Spülschrank
+  - NIMM Weichspüler (`Weichspüler`)
+- >Deluxe Edition:
+  >- **SCHWER:**
+  >   - NIMM Lederlappen (vom Wasserhahn) (`Lederlappen`)
 - SCHAU AN Notiz am Kühlschrank
 - BENUTZE `Buttermesser` mit Marmeladenglas (`beschmiertes Buttermesser`)
 - SCHAU AN Telefon
@@ -65,7 +73,6 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 ## 3. 13th Avenue
 
 - BENUTZE `Briefkastenschlüssel` mit Briefkasten (`Postkarte`)
-~~ Beschreibung?
 - DRÜCKE Türklingel **3 Mal** (`patronenförmige Kekse`)
 - SCHAU AN Bushaltestelle
 - ÖFFNE geschlossene Frisörtür
@@ -73,21 +80,26 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 ## 4. Artificial Hair Bros
 
 - Gehe alle Dialogoptionen durch
-- NIMM Haken vom Kleiderhaken (`großer Kleiderhaken`)
+- NIMM Haken vom Kleiderbügel (`großer Kleiderhaken`)
 - NIMM Zeitschrift (`Friseurheft`)
 - SCHAU AN `Friseurheft`
 - REDE MIT Büstenkopf
 - SCHAU AN grüne Perücke
-- NIMM grüne Perücke
-- NIMM Lampe (`intakte Glühbirne`)
+- **SCHWER:**
+  - NIMM grüne Perücke
+- NIMM Lampe
+- >Deluxe Edition:
+  >- **SCHWER:**
+  >   - BENUTZE `Lederlappen` mit Lampe (`intakte Glühbirne`)
 
 ### 4.1. Zak's Wohnzimmer
 
 - BENUTZE `Friseurheft` mit Telefon
-- BENUTZE `patronenförmige Kekse` mit Spüle
-- ÖFFNE Wasserhahn
-- BENUTZE `Weichspüler` mit Spüle
-- NIMM Keksbrei (`Keksbrei`)
+- **SCHWER:**
+  - BENUTZE `patronenförmige Kekse` mit Spüle
+  - ÖFFNE Wasserhahn
+  - BENUTZE `Weichspüler` mit Spüle
+  - NIMM Keksbrei (`Keksbrei`)
 
 ### 4.2. Zak's Schlafzimmer
 
@@ -96,7 +108,7 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - ÖFFNE oberste Schublade
 - SCHAU AN oberste Schublade (`Kartenspiel`)
 - SCHAU an `Kartenspiel` (`Cashcard`)
-- Verlasse Wohnung
+- VERLASSE Wohnung
 
 ## 5. 13th Avenue
 
@@ -110,10 +122,11 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 
 - NIMM Aquarium (`Sushi im Glas`)
 - NIMM Feuerzeug (`Feuerzeug`)
+- NIMM Titan Cutter Messer (vom Tisch bei Jerry)
+  - **INFO:** Warten, bis Jerry das Titan Cutter Messer kurz auf den Tisch legt
 - REDE MIT Jerry, **wichtig ist:**
   - Sag mal, Jerry, könntest Du mir mal Dein Messer leihen?
 - BENUTZE `beschmiertes Buttermesser` mit Titan Cutter Messer (`Titan Cutter Messer`)
-  > **INFO:** Warten, bis Jerry das Titan Cutter Messer kurz auf den Tisch legt
 - SCHAU AN Papierkorb (`zerknüllter Zeitungsausschnitt`)
 - SCHAU AN `zerknüllter Zeitungsausschnitt`
 - REDE MIT Sekretärin
@@ -130,26 +143,33 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 
 - SCHAU AN bärtiger Fluggast
   - KLICKE in der Nahansicht auf seinen Bart. Nummer `1138` merken
+- >Deluxe Edition:
+  >- ZIEHE Bart. Nummer `1138` merken
 - SCHAU AN Koffer
   - Kombination `1138` einstellen
 - NIMM Leuchtendes Objekt (`Strahlendes Objekt`)
 - ÖFFNE mittleren Oberschrank
+- >Deluxe Edition:
+  >- ÖFFNE alle Oberschränke, auch den über der Stewardess.
 - NIMM Decke (`weiße Decke`)
 - ÖFFNE die restlichen Oberschränke im Passagierbereich
 - REDE MIT Stewardess, rede über
   - Ich würde gerne schlafen, aber es ist zu hell hier. (`Schlaftablette`)
-- ÖFFNE Mikrowelle
-- BENUTZE `Strahlendes Objekt` mit Mikrowelle
-- SCHLIESSE Mikrowelle
-- BENUTZE Mikrowelle (`leuchtendes Zeug`)
+- **SCHWER:**
+  - ÖFFNE Mikrowelle
+  - BENUTZE `Strahlendes Objekt` mit Mikrowelle
+  - SCHLIESSE Mikrowelle
+  - BENUTZE Mikrowelle (`leuchtendes Zeug`)
 - DRÜCKE `Schlaftablette` (`zerdrückte Schlaftablette`)
 - ÖFFNE Toilettentür (`Nachttopf`)
-- ÖFFNE Abfalleimer
-- SCHAU AN Abfalleimer **5 mal** (`Pömpel`)
-- BENUTZE `Pömpel`
-- NIMM Dose (`Nüsschen`)
+- **SCHWER:**
+  - ÖFFNE Abfalleimer
+  - SCHAU AN Abfalleimer **5 mal** (`Pömpel`)
+  - BENUTZE `Pömpel` mit Toilette
+  - NIMM Dose (`Nüsschen`)
 - BENUTZE `leuchtendes Zeug` mit `weiße Decke` (`Decke, schwach leuchtend`)
-- BENUTZE `Decke, schwach leuchtend` mit Licht (`Decke, stark leuchtend`)
+- **SCHWER:**
+  - BENUTZE `Decke, schwach leuchtend` mit Licht (`Decke, stark leuchtend`)
 - BENUTZE `zerdrückte Schlaftablette` mit `Nüsschen` (`Nüsschen mit Schlafmittel`)
 - BENUTZE `Nüsschen mit Schlafmittel` mit Oma
 - SCHLIESSE alle Fenster im Passagierbereich
@@ -157,82 +177,89 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 
 ## 9. Flughafen Mexiko
 
-- Verlasse durch Ausgang Ost
+- VERLASSE durch Ausgang Ost
 
 ## 10. Vor der Pyramide
 
-- Verlasse westlich zur
+- VERLASSE westlich zur
 
 ## 11. Ausgrabungsstelle
 
 - NIMM Knochenhaufen **4 Mal** (`viele, kleine Knochen`, `mittelgroßer Schädel`)
 - NIMM Schaufel (`Schäufelchen`)
-- DRÜCKE Sessel
-- NIMM Brechstange (`Brecheisen`)
+- **LEICHT:**
+  - DRÜCKE Gerüst (`Brecheisen`)
+- **SCHWER:**
+  - DRÜCKE Sessel
+  - NIMM Brechstange (`Brecheisen`)
 - BENUTZE `Brecheisen` mit Jalousie
 - ÖFFNE Erste Hilfe Set
 - NIMM Tesafilm (`Tesafilm`)
 - BENUTZE `Tesafilm` mit `Kassette` (`reparierte Kassette`)
 - BENUTZE `gelber Buntstift` mit `reparierte Kassette` (`Kassette`)
-- NIMM Nest (vorne im Bagger) (`Vogelnest`)
-- Verlasse Szene durch Höhleneingang im Norden
+- **SCHWER:**
+  - NIMM Nest (vorne im Bagger) (`Vogelnest`)
+- VERLASSE Szene durch Höhleneingang im Norden
 
 ## 12. Pfadfinderlager
 
 - SCHAU AN Gewinde
-- NIMM Stein (`Stein`)
-- Verlasse Richtung Süden zu Weg in den Dschungel
+- **SCHWER:**
+  - NIMM Stein (`Stein`)
+- VERLASSE Richtung Süden zu Weg in den Dschungel
 
 ## 13. Dschungel
 
 - NIMM Keksschachtel (`Keksschachtel`, `Handknochen`)
-- NIMM Stein (`Steintafel`)
+- **LEICHT:**
+  - NIMM Nest (`Nest`)
+- **SCHWER:**
+  - NIMM Stein (`Steintafel`)
 - ÖFFNE `Keksschachtel` (`Küchenschabe`)
 
 ## 14. Ausgrabungsstelle
 
-- SCHAU AN Grube
-- BENUTZE `Stein` mit Grube
+- **LEICHT:**
+  - SCHAU AN Grube
+- **SCHWER:**
+  - BENUTZE `Stein` mit Grube
 - BENUTZE `Brecheisen` mit Pflanzenkopf
 
-## 15. Flughafen Mexiko
+## 15. **SCHWER:** Flughafen Mexiko
 
-- Benutze `Brecheisen` mit Stein (rechts in der Wand, neben der Zeichnung) (`Steintafel`)
-- Benutze `Steintafel` mit `Steintafel` (`vollständige Steintafel`)
-- SCHAU AN `vollständige Steintafel`
-  > **HINWEIS:** Das Muster auf der Steintafel merken.
+- **SCHWER:**
+  - BENUTZE `Brecheisen` mit Stein (rechts in der Wand, neben der Zeichnung) (`Steintafel`)
+  - BENUTZE `Steintafel` mit `Steintafel` (`vollständige Steintafel`)
+  - SCHAU AN `vollständige Steintafel`
+    > **HINWEIS:** Das Muster auf der Steintafel merken. Es ist in jedem Spieldurchlauf anders.
 
 ## 16. Vor der Pyramide
 
-- Verlasse Richtung Norden zur
+- VERLASSE Richtung Norden zur
 
 ### 16.1. Kuppel
 
 - SCHAU AN verblichene Zeichen
 - BENUTZE `gelber Buntstift` mit verblichene Zeichen
-  - Hier die Zeichnung von der Steintafel *nachzeichnen* und danach auf den kleinen runden Stein klicken  
-
-    Zeichnung:
-
-    ``` text
-    | /\/
-    | \/\
-    |   /
-    |__/
-    ```
+  - **LEICHT:**
+    - Die Zeichnung wie sie links zu sehen ist abzeichnen.
+  - **SCHWER:**
+    - Hier die Zeichnung von der Steintafel *nachzeichnen* und danach auf den kleinen runden Stein klicken.
 
 #### 16.1.1. In der Pyramide
 
 - SCHAU AN Ding
 - BENUTZE `Feuerzeug` mit Ding
 - SCHAU AN Kopfschmuck
-- BENUTZE `Fernbedienung` mit Kopfschmuck
+- **SCHWER:**
+  - BENUTZE `Fernbedienung` mit Kopfschmuck
 - NIMM Kristall
 - SCHAU AN sonderbare Platte (links unten im Bild, die Stelle auf dem Boden mit der kleinen Verzierung)
 - ZIEHE sonderbare Platte (`U-förmiger Stein`)
 - BENUTZE `U-förmiger Stein` mit seltsame Vertiefung (im Sockel der zentralen Feuerstelle) **2 Mal**
 - BENUTZE `Keksbrei` mit steinförmige Vertiefung (Im Sockel der Statue im Hintergrund)
-- BENUTZE `Schäufelchen` mit Heißer Keks (`Riesenkeks`)
+- **SCHWER:**
+  - BENUTZE `Schäufelchen` mit Heißer Keks (`Riesenkeks`)
 - DRÜCKE linke Fackel
 - DRÜCKE rechte Fackel
 - SCHAU AN seltsame Zeichnung
@@ -249,29 +276,30 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - SCHAU AN EI
 - NIMM EI
 - SCHAU AN Feder
-- NIMM FEDER
-- BENUTZE Rohr
-- NIMM FEDER **5 Mal** (so lange, bis die Feder aus dem Pfadfinderlager verschwindet)
+- **LEICHT:** NIMM FEDER (`Feder`)
+- **SCHWER:**
+  - BENUTZE Rohr
+  - NIMM FEDER **5 Mal** (so lange, bis die Feder aus dem Pfadfinderlager verschwindet)
 
 ## 18. Flughafen Mexiko
 
-- NIMM Feder (`Feder`)
+- **SCHWER:**
+  - NIMM Feder (`Feder`)
 - BENUTZE `Feder` mit `Vogelnest` (`Vogelnest mit Feder`)
 - Reise nach Honolulu
 
 ## 19. Das Fliegen / Nordpol
 
-> **ACHTUNG:** Zufallsrätsel  
+> **ACHTUNG:** Zufallsrätsel
 > Irgendwann im Laufe des Spiels (das geschieht *dynamisch*) hat das Navigationsgerät des Flugzeugs eine Fehlfunktion und ihr macht eine Zwischenlandung am **Nordpol**. Die Lösung findet ihr in diesem Abschnitt.
 
 ### 19.1. Nordpol (zufälliges Reiseziel)
 
-> **HINWEIS:** Fehler im Spiel  
-> Sobald Zak das erste mal zu frieren anfängt (Er sagt dann 'Brrr... es ist eiskalt hier'), wird das Inventar ausgeblendet und bleibt unsichtbar.  
-> Die Inventargegenstände können aber trotzdem ausgewählt werden, das muss nun aber blind geschehen!  
+> **HINWEIS:** Fehler im Spiel
+> Sobald Zak das erste mal zu frieren anfängt (Er sagt dann "Brrr... es ist eiskalt hier"), wird das Inventar ausgeblendet und bleibt unsichtbar.
+> Die Inventargegenstände können aber trotzdem ausgewählt werden, das muss nun aber blind geschehen!
 
 > **ACHTUNG:** Sobald Zak anfängt zu frieren, muss der gefüllte Kaffeebecher benutzt werden!
->
 > - BENUTZE `gefüllter Kaffeebecher`
 
 - Ihr erhaltet automatisch `gefüllter Kaffeebecher`
@@ -279,80 +307,89 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - BENUTZE `Skier` mit Bach (rechts in Bild)
 - DRÜCKE Schneemann
 - NIMM Kerosin-Kanister
-- Verlasse den Nordpol durch den Ausgang im Westen
+- VERLASSE den Nordpol durch den Ausgang im Westen
 
 ## 20. Flughafen Honolulu
 
 - NIMM Zeitung (`Zeitung`)
-- SCHAU AN `Zeitung` (Info: Die Zeitung hat mehrere Seiten)
-- Verlasse Flughafen gen Osten
+- SCHAU AN `Zeitung` (**INFO:** Die Zeitung hat mehrere Seiten)
+- VERLASSE Flughafen gen Osten
 
 ## 21. Strand
 
 - REDE MIT Cabana Junge, ruhig die Dialoge durchprobieren, letztendlich führt folgendes zum Ziel
-  - 'Äh... Ich BIN Clubmitglied'
-  - 'Aber ich habe doch diese tolle Club-Kopfbedeckung!'
+  - "Äh... Ich BIN Clubmitglied"
+  - "Aber ich habe doch diese tolle Club-Kopfbedeckung!"
 - REDE MIT Annie
 - BENUTZE `Zeitung` mit Annie (`Buch der Umgangsformen`)
 
-> **INFO:** Es gibt hier zwei Lösungswege  
+> **INFO:** Es gibt hier zwei Lösungswege:
 
-1. **'Gutes' Ende**
+1. **Gutes Ende**
    - BENUTZE `Schäufelchen` mit Jacques
 
-2. **'Böses' Ende**
+2. **Böses Ende**
    - BENUTZE `geöffnete Vaselinetube` mit Sonnenöl
    - NIMM Vaselinetube (`Vaseline`)
 
+## 22. Flughafen Honolulu
+
+- **INFO:** NUr für den Fall, dass man Annie die Zeitung nicht gegeben hat:
+  - NIMM Sitzkissen
+  - NIMM Buch (`Buch der Umgangsformen`)
 - Reise zum
 
-## 22. Flughafen Paris
+## 23. Flughafen Paris
 
-- SCHAU AN Schnauzbart (Im Poster)
-- NIMM Schnauzbart (`französischer Bart`)
-- Verlasse Flughafen Richtung Osten
+- **LEICHT:**
+  - NIMM Schnauzbart (auf der Wartebank) (`französischer Bart`)
+- **SCHWER:**
+  - SCHAU AN Schnauzbart (Im Poster)
+  - NIMM Schnauzbart (`französischer Bart`)
+- VERLASSE Flughafen Richtung Osten
 
-## 23. Vor dem Restaurant
+## 24. Vor dem Restaurant
 
 - ÖFFNE Tür
 
-### 23.1. Le pecheur Merveillieux
+### 24.1. Le pecheur Merveillieux
 
 - REDE MIT unterem Gast
 - REDE MIT mittlerem Gast
 - REDE MIT Kellner
 - REDE MIT oberem Gast
-  - 'Sagen Sie - sind Sie zufällig Dr. Julio Levy?'
-  - 'Natürlich helfe ich Ihnen!'
+  - "Sagen Sie - sind Sie zufällig Dr. Julio Levy?"
+  - "Natürlich helfe ich Ihnen!"
 - REDE MIT Kellner
-  - 'Stellen Sie sich vor ich könnte mein Essen nicht bezahlen!'
+  - "Stellen Sie sich vor ich könnte mein Essen nicht bezahlen!"
 
-## 24. Vor dem Restaurant
+## 25. Vor dem Restaurant
 
-- Gehe zu Seitenstraße
+- GEHE ZU Seitenstraße
 
-## 25. Seitenstraße
+## 26. Seitenstraße
 
 - SCHAU AN Fenster
 - BENUTZE `Küchenschabe` mit Fenster
 - ÖFFNE Tür
 
-## 26. Küche
+## 27. Küche
 
 - SCHLIESSE Tür
-- **Schnell**: BENUTZE `Brecheisen` mit Tür
+- **SCHNELL**: BENUTZE `Brecheisen` mit Tür
+  - **INFO:** Falls es nicht funktioniert, findet man die Küchenschabe wieder in der Seitenstraße am Keller und kann es erneut versuchen.
 - ZIEHE Schemel
 - NIMM Silberfischchen (`Silberfisch`)
 - NIMM Gummi (in Schrank links neben dem Herd) (`Abdichtgummi`)
 - BENUTZE `Nachttopf` mit Topf mit Suppe (`Suppe`)
 
-## 27. Seitenstraße
+## 28. Seitenstraße
 
-- Benutze Tür
-  - 'Ich habe früher oft in Lefty's Bar gejobbt.'
+- BENUTZE Tür
+  - "Ich habe früher oft in Lefty"s Bar gejobbt."
   - **SCHNELL** ins
 
-### 27.1. Le pecheur Merveillieux
+### 28.1. Le pecheur Merveillieux
 
 - BENUTZE `Buch der Umgangsformen` mit mittlerem Gast
 - BENUTZE `französischer Bart`
@@ -360,90 +397,96 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - REDE MIT oberem Gast
 - Reise nach
 
-## 28. Flughafen Scotland (Schottland)
+## 29. Flughafen Scotland (Schottland)
 
-- Verlasse Richtung Norden
+- VERLASSE Richtung Norden
 
-## 29. Seeufer
+## 30. Seeufer
 
 - REDE MIT Angler, wähle zuletzt
-  - 'Könnte es sein, dass Sie die falschen Köder habe?'
+  - "Könnte es sein, dass Sie die falschen Köder habe?"
 - BENUTZE `Silberfisch` mit Angler (`Angel`)
 - BENUTZE `Titan Cutter Messer` mit `großer Kleiderhaken` (`Angelhaken`)
 - BENUTZE `Angelhaken` mit `Angel` (`Angel mit großem Haken`)
 - BENUTZE `Angel mit großem Haken` mit Angler
-- Benutze `Titan Cutter Messer` mit Fisch (`Fischhaare`)
-- NIMM Angel (`Angel mit großem Haken`)
+- **SCHWER:**
+  - BENUTZE `Titan Cutter Messer` mit Fisch (`Fischhaare`)
+  - NIMM Angel (`Angel mit großem Haken`)
 - Reise nach
 
-## 30. Flughafen San Francisco
+## 31. **SCHWER:** Flughafen San Francisco
 
 - Reise zum
 
-## 31. National Infiltrator
+## 32. **SCHWER:** National Infiltrator
 
 - ÖFFNE Tür
 
-### 31.1. Redaktion
+### 32.1. **SCHWER:** Redaktion
 
-- BENUTZE `Angel mit großem Haken` mit Sekretärin (`Brille`)
-- Reise nach
+- **SCHWER:**
+  - BENUTZE `Angel mit großem Haken` mit Sekretärin (`Brille`)
+  - Reise nach
 
-## 32. Flughafen Mexiko
+## 33. Flughafen Mexiko
 
 - Reise zur
 
-### 32.1. Kuppel
+### 33.1. Kuppel
 
 - Betrete Pyramide
 
-#### 32.1.1. In der Pyramide
+#### 33.1.1. In der Pyramide
 
-- BENUTZE `Brille` mit Gekritzel
+- **SCHWER:**
+  - BENUTZE `Brille` mit Gekritzel
 - REDE MIT rechter Metallplatte
 - NIMM großer Menschenknochen (`großer Schädel`)
 - NIMM kleiner Menschenschädel (`kleiner Schädel`)
-- BENUTZE `kleiner Schädel` mit Geheimfach
-- BENUTZE `großer Schädel` mit Geheimfach
-- BENUTZE `mittelgroßer Schädel` mit Geheimfach
+- BENUTZE `kleiner Schädel` mit Geheimfach (links)
+- BENUTZE `großer Schädel` mit Geheimfach (mitte)
+- BENUTZE `mittelgroßer Schädel` mit Geheimfach (rechts)
 - NIMM länglicher Schädel (`Schädel`)
 - Reise nach
 
-## 33. San Francisco
+## 34. San Francisco
 
 - Reise zur
 
-## 34. 13th Avenue
+## 35. 13th Avenue
 
 - Betrete Frisör
 
-### 34.1. Artificial Hair Bros.
+### 35.1. Artificial Hair Bros.
 
 - REDE MIT Stanislav
-  - 'Sie haben Recht! Ich brauche eine Perücke!'
-  - 'Ich bin älter als Sie denken!'
-  - 'Ich befinde mich in einer Führungsposition.'
-  - 'Elvis Presley! Der ist cool!'
-  - 'Mystische Gegenden, um die sich Legenden ranken.'
-  - 'Entspannt in einem rosa Cadillac! Ein Traum!'
-  - 'Klassisches Schwarz passt immer gut!'
-- BENUTZE `Fischhaare` mit Stanislav
-- Verlasse Artificial Hair Bros. und betrete den Laden wieder (`Frisur Elvistolle`)
+  - "Sie haben Recht! Ich brauche eine Perücke!"
+  - "Ich bin älter als Sie denken!"
+  - "Ich befinde mich in einer Führungsposition."
+  - "Elvis Presley! Der ist cool!"
+  - "Mystische Gegenden, um die sich Legenden ranken."
+  - "Entspannt in einem rosa Cadillac! Ein Traum!"
+  - "Klassisches Schwarz passt immer gut!"
+- **SCHWER:**
+  - BENUTZE `Fischhaare` mit Stanislav
+- VERLASSE Artificial Hair Bros. und betrete den Laden wieder (`Frisur Elvistolle`)
 
-### 34.2. Zak's Wohnzimmer
+### 35.2. Zak's Wohnzimmer
 
-> **HINWEIS:** Fernseher  
-> Sobald der Fernseher bei den folgenden Aktionen blitzt und Zak das mit 'Was soll das denn?' kommentiert  
->
+> **HINWEIS:** Fernseher
+> Sobald der Fernseher bei den folgenden Aktionen blitzt und Zak das mit "Was soll das denn?" kommentiert:
 > - BENUTZE Fernseher
-
 - SCHAU AN Telefon
 - BENUTZE `Titan Cutter Messer` mit `Schädel` (`Caponierkopf ausgehöhlt`)
 - BENUTZE `Abdichtgummi` mit `Caponierkopf ausgehöhlt` (`Kopf mit Gurkenglasgummi`)
 - BENUTZE `Kopf mit Gurkenglasgummi` mit Marmeladenglas (`Kopf mit Marmelade und Gummi`)
-- BENUTZE `Frisur Elvistolle` mit `Kopf mit Marmelade und Gummi` (`Caponier Schaedel und Tolle`)
 
-## 35. Flugzeug
+### 35.3. Zak's Schlafzimmer
+
+- Optional: BENUTZE `Sushi in Glas` mit Chuck die Pflanze
+- BENUTZE `Frisur Elvistolle` mit `Kopf mit Marmelade und Gummi` (`Caponier Schädel und Tolle`)
+
+## 36. Flugzeug
 
 - BENUTZE `Kaffeebecher` mit Lüftungsschlitze
 - SCHAU AN Krempel (`Sicherung`)
@@ -457,71 +500,74 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - NIMM Plane (`Plane`)
 - BENUTZE `Plane` mit Ladeluke
 
-## 36. Absturzstelle
+## 37. Absturzstelle
 
 - SCHAU AN Sperrmüll
 - NIMM Gießkanne (`Gießkanne mit Loch`)
 - SCHAU AN Schlauch
 - SCHAU AN Maschine
-- DRÜCKE Baum
+- SCHAU AN Kastanie (im Baum)
+- DRÜCKE Baum **3 Mal**
 - NIMM Kastanie (`Kastanie`)
 - ÖFFNE `Kastanie` (`geöffnete Kastanie`)
-- Verlasse Absturzstelle Richtung Süden
+- VERLASSE Absturzstelle Richtung Süden
 
-## 37. Gartenhaus
+## 38. Gartenhaus
 
 - REDE MIT fleischfressende Pflanze
-- NIMM Äste (`Y-förmiger Ast`)
+- **SCHWER:**
+  - NIMM Äste (`Y-förmiger Ast`)
 - SCHAU AN Termiten
-  > **ACHTUNG:** Easter Egg  
-  > Spiel **SPEICHERN** und die Termiten mal NEHMEN
+  > **ACHTUNG:** Easter Egg
+  > Spiel **SPEICHERN** und die Termiten NEHMEN
 - NIMM angefressener Düngesack (`Düngesack`)
 - NIMM Kaugummi (`Kaugummi`)
 - BENUTZE `Kaugummi` (`gekautes Kaugummi`)
 - BENUTZE `gekautes Kaugummi` mit `Gießkanne mit Loch` (`Gießkanne`)
 - NIMM Windrad (`hohles Bambusrohr`, `Windrad`)
-- DRÜCKE Busch
-- BENUTZE Wasserzulauf
+- **SCHWER:**
+  - DRÜCKE Busch
+  - BENUTZE Wasserzulauf
 
-## 38. Absturzstelle
+## 39. Absturzstelle
 
 - BENUTZE `Düngesack` mit `Gießkanne` (`mit Dünger gefüllte Gießkanne`)
 - BENUTZE `mit Dünger gefüllte Gießkanne` mit Schlauch (`Gießkanne mit Düngemittel`)
 
-## 39. Gartenhaus
+## 40. Gartenhaus
 
-- Verlasse nach Norden in Richtung Waldrand
+- VERLASSE nach Norden in Richtung Waldrand
 
-## 40. Waldrand
+## 41. Waldrand
 
 - REDE MIT Gärtner **2 Mal**
-  - 'Sie haben da aber schöne Handschuhe'
+  - "Sie haben da aber schöne Handschuhe"
 - NIMM Handschuhe (`graue Arbeitshandschuhe`)
 - REDE MIT Gärtner
-  - 'Darf ich mir mal Ihre Schaufel ausborgen?'
-  - 'Sagen Sie, kennen Sie sich mit Schädlingen aus?'
-  - 'Nun, ich habe eigentlich vor, sie los zu werden.'
+  - "Darf ich mir mal Ihre Schaufel ausborgen?"
+  - "Sagen Sie, kennen Sie sich mit Schädlingen aus?"
+  - "Nun, ich habe eigentlich vor, sie los zu werden."
 - DRÜCKE Gärtner
 - NIMM Holzauge (`Holzauge`)
 - BENUTZE `geöffnete Kastanie` mit Gärtner
 - NIMM Saatgut (`Saatgut`)
 
-## 41. Gartenhaus
+## 42. Gartenhaus
 
 - BENUTZE `graue Arbeitshandschuhe` mit `hohles Bambusrohr` (`Bambusrohr mit Handschuh`)
 - BENUTZE `Bambusrohr mit Handschuh` mit Bank (`grün gefärbte Handschuhe`)
 - BENUTZE `Titan Cutter Messer` mit `grün gefärbte Handschuhe` (`abgeschnittener, grüner Daumen`, `Spitze des Titan Cutter`)
 
-## 42. Waldrand
+## 43. Waldrand
 
 - BENUTZE `abgeschnittener, grüner Daumen` mit Gärtner
 - BENUTZE `Gießkanne mit Düngemittel` mit Beet
 - ÖFFNE Beet
 - NIMM ausgegrabene Erdnuss (`Erdnuss`)
 
-## 43. Gartenhaus
+## 44. Gartenhaus
 
-- BENUTZE `Caponier Schaedel und Tolle`
+- BENUTZE `Caponier Schädel und Tolle` (aufsetzen)
 - BENUTZE `Erdnuss` mit fleischfressende Pflanze
 - SCHAU AN Rückwand
 - BENUTZE `Holzauge` mit Zerkleinerer
@@ -529,81 +575,86 @@ Das Spiel kann kostenlos auf der [Projektseite](http://www.mckracken.net/cms/bet
 - BENUTZE `Sägespäne aus Mahagoni` mit Termiten
 - Gehe durch offenes Loch
 
-## 44. Gebäudeseite
+## 45. Gebäudeseite
 
 - NIMM Lederlappen (`Lederlappen`)
 - DRÜCKE Loca Automat
 - NIMM Coladose (`Locadose`)
 - SCHAU AN getorftes Beet
 - NIMM drei Pfeile (`blauer Pfeil`, `roter Pfeil`, `grüner Pfeil`)
-  > **HINWEIS:** Pfeile  (SPOILER, wer selbst suchen möchte überspringt diesen Teil)  
-  > Diese sind schwer zu entdecken, da sehr klein und alle von anderen Gegenständen zum Großteil verdeckt.  
+  > **HINWEIS:** Pfeile  (SPOILER, wer selbst suchen möchte überspringt diesen Teil)
+  > Diese sind schwer zu entdecken, da sehr klein und alle von anderen Gegenständen zum Großteil verdeckt.
   > <details><summary>*** Klicke um die Fundorte zu sehen ***
   > </summary>
   >  Blauer Pfeil: Zwischen Dachrinne und weiß-blauem Topf<br>
   >  Roter  Pfeil: Zwischen getorftem Beet und rotem Blumenkasten<br>
   > Grüner Pfeil:<br>
   >- Entweder direkt links neben dem Gitter im Boden neben dem grünen Kasten oder<br>
-  >- im Labor unterhalb des Käfigs bzw unter dem Destillierapparat
+  >- im Labor unterhalb des Käfigs bzw. unter dem Destillierapparat
   >  </details>
-- BENUTZE `Caponier Schaedel und Tolle`
-- Gehe zu vorderer Hausbereich
+- BENUTZE `Caponier Schädel und Tolle`
+- GEHE ZU vorderer Hausbereich
 
-### 44.1. Labor
+### 45.1. Labor
 
-- DRÜCKE Topf mit Gewächs
+- **LEICHT:**
+  - NIMM Kabel (`Kabel`)
+- **SCHWER:**
+  - SCHLIESSE geöffnete Tür
+  - NIMM Kabel (`Kabel`)
+  - DRÜCKE Topf mit Gewächs
+  - NIMM angerostete Eisenstange (an der Treppe vorne links) (`Eisenstange`)
 - NIMM Topf (`Trieb Kletterpflanze`)
-- NIMM angerostete Eisenstange (an der Treppe vorne links) (`Eisenstange`)
-- SCHLIESSE geöffnete Tür
-- NIMM Kabel (`Kabel`)
 
-## 45. Gebäudeseite
+## 46. Gebäudeseite
 
 - BENUTZE `Trieb Kletterpflanze` mit getorftes Beet
 - BENUTZE `Gießkanne mit Düngemittel` mit Rankentrieb
 - GEHE zu geöffnetes Fenster
 
-### 45.1. Büro
+### 46.1. Büro
 
 - SCHAU AN Weltherrschaftspläne
 - NIMM Weltherrschaftspläne (`Welteroberungspläne`)
 - NIMM Schraubendreher (`Schraubenzieher`)
 - DRÜCKE Schalter
-- BENUTZE `Caponier Schaedel und Tolle`
+- BENUTZE `Caponier Schädel und Tolle` (absetzen)
 - BENUTZE `grüner Pfeil` mit Dartspiel
 - BENUTZE `blauer Pfeil` mit Dartspiel
 - BENUTZE `roter Pfeil` mit Dartspiel
-- **WICHTIG**: BENUTZE `Caponier Schaedel und Tolle` (Maske wieder anziehen)
+- **WICHTIG**: BENUTZE `Caponier Schädel und Tolle` (Maske wieder aufsetzen)
 - Betrete Schrank
 
-## 46. Caponier-Zentrale
+## 47. Caponier-Zentrale
 
-Dialogsequenz:
+- **LEICHT:**
+  - DRÜCKE Knopf (an der Konsole links unten)
+  - NIMM Besen (`Besen`)
+- **SCHWER:**
+  - "Ich schloss gerade die Tür hinter mir..."
+  - "...als ich Lust auf Marillenknödel mit süßer Soße bekam"
+  - "Ich ging daraufhin in die Küche, stolperte aber."
+  - "...steckte ich kopfüber in einer Mikrowelle"
+  - "Irgendein Idiot drückte auf einen der Knöpfe"
+  - "...floss ein gigantischer Elektrosturm um mich herum."
+  - "...die Raum-Zeit-Dimension durchquerte..."
+- VERLASSE Raum im Norden durch die Sicherheitstür
 
-- 'Ich schloss gerade die Tür hinter mir...'
-- '...als ich Lust auf Marillenknödel mit süßer Soße bekam'
-- 'Ich ging daraufhin in die Küche, stolperte aber.'
-- '...steckte ich kopfüber in einer Mikrowelle'
-- 'Irgendein Idiot drückte auf einen der Knöpfe'
-- '...floss ein gigantischer Elektrosturm um mich herum.'
-- '...die Raum-Zeit-Dimension durchquerte...'
-- Verlasse Raum im Norden durch die Sicherheitstür
-
-### 46.1. Gang
+### 47.1. Gang
 
 - ZIEHE Verblendung
 - BENUTZE `hohles Bambusrohr` mit grüner Schlabbersack
 - NIMM geplatzter Schlabbersack (`klebriger Schleim`)
-- Verlasse Gang durch östliche Tür
+- VERLASSE Gang durch östliche Tür
 
-#### 46.1.1. Zimmer des Kings
+#### 47.1.1. Zimmer des Kings
 
 - ÖFFNE Schrank
 - NIMM Mobile (`Mobile`)
 - BENUTZE `Mobile` mit Schnur
 - DRÜCKE Mobile
 - BENUTZE Jukebox
-  - WÄHLE Lied 13 'Lullaby'
+  - WÄHLE Lied 13 "Lullaby"
 - ÖFFNE Vorhang
 - DRÜCKE blauer Anzug
 - DRÜCKE goldener Umhang
@@ -612,95 +663,102 @@ Dialogsequenz:
 - BENUTZE `Schnuller` mit "Der King"
 - NIMM Schlüssel (`gebogenes Metallstück`)
 - DRÜCKE Portraitbild des King
-- Gehe zurück in den
+- **LEICHT:**
+  - NIMM blauer Kristall (`Blauer Kristall`)
+- GEHE Zurück in den
 
-### 46.2. Gang
+### 47.2. Gang
 
-- Gehe zu linker Tür
+- GEHE ZU linker Tür
 - SCHAU AN seltsame Mechanik
 - BENUTZE `gebogenes Metallstück` mit seltsame Mechanik
 
-#### 46.2.1. Maschinenraum
+#### 47.2.1. Maschinenraum
 
 - ÖFFNE Kasten
 - DRÜCKE Knopf
 - NIMM Leuchtender Kristall (`Kristall`)
-- SCHAU AN verwesende Weltraumputze
+- >**EASTER EGG:**
+  >- SCHAU AN verwesende Weltraumputze
 - BENUTZE `klebriger Schleim` mit `Handknochen` (`knöcherne Hand mit Schleim`)
 - BENUTZE `knöcherne Hand mit Schleim` mit Schalter
 - NIMM länglicher Gegenstand (`leerer Glaszylinder`)
 
-## 47. Caponier Zentrale
+## 48. Caponier Zentrale
 
 - NIMM Vorhang
 - Gehe durch den Teleporter zurück bis zur
 
-## 48. Absturzstelle
+## 49. Absturzstelle
 
 - BENUTZE `Locadose` mit Maschine
 - ÖFFNE Kappe
 - BENUTZE `Kristall` mit Kappe
 - SCHLIESSE Vorrichtung
 - BENUTZE `Eisenstange` mit entrostete Maschine
-- BENUTZE `Caponier Schaedel und Tolle`
+- BENUTZE `Caponier Schädel und Tolle` (absetzen)
 - BENUTZE Hebel
   - Hebel drücken
 
-## 49. Zukunft
+## 50. Zukunft
 
 - NIMM Fliegenpilz (`Fliegenpilz`)
-- NIMM Augapfel (`Augapfel eines Caponiers`)
+- **SCHWER:**
+  - NIMM Augapfel (`Augapfel eines Caponiers`)
 - BENUTZE `Lederlappen` mit `Schraubenzieher` (`umwickelter Schraubenzieher`)
 - BENUTZE `umwickelter Schraubenzieher` mit Klappe (an der Bombe)
 - NIMM Sprengkörper (`Sprengkörper`)
-- Verlasse Zukunft Richtung Westen
+- VERLASSE Zukunft Richtung Westen
 
-## 50. Absturzstelle
+## 51. **SCHWER:** Absturzstelle
 
-- BENUTZE `Caponier Schaedel und Tolle`
-- Gehe zum
+- BENUTZE `Caponier Schädel und Tolle` (aufsetzen)
+- GEHE zum
 
-### 50.1. Gang im Raumschiff
+### 51.1. **SCHWER:** Gang im Raumschiff
 
 - Betrete
 
-#### 50.1.1. Zimmer des Kings
+#### 51.1.1. **SCHWER:** Zimmer des Kings
 
-- Benutze `Augapfel eines Caponiers` mit Safe
+- BENUTZE `Augapfel eines Caponiers` mit Safe
 - NIMM blauer Kristall (`Blauer Kristall`)
 - Zurück zur
 
-## 51. Absturzstelle
+## 52. Absturzstelle
 
-- BENUTZE `Caponier Schaedel und Tolle`
+- **SCHWER:**
+  - BENUTZE `Caponier Schädel und Tolle` (absetzen)
 - BENUTZE Hebel
   - Hebel ziehen
 
-## 52. Vergangenheit
+## 53. Vergangenheit
 
 - REDE MIT Kleines Mädchen
-- NIMM Haargummi (`Haargummi`)
 - NIMM Fingerhut (`Fingerhut`)
-- BENUTZE `Haargummi` mit `Y-förmiger Ast` (`Zwille`)
-- BENUTZE `Zwille` mit Puppe (warten, bis das kleine Mädchen die Puppe über ihren Kopf hält)
-- NIMM Puppe (`Stoffpuppe`)
-- BENUTZE `Sushi im Glas` mit Tümpel (`leeres Aquarium`)
+- **SCHWER:**
+  - NIMM Haargummi (`Haargummi`)
+  - BENUTZE `Haargummi` mit `Y-förmiger Ast` (`Zwille`)
+  - BENUTZE `Zwille` mit Puppe (warten, bis das kleine Mädchen die Puppe über ihren Kopf hält)
+  - NIMM Puppe (`Stoffpuppe`)
+- **INFO:** Falls man Sushi nicht bereits in Zak's Schlafzimmer mit Chuck der Pflanze benutzt hat:
+  - BENUTZE `Sushi im Glas` mit Tümpel (`leeres Aquarium`)
 - BENUTZE `Saatgut` mit Vogelhaus
 - BENUTZE `Blauer Kristall` mit Vogel
 - Fliege im Bild nach oben (Bild scrollt in die Baumkrone)
 - DRÜCKE Eierschalen
 - NIMM Vogelbeeren (`Vogelbeeren`)
-  > **HINWEIS:** Fehler im Spiel  
+  > **HINWEIS:** Fehler im Spiel
   > Um wieder nach unten zu kommen, muss man erst nach oben fliegen, bis der Bildschirm nach oben scrollt.
 - GIB `Vogelbeeren` an Zak
 - Fliege durch Dachfenster
 
-### 52.1. Dachboden
+### 53.1. Dachboden
 
 - NIMM Schlüssel (`Schlüssel`)
 - Fliege wieder hinaus
 
-## 53. Vergangenheit
+## 54. Vergangenheit
 
 - BENUTZE `Schlüssel` mit Zak
 - BENUTZE Zak
@@ -708,7 +766,7 @@ Dialogsequenz:
 - ÖFFNE Tür
 - Betrete Haus
 
-### 53.1. Dachboden
+### 54.1. Dachboden
 
 - NIMM Zettel vom Tisch (`Forschungsergebnisse`)
 - SCHAU AN `Forschungsergebnisse`
@@ -719,51 +777,54 @@ Dialogsequenz:
 - BENUTZE seltsames Gerät
 - NIMM Aquarium (`Aquarium mit Gift`)
 - BENUTZE `Aquarium mit Gift` mit leerer Glaszylinder (`gefüllter Glaszylinder`, `leeres Aquarium`)
-- Verlasse die Vergangenheit
+- VERLASSE die Vergangenheit
 
-## 54. Waldrand
+## 55. **SCHWER:** Waldrand
 
+- BENUTZE `Caponier Schädel und Tolle` (absetzen)
 - BENUTZE `Stoffpuppe` mit Gärtner
 - NIMM Schaufel (`Spaten`)
-- BENUTZE `Caponier Schaedel und Tolle` (anziehen)
+- BENUTZE `Caponier Schädel und Tolle` (aufsetzen)
 
-## 55. Caponier Zentrale
+## 56. Caponier Zentrale
 
 - BENUTZE Schalter
 - BENUTZE `gefüllter Glaszylinder` mit offener Schacht
 
-### 55.1. Gebäudeseite
+### 56.1. Gebäudeseite
 
 - Betrete
 
-#### 55.1.1. Labor
+#### 56.1.1. Labor
 
-- BENUTZE `Spaten` mit Dreckhaufen
+- **LEICHT:**
+  - BENUTZE `Besenwesen` mit Dreckhaufen
+- **SCHWER:**
+  - BENUTZE `Spaten` mit Dreckhaufen
 - ÖFFNE Klappe?
 - NIMM Gegenstand (`Sprenghebel`)
 - BENUTZE `Sprenghebel` mit `Kabel` (`Sprenghebel mit Kabel`)
 - BENUTZE `Sprenghebel mit Kabel` mit `Sprengkörper` (`Sprengsatz`)
 - BENUTZE `Sprengsatz`
 
-## 56. United Nations
+## 57. **SCHWER:** United Nations
 
-Dialogsequenz:
+- "...die Caponier nicht so unsagbar dumm gewesen wären."
+- "...DU BIST EIN HELD!"
+- "... den außerirdischen Caponiern."
+- "...durch die Zeit zu reisen,..."
 
-- '...die Caponier nicht so unsagbar dumm gewesen wären.'
-- '...DU BIST EIN HELD!'
-- '... den außerirdischen Caponiern.'
-- '...durch die Zeit zu reisen,...'
+### 57.1. Zak's Wohnzimmer
 
-### 56.1. Zak's Wohnzimmer
+- **SCHWER:**
+  - NIMM Spitze des Titancutters (aus dem Regal) (`Spitze des Titan Cutter`)
 
-- NIMM Spitze des Titancutters aus dem Regal (`Spitze des Titan Cutter`)
-
-### 56.2. Zak's Schlafzimmer
+### 57.2. Zak's Schlafzimmer
 
 - ÖFFNE unterste Schublade
 - NIMM Pariser (`Kondom`)
 
-### 56.3. Zak's Wohnzimmer
+### 57.3. Zak's Wohnzimmer
 
 - ÖFFNE Schublade
 - NIMM Rezeptbuch (`Kochbuch`)
@@ -773,9 +834,9 @@ Dialogsequenz:
 - ÖFFNE Kühlschrank (`Butter`)
 - ÖFFNE Schlüsselkasten
 - NIMM Briefkastenschlüssel (`Briefkastenschlüssel`)
-- Verlasse Wohnung
+- VERLASSE Wohnung
 
-## 57. 13th Avenue
+## 58. 13th Avenue
 
 - BENUTZE `Briefkastenschlüssel` mit Briefkasten (`Paket`)
 - ÖFFNE `Paket` (`Zirkel`)
@@ -783,7 +844,7 @@ Dialogsequenz:
 - BENUTZE `Titan-Cutter-Zirkel` mit Schaufenster
 - NIMM Tortenboden (`Tortenboden`)
 
-## 58. Zak's Wohnzimmer
+## 59. Zak's Wohnzimmer
 
 - SCHAU AN Telefon
 - ÖFFNE Mikrowelle
@@ -798,13 +859,13 @@ Dialogsequenz:
 - BENUTZE `Ungebackene Orangencreme-Torte` mit geöffneter Ofen (`Orangenbuttercremetorte`)
 - ÖFFNE Haustür und verlasse Wohnung
 
-## 59. 13th Avenue
+## 60. 13th Avenue
 
-- Gehe zu Treppe
+- GEHE ZU Treppe
 
 --------------------------------------------------------------------------------
 
-## 60. Video Walkthrough
+## 61. Video Walkthrough
 
 Zak 2 - Between Time and Space Directors Cut Lösung (Deutsch) (PC, Win) [50 FPS] - Unkommentiert
 
