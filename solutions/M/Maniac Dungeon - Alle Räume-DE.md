@@ -941,3 +941,73 @@ Maniac Dungeon Raum 20: Die Pharaonen-Grabkammer (Deu) (PC, Win) - Unkommentiert
 Maniac Dungeon Raum 21: Durch Raum (21) und Zeit (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/0MHN9yWorM4/0.jpg)](https://www.youtube.com/watch?v=0MHN9yWorM4)
+
+--------------------------------------------------------------------------------
+
+## 22. Raum 22 - Unter Affen
+
+- >EASTER EGGS:
+  >- Man kann wieder alle möglichen Inventargegenstände mit allen Charakteren benutzen
+  >- Der Hamsterduden übersetzt diverse Dinge in Hamstersprache
+- Unser Inventar zu Beginn: `Hamster`, `Kaputter Lukenöffner`, `Hamsterduden`
+- GEHE nach links
+- REDE MIT Guybrush (`Leere Flasche`, `173 Goldstücke`, `Affenkopf-Schlüssel`, `Geisterfeder`, `Geisterwerkzeug`, `Heftklammer-Entferner`, `interessanter Stein`, `jede Menge Memos`, `Kanonenkugel`, `Linse`, `Magnet-Kompass`, `Pfefferminz`, `Schädel`, `Tinte`, `Visitenkarte`, `T-Shirt`)
+- >EASTER EGG:
+  >- BENUTZE `Linse` mit `173 Goldstücke`
+- BENUTZE `Kaputter Lukenöffner` mit malziger Ed (`Lukenöffner`)
+- BENUTZE `Affenkopf-Schlüssel` mit malziger Ed (`gebrauchtes Q-Tip`)
+- BENUTZE `Lukenöffner` mit `gebrauchtes Q-Tip` (`Verlängerungsarm`)
+- BENUTZE `Leere Flasche` mit Pilz (`Pilzsporen`)
+- DRÜCKE Pilz
+- SCHAU AN etwas unter dem Pilz
+  - **HINWEIS:** Der Hotspot erscheint erst, wenn man Lukenöffner und Affenkopf-Schlüssel mit malziger Ed benutzt hat.
+- ÖFFNE `Magnet-Kompass` (`Kompass ohne Magnet`, `Kompassnadel`)
+- BENUTZE `Pilzsporen` mit etwas unter dem Pilz
+- BENUTZE `Kanonenkugel` mit `Schädel` (`Kanonenkugel mit Kopf`)
+- BENUTZE `Kanonenkugel mit Kopf` mit `Heftklammer-Entferner` (`Kanonenkugel mit Kopf un`)
+- BENUTZE `Kanonenkugel mit Kopf un` mit `Geisterfeder` (`hässliches Hühnchen`)
+- BENUTZE `hässliches Hühnchen` mit Geisterhühnchen (`Flaum`)
+- BENUTZE `Flaum` mit `T-Shirt` (`Nest`)
+- BENUTZE `Nest` mit Geisterhühnchen
+- SCHAU AN eingeritzte Zeichen (in der linken Hälfte des Raums, der linke Baum auf dem Pfad hinten. Es gibt eine Hotspot `Baum` und dort unten am Baumstamm)
+- BENUTZE `Linse` mit eingeritzte Zeichen
+- >EASTER EGG:
+  >- BENUTZE Baum
+- BENUTZE `Verlängerungsarm` mit Gesicht
+- SCHAU AN helle Stelle (auf dem Boden unter dem Gesicht)
+- REDE MIT Voodoo Lady
+  - Benötigte Zutaten: Ei, Salz, lebende Feder, Lava, Tinte, Papier, Wurzel
+- BENUTZE `Kompass ohne Magnet` mit helle Stelle
+- BENUTZE `Verlängerungsarm` mit Gesicht
+- NIMM Kompass-Schale (`Salz`)
+- NIMM Geisterhühnchen (es sitzt jetzt im Nest)
+- BENUTZE `hässliches Hühnchen` mit Geisterhühnchen
+- BENUTZE `Geisterwerkzeug` mit Feder (`lebende Feder`)
+- SCHAU AN Ed hat da was (an Ed's Gürtelschnalle)
+- NIMM Ed hat da was (`Faden`)
+- NIMM Nest (`Nest`, `Ei`, `hässliches Hühnchen`)
+- BENUTZE `hässliches Hühnchen` mit Razor (oder Bernard)
+- BENUTZE folgende Inventargegenstände mit der Voodoo Lady: `Ei`, `Feder`, `Salz`, `Tinte`, `jede menge Memos` (`Zettel und Stift`)
+- BENUTZE `Zettel und Stift` mit Bernard (`Wurzel`)
+- BENUTZE `Faden` mit `Kompassnadel` (`magnetisches Pendel`)
+- BENUTZE `magnetisches Pendel`
+- GEHE in Richtung Ausgang (`Schale`)
+- BENUTZE `Pfefferminz` mit Klippe (an der Startposition rechts unterhalb der Gesichter)
+- BENUTZE `Schale` mit Lavafontäne (`Lava`)
+- BENUTZE `Wurzel` mit Voodoo Lady
+- BENUTZE `Lava` mit Voodoo Lady (`Ei`, `Salz`, `Lava`)
+- ÖFFNE das Spielmenü mit F5
+  - SCHAU AN Menü
+  - BENUTZE `interessanter Stein` mit Menü innerhalb des linken Rahmens unten rechts in der Ecke (`Hamster`)
+  - BENUTZE `Ei` mit (linkem) Symbol
+  - BENUTZE `Lava` mit (mittlerem) Symbol
+  - BENUTZE `Salz` mit (rechtem) Symbol (`Spiegelei`)
+  - KLICKE auf den Spielen Knopf
+- BENUTZE `Spiegelei` mit Voodoo Lady (`Magische Sodaflasche`)
+- BENUTZE `Magische Sodaflasche` mit Guybrush
+
+### 22.1. Video Walkthrough
+
+Maniac Dungeon Raum 22: Unter Affen Lösung (Deutsch) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/fYvi0GwSg9w/0.jpg)](https://www.youtube.com/watch?v=fYvi0GwSg9w)
