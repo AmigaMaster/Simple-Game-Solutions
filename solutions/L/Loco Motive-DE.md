@@ -1,8 +1,9 @@
 # Loco Motive (Full Version) - Walkthrough
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|   0.9   | 28.11.2024 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor                                          |
+|:-------:|------------|------------------------------------------------|
+|   1.0   | 12.01.2025 | Amiga Master, verified with second playthrough |
+|   0.9   | 28.11.2024 | Amiga Master (AmigaMaster-NG@t-online.de)      |
 
 ## 1. Polizeistation
 
@@ -92,8 +93,6 @@
 - NIMM vermisstes Testament
 - REDE MIT Barkeeper
 - REDE MIT Ron
-- REDE MIT Zwillinge
-- BENUTZE Liebesbrief mit Zwillinge
 - REDE MIT Zwillinge
 - REDE MIT Susanne
 - REDE MIT Don
@@ -222,6 +221,7 @@
 
 - REDE MIT Doktor Leisch
 - SCHAU AN Teppich (rechte Seite vom Teppich)
+- NIMM Blütenblätter (`Blütenblätter`)
 
 ### 4.6. Loungewaggon
 
@@ -257,10 +257,6 @@
   - **MERKE:** `Ethanol`, `Coktailparfüm`, `Blütenblätter`
 - BENUTZE `Dons Poesiealbum` mit Buch (`Dr. Schleihers Leitfaden zur Unsichtbarkeit`)
 - SCHAU AN `Dr. Schleihers Leitfaden zur Unsichtbarkeit`
-
-#### 4.9.2. Lady Unterwalds Quartier
-
-- NIMM Blütenblätter (`Blütenblätter`)
 
 ### 4.10. Speisewaggon
 
@@ -394,8 +390,8 @@
 - REDE MIT **allen drei** Verlegern
 - BENUTZE `Brieföffner` mit `Paket` (`Chiseltons Manuskript`, `Deckblatt`)
 - BENUTZE `Brieföffner` mit `Prototyp-Puppe` (`zerfetzte Puppe`, `Sägemehl`)
-- BENUTZE `Sägemehl` mit `gefüllter Becher` (`Becher mir Paste`)
-- BENUTZE `Becher mir Paste` mit Schlitz (der Maschine) (`Pappbecher`)
+- BENUTZE `Sägemehl` mit `gefüllter Becher` (`Becher mit Paste`)
+- BENUTZE `Becher mit Paste` mit Schlitz (der Maschine) (`Pappbecher`)
 - REDE MIT **allen drei** Verlegern
   - **MERKE:** `Action`, `Emotionen`, `Die anderen beiden überzeugen`
 - SCHAU AN Ablage
@@ -418,7 +414,7 @@
 
 #### 5.3.1. Waschraum
 
-- NIMM Saugglocke (`Saugglocke (rot)`)
+- NIMM Saugglocke (`Saugglocke (blau)`)
 - VERLASSE den Raum
 
 ### 5.4. Loungewaggon 2
@@ -469,17 +465,13 @@
 - REDE MIT verärgerter Gentleman
 - BENUTZE `Rosebud-Rezept` mit Barkeeper
 
-### 5.9. Küchenwaggon
+### 5.9. Schlafwaggon
 
-- Als Gesundheitsinspektor ausgeben
-
-### 5.10. Schlafwaggon
-
-#### 5.10.1. Kabine 305 - Dons Abteil
+#### 5.9.1. Kabine 305 - Dons Abteil
 
 - BENUTZE `Junior-Detektiv-Abzeichen` mit Don (`Detektivabzeichen`)
 
-### 5.11. Küchenwaggon
+### 5.10. Küchenwaggon
 
 - Als Gesundheitsinspektor ausgeben
 - NIMM Saugglocke (`Saugglocke (rot)`)
@@ -497,7 +489,7 @@
     - >**ACHIEVEMENT:** Wenn du die Hitze nichts aushältst ...
 - BENUTZE `Pappbecher` mit Eintopf (`scharfe Suppe`)
 
-### 5.12. Speisewaggon
+### 5.11. Speisewaggon
 
 - BENUTZE `Detektivabzeichen` mit Bergmann (1/5)
 - BENUTZE `Detektivabzeichen` mit Ron (2/5)
@@ -505,14 +497,14 @@
 - BENUTZE `Rosebud-Rezept` mit Barkeeper
 - NIMM Magneten (`Magnet`)
 
-### 5.13. Schlafwaggon
+### 5.12. Schlafwaggon
 
-#### 5.13.1. Kabine 305 - Dons Abteil
+#### 5.12.1. Kabine 305 - Dons Abteil
 
 - BENUTZE `Detektivabzeichen` mit Don (4/5)
 - BENUTZE `Magnet` mit Don (`gefälschte Gästeliste`)
 
-### 5.14. Loungewaggon
+### 5.13. Loungewaggon
 
 - BENUTZE `gefälschte Gästeliste` mit Gästeliste
 - BENUTZE `Detektivabzeichen` mit Inspizientin (4/5)
@@ -520,7 +512,7 @@
   - Die Gästeliste nochmals überprüfen
 - BETRETE Green Room
 
-#### 5.14.1. Green Room
+#### 5.13.1. Green Room
 
 - BENUTZE `Detektivabzeichen` mit Sängerin (5/5)
   - >**ACHIEVEMENT:** Hermann Mermann, Detektiv der Extraklasse!
@@ -545,7 +537,7 @@
     - Material: Schick, definitiv Silber oder Gold, Kein Metall & von selben Typen wie die Unterwald-Büsten
     - Geste: Keine beleidigende Geste, Handbewegung, Majestätisch
     - Zitat: Hat mit den Unterwalds zu tun, Sentimental, Rührselig mit Familie
-- REDE MIT Herrn Liu
+- REDE MIT Herr Liu
 - REDE MIT Mitglied rechts im Lager (Bruder Brian)
   - **HINWEIS:** Noch hat man nicht alle Hinweise für den Handgötzen
 
@@ -773,7 +765,7 @@
 
 >Arthur
 - BENUTZE Rohrpost (`Spule`)
-- NIMM Schallplatte (`Grammofonplatte`)
+- NIMM Schallplatte (aus dem rechten Bücherregal) (`Grammofonplatte`)
 - SCHAU AN Gemälde (über dem Kamin)
   - >**ACHIEVEMENT:** Lord Unterwald
 - BENUTZE `Spule` mit `leerer Rekorder` (`Taschenrekorder`)
