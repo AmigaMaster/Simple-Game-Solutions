@@ -1033,4 +1033,4 @@ Maniac Dungeon Raum 22: Unter Affen Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 Maniac Dungeon Raum 23: (R)ausgefallen Lösung (Deutsch) (PC, Win) - Unkommentiert
 
-[![Walkthrough](https://img.youtube.com/vi/fYvi0GwSg9w/0.jpg)](https://www.youtube.com/watch?v=fYvi0GwSg9w)
+[![Walkthrough](https://img.youtube.com/vi/TvqWIPJSXAI/0.jpg)](https://www.youtube.com/watch?v=TvqWIPJSXAI)
