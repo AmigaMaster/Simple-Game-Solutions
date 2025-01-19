@@ -2,9 +2,10 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
-|   1.23  | 17.01.2025 | AmigaMaster, Raum 23 hinzugefügt          |
-|   1.22  | 11.01.2025 | AmigaMaster, Raum 22 hinzugefügt          |
-|   1.0   | 07.10.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|  1.23.1 | 19.01.2025 | AmigaMaster, Raum 23 korrigiert           |
+|  1.23   | 17.01.2025 | AmigaMaster, Raum 23 hinzugefügt          |
+|  1.22   | 11.01.2025 | AmigaMaster, Raum 22 hinzugefügt          |
+|  1.0    | 07.10.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -1019,11 +1020,14 @@ Maniac Dungeon Raum 22: Unter Affen Lösung (Deutsch) (PC, Win) - Unkommentiert
 ## 23. Raum 23 - (R)ausgefallen
 
 - KLICKE einmal, sobald niemand mehr etwas sagt
-- Versuche die Lupe zu treffen (es gibt noch keinen Cursor)
+- Versuche die Lupe zu treffen (es gibt noch keinen sichtbaren Cursor)
   - Ed, Razor und Bernard zeigen immer ungefähr in die Richtung, in der der unsichtbare Cursor zeigt
   - Es gibt immer Hinweise, ob man z. B. den Arm, die Tastatur oder etwas anderes trifft
-- LUPE: SCHAU AN Tastatur
-- SCHAU AN Diskette mit "M" in der Diskettenbox
+- LUPE
+  - SCHAU AN Tastatur
+  - SCHAU AN Buch (hinter Ed)
+  - SCHAU AN Eselsohr (unten rechts im Buch) **4 Mal**
+  - SCHAU AN abgerissenes Eselsohr auf dem Tisch
 - NIMM Schlüssel
   - BENUTZE Schlüssel mit Diskettenbox
 - ÖFFNE Diskettenbox
@@ -1033,4 +1037,4 @@ Maniac Dungeon Raum 22: Unter Affen Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 Maniac Dungeon Raum 23: (R)ausgefallen Lösung (Deutsch) (PC, Win) - Unkommentiert
 
-[![Walkthrough](https://img.youtube.com/vi/TvqWIPJSXAI/0.jpg)](https://www.youtube.com/watch?v=TvqWIPJSXAI)
+[![Walkthrough](https://img.youtube.com/vi/c0wge2nTPig/0.jpg)](https://www.youtube.com/watch?v=c0wge2nTPig)
