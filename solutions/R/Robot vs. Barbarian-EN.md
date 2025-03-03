@@ -4,13 +4,19 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 03.03.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Buy the game from the [AGS homepage](https://www.adventuregamestudio.co.uk/play/game/2831).
+Download the free game from the [AGS homepage](https://www.adventuregamestudio.co.uk/play/game/2831).
 
-## 1. Barbarian
+## 1. Copy Protection
+
+- Just wait und do not press any button and it will continue automatically
+- Open den file Documentation\07_BvR Code Wheel CP-Ra425-07.html
+- Build your own copy protection wheel by printing the file Nifty Things\07_BvR Code Wheel CP-Ra425-07.pdf
+
+## 2. Barbarian
 
 SELECT the brown START button
 
-### 1.1. Throne Room
+### 2.1. Throne Room
 
 - GET royal bureau **2 times** (`Royal quill`, `Ink pot`)
 - USE `Royal quill` with king
@@ -19,7 +25,7 @@ SELECT the brown START button
   - Choose as you like (`Bloody sword`)
 - EXIT east
 
-### 1.2. Inner Ward
+### 2.2. Inner Ward
 
 - USE royal outhouse
 - GET bucket and rag (`Rag`)
@@ -27,39 +33,39 @@ SELECT the brown START button
   - Choose beetroot (`Beetroot`)
 - TALK TO royal guard
 
-### 1.3. Throne Room
+### 2.3. Throne Room
 
 - TALK TO king
   - "The guard requests..."
   - "Here is a quill..."
   - "About the toilet...
 
-### 1.4. Inner Ward
+### 2.4. Inner Ward
 
 - USE royal outhouse (`Royal toilet paper`)
 
-### 1.5. Throne Room
+### 2.5. Throne Room
 
 - USE `Ink pot` with royal book press
 - USE `Beetroot` with royal book press (`Filled ink pot`)
 - TALK TO king
   - "Here... quill, ink and paper, Sire." (`Royal permit`)
 
-### 1.6. Inner Ward
+### 2.6. Inner Ward
 
 - USE `Rag` with bucket (`Wet rag`)
 - USE `Wet rag` with bloody sword
 - USE `Royal permit` with guard
 
-### 1.7. Throne Room
+### 2.7. Throne Room
 
 - USE `Bloody sword` with shoe polishing machine (`Sword`)
 
-### 1.8. Inner Ward
+### 2.8. Inner Ward
 
 - ISE `Sword` with guard
 
-### 1.9. Outside
+### 2.9. Outside
 
 - GET small skulls
   - CHOOSE as you like (`Skull`)
@@ -85,7 +91,7 @@ SELECT the brown START button
 - LOOK AT `Promotional gift bag` (`Empty bag`, `Leaflet`, `Bottle opener`, `Big blue cup`, `Screwdriver`)
 - EIT east
 
-### 1.10. Cave Entrance
+### 2.10. Cave Entrance
 
 - USE cart
 - USE `Screwdriver` with metal plate
@@ -98,22 +104,22 @@ SELECT the brown START button
 - USE switch to select tour 2
 - USE cart (tour X should be selected)
 
-### 1.11. Cave Exit
+### 2.11. Cave Exit
 
 - USE strange thing
 
-### 1.12. Fight
+### 2.12. Fight
 
 - USE `Tree branch` with unknown danger
 - USW `Sword` with unknown danger
 
 --------------------------------------------------------------------------------
 
-## 2. Robot
+## 3. Robot
 
 - SELECT the blue START button
 
-### 2.1. Supercomputer Room
+### 3.1. Supercomputer Room
 
 - GET remote control (`Remote control`)
 - USE `Remote control` with sensor
@@ -123,7 +129,7 @@ SELECT the brown START button
 - TALK TO Supercomputer
 - EXIT west
 
-### 2.2. Wall in front of Building
+### 3.2. Wall in front of Building
 
 - USE (blue) sign **2 times**
 - USE `Remote control` with GuardBot **2 times**
@@ -133,7 +139,7 @@ SELECT the brown START button
 - LOOK AT (white) sign
 - EXIT east
 
-### 2.3. Supercomputer Room
+### 3.3. Supercomputer Room
 
 - TALK TO Supercomputer
   - "I need a program for the GuardBot."
@@ -155,13 +161,13 @@ SELECT the brown START button
 - USE `ROM cartridge` with cartridge slot
 - USE Switch (to change to the left side)
 
-### 2.4. Wall in front of Building
+### 3.4. Wall in front of Building
 
 - USE `Adhesive tape` with button
 - USE (the other) button
 - USE waste disposal hatch (`Barrier ribbon`, `Closed, empty bottle`, `Nut`)
 
-### 2.5. Supercomputer Room
+### 3.5. Supercomputer Room
 
 - USE `Nut` with broken switch
 - USE switch (to change to the left side)
@@ -175,7 +181,7 @@ SELECT the brown START button
 - GET floppy disk (`Floppy disk`)
 - GET cartridge (`ROM cartridge`)
 
-### 2.6. Wall in front of Building
+### 3.6. Wall in front of Building
 
 - USE `ROM cartridge` with cartridge slot
 - TALK TO GuardBot
@@ -200,7 +206,7 @@ SELECT the brown START button
   2. Wait until noon and shoot the right guy
   3. Wait until 5 minutes before noon, shoot the clock and shoot the middle guy
 
-### 2.7. Ruins
+### 3.7. Ruins
 
 - USE `Closed, empty bottle` (`Empty bottle`, `Bottle cap`)
 - TAKE warning sign (`Warning sign`)
@@ -235,7 +241,7 @@ SELECT the brown START button
 - USE `Greeting card` with goddess
 - USE sign
 
-### 2.8. Forest
+### 3.8. Forest
 
 - USE `Barrier ribbon` with big cactus
   - "Small cactus...!
@@ -269,6 +275,6 @@ SELECT the brown START button
 - WALK west
 - USE strange thing
 
-### 2.9. Fight
+### 3.9. Fight
 
 - USE `Laser gun` with unknown risk
