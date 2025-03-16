@@ -2,6 +2,7 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
+|   1.01  | 01.12.2024 | Amiga Master (AmigaMaster-NG@t-online.de), Videolinks zu Talkieversionen hinzugefügt |
 |   1.0   | 27.12.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
@@ -122,3 +123,11 @@ und werden einen Blick in
 Maniac Mansion Mania Episode 095: Britney's Flucht Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/YYj-_DMYkX8/0.jpg)](https://www.youtube.com/watch?v=YYj-_DMYkX8)
+
+Maniac Mansion Mania Episode 095: Britney's Flucht (Talkie) Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/Hi6Oh0PziZs/0.jpg)](https://www.youtube.com/watch?v=Hi6Oh0PziZs)
+
+Maniac Mansion Mania Episode 095: Britney's Escape (Talkie) Lösung (Eng) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/9R-_XLH8xok/0.jpg)](https://www.youtube.com/watch?v=9R-_XLH8xok)
