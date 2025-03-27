@@ -1,4 +1,4 @@
-# Maniac Mansion Mania Episode 041: Das neue Jugendschutzgesetz (V3.x) - Lösung
+# Maniac Mansion Mania Episode 041: Das neue Jugendschutzgesetz (V3) - Lösung
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
@@ -64,7 +64,7 @@ und dort in der
 
 ### 1.2. Treppenhaus zweite Etage
 
-- BENUTZE Türklingen an (linker) Tür
+- BENUTZE Türklingel an (linker) Tür
 - NIMM Handy (`Handy`)
 - Gehe nach unten ins
 
@@ -154,3 +154,11 @@ und dort in der
 ### 10.2. Straße vor Syd's Haus
 
 - GIB `Hamster` an Weird Ed
+
+--------------------------------------------------------------------------------
+
+## 11. Video Walkthrough
+
+Maniac Mansion Mania Episode 041: Das neue Jugendschutzgesetz V3 (Talkie) Lösung (Deutsch) (PC, Win)
+
+[![Walkthrough](https://img.youtube.com/vi/aar2BgoyFJM/0.jpg)](https://www.youtube.com/watch?v=aar2BgoyFJM)
