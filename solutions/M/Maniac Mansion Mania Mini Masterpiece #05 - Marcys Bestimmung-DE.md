@@ -2,7 +2,8 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
-|   1.0   | 02.09.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|  1.0.2  | 03.02.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|  1.0    | 02.09.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -50,7 +51,8 @@ Die Mini Masterpieces sind kleine, auf maximal 10 Aktionen beschränkte Folgen o
 
 #### 1.7.2. Höhle
 
-- REDE MIT Gamercat
+- REDE MIT Gamercat **2 mal**
+  - Sprich über das Fangen der Elster
 - Verlasse die Höhle durch den linken Durchgang
 
 #### 1.7.3. Vorsprung
@@ -74,3 +76,7 @@ Die Mini Masterpieces sind kleine, auf maximal 10 Aktionen beschränkte Folgen o
 Maniac Mansion Mania Mini Masterpiece #05: Marcys Bestimmung Lösung (Deu) (PC, Win) - Unkomm.
 
 [![Walkthrough](https://img.youtube.com/vi/Yc2QiIp4i-k/0.jpg)](https://www.youtube.com/watch?v=Yc2QiIp4i-k)
+
+Maniac Mansion Mania Mini Masterpiece #05: Marcys Bestimmung (Talkie) Lösung (Deu) (PC, Win) - Unk.
+
+[![Walkthrough](https://img.youtube.com/vi/Y-d9sFD7QcY/0.jpg)](https://www.youtube.com/watch?v=Y-d9sFD7QcY)
