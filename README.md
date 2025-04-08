@@ -9,7 +9,7 @@
 
 Game solutions written in easy-to-read and easy-to-write plain text format, optional using markdown for text formatting.
 
-[![LastCommit](https://img.shields.io/github/last-commit/AmigaMaster/Simple-Game-Solutions?color=%2329C83D)](https://shields.io/) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FSimple-Game-Solutions&count_bg=%2329C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+[![LastCommit](https://img.shields.io/github/last-commit/AmigaMaster/Simple-Game-Solutions?color=%2329C83D)](https://shields.io/) [![Hits](https://github.com/AmigaMaster/github-profile-views-counter/raw/master/svg/profile/badge.svg)](https://github.com/AmigaMaster/github-profile-views-counter)
 
 ## Table of Contents <!-- omit in toc -->
 
