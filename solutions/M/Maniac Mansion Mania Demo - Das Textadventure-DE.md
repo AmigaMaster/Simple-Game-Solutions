@@ -1,4 +1,4 @@
-# Maniac Mansion Mania - Das Textadventure - Lösung
+# Maniac Mansion Mania Demo - Das Textadventure - Lösung
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
