@@ -1,8 +1,9 @@
 # Maniac Mansion Mania Episode 101: Mit anderen Augen - Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 22.03.2023 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor                                                           |
+|:-------:|------------|-----------------------------------------------------------------|
+|   1.01  | 15.04.2025 | Amiga Master nach Hinweis von Kiwa (Maniac Mansion Mania Forum) |
+|   1.0   | 22.03.2023 | Amiga Master (AmigaMaster-NG@t-online.de)                       |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -255,6 +256,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 
 - NIMM Fussmatte (`Zettel`)
 - BENUTZE `Zettel` mit Sonne
+  - ALTERNATIV: BENUTZE `Zettel` mit Kerzen in Bernard's Wohnung
   - MERKE: Kombination `hoch, runter, hoch, hoch, runter`
 - Mittels ZIEHE und DRÜCKE die Kombination auf dem Zettel nachbilden.
 - BETRETE Villa
