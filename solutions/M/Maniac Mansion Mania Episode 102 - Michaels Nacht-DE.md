@@ -17,7 +17,7 @@ Viele Aktionen sind mit einem eigenen Kommentar versehen. Daher ruhig auch unsin
 ## 2. Titelbildschirm
 
 - >**EASTER EGG:**
-  >- BENUTZE Ding
+  >- BENUTZE Ding (den blauen Ball mit Augen)
 
 ## 3. Fotolabor
 
