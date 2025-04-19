@@ -233,3 +233,7 @@ Es gibt jetzt drei Möglichkeiten:
 Maniac Mansion Mania Episode 037: Verabredung mit Dave Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/zaKx5Sut9dc/0.jpg)](https://www.youtube.com/watch?v=zaKx5Sut9dc)
+
+Maniac Mansion Mania Episode 037: Verabredung mit Dave (Talkie) Lösung (Deu) (PC, Win) - Unkomm.
+
+[![Walkthrough](https://img.youtube.com/vi/WNgC8cStxH0/0.jpg)](https://www.youtube.com/watch?v=WNgC8cStxH0)
