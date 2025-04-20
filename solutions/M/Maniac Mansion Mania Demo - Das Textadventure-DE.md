@@ -101,7 +101,7 @@ Spielstände können mit SAVE gespeichert und RESTORE geladen werden und das Spi
 
 ### 2.13. Freier Fall
 
-- **ACHTUNG:** Der Fallschirm uss zwischen der 5. und 8. Aktion gezogen werden!
+- **ACHTUNG:** Der Fallschirm muss zwischen der 5. und 8. Aktion gezogen werden!
 - LOOK **5 mal** (Bis Autos und Bäume erkannt werden)
 - PULL parachute
 
