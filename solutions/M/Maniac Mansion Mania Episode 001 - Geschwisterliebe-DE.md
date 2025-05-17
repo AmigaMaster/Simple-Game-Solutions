@@ -1,8 +1,9 @@
-# Maniac Mansion Mania 001: Geschwisterliebe Lösung
+# Maniac Mansion Mania 001: Geschwisterliebe - Lösung
 
 | Version | Datum      | Autor
 |---------|------------|------
-|  1.02   | 22.03.2023 | Amiga Master (AmigaMaster-NG@t-online.de), remove some needless lines
+|  1.03   | 20.04.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Anpassungen an Ronmastered Collection
+|  1.02   | 22.03.2023 | Amiga Master (AmigaMaster-NG@t-online.de), unnötige Zeilen entfernt
 |  1.01   | 17.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
@@ -25,6 +26,7 @@ und schauen dort in
 
 - NIMM Portemonnaie
 - ÖFFNE Schublade (rechts im Schreibtisch)
+  - Ronmastered Collection: ÖFFNE **beide** Schubladen
 - SCHAU AN Schublade (`Kugelschreiber`)
 - ÖFFNE Tür
 - Verlasse Zimmer
@@ -72,6 +74,7 @@ und schauen dort in
 ### 1.7. Esszimmer
 
 - NIMM rechte Kerze (`Kerze`)
+  - Ronmastered Collection: NIMM **alle** Kerzen
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
 
@@ -107,6 +110,7 @@ und schauen dort in
 ### 1.10. Wohnzimmer
 
 - NIMM rechtes Sitzkissen (`rechtes Sitzkissen`)
+  - Ronmastered Collection: NIMM **beide** Sitzkissen
 - NIMM Fernbedienung (`Fernbedienung`)
 - BENUTZE `Fernbedienung` mit Fernseher
 
@@ -117,6 +121,7 @@ und schauen dort in
 #### 1.11.1. Britney's Zimmer
 
 - NIMM Britneys Tagebuch (`Britneys Tagebuch`)
+- SCHAU AN `Britneys Tagebuch`
 - BENUTZE `Britneys Tagebuch` mit `Briefumschlag`
 - BENUTZE `Kugelschreiber` mit `Briefumschlag`
 
