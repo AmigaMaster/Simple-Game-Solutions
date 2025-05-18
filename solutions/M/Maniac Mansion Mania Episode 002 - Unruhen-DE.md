@@ -1,9 +1,10 @@
-# Maniac Mansion Mania 002: Unruhen Lösung
+# Maniac Mansion Mania 002: Unruhen - Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|  1.01   | 14.06.2023 | Amiga Master (AmigaMaster-NG@t-online.de) |
-|  1.0    | 17.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|:-------:|------------|-------------------------------------------
+|  1.02   | 21.04.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Anpassungen an Ronmastered Collection
+|  1.01   | 14.06.2023 | Amiga Master (AmigaMaster-NG@t-online.de)
+|  1.0    | 17.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -24,6 +25,7 @@ und schauen dort in
 #### 1.1.1. Bernard's Zimmer
 
 - SCHAU AN Bett (`Kleiderbügel`)
+  - Ronmastered Collection: SCHAU AN Kissen
 - ÖFFNE Tür
 - Verlasse Zimmer
 
@@ -34,6 +36,8 @@ und schauen dort in
 ### 1.3. Flur Erdgeschoss
 
 - SCHAU AN Wäschekorb
+  - Ronmastered Collection: Der Wäschekorb befindet sich im Badezimmer (obere Etage, zweite Tür von links)
+- NIMM Wäschekorb
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
 
@@ -56,7 +60,6 @@ und schauen dort in
 
 ### 1.6. Flur Erdgeschoss
 
-- SCHAU AN Wäschekorb
 - ÖFFNE (rechte) Tür
 - Verlasse durch (rechte) Tür
 
@@ -64,14 +67,14 @@ und schauen dort in
 
 - NIMM Fernbedienung (`Fernbedienung`)
 - NIMM Kissen
-- NIMM Kreditkarte
+- NIMM Kreditkarte (`Kreditkarte`)
 - BENUTZE `Fernbedienung` mit Fernseher
 - Gehe zu
 
 ### 2. Flur Obergeschoss
 
-- BENUTZE `Kleiderbügel` mit `Besenstiel` (`Haken am Stiel`)
-- BENUTZE `Haken am Stiel` mit Luke
+- BENUTZE `Kleiderbügel` mit `Besenstiel` (`Haken am Stiel` bzw. `Lukenöffner`)
+- BENUTZE `Haken am Stiel` (oder `Lukenöffner`) mit Luke
 - Zurück in
 
 #### 2.1. Bernard's Zimmer
@@ -98,6 +101,7 @@ und schauen dort in
 ### 5. Flur Erdgeschoss
 
 - BENUTZE `Nudelzange` mit Wäschekorb (`Gefrierbeutel mit Socken`)
+  - Ronmastered Collection: Der Wäschekorb befindet sich im Badezimmer (obere Etage, zweite Tür von links)
 - Gehe zu
 
 ### 6. Flur Obergeschoss
