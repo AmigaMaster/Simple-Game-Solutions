@@ -1,8 +1,9 @@
-# Maniac Mansion Mania Episode 004: Mimikry der Emotionen Lösung
+# Maniac Mansion Mania Episode 004: Mimikry der Emotionen - Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|:-------:|------------|-------------------------------------------
+|  1.01   | 18.05.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Anpassung an Ronmastered Collection
+|  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -23,10 +24,14 @@ und schauen dort in
 #### 1.1.1. Bernard's Zimmer
 
 - REDE MIT Bernard
-- **Easter Egg:** SCHAU AN Chuck
+- **Easter Egg:** SCHAU AN Chuck oder Computer
 - NIMM Cappy (`Cappy`)
 - ÖFFNE rechte Schublade (im Schreibtisch)
 - SCHAU AN Schublade (`Schlauch`)
+  - Ronmastered Collection:
+  - NIMM Schublade (`Schlauch`)
+- Ronmastered Collection:
+  - NIMM Buch (`Goethemist`)
 - ÖFFNE Tür
 - Verlasse Zimmer
 
@@ -37,7 +42,7 @@ und schauen dort in
 - ÖFFNE Tür (hinten rechts)
 - Verlasse durch Tür (hinten rechts)
 
-#### 1.10.1. Elternschlafzimmer
+#### 1.2.1. Elternschlafzimmer
 
 - NIMM Lampe (`schwarzweiße Lampe`)
 - SCHAU AN Bett
@@ -45,7 +50,7 @@ und schauen dort in
 - Bewege Hoagies Vater in den Lichtstrahl
 - Verlasse Zimmer
 
-### 1.4. Flur Obergeschoss
+### 1.3. Flur Obergeschoss
 
 - Verlasse über die Treppe nach unten
 
@@ -54,16 +59,22 @@ und schauen dort in
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
 
-### 1.8. Bibliothek
+### 1.5. Bibliothek
 
 - Gehe nach links bis zur Tür
 - GIB `schwarzweiße Lampe` an Uwe Boll (`schwarzweiße Lampe (an)`)
 - NIMM Regal
+  - Ronmastered Collection: NIMM Bücher (`gewaltiges Bücherregal`)
+- Ronmastered Collection:
+  - Elternschlafzimmer
+  - BENUTZE `Goethemist` mit `Schlauch`
 - DRÜCKE (rechten, grünen) Knopf
 - BENUTZE `Cappy voll Blut` mit (rechtem, grünen) Knopf
 - DRÜCKE (rechten, gefärbten) Knopf
 
-#### Bernard's Zimmer
+### 1.6. Flur Obergeschoss
+
+#### 1.6.1. Bernard's Zimmer
 
 - Verlasse Zimmer
 
