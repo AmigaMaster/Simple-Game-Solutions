@@ -1,8 +1,9 @@
-# Maniac Mansion Mania Episode 005: Rhythmen zum Reinbeißen Lösung
+# Maniac Mansion Mania Episode 005: Rhythmen zum Reinbeißen - Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|:-------:|------------|-------------------------------------------
+|  1.01   | 19.05.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Anpassung an Ronmastered Collection
+|  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -22,7 +23,7 @@ und schauen dort in
 
 #### 1.1.1. Bernard's Zimmer
 
-- BENUTZE Radio
+- BENUTZE Radio **2 mal**
 - ÖFFNE Tür
 - Verlasse Zimmer
 
@@ -42,6 +43,13 @@ und schauen dort in
 
 ### 1.4. Flur Erdgeschoss
 
+- Ronmastered Collection:
+  - ÖFFNE (linke, hintere) Tür und betrete die Abstellkammer
+  - NIMM Schraubenzieher (`Schraubenzieher`)
+  - VERLASSE die Abstellkammer
+  - ÖFFNE (linke) Tür und betrete die Bibliothek
+  - NIMM auffällig gelbes Buch (`Buch über Alchemie`)
+  - SCHAU AN `Buch über Alchemie`
 - ÖFFNE (rechte) Tür
 - Verlasse durch (rechte) Tür
 
@@ -52,6 +60,7 @@ und schauen dort in
 ### 1.6. Flur Eingangsbereich
 
 - NIMM Schraubenzieher (`Schraubenzieher`)
+  - Ronmastered Collection: Der Schraubenzieher befindet sich in der Abstellkammer
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
 
@@ -73,7 +82,7 @@ und schauen dort in
 - BENUTZE `Dose` mit Tentakelschleim
 - NIMM Kabel (`Kabel`)
 - BENUTZE `Make-Up` mit `Dose` (`Dose`)
-- BENUTZE `Salz` mit `Dose` (`Dose mit Brechmittel`)
+- BENUTZE `Salz` mit `Dose` (`Dose Brechmittel`)
 - Verlasse Dachboden und gehe zu
 
 #### 2.1.2. Bernard's Zimmer
@@ -102,12 +111,19 @@ und schauen dort in
 
 - ÖFFNE Mikrowelle
 - BENUTZE `Perpetuum Mobile` mit Mikrowelle
-- BENUTZE `Dose mit Brechmittel` mit Mikrowelle (`Dose mit Brechmittel`)
+- BENUTZE `Dose Brechmittel` mit Mikrowelle (`Dose Brechmittel`)
+- Ronmastered Collection:
+  - ÖFFNE Mikrowelle
+  - BENUTZE `Dose Brechmittel` mit Mikrowelle
+  - SCHLIESSE Mikrowelle
+  - BENUTZE Mikrowelle
+  - ÖFFNE Mikrowelle
+  - NIMM Dose (`Dose Brechmittel`)
 - Gehe zum
 
 #### 2.4.2. Dachboden
 
-- BENUTZE `Dose mit Brechmittel` mit Grüntentakel
+- BENUTZE `Dose Brechmittel` mit Grüntentakel
 
 --------------------------------------------------------------------------------
 
