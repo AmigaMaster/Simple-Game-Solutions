@@ -52,3 +52,7 @@ Maniac Mansion Mania Mini Masterpiece #02: Wendy im finsteren Keller Lösung (De
 Maniac Mansion Mania Mini Masterpiece #02 (V2.0): Wendy im finsteren Keller Lösung (Deu) (PC, Win)
 
 [![Walkthrough](https://img.youtube.com/vi/NwSkKjYDkSU/0.jpg)](https://www.youtube.com/watch?v=NwSkKjYDkSU)
+
+Maniac Mansion Mania Mini Masterpiece #02 (Talkie): Wendy im finsteren Keller Lösung (Deu) (PC, Win)
+
+[![Walkthrough](https://img.youtube.com/vi/Tln5zAj7XjY/0.jpg)](https://www.youtube.com/watch?v=Tln5zAj7XjY)
