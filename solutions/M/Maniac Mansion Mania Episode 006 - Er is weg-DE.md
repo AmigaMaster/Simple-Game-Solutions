@@ -1,8 +1,9 @@
-# Maniac Mansion Mania Episode 006: Er is' weg Lösung
+# Maniac Mansion Mania Episode 006: Er is' weg - Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|:-------:|------------|-------------------------------------------
+|  1.01   | 19.05.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Anpassung an Ronmastered Collection
+|  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -29,6 +30,9 @@ und schauen dort in
 - SCHAUE AN Schlüsselloch
 - BENUTZE `Feder` mit Schlüsselloch (`Schlüssel`)
 - BENUTZE `Schlüssel` mit Tür
+- Ronmastered Collection:
+  - >**EASTER EGG:**
+    >- REDE MIT Chuck
 
 ### 1.2. Flur Obergeschoss
 
@@ -36,6 +40,9 @@ und schauen dort in
 
 ### 1.3. Flur Erdgeschoss
 
+- Ronmastered Collection:
+  - ÖFFNE (linke, hintere) Tür und betrete die Abstellkammer
+  - NIMM Faden (`Faden`)
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
 
@@ -52,6 +59,8 @@ und schauen dort in
 #### 1.5.1. Küche
 
 - In der Küche einige Dinge anschauen bis zur Cutscene
+- Ronmastered Collection:
+  - Immer nach rechts durch das Haus und im Eingangsflur durch die linke Tür das Haus verlassen
 - Verlasse Küche und gehe zum
 
 ### 1.6. Flur Erdgeschoss
@@ -62,8 +71,10 @@ und schauen dort in
 #### 1.6.1. Wohnzimmer
 
 - NIMM Fernbedienung (`Fernbedienung`)
+  - Ronmastered Collection: Es gibt keine Fernbedienung
 - BENUTZE `Fernbedienung` mit Fernseher
 - NIMM Faden (`Faden`)
+  - Ronmastered Collection: Der Faden befindet sich in der Abstellkammer
 - Gehe zum
 
 ### 1.7. Flur Obergeschoss
@@ -99,7 +110,7 @@ und schauen dort in
 
 #### 1.9.1. Britney's Zimmer
 
-- BENUTZE `Pizza` mit Fenster
+- BENUTZE `Pizza` mit Fenster (Ronmastered: Sonnenstrahlen)
 
 --------------------------------------------------------------------------------
 
