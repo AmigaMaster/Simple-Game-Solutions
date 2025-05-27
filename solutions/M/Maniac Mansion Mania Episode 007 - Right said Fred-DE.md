@@ -1,8 +1,9 @@
-# Maniac Mansion Mania Episode 007: Right said Fred!?! Lösung
+# Maniac Mansion Mania Episode 007: Right said Fred!?! - Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|:-------:|------------|-------------------------------------------
+|  1.01   | 21.05.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Anpassung an Ronmastered Collection
+|  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -40,6 +41,9 @@ und schauen dort in
 
 ### 1.4. Flur Erdgeschoss
 
+- Ronmastered Collection:
+  - ÖFFNE (linke, hintere) Tür und betrete die Abstellkammer
+  - NIMM Fussball (`Fussball`)
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
 
@@ -47,7 +51,7 @@ und schauen dort in
 
 - ÖFFNE lockere Platte
 - NIMM Roter Hering (`Roter Hering`)
-- NIMM TV-Zeitschrift (Im Regal, 3. Reihe, das grüne Buch) (`TV-Zeitschrift`)
+- NIMM TV-Zeitschrift (Im Regal, 3. Reihe, das grüne, in der Ronmastered das blaue Buch) (`TV-Zeitschrift`)
 - NIMM Handy (`Handy`)
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
@@ -71,17 +75,20 @@ und schauen dort in
 #### 1.7.1. Wohnzimmer
 
 - BENUTZE `Fernbedienung` mit Fernseher
+  - Ronmastered Collection: Die Fernbedienung ein weiteres mal benutzen
 - Verlasse durch Durchgang hinten rechts
 
 ### 1.8. Flur Eingangsbereich
 
 - NIMM Fussball (`Fussball`)
+  - Ronmastered Collection: Der Fussball befindet sich in der Abstellkammer
 - ÖFFNE (linke) Tür
 - Verlasse Haus durch (linke) Tür
 
 ## 2. Vor dem Haus
 
 - REDE MIT Dr. Fred
+  - Ronmastered Collection: Die Szene findet in Bernard's Zimmer statt
 - Nach der Cutscene wechseln wir automatisch zu
 
 ## 3. Bernoulli's Haus
