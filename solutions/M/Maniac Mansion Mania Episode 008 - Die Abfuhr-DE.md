@@ -1,8 +1,9 @@
-# Maniac Mansion Mania Episode 008: Die Abfuhr Lösung
+# Maniac Mansion Mania Episode 008: Die Abfuhr - Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|:-------:|------------|-------------------------------------------
+|  1.01   | 22.05.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Anpassung an Ronmastered Collection
+|  1.0    | 18.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -62,6 +63,10 @@ und schauen dort in
 
 ### 1.5. Flur Erdgeschoss
 
+- Ronmastered Collection:
+  - ÖFFNE (linke, hintere) Tür und betrete die Abstellkammer
+  - NIMM Werkzeugkasten (`Werkzeugkasten`)
+  - ÖFFNE `Werkzeugkasten` (`Schraubendreher`, `Dübel`, `Schrauben`, `Scharnier`, `Langer Nagel`, `Bohrmaschine`)
 - NIMM Keilriemen (`Keilriemen`)
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
@@ -74,7 +79,7 @@ und schauen dort in
 ### 1.7. Esszimmer
 
 - SCHAU AN Nähkorb
-- NIMM Faden (`Bindfaden`)
+- NIMM Faden Ronmastered: Nähkorb (`Bindfaden` Ronmastered: `Faden`)
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
 
@@ -116,7 +121,10 @@ und schauen dort in
 - NIMM Brett (`Brett`)
 - NIMM Superkleber (`Superkleber`)
 - NIMM Werkzeugkasten (`Werkzeugkasten`)
+  - Ronmastered Collection: Der Werkzeugkasten befindet sich in der Abstellkammer
 - ÖFFNE `Werkzeugkasten` (`Schraubendreher`, `Dübel`, `Schrauben`, `Scharnier`, `Langer Nagel`, `Bohrmaschine`)
+- Ronmastered Collection:
+  - NIMM Bohrmaschine (`Bohrmaschine`)
 - Verlasse Dachboden und gehe zum
 
 #### 1.10.2. Wohnzimmer
@@ -142,7 +150,7 @@ und schauen dort in
 
 #### 1.11.1. Küche
 
-- BENUTZE `Recorder mit Kassette` (`Recorder mit Aufnahme`)
+- BENUTZE / Ronmastered: REDE MIT `Recorder mit Kassette` (`Recorder mit Aufnahme`)
   - >**HINWEIS:** Das Verb benutzen  
     > Hierbei das Verb 'Benutzen' anklicken und dann den Inventargegenstand. Wird nur der Inventargegenstand angeklickt, möchte das Spiel den Recorder mit einem anderen Gegenstand benutzen anstatt eine Aufnahme zu starten.
 - BENUTZE `Recorder mit Aufnahme` mit offenes Fenster
