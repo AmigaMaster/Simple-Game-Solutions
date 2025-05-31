@@ -1,8 +1,9 @@
 # Maniac Mansion Mania Episode 009: Radioaktiv Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|  1.0    | 19.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|:-------:|------------|-------------------------------------------
+|  1.01   | 23.05.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Anpassung an Ronmastered Collection
+|  1.0    | 19.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -25,7 +26,7 @@ und werfen einen Blick in
 - ÖFFNE Fenster (neben dem Monitor)
 - REDE MIT Fenster (neben dem Monitor)
 - ÖFFNE Schublade (rechts im Schreibtisch)
-- SCHAU AN Schublade (rechts im Schreibtisch)
+- SCHAU AN Schublade (rechts im Schreibtisch) (Ronmastered: `Lineal`)
 - NIMM Schublade (rechts im Schreibtisch) (`Lineal`, `Kugelschreiber`)
 - BENUTZE Computer
 - ÖFFNE Tür
@@ -79,6 +80,7 @@ und werfen einen Blick in
 ### 1.7. Bibliothek
 
 - SCHAU AN Wandverbau
+  - Ronmastered Collection: Ist hier "lockere Platte" benannt
 - ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
 
@@ -135,6 +137,11 @@ und werfen einen Blick in
 ### 2.2. Keller
 
 - NIMM Messgerät für Strahlungen (`Strahlungsmessgerät`)
+- ÖFFNE Schublade (im Tisch)
+- NIMM Schraubenzieher (`Schraubenzieher`)
+- Ronmastered Collection:
+  - NIMM Zeitschrift (`Zeitschrift`)
+  - SCHAU AN `Zeitschrift`
 - Gehe zu
 
 ## 3. Vor dem Haus
@@ -159,9 +166,14 @@ und werfen einen Blick in
 
 #### 5.0.1. Küche
 
-- BENUTZE `Mikrowelle` mit Microschrank
+- BENUTZE `Mikrowelle` mit Mikrowellenschrank
 - ÖFFNE Mikrowelle
 - BENUTZE `Krug mit Gemisch` mit Geöffneter Mikrowellenherd (`Krug mit Arznei`)
+- Ronmastered Collection:
+  - SCHLIESSE Mikrowelle
+  - BENUTZE Mikrowelle
+  - ÖFFNE Mikrowelle
+  - NIMM Krug mit Arznei (`Krug mit Arznei`)
 - SCHLIESSE Geöffneter Mikrowellenherd
 - NIMM Mikrowelle (`Mikrowelle`)
 - Gehe zu
@@ -175,6 +187,8 @@ und werfen einen Blick in
 - BENUTZE `Krug mit Arznei`
   - >**INFO:** Das Benutze Verb auswählen  
     >und danach den Krug im Inventar anklicken.
+  - Ronmastered Collection:
+    - BENUTZE `Krug mit Arznei` **3 mal**
 - Betrete Höhle im Osten
 
 ### 7.1. FOX Höhle
@@ -191,6 +205,7 @@ und werfen einen Blick in
 
 ## 9. Vor dem Haus
 
+- Ronmastered Collection: Direkt zur Bibliothek gehen (falls man den Schraubenzieher bereits besitzt)
 - GEHE in den
 
 ### 9.1. Keller
@@ -202,13 +217,15 @@ und werfen einen Blick in
 
 ### 9.2. Bibliothek
 
-- BENUTZE `Schraubenzieher` mit Wandverbau
-- NIMM Schachtel (`Schachtel`)
+- BENUTZE `Schraubenzieher` mit Wandverbau / Ronmastered: lockere Platte
+- NIMM Schachtel / Ronmastered: Platte (`Schachtel`)
 - ÖFFNE Schachtel (`Experimentpläne`, `Offene Schachtel`)
 - Gehe in den
 
 ### 9.3. Keller
 
+- Ronmastered Collection:
+  - BENUTZE `Perpetuum mit Hamster` mit Energie Schnittstelle
 - BENUTZE `Experimentpläne` mit Thermonukleare Kernfusion (`Hamster`)
 - Gehe zum
 
@@ -219,7 +236,7 @@ und werfen einen Blick in
 
 #### 9.4.1. Bernard's Zimmer
 
-- BENUTZE Computer
+- BENUTZE / Ronmastered: SCHAU AN Computer
 - Gehe zu
 
 >**HINWEIS:** Zwei mögliche Enden  
@@ -233,6 +250,8 @@ und werfen einen Blick in
 - BENUTZE `Briefmarke` mit `Schachtel mit Hamster`
 - BENUTZE `Kugelschreiber` mit  `Schachtel mit Hamster`
 - BENUTZE `Schachtel mit Hamster` mit Briefkasten
+- Ronmastered Collection:
+  - SCHLIESSE Briefkasten
 - ***E N D E***
 
 --------------------------------------------------------------------------------
@@ -241,9 +260,12 @@ und werfen einen Blick in
 
 #### 11.0.2. Küche
 
-- BENUTZE `Mikrowelle` mit Microschrank
+- BENUTZE `Mikrowelle` mit Mikrowellenschrank
 - ÖFFNE Mikrowelle
 - BENUTZE `Hamster` mit Geöffneter Mikrowellenherd
+- Ronmastered Collection:
+  - SCHLIESSE Mikrowelle
+  - BENUTZE Mikrowelle
 - ÖFFNE Mikrowelle (`Hamster-matsch`)
 - Gehe zu
 
@@ -253,6 +275,8 @@ und werfen einen Blick in
 - BENUTZE `Briefmarke` mit `Blutige Schachtel`
 - BENUTZE `Blutige Schachtel` mit `Kugelschreiber`
 - BENUTZE `Blutige Schachtel` mit Briefkasten
+- Ronmastered Collection:
+  - SCHLIESSE Briefkasten
 - ***E N D E***
 
 --------------------------------------------------------------------------------
