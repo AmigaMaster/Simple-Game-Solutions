@@ -4,6 +4,8 @@
 |:-------:|------------|-------------------------------------------|
 |  1.0    | 16.06.2023 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
+Das kostenlose Spiel kann von der [itch.io Webseite](https://fireorange.itch.io/beyond-dream-and-time) heruntergeladen werden.
+
 ## 1. Ratsturm
 
 ### 1.1. Sternentor
