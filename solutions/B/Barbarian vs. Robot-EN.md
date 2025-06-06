@@ -1,7 +1,8 @@
-# Robot vs. Barbarian - Walkthrough
+# Barbarian vs. Robot - Walkthrough
 
 | Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
+|   1.01  | 15.05.2025 | Amiga Master, fixes for dynamic riddles   |
 |   1.0   | 03.03.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 Download the free game from the [AGS homepage](https://www.adventuregamestudio.co.uk/play/game/2831).
@@ -63,7 +64,7 @@ SELECT the brown START button
 
 ### 2.8. Inner Ward
 
-- ISE `Sword` with guard
+- USE `Sword` with guard
 
 ### 2.9. Outside
 
@@ -89,7 +90,7 @@ SELECT the brown START button
   - Search through the pockets (`Ticket`)
 - USE `Ticket` with weird wizard (`Coin`, `Promotional gift bag`)
 - LOOK AT `Promotional gift bag` (`Empty bag`, `Leaflet`, `Bottle opener`, `Big blue cup`, `Screwdriver`)
-- EIT east
+- EXIT east
 
 ### 2.10. Cave Entrance
 
@@ -110,8 +111,7 @@ SELECT the brown START button
 
 ### 2.12. Fight
 
-- USE `Tree branch` with unknown danger
-- USW `Sword` with unknown danger
+- USE `Sword` with unknown danger
 
 --------------------------------------------------------------------------------
 
@@ -218,14 +218,18 @@ SELECT the brown START button
 - LOOK AT information sign
 - EXIT west
 - TALK TO goddess
-  - "Where can I find the local authority?"
+  - "Where can I find the local authority?" (`Greeting card`)
+  - **NOTE:** The rhyme is different for each playthrough. You have to complete it by choosing the correct color name.
 - USE `One silver crown` with goddess
 - LOOK AT `Headdress` (`Crown`)
 - USE `Crown` with goddess
 - USE `Empty bottle` with fountain
 - USE tail **2 times**
 - GET bottle (`Water-filled-bottle`)
-- USE `Withered flower` with `Water-filled-bottle` (`Flower placed in water` (yellow flower))
+- USE one of the flowers from your inventory with `Water-filled-bottle` to get the correct color for the rhyme (`Flower placed in water`):
+  1. `Floppy flower` = blue
+  2. `Limped flower` = red
+  3. `Withered flower` = yellow
 - USE `Flower placed in water` with goddess (`Chocolate bunny`)
 - USE `Chocolate bunny` with sun
 - GET shiny object (`Coin`)
@@ -237,44 +241,53 @@ SELECT the brown START button
   - GET STARTED
   - ANCIENT
   - YELLOW
-  - CHEERFUL (`Greeting card`)
+  - **NOTE:** The rhyme is different for each playthrough (`Greeting card`):
+    1. For rhyme on "smile", select CHEERFUL (Smiley)
+    2. For rhyme on "above", select EMOTIONAL (Heart)
+    3. For rhyme "???", select (Ace)
 - USE `Greeting card` with goddess
 - USE sign
 
 ### 3.8. Forest
 
 - USE `Barrier ribbon` with big cactus
-  - "Small cactus...!
+  - "Small cactus..."
 - WALK TO tall cactus
 - GET ScienceBot (`Arm with book`)
 - LOOK AT `Arm with book`
-  - USE purple cable
+  - USE all three colored cables, the last one always opens the hatch
   - FLIP maintenance mode switch
-  - USE green cable (`Arm`, `Notebook`)
+  - USE the first cable, you touched (`Arm`, `Notebook`)
   - FLIP maintenance mode switch
 - LOOK AT `Notebook`
 - WALK TO (left) cactus
 - GET barrier ribbon (`Barrier ribbon`)
 - USE `Barrier ribbon` with tall cactus
+  - "Small cactus..."
 - WALK TO big cactus
 - USE `Arm` with sheet of paper
   - ...pull the blue cable (`Paper`)
 - LOOK AT `Paper`
-  - **NOTE:** The codes for the letters `E X I T`
+  - **NOTE:** The codes for the letters `E X I T` - they change in each playthrough
 - WALK TO (right) cactus
 - GET barrier ribbon (`Barrier ribbon`)
 - USE `Barrier ribbon` with big cactus
 - WALK TO tall cactus
-- USE display and enter the code:
-  - | | | | | | | | | | | | | | | |
-    |-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
-    |-|-|-| |-|-|#| |-|-|-| |#|-|-|
-    |-|-|-| |-|#|-| |-|#|-| |-|#|-|
-    |#|-|-| |-|-|#| |-|-|-| |-|-|#|
+- USE display
+  - PUSH button (on the left side) and enter the code for `EXIT`
   - USE manipulate left edge (so the shape changes to a sign post showing to the left)
+- 10101 sign
 - WALK west
 - USE strange thing
 
 ### 3.9. Fight
 
 - USE `Laser gun` with unknown risk
+
+--------------------------------------------------------------------------------
+
+## 4. Video Walkthrough
+
+Barbarian vs. Robot Lösung (Englisch) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/WRyKFv6bO38/0.jpg)](https://www.youtube.com/watch?v=WRyKFv6bO38)
