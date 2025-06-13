@@ -86,6 +86,171 @@
 
 - GEHE nach Westen (25/285)
 
+## 2. Kapitel 2: Der unheimliche Zug
+
+### 2.1. Labor
+
+- NIMM Mülleimer (`Plastikbecher`) (5/5)
+- NIMM Spalt (`Fliegen`) (10/15)
+- BENUTZE `Fliegen` mit `Plastikbecher` (`Plastikbecher (gefüllt)`) (10/25)
+- BENUTZE `Plastikbecher (gefüllt)` mit Käfig (`Becher mit Spinne`) (10/35)
+- >Easter Egg:
+  > - ÖFFNE `Becher mit Spinne`
+- BENUTZE `Becher mit Spinne` mit Spalt (15/50)
+- NIMM Zeitungen (`Diktatheft`) (5/55)
+- SIEH AN `Diktatheft` (5/60)  
+  **MERKE:** Buchstaben
+  - LECHMSU
+  - Es ist ein Anagram
+  - MUSCHEL
+- SIEH AN Notiz hinten an der Wand  
+  RÄTSEL:
+  - MUSCHEL = nfhxsvo
+- **ACHTUNG:** Spiel speichern
+- BENUTZE Computer (10/70)  
+  Punkte: Timeletters
+  - Für die maximalen Punkte muss Timeletters gewonnen werden. Man hat allerdings nur eine Chance.
+  - Innerhalb von 12 Sekunden auf der rechten Seite auf die richtigen Buchstaben klicken
+  - Es gibt 10 verschiedene Wörter:
+    1. BAUM
+    2. GOLD
+    3. HAND
+    4. BILD
+    5. BUCH
+    6. SAND
+    7. ZEIT
+    8. RUHE
+    9. BIER
+    10. ROCK
+  - "Verriegelung"
+  - Code: `nfhxsvo` (20/90)
+  - Die rote Tür unten links entriegeln (5/95)
+
+### 2.2. Wald
+
+- >Easter Egg:
+  > - ÖFFNE Baumloch
+- NIMM Laubhaufen (`Ast`) (5/100)
+- BENUTZE `Ast` mit Baumharz (`Ast mit Baumharz`) (10/110)
+- SIEH AN Schatten (5/115)
+- BENUTZE `Ast mit Baumharz` mit Loch (`Pergament`) (10/125)
+- SIEH AN `Pergament` (5/130)
+
+### 2.3. Bahnhof
+
+#### 2.3.1. Zug
+
+##### 2.3.1.1. Abteil
+
+- REDE MIT Doktor über alles (10/140)
+- NIMM Brieftasche (`Brieftasche`) (15/155)
+- ÖFFNE `Brieftasche` (`Zettel`, `Münze`) (5/160)
+- SIEH AN `Zettel` (5/165)
+- GEHE in den Gang
+
+##### 2.3.1.2. Gang
+
+- GEHE in den Ausgang
+
+#### 2.3.2. Bahnhof
+
+- REDE MIT Mann über alles (5/170)
+- BENUTZE `Golfschläger` mit Mülltonne (10/180)
+
+#### 2.3.3. Zug
+
+##### 2.3.3.1. Abteil
+
+- SIEH AN `Bild`
+- BENUTZE Laptop  
+  **Rätsel:** Laptopzugang
+  - Das linke Symbol mit dem rechten verbinden
+  - Lösung steht in der "Ballade aus der Muschel" auf dem Kinderbild
+  - "Nebel über der Stadt"
+  - "Seelische Blitze im Herzen"
+  - "Dunkelheit über uns"
+  - Dunkelheit (schwarzes Bild) -> Menschen
+  - Blitz -> Herz
+  - Nebel -> Stadt (20/200)
+- >Easter Egg:
+  > - In den Laptopdaten ist ein "Samuel Gordon" aufgelistet (aus dem Spiel Black Mirror)
+
+#### 2.3.4. Bahnhof
+
+- REDE MIT Mann (10/210)
+
+#### 2.3.5. Zug
+
+##### 2.3.5.1. Gang
+
+- GEHE in das Großabteil
+
+##### 2.3.5.2. Großabteil
+
+- SIEH AN Campingleuchte (5/215)
+
+##### 2.3.5.3. Abteil
+
+- REDE MIT Doktor (5/220)
+  - "Batterien" (`Magnet`)
+
+#### 2.3.6. Bahnhof
+
+- NIMM Mülltonne (`Batterien`) (10/230)
+
+#### 2.3.7. Zug
+
+##### 2.3.7.1. Großabteil
+
+- BENUTZE `Batterien` mit Campingleuchte (5/235)
+- SIEH AN Sitz (links in der Mitte) (`Schnürsenkel`)
+- BENUTZE `Schnürsenkel` mit `Magnet` (`Magnet am Schnürsenkel`) (5/240)
+
+#### 2.3.8. Bahnhof
+
+- BENUTZE `Magnet am Schnürsenkel` mit Abflussgitter (`Schlüssel`) (10/250)
+
+#### 2.3.9. Zug
+
+##### 2.3.9.1. Großabteil
+
+- GEHE nach oben
+
+##### 2.3.9.2. Kinderabteil
+
+- SIEH AN Bild (10/260)
+
+##### 2.3.9.3. Abteil
+
+- REDE MIT Doktor (10/270)
+
+##### 2.3.9.4. Kinderabteil
+
+- BENUTZE `Münze` mit Fach (5/275)
+- BENUTZE `Schlüssel` mit Truhe (5/280)
+
+### 2.4. Haus
+
+#### 2.4.1. Wohnzimmer
+
+- >Easter Egg:
+  > - DRÜCKE Globus
+- NIMM Mineralwasserflasche (`Mineralwasserflasche`) (5/285)
+- BENUTZE `Mineralwasserflasche`mit Schrank (10/295)
+- NIMM Scherben (`Scherbe`) (5/300)
+- BENUTZE `Scherbe` mit Sofa (`Zettel`) (10/310)
+- BENUTZE `Zettel` mit Aktenkoffer (`leere Blätter`) (5/315)
+- NIMM Kerzenständer vom Regal (`Kerzenständer`) (5/320)
+- SIEH AN Schrank
+  - SIEH AN Notizen (`Pyrit-Stein`) (10/330)
+  - NIMM Kerzen (`Kerze`) (5/335)
+  - BENUTZE `Kerzenständer` mit Schrankfläche (10/345)
+  - BENUTZE `Kerze` mit Kerzenständer (20/365)
+  - BENUTZE `Pyrit-Stein` mit Stahlplatte (10/375)
+  - BENUTZE `leere Blätter` mit Kerze (15/390)
+  - Automatisch: Lies Brief (10/400)
+  - **SCHNELL:** ZIEHE Schrankfläche (50/450)
+
 --------------------------------------------------------------------------------
 
 ## 4. Video Walkthroughs
@@ -95,3 +260,9 @@
 Feuersturm - Kapitel 1: Zurück in die Welt Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough Kapitel 1](https://img.youtube.com/vi/-7WSoCKxjhg/0.jpg)](https://www.youtube.com/watch?v=-7WSoCKxjhg)
+
+### 4.2. Kapitel 2
+
+Feuersturm - Kapitel 2: Der unheimliche Zug Lösung (Deutsch) (PC, Win) - Unkommentiert
+
+[![Walkthrough Kapitel 2](https://img.youtube.com/vi/-BCQDYwMseE/0.jpg)](https://www.youtube.com/watch?v=-BCQDYwMseE)
