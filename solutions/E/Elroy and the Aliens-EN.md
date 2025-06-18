@@ -2,19 +2,24 @@
 
 | Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
-|   0.9   | 17.06.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.0   | 19.06.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-## 1. Home
+## 1. Achievement Notes
 
-### 1.1. Your House
+- >**ACHIEVEMENT:** Pixel Hunter
+  >- Reached the end without using hotspot highlighting!
 
-#### 1.1.1. Living Room
+## 2. Home
+
+### 2.1. Your House
+
+#### 2.1.1. Living Room
 
 - USE Door
 - PICK UP Keys (`Keys`)
 - USE `Keys` on Door
 
-#### 1.1.2. Lab
+#### 2.1.2. Lab
 
 - PICK UP Hâani Pentagon book (`Hâani Pentagon book`)
 - PICK UP Remote control (`Remote control`)
@@ -24,7 +29,7 @@
 - PICK UP Propulsion module (`Propulsion module`)
 - EXIT upstairs
 
-#### 1.1.3. Rooftop
+#### 2.1.3. Rooftop
 
 - PICK UP Fuel canister (`Fuel canister`)
 - PICK UP Spout (`Spout`)
@@ -36,13 +41,19 @@
 - USE `Remote control` on Rocket (`Fried Circuit Board`)
 - EXIT rooftop and EXIT your house
 
-### 1.2. Outside
+#### 2.1.4. Living Room
+- >**ACHIEVEMENT:** Good Host
+  >- USE Fridge
+  >- PICK UP Wundershake (`Wundershake`)
+  >- On the Rooftop: USE `Wundershake` on Peggie
+
+### 2.2. Outside
 
 - EXIT northeast
 
-## 2. Sierra's Junkyard
+## 3. Sierra's Junkyard
 
-### 2.1. Outside
+### 3.1. Outside
 
 - PICK UP Old Tire (`Old Tire`)
 - >**ACHIEVEMENT:** Captain Pendulum
@@ -55,13 +66,13 @@
 - USE Lever
 - ENTER Sierra's Scrapheap
 
-### 2.2. Sierra's Scrapheap
+### 3.2. Sierra's Scrapheap
 
 - PICK UP Old purse (`Purse`)
 - PICK UP Bucket (`Bucket`)
 - ENTER Shed
 
-#### 2.2.1. Shed
+#### 3.2.1. Shed
 
 - PICK UP Hose (`Hose`)
 - TALK TO Sierra Jones
@@ -70,68 +81,68 @@
     >- "What is she working on"
     >- Select any name for the game
 
-## 3. Home
+## 4. Home
 
-### 3.1. Your House
+### 4.1. Your House
 
-#### 3.1.1. Rooftop
+#### 4.1.1. Rooftop
 
 - USE `Circuit board` on Rocket
 - >**ACHIEVEMENT:** Call the Animal Protection Agency
   >- USE multiple different inventory items on bird
 
-#### 3.1.2. Lab
+#### 4.1.2. Lab
 
 - USE Fireplace
 - USE `Slope City Chronicle` on Fireplace
 
-### 3.2. Outside
+### 4.2. Outside
 
 - TALK TO Mrs. Kandinsky
   - "Need matches"
   - "Sorry" (`Matches`)
 
-### 3.3. Your House
+### 4.3. Your House
 
-#### 3.3.1. Lab
+#### 4.3.1. Lab
 
 - USE `Matches` on Fireplace
 
-#### 3.3.2. Rooftop
+#### 4.3.2. Rooftop
 
 - USE `Remote control` on Rocket
 - USE Rocket
 
-#### 3.3.3. Lab
+#### 4.3.3. Lab
 
 - TALK TO Peggie
 - USE `Broom` on Hole
 - USE Button (`Mysterious Box`)
 - EXIT house
 
-### 3.4. Outside
+### 4.4. Outside
 
 - >**ACHIEVEMENT:** Neighbor of the Year
   >- USE `Broom` on Mrs. Kandinsky
 
-## 4. Slope City News
+## 5. Slope City News
 
 - LOOK AT coordinate on the last page in the book (`Pencils`, `Map`)
 - READ all articles
 - USE Elevator
 
-## 5. Town Square
+## 6. Town Square
 
 - TALK TO Charlie
 - TALK TO Painter
 
-## 6. Train Station
+## 7. Train Station
 
-### 6.1. Outside
+### 7.1. Outside
 
 - ENTER Train Station
 
-### 6.2. Inside Train Station
+### 7.2. Inside Train Station
 
 - >**ACHIEVEMENT:** Fashionista
   >- **NOTE:** You must not have put the pencils in the purse to get this achievement!
@@ -148,134 +159,138 @@
 - TALK TO Ticket Teller
 - EXIT southeast
 
-#### 6.2.1. Tracks
+#### 7.2.1. Tracks
 
 - TALK TO Conductor
 - PICK UP Spray Can (`Spray Can`)
 - TALK TO Homeless Guy (Stan Rosebud)
 - EXIT tracks and EXIT train station
 
-### 6.3. Outside
+### 7.3. Outside
 
 - TALK TO Nerdy Woman (Bridget)
   - Talk about everything and talk about "Losantos"
 
-## 7. Basketball Court
+## 8. Basketball Court
 
 - TALK TO "Queen" Terri
 - USE `Spray Can` with `Bucket` (`Golden Bucket`)
 
-## 8. Home
+## 9. Home
 
-### 8.1. Your House
+### 9.1. Your House
 
-#### 8.1.1. Lab
+#### 9.1.1. Lab
 
 - USE `Diamond` on Laser Cutter
 - USE `Golden Bucket` on Laser Cutter (`Painted Bucket Crown`)
 
-### 8.2. Outside
+### 9.2. Outside
 
 - TALK TO Mrs. Kandinsky
 
-## 9. Basketball Court
+## 10. Basketball Court
 
 - TALK TO "Queen" Terri
   - "Offer crown" (`Tinfoil Hat`)
 
-## 10. Town Square
+## 11. Town Square
 
 - USE `Tinfoil Hat` on Charlie (`Compass`, `Charlie's Disk`)
 - PICK UP Space Blanket (`Space Blanket`)
 
-## 11. Sierra’s Junkyard
+## 12. Sierra’s Junkyard
 
-### 11.1. Sierra's Scrapheap
+### 12.1. Sierra's Scrapheap
 
-#### 11.1.1. Shed
+#### 12.1.1. Shed
 
 - TALK TO Sierra Jones
 - USE `Charlie's Disk` on Sierra Jones
 
-### 11.2. Sierra's Scrapheap
+### 12.2. Sierra's Scrapheap
 
 - USE Old Generator
 - USE `Space Blanket` on Cooling Tank
 
-## 12. Wanderbrust Tower
+## 13. Wanderbrust Tower
 
 - USE `Hose` on Car Fuel Tank
 - USE `Empty Canister` on Car Fuel Tank (`Canister with Diesel`)
 
-## 13. Sierra’s Junkyard
+## 14. Sierra’s Junkyard
 
-### 13.1. Sierra's Scrapheap
+### 14.1. Sierra's Scrapheap
 
 - USE `Canister with Diesel` on Old Generator
 
-#### 13.1.1. Shed
+#### 14.1.1. Shed
 
 - TALK TO Sierra Jones
 
-## 14. Slope City News
+## 15. Slope City News
 
 - TALK TO Peggie
 > You change to Peggie
 
-## 15. Wanderbrust Tower
+## 16. Wanderbrust Tower
 
-### 15.1. Street
+### 16.1. Street
 
 - ENTER Wanderbrust Tower
 
-### 15.2. Tower
+### 16.2. Tower
 
-#### 15.2.1. Lobby
+#### 16.2.1. Lobby
 
 - TALK TO "Receptionist"
 - USE Elevator
 
-#### 15.2.2. Elevator
+#### 16.2.2. Elevator
 
+- >**ACHIEVEMENT:** Every. Single. Floor.
+  >- Visit every floor (1 to 17 + W) and LOOK AT each Door and return into the Elevator
+- >**ACHIEVEMENT:** It Doesn’t Get More Meta Than This
+  >- Visit Floor 12 and LOOK AT Door
 - SELECT Floor W **2 times**
 - EXIT elevator
 
-#### 15.2.3. Wanderbrust's Floor
+#### 16.2.3. Wanderbrust's Floor
 
 - TALK TO Secretary
 
-## 16. Slope City News
+## 17. Slope City News
 
 - TALK TO Elroy (`Voice Recorder with Tape`)
 > You change to Elroy
 
-## 17. Sierra's Junkyard
+## 18. Sierra's Junkyard
 
-### 17.1. Sierra's Scrapheap
+### 18.1. Sierra's Scrapheap
 
-#### 17.1.1. Shed
+#### 18.1.1. Shed
 
 - USE `Voice Recorder with Tape` on Radio
 
-## 18. Town Square
+## 19. Town Square
 
-### 18.1. Park
+### 19.1. Park
 
 - ENTER Backstage Entrance
 
-### 18.2. Theater
+### 19.2. Theater
 
-#### 18.2.1. Powder Room
+#### 19.2.1. Powder Room
 
 - EXIT west
 
-#### 18.2.2. Backstage
+#### 19.2.2. Backstage
 
 - TALK TO Theater Tech (Albert)
   - "Yes"
 - EXIT east
 
-#### 18.2.3. Powder Room
+#### 19.2.3. Powder Room
 
 - LOOK AT Theater Poster
 - PICK UP Dress (`Dress`)
@@ -283,11 +298,11 @@
 - PICK UP Script (`Script`)
 - PICK UP Blonde Wig (`Blonde Wig`)
 
-#### 18.2.4. Backstage
+#### 19.2.4. Backstage
 
 - EXIT west
 
-#### 18.2.5. Storage Room
+#### 19.2.5. Storage Room
 
 - USE Box
 - PICK UP Robot Manual (`Robot Manual`)
@@ -309,23 +324,23 @@
   - USE the pattern from the `Robot Manual` to turn on the robot
 - TALK TO Robot
 
-#### 18.2.6. Backstage
+#### 19.2.6. Backstage
 
 - USE `Costume` on Elroy
 - ENTER Stage
 
-#### 18.2.7. Stage
+#### 19.2.7. Stage
 
 - TALK TO Director
 - EXIT Theater
 
-### 18.3. Park
+### 19.3. Park
 
 - TALK TO artist (`Crayon`)
 
-### 18.4. Theater
+### 19.4. Theater
 
-#### 18.4.1. Backstage
+#### 19.4.1. Backstage
 
 - USE `Fake Blood` on `Blonde Wig` (`Red Wig`)
 - USE `Red Wig` on robot
@@ -335,7 +350,7 @@
 - TALK TO robot
   - "Move to stage"
 
-#### 18.4.2. Stage
+#### 19.4.2. Stage
 
 - USE (left) Button **repeat** until wormhole appears
 - USE Button (right) **repeat** until rocket appears
@@ -356,7 +371,7 @@
   >   - "My love..."
   >   - "One last time..."
 
-### 18.5. Backstage
+### 19.5. Backstage
 
 - TALK TO Albert
   - "Using the audio station"
@@ -366,22 +381,22 @@
     - `She can come in. Wanderbrust here.`
   - USE Record button
 
-## 19. Slope City News
+## 20. Slope City News
 
 - TALK TO Peggie
 > You change to Peggie
 
-## 20. Wanderbrust Tower
+## 21. Wanderbrust Tower
 
-### 20.1. Tower
+### 21.1. Tower
 
-#### 20.1.1. Wanderbrust's Floor
+#### 21.1.1. Wanderbrust's Floor
 
 - PICK UP Compact Mirror (`Mirror`)
 - USE `Mirror` on window
 - EXIT east
 
-##### 20.1.1.1. Office
+##### 21.1.1.1. Office
 
 - USE desk (`Note`)
 - USE Bookshelf
@@ -389,14 +404,14 @@
   >- LOOK AT all books from A to Z, with M last
 - LOOK AT "M" (`Crystal`)
 
-## 21. Slopy City News
+## 22. Slopy City News
 
 - TALK TO Elroy
 > You change to Elroy
 
-## 22. Train Station
+## 23. Train Station
 
-### 22.1. Trunk
+### 23.1. Trunk
 
 - USE `Matches` on Darkness
 - USE Bag
@@ -411,9 +426,9 @@
   - USE right knob to spread both bolts until there are wide open
   - USE left knob to move both bolts to the left
 
-## 23. Train Ride
+## 24. Train Ride
 
-### 23.1. Dream
+### 24.1. Dream
 
 - USE Hoop **2 times**
 - TALK TO Sasha (in the back of the train)
@@ -426,49 +441,49 @@
 - Walk right until you see Peggie
 - USE brake or simply wait
 
-## 24. Train Station
+## 25. Train Station
 
 - WALK east
 - ENTER Town
 
-## 25. Map
+## 26. Map
 
 - WALK TO building in the middle
 
-## 26. Diner
+## 27. Diner
 
-### 26.1. Outside
+### 27.1. Outside
 
 - ENTER Diner
 
-### 26.2. Inside Diner
+### 27.2. Inside Diner
 
 - >**ACHIEVEMENT:** Chessmaster
   >- USE Chessboard
 - PICK UP Shovel (`Old Bloody Shovel`)
 - PICK UP Note (`Bar Tab`)
 
-## 27. Tower
+## 28. Tower
 
 - USE Middle cupboard
 - PICK UP Tape (`Audio Tape`)
 - USE `Audio Tape` on `Voice Recorder with Tape` (`Recorder with Old Tape`, `Tape`)
 - LOOK AT `Recorder with old Tape`
 
-## 28. Church
+## 29. Church
 
-### 28.1. Outside
+### 29.1. Outside
 
 - ENTER Church Entrance
 
-### 28.2. Inside Church
+### 29.2. Inside Church
 
 - PICK UP Notes (on floor) (`Priest's Note`)
 - LOOK AT `Priest's Note` or `Bar Tab`
   - **NOTE:** Jeremiah Quentin Smith
 - EXIT east
 
-### 28.3. Outside
+### 29.3. Outside
 
 - LOOK AT Grave with "J.Q.S."
 - >**ACHIEVEMENT:** So that I can feel the rain
@@ -479,32 +494,32 @@
 - LOOK AT `Notebook`
   - Assemble the puzzle tiles, it's quite easy as you can see the page borders
 
-## 29. Tower
+## 30. Tower
 
 - ENTER Tower
 
-### 29.1. On Top of Tower
+### 30.1. On Top of Tower
 
 - USE binoculars
 - SEARCH the Butte you saw in the `Notebook` (it's right of the broken house)
 
-## 30. Dig Site
+## 31. Dig Site
 
-### 30.1. Base Camp
+### 31.1. Base Camp
 
 - ENTER Path Into Valley
 
-### 30.2. Valley
+### 31.2. Valley
 
 - USE Wobbly Sign **2 times**
 - PICK UP Iron Rod (`Iron Rod`)
 
-### 30.3. Base Camp
+### 31.3. Base Camp
 
 - USE `Iron Rod` on Crate
 - PICK UP Crate (`Robot Head`)
 
-### 30.4. Valley
+### 31.4. Valley
 
 - Try to ENTER minefield
 - USE `Robot Head` on Robot
@@ -517,6 +532,9 @@
 - **SAVE YOUR GAME HERE** to get two achievements
 - TALK TO Howard
   - "Navigating the minefield"
+- >**ACHIEVEMENT:** Mine Magnet
+  >- Step on a mine **5 times**
+  >- **LOAD YOUR SAVED GAME**
 - >**ACHIEVEMENT:** Flawless Footwork
   >- Navigate through the minefield without hitting a mine.
   >- Part 1:
@@ -538,16 +556,16 @@
   >   - 2x right onto the field under the first cactus
   >   - All the way to the EXIT
 
-## 31. Hâani Pentagon
+## 32. Hâani Pentagon
 
 - PICK UP Tablet (`Stone Tablet`)
 - EXIT west
 
-## 32. Map
+## 33. Map
 
 - ENTER southern building
 
-## 33. Terraces
+## 34. Terraces
 
 - PICK UP Tablet (`Stone Tablet`)
 - USE `Iron Rod` on Crate
@@ -555,8 +573,11 @@
 - PICK UP Ancient Bowl (`Ancient Bowl`)
 - EXIT and enter eastern location
 
-## 34. Cacti
+## 35. Cacti
 
+- >**ACHIEVEMENT:** Haani Pentagon Scholar
+  >- TALK TO Peggie
+  >   - "Ask to see dad's book" **10 times**
 - USE Table
 - PICK UP Radio (`Radio`)
 - USE `Bottle of Soda` on `Ancient Bowl` (`Bowl of Soda`)
@@ -571,18 +592,18 @@
   - Rotate, so that the read beam hits the red lense at the top
 - EXIT and enter north western location
 
-## 35. Boulders
+## 36. Boulders
 
 - PICK UP Tablet (`Stone Tablet`)
 - PICK UP Cloth (`Cloth`)
 - USE Boulders
 
-## 36. Hâani Pentagon
+## 37. Hâani Pentagon
 
 - TALK TO Howard
   - "Follow me"
 
-## 37. Boulders
+## 38. Boulders
 
 - TALK TO Howard
   - "Self-destruct..." (`Stone Tablet`)
@@ -592,7 +613,7 @@
   - Pay attention to the positioning of both colors
 - EXIT and  enter northeast location
 
-## 38. Spiral
+## 39. Spiral
 
 - PICK UP Wires (`Wire`)
 - USE `Cloth` on `Iron Rod` (`Iron Rod Torch`)
@@ -604,12 +625,12 @@
   - The same solution as for Monolith 2
 - EXIT and enter western location
 
-## 39. Well
+## 40. Well
 
 - USE `Wire`on `Rechargeable Battery` (`Wired Battery`)
 - USE `Wired battery` on Solar station
 
-## 40. Terraces
+## 41. Terraces
 
 - USE Console?
   - Insert the `Stone Tablets` in the correct order:
@@ -623,7 +644,7 @@
   - Now there is a red, blue and green beam
   - First align the red and blue beams
 
-## 41. Well
+## 42. Well
 
 - USE Solar Station (`Charged Battery`)
 - USE `Matches` on `Iron Rod Torch` (`Flaming Iron Rod Torch`)
@@ -631,7 +652,7 @@
 - USE Well
 - ENTER Well
 
-### 41.1. Cave
+### 42.1. Cave
 
 - Walk to the right
 - USE `Radio` on Bats
@@ -640,7 +661,7 @@
 - USE `Crystal` on Monolith
   - Again, adjust the red blue and green beam from inner to outer circle
 
-## 42. Hâani Pentagon
+## 43. Hâani Pentagon
 
 - USE Panel (in the center door)
   - Hexagon puzzle:
@@ -659,7 +680,7 @@
       - Now place both 2 under tile number 3
 - ENTER Path
 
-### 42.1. Path
+### 43.1. Path
 
 - USE Mysterious Cylinder
   - USE `Crystal`on Empty Slot
@@ -681,11 +702,11 @@
 - USE Mysterious Cylinder
   - Rotate the three parts so the show Lightning, Flood, Fire
 
-## 43. Crooked MT
+## 44. Crooked MT
 
-### 43.1. Portal Building
+### 44.1. Portal Building
 
-#### 43.1.1. Portal Chamber
+#### 44.1.1. Portal Chamber
 
 - Walk onto the empty, glowing platform
 - You now have to answer some questions
@@ -699,7 +720,7 @@
     - 4th question is 4+5 = 9. We do not know the symbol for the number 9 but we can exclude two of the three answers, so is ith the middle platform
 - EXIT east
 
-#### 43.1.2. Elevator Room
+#### 44.1.2. Elevator Room
 
 - USE Elevator?
 - TALK TO **both** Guards
@@ -709,14 +730,14 @@
 - PICK UP "Eyes" (`Squishy Eyes`)
 - EXIT west
 
-### 43.2. Mountain
+### 44.2. Mountain
 
 - TALK TO Panhandler
   - Give him all but one `Squishy Eyes`
 - TALK TO **all** aliens
 - ENTER Cliff (around the corner left of th Panhandler)
 
-### 43.3. Cliff
+### 44.3. Cliff
 
 - LOOK AT Rocks
 - TALK TO Rocks
@@ -725,31 +746,31 @@
   - "TAKATA"
 - ENTER Tree Trunk
 
-#### 43.3.1. Tree Trunk
+#### 44.3.1. Tree Trunk
 
 - TALK TO Meditating Alien (Professor Zax)
 - USE Ladder to exit and exit east
 
-### 43.4. Mountain
+### 44.4. Mountain
 
 - EXIT southwest
 
-## 44. Gate
+## 45. Gate
 
 - TALK TO Border Guard?
 - TALK TO Loiterer
 
-## 45. Island
+## 46. Island
 
-### 45.1. Landing Place
-
-- EXIT east
-
-### 45.2. Jungle
+### 46.1. Landing Place
 
 - EXIT east
 
-### 45.3. Crash Site
+### 46.2. Jungle
+
+- EXIT east
+
+### 46.3. Crash Site
 
 - TALK TO Alien (Zeke) (`Nanitizer`)
 - PICK UP Helmet (`Empty Helmet`)
@@ -793,110 +814,110 @@
     > > > > > ^
     ```
 
-## 46. Gate
+## 47. Gate
 
 - TALK TO Boarder Guard
 - EXIT northwest
 
-## 47. Tavern SQ
+## 48. Tavern SQ
 
 - ENTER Path to the northwest
 
-## 48. Arena
+## 49. Arena
 
-### 48.1. Market Square
+### 49.1. Market Square
 
 - ENTER Arena
 
-### 48.2. Arena Entrance Area
+### 49.2. Arena Entrance Area
 
 - TALK TO Guard (Xelma)
 - TALK TO Spectator (the one with the flag on his head)
 
-## 49. Tavern SQ
+## 50. Tavern SQ
 
 - TALK TO Alien with Odd Hat (Klarek) (`Investigation`)
 - >**ACHIEVEMENT:** Triangle of Truth
   >- LOOK AT Sign (above Klarek) **8 times**
 - ENTER Bar
 
-### 49.1. Bar
+### 50.1. Bar
 
 - TALK TO Barman (Mikk) (`Empty Glass`)
 - TALK TO Alien with Glasses
 - TALK TO Mikk
   - "Fuxian Fire Ale recipe"
 
-## 50. Gate
+## 51. Gate
 
 - TALK TO Border Gate (Stivven)
 
-## 51. Tavern SQ
+## 52. Tavern SQ
 
 - EXIT east
 
-## 52. Path to Ruins
+## 53. Path to Ruins
 
 - EXIT northeast
 
-### 52.1. Ancient Ruins
+### 53.1. Ancient Ruins
 
 - TALK TO Priest (Slomek) (`Scroll of Chants`)
 
-## 53. Arena
+## 54. Arena
 
 - EXIT west into the Path
 
-## 54. Docks
+## 55. Docks
 
-### 54.1. Outside
+### 55.1. Outside
 
 - TALK TO Alien on Boat
 - ENTER House
 
-### 54.2. House
+### 55.2. House
 
 - PICK UP Empty Basket (`Basket`)
 - PICK UP Machete (`Machete`)
 - EXIT house
 
-### 54.3. Outside
+### 55.3. Outside
 
 - ENTER Shipyard
 
-### 54.4. Shipyard
+### 55.4. Shipyard
 
 - TALK TO Dock Worker (Keef) (`Wrench-Like Tool`)
 - TALK TO Engineer
 
-## 55. Arena
+## 56. Arena
 
 - TALK TO Merchant
   - You need to talk about the Flux compensator and Fire Spirit Catcher
 - TALK TO Small Alien Child
 
-## 56. Path to Ruins
+## 57. Path to Ruins
 
 - USE `Machete` on Overgrowth
 - USE `Basket` on Red Berries (`Basket with Berries`)
 
-## 57. Arena
+## 58. Arena
 
-### 57.1. Market Square
+### 58.1. Market Square
 
 - EXIT east into the Back Alley
 
-### 57.2. Back Alley
+### 58.2. Back Alley
 
 - TALK TO Artist
   - "Offer red berries as paint" (`Basket`, `Peggie's Portrait`)
 - PICK UP (green) Mushrooms (`Mushrooms`)
 
-### 57.3. Market Square
+### 58.3. Market Square
 
 - ENTER Brewery
 
-#### 57.3.1. Brewery
+#### 58.3.1. Brewery
 
 - TALK TO Sahti
   - **NOTE:** Mix Green (instead of orange) and orange to brew a powerful stimulant
@@ -911,9 +932,9 @@
 - USE Left Pipes
   - Connect Yellow
 
-## 58. Path to Ruins
+## 59. Path to Ruins
 
-- USE Closed Cave
+- USE Closed Cave  
   Solve the Tile puzzle. There are multiple solutions. One example:
   ```
    1
@@ -923,11 +944,11 @@
   ```
 - ENTER cave
 
-### 58.1. Cave Entrance
+### 59.1. Cave Entrance
 
 - EXIT east into the Hall
 
-### 58.2. Hall
+### 59.2. Hall
 
 - USE Panel
   ```
@@ -959,7 +980,7 @@
 - PICK UP Strange Object (`Red Stone Artifact`)
 - EXIT west
 
-### 58.3. Cave Entrance
+### 59.3. Cave Entrance
 
 - USE `Red Stone Artifact` on Keyhole
 - USE Panel
@@ -972,22 +993,22 @@
   ```
 - ENTER Room
 
-### 58.4. Room
+### 59.4. Room
 
 - USE `Squeaky Animal` on Squishy
 - PICK UP Eggs (`Eggs`)
 
-## 59. Arena
+## 60. Arena
 
-### 59.1. Market Square
+### 60.1. Market Square
 
 - USE `Eggs` on Merchant Zdenkka (+51 Squishy Eyes)
 
-## 60. Gate
+## 61. Gate
 
 - USE `Peggie's Portrait` on Border Guard (`Peggie's Portrait with Guard Signature`)
 
-## 61. Tavern SQ
+## 62. Tavern SQ
 
 - TALK TO Klarek
   - "Investigation: The Who"
@@ -995,41 +1016,41 @@
   - "Investigation: The When"
 - USE `Peggie's Portrait with Guard Signature` on Klarek (`Peggie's Portrait with Both Signatures`)
 
-## 62. Arena
+## 63. Arena
 
-### 62.1. Arena Entrance Area
+### 63.1. Arena Entrance Area
 
 - TALK TO Xelma
   - "Entering the Arena"
 - USE Platform
 
-### 62.2. Inside Arena
+### 63.2. Inside Arena
 
 **NOTE:** Do not yet use the `Scroll of Chants` on any of the riders.
 
-#### 62.2.1. Volunteers
+#### 63.2.1. Volunteers
 
 - TALK TO Elroy
 - EXIT west
 
-#### 62.2.2. Precious
+#### 63.2.2. Precious
 
 - TALK TO Rider
 
-#### 62.2.3. Eggthor
+#### 63.2.3. Eggthor
 
 - TALK TO Rider
 
-#### 62.2.4. Spykor
+#### 63.2.4. Spykor
 
 - TALK TO Rider
 
-### 62.3. Inside Arena
+### 63.3. Inside Arena
 
 - USE `Basket` on Giant Pile of Smelly Stuff (`Kataloth Poop`)
 - EXIT Arena
 
-### 62.4. Market Square
+### 63.4. Market Square
 
 - USE `Kataloth Poop` on Merchant Zdenkka (`Basket`, +5 Squishy Eyes)
 - TALK TO Merchant Zdenkka
@@ -1038,79 +1059,81 @@
     - **NOTE:** If necessary, collect more Kataloth Poop and sell it to her.
 - **NOTE:** Collect more Kataloth Poop and sell it, so you have some Squishy Eyes
 
-## 63. Tavern SQ
+## 64. Tavern SQ
 
-### 63.1. Bar
+### 64.1. Bar
 
 - USE `Squishy Eyes` on Jukebox
 - USE Jukebox **3 times** (or until you trigger a short cut scene)
 - TALK TO Mikk
   - "What song is playing"
+- >**ACHIEVEMENT:** Deejay
+  >- USE Jukebox **7 times** (for a total of 10 times)
 
-## 64. Arena
+## 65. Arena
 
-### 64.1. Market Square
+### 65.1. Market Square
 
 - TALK TO McClockly
   - "Play a slow song"
 - USE `Spirit Catcher` on Fire Spirits (`Fire Spirits in Catcher`)
 
-### 64.2. Brewery
+### 65.2. Brewery
 
 - USE `Fire Spirits in Catcher` on Furnace
 Connect pipes like in image below
 - USE `Empty Glass` on Faucet (`Interesting Smelling Drink`)
 - USE `Mushrooms` on `Interesting Smelling Drink` (`Hopefully Good Fuxian Ale`)
 
-## 65. Tavern SQ
+## 66. Tavern SQ
 
-### 65.1. Bar
+### 66.1. Bar
 
 - USE `Hopefully Good Fuxian Ale` on Beno (`Glasses`)
 
-## 66. Arena
+## 67. Arena
 
-### 66.1. Brewery
+### 67.1. Brewery
 
 - USE Right Pipes
   - Connect to green pipe
 - USE `Empty Jug` on Faucet (`Jug with Powerful Stimulant`)
 
-## 67. Crooked MT
+## 68. Crooked MT
 
-### 67.1. Cliff
+### 68.1. Cliff
 
-#### 67.1.1. Tree Trunk
+#### 68.1.1. Tree Trunk
 
 - TALK TO Professor Zax
   - "Here are your glasses"
   - "Ask him to translate the scroll" (`Meditation Chants`)
 
-## 68. Path to Ruins
+## 69. Path to Ruins
 
-### 68.1. Ancient Ruins
+### 69.1. Ancient Ruins
 
 - >**ACHIEVEMENT:** Sweet Dreams
   >- TALK TO Priest Slomek
   >   - "Give scroll translation" (`Sacred Meditation Chants`)
 
-## 69. Arena
+## 70. Arena
 
-### 69.1. Inside Arena
+### 70.1. Inside Arena
 
-#### 69.1.1. Precious
+#### 70.1.1. Precious
 
 - TALK TO Rider
   - "Offer sleep incantation scroll"
 
-#### 69.1.2. Spykor
+#### 70.1.2. Spykor
 
 - TALK TO Rider
   - "Offer concoction from the brewery"
 
-## 70. Docks
+## 71. Docks
 
-### 70.1. Shipyard
+### 71.1. Shipyard
 
 - TALK TO Engineer
   - "I found the Flux Compensator!"
@@ -1118,63 +1141,63 @@ Connect pipes like in image below
   - S = Start, F = Finish, C = Coil, > = Right, ^ = Up, v = Down, * = Blocked field
   - Level 1:
     ```
-       F    
-    v<*^    
-    vC ^    
-    >+>^    
-     ^      
-     ^*     
-     ^      
-     ^<    
-    **S*****
+          F
+    v < * ^
+    v C   ^
+    > + > ^
+      ^
+      ^ *
+      ^
+      ^ <
+    * * S * * * * *
     ```
   - Level 2:
     ```
-       F        
-       ^v<<<    
-     * ^<  ^*   
-       *   ^    
-           ^    
-      *    ^    
-           ^    
-         * ^    
-       * >C^    
-         ^      
-        *^      
-      >>>^     
-    **S*********
+          F
+          ^ v < < <
+      *   ^ <     ^ *
+          *       ^
+                  ^
+        *         ^
+                  ^
+              *   ^
+          *   > C ^
+              ^
+            * ^
+        > > > ^
+    * * S * * * * * * * * *
     ```
   - Level 3:
     ```
-    F<<<  * 
-       ^    
-       ^<C< 
-      *   ^ 
-        *>^ 
-         ^* 
-         ^  
-      >>>^ 
-    **S*****
+    F < < <     *
+          ^
+          ^ < C <
+        *       ^
+            * > ^
+              ^ *
+              ^
+        > > > ^
+    * * S * * * * *
     ```
 
-### 70.2. House
+### 71.2. House
 
 - USE Board with Map
 
-## 71. Crooked MT
+## 72. Crooked MT
 
-### 71.1. Portal Building
+### 72.1. Portal Building
 
-#### 71.1.1. Elevator Room
+#### 72.1.1. Elevator Room
 
 - USE Crystal on Mysterious Cylinder
   - **NOTE:** `Wet, Star, Night, Day, Rings`
 - USE Mysterious Cylinder
   - Enter the code from what the guards said: `Wet, Star, Night, Day, Rings`
 
-## 72. Wanderbrust Tower
+## 73. Wanderbrust Tower
 
-### 72.1. Street
+### 73.1. Street
 
 - TALK TO Chauncey?
   - "Distract Little Joe"
@@ -1183,17 +1206,17 @@ Connect pipes like in image below
   - "Yes, we have to..."
 - ENTER Door
 
-### 72.2. Tower
+### 73.2. Tower
 
-#### 72.2.1. Lobby
+#### 73.2.1. Lobby
 
 - USE Stairs
 
-#### 72.2.2. Stairway
+#### 73.2.2. Stairway
 
 - EXIT upstairs
 
-#### 72.2.3. Wanderbrust's Office
+#### 73.2.3. Wanderbrust's Office
 
 - USE Stuffed Animal
 - USE Panel
@@ -1201,16 +1224,21 @@ Connect pipes like in image below
 **SAVE YOUR GAME HERE**
 - ENTER Secret Passage
 
-#### 72.2.4. Laboratory
+#### 73.2.4. Laboratory
 
-The following achievements depend on your dialog choice:
-- >**ACHIEVEMENT:** No You Won't
-  >- "Pull him"
-- >**ACHIEVEMENT:** Learn to Forgive
-  >- "Do nothing"
-- >**ACHIEVEMENT:** Rebel
-  >- "Push him"
+- The following achievements depend on your dialog choice:
+  - >**ACHIEVEMENT:** No You Won't
+    >- "Pull him"
+  - >**ACHIEVEMENT:** Learn to Forgive
+    >- "Do nothing"
+  - >**ACHIEVEMENT:** Rebel
+    >- "Push him"
 - >**ACHIEVEMENT:** Master of the Multiverse
   >- Complete all three endings
 - >**ACHIEVEMENT:** Don't get Up Just Yet
   >- Watch the post-credits scene
+
+## 74. Post-Game Achievements
+
+- >**ACHIEVEMENT:** Polyglot
+  >- Reached the end in 2 different languages
