@@ -251,6 +251,174 @@
   - Automatisch: Lies Brief (10/400)
   - **SCHNELL:** ZIEHE Schrankfläche (50/450)
 
+## 3. Kapitel 3: Wo der Wald beginnt
+
+### 3.1. Friedhof
+
+- BENUTZE Eingang (10/10)
+
+#### 3.1.1. Gruft
+
+- NIMM Sarg (10/20)
+
+### 3.2. Vor deinem Haus
+
+- SIEH AN Statue (5/25)
+- GEHE nach Osten
+
+### 3.3. Kreuzung
+
+- REDE MIT Mann (5/30)
+- GIB `Notiz` an Mann (`Zeitung`) (5/35)
+- SIEH AN `Zeitung` (10/45)
+- GEHE nach Norden
+
+### 3.4. Friedhof
+
+- BENUTZE Efeu (15/60)
+
+#### 3.4.1. Gruft
+
+- NIMM Sarg (`Pergamentrolle`) (5/65)
+- DRÜCKE Stein (`Karte`) (10/75)
+- SIEH AN `Karte`
+
+### 3.5. Friedhof
+
+- GEHE nach Westen (20/95)
+
+### 3.6. Wald
+
+- REDE MIT Junge (5/100)
+- GEHE nach Norden (5/105)
+- REDE MIT Junge (5/110)
+- SIEH AN `Pergamentrolle` (5/115)
+  - Es wird eine Zahl gesucht
+  - Im Text sind Zahlen "versteckt"
+  - Sie sind Teil eines Wortes
+  - "EINSt", "EINEN", "BeACHTung", "mEINE", "hELFen"
+- REDE MIT Junge
+  - "Natürlich kenne ich die Zahl"
+  - `118111` (30/145)
+  - Über alles reden (15/160)
+- GEHE nach Norden
+
+### 3.7. Brücke
+
+- GEHE nach Norden (5/165)
+- REDE MIT Polizist (10/175)
+- GIB `Zeitung` an Polizist
+
+### 3.8. Wald
+
+- REDE MIT Junge
+- GIB `Geld` an Junge (`Zeitschrift`) (10/185)
+
+### 3.9. Brücke
+
+- GIB `Zeitschrift` an Polizist (5/190)
+
+### 3.10. Wald
+
+- REDE MIT Junge (5/195)
+
+### 3.11. Brücke
+
+- BENUTZE `Zeitung` mit Schild (`eingefärbte Zeitung`)
+- BENUTZE `eingefärbte Zeitung` mit `Zeitschrift` (`Zeitschrift mit Beilage`)
+- GIB `Zeitschrift mit Beilage` an Polizist (15/210)
+- GEHE nach Norden
+
+### 3.12. Wald hinter der Brücke
+
+- GEHE nach Norden
+
+### 3.13. Felsen im Wald
+
+- NIMM Feder (30/240)
+- GEHE nach Süden
+
+### 3.14. Wald hinter der Brücke
+
+- SIEH AN großes Baumloch
+- >Easter Egg:
+  > - NIMM großes Baumloch
+
+### 3.15. Brücke
+
+- SIEH AN Polizist
+- NIMM Polizist (`Taschenlampe`) (10/250)
+- **SPEICHERN**
+- >Easter Egg:
+  > - **ACHTUNG:** Die Aktion gibt 5 Minuspunkte!
+  > - BENUTZE `Karte` mit Abgrund (-5 Punkte!)
+
+### 3.16. Wald hinter der Brücke
+
+- BENUTZE `Taschenlampe` mit großes Baumloch (10/260)
+- BENUTZE `Magnet am Schnürsenkel` mit großes Baumloch (`Taschenmesser`) (20/280)
+
+### 3.17. Felsen im Wald
+
+- BENUTZE `Taschenmesser` mit Gestrüpp (5/285)
+- GEHE zu Höhle
+
+#### 3.17.1. Höhle
+
+- DRÜCKE `Taschenlampe` (5/290)
+
+### 3.18. Traum
+
+- REDE MIT Wegener  
+  **RÄTSEL:**
+  - "Mein NAME weist darauf hin und du bist auf der Suche nach dem richtigen"
+  - Sein Name ist "Wegener"
+  - Wir suchen den richtigen "Weg"
+  - Die Gräber sind von "Lampen", "Georgen", "Elfenstein", "Anker" und "Waldmann"
+  - Die Anfangsbuchstaben der Nachnamen sind LGEAW
+  - Wir suchen nach dem "WEG"
+  - DRÜCKE Josef **W**aldmann (rechts unten)
+  - DRÜCKE Theodor **E**lfenstein (links unten)
+  - DRÜCKE Sarah **G**eorgen (rechts oben) (30/320)
+
+### 3.19. Institut
+
+- SIEH AN Grashüpfer (ein unsichtbarer Hotspot ganz links am Bildschirmrand) (10/330)
+- SIEH AN Ritz zwischen den Türen
+- BENUTZE `Taschenmesser` mit Ritz (10/340)
+- GEHE zu Eingangsflur
+
+#### 3.19.1. Eingangsflur
+
+- SIEH AN Zimmerpflanze (`Reagenzglas`) (5/345)
+
+### 3.20. Institut
+
+- SIEH AN Strauch mit Beeren (5/350)
+  - NIMM Beeren
+  - >Easter Egg:
+    > - "behalten"
+  - "fallen lassen"
+  - BENUTZE `Reagenzglas` mit Beeren
+  - BENUTZE `Taschenmesser`mit Beeren (`volles Reagenzglas`) (15/365)
+
+#### 3.20.1. Eingangsflur
+
+- BENUTZE `volles Reagenzglas` mit Tür (hinten links) (10/375)
+- GEHE zu Raum
+
+#### 3.20.2. Wohnzimmer
+
+- BENUTZE Tür (hinten links)
+  - "Ich bin weder kriminell, noch ein Psychopath."
+  - "Ich habe wirklich keine bösen Absichten."
+  - "Ich habe eine hohe Achtung vor Ihren Erfahrungen."
+  - "WAS macht denn keinen Sinn?" (50/415)
+
+#### 3.20.3. Eingangsflur
+
+- BENUTZE Treppe (30/445)
+
 --------------------------------------------------------------------------------
 
 ## 4. Video Walkthroughs
@@ -266,3 +434,9 @@ Feuersturm - Kapitel 1: Zurück in die Welt Lösung (Deutsch) (PC, Win) - Unkomm
 Feuersturm - Kapitel 2: Der unheimliche Zug Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough Kapitel 2](https://img.youtube.com/vi/-BCQDYwMseE/0.jpg)](https://www.youtube.com/watch?v=-BCQDYwMseE)
+
+### 4.3. Kapitel 3
+
+Feuersturm - Kapitel 3: Wo der Wald beginnt Lösung (Deutsch) (PC, Win) - Unkommentiert
+
+[![Walkthrough Kapitel 3](https://img.youtube.com/vi/8gohkvN9_uk/0.jpg)](https://www.youtube.com/watch?v=8gohkvN9_uk)
