@@ -1,23 +1,39 @@
 # Old Skies - Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|  0.97   | 27.04.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author
+|:-------:|------------|-------------------------------------------
+|  0.98   | 21.06.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add missing achievements and update guide up to chapter 4
+|  0.97   | 27.04.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
-## 1. Game Options
+## 1. Game Options / Before you Begin
 
-- To get the "Commentimey" achievement, enable Commentary Mode and listen to all bloopers and comments during the whole game.
+- >**ACHIEVEMENT:** Commentimey
+  >- Enable Commentary Mode and listen to all bloopers and comments during the whole game
+- Don't read the `Field Manual` until you get the `Who Me Study?` achievement
+- Don't contact Nozzo to ask for a hint (`<Any thought>`) during the whole game
+- Take every chance to go to Fia's home and check the Personic data in the holoscreen
 
 ## 2. Present
 
 ### 2.1. Jay V's
 
+- **SAVE YOUR GAME HERE** for a couple of different achievements
 - LOOK AT young man
-  - You talk to him
+  - "So, what's your name?"
+  - **NOTE:** Depending on your following choices, you get different achievements:
+  - >**ACHIEVEMENT:** Gone Dutch
+    >- "Real enough to share a drink?"
+  - >**ACHIEVEMENT:** Your Treat
+    >- "Real enough for me to buy you a drink?"
+  - >**ACHIEVEMENT:** Timetotaler
+    >- "Real enough to buy me a drink?"
+  >- Complete the dialogue
 
 ### 2.2. Home
 
 - USE holotouch
+  - >**ACHIEVEMENT:** Personable (1/8)
+    >- check the Personics. Do this every time when it is possible
   - READ all messages
 - EXIT east
 
@@ -43,6 +59,12 @@
 
 ##### 3.1.1.2. Street
 
+- >**ACHIEVEMENT:** Sera-fia
+  >- Note the angel graffiti on the wall stand in front of it. This is a bit fiddly:
+  >   - You must not stand directly at the wall, but a little bit below
+  >   - You need to wait for about 5-10 seconds before you move
+  >   - The graffiti flashes, when the achievement is triggered
+  >   - For me, it triggered while looking to the right side and her left hand is exactly positioned at the top left bollard without touching it. so her whole body does not touch the bollard.
 - TAKE rag (`Rag`)
 - LOOK AT combination lock
 - USE `Rag` with combination lock
@@ -91,14 +113,15 @@
 
 ##### 3.1.4.3. Back Alley
 
-- TAKE piece of paper
+- "I apologize for my friend."
+- TAKE piece of paper (`Filthy piece of paper`)
 - USE trash bin
 - Make your way back to the landing site (`Pistol`)
 - Return to the diner
 
 ##### 3.1.4.4. Diner
 
-- TALK TO woman (New location: Brittany Hall Dorm)
+- TALK TO Mattie (New location: Brittany Hall Dormitory)
 
 #### 3.1.5. Brittany Hall Dorm
 
@@ -107,7 +130,7 @@
 - USE `Multitool` with door
 - ARCHIVE:
   - SEARCH Joseph Anderson
-- LOOK AT `Piece of paper`
+- LOOK AT `Filthy piece of paper`
 - USE door
 
 ##### 3.1.5.2. Office
@@ -125,12 +148,13 @@
 
 ##### 3.1.6.1. Diner
 
-- TALK TO woman
+- TALK TO Mattie
+  - "Professor Foster"
   - "Rhona"
   - "Lisa"
 - ARCHIVE:
   - SEARCH Rhona Foster
-  - SEARCH Oliver Foster
+  - SEARCH Oliver Foster (New location: New York University, Department of Chemistry)
   - READ all messages
 
 #### 3.1.7. NYU Department of Chemistry
@@ -144,7 +168,7 @@
 ##### 3.1.7.2. Office
 
 - LOOK AT piece of paper on the desk
-  - Take note of the letter content, especially the middle part
+  - **:NOTE:** The middle paragraph "what Dad was always looking through"
   - In the archive, SEARCH for Oliver Foster and look at the photo
   - Note the microscope vendor `ZEUS`
 - TALK TO Lisa
@@ -154,10 +178,15 @@
 ##### 3.1.7.3. Entrance Hall
 
 - TALK TO Lisa
+- **SAVE YOUR GAME HERE** to get different achievements
 - EXIT through window
 - >**ACHIEVEMENT:** Die Knowing
   >- Tell him the truth
+  >- **LOAD YOU SVAED GAME**
+- >**ACHIEVEMENT:** Impatience
+  >- Choose `<Fire weapon>` as your first dialogue
 - >**ACHIEVEMENT:** Dine's Up
+  >- Complete Chapter One
 
 ## 4. Present
 
@@ -168,12 +197,27 @@
 ### 4.2. Home
 
 - USE holotouch
+  - >**ACHIEVEMENT:** Personable (2/8)
+    >- check the Personics. Do this every time when it is possible.
+  - READ all messages
+
+### 4.3. Jay V's
+
+- You talk with your colleagues
+
+### 4.4. Home
+
+- USE holotouch
+  - >**ACHIEVEMENT:** Personable (3/8)
+    >- check the Personics. Do this every time when it is possible.
   - READ all messages
 - USE bed
 - USE holotouch
+  - >**ACHIEVEMENT:** Personable (4/8)
+    >- check the Personics. Do this every time when it is possible.
   - READ all messages
 
-### 4.3. ChronoZen HQ
+### 4.5. ChronoZen HQ
 
 - USE door
 
@@ -197,13 +241,13 @@
 - ARCHIVE:
   - SEARCH Simon Inman
   - READ all messages
-- TALK TO MAN (Brian) at the punch bag
 - TALK TO Ida
 - TALK TO Brian (Mason)
+  - **NOTE:** His punches `left, right, left, left, right, right, left, right`
 - ARCHIVE:
   - SEARCH Brian Mason
 - USE `Newspaper` with Brian
-- TALK TO Ida
+- TALK TO Ida (New location: Essex Market)
 - EXIT west
 
 #### 5.1.3. Essex Street Oyster Stand
@@ -221,13 +265,25 @@
 
 - TALK TO barmaid (Clara)
   - "Restore"
-- Try different ways to solve this until you get the dialogue option "Clara's buffing, Simon. You know this!"
+- **SAVE YOUR GAME HERE** for an extra achievement
 - >**ACHIEVEMENT:** Gilded Restage
-  >- Rewind the scene 10 times
-- TAKE billiard ball (`Billiard ball`)
-- USE `Billiard ball` with spot on the floor in front of the billiard table
-- TALK TO Chloe or Clara
-  - "Clara's buffing, Simon. You know this!"
+  >- Rewind the scene **10 times**
+  >- **RESTORE YOUR SAVED GAME**
+- >**ACHIEVEMENT:** Having a Ball
+  >- TAKE billiard ball (`Billiard ball`)
+  >- USE `Billiard ball` with spot on the floor in front of the billiard table
+  >- TALK TO Clara
+  >   - "Leave your rifle alone"
+  >   - "Don't provoke him, Clara"
+  >   - "Who wants a drink?"
+  >   - "Shoot him Clara! Quick!"
+  >- TAKE billiard ball (`Billiard ball`)
+  >- USE `Billiard ball` with spot on the floor in front of the billiard table
+  >- TALK TO Clara
+  >   - "Leave your rifle alone"
+  >   - "Simon Inman?"
+  >   - "Yes, please don't"
+  >   - "Clara's bluffing, Simon. You know this!"
 - EXIT bar
 
 ##### 5.1.4.3. Street
@@ -244,10 +300,12 @@
 #### 5.1.5. Inman Residence
 
 - TALK TO Simon
+  - "Motion Chloe forward"
 - ARCHIVE:
   - SEARCH Simon Inman
   - READ all messages
 - TALK TO Chloe
+  - "It changed."
 
 ### 5.2. April 1871
 
@@ -264,11 +322,12 @@
 #### 5.2.2. Inman Residence
 
 - TALK TO Simon
+  - **Repeat** until there are no more dialog options
 - TALK TO Paula
 
 #### 5.2.3. Ida's Arena
 
-- TALK TO woman
+- EXIT Arena
 
 #### 5.2.4. Essex Street Oyster Stand
 
@@ -282,7 +341,7 @@
 - TALK TO woman
   - "Your stories don't add up" (Breaktown boys)
 - ARCHIVE:
-  - SEARCH Breakdown boys
+  - SEARCH Breakdown boys (New Location: Badger's Fish Market)
 
 #### 5.3.2. Badger Fish Market
 
@@ -308,7 +367,8 @@
 
 - TALK TO Simon
   - "Breakdown boys"
-  - "The Family photo"
+  - "The family photograph"
+- EXIT and return to the scene
 - USE door
 
 ##### 5.4.2.1. Living Room
@@ -342,22 +402,33 @@
 
 #### 5.6.1. Inman Residence
 
-- ENTER forest
-  - Remember the `Note` and `Sketchbook`
-  - At first step forward
-  - Then follow the instruction
-    - Stump = Jack = right
-    - Log = Michael = left
-    - Boulder = Jill = forward
-    - Bridge = Mary = forward
+- **SAVE YOUR GAME**
+- >**ACHIEVEMENT:** Forest Maker
+  >- Make your way through the forest without getting lost once:
+  >- ENTER forest
+  >   - Remember the `Note` and `Sketchbook`
+  >   - At first step forward
+  >   - Then follow the instruction
+  >   - Stump = Jack = right
+  >   - Log = Michael = left
+  >   - Boulder = Jill = forward
+  >   - Bridge = Mary = forward
 
 ##### 5.6.1.1. Forest
 
 - USE `Pistol` with tree
 
+##### 5.6.1.2. Living Room
+
+- EXIT house and switch to October 1871 here
+
 ### 5.7. October 1871
 
-#### 5.7.1. Badger Fish Market
+#### 5.7.1. Inman Residence
+
+- TALK TO Eddie
+
+#### 5.7.2. Badger Fish Market
 
 - TALK TO Paula
 
@@ -378,23 +449,35 @@
 
 ### 5.10. April 1871
 
-#### 5.10.1. The Barking Dog
+#### 5.10.1. Ida's Arena
 
-##### 5.10.1.1. Bar
+- TALK TO Simon
 
-- TALK TO Brian
-
-#### 5.10.2. Street
-
-- Try to EXIT
+#### 5.10.2. The Barking Dog
 
 ##### 5.10.2.1. Bar
 
-- You can learn how he fights by rewinding or you travel to October 1871 and look in the gym how he trains and note the order of his punches:
-  - left, right, left, left, right, right, left, right
-  - >**ACHIEVEMENT:** A New Champion
+- TALK TO Brian
 
-#### 5.10.3. Inman Residence
+#### 5.10.3. Street
+
+- **SAVE YOUR GAME HERE**
+- Try to EXIT
+
+##### 5.10.3.1. Bar
+
+- You can learn how he fights by rewinding or you travel to October 1871 and look in the gym how he trains and note the order of his punches:
+  - >**ACHIEVEMENT:** A New Champion
+    >- Fail to avoid his punches and rewind one time
+    >- **LOAD YOUR SAVED GAME**
+  - >**ACHIEVEMENT:** Move Like a Butterfly
+    >- `left, right, left, left, right, right, left, right`
+
+#### 5.10.4. Ida's Arena
+
+- You talk to Simon
+
+#### 5.10.5. Inman Residence
 
 - Choose as you like for the first try, in the second try:
 - "Listen to me carefully"
@@ -405,25 +488,39 @@
 - "how about it"
 - Choose as you like
 - >**ACHIEVEMENT:** Time's Champion
+  >- Complete Chapter Two
 
 ## 6. Present
 
-### 6.1. Jay V's
+### 6.1. Home
+
+- USE holotouch
+  - >**ACHIEVEMENT:** Personable (5/8)
+    >- check the Personics. Do this every time when it is possible.
+  - READ all messages
+
+### 6.2. Jay V's
 
 - You automatically talk
 
-### 6.2. Home
+### 6.3. Home
 
 - USE holotouch
+  - >**ACHIEVEMENT:** Personable (6/8)
+    >- check the Personics. Do this every time when it is possible.
   - READ all messages
 - USE bed
+- USE holotouch
+  - >**ACHIEVEMENT:** Personable (7/8)
+    >- check the Personics. Do this every time when it is possible.
+  - READ all messages
 
-### 6.3. Park Gallery
+### 6.4. Park Gallery
 
 - TALK TO Nozzo
 - ENTER park gallery
 
-#### 6.3.1. Gallery
+#### 6.4.1. Gallery
 
 - LOOK AT painting with no name
 
@@ -434,7 +531,7 @@
 #### 7.1.1. Landing Point
 
 - TALK TO Imani
-- TAKE metal pitcher (`Metal pitcher`)
+- TAKE metal pitcher (from the ground) (`Metal pitcher`)
 - EXIT west
 
 #### 7.1.2. Granted Gems
@@ -448,7 +545,7 @@
 - TALK TO shop owner
 - USE `Photograph` with shop owner
 - TALK TO shop owner
-- USE `Currency module` with shop owner (Jackson Grant, new location)
+- USE `Currency module` with shop owner (New location: Jackson Grant's Residence)
 
 ##### 7.1.2.3. Street
 
@@ -496,35 +593,56 @@
   - "Message from your wife" (Arthur)
 - ARCHIVE:
   - SEARCH Mitchell Santina
-  - READ service record
+  - READ service record (New location: Car Crash)
 
 #### 7.1.6. Crash Site
 
+- LOOK AT puddle
 - USE `Metal pitcher` with puddle (`Metal pitcher with cold water`)
 - USE `Metal pitcher with cold water` with Elizabeth and Arthur
-- **SAVE YOUR GAME**
+- **SAVE YOUR GAME HERE** to get different achievements
 - EXIT east or west
-  - There are two solutions, each one gives a different achievement:
-  1. - >**ACHIEVEMENT:** Time Gat
-     >- USE `Pistol` with office
-     >- **LOAD your saved game**
-  2. - TALK TO officer
-     - >**ACHIEVEMENT:** Flatfoot Whisperer
-       >- Calm the police officer down without the aid of time loops
-     - "This isn't like you."
-     - "I know you well enough. Your record is exemplary"
-     - "Facing your family?"
-     - "Your wife"
-     - "Who'd read her novels?"
-     - "Your children"
-     - "They want to follow in your footsteps"
-     - "Yourself"
-     - "You want to teach?"
+- TALK TO officer Santina
+  - There are two solutions and four achievements:
+  - >**ACHIEVEMENT:** Time Gat
+      >- Always use first dialogue option
+      >- REWIND one time
+      >- USE `Pistol` with officer Santina
+      >- **LOAD YOU SAVED GAME**
+  - >**ACHIEVEMENT:** Just a hunch
+      >- USE `Pistol` with officer Santina
+      >- **LOAD YOU SAVED GAME**
+  - >**ACHIEVEMENT:** Time Gabber
+      >- Always use first dialogue option
+      >- REWIND one time
+      >- "I'm not the one you want."
+      >- "This isn't like you."
+      >- "I know you well enough. Your record is exemplary"
+      >- "Facing your family?"
+      >- "Your wife"
+      >- "Who'd read her novels?"
+      >- "Your children"
+      >- "They want to follow in your footsteps"
+      >- "Yourself"
+      >- "You want to teach?"
+      >- **LOAD YOU SAVED GAME**
+  - >**ACHIEVEMENT:** Flatfoot Whisperer
+      >- Calm the police officer down without the aid of time loops
+      >- "I'm not the one you want."
+      >- "This isn't like you."
+      >- "I know you well enough. Your record is exemplary"
+      >- "Facing your family?"
+      >- "Your wife"
+      >- "Who'd read her novels?"
+      >- "Your children"
+      >- "They want to follow in your footsteps"
+      >- "Yourself"
+      >- "You want to teach?"
+      >- **LOAD YOU SAVED GAME**
 - USE back window (of the car)
   - TAKE purse (`Purse`)
 - USE `Purse` (`Matchbook`)
 - USE `Matchbook` (Location: Contis Cafe)
-- >**ACHIEVEMENT:** Time Gabber
 
 #### 7.1.7. Contis Cafe
 
@@ -559,13 +677,13 @@
 ##### 7.1.9.2. Bar
 
 - >**ACHIEVEMENT:** Enraptured
-  >- WAIT and watch Elizabeth performance without talking once
+  >- WAIT and watch Elizabeth's performance without talking to anybody and don't do anything
 - TALK TO bartender
 - TALK TO Arthur
   - Ask him to dim the lights
 - USE `Multitool` with steel cable box
 - USE cable
-- TALK TO Elizabeth and Arthur (Location: Pie Sycamore Residence)
+- TALK TO Elizabeth and Arthur (Location: Pie Sycamore)
 
 #### 7.1.10. Pie Sycamore Residence
 
@@ -593,7 +711,7 @@
 ##### 7.1.11.1. Street
 
 - TALK TO Elizabeth and Arthur
-  - Do not start the robbery yet
+  - Do not start the robbery yet, select "Let's take a moment."
 
 ##### 7.1.11.2. Sales Room
 
@@ -605,6 +723,7 @@
 
 - TALK TO Elizabeth and Arthur
   - "I need a piece of jewelry" (`Engagement ring`)
+  - "Let's take a moment."
 
 ##### 7.1.11.4. Sales Room
 
@@ -614,6 +733,7 @@
 
 ##### 7.1.11.5. Street
 
+- **SAVE YOUR GAME HERE** to get different achievements
 - TALK TO Elizabeth and Arthur
   - "Let's begin."
 
@@ -621,13 +741,14 @@
 
 - >**ACHIEVEMENT:** Prohibition Reinsertion
   >- Rewind the scene 10 times
-- "Wait.."
-- "Just break the glass open."
+  >- **LOAD YOUR SAVED GAME**
+- "Just let the events play out."
 
 ##### 7.1.11.7. Back Room
 
 - "Lizbeth should open the safe"
 - MOVE the cursor above the safe and note the number `09`
+- Wait until rewind
 
 ##### 7.1.11.8. Sales Room
 
@@ -639,8 +760,16 @@
 
 - "Danny should open the safe"
 - MOVE the cursor above the safe and note the number `23`
+- Wait until rewind and repeat the scene
 - "I'll open the safe"
-- ENTER teh thee numbers you got from the archive and the safe `09-18-23`
+- ENTER the three numbers you got from the archive and the safe `09-18-23`
+- **LOAD YOU SAVED GAME**
+- >**ACHIEVEMENT:** Heistsight is 20/20
+  >- **NOTE:** You can get this achievement only if you already know the code.
+  >- "Just let the events play out."
+  >- ENTER back room
+  >- "I'll open the safe"
+  >- ENTER code `09-18-23`
 
 #### 7.1.12. Pie Sycamore Residence
 
@@ -654,6 +783,8 @@
 ### 8.1. Home
 
 - USE holotouch
+  - >**ACHIEVEMENT:** Personable (8/8)
+    >- check the Personics.
   - READ all messages
 - USE bed
 
@@ -688,12 +819,16 @@
 - ARCHIVE:
   - SEARCH Sam Deane
 - TALK TO Sam (Sterling Agency)
+  - "I know what you're here to do"
 - ARCHIVE:
   - SEARCH Sterling Agency
-- TALK TO Sam
-  - "Sterling is using you"
-  - "They want you to write a paper..."
-  - "They have very tight security"
+- **SAVE YOUR GAME HERE**
+- >**ACHIEVEMENT:** Temp Crasher
+  >- Convince Sam to quit the agency on the first attempt
+  >- TALK TO Sam
+  >   - "Sterling is using you"
+  >   - "They want you to write a paper..."
+  >   - "They have very tight security"
 - TAKE access card (`Keycard`)
 - USE `Keycard` with scanner (`Leaflets`)
 
@@ -715,8 +850,8 @@
   - READ all messages
     - **NOTE:** Log2: Shuttle? (`Madison is knocked out by trains`) and Log4: PasaGel? (`Activated by words`)
 - USE yellow touch screen
-  - **NOTE:** The words for activation key, primer key and detonation key
-  - ```
+  - **NOTE:** The words for activation key, primer key and detonation key:  
+    ```
     Melon Cup   Buddo
     Tense Paper Dilly
     Jump  Arrow Zoiper
@@ -725,8 +860,10 @@
 ##### 9.1.2.4. Conference Room
 
 - USE `Spool of copper wire` with drone
+- Listen to Madison's speech, especially note the CAPITAL letter words
 - TALK TO Madison
   - "Take a break"
+  - "Need any help?"
   - "Help with presentation"
   - You need to choose words which are available as activation words for the Gel
   - "InTENSE"
@@ -764,7 +901,12 @@
 
 - ENTER park gallery
 
-### 10.2. ChronoZen HQ
+### 10.2. Home
+
+- USE holotouch
+  - READ all messages
+
+### 10.3. ChronoZen HQ
 
 - USE door (`Trashbag`)
 
@@ -778,10 +920,12 @@
 
 #### 11.1.2. Break Room
 
+- USE `Trashbag` with big metal bin
+  - Go through all dialogues
 - USE touch screen
   - Incinerate
 - USE big metal bin
-  - Hit it hard
+  - Kick it hard
 - USE `Trashbag` with hatch
 - USE touch screen
   - Disposal chute
@@ -826,7 +970,7 @@
 
 ### 11.9. Conference Room
 
-- USE `Overcoat` with drone
+- USE `Overcoat` with working drone
 
 ### 11.10. Landing Point
 
@@ -849,30 +993,35 @@
 
 #### 13.1.1. Reception
 
-- ENTER vertical farm through the glass dor on the right side
+- ENTER vertical farm through the glass door on the right side
 
 #### 13.1.2. Vertical Farm
 
+- **SAVE YOUR GAME HERE**
 - EXIT east
 
 #### 13.1.3. Break Room
 
-- **QUICK:**
-  - TAKE magnet (`Electromagnet`)
-  - USE trash bin
-  - USE `Electromagnet` with lid
-  - TAKE rag (`Rag`)
-  - USE `Multitool` with panel
-  - USE `Rag` with open panel
+- >**ACHIEVEMENT:** Decinerate
+  >- Successfully hide in the trash bin without rewinding a single time
+  >- **QUICK:**
+  >   - TAKE magnet (`Electromagnet`)
+  >   - USE trash bin
+  >   - USE `Electromagnet` with lid
+  >   - TAKE rag (`Rag`)
+  >   - USE `Multitool` with panel
+  >   - USE `Rag` with open panel
 
 #### 13.1.4. Vertical Farm
 
+- EXIT east
 - USE maintenance panel panel and take note of the possible settings for music, ambient and aroma
+- EXIT east
 
 #### 13.1.5. Office
 
 - TALK TO Cassie
-  - "Madison os meditating"
+  - "Madison is meditating"
     - **NOTE:** `Haskins tribute concert`
 
 #### 13.1.6. Conference Room
@@ -883,17 +1032,13 @@
 #### 13.1.7. Workshop
 
 - Ask when the presentation takes place
+- LOOK AT piece of paper at the wall
+  - **NOTE:** L502 = `Lavender`
+- USE holoscreen
+  - Chat Log 2: Shuttle?
+    - **NOTE:** She fall asleep in a train
 
-#### 13.1.8. Conference Room
-
-- TALK TO Benjamin
-  - "Yes"
-
-#### 13.1.9. Workshop
-
-- Ask when the presentation takes place
-
-#### 13.1.10. Vertical Farm
+#### 13.1.8. Vertical Farm
 
 - USE maintenance panel
   - MUSIC: Info from Cassie `Haskins`
@@ -901,16 +1046,38 @@
   - AROMA: Info from the note in Cassie's office (a code) and the piece of paper on the wall in the workshop `Lavender`
 - WALK TO Landing Point (`Recording`)
 
+#### 13.1.9. Conference Room
+
+- TALK TO Benjamin
+  - "Yes"
+
+#### 13.1.10. Workshop
+
+- USE holoscreen
+  - CENTRAL TIME
+  - EXIT
+
+#### 13.1.11. Conference Room
+
+- TALK TO Benjamin
+  - "Yes"
+
+#### 13.1.12. Workshop
+
+- ”You sure you don’t have enough time for coffee?”
+
 ### 13.2. Landing Point
 
 - >**ACHIEVEMENT:** Clock Blocked
   >- Complete Chapter Four (for real this time??)
 - USE `Recording`
-  - **NOTE:** Date and time of the video `Nov-10-2062, 18:00 PM`
-  - **NOTE:** Activation words `MELANCHOLY`, `CAPRICIOUS`, `BUT OH NO`
-- CONTACT Nozzo
-  - USE all dialogue options
-  - >**ACHIEVEMENT:** TikTok
+  - **NOTE:**
+    - Date and time of the video `Nov-10-2062, 18:00 PM`
+    - Activation words `MELANCHOLY`, `CAPRICIOUS`, `BUT OH NO`
+    - Mentioning of `Shoes` and `Gun`
+- >**ACHIEVEMENT:** TikTok
+  >- CONTACT Nozzo
+  >   - USE all dialogue options
 
 ### 13.3. Street
 
