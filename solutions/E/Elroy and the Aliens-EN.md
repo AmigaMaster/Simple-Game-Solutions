@@ -1200,6 +1200,7 @@ Connect pipes like in image below
 ### 73.1. Street
 
 - TALK TO Chauncey?
+  - In the first dialogue, choose as you like
   - "Distract Little Joe"
   - "Pa... Bessie the..."
   - "Amanda will help..."
