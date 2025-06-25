@@ -2,6 +2,7 @@
 
 | Version | Date       | Author
 |:-------:|------------|-------------------------------------------
+|  1.0    | 22.06.2025 | Amiga Master (AmigaMaster-NG@t-online.de), include all achievements and updated guide for all chapters
 |  0.98   | 21.06.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add missing achievements and update guide up to chapter 4
 |  0.97   | 27.04.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
@@ -9,9 +10,9 @@
 
 - >**ACHIEVEMENT:** Commentimey
   >- Enable Commentary Mode and listen to all bloopers and comments during the whole game
+- >**ACHIEVEMENT:** More Like Nozz-NO
+  >- Don't contact Nozzo to ask for a hint (`<Any thought>`) during the whole game
 - Don't read the `Field Manual` until you get the `Who Me Study?` achievement
-- Don't contact Nozzo to ask for a hint (`<Any thought>`) during the whole game
-- Take every chance to go to Fia's home and check the Personic data in the holoscreen
 
 ## 2. Present
 
@@ -182,7 +183,7 @@
 - EXIT through window
 - >**ACHIEVEMENT:** Die Knowing
   >- Tell him the truth
-  >- **LOAD YOU SVAED GAME**
+  >- **LOAD YOU SAVED GAME**
 - >**ACHIEVEMENT:** Impatience
   >- Choose `<Fire weapon>` as your first dialogue
 - >**ACHIEVEMENT:** Dine's Up
@@ -1135,7 +1136,7 @@
 
 ##### 15.1.1.2. Back Alley
 
-- TALK TO Hanna
+- TALK TO Hanna (New Location: Nick Chord's Essex House, `Transcript`)
 - EXIT west
 
 #### 15.1.2. Nick Chord's Residence
@@ -1146,14 +1147,14 @@
 - TAKE bottle (`Bottle of liquor`)
 - TAKE note from the ground (`Note`)
 - USE `Note`
-  - **NOTE:**
+  - **NOTE:** The ingredient for the sleeping aid and that it strength increases with alcohol
 - USE drawer
   - TAKE **all** drugs (`Sage Mist`, `Marigold Veil`, `Bloody Thorn`, `Rosemary Hush`, `Jasmine Echo`)
 - USE `Rosemary hush` with `Bottle of liquor` (`Spiked bottle of liquor`)
 - USE `Spiked bottle of liquor` with Nick
 - LOOK AT `Transcript` (Yvonne Lozzotti, Location: Lozzotti Residence)
 - ARCHIVE:
-  - SEARCH Yvonne Lozzotti (Location: The Village Eye)
+  - SEARCH Yvonne Lozzotti (Location: Village Eye)
 - EXIT west (Dion)
 
 #### 15.1.3. Lozzotti Residence
@@ -1176,10 +1177,12 @@
     3. Dorm
 - LOOK AT photograph
   - **NOTE:** `84`
-- USE telephone (Location: Two World Trade Center, Winera)
+- USE telephone (Location: World Trade Center, Winera)
 - ARCHIVE:
   - SEARCH Winera
 - LOOK AT sketches (Location: Washington Square Park)
+- >**ACHIEVEMENT:** Never Forget
+  >- While the game is started, change your system time to 11th September and walk to the Two World Trade Center location.
 
 #### 15.1.4. Two World Trade Center
 
@@ -1192,7 +1195,7 @@
 
 - USE computer
   - READ all messages
-    - **NOTE:** "re: Better than DNT", channel `12`
+    - **NOTE:** The channel number in the email "re: Better than DNT". **This number changes for each playthrough**, for example `channel 12`
 - EXIT east
   - "Go to Windows on the World."
 
@@ -1208,7 +1211,7 @@
 #### 15.1.5. Washington Square Park
 
 - TALK TO Dion
-  - **NOTE:** Twobrook `2`
+  - **NOTE:** Dion's home. This changes for each playthrough, for example `Twobrook = 2`
 
 #### 15.1.6. The Village Eye
 
@@ -1216,17 +1219,21 @@
 
 - TALK TO officer
 - USE keypad
-  - ENTER the code from the `Crumpled piece of paper`
-  - `2-12-84`
+  - ENTER the code in order how its written on the `Crumpled piece of paper`:
+    1. Dion's Home (Talk to Dion in the Washington Square Park)
+    2. DNT (The channel from Winera's computer)
+    3. Dorm (The photograph in the apartment on Lozzotti Residence)
+       - Example: `2-12-84`
 - USE door
 
 ##### 15.1.6.2. Office
 
 - USE computer with sign Lozzotti
   - READ Bob's b-day party
-    - **NOTE:** His birthday `10-2`
+    - **NOTE:** His birthday. The date changes for each playthrough, for example `10-2`
   - OPEN PRINT THIS AT OFFICE
-  - PRINT Attachment (Location: The Tombs)
+  - PRINT Attachment
+- EXIT office (Location: The Tombs Prison)
 
 #### 15.1.7. The Tombs
 
@@ -1254,12 +1261,12 @@
   - SEARCH Yvonne Lozzotti
   - SEARCH Hanna Tanaka
   - SEARCH Dion Lozzotti
+- LOOK AT `Transcript`
 
 ### 15.3. September 2001
 
 #### 15.3.1. The Tombs
 
-- LOOK AT `Transcript`
 - ENTER main doors
   - "Tanner"
 - TALK TO officer
@@ -1270,7 +1277,7 @@
 #### 15.4.1. The Tombs
 
 - TALK TO officer
-  - "Hanna Tanner"
+  - "Hanna Tanner?"
 
 #### 15.4.2. The Village Eye
 
@@ -1286,7 +1293,7 @@
 #### 15.4.4. The Village Eye
 
 - TALK TO Yvonne
-  - **NOTE:** Her editor turns 40 this year
+  - **NOTE:** Her editor turns `40` this year
 - USE keypad
   - The code is the birth date of the editor
   - You get the day an month from Lozzotti's computer in September 2001
@@ -1300,6 +1307,15 @@
 #### 15.4.5. The Tombs
 
 - TALK TO officer
+  - **NOTE:** You need the `Press-pass` to be able to enter the building.
+  - Inside, talk about everything
+
+#### 15.4.6. The Village Eye
+
+##### 15.4.6.1. Office
+
+- >**ACHIEVEMENT:** Bestower of Continuity
+  >- USE `Press-pass` with empty spot (where you found it)
 
 ### 15.5. September 2001
 
@@ -1307,37 +1323,42 @@
 
 ##### 15.5.1.1. Windows on the World
 
+- **SAVE YOUR GAME HERE** to get two different achievements in the next scenes
 - TALK TO Emma
 
 #### 15.5.2. Shop
 
-- **SAVE YOUR GAME HERE**: For two different achievements
-- Rewind 10 times
 - >**ACHIEVEMENT:** Y2Slay
+  >- Rewind 10 times
+  >- **LOAD YOUR SAVED GAME**
 - "Push her"
+- Choose as you like
 - "Let me think a moment..."
 - LOOK AT tree
 - LOOK AT trash can
 - LOOK AT west exit
-- Confab with Emma
-- "Split up"
-- "To the alley..."
-- Repeat the same again
-- "Split up"
-- "To the alley..."
-- "Grab the trash can lid"
+- Confab with Em
+- "We split up"
+- "You run to the alley..."
+- **NOTE:** After you got shot **two times**:
+  - "We split up"
+  - "You run to the alley..."
+  - "Grab the trash can lid"
 
 #### 15.5.3. Landing Point
 
 ##### 15.5.3.1. Back Alley
 
-- "You don't have to do this Hanna"
-- "You are planning to kill your best friend."
-- "This will haunt you forever."
 - >**ACHIEVEMENT:** Ta-no-kill
+  >- "You're too late"
+  >- "You don't want to do this"
+  >- "You don't have to do this, Hanna"
+  >- "You are planning to kill your best friend."
+  >- "This will haunt you forever."
+  >- "You don't want this"
 - >**ACHIEVEMENT:** Dead Before Her Time
   >- "Deliberately miss"
-  >- **LOAD** your saved game and replay
+  >- **LOAD YOU SAVED GAME**
 - >**ACHIEVEMENT:** A Full Life
   >- "Stun her"
 
@@ -1351,8 +1372,9 @@
 - USE `Blue mug` with sink (`Mug full of water`)
 - USE drawer (`Coffee pod`)
 - USE `Coffee pod` with coffee maker
-  - USE plastic compartment
-  - USE plastic tray **2 times**
+  - USE plastic compartment (to open it)
+  - USE `Coffee pod` with plastic tray
+  - USE plastic tray (to close it)
   - USE `Mug full of water` with hole `Blue mug`
   - USE `Blue mug` with compartment with spout
   - USE brew button
@@ -1361,6 +1383,7 @@
 - USE `Mug with fresh coffee and Rosemary Hush` with Emma
 - EXIT apartment
 - >**ACHIEVEMENT:** Time Eleven
+  >- Complete Chapter Five
 
 ## 16. Present
 
@@ -1397,13 +1420,15 @@
 ##### 17.1.3.1. Garden
 
 - USE door
+- TALK TO woman
 - LOOK AT `Article`
-  - LOOK AT infotext from the picture (Adam)
+  - LOOK AT small caption under the photo (Adam)
 - ARCHIVE:
   - SEARCH Otis Knox
   - READ all messages
-  - SEARCH Adam Cole (Location: Cole Residence)
+  - SEARCH Adam Cole (Location: 2002 Mermaid Avenue)
 - TALK TO woman (Evelyn)
+- EXIT east
 
 #### 17.1.4. Cole Residence
 
@@ -1415,17 +1440,20 @@
 ##### 17.1.4.2. Room
 
 - TAKE key (`House key`)
-- USE trash bin (`Photograph og Family`)
-- USE computer
-  - OPEN both book signing photos
-  - OPEN Trivia!
-    - Answer the question - you will find the answers in the field guide:
-    1. 1 - Paradox Field Excluder
-    2. 3 - Quansonic Particle
-    3. 4 - Both #1 and #2
-    4. 2 - ChronoZen
-    5. 5 - Government Intervention
-  - OPEN Open Sesame
+- USE trash bin (`Photograph of Family`)
+- **SAVE YOUR GAME HERE**
+- >**ACHIEVEMENT:** Who Me Study?
+  >- Win a trivia game without ever reading the field guide
+  >- USE computer
+  >   - OPEN both book signing photos
+  >   - OPEN Trivia!
+  >   - Answer the question - you will find the answers in the field guide:
+  >     1. 1 - Paradox Field Excluder
+  >     2. 3 - Quansonic Particle
+  >     3. 4 - Both #1 and #2
+  >     4. 2 - ChronoZen
+  >     5. 5 - Government Intervention
+  >   - OPEN Open Sesame
 - USE scanner
 - EXIT west
 
@@ -1438,6 +1466,7 @@
 
 ##### 17.1.5.2. Kitchen
 
+- LOOK AT first aid kit
 - USE scrapbook on kitchen table
   - **NOTE:** Months end with an `r`, day is `14th`, `Ho? Comme??`
 - LOOK AT photo above kitchen counter
@@ -1445,11 +1474,6 @@
 - USE drawer
   - TAKE photo (`Photograph of Marla Knox`)
 - EXIT west
-
-##### 17.1.5.3. Garden
-
-- TALK TO Evelyn
-  - "Show family photograph"
 
 #### 17.1.6. Cole Residence
 
@@ -1461,12 +1485,12 @@
 ###### 17.1.6.1.1. Underground Room
 
 - USE light switch
-- LOOK AT whiteboard (Location: Beach)
+- LOOK AT whiteboard (Location: Beach spot)
 - USE machine
 
 #### 17.1.7. Coney Island Beach
 
-- TALK TO couple (Liam)
+- TALK TO couple (Otis)
 
 #### 17.1.8. Boardwalk Books
 
@@ -1479,6 +1503,7 @@
 
 - TALK TO Evelyn
   - "Otis before he was famous."
+  - "What stopped?"
   - "It all worked out?"
     - **NOTE:** He changed when his first book came out
 - ARCHIVE:
@@ -1488,18 +1513,28 @@
 
 #### 17.1.10. Coney Island Beach
 
-- TALK TO couple (Liam)
+- TALK TO couple (Otis)
   - "Before you were famous"
 
 #### 17.1.11. Boardwalk Books
 
 - TALK TO Liam
-  - "I heard what happened..." (Info: `Hotel Commonwealth`, Location: Commonwealth Hotel)
+  - "I heard what happened..." (New location: Commonwealth Hotel)
+  - "How long ago was this?"
+    - **NOTE:** `20 years ago`
+- **SAVE YOUR GAME HERE** to get two different achievements
 - CONTACT Nozzo
   - The date of Otis's change"
-  - `Halloween` and month ends with an `r`, `October`
-  - Day from the scrapbook `14th`
-  - Year where Otis first book came out `1977`
+  - >**ACHIEVEMENT:** Happy Birthday
+    >- March
+    >- 31st
+    >- 1976
+    >- **LOAD YOU SAVED GAME**
+  - >**ACHIEVEMENT:** Got It In One
+    >- Deduced the correct date on the first try
+    >- `Halloween` and month ends with an `r`, `October`
+    >- Day from the scrapbook `14th`
+    >-Year where Otis first book came out `1977`
 
 ### 17.2. October 1977
 
@@ -1516,7 +1551,7 @@
 ##### 17.2.2.2. Living Room
 
 - LOOK AT trash bin
-- LOOK AT typewriter (Whiteman)
+- LOOK AT typewriter (Liam Whiteman)
 - ARCHIVE:
   - SEARCH Liam Whiteman
 
@@ -1525,7 +1560,7 @@
 ##### 17.2.3.1. Reception
 
 - LOOK AT sign-in book
-  - LOOK AT Marla Whiteman
+  - LOOK AT Marla Whiteman (on the left page in the middle)
 - USE elevator
 
 ##### 17.2.3.2. Hotel Room
@@ -1544,7 +1579,19 @@
 
 - TALK TO couple
   - "I know the truth"
+- **SAVE YOUR GAME HERE**
 - USE Otis Knox (Sherman)
+- >**ACHIEVEMENT:** Witness me!
+  >- Die in front of six different characters. You need to die when you enter the following scenes. **DO NOT LOAD YOUR SAVED GAME BETWEEN DEATHS**
+  >   1. Liam (1994 Boardwalk Books) (1/6)
+  >   2. Evelyn (1994 Knox residence) (2/6)
+  >   3. Marla (1994 Coney Island beach) (3/6)
+  >   4. Two strangers (1977 Commomwealth Hotel) (5/6)
+  >      - **SAVE YOUR GAME HERE**
+  >   5. Nozzo: Enter a scene and keep talking to him until the time runs out (6/6)
+  >- >**ACHIEVEMENT:** Grunde Expunge
+  >   >- Rewind 10 times
+  >- **LOAD YOUR GAME** or you will not get the "More Like Nozz-NO" achievement at the end of the game!
 
 #### 17.3.3. Landing Point
 
@@ -1576,20 +1623,20 @@
 
 ### 17.4. October 1977
 
-#### 17.4.1. Commonwealth Hotel
-
-##### 17.4.1.1. Hotel Room
-
-- LOOK AT shoes
-  - Search the body (`Capsule of diabetes medicine`)
-- USE `Capsule of diabetes medicine` with `Syringe with blood and Quansonic particles` (`Syringe with blood, Quansonic particles and buformin`)
-
-#### 17.4.2. Boardwalk Books
+#### 17.4.1. Boardwalk Books
 
 - USE payphone
   - Evely Sherman
 - ARCHIVE:
   - SEARCH Evely Sherman
+
+#### 17.4.2. Commonwealth Hotel
+
+##### 17.4.2.1. Hotel Room
+
+- LOOK AT shoes
+  - Search the body (`Capsule of diabetes medicine`)
+- USE `Capsule of diabetes medicine` with `Syringe with blood and Quansonic particles` (`Syringe with blood, Quansonic particles and buformin`)
 - Walk around until you die
 
 ### 17.5. July 1993
@@ -1605,7 +1652,6 @@
 
 - USE supply cupboard (`Bag of sodium nitrate`)
 - USE `Bag of sodium nitrate` with `Syringe with blood, Quansonic particles and buformin` (`Syringe with blood, Quansonic particles, buformin and sodium nitrate`)
-- Walk around until you die
 
 ### 17.6. October 1977
 
@@ -1623,6 +1669,7 @@
 
 - USE tree
 - >**ACHIEVEMENT:** Pastroland
+  >- Complete Chapter Six
 
 ## 18. Present
 
