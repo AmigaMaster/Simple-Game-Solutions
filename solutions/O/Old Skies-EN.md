@@ -66,6 +66,8 @@
   >   - You need to wait for about 5-10 seconds before you move
   >   - The graffiti flashes, when the achievement is triggered
   >   - For me, it triggered while looking to the right side and her left hand is exactly positioned at the top left bollard without touching it. so her whole body does not touch the bollard.
+  >![Achievement-Sera-fia Screenshot](https://github.com/AmigaMaster/Simple-Game-Solutions/raw/f2b9b020112b920fe89cc1d9e53c210250417093/solutions/O/Old%20Skies-Achievement-Sera-fia.png)
+
 - TAKE rag (`Rag`)
 - LOOK AT combination lock
 - USE `Rag` with combination lock
