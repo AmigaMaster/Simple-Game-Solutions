@@ -2,6 +2,7 @@
 
 | Version | Date       | Author
 |:-------:|------------|-------------------------------------------
+|  1.01   | 02.07.2025 | Amiga Master (AmigaMaster-NG@t-online.de), several small updates
 |  1.0    | 22.06.2025 | Amiga Master (AmigaMaster-NG@t-online.de), include all achievements and updated guide for all chapters
 |  0.98   | 21.06.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add missing achievements and update guide up to chapter 4
 |  0.97   | 27.04.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
@@ -45,7 +46,7 @@
 
 ## 3. Chapter One: Dine's Up
 
-### 3.1. 4
+### 3.1. April 2024
 
 #### 3.1.1. Landing Point
 
@@ -65,10 +66,10 @@
   >   - You must not stand directly at the wall, but a little bit below
   >   - You need to wait for about 5-10 seconds before you move
   >   - The graffiti flashes, when the achievement is triggered
-  >   - For me, it triggered while looking to the right side and her left hand is exactly positioned at the top left bollard without touching it. so her whole body does not touch the bollard.
-  >![Achievement-Sera-fia Screenshot](https://github.com/AmigaMaster/Simple-Game-Solutions/blob/master/solutions/O/Old%20Skies-Achievement-Sera-fia.png?raw=true)
+  >   - For me, it triggered while looking to the right side and her left hand is exactly positioned at the top left bollard without touching it. So her whole body does not touch the bollard.  
+  >     ![Achievement-Sera-fia Screenshot](https://github.com/AmigaMaster/Simple-Game-Solutions/blob/master/solutions/O/Old%20Skies-Achievement-Sera-fia.png?raw=true)
 - TAKE rag (`Rag`)
-- LOOK AT combination lock
+- LOOK AT combination lock **2 times**
 - USE `Rag` with combination lock
   - Do nothing (you get the historical archive info)
 - OPEN historical archive
@@ -170,12 +171,12 @@
 ##### 3.1.7.2. Office
 
 - LOOK AT piece of paper on the desk
-  - **:NOTE:** The middle paragraph "what Dad was always looking through"
+  - **NOTE:** The middle paragraph "what Dad was always looking through"
   - In the archive, SEARCH for Oliver Foster and look at the photo
   - Note the microscope vendor `ZEUS`
 - TALK TO Lisa
 - USE computer
-  - ENTER the password you get from the letter and the photo `ZEUS`
+  - ENTER the password you got from the letter and the photo `ZEUS`
 
 ##### 3.1.7.3. Entrance Hall
 
@@ -233,6 +234,7 @@
 
 - EXIT west
 - TALK TO Chloe
+- EXIT west
 
 ##### 5.1.1.2. Street
 
@@ -308,6 +310,7 @@
   - READ all messages
 - TALK TO Chloe
   - "It changed."
+- EXIT to landing point at The Barking Dog
 
 ### 5.2. April 1871
 
@@ -315,10 +318,11 @@
 
 ##### 5.2.1.1. Landing Point
 
-- EXIT west
+- EXIT west **2 times**
 
 ##### 5.2.1.2. Bar
 
+- TALK TO Brian
 - TALK TO Clara
 
 #### 5.2.2. Inman Residence
@@ -334,6 +338,7 @@
 #### 5.2.4. Essex Street Oyster Stand
 
 - TALK TO woman
+- EXIT east
 - USE Stopwatch to travel to October 1871
 
 ### 5.3. October 1871
@@ -351,7 +356,7 @@
   >- USE cat
 - TALK TO fish monger
 
-### 5.4. October 1871
+### 5.4. April 1871
 
 #### 5.4.1. Badger Fish Market
 
@@ -422,7 +427,11 @@
 
 ##### 5.6.1.2. Living Room
 
-- EXIT house and switch to October 1871 here
+- EXIT house
+
+#### 5.6.2. Inman Residence
+
+- Switch to October 1871 while standing at this scene
 
 ### 5.7. October 1871
 
@@ -454,6 +463,7 @@
 #### 5.10.1. Ida's Arena
 
 - TALK TO Simon
+  - "The payoff"
 
 #### 5.10.2. The Barking Dog
 
@@ -824,10 +834,11 @@
   - "I know what you're here to do"
 - ARCHIVE:
   - SEARCH Sterling Agency
+- TALK TO Sam
+  - "About your temp agency"
 - **SAVE YOUR GAME HERE**
 - >**ACHIEVEMENT:** Temp Crasher
   >- Convince Sam to quit the agency on the first attempt
-  >- TALK TO Sam
   >   - "Sterling is using you"
   >   - "They want you to write a paper..."
   >   - "They have very tight security"
@@ -910,11 +921,13 @@
 
 ### 10.3. ChronoZen HQ
 
-- USE door (`Trashbag`)
+- USE door
 
 ## 11. June 2042
 
 ### 11.1. Street
+
+- ENTER door (`Trashbag`)
 
 #### 11.1.1. Reception
 
@@ -963,6 +976,7 @@
 - LOOK AT piece of paper
   - **NOTE:** `#LF502` at 10:30 PM
 - TALK TO Cassie
+  - Talk about the janitor until there are no new dialogue options
 
 ### 11.8. Break Room
 
@@ -995,7 +1009,7 @@
 
 #### 13.1.1. Reception
 
-- ENTER vertical farm through the glass door on the right side
+- ENTER vertical farm through the door on the right side
 
 #### 13.1.2. Vertical Farm
 
@@ -1014,59 +1028,65 @@
   >   - USE `Multitool` with panel
   >   - USE `Rag` with open panel
 
-#### 13.1.4. Vertical Farm
+#### 13.1.4. Reception
+
+- ENTER vertical farm
+
+#### 13.1.5. Vertical Farm
 
 - EXIT east
 - USE maintenance panel panel and take note of the possible settings for music, ambient and aroma
 - EXIT east
 
-#### 13.1.5. Office
+#### 13.1.6. Office
 
 - TALK TO Cassie
   - "Madison is meditating"
     - **NOTE:** `Haskins tribute concert`
+- LOOK AT piece of paper
+  - **NOTE:** `#LF502`
 
-#### 13.1.6. Conference Room
+#### 13.1.7. Conference Room
 
 - TALK TO Benjamin
   - "Yes"
 
-#### 13.1.7. Workshop
+#### 13.1.8. Workshop
 
 - Ask when the presentation takes place
 - LOOK AT piece of paper at the wall
-  - **NOTE:** L502 = `Lavender`
+  - **NOTE:** LF502 = `Lavender`
 - USE holoscreen
   - Chat Log 2: Shuttle?
     - **NOTE:** She fall asleep in a train
 
-#### 13.1.8. Vertical Farm
+#### 13.1.9. Vertical Farm
 
 - USE maintenance panel
   - MUSIC: Info from Cassie `Haskins`
   - AMBIENT: Info from Log2 from the computer in the workshop `Train`
   - AROMA: Info from the note in Cassie's office (a code) and the piece of paper on the wall in the workshop `Lavender`
-- WALK TO Landing Point (`Recording`)
 
-#### 13.1.9. Conference Room
+#### 13.1.10. Conference Room
 
 - TALK TO Benjamin
   - "Yes"
 
-#### 13.1.10. Workshop
+#### 13.1.11. Workshop
 
 - USE holoscreen
   - CENTRAL TIME
   - EXIT
 
-#### 13.1.11. Conference Room
+#### 13.1.12. Conference Room
 
 - TALK TO Benjamin
   - "Yes"
 
-#### 13.1.12. Workshop
+#### 13.1.13. Workshop
 
 - ”You sure you don’t have enough time for coffee?”
+- WALK TO Landing Point (`Recording`)
 
 ### 13.2. Landing Point
 
@@ -1142,7 +1162,7 @@
 
 #### 15.1.2. Nick Chord's Residence
 
-##### 15.1.2.1. Street
+##### 15.1.2.1. Apartment
 
 - USE refrigerator
 - TAKE bottle (`Bottle of liquor`)
@@ -1150,7 +1170,7 @@
 - USE `Note`
   - **NOTE:** The ingredient for the sleeping aid and that it strength increases with alcohol
 - USE drawer
-  - TAKE **all** drugs (`Sage Mist`, `Marigold Veil`, `Bloody Thorn`, `Rosemary Hush`, `Jasmine Echo`)
+  - TAKE Rosemary Hush (`Rosemary Hush`)
 - USE `Rosemary hush` with `Bottle of liquor` (`Spiked bottle of liquor`)
 - USE `Spiked bottle of liquor` with Nick
 - LOOK AT `Transcript` (Yvonne Lozzotti, Location: Lozzotti Residence)
@@ -1257,12 +1277,13 @@
 #### 15.2.2. The Village Eye
 
 - USE keypad
-- TALK TO woman (Yvonne)
+- TALK TO woman
 - ARCHIVE:
   - SEARCH Yvonne Lozzotti
   - SEARCH Hanna Tanaka
   - SEARCH Dion Lozzotti
 - LOOK AT `Transcript`
+- EXIT east
 
 ### 15.3. September 2001
 
@@ -1299,7 +1320,7 @@
   - The code is the birth date of the editor
   - You get the day an month from Lozzotti's computer in September 2001
   - You get his age from the conversation with Yvonne
-  - `10-2-61`
+  - Examples: `10-2-61` or `11-5-61`
 
 ##### 15.4.4.1. Office
 
@@ -1392,7 +1413,7 @@
 
 - ENTER park gallery
 - ARCHIVE:
-  - SEARCH Imani Quentin
+  - SEARCH Imani *Surname* (Her surname depends on your choice of the name for the baby. Can be Quentin, Nash, etc.)
 
 ### 16.2. Home
 
@@ -1421,14 +1442,13 @@
 ##### 17.1.3.1. Garden
 
 - USE door
-- TALK TO woman
+- TALK TO woman (Evelyn)
 - LOOK AT `Article`
   - LOOK AT small caption under the photo (Adam)
 - ARCHIVE:
   - SEARCH Otis Knox
   - READ all messages
   - SEARCH Adam Cole (Location: 2002 Mermaid Avenue)
-- TALK TO woman (Evelyn)
 - EXIT east
 
 #### 17.1.4. Cole Residence
@@ -1475,6 +1495,10 @@
 - USE drawer
   - TAKE photo (`Photograph of Marla Knox`)
 - EXIT west
+
+##### 17.1.5.3. Garden
+
+- TALK TO Evelyn
 
 #### 17.1.6. Cole Residence
 
@@ -1530,12 +1554,12 @@
     >- March
     >- 31st
     >- 1976
-    >- **LOAD YOU SAVED GAME**
+    >- **LOAD YOUR SAVED GAME**
   - >**ACHIEVEMENT:** Got It In One
     >- Deduced the correct date on the first try
     >- `Halloween` and month ends with an `r`, `October`
     >- Day from the scrapbook `14th`
-    >-Year where Otis first book came out `1977`
+    >- Year where Otis first book came out `1977`
 
 ### 17.2. October 1977
 
@@ -1581,7 +1605,7 @@
 - TALK TO couple
   - "I know the truth"
 - **SAVE YOUR GAME HERE**
-- USE Otis Knox (Sherman)
+- USE Otis Knox
 - >**ACHIEVEMENT:** Witness me!
   >- Die in front of six different characters. You need to die when you enter the following scenes. **DO NOT LOAD YOUR SAVED GAME BETWEEN DEATHS**
   >   1. Liam (1994 Boardwalk Books) (1/6)
@@ -1627,9 +1651,9 @@
 #### 17.4.1. Boardwalk Books
 
 - USE payphone
-  - Evely Sherman
+  - Evelyn Sherman
 - ARCHIVE:
-  - SEARCH Evely Sherman
+  - SEARCH Evelyn Sherman
 
 #### 17.4.2. Commonwealth Hotel
 
@@ -1647,7 +1671,7 @@
 ##### 17.5.1.1. Kitchen
 
 - USE telephone
-  - "Call Evely Sherman"
+  - "Call Evelyn Sherman"
 
 ##### 17.5.1.2. Garden
 
