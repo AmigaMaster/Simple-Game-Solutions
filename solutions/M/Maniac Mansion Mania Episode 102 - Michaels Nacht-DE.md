@@ -51,3 +51,9 @@ Viele Aktionen sind mit einem eigenen Kommentar versehen. Daher ruhig auch unsin
 - BENUTZE `Glaskugel` mit Vergrößerer
 - BENUTZE `Kamera` mit Vergrößerer (`brennende Zeitung`)
 - BENUTZE `brennende Zeitung` mit Rakete
+
+## 3. Video Walkthrough
+
+Maniac Mansion Mania Episode 102: Michaels Nacht (Talkie) Lösung (Deutsch) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/XCRXqR2PdCU/0.jpg)](https://www.youtube.com/watch?v=XCRXqR2PdCU)
