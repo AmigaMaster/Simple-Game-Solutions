@@ -1456,7 +1456,7 @@
     - Der Kopf enden rechts mittig
     - Das feuerspeiende Maul endet rechts unten
     - Die Kachel ganz recht unten bleibt frei (`Masken`, `Autoschlüssel`, `Mitgliedsausweis`, `rotes Smartphone`)  
-      [![Lösung](https://github.com/AmigaMaster/Simple-Game-Solutions/raw/f2b9b020112b920fe89cc1d9e53c210250417093/solutions/D/Die%20drei%20Fragezeichen%20-%20Der%20Plan%20der%20Cham%C3%A4leonbande-Schieber%C3%A4tsel.png)](https://google.de)
+      ![Drachenschieberätsel-Lösung](https://github.com/AmigaMaster/Simple-Game-Solutions/raw/f2b9b020112b920fe89cc1d9e53c210250417093/solutions/D/Die%20drei%20Fragezeichen%20-%20Der%20Plan%20der%20Cham%C3%A4leonbande-Schieber%C3%A4tsel.png)
 
 ### 8.5. Straße
 
