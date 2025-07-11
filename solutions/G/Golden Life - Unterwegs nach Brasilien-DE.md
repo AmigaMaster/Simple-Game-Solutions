@@ -2,7 +2,7 @@
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
-|   1.0   | 25.06.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.01  | 11.07.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 ## 1. Arbatov
 
@@ -19,7 +19,7 @@
     - "Brauchst du was?" – "Würdest du dem Sohn des armen Leutnant Schmidts helfen?"
     - "Wie viel willst du?" – "50 Rubel"
     - "Wie ist der Name deines Vaters?" – "Peter"
-    - "Auf welchem Schlachtfeld hat er die Meuterei angezettelt?" – "Ochalov"
+    - "Auf welchem Schlachtschiff hat er die Meuterei angezettelt?" – "Ochakov"
     - "Wo wurde Leutnant Schmidt das erste mal unter Arrest gestellt?" – "Bei einer Massenversammlung."
     - "Wie starb Leutnant Schmidt?" – "Erschossen"
     - "Wie alt war er da? – "39 Jahre"
@@ -103,7 +103,7 @@
 ### 1.14. Auto-Markt
 
 - BENUTZE `Grüne Farbe` mit Automobil
-- BENUTZE `Ausgebessertes Plakat` mit Automobil (`Leere Krug`)
+- BENUTZE `Ausgebessertes Plakat` mit Automobil
 
 ## 2. Rennvorbereitungen
 
@@ -313,21 +313,16 @@
 #### 4.4.4. Sekretariat
 
 - BENUTZE alle Türen und frage weiter nach
-- VERLASSE nach Süden
-  - **HINWEIS:** Falls das nicht möglich ist, die Gänge zurück und weiter überall nachfragen
+- Kehre den Weg zurück und frage erneut an allen Türen
 - Letztendlich wirst Du an den Empfang verwiesen
 
-#### 4.4.5. Kanzlei
-
-- BENUTZE alle Türen
-- Letztendlich wirst Du an den Empfang verwiesen
-- Den Weg zurück
-
-#### 4.4.6. Eingangsbereich
+#### 4.4.5. Eingangsbereich
 
 - REDE MIT Empfang (Rechts neben der Tür)
 
 ### 4.5. Strand
+
+- Automatische Cutscene
 
 ### 4.6. Herkules
 
@@ -335,31 +330,35 @@
 
 - REDE MIT Empfang
 
-#### 4.6.2. Kanzlei
+#### 4.6.2. Sekretariat
+
+- VERLASSE nach Süden
+
+#### 4.6.3. Kanzlei
 
 - REDE MIT Frau in rosa
 - VERLASSE nach unten
 
-#### 4.6.3. Sekretariat
+#### 4.6.4. Sekretariat
 
 - REDE MIT Frau in gelb (`Formular A`, `Formular B`, `Formular C`, `Formular D`)
 
-#### 4.6.4. Kanzlei
+#### 4.6.5. Kanzlei
 
 - BENUTZE erstes Büro links (Benötigt Formular B)
 - BENUTZE zweites Büro von links (Benötigt Formular C)
 
-#### 4.6.5. Treppenhaus
+#### 4.6.6. Treppenhaus
 
 - BENUTZE Tür oben links (A. V. Komarov) (Benötigt Formular D)
 - BENUTZER Tür unten rechts (K.I. Pavlov.) (Benötigt Formular A)
 - BENUTZE Tür oben links (A. V. Komarov) (Info zu Sonderformular)
 
-#### 4.6.6. Sekretariat
+#### 4.6.7. Sekretariat
 
 - REDE MIT Frau in gelb (`Gestempeltes Sonderformular`)
 
-#### 4.6.7. Kanzlei
+#### 4.6.8. Kanzlei
 
 - BENUTZE erstes Büro links (`Gestempeltes Formular A`)
 - REDE MIT Frau in rosa
@@ -467,16 +466,16 @@
 - SCHAU AN Karte auf Tisch
   - BENUTZE einen der drei Aufenthaltsorte
 - REDE über Dichtung, Kino, Liebe, Musik, Natur, Reisen, Tchernomorsk, Theater, Wetter
-  - Wenn`Zosya` eine Option ist, immer darüber reden und die Informationen **NOTIEREN**
+  - Wenn `Zosya` eine Option ist, immer darüber reden und die Informationen **NOTIEREN**
   - Zwischenzeitlich ihr Blumen kaufen, schwimmen gehen, ins Kino gehen, in den Zirkus usw.
   - Jeweils am linken oder rechten Bildschirmrand (Abhängig vom Aufenthaltsort) kann man zurück zur Karte und den Ort wechseln und ihre Stimmung prüfen - diese muss auf 100% sein
   - Infos über Zosya:
-    - **Augenfarbe: Braun
+    - Augenfarbe: Braun
     - Erstes Treffen: 11. August
     - Geburtstag: 21. Mai 1910
     - Lieblingsdichter: Fet
     - Lieblingsfarbe: Orange
-    - **Lieblingskomponist: Tschaikowski
+    - Lieblingskomponist: Tschaikowski
     - Lieblingszahl: 5
   - Wenn Stimmung bei 100%:
     - Über Koreiko reden
