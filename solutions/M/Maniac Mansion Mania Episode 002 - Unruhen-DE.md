@@ -120,3 +120,7 @@ Maniac Mansion Mania Episode 002: Unruhen Lösung (Deutsch) (PC, Win) - Unkommen
 Maniac Mansion Mania Episode 002: Unruhen (Talkie) Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/8L5U3yxc0n8/0.jpg)](https://www.youtube.com/watch?v=8L5U3yxc0n8)
+
+Maniac Mansion Mania Episode 002: Unruhen (Ronmastered) Lösung (Deutsch) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/NrNbXT_e2Dk/0.jpg)](https://www.youtube.com/watch?v=NrNbXT_e2Dk)
