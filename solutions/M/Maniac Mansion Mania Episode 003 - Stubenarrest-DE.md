@@ -93,36 +93,64 @@ und werfen einen Blick in
 
 - Verlasse Zimmer
 
-### 1.9. Flur Obergeschoss
-
-- Ronmastered Collection:
-  - BETRETE Britney's Zimmer (linke Tür):
-    - NIMM Zettel (`Zettel`)
-  - Im Esszimmer:
-    - BENUTZE `Zettel` mit Kerze
-    - SCHAU AN `Zettel` & Zahlen merken
-      - **HINWEIS:** Die Zahlen sind in jedem Spieldurchlauf anders, z. B. `122 45`
-  - In der Bibliothek:
-    - NIMM Buch (Koordinaten vom gelben Zettel) ((lila) `Schlüssel`)
-  - Britney's Zimmer:
-    - BENUTZE `Schlüssel` mit Schminkschränkchen (`Silberner Schlüssel`)
-- ÖFFNE Tür (hinten rechts)
-- Verlasse durch Tür (hinten rechts)
-
-#### 1.9.1. Elternschlafzimmer
-
-- BENUTZE `Roter Schlüssel` mit (linker) Schublade (`Silberner Schlüssel`)
-- Gehe zum
-
-### 1.10. Flur Eingangsbereich
-
-- Ronmastered Collection:
-  - BENUTZE `Silberner Schlüssel` mit (linker) Tür
+Ab hier sind die Wege je nach Version etwas anders.
 
 --------------------------------------------------------------------------------
 
-## 2. Video Walkthrough
+## 2. Originalversion
+
+### 2.1. Flur Obergeschoss
+
+- ÖFFNE Tür (hinten rechts)
+- Verlasse durch Tür (hinten rechts)
+
+#### 2.1.1. Elternschlafzimmer
+
+- BENUTZE `Roter Schlüssel` mit (linker) Schublade (`Silberner Schlüssel`)
+- Gehe zum Flur Eingangsbereich
+
+--------------------------------------------------------------------------------
+
+## 3. Ronmastered Collection
+
+### 3.1. Flur Obergeschoss
+
+- BETRETE Britney's Zimmer (linke Tür)
+
+#### 3.1.1. Britney's Zimmer
+
+- NIMM Zettel (`Zettel`)
+
+### 3.2. Flur Erdgeschoss
+
+#### 3.2.1. Esszimmer
+
+- BENUTZE `Zettel` mit Kerze
+- SCHAU AN `Zettel` & Zahlen merken
+  - **HINWEIS:** Die Zahlen sind in jedem Spieldurchlauf anders, z. B. `122 45`
+
+#### 3.2.2. Bibliothek
+
+- NIMM Buch (Koordinaten vom gelben Zettel) ((lila) `Schlüssel`)
+
+### 3.3. Flur Obergeschoss
+
+#### 3.3.1. Britney's Zimmer
+
+- BENUTZE `Schlüssel` mit Schminkschränkchen (`Silberner Schlüssel`)
+
+### 3.4. Flur Eingangsbereich
+
+- BENUTZE `Silberner Schlüssel` mit (linker) Tür
+
+--------------------------------------------------------------------------------
+
+## 4. Video Walkthrough
 
 Maniac Mansion Mania Episode 003: Stubenarrest Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/2m1UzzpPwVo/0.jpg)](https://www.youtube.com/watch?v=2m1UzzpPwVo)
+
+Maniac Mansion Mania Episode 003: Stubenarrest (Ronmastered) Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/-UzLAN8eNpw/0.jpg)](https://www.youtube.com/watch?v=-UzLAN8eNpw)
