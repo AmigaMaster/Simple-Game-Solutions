@@ -1048,7 +1048,6 @@
   - TALK TO Sarah
   - LOOK AT door
   - EXIT room through door
-  - **LOAD YOUR SAVED GAME** (Page 3, Save 2)???
 - USE `Pistol` on Dr. Roth
 - TALK TO Dr. Roth **2 times** (until he walks to the console)
 - LOOK AT console (right next to Dr. Roth)
