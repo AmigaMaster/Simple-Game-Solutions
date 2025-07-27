@@ -41,7 +41,7 @@ Download the free game from the [AGS homepage](https://www.adventuregamestudio.c
 
 ### 4.1. Captain's Cabin
 
-- TAKE book (`Book`)
+- TAKE book (`(red) Book`)
 - USE all 5 drawers from the desk (`Paper bag`)
 - LOOK AT `Paper bag` (`Jam`, `Empty paper bag`)
 - USE `Empty paper bag` with you (`Inflated paper bag`)
@@ -58,7 +58,6 @@ Download the free game from the [AGS homepage](https://www.adventuregamestudio.c
 ## 6. Nose Deck
 
 - TALK TO Silas
-- USE crate (`Paint`)
 - USE hatch
 
 ### 6.1. Crew's Quarters
@@ -71,28 +70,28 @@ Download the free game from the [AGS homepage](https://www.adventuregamestudio.c
 - LOOK AT `Tattoo book`
 - USE `Inky needle` with Roger
   - "A nautical star, please" (`Whistle`) (10/10)
-- USE (red) `Book` with book (under the table leg) ((Blue)`Book`)
-- LOOK AT (Blue)`Book`
+- USE `(red) Book` with book (under the table leg) (`(blue) Book`)
+- LOOK AT `(blue) Book`
 - USE (lower) hatch
 
-### 6.2. Hold
+### 6.2. Cargo Hold
 
 - LOOK AT manifest
 - USE `Fishing net` with tank (`Live clams`)
 - LOOK AT large barrel
-- USE `Spray bottle` with cat
-- USE footprints (`Coal dust`) (10/20)
+- USE `Spray bottle` with cat (10/20)
+- USE footprints (`Coal dust`)
 
 ### 6.3. Crew's Quarters
 
 - TALK TO Roger
-  - "Who's Ron?" - **NOTE:** This dialog line appears when you looked at the large barrel in the cargo.
+  - "Who's Ron?" - **NOTE:** You will see this dialogue box when you have looked at the large barrel in the cargo hold.
 - USE `Live clams` with Roger (`Clam shells`)
 - USE `Clam shells` with `Sea weed` (`Brassiere`)
 
 ## 7. Nose Deck
 
-- USE `Brassiere` with with figurehead (10/30)
+- USE `Brassiere` with figurehead (10/30)
 - USE `Egg` with Silas
 - TALK TO Silas
   - "Did you cross out the crate..."
@@ -126,7 +125,7 @@ Download the free game from the [AGS homepage](https://www.adventuregamestudio.c
 
 - USE `Black hair oil` with Roger (10/90)
 
-### 10.2. Hold
+### 10.2. Cargo Hold
 
 - USE `Empty jar` with large barrel (`Jar of rum`)
 
