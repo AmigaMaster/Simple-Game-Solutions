@@ -39,13 +39,15 @@
 - USE `Guidance module` on Rocket
 - USE `Fuel` on Rocket (`Empty Canister`)
 - USE `Remote control` on Rocket (`Fried Circuit Board`)
-- EXIT rooftop and EXIT your house
+- EXIT rooftop
 
 #### 2.1.4. Living Room
+
 - >**ACHIEVEMENT:** Good Host
   >- USE Fridge
   >- PICK UP Wundershake (`Wundershake`)
   >- On the Rooftop: USE `Wundershake` on Peggie
+- EXIT your house
 
 ### 2.2. Outside
 
@@ -252,7 +254,7 @@
   >- Visit every floor (1 to 17 + W) and LOOK AT each Door and return into the Elevator
 - >**ACHIEVEMENT:** It Doesn’t Get More Meta Than This
   >- Visit Floor 12 and LOOK AT Door
-- SELECT Floor W **2 times**
+- SELECT Floor W
 - EXIT elevator
 
 #### 16.2.3. Wanderbrust's Floor
@@ -377,8 +379,8 @@
   - "Using the audio station"
 - USE `Voice Recorder with Tape` on Mixing Station
   - USE recorder interface to select and copy words from the top timeline to the bottom to form the following sentences:
-    - `This is Wanderbrust. She can come in.`
-    - `She can come in. Wanderbrust here.`
+    - `This is Wanderbrust. She can come here in.`
+    - `She can come here in. Wanderbrust here.`
   - USE Record button
 
 ## 20. Slope City News
@@ -431,9 +433,12 @@
 ### 24.1. Dream
 
 - USE Hoop **2 times**
+
+### 24.2. Train
+
 - TALK TO Sasha (in the back of the train)
 - TALK TO Terry
-- USE `Voice recorder with Tape`on Terry
+- USE `Voice recorder with Tape` on Terry
 - TALK TO  Terry
   - "Blackmail Terri"
 - Walk to the front
@@ -501,7 +506,7 @@
 ### 30.1. On Top of Tower
 
 - USE binoculars
-- SEARCH the Butte you saw in the `Notebook` (it's right of the broken house)
+- SEARCH the Butte you saw on the map from the `Notebook` (it's right of the broken house)
 
 ## 31. Dig Site
 
@@ -526,7 +531,6 @@
   - Connect the colored wires
 - USE Robot (Howard)
   - Place the pins, so that the wires do not cross AND the orange holes must have a pin in it.
-  - There are multiple solutions for this puzzle
 - TALK TO Howard
   - "Minefield"
 - **SAVE YOUR GAME HERE** to get two achievements
@@ -538,22 +542,22 @@
 - >**ACHIEVEMENT:** Flawless Footwork
   >- Navigate through the minefield without hitting a mine.
   >- Part 1:
-  >   - Above the first mine
-  >   - Under the second mine
+  >   - Above the first mine, keep at the top corners
+  >   - Under the second mine (you can step on the most right number 1 field)
   >- Part 2:
-  >   - Above an right of the first mine
+  >   - Above and right of the first mine, always move at the most right side
   >   - Collect artifact
   >- Part 3:
-  >   - At the top above the rock until the edge
-  >   - 1x Down
-  >   - 1x Right, on the field left from the "1"
-  >   - 2x down, onto the field "2"
+  >   - From the start pint, you can click on the top number 1 field (you move at the top edge of the field)
+  >   - 1x diagonally lower right
+  >   - 2x right, on the field left from the "1"
+  >   - CLICK in the field right of the number "2"
   >   - Collect the artifact
   >- Part 4:
   >   - Onto the "2"
-  >   - Onto the "1"
-  >   - 1x right, into the corner
-  >   - 2x right onto the field under the first cactus
+  >   - Onto the lower "1"
+  >   - 1x diagonally down right, into the corner
+  >   - 2x diagonally up right onto the field under the left cactus
   >   - All the way to the EXIT
 
 ## 32. Hâani Pentagon
@@ -611,7 +615,7 @@
   - The solution is the same as for the first monolith: Make your way from the inner to the outer circle
   - You now have a blue and a green beam
   - Pay attention to the positioning of both colors
-- EXIT and  enter northeast location
+- EXIT and enter northeast location
 
 ## 39. Spiral
 
@@ -621,13 +625,13 @@
 - USE Box
 - PICK UP Battery (`Rechargeable Battery`)
 - PICK UP Tablet
-- USE `Crystal`on Monolith
+- USE `Crystal` on Monolith
   - The same solution as for Monolith 2
 - EXIT and enter western location
 
 ## 40. Well
 
-- USE `Wire`on `Rechargeable Battery` (`Wired Battery`)
+- USE `Wire` on `Rechargeable Battery` (`Wired Battery`)
 - USE `Wired battery` on Solar station
 
 ## 41. Terraces
@@ -638,7 +642,8 @@
     - As soon as you insert the correct tablet, something happens
     - You can try keep doing this but have a look at the symbols
     - Tablet for first slot has one circle
-    - Tablet for 2nd slot has two circles etc.
+    - Tablet for 2nd slot has two unconnected circles
+    - 3rd slot has 3 circles, etc.
     - Slot 6 is the exception, where the symbol consists of two connected circles
 - USE `Crystal` on Monolith
   - Now there is a red, blue and green beam
@@ -672,33 +677,33 @@
     - Level 2:
       - Now there are light brown given tiles which you cannot move
       - Make a diagonal line from the left light brown tile with number 1, so that you get 1221
-      - Place the remaining 2 grey tiles left and top of the light grey tile with number 2, sou you get a 222
+      - Place the remaining 2 grey tiles left and top of the light brown tile with number 2, sou you get a 222 triangle
     - Level 3:
-      - At the top, place tile 1
-      - Below, place tile 2
-      - 3rd row: Place tile 3
-      - Now place both 2 under tile number 3
+      - In the top line, in the middle field, place tile 1
+      - Left below: tile 2
+      - Right below: tile 3
+      - Now place both 2 under tile 3
 - ENTER Path
 
 ### 43.1. Path
 
 - USE Mysterious Cylinder
-  - USE `Crystal`on Empty Slot
+  - USE `Crystal` on Empty Slot
 - **SAVE YOUR GAME HERE**
 - LOOK AT Note (left of the portal)
   - >**ACHIEVEMENT:** Divine Inspiration
     >- Solve the Puzzle without deciphering the note
-    >- Note the last word of each paragraph:
-    >- `LIG***I*G`
-    >- `*LOOD`
-    >- `*IRE*`
+    >- Note the last word of each paragraph (German translation in parentheses):
+    >- `LIG***I*G` (`*LI**E`)
+    >- `*LOOD` (`*LU*`)
+    >- `*IRE*` (`*EUER*`)
     >- Note the same missing symbol for the "lood" and "ire" words, so they begin with the same letter
     >- Even when you cannot decipher the first word, the other two are pretty easy to guess
     >- When entering the last two symbols on the rotating parts of the cylinder, you can simply try all symbol on the first one
   - The complete text:
-    HIS EYES ARE `LIGHTNING`
-    HIS ROAR IS A `FLOOD`
-    HIS BREATH IS `FIRE`
+    HIS EYES ARE `LIGHTNING` (`BLITZE`)
+    HIS ROAR IS A `FLOOD` (`FLUT`)
+    HIS BREATH IS `FIRE` (`FEUER`)
 - USE Mysterious Cylinder
   - Rotate the three parts so the show Lightning, Flood, Fire
 
@@ -708,7 +713,7 @@
 
 #### 44.1.1. Portal Chamber
 
-- Walk onto the empty, glowing platform
+- WALK onto the empty, glowing platform
 - You now have to answer some questions
   - TALK TO Peggie
     - "Ask to see dad's book"
@@ -922,7 +927,7 @@
 - TALK TO Sahti
   - **NOTE:** Mix Green (instead of orange) and orange to brew a powerful stimulant
 - PICK UP Jug (`Empty Jug`)
-- USE `Wrench like Tool`on Pipe
+- USE `Wrench like Tool` on Pipe
 - PICK UP Squeaky Animal (`Squeaky Animal`)
 - USE Valve
   - TURN anti-clockwise
@@ -1026,7 +1031,7 @@
 
 ### 63.2. Inside Arena
 
-**NOTE:** Do not yet use the `Scroll of Chants` on any of the riders.
+- **NOTE:** Do not yet use the `Scroll of Chants` on any of the riders.
 
 #### 63.2.1. Volunteers
 
@@ -1081,7 +1086,6 @@
 ### 65.2. Brewery
 
 - USE `Fire Spirits in Catcher` on Furnace
-Connect pipes like in image below
 - USE `Empty Glass` on Faucet (`Interesting Smelling Drink`)
 - USE `Mushrooms` on `Interesting Smelling Drink` (`Hopefully Good Fuxian Ale`)
 
@@ -1222,7 +1226,7 @@ Connect pipes like in image below
 - USE Stuffed Animal
 - USE Panel
   - ENTER `ZARYA`
-**SAVE YOUR GAME HERE**
+- **SAVE YOUR GAME HERE**
 - ENTER Secret Passage
 
 #### 73.2.4. Laboratory
