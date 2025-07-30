@@ -1,31 +1,15 @@
 # Kathy Rain 2: Soothsayer - Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|   0.9   | 25.05.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author
+|:-------:|------------|-------------------------------------------
+|   1.0   | 31.07.2025 | Amiga Master (AmigaMaster-NG@t-online.de) - add missing achievements, add German translations for text riddles
+|   0.9   | 25.05.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
-## 1. Missing Achievements
+## 1. Day One
 
-- The view is always greener...
-  - LOOK AT window in all locations where this is possible:
-    - The Gazette
-    - Longhorn PI
-    - Debra's Cabin
-    - Onyx Row
-    - more???
+### 1.1. Rain Investigations
 
-- Library Buddies
-  - TALK TO the librarian on each day where this is possible:
-    - Day 1 at the beginning of the game
-    - Day 2 ???
-    - Day 3, in the evening (at the Club of Hearts)
-    - Day 4, in the morning
-
-## 2. Day One
-
-### 2.1. Rain Investigations
-
-#### 2.1.1. Office
+#### 1.1.1. Office
 
 - >**ACHIEVEMENT:** Not gonna be that easy
   >- USE phone book
@@ -35,24 +19,29 @@
 - TAKE camera (`Camera`)
 - >**ACHIEVEMENT:** Picture purr-fect
   >- USE camera on Mildred
+- >**ACHIEVEMENT:** The view is always greener... (1/6)
+  >- LOOK AT window
 - USE Newspaper rack (`Newspaper Articles (Debra Sinclair)`)
 - EXIT north
 
-#### 2.1.2. Living Area
+#### 1.1.2. Living Area
 
+- >**ACHIEVEMENT:** The view is always greener... (2/6)
+  >- LOOK AT window
 - TAKE makeup brush (`Makeup brush`)
 - EXIT west and EXIT the office
 - >**ACHIEVEMENT:** Enjoying the scenery redux
   >- Simply wait on the biker screen for about one minute
 
-### 2.2. City Library
+### 1.2. City Library
 
-- TALK TO librarian
-  - The Soothsayer
-  - Debra Sinclair (New location: Bear Creek)
+- >**ACHIEVEMENT:** Library buddies (1/4)
+  >- TALK TO librarian
+  >   - The Soothsayer
+  >   - Debra Sinclair (New location: Bear Creek)
 - LOOK AT `Newspaper Articles (Debra Sinclair)` (Topic: Debra Sinclair)
-  - READ page 2
-    - **NOTE:** The date the previous victim Jane Doe died `Publication anniversary of Stormchaser`
+  - READ all pages
+    - **NOTE:** On page 2, the date the previous victim Jane Doe died `Publication anniversary of Stormchaser`
 - USE computer
   - >**ACHIEVEMENT:** Eileen's favorite book
     >- SEARCH "Bible"
@@ -63,19 +52,22 @@
   - SEARCH "Collins"
   - READ The Mauve Affair
 - LOOK AT calendar
-  - SELECT April, 25th 1987
+  - SELECT April, 25th 1998
 - USE Microfilm Shelves (`Newspaper Article (Jane Doe)`, Location: Constance Hill)
 - LOOK AT `Newspaper Articles (Jane Doe)` (Jane Doe, King of Kings)
+  - READ all pages
   - **NOTE:** The information about the previous victim Deacon Townsend in the last paragraph. More information is in issue #842. The current issue is from April 29.
 - LOOK AT calendar
   - SELECT a date for issue #842 - you will note, that the newspaper is released weekly
-  - SELECT April 8, 1987
+  - SELECT April 8, 1998
 - USE Microfilm Shelves (`Newspaper Article (Benedikt Townsend)`)
 - LOOK AT `Newspaper Article (Benedikt Townsend)` (Topic: Benedikt Townsend, Topic: Scrying Mirrors)
+  - READ all pages
   - **NOTE:** The paragraph on page 2 about Eric Holloway who was killed in a full-moon night last month.
 - LOOK AT calendar
   - SELECT the previous month and the day with the full moon, March 12
-- USE Microfilm Shelves (`Newspaper Article (Eric Holloway)`, Topic: Eric Holloway, Location: Verdant Street
+- USE Microfilm Shelves (`Newspaper Article (Eric Holloway)`, Topic: Eric Holloway, Location: Verdant Street)
+  - READ all pages
   - **NOTE:** The last paragraph about Rose Taylor which was stabbed on Statehood day.
 - LOOK AT calendar
   - SELECT Statehood Day (February 5)
@@ -83,9 +75,9 @@
   >- USE Microfilm Shelves (`Newspaper Article (Rose Taylor)`, Topic: Rose Taylor, Topic: Azure Sky Motel)
 - EXIT east
 
-### 2.3. Rain Investigations
+### 1.3. Rain Investigations
 
-#### 2.3.1. Office
+#### 1.3.1. Office
 
 - USE phone book
   - Azure Sky Motel (Phone: Azure Sky Motel)
@@ -98,9 +90,9 @@
   - Orson Taylor (Location: The Gazette)
 - EXIT west
 
-### 2.4. The Gazette
+### 1.4. The Gazette
 
-- >**ACHIEVEMENT:** The view is always greener... (1/4)
+- >**ACHIEVEMENT:** The view is always greener... (3/6)
   >- LOOK AT City View (through the window)
 - TALK TO Eileen
   - TALK about every topic
@@ -108,6 +100,7 @@
   - ASK ABOUT roll of tape (`Tape Roll`)
   - ASK ABOUT business cards (`Eileen's Card`)
 - LOOK AT `Eileen's Card` (Phone: Eileen Office)
+- LOOK AT framed article (at the wall behind Art)
 - TALK TO Art (Topic: Art's new lead?)
   - TALK about every topic
   - ASK ABOUT the Framed Article (at the wall behind him)
@@ -128,38 +121,40 @@
   - "That’s a shame..."
 - TALK TO Eileen
   - "Art's new lead?" (Topic: Pyre, Phone: Josh Office, Location: Downtown, Location: Meadow's Trailer)
+  - **NOTE:** If you do not have the topic "Scrying Mirrors" make sure, you read all newspaper pages from `Newspaper Article (Benedikt Townsend)`
 
-### 2.5. Downtown
+### 1.5. Downtown
 
 - >**ACHIEVEMENT:** Disco lights
   >- USE signal button for the pedestrian crossing **3 times**
 - TALK TO Lionel (Topic: Hannah Verdoux, Topic: Club of Hearts)
 
-### 2.6. Rain Investigations
+### 1.6. Rain Investigations
 
-#### 2.6.1. Office
+#### 1.6.1. Office
 
 - USE phone book
   - Club of Hearts
 
-## 3. Day Two
+## 2. Day Two
 
 - >**ACHIEVEMENT:** One more case
 
-### 3.1. Rain Investigations
+### 2.1. Rain Investigations
 
-#### 3.1.1. Office
+#### 2.1.1. Office
 
 - USE answering machine
 - TAKE note (on the floor next to the entrance door) (`Handwritten Note`)
 - USE phone
-  - Pyre
+  - Eileen
+    - TALK about all new topics
 
-### 3.2. Meadow's Trailer
+### 2.2. Meadow's Trailer
 
 - USE door (`Chakra Pendant`)
 
-### 3.3. Constance Hill
+### 2.3. Constance Hill
 
 - LOOK AT graffiti
   - EXIT detail view
@@ -175,7 +170,7 @@
   >- USE `Lockpicks` on Katmobile
 - USE Katmobile
 
-### 3.4. Bear Creek
+### 2.4. Bear Creek
 
 - TALK TO Randy
   - Choose any of the five fan club names
@@ -189,10 +184,10 @@
 - >**ACHIEVEMENT:** A+
   >- USE `Randy's Quiz` and answer all questions correctly
   >- **NOTE:** You find the answers in the library computer by searching for Debra Sinclair, read the newspaper articles and look at the surrounding area at Bear Creek. As long as you have one question answered correctly, you can always retry and correct the wrong answers.
-  >- In between... "Native American"
-  >- What alternate... "Debra Willis"
-  >- Debra ghostwrote... "The Mauve Affair"
-  >- Complete Debra’s famous... (1) "Lavender" (2) "Yaupon Tea"
+  >- In between... "Native American" (German: "Indianer")
+  >- What alternate... "Debra Willis" (German: "Debra Willis")
+  >- Debra ghostwrote... "The Mauve Affair" (German: "Die Mauve-Affäre")
+  >- Complete Debra’s famous... (1) "Lavender" (2) "Yaupon Tea" (German: (1) "Lavendel", (2) "Yaupon Tee")
   >- USE `Randy's Quiz` on Randy
   >- **LOAD YOUR SAVED GAME**
 - >**ACHIEVEMENT:** Burning fandom
@@ -202,9 +197,9 @@
 - USE `Cabin Key` on door
 - USE door
 
-#### 3.4.1. Cabin
+#### 2.4.1. Cabin
 
-- >**ACHIEVEMENT:** The view is always greener... (2/4)
+- >**ACHIEVEMENT:** The view is always greener... (4/6)
   >- LOOK AT window
 - USE `Makeup Brush` on powder (`Makeup Brush (Powdered)`)
 - LOOK AT shiny object (on the floor right next to the sofa. It shines when the light from the windows hits it)
@@ -218,34 +213,35 @@
 - USE `Cabin Key` on locked door
 - EXIT cabin
 
-### 3.5. Bear Creek
+### 2.5. Bear Creek
 
 - >**ACHIEVEMENT:** Chakra show-off
   >- WALK in front of Randy
   >- USE `Chakra Pendant`
 
-### 3.6. Verdant Street
+### 2.6. Verdant Street
 
-#### 3.6.1. Lobby
+#### 2.6.1. Lobby
 
 - LOOK AT **both** name plates
 - EXIT upstairs
 
-#### 3.6.2. Rooftop
+#### 2.6.2. Rooftop
 
 - LOOK AT condolence notes (Topic: Rachel Wang)
 - EXIT to lobby
 
-#### 3.6.3. Lobby
+#### 2.6.3. Lobby
 
 - USE (right) apartment door
 - USE `Eileen's Card` on apartment door
 
-### 3.7. City Library
+### 2.7. City Library
 
-- TALK TO librarian
+- >**ACHIEVEMENT:** Library buddies (2/4)
+  >- TALK TO librarian
 
-### 3.8. King of Kings
+### 2.8. King of Kings
 
 - >**ACHIEVEMENT:** Grand Theft Auto
   >- USE `Lockpicks` with car
@@ -277,7 +273,7 @@
   >   - 10 wrench on the right side
 - USE Katmobile
 
-### 3.9. Meadow's Trailer
+### 2.9. Meadow's Trailer
 
 - **NOTE:** Do not move, otherwise leave and re-enter the scene. The following achievement may be glitchy. You may need to load the saved game from the priest.
 - >**ACHIEVEMENT:** Zen-tastic
@@ -286,67 +282,67 @@
   >- USE door
 - TALK about everything (`Scrying Mirror`)
 
-### 3.10. Rain Investigations
+### 2.10. Rain Investigations
 
-#### 3.10.1. Office
+#### 2.10.1. Office
 
 - TALK about everything
   - TALK ABOUT `Fingerprint` (Location: Longhorn PI)
 
-### 3.11. Longhorn PI
+### 2.11. Longhorn PI
 
 - >**ACHIEVEMENT:** Old habits
   >- USE `Zippo Lighter` on Cigars
 - >**ACHIEVEMENT:** Molotov cocktail
   >- USE `Zippo Lighter` on whiskey
-- >**ACHIEVEMENT:** The view is always greener... (3/4)
+- >**ACHIEVEMENT:** The view is always greener... (5/6)
   >- LOOK AT window
 - TALK TO Lucas
   - TALK about everything (Location: Engstrom Psychiatric Facility)
 - EXIT office
 
-## 4. Day Three
+## 3. Day Three
 
 - >**ACHIEVEMENT:** Chasing leads
 
-### 4.1. Rain Investigations
+### 3.1. Rain Investigations
 
-#### 4.1.1. Office
+#### 3.1.1. Office
 
 - USE answering machine (Topic: Tabitha Caldwell, Location: Tabby's Garden)
 - TAKE note (`Handwritten Note #2`)
 
-### 4.2. Engstrom Psychiatric Facility
+### 3.2. Engstrom Psychiatric Facility
 
-#### 4.2.1. Lobby
+#### 3.2.1. Lobby
 
 - >**ACHIEVEMENT:** Button masher
   >- USE button **3 times**
 - TALK TO Oscar
   - ASK ABOUT door
 
-#### 4.2.2. Cell
+#### 3.2.2. Cell
 
 - TALK TO your mom (Topic: Rockport Royal)
   - Rose Taylor
 
-### 4.3. Downtown
+### 3.3. Downtown
 
 - USE Cigarette machine (`Cigarette Pack`)
 - LOOK AT `Newspaper Articles`
   - SEARCH for the cigarette ad for Rockport Royal
     - **:NOTE:** The flavors Lavender, Peppermint, Cinnamon
 
-### 4.4. Bear Creek
+### 3.4. Bear Creek
 
 - USE flower pot (`Lavender`)
 
-### 4.5. Gazette
+### 3.5. Gazette
 
 - >**ACHIEVEMENT:** Tea sommelier
   >- USE `Lavender` on Teacup
 
-### 4.6. Tabby's Garden
+### 3.6. Tabby's Garden
 
 - TAKE obsidian mirrors (`Obsidian Mirror`)
 - >**ACHIEVEMENT:** Mirror matcher
@@ -358,9 +354,9 @@
 - USE `Scrying Mirror` on obsidian mirrors
 - EXIT shop
 
-### 4.7. Rain Investigations
+### 3.7. Rain Investigations
 
-#### 4.7.1. Office
+#### 3.7.1. Office
 
 - USE stuck drawer
 - USE phone
@@ -370,7 +366,7 @@
 - >**ACHIEVEMENT:** Cut lover
   >- USE `Pair of Scissors` on Mildred
 
-#### 4.7.2. Living Area
+#### 3.7.2. Living Area
 
 - TAKE spice rack (`Cinnamon Shaker`)
 - USE `Cinnamon Shaker` on `Cigarette Pack`
@@ -381,50 +377,55 @@
 - >**ACHIEVEMENT:** Rough Royals
   >- USE `Blue Marker` on `Cigarette Pack (Red)` (`Cigarette Pack (Purple)`)
 
-### 4.8. Tabby's Garden
+### 3.8. Tabby's Garden
 
 - >**ACHIEVEMENT:** Scissor sister
   >- USE `Pair of Scissors` on Bonsai tree
 
-### 4.9. Engstrom Psychiatric Facility
+### 3.9. City Library
 
-#### 4.9.1. Cell
+- >**ACHIEVEMENT:** Library buddies (3/4)
+  >- TALK TO librarian
+
+### 3.10. Engstrom Psychiatric Facility
+
+#### 3.10.1. Cell
 
 - TALK TO your mom
   - USE `Cigarette Pack (Purple)` (Topic: Rose's Lover)
 
-#### 4.9.2. Lobby
+#### 3.10.2. Lobby
 
 - TALK TO Oscar (Topic: Rose's Lover - Discharged?)
 
-### 4.10. Club of Hearts
+### 3.11. Club of Hearts
 
 - You get rejected
 
-### 4.11. Meadow's Trailer
+### 3.12. Meadow's Trailer
 
 - USE door
   - TALK about Club of Hearts (or ASK ABOUT Club of Hearts Poster)
 
-### 4.12. Downtown
+### 3.13. Downtown
 
 - USE signal button
 - USE `Chakra Pendant`
 - USE `Camera` (`Photo (Chakra #2)`)
 
-### 4.13. Meadow's Trailer
+### 3.14. Meadow's Trailer
 
 - USE door (`Club of Hearts Card`)
 
-### 4.14. Rain Investigations
+### 3.15. Rain Investigations
 
-#### 4.14.1. Office
+#### 3.15.1. Office
 
 - USE `Pair of Scissors` with `Photo (Chakra)` (`Photo (Cut)`)
 - USE `Photo (Cut)` with laminator
 - USE `Club of Hearts Card` with laminator
 
-### 4.15. Club of Hearts
+### 3.16. Club of Hearts
 
 - >**ACHIEVEMENT:** They call me the laminator
 - LOOK AT banner stand
@@ -432,46 +433,44 @@
 - TALK TO sitting man (Art Hopkins)
   - ASK ABOUT banner stand
 - **SAVE YOUR GAME** for three different achievements
-- >**ACHIEVEMENT:** Humanist poet
-  >- Beating hearts, break free; Through gentle touch, hearts unite; Freedom, justified.
-- >**ACHIEVEMENT:** Survivor poet
-  >- Broken minds, scream loud; Trapped in a maze, tears stream down; Struggle, takes it toll.
-- >**ACHIEVEMENT:** Maverick poet
-  >- Fucked-up vibes, stand proud; With zero rules, worlds collide; Freedom, come undone.
-- The correct one:
-- >**ACHIEVEMENT:** Popular poet
-  >- Skin on skin, play rough; With zero rules, pain subsides; Madness, feels so right.
+- USE microphone
+  - >**ACHIEVEMENT:** Humanist poet
+    >- Beating hearts, break free; Through gentle touch, hearts unite; Freedom, justified.
+  - >**ACHIEVEMENT:** Survivor poet
+    >- Broken minds, scream loud; Trapped in a maze, tears stream down; Struggle, takes it toll.
+  - >**ACHIEVEMENT:** Maverick poet
+    >- Fucked-up vibes, stand proud; With zero rules, worlds collide; Freedom, come undone.
+  - The correct one:
+  - >**ACHIEVEMENT:** Popular poet
+    >- Skin on skin, play rough; With zero rules, pain subsides; Madness, feels so right.
 - TALK TO Hannah (Topic: Pyre Dealers, Topic: "Faze")
-  - **NOTE:** With version 1.0.2.4025 of the game, the Topic "Club of Hearts" will be removed from the notebook. You won't be able to get the "Library buddies" achievement.
 
-### 4.16. Longhorn PI
+### 3.17. Longhorn PI
 
 - TALK TO Lucas (Topic: Corey "Faze" Finnegan)
 - EXIT office
 
-### 4.17. Constance Hill
+### 3.18. Constance Hill
 
 - LOOK AT fire pit
 
-## 5. Day Four
+## 4. Day Four
 
 - >**ACHIEVEMENT:** Poetry queen
 
-### 5.1. Rain Investigations
+### 4.1. Rain Investigations
 
-#### 5.1.1. Office
+#### 4.1.1. Office
 
 - USE answering machine
 - TAKE note (`Handwritten Note #3`)
 
-### 5.2. City Library
+### 4.2. City Library
 
-- >**ACHIEVEMENT:** Library buddies
-  >- **NOTE:** This achievement is glitchy as the required topic is removed from the notebook in specific versions of the game.
+- >**ACHIEVEMENT:** Library buddies (4/4)
   >- TALK TO librarian
-  >   - Club of Hearts
 
-### 5.3. Downtown
+### 4.3. Downtown
 
 - TALK TO Corey (Topic: Pyre Dealer (Bald Man), Topic: Pyre Dealer (Scarred Woman))
   - TALK about everything
@@ -479,90 +478,90 @@
   - USE `Brochure` (Topic: "Vic", Location: Ranger Station)
 - LOOK AT graffiti
 
-### 5.4. Constance Hill
+### 4.4. Constance Hill
 
 - >**ACHIEVEMENT:** Pattern recognition
   >- LOOK AT graffiti
   >   - LOOK AT tag
 
-### 5.5. Ranger Station
+### 4.5. Ranger Station
 
 - TALK TO junior ranger (Topic: Victor Cooper)
 
-### 5.6. Verdant Street
+### 4.6. Verdant Street
 
-#### 5.6.1. Lobby
+#### 4.6.1. Lobby
 
 - LOOK AT slippers
 
-#### 5.6.2. Rooftop
+#### 4.6.2. Rooftop
 
 - TALK TO Rachel
   - "Probably..."
   - "Why do you think..."
   - "If Eric would..."
 
-#### 5.6.3. Lobby
+#### 4.6.3. Lobby
 
 - TALK TO Rachel
   - Pyre Dealer (Scarred Woman) (`Transcript`)
 - LOOK AT `Transcript` (Topic: Scarred Woman - Faith?)
 
-### 5.7. King of Kings
+### 4.7. King of Kings
 
 - TALK TO Hugh Winters (Topic: Faith Cyrene, Location: Onyx Row)
 
-### 5.8. Downtown
+### 4.8. Downtown
 
 - >**ACHIEVEMENT:** Quid pro quo
   >- TALK TO Lionel
   >   - Victor Cooper (or Faith Cyrene)
 
-### 5.9. Onyx Row
+### 4.9. Onyx Row
 
-#### 5.9.1. Hallway
+#### 4.9.1. Hallway
 
 - USE apartment door
 - USE `Lockpicks` on apartment
-- >**ACHIEVEMENT:** The view is always greener... (4/4)
+- >**ACHIEVEMENT:** The view is always greener... (6/6)
   >- LOOK AT window
 - TAKE cellphone
 - EXIT upstairs
 
-### 5.10. Crash Site
+### 4.10. Crash Site
 
 - ENTER doorway
 
-### 5.11. Tunnel
+### 4.11. Tunnel
 
-- EXIT west (`Penny`, `Russian Doll`, `Club oh Hearts`)
+- EXIT west (`Penny`, `Russian Doll`, `Club of Hearts`)
 
-#### 5.11.1. Stage
+#### 4.11.1. Stage
 
 - Answer as you like
 - USE `Club of Hearts` on imposter
 
-## 6. Day Five
+## 5. Day Five
 
 - >**ACHIEVEMENT:** Higher stakes
 
-### 6.1. Hospital
+### 5.1. Hospital
 
 - Answer as you like (`Pills`)
 
-### 6.2. Rain Investigations
+### 5.2. Rain Investigations
 
-#### 6.2.1. Office
+#### 5.2.1. Office
 
 - USE answering machine
 - TALK TO Eileen
 
-### 6.3. Longhorn PI
+### 5.3. Longhorn PI
 
 - >**ACHIEVEMENT:** Anti-pharma
   >- USE `Pills` with trash can
 - USE gun case (`Ammunition Box`)
-- LOOK AT window
+- LOOK AT window (if you missed it at the first chance, this is your last chance to get the The view is always greener achievement)
 - LOOK AT desk
   - LOOK AT photo
     - **NOTE:** "Longhorn"
@@ -581,7 +580,7 @@
   - USE assembled clues
     - **Riddle:** "1011" means
       - >**ACHIEVEMENT:** Woof woof
-        >- ENTER "dog case" in the text prompt
+        >- ENTER "dog case" in the text prompt (Look on page 1 of the manual) (German: "Hundesituation")
       - First question is the meaning of "1011"
         - The morse code contains numbers from 1 to 26
         - There is no 0, so is has to be a 10, so it may be "10 11" (JK) or "10 1 1" (JAA)
@@ -595,39 +594,40 @@
       - Look at the police manual
       - There are codes
       - One is for report in person (meet) `10-25`
-      - Send `12121025`
-    - **Riddle:** Response
-      - Response `1011 1020 000`
+      - SEND `12121025`
+    - **Riddle:** Received Response
+      - Response is `1011 1020 000`
       - Look at the police manual for 1020 = Location
       - `000` is on the yellow post-it and means ?
-      - JK is asking for the location
-    - **Riddle:** Location
+      - Decoded message: JK is asking for the location
+    - **Riddle:** Send Location
       - We know the initials LL = `1212`
       - The police code for location is `1020`
       - Look at the meeting on the 18th day `Cafe` - you received a code `3333`
       - Look at the post-it
       - Cafe is 3x4, so this means the number 3 written 4 times
       - Park is 1x4, this is number 1 written four times `1111`
-      - Send `121210201111`
-    - **Riddle:** Response
+      - SEND `121210201111`
+    - **Riddle:** Received Response
       - Response `1011 1036 000`
       - Again, check the police manual to decode this
       - 1036 = Correct time
       - 000 Question
-    - **Riddle:** Time
+      - Decoded message: He is asking for a time
+    - **Riddle:** Send Time
       - Use the same procedure to sent a time.
       - If you do not know the time, try any time and Kathy will remind you.
       - Police code for estimated time of arrival (ETA) `1077`
       - You want to meet JK at 2 PM
-      - `121210771400` (Location: City Park)
+      - SEND `121210771400` (Location: City Park)
 - >**ACHIEVEMENT:** Page-restricted
 
-### 6.4. City Park
+### 5.4. City Park
 
 - USE payphone
   - JK (Topic: Andrea Hall, Location: KCU)
 
-### 6.5. KCU
+### 5.5. KCU
 
 - TALK TO Rebecca
   - TALK about Andrea Hall
@@ -644,14 +644,14 @@
 - >**ACHIEVEMENT:** Anti-PC crowd
   >- USE `Magnet` on computer
 
-### 6.6. Rain Investigations
+### 5.6. Rain Investigations
 
-#### 6.6.1. Living Area
+#### 5.6.1. Living Area
 
 - >**ACHIEVEMENT:** Ridge magnet
   >- USE `Magnet` on refrigerator
 
-#### 6.6.2. Office
+#### 5.6.2. Office
 
 - TALK TO Eileen
   - Hard Drive Encryption
@@ -662,7 +662,7 @@
 - TALK TO Eileen
   - Hard Drive Encryption
 
-### 6.7. KCU
+### 5.7. KCU
 
 - USE box of cables (`FlyWire Cable`)
 - USE `Software CD` on Laptop
@@ -674,8 +674,7 @@
   - TURN OFF and ON
   - ENTER to enter BIOS
     - **NOTE:** Serial number `421162`
-  - PRESS Enter key to enter BIOS
-    - ENABLE DMA Mode
+      - ENABLE DMA Mode
     - EXIT BIOS
   - START the computer
   - Note vendor and version number. For example `SecVault` `v1.0.1.2`
@@ -716,19 +715,19 @@
 - USE computer
   - OPEN **all three** text files
 
-### 6.8. Ranger Station
+### 5.8. Ranger Station
 
 - TALK TO Cassie
   - ASK ABOUT door
 - USE office door
 
-#### 6.8.1. Office
+#### 5.8.1. Office
 
 - TALK TO Chief Walker
   - Victor Cooper
-- LOK AT map (Location: Cooper's Cabin)
+- LOOK AT map (Location: Cooper's Cabin)
 
-### 6.9. Crash Site
+### 5.9. Crash Site
 
 - LOOK AT drain
 - USE `Magnet` on `Metal Wire` (`Magnetic Collector`)
@@ -736,44 +735,44 @@
 - >**ACHIEVEMENT:** Dumpster fire
   >- USE `Zippo Lighter` on dumpster
 
-### 6.10. Constance Hill
+### 5.10. Constance Hill
 
 - >**ACHIEVEMENT:** Treasure hunter
   >- USE `Magnetic Collector` on drain pipe
 
-### 6.11. Longhorn PI
+### 5.11. Longhorn PI
 
 - >**ACHIEVEMENT:** Pacifist
   >- USE `Revolver` on gun case
 
-### 6.12. Cooper's Cabin
+### 5.12. Cooper's Cabin
 
 - USE door
 - USE `Lockpicks` on door
 
-#### 6.12.1. Cabin
+#### 5.12.1. Cabin
 
 - LOOK AT plants (`Document`, `Cooper's Map`)
 - LOOK AT `Document` (Topic: Wiktor Kopernik)
 - LOOK AT `Cooper's Map`
 
-## 7. Day Six
+## 6. Day Six
 
 - >**ACHIEVEMENT:** Revelations
 
-### 7.1. Rain Investigations
+### 6.1. Rain Investigations
 
-#### 7.1.1. Living Area
+#### 6.1.1. Living Area
 
 - >**ACHIEVEMENT:** Bullseye
   >- USE `Revolver` on dartboard
 - EXIT west into the office (`Cellphone`, Phone: My Office)
 
-### 7.2. Tabby's Garden
+### 6.2. Tabby's Garden
 
 - ENTER back room
 
-#### 7.2.1. Back Room
+#### 6.2.1. Back Room
 
 - TAKE medical bottle (`Ipecac Syrup`)
 - TAKE address book (`Address Book`)
@@ -783,9 +782,9 @@
 - USE grow cabinet
 - >**ACHIEVEMENT:** Victim number six
 
-### 7.3. Engstrom Psychiatric Facility
+### 6.3. Engstrom Psychiatric Facility
 
-#### 7.3.1. Lobby
+#### 6.3.1. Lobby
 
 - TALK TO Oscar (Topic: Patient Escape)
 - USE `Ipecac Syrup` on water cooler
@@ -797,31 +796,31 @@
 - LOOK AT `Patient File (Mom)` (Topic: Marla Stone)
 - LOOK AT `Patient File (Kopernik)` (`Cassette Tape`)
 
-### 7.4. Rain Investigations
+### 6.4. Rain Investigations
 
-#### 7.4.1. Office
+#### 6.4.1. Office
 
 - USE `Address Book`
 - USE `Cassette Tape` on radio
 
-### 7.5. City Library
+### 6.5. City Library
 
 - USE post office boxes
 - USE `Lockpicks` on post office boxes (`Letter`)
 - LOOK AT `Letter` (`Map of Mines`)
 - USE `Map of Mines` on `Cooper's Map` (Location: Mine, `Radio`)
 
-### 7.6. Mine
+### 6.6. Mine
 
-#### 7.6.1. Entrance Hallway
+#### 6.6.1. Entrance Hallway
 
 - USE `Radio` on surveillance camera
 
-#### 7.6.2. Surveillance Hallway
+#### 6.6.2. Surveillance Hallway
 
 - TALK TO Tom
 
-#### 7.6.3. Elevator Room
+#### 6.6.3. Elevator Room
 
 - >**ACHIEVEMENT:** Tom out
   >- USE `Radio`
@@ -842,23 +841,23 @@
   - Try all remaining 10 combinations `5991`
 - ENTER metal door
 
-#### 7.6.4. Cave
+#### 6.6.4. Cave
 
 - "No, it's not..."
 - "She's just saying..."
 - >**ACHIEVEMENT:** The real daughter
 
-## 8. Malleable
+## 7. Malleable
 
 - >**ACHIEVEMENT:** Sanctum showdown
 
-### 8.1. Apartment
+### 7.1. Apartment
 
 - LOOK AT altar
 - WALK west into the hallway
 - EXIT west
 
-### 8.2. Church
+### 7.2. Church
 
 - TAKE papers
 - USE altar
@@ -890,7 +889,7 @@
 - >**ACHIEVEMENT:** Master of Belief
 - EXIT east
 
-### 8.3. Glass Hallway
+### 7.3. Glass Hallway
 
 - **QUICK:**
   - TAKE **all four** shards (`Broken Urn`)
@@ -900,7 +899,7 @@
 - USE `Burial Urn` on gravestone (`Key of Lament`)
 - EXIT west
 
-### 8.4. Fire Pit Room
+### 7.4. Fire Pit Room
 
 - LOOK AT fire pit
 - Lure Jane into one of the steaming vents and run to one of the three valves
@@ -910,7 +909,7 @@
 - LOOK AT fire pit (`Key of Reason`)
 - EXIT north
 
-### 8.5. Apartment
+### 7.5. Apartment
 
 - ENTER apartment
 - USE `Key of Communion` on lockbox
@@ -919,14 +918,14 @@
 - >**ACHIEVEMENT:** Gun of Revenge
 - EXIT upstairs
 
-#### 8.5.1. Rooftop
+#### 7.5.1. Rooftop
 
 - USE `White Bullet` on `Gun of Revenge`
-- USE `Gun of Revenge`on Mr. Burgundy
+- USE `Gun of Revenge` on Mr. Burgundy
 
-## 9. Mine
+## 8. Mine
 
-### 9.1. Cave
+### 8.1. Cave
 
 - EXIT east
 - >**ACHIEVEMENT:** A fate serene
