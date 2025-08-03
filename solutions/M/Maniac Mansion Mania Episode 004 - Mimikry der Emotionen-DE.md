@@ -85,3 +85,7 @@ und schauen dort in
 Maniac Mansion Mania Episode 004: Mimikry der Emotionen Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/H2g51d3TZOs/0.jpg)](https://www.youtube.com/watch?v=H2g51d3TZOs)
+
+Maniac Mansion Mania Episode 004: Mimikry der Emotionen (Ronmastered) Lösung (Deu) (PC, Win) - Unk.
+
+[![Walkthrough](https://img.youtube.com/vi/c57iSEaS-2Y/0.jpg)](https://www.youtube.com/watch?v=c57iSEaS-2Y)
