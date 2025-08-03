@@ -22,6 +22,7 @@
 - >**ACHIEVEMENT:** The view is always greener... (1/6)
   >- LOOK AT window
 - USE Newspaper rack (`Newspaper Articles (Debra Sinclair)`)
+- LOOK AT `Newspaper Articles (Debra Sinclair)`
 - EXIT north
 
 #### 1.1.2. Living Area
@@ -754,7 +755,7 @@
 
 - LOOK AT plants (`Document`, `Cooper's Map`)
 - LOOK AT `Document` (Topic: Wiktor Kopernik)
-- LOOK AT `Cooper's Map`
+- LOOK AT `Cooper's Map` (`Cellphone`, Phone: My Office)
 
 ## 6. Day Six
 
@@ -766,7 +767,7 @@
 
 - >**ACHIEVEMENT:** Bullseye
   >- USE `Revolver` on dartboard
-- EXIT west into the office (`Cellphone`, Phone: My Office)
+- EXIT west into the office
 
 ### 6.2. Tabby's Garden
 
@@ -790,7 +791,7 @@
 - USE `Ipecac Syrup` on water cooler
 - USE `Cellphone`
   - My Office
-- USE water cooler
+  - USE Oscar (or water cooler)
 - USE `Lockpicks` on door
 - USE filing cabinets (`Patient File (Mom)`, `Patient File (Kopernik)`)
 - LOOK AT `Patient File (Mom)` (Topic: Marla Stone)
@@ -831,6 +832,7 @@
 - USE `Radio`
   - TALK TO Tom
   - ASK ABOUT valve wheel
+- **WAIT** until Tom starts to run to the valve, then
   - **QUICK:** USE `Revolver` on Victor
 - >**ACHIEVEMENT:** Flew the coop
 - >**ACHIEVEMENT:** Caliber confusion
@@ -877,23 +879,25 @@
       3. Cross (Deacon)
       4. Student Hat (College student)
       5. Writers Desk (Author)
-      6. Bonsai
+      6. Bonsai (Tabitha)
 - USE altar
   - **Riddle:** Sequence of Sacraments in the Ritual
     - LOOK AT `Newspaper Articles`
-    - **NOTE:** ????
-      1. Syringe (Found by Victor Cooper who was an experienced hunter)
-      2. Mirror (Mirror held to her face)
-      3. Eye (Killed by Faith Cyrene, the last Thing he saw was the Great Eye)
-      4. Skull (Mirror, eye of the old god) (`Key of Communion`)
+    - **NOTE:** What happened in what order
+      1. Syringe (Nurse was killed first)
+      2. Mirror (Scrying mirror in the second newspaper article)
+      3. Eye (Killed by Faith Cyrene, the last thing he saw was the Great Eye)
+      4. Skull (all rituals end with death) (`Key of Communion`)
 - >**ACHIEVEMENT:** Master of Belief
 - EXIT east
 
 ### 7.3. Glass Hallway
 
 - **QUICK:**
-  - TAKE **all four** shards (`Broken Urn`)
-  - WALK onto the area with the gravestone
+  - Stay away from Eric and while picking up all shards, always make sure there is enough space between you and him
+  - The platform in the middle is a safe place where Eric stops following you
+- TAKE **all four** shards (`Broken Urn`)
+- WALK onto the area with the gravestone
 - USE `Broken Urn` on gravestone (`Burial Urn`)
 - >**ACHIEVEMENT:** Master of Lament
 - USE `Burial Urn` on gravestone (`Key of Lament`)
