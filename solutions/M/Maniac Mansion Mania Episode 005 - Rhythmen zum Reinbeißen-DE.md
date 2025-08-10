@@ -132,3 +132,7 @@ und schauen dort in
 Maniac Mansion Mania Episode 005: Rhythmen zum Reinbeißen Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/7FWxgvzQBSI/0.jpg)](https://www.youtube.com/watch?v=7FWxgvzQBSI)
+
+Maniac Mansion Mania Episode 005: Rhythmen zum Reinbeißen (Ronmastered) Lösung (Deu) (PC, Win)
+
+[![Walkthrough](https://img.youtube.com/vi/XgAZ1a0-248/0.jpg)](https://www.youtube.com/watch?v=XgAZ1a0-248)
