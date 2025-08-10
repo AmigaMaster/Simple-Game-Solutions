@@ -2,6 +2,7 @@
 
 | Version | Datum      | Autor
 |:-------:|------------|------
+|   1.01  | 10.08.2025 | Amiga Master (AmigaMaster-NG@t-online.de), kleinere Ergänzungen und Anpassungen
 |   1.0   | 21.07.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 ## 1. Vor Beginn
@@ -26,7 +27,7 @@
 - BENUTZE Handgerät
 - Den Weg weiter und links herum
 - REDE MIT Truckfahrer (Joe Wendell)
-  - MERKE: Schlagen, Tanzen, Ziehen
+  - **MERKE:** Schlagen, Tanzen, Ziehen
 - Gegenüber zum Karussell
 - REDE MIT Junge (Pixel)
 - BENUTZE Karussell mit `Brecheisen`
@@ -255,7 +256,6 @@
   - Abmachung: Abgemacht
 - REDE MIT ehrfürchtiger Mann
   - Er wartet auf ein Zeichen
-- Man kann jetzt die Abmachung erfüllen oder den Vater zu einem Atheisten
 >**ACHIEVEMENT:** The Zen Of Screaming
   >- Set the Kids' Exhibit to speak 'Aggressively'
   >- GEHE zum Kinder-Exponat und stelle dich links davon auf den Gang und warte, bis der Putzroboter sich an der Station links davon auffüllt
@@ -284,19 +284,20 @@
 - HACKE Exponat
   - ÜBERTRAGE `Exponat information ansagen` in das "Joey spricht" Exponat
 - BENUTZE Exponat-Information
-- SCHNELL:
+- **SCHNELL:**
   - Zurück zum Kühlschrank
   - BENUTZE Schloss mit `Brecheisen`
 - BENUTZE "Joey spricht"-Exponat mit `Brecheisen`
 - NIMM Joey Platine (`Platine`)
 - GEHE zum Abstellraum (Die Tür ist jetzt offen)
-- BENUTZE Saugrobot mit `Platine`
+- BENUTZE Saugroboter mit `Platine`
 - Für diverse Easter Eggs, die Regale untersuchen
 - GEHE zum Hologramm-Tisch, hinter ihm ist eine Platte
 - BENUTZE Platte mit `Brecheisen`
 - BENUTZE Port mit Joey
 - REDE MIT Joey
-- GEHE in den Abstellraum in die Nähe des Terminals
+- GEHE in den Abstellraum nach hinten zum Terminal
+  - **HINWEIS:** Das Terminal muss die Anleitung für den Fassroboter anzeigen
 - WARTE, bis der Schädlingsbekämpfungsroboter in Reichweite ist
 - HACKE Schädlingsbekämpfungsroboter
   - ÜBERTRAGE `Fassroboter` in den Schädlingsbekämpfungsroboter
@@ -358,13 +359,15 @@
 - Auf derselben Ebene hinten durch die Tür
 - ÖFFNE Kontrollbox
 - BENUTZE Hand-Scanner
-- Über dem Automaten sitzt ein Kakadu auf einem Querträger
+- Hinaus aus dem Raum und nach rechts
+- Über dem Automaten hinter dem Baum sitzt ein Kakadu auf einem Querträger
 - ANLOCKEN Kakadu
-- WIRF Mini-K in Baum (Der Kakadu fliegt in den Baum und der Roboter schwebt über einem Sprinkler)
-- BENUTZE Sprinklersteuerung
+- WIRF Mini-K in Baum (Der Kakadu fliegt in den Baum und der Roboter folgt ihm)
+- BENUTZE Sprinklersteuerung (im Raum mit dem Aufzug)
 >**ACHIEVEMENT:** Lax Safety
   >- Obtain a waiver from Orana
-  >- BENUTZE verstreute Federn mit Joey (Man spricht mit Orana)
+  >- BENUTZE verstreute Federn mit Joey
+  >- BENUTZE Wimpel mit Joey (Man spricht mit Orana)
 - NIMM Joey Platine (`Platine`)
 - Zurück zum Monopod
 
@@ -387,19 +390,19 @@
 ### 13.4. Presse
 
 - ABSCHALTEN Pressensteuerungskonsole
-- BENUTZE Presse it `Brecheisen`
+- BENUTZE Presse mit `Brecheisen`
 - EINSCHALTEN Pressensteuerungskonsole
 - **SCHNELL:**
   - VERSTECKE in Spind
 - WARTE bis der Roboter an der Presse steht
 - VERLASSE Spind
 - EINSCHALTEN Pressensteuerungskonsole
-- AUFHEBEN Brecheisen (`Brecheisen`)
-- Wieder nach oben und hinaus, wo der Roboter den Weg bewachte
+- AUFHEBEN Brecheisen (neben der Konsole) (`Brecheisen`)
+- Wieder nach oben und rechts herum hinaus
 
 ### 13.5. Außenbereich
 
-- Dem Weg folgen, beim Abzweig rechts herum und in das Gebäude
+- Dem Weg folgen, am Abzweig rechts herum und in das Gebäude
 
 ### 13.6. Müllverbrennung
 
@@ -409,7 +412,7 @@
 
 ### 13.7. Presse
 
-- GEHE zu Leet - eine Cutscene startet nach ein paar Sekunden
+- GEHE zu Leet - nach ein paar Sekunden startet eine Cutscene
 - PLATZIERE HAND auf Handklammer
   - >**ACHIEVEMENT:** A Fishy Tail
       >- Porpoisefully fail Jimmy's scary moment
@@ -426,7 +429,7 @@
 - An der Treppe rechts vorbei
 - >**ACHIEVEMENT:** Movie-buff (4/5)
   >- UNTERSUCHE Poster (unter der Treppe)
-- Jetzt die Treppe hinauf und rechts an der Leiter vorbei
+- Treppe hinauf und nach rechts
 - BENUTZE rostige Kiste mit `Brecheisen`
 - AUSSCHALTEN Lichtschalter
 - UNTERSUCHE "Anchor Insurance"-Schild (Am Gassteuerungsventil nach oben schauen)
@@ -543,7 +546,7 @@
 - REDE MIT Joey
 - REDE MIT Poppy
 - BENUTZE Leiter nach unten
-- **ACHTUNG:** die folgende Aktion nicht ausführen, wenn man den guten Weg für das **ACHIEVEMENT:** Two Faced spielt, da man das Plüschtier Songbird zurückgeben muss.
+- **ACHTUNG:** die folgende Aktion nicht ausführen, wenn man den guten Weg für das **ACHIEVEMENT** Two Faced spielt, da man das Plüschtier Songbird zurückgeben muss.
   - BENUTZE Ofenschacht mit `Bilby-Plüschtier`
 
 ## 14. Graham' s Apartment
@@ -566,6 +569,8 @@
   >- BENUTZE Holosockel mit `Kaputte Hololinse`
 - REDE MIT Chipworth
 - REDE MIT Songbird
+- >**ACHIEVEMENT** Two Faced (1/2)
+  >- BENUTZE Songbird mit `Bilby-Plüschtier`
 - BENUTZE Songbird mit `Graham's Foto`
 
 ## 15. Graham' s Apartment
@@ -581,7 +586,7 @@
 - REDE MIT Reginald
 - VERLASSE die VIP-Lounge
 - HACKE VIP-Lounge-Türsteuerung
-  - ZURÜCKSETZEN des Hacks
+  - ZURÜCKSETZEN des Hacks, so dass sich die Tür wieder normal verhält
 - GEHE um das Cafe herum auf die Seite, auf der das Monopod ist
 - Belausche die Diagnostikerin, die Musik über ihre Kopfhörer hört
 - Gehe in die Nähe des Cafe-Audiosystems und warte, bis die Diagnostikerin in Reichweite ist
@@ -607,7 +612,7 @@
 - >**ACHIEVEMENT:** Party Party
   >- Earn a party invite
   >- REDE MIT Tarquin
-  >- Inspiration
+  >   - Inspiration
 
 ### 17.1. Im Apartment
 
@@ -729,13 +734,12 @@
   - TAUSCHE `Aufzug rufen` mit `Ablehnung abspielen`
 - BENUTZE Aufzugruf-Scanner
 - BENUTZE Aufzugsteuerung
-- Nach linke
 - VERLASSE durch Aussentür
 
 ### 21.1. Außenbereich
 
-- Nach links und die Treppe herunter dem Weg folgen
-- Den HACK-Scanner aktivieren und von ein paar Schritte von der Bürotür zurücktreten, bis 3 Ziele angezeigt werden: Windmesser, Sturmfensterläden und Waffensteuerung
+- Nach links die Treppe hinunter und dem Weg folgen
+- Den HACK-Scanner aktivieren und ein paar Schritte von der Bürotür zurücktreten, bis 3 Ziele angezeigt werden: Windmesser, Sturmfensterläden und Waffensteuerung
 - HACKE Windmesser, Waffensteuerung und Sturmfensterläden
   - TAUSCHE `Grün` (Windmesser) mit `Rot` (Waffensteuerung) = Waffensteuerung ist `Grün` &  Windmesser ist `Rot`
   - TAUSCHE `Fensterladenalarm senden` mit `Manueller Betrieb` (Fensterarlam mit `Rot` ist oben & Manueller Betrieb ist unten)
@@ -761,7 +765,7 @@
 - HEBEL DRÜCKEN Toaster
 - >**ACHIEVEMENT:** Time To Get Outta Here
   >- Open the main gates to allow Wendell to leave with the kids
-- >**ACHIEVEMENT:** Two Faced
+- >**ACHIEVEMENT:** Two Faced (2/2)
   >- Witness both Songbird's endings
   >- Es müssen folgende beiden Wege gespielt werden, bevor das Achievement freigeschaltet wird:
   >   1. (Gut) Die Befragung meistern + ein Spielzeug an Songbird zurückgeben
@@ -776,13 +780,13 @@
     - Beide Stalker wie folgt einstellen:
       - Lokalisieren: `Feinde`
       - Informieren: `Reflexions-Probanden`
-      - Geschützziel: `AndoYDen`
+      - Geschützziel: `AndroYDen`
 - >**ACHIEVEMENT:** A Meeting Of Minds
   >- Confront the Council in the Citadel
 
 ## 23. Overmann-Kammer
 
-- GEHE geradeaus durch dir Tür
+- GEHE geradeaus durch die Tür
 - >**ACHIEVEMENT:** Movie-buff (5/5)
   >- Discover all five movie posters
   >- UNTERSUCHE Poster (Rechts hinter dem Tisch mit der Dose und dem Computer-Terminal)
@@ -790,22 +794,22 @@
 
 ### 23.1. MINOS
 
-1. Würfel
+1. Wohlergehen
    - DREHE Segment A bis sich das vollständige Bild ergibt
    - DREHE Segment B bis zur nächsten Cutscene
-2. Würfel
+2. Ambition
    - DREHE den Segment A, bis sich ein vollständiges Bild ergibt
    - DREHE dann immer Segment A und B, damit sich immer das nächste vollständige Bild ergibt und bis zur Cutscene
-3. Würfel
-   - DREHE Segment B bis zwei der drei Teile zusammenpassen
-   - DREHE Segment A bis sich ein vollständiges Bild ergibt
-   - DREHE Segment C bis zur nächsten Cutscene
-4. Würfel
+3. Sicherheit
+   - DREHE Segment A bis der linke und rechte Rand zusammenpassen
+   - DREHE Segment B bis das Bild zusammenpasst
+   - DREHE Segment C bis das korrekt Bild angezeigt wird
+4. Komfort
    - DREHE Segment C bis zwei Teile zusammenpassen
    - DREHE Segment B bis das Bild passt
    - DREHE Segment A bis der Mann im Schlafanzug vorne ist (Segment C ändert sich)
    - DREHE Segment C bis das Bild vollständig ist
-5. Würfel
+5. Wohlstand
    - DREHE Segment A bis das Bild passt
    - DREHE dann immer Segment A und B, damit sich immer das nächste vollständige Bild ergibt und bis zur Cutscene
 - >**ACHIEVEMENT:** Snuffing Out The Light
