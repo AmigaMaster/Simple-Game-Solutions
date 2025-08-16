@@ -119,3 +119,7 @@ und schauen dort in
 Maniac Mansion Mania Episode 006: Er is’ weg Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/_w8qekelkcY/0.jpg)](https://www.youtube.com/watch?v=_w8qekelkcY)
+
+Maniac Mansion Mania Episode 006: Er is’ weg (Ronmastered) Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/nALm0R1xrpI/0.jpg)](https://www.youtube.com/watch?v=nALm0R1xrpI)
