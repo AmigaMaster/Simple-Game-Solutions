@@ -1,8 +1,9 @@
 # The Drifter - Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|  1.0    | 25.07.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author
+|:-------:|------------|-------------------------------------------
+|  1.01   | 23.07.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add missing actions, fix Fancy A Cuppa? achievement, add explanation for correct hook in grave scene
+|  1.0    | 25.07.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 ## 1. Before you Begin
 
@@ -21,7 +22,7 @@
 - PICK UP rebar (`Rebar`)
 - USE `Rebar` on door
 - LOOK AT door
-- USE door (change side)
+- USE door (to change side)
 - USE hatch in the roof
 
 ## 3. Chapter 1 - Welcome Party
@@ -94,7 +95,7 @@
   >- **LOAD YOUR SAVED GAME**
 - USE `Knife` on hands
 - USE `Knife` on feet (Fade to black)
-- USE `Knife` on hands
+- USE `Knife` on hands (again)
 - USE sack on your face
 - USE `Knife` on feet
 - PICK UP jerrycan (`Jerrycan`)
@@ -108,17 +109,18 @@
 
 #### 4.1.1. Tunnel
 
-- USE `Knife` on brick (right next to the red barrel) (`Glas bottle of rum`)
+- USE `Knife` on brick (right next to the red barrel)
+- LOOK AT hole (`Glas bottle of rum`)
 - LOOK AT outlet on the right wall (`Zippo lighter`)
-- PICK UP the newspaper (on the floor) (`Newspaper`)
+- PICK UP newspaper (on the floor) (`Newspaper`)
 - USE `Glas bottle of rum` on `Zippo lighter` (`Filled Zippo lighter`)
-- USE `Newspaper` on on barrel
+- USE `Newspaper` on barrel
 - USE `Filled Zippo lighter` on barrel
 - USE outlet
 - USE body
 - LOOK AT body
-- USE body
-- USE `Knife` on body (`Angela Grace's Business card`, `Strip of cloth`, `Mini-Cassette tape`)
+- USE body (`Angela Grace's Business card`)
+- USE `Knife` on body (`Strip of cloth`, `Mini-Cassette tape`)
 - USE barrel
 - USE `Strip of cloth` on `Glas bottle of rum` (`Molotov cocktail`)
 - USE `Filled Zippo lighter` on `Molotov cocktail` (`Lit Molotov cocktail`)
@@ -231,7 +233,7 @@
 
 #### 4.5.3. Graves
 
-- LOOK AT teh gravestone in the middle (the one with the flowers)
+- LOOK AT the gravestone in the middle (the one with the flowers)
   - TALK TO gravestone
   - LOOK AT gravestone
   - USE flower bouquet
@@ -255,13 +257,16 @@
 - USE `Urn` on Annie
 - LOOK AT shovel
 - USE shovel (`Shovel`)
-- EXIT west
 
 #### 5.1.3. Chapel
 
 - EXIT west
 
-#### 5.1.4. Graves
+#### 5.1.4. Entrance
+
+- EXIT to graves
+
+#### 5.1.5. Graves
 
 - TALK TO Annie (`Money`)
 - EXIT southeast
@@ -269,7 +274,7 @@
 - USE tree
 - USE `Shovel` on tree
 
-##### 5.1.4.1. Hole
+##### 5.1.5.1. Hole
 
 - LOOK AT light above
 - USE `Zippo lighter` on darkness (on the right side)
@@ -279,9 +284,9 @@
 - LOOK AT masonry (on the right side)
 - USE masonry
 - LOOK AT hook
-- USE `Wet Rag` on hook
+- USE `Wet Rag` on hook at the wooden pole (not the hook at the wall!)
 - USE `Zippo lighter` on hook
-- **NOTE:** The dark area at the wall to your left (recessed lines in the wall)
+  - **NOTE:** The dark area at the wall to your left (recessed lines in the wall)
 - USE `Umbrella` on masonry
 - USE recessed lines in the wall
 - WAIT until the monster is on the right side
@@ -299,6 +304,7 @@
 
 ### 5.2. Hospital
 
+- **SAVE YOUR GAME HERE**
 - TALK TO man
 - USE red button
 - TALK TO man **3 times** (`Coffee card with detective's mobile number`)
@@ -358,21 +364,21 @@
 ### 6.4. Home
 
 - USE `Empty thermos` on green kettle (`Thermos full of hot tea`)
-- >**ACHIEVEMENT:**  (1/?)
+- >**ACHIEVEMENT:** Fancy A Cuppa? (1/8)
   >- USE `Thermos full of hot tea` on Sarah
 
 ### 6.5. Newspaper Office
 
 #### 6.5.1. Reception
 
-- >**ACHIEVEMENT:**  (2/?)
+- >**ACHIEVEMENT:** Fancy A Cuppa? (2/8)
   >- USE `Thermos full of hot tea` on woman
 
 ### 6.6. Railway Overpass
 
 #### 6.6.1. Overpass
 
-- >**ACHIEVEMENT:**  (3/?)
+- >**ACHIEVEMENT:** Fancy A Cuppa? (3/8)
   >- USE `Thermos full of hot tea` on detective
 - TALK TO detective
 
@@ -457,19 +463,19 @@
 
 - USE `Label` on lightbox
 - USE lightbox
-- >**ACHIEVEMENT:**  (4/?)
+- >**ACHIEVEMENT:** Fancy A Cuppa? (4/8)
   >- USE `Thermos full of hot tea` on Dr. Nazari
 - TALK TO Dr. Nazari
 - PICK UP pen (when she drops it) (`Pen`)
 - TALK TO Dr. Nazari
 - USE `Pen` on `List of payments`
-- TALK TO Nazari
+- TALK TO Dr. Nazari
 
 ### 6.16. Cemetery
 
 #### 6.16.1. Entrance
 
-- >**ACHIEVEMENT:**  (5/?)
+- >**ACHIEVEMENT:** Fancy A Cuppa? (5/8)
   >- USE `Thermos full of hot tea` on caretaker
 - PICK UP thermos (`Thermos full of hot tea`)
 
@@ -482,7 +488,7 @@
 - **SAVE YOUR GAME HERE**
 - USE computer
   - "Holden, Maxwell"
-- >**ACHIEVEMENT:**  (6/?)
+- >**ACHIEVEMENT:** Fancy A Cuppa? (6/8)
   >- USE `Thermos full of hot tea` on Alec
 - USE phone
 - LOOK AT trolley (`Trolley`)
@@ -505,7 +511,7 @@
 - USE `Bend downpipe` on extension cord (`Extension lead`)
 - USE `Extension lead` on `Bend downpipe` (`Hook`)
 - LOOK down
-- >**ACHIEVEMENT:**  (7/?)
+- >**ACHIEVEMENT:** Fancy A Cuppa? (7/8)
   >- USE `Thermos full of hot tea` on soldiers
 - USE `Hook` on lid of dumpster
 - LOOK up **2 times**
@@ -582,7 +588,7 @@
 - USE `Hook` on radiator
 - USE `Chunks of masonry` on broom
 - PICK UP broom (`Broom`)
-- USE `Broom` on esky (the blue box on the freezer)
+- USE `Broom` on esky (the blue one on the freezer)
 - PICK UP dry ice (`Dry ice`)
 - **SAVE YOUR GAME HERE**
 - USE `Dry ice` on radiator
@@ -610,7 +616,7 @@
 - **SAVE YOUR GAME HERE**
 - WALK right
 - **QUICK:**
-  - USE `Iron rebar` on Holden
+  - USE `Iron rebar` on Holden **2 times**
   - USE Holden (`Rifle`)
   - USE `Rifle` on iron rungs
 - >**ACHIEVEMENT:** Chains That Bind
@@ -787,12 +793,18 @@
   - "Hidden door"
 - USE `Coffee beans` on coffee machine
 - USE `Makeup compact` on ground coffee (`Makeup compact with ground coffee`)
+
+### 9.9. Third Floor
+
+#### 9.9.1. Pipe Corridor
+
+- USE `Makeup compact with ground coffee` on keypad
 - EXIT and take the elevator to the bottom floor
 
-### 9.9. Reactor Floor
+### 9.10. Reactor Floor
 
 - WALK east
-- LOKO AT meter
+- LOOK AT meter
 - USE `Geiger counter` on meter
 - TALK TO man (Dr. Klein) **2 times**
 - USE `Screwdriver` on `Geiger counter` (`Metal cylinder`)
@@ -801,18 +813,18 @@
 - USE generator
 - USE elevator
 
-### 9.10. Fourth Floor (Laboratories)
+### 9.11. Fourth Floor (Laboratories)
 
-#### 9.10.1. Elevator Corridor
+#### 9.11.1. Elevator Corridor
 
-- EXIT west
+- EXIT east
 
-#### 9.10.2. Interface Lab Corridor
+#### 9.11.2. Interface Lab Corridor
 
 - LOOK AT door
 - USE door
 
-#### 9.10.3. Interface Lab
+#### 9.11.3. Interface Lab
 
 - LOOK AT everything
   - Plotter
@@ -826,28 +838,29 @@
 - TALK TO Sanjay **2 times**
 - EXIT west
 
-#### 9.10.4. Accelerator Lab
+#### 9.11.4. Accelerator Lab
 
 - USE door
 - LOOK AT warning sign
+- TALK TO Dr. Klein (if he is here)
 - EXIT south
 
-#### 9.10.5. Accelerator Lab Corridor
+#### 9.11.5. Accelerator Lab Corridor
 
 - EXIT west and enter elevator
 
-### 9.11. Top Floor
+### 9.12. Top Floor
 
 - TALK TO detective
 
-### 9.12. Third Floor
+### 9.13. Third Floor
 
-#### 9.12.1. Pipe Corridor
+#### 9.13.1. Pipe Corridor
 
 - LOOK AT keypad (it should have been used)
 - ENTER room
 
-##### 9.12.1.1. Hospital Room
+##### 9.13.1.1. Hospital Room
 
 - USE curtain
 - LOOK AT what you have found
@@ -855,49 +868,49 @@
 - SEARCH hospital crash cart
 - EXIT room
 
-### 9.13. Second Floor
+### 9.14. Second Floor
 
-##### 9.13.0.2. Cafe
+##### 9.14.0.2. Cafe
 
 - TALK TO Angela
 
-### 9.14. Reactor Floor
+### 9.15. Reactor Floor
 
 - USE lockers (`Nicotine gum`)
 
-### 9.15. Fourth Floor
+### 9.16. Fourth Floor
 
-#### 9.15.1. Accelerator Lab
+#### 9.16.1. Accelerator Lab
 
 - LOOK AT lab coat (on the bench)
 - TALK TO Dr. Roth
 - TALK TO Dr. Klein
 - EXIT east
 
-#### 9.15.2. Interface Lab
+#### 9.16.2. Interface Lab
 
 - USE `Nicotine gum` on plotter
 - EXIT south
 
-#### 9.15.3. Interface Lab Corridor
+#### 9.16.3. Interface Lab Corridor
 
 - EXIT west
 
-#### 9.15.4. Accelerator Lab Corridor
+#### 9.16.4. Accelerator Lab Corridor
 
 - ENTER door
 
-#### 9.15.5. Accelerator Lab
+#### 9.16.5. Accelerator Lab
 
 - USE coat **2 times** (`Roth's keycard`)
 
-### 9.16. Third Floor
+### 9.17. Third Floor
 
-#### 9.16.1. Elevator Corridor
+#### 9.17.1. Elevator Corridor
 
 - USE `Roth's keycard` on door
 
-#### 9.16.2. Dr. Roth's Quarters
+#### 9.17.2. Dr. Roth's Quarters
 
 - SEARCH insect collection (above the bed) (`Photo of three founders`)
 - ENTER bathroom
@@ -906,39 +919,39 @@
 - USE `Untwisted coat hanger` on Hara
 - EXIT room and EXIT west
 
-#### 9.16.3. Pipe Corridor
+#### 9.17.3. Pipe Corridor
 
 - LOOK AT pipe
 - USE `Nicotine gum` on pipe
 - EXIT west and ENTER Annie's quarters
 
-#### 9.16.4. Annie's Quarters
+#### 9.17.4. Annie's Quarters
 
 - USE `Meal ticket` on Annie (`Steak Ticket`)
   - **NOTE:** If you redeemed the meal ticket, walk to the cafe, dispense your vegetable soup (on the meal spender) and USE the scanner again
 - TALK TO Annie
 
-### 9.17. Second Floor
+### 9.18. Second Floor
 
-#### 9.17.1. Cafe
+#### 9.18.1. Cafe
 
 - USE `Steak ticket` on meal spender (`Knife`, `Steak with potatoes`)
 
-### 9.18. Third Floor
+### 9.19. Third Floor
 
-#### 9.18.1. Dr. Roth's Quarters
+#### 9.19.1. Dr. Roth's Quarters
 
 - USE `Knife` on mask (in the bathroom) (`Gas mask`)
 - USE `Screwdriver` on `Gas mask` (`Replacement tube`)
 - USE `Replacement tube` on `Geiger counter`
 
-### 9.19. Fourth Floor
+### 9.20. Fourth Floor
 
-#### 9.19.1. Accelerator Lab
+#### 9.20.1. Accelerator Lab
 
 - TALK TO Klein
 
-### 9.20. Reactor Floor
+### 9.21. Reactor Floor
 
 - WALK west
 - LOOK AT generator (`Jerrycan`)
@@ -946,26 +959,26 @@
 - WALK east
 - USE hanging person
 
-### 9.21. Fourth Floor
+### 9.22. Fourth Floor
 
-#### 9.21.1. Interface Lab
+#### 9.22.1. Interface Lab
 
 - TALK TO Hara
 - TALK TO Sanjay
 - TALK TO Dr. Roth
 - USE chair **2 times**
 
-### 9.22. Third Floor
+### 9.23. Third Floor
 
-#### 9.22.1. Pipe Corridor
+#### 9.23.1. Pipe Corridor
 
-##### 9.22.1.1. Hospital Room
+##### 9.23.1.1. Hospital Room
 
 - USE `Photo of three founders` on woman
 
-### 9.23. Fourth Floor
+### 9.24. Fourth Floor
 
-#### 9.23.1. Interface Lab
+#### 9.24.1. Interface Lab
 
 - TALK TO Annie
 - USE `Gas mask` on Sanjay
@@ -976,24 +989,24 @@
 - USE chair
 - TALK TO Sanjay
 
-### 9.24. Reactor Floor
+### 9.25. Reactor Floor
 
 - WALK east
 - USE `Geiger counter` on meter
 - TALK TO Dr. Klein
 - USE `Gas mask` on Dr. Klein
 
-### 9.25. Top Floor
+### 9.26. Top Floor
 
 - TALK TO Hara **2 times**
 
-### 9.26. Fourth Floor
+### 9.27. Fourth Floor
 
-#### 9.26.1. Accelerator Lab
+#### 9.27.1. Accelerator Lab
 
 - TALK TO Dr. Roth
 
-### 9.27. Top Floor
+### 9.28. Top Floor
 
 - TALK TO Hara
 - >**ACHIEVEMENT:** Rogue Hypothesis
