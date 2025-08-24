@@ -137,3 +137,7 @@ Maniac Mansion Mania Episode 007: Right said Fred!?! Lösung (Deutsch) (PC, Win)
 Maniac Mansion Mania Episode 007: Right said Fred!?! (Talkie) Lösung (Deu) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/vvj9ilPHuNo/0.jpg)](https://www.youtube.com/watch?v=vvj9ilPHuNo)
+
+Maniac Mansion Mania Episode 007: Right said Fred!?! (Ronmastered) Lösung (Deu) (PC, Win) - Unkomm.
+
+[![Walkthrough](https://img.youtube.com/vi/yotA2j8fPb4/0.jpg)](https://www.youtube.com/watch?v=yotA2j8fPb4)
