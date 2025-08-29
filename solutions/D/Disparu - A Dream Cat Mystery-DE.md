@@ -1,8 +1,9 @@
 # Disparu: A Dream Cat Mystery - Lösung
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 04.08.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|:-------:|------------|-------------------------------------------
+|   1.01  | 15.08.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Add easter egg
+|   1.0   | 04.08.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 Das kostenlose Spiel kann von der [itch.io Webseite](https://fireorange.itch.io/disparu) heruntergeladen werden.
 
@@ -29,7 +30,7 @@ Das kostenlose Spiel kann von der [itch.io Webseite](https://fireorange.itch.io/
     5. Zwei katzohrige Distelblumen pflücken und in die `Vase` stellen (Orange)
     6. In die `mittlere` Kiste springen (Rot)
 - BENUTZE Display
-  - DRÜCKE die Farbkombination aus dem Rätsel von der Notiz: `Violet, Rot, Gelb, Rosa, Orange, Rot`)
+  - DRÜCKE die Farbkombination aus dem Rätsel von der Notiz: `Violet, Rot, Gelb, Rosa, Orange, Rot`
 - NIMM Tasse (`Tasse`)
 - BENUTZE Kletterpflanze nach oben
 
@@ -50,7 +51,11 @@ Das kostenlose Spiel kann von der [itch.io Webseite](https://fireorange.itch.io/
 
 ### 2.6. Kellerlabyrinth
 
-- Folge dem Pfad von den Schubladen: `Hoch, rechts, hoch, links`
+- >**EASTER EGG:**
+  >- GEHE durch folgende Türen: `Hoch, Hoch` (hintere Tür ist mittig und der Türrahmen geht hoch fast bis zur Decke)
+  >- Mittig nach `unten` gehen (ohne Hotspot)
+  >- Zurück zum Sofa
+- Folge dem Pfad, der auf den Schubladen angegeben ist: `Hoch, rechts, hoch, links`
 
 ### 2.7. Raum mit Kreis
 
