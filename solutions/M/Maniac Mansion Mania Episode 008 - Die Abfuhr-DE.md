@@ -162,3 +162,7 @@ und schauen dort in
 Maniac Mansion Mania Episode 008: Die Abfuhr Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/ml29lSscx8w/0.jpg)](https://www.youtube.com/watch?v=ml29lSscx8w)
+
+Maniac Mansion Mania Episode 008: Die Abfuhr Lösung (Ronmastered) (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/bY6g1s8etEE/0.jpg)](https://www.youtube.com/watch?v=bY6g1s8etEE)
