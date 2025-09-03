@@ -1,8 +1,9 @@
 # Technobabylon - Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|  1.0    | 18.08.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author
+|:-------:|------------|-------------------------------------------
+|  1.01   | 03.09.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add missing dialogue and some minor changes
+|  1.0    | 18.08.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 ## 1. Foreword
 
@@ -27,7 +28,7 @@
 - USE `Wetware` on door panel (on the right)
 - USE `Trance`
   - USE `Mailbox`
-    - READ ALL mails
+    - READ ALL emails
     - DOWNLOAD attachment from mail "EXS PHARMA" - **DO NOT ACCESS IT**
   - USE connection to door panel
   - USE connection to food machine
@@ -324,8 +325,8 @@
 #### 7.2.1. Dome
 
 - TALK TO Dr. Chigwa
-  - **NOTE:** The description of the plant you need to sample (changes for each playthrough), for example `Orchidaceae Isotria`, and `Red flowers, spiny toxic leaves, long fruit`
-- LOOK AT **all plants** until you find the one matching the description. It will be here or in the Production Lab to the left:
+  - **NOTE:** The description of the plant you need to sample (changes for each playthrough), for example`Red flowers, spiny toxic leaves, long fruit`
+- LOOK AT **all plants** until you find the one matching the description. It will be here, in the Production Lab to the left or in the growth lab ()
   - >**ACHIEVEMENT:** Microbiologist (1/5)
     >- USE `DNA Sampler` on plant
 - USE `DNA Sampler` on Gene Sequencer
@@ -651,6 +652,7 @@
 - USE `Bonesaw` on Body (in the background) (`Slice of Meat`)
 - USE `Slice of Meat` on `Jar`
 - TALK TO Chef
+- USE Body (the one with blonde hair)
 - USE Growth Chamber
   - PURGE
 - USE `Tissue Paper` on Growth Chamber
@@ -658,13 +660,14 @@
 
 #### 10.1.4. Upper Level
 
-- TALK TO Stepford **2 times**
+- TALK TO Stepford (until he follows you)
 
 #### 10.1.5. Lower Level
 
+- USE `Jar` on Fish Tank
+
 ##### 10.1.5.1. Kitchen
 
-- USE Body (the one with blonde hair)
 - USE `CI-Splitter` on Stepford
 - EXIT Kitchen
 
@@ -681,7 +684,6 @@
   - Memory: Stepford
   - Role: Stepford
 - TALK TO Guard
-- USE `Jar` on Fish Tank
 
 ##### 10.1.6.1. Bathroom
 
@@ -778,8 +780,8 @@
 
 #### 11.4.1. Cargo Hold
 
-- WAIT behind the crates until the Guard is at the right position
-- USE Console
+- WAIT behind the crates until the Guard is walking to the right side and walks in front of the crates
+- USE Console **2 times**
 - USE left door
 
 #### 11.4.2. Hallway
@@ -833,6 +835,7 @@
 - USE `Traveller`
   - CONTACT Cobalt3
     - "Report your status!"
+    - "Intruder sighter to port!"
   - USE Hatch
 
 #### 11.4.9. Helium Containers
@@ -858,7 +861,11 @@
   - Role: Turret
 - USE `AP Ammunition` on Turret
 - TALK TO Turret
-- Make your way to the Sickbay
+- USE hatch
+
+#### 11.4.12. Hallway
+
+- USE door to Sickbay
 - >**ACHIEVEMENT:** Ripper
 - >**ACHIEVEMENT:** Guarded by Fate
   >- Survive up to Part 9 without dying once
@@ -875,6 +882,7 @@
 - TALK TO Lao
   - **NOTE:** You can now switch between characters by using your inventory
 - SWITCH TO Latha
+- TALK TO Lao
 
 >Latha
 
@@ -885,14 +893,13 @@
 
 - USE Interface Chair
   - TALK TO Jinsil
-    - "Nice to see you"
-    - USE Data Shunt
-    - USE Central
-    - CONNECT TO Visual Systems
-      - USE Cameras
-        - USE Call Service Drone (from the right)
-        - DRIVE to the hallway in the right background, so the Drone hides there
-      - SWITCH TO Lao
+  - USE Data Shunt
+  - USE Central
+  - CONNECT TO Visual Systems
+    - USE Cameras
+      - USE Call Service Drone (from the right)
+      - DRIVE to the hallway in the right background, so the Drone hides there
+    - SWITCH TO Lao
 
 ### 12.3. Central Core
 
