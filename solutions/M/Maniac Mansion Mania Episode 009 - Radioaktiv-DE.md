@@ -286,3 +286,7 @@ und werfen einen Blick in
 Maniac Mansion Mania Episode 009: Radioaktiv Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/1MtOP40Lb9U/0.jpg)](https://www.youtube.com/watch?v=1MtOP40Lb9U)
+
+Maniac Mansion Mania Episode 009: Radioaktiv Lösung (Ronmastered) (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/jC3tDLL36DQ/0.jpg)](https://www.youtube.com/watch?v=jC3tDLL36DQ)
