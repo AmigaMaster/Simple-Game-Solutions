@@ -76,17 +76,17 @@ Wir beginnen am
     *** KLICKE, um die Lösung anzuzeigen ***
     </summary>
     Die Anzahl der Münzen muss sich um zwei unterscheiden, also z. B. 1 und 3, 2 und 4, usw.<br><br>
-    "Gibst du mir eine Münze, dann habe ich doppelt so viele wie du." = zusammen mit der ersten Bedingung, trifft das nur auf die Kombination 5 und 7 zu.
+    "Gibst du mir eine Münze, dann habe ich doppelt so viele wie du." = zusammen mit der ersten Bedingung, trifft das nur auf die Kombination 7 und 5 zu.
     </details>
 - SCHAU AN Zettel
   - <details><summary>
     *** KLICKE, um die Lösung anzuzeigen ***
     </summary>
-    Die Lösung ist zwar heute widerlegt aber man kann die letzte Zahl der Kombination des Schlosses auch durchprobieren.<br>
+    Die Lösung ist zwar heutzutage widerlegt aber man kann die letzte Zahl der Kombination des Schlosses auch durchprobieren.<br>
     Die letzte Zahl der Kombination lautet: 7
     </details>
 - ÖFFNE (mittleren) Spind
-  - Die oben ermittelte Kombination eingeben
+  - Die oben ermittelte Kombination eingeben `757`
 - NIMM Surfbrett (`Surfbrett`)
 - Verlasse Hütte
 
@@ -101,3 +101,7 @@ Wir beginnen am
 Maniac Mansion Mania Episode 084: Surf'n'Ronville Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/hAnkIeQRSGQ/0.jpg)](https://www.youtube.com/watch?v=hAnkIeQRSGQ)
+
+Maniac Mansion Mania Episode 084: Surf'n'Ronville (Talkie) Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/NmNSF41C45g/0.jpg)](https://www.youtube.com/watch?v=NmNSF41C45g)
