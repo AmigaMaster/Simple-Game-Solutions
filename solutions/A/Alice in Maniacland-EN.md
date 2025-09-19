@@ -17,7 +17,7 @@ Download the free game from the [Adventure Game Studio Website](https://www.adve
 - PULL table (`Cake`)
 - USE `Cake`
 - PICKUP key (`Key`)
-- Noe there are different solutions to get into the mansion
+- There are three different ways to get into the mansion:
 
 --------------------------------------------------------------------------------
 
