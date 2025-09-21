@@ -1,4 +1,4 @@
-# Maniac Mansion Mania Episode 098: Maniac Apartment Lösung
+# Maniac Mansion Mania Episode 098: Maniac Apartment - Lösung
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
@@ -73,3 +73,7 @@ und befinden uns in
 Maniac Mansion Mania Episode 098: Maniac Apartment Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/vtMWVqQvXcA/0.jpg)](https://www.youtube.com/watch?v=vtMWVqQvXcA)
+
+Maniac Mansion Mania Episode 098: Maniac Apartment (Talkie) Lösung (Deu) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/lbVn9PHj_ts/0.jpg)](https://www.youtube.com/watch?v=lbVn9PHj_ts)
