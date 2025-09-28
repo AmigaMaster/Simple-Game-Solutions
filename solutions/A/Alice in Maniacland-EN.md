@@ -72,3 +72,11 @@ Download the free game from the [Adventure Game Studio Website](https://www.adve
 
 - USE `Screwdriver` with (top) grating
 - OPEN grating
+
+--------------------------------------------------------------------------------
+
+## 4. Video Walkthrough
+
+Alice in Maniacland Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/RlOJwESTh7w/0.jpg)](https://www.youtube.com/watch?v=RlOJwESTh7w)
