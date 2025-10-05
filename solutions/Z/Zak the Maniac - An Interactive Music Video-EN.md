@@ -252,3 +252,11 @@ Get the free game from the [Homepage](https://error47band.itch.io/maniaczak)
 #### 7.7.4. Meteor Room
 
 - PUSH pure evil
+
+--------------------------------------------------------------------------------
+
+## 8. Video Walkthrough
+
+Zak the Maniac - An Interactive Music Video Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/7Xg_kwbOkMI/0.jpg)](https://www.youtube.com/watch?v=7Xg_kwbOkMI)
