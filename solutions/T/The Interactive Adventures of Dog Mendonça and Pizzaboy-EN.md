@@ -173,7 +173,7 @@
 #### 5.8.1. Bathroom
 
 - USE `Bubblegum` with spectral abomination (`Plank of wood`)
-- USE `Pank of wood` with spectral abomination (`Plank with gum`)
+- USE `Plank of wood` with spectral abomination (`Plank with gum`)
 - USE `Plank with gum` with wrench (`Wrench`)
 
 ### 5.9. Lobby
