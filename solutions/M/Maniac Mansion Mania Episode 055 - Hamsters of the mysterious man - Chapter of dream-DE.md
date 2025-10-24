@@ -100,6 +100,8 @@ und befinden uns in
 > **INFO:**
 > Ab hier sind zwei unterschiedliche Lösungswege möglich.
 
+--------------------------------------------------------------------------------
+
 ## 2. Erster Lösungsweg (Bernard)
 
 Dieser wird mit Bernard gespielt
@@ -237,6 +239,8 @@ Dieser wird mit Bernard gespielt
 - Verlasse Flur durch (linke) Tür
 - ***ENDE***
 
+--------------------------------------------------------------------------------
+
 ## 3. Zweiter Lösungsweg (Britney)
 
 Dieser wird als Britney gespielt.
@@ -311,6 +315,7 @@ Dieser wird als Britney gespielt.
 ### 3.7. Esszimmer
 
 - BENUTZE `Nagelfeile` mit Vorhängeschloss
+- ÖFFNE (linke) Tür
 - Verlasse durch (linke) Tür
 
 ### 3.8. Küche
@@ -338,13 +343,13 @@ Dieser wird als Britney gespielt.
 - SCHAU AN Schrank (`Milchsockensäure`, `Spezialschlüssel`)
 - Verlasse Flur durch (rechte) Tür
 
-### 3.12. Wohnzimmer
+### 3.12. Wohnzimmer (Traumwelt)
 
 - NIMM Fernbedienung (`Fernbedienung`)
 - REDE MIT Dad
 - Verlasse Wohnzimmer durch (linke) Tür
 
-### 3.13. Flur Erdgeschoss
+### 3.13. Flur Erdgeschoss (Traumwelt)
 
 - Verlasse durch Tür hinten links
 
@@ -401,7 +406,7 @@ Dieser wird als Britney gespielt.
 
 ### 3.22. Wohnzimmer (Traumwelt)
 
-- BENUTE `Fernbedienung` mit Fernseher
+- BENUTZE `Fernbedienung` mit Fernseher
 - DRÜCKE Bernard
 
 #### 3.22.1. Bernard's Zimmer
