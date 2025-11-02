@@ -38,7 +38,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 - BENUTZE `Graltagebuch`
 - BENUTZE `Magnesiumtabletten` mit `Socken in Milch` (`Milchsockensäure`)
 - BENUTZE `Moto V3i`
-  - PIN `6416` eingeben
+  - PIN `6416` eingeben (mit dem Knopf oben rechts bestätigen)
 - BENUTZE `Moto V3i`
 - REDE MIT Chuck
   - "Eine Frage ..."
@@ -71,3 +71,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 Maniac Mansion Mania Episode 061: Bernards Room Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/_Sih40FH4Hk/0.jpg)](https://www.youtube.com/watch?v=_Sih40FH4Hk)
+
+Maniac Mansion Mania Episode 061: Bernards Room (Talkie) Lösung (Deutsch) (PC, Win) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/KN_vPKNQHl8/0.jpg)](https://www.youtube.com/watch?v=KN_vPKNQHl8)
