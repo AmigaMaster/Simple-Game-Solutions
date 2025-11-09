@@ -77,3 +77,11 @@ Get the free game from the [Homepage](https://ramoramainteractive.itch.io/gurk-i
 - LOOK AT `Remote Control` (`Batteries`)
 - USE `Batteries` with mixer
 - USE `Banana` with mixer
+
+-------------------------------------------------------------------------------
+
+## 5. Video Walkthrough
+
+Gurk in Trouble - A Yip Quest Story Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/nTF7lyxPsE4/0.jpg)](https://www.youtube.com/watch?v=nTF7lyxPsE4)
