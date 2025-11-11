@@ -16,7 +16,7 @@
   - Bottled It: Fill the bottle from every source
 
 - Unclear achievements:
-  - Speedrun: Commplete the game... quickly (The exact ime is currently unknown)
+  - Speedrun: Complete the game... quickly (The exact time is currently unknown)
 
 ## 2. Causeway Beach
 
