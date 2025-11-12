@@ -2,6 +2,7 @@
 
 | Version | Date       | Author
 |:-------:|------------|-------------------------------------------
+|   1.02  | 13.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add Captain Crumb achievement
 |   1.01  | 11.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add several achievements
 |   1.0   | 09.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
@@ -11,7 +12,6 @@
 
 - Missing achievements:
   - The Devil's Rock Devil: Go on a crime spree
-  - Captain Crumb: Learn about pirates
   - Ghost Stories: Show off your magazine
   - Bottled It: Fill the bottle from every source
 
@@ -146,6 +146,9 @@
 - TALK TO Jasper
 - >**ACHIEVEMENT:** Ghost Stories (5/???)
   >- USE `Magazine` on Jasper
+- >**ACHIEVEMENT:** Captain Crumb
+  >- LOOK AT carving
+  >- TALK TO Japser
 - USE `Brooch` on Jasper (`Button Magnet`, `Brooch`)
 - EXIT east
 
@@ -195,7 +198,8 @@
 
 - EXIT and re-enter the scene to trigger a cutscene
 - USE `Auger` on barrels
-- USE `Bottle` on rum (`Bottle of Rum`)
+- >**ACHIEVEMENT:** Bottled It (2/???)
+  >- USE `Bottle` on rum (`Bottle of Rum`)
 - USE `Bottle of Rum` in `Gris-Gris`
 - EXIT north
 
@@ -247,7 +251,7 @@
 - >**ACHIEVEMENT:** Housewarming
   >- USE `Magazine` on Witch Doctor
 - USE `Magazine` on `Gris-Gris`
-- >**ACHIEVEMENT:** Bottled It (2/???)
+- >**ACHIEVEMENT:** Bottled It (3/???)
   >- USE `Bottle` on tide (`Bottle of Spirit Water`)
 - >**ACHIEVEMENT:** Part Two
   >- USE `Bottle of Spirit Water` on flames
@@ -441,7 +445,8 @@
   - USE wire on barrel lift socket
 - USE `Chamber Pot` on barrel lift
 - USE switch (to turn it on)
-- USE `Bottle` on barrel (`Bottle of Rum`)
+- >**ACHIEVEMENT:** Bottled It (4/???)
+  >- USE `Bottle` on barrel (`Bottle of Rum`)
 
 #### 5.1.23. Conservatory
 
@@ -450,7 +455,8 @@
 
 #### 5.1.24. Cellar
 
-- USE `Bottle` on barrel (`Bottle of Rum`)
+- >**ACHIEVEMENT:** Bottled It (5/???)
+  >- USE `Bottle` on barrel (`Bottle of Rum`)
 
 #### 5.1.25. Trophy Room
 
@@ -551,7 +557,7 @@
 
 ### 6.2. Bellemore Manor
 
-- >**ACHIEVEMENT:** Bottled It (3/???)
+- >**ACHIEVEMENT:** Bottled It (6/???)
   >- USE `Bottle` on pond (`Bottle of Water`)
 - ENTER tea party (on the right side)
   - PICK UP teaspoon (`Teaspoon`)
@@ -725,7 +731,8 @@
 - PICK UP matchbooks (`Matchbook`)
 - >**ACHIEVEMENT:** Squawkin' Hawkins
   >- TALK TO Felix
-- USE `Bottle` on fountain (`Bottle of Water`)
+- >**ACHIEVEMENT:** Bottled It (7/???)
+  >- USE `Bottle` on fountain (`Bottle of Water`)
 
 #### 6.14.3. Captain's Club
 
@@ -746,6 +753,9 @@
 
 #### 6.14.4. Captain's Club
 
+- **NOTE:**
+  - **ACHIEVEMENT:** Bottled It (x/???)
+  - There must be another water source in this part, so do not use the switch in order to empty the bottle in the window box and refill the bottle
 - >**ACHIEVEMENT:** Kleptomaniac
   >- USE switch (`Fort Key`)
 
@@ -859,7 +869,8 @@
 
 #### 6.25.1. Cave
 
-- USE `Bottle` (or `Bottle of Water`) on algae (water) (`Bottle of Algae Water`)
+- >**ACHIEVEMENT:** Bottled It (8/???)
+  >- USE `Bottle` (or `Bottle of Water`) on algae (water) (`Bottle of Algae Water`)
 - USE skeleton
   - PICK UP Xavier's key (`Explorer's Key`)
 - DO NOT MOVE, so it gets darker
@@ -923,7 +934,7 @@
 
 ### 6.31. Gorgon's Well
 
-- >**ACHIEVEMENT:** Bottled It (4/???)
+- >**ACHIEVEMENT:** Bottled It (9/???)
   >- USE `Bottle` on swamp (`Bottle of Water`)
 - USE `Crank` on pulley
 - USE crank
@@ -974,7 +985,7 @@
 
 ##### 7.1.1.1. Cave
 
-- >**ACHIEVEMENT:** Bottled It (5/???)
+- >**ACHIEVEMENT:** Bottled It (10/???)
   >- USE `Bottle` (or `Bottle of Water`) on spirit water (`Bottle of Spirit Water`)
 - PICK UP handwheel (`Handwheel`)
 - USE `Handwheel` on crane
