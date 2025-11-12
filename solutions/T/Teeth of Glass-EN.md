@@ -27,7 +27,7 @@ Download the free game from [Homepage](https://beyondbooleans.itch.io/teeth-of-g
 - WALK right
 - USE large leatherbound book
   - **NOTE:**
-    1. Recognise your roots
+    1. Recognize your roots
     2. Bath in blue waters
     3. Allow the essence of life
 - USE photograph
