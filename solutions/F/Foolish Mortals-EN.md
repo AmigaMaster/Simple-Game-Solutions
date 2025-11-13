@@ -2,17 +2,16 @@
 
 | Version | Date       | Author
 |:-------:|------------|-------------------------------------------
+|   1.03  | 14.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add Ghost Stories & The Devil's Rock Devil achievements
 |   1.02  | 13.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add Captain Crumb achievement
 |   1.01  | 11.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add several achievements
 |   1.0   | 09.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 ## 1. Achievements Notes
 
-- Do not use any hints during the game in order to get Master of Mystery
+- Do not use any hints during the game in order to get Master of Mystery achievement
 
 - Missing achievements:
-  - The Devil's Rock Devil: Go on a crime spree
-  - Ghost Stories: Show off your magazine
   - Bottled It: Fill the bottle from every source
 
 - Unclear achievements:
@@ -28,7 +27,7 @@
 ### 3.1. Deadnettle
 
 - TALK TO fisherman (Ned Kipps) (`Chum`)
-- >**ACHIEVEMENT:** Ghost Stories (1/???)
+- >**ACHIEVEMENT:** Ghost Stories (1/23)
   >- USE `Magazine` on Ned
   - EXIT dock (at the bottom screen)
 - EXIT east
@@ -46,7 +45,7 @@
 
 - USE tin boat
 - TALK TO little girl (Mallory Whisp)
-- >**ACHIEVEMENT:** Ghost Stories (2/???)
+- >**ACHIEVEMENT:** Ghost Stories (2/23)
   >- USE `Magazine` on Mallory
 - USE `Shrunken Head` on Mallory (`Tin Boat`)
 - USE `Chum` on `Tin Boat` (`Chum Boat`)
@@ -96,6 +95,8 @@
 
 #### 3.7.1. Riverboat
 
+- >**ACHIEVEMENT:** Ghost Stories (3/23)
+  >- USE `Magazine` on Witch Doctor
 - >**ACHIEVEMENT:** Part One
   >- USE `Pocket Watch` on Witch Doctor
 
@@ -120,7 +121,7 @@
 - PICK UP scissors (`Scissors`)
 - PICK UP twine (`Twine`)
 - TALK TO Evelyn
-- >**ACHIEVEMENT:** Ghost Stories (3/???)
+- >**ACHIEVEMENT:** Ghost Stories (4/23)
   >- USE `Magazine` on Evelyn
 - USE `Penny` on Evelyn (`Newspaper`)
 - USE `Scissors` on `Newspaper` (`Photograph`)
@@ -133,7 +134,7 @@
 #### 4.3.1. Courtyard
 
 - TALK TO Maitre d' (Felix Greer)
-- >**ACHIEVEMENT:** Ghost Stories (4/???)
+- >**ACHIEVEMENT:** Ghost Stories (5/23)
   >- USE `Magazine` on Felix
 - EXIT northeast
 
@@ -144,7 +145,7 @@
 #### 4.4.1. Jeweler's
 
 - TALK TO Jasper
-- >**ACHIEVEMENT:** Ghost Stories (5/???)
+- >**ACHIEVEMENT:** Ghost Stories (6/23)
   >- USE `Magazine` on Jasper
 - >**ACHIEVEMENT:** Captain Crumb
   >- LOOK AT carving
@@ -213,8 +214,9 @@
 - USE `Twine` on table
 - PICK UP tin can (`Coffin Nails`)
 - USE `Coffin Nails` on `Gris-Gris`
+- LOOK AT coffin
 - TALK TO Edgar
-- >**ACHIEVEMENT:** Ghost Stories (6/???)
+- >**ACHIEVEMENT:** Ghost Stories (7/23)
   >- USE `Magazine` on Edgar
 - EXIT to the map and walk to the southern ?
 
@@ -241,6 +243,7 @@
 
 #### 4.13.1. Newspaper Office
 
+- TALK TO Evelyn
 - USE `White Feathers` on canister (`Black Feathers`)
 - USE `Black Feathers` on `Gris-Gris`
 
@@ -250,6 +253,8 @@
 
 - >**ACHIEVEMENT:** Housewarming
   >- USE `Magazine` on Witch Doctor
+- >**ACHIEVEMENT:** Ghost Stories (8/23)
+  >- USE `Magazine` on Loa
 - USE `Magazine` on `Gris-Gris`
 - >**ACHIEVEMENT:** Bottled It (3/???)
   >- USE `Bottle` on tide (`Bottle of Spirit Water`)
@@ -273,7 +278,7 @@
 #### 5.1.2. Ballroom
 
 - TALK TO Elaine
-- >**ACHIEVEMENT:** Ghost Stories (6/???)
+- >**ACHIEVEMENT:** Ghost Stories (9/23)
   >- USE `Magazine` on Elaine
 - EXIT east
 
@@ -285,10 +290,10 @@
 
 - PICK UP vase (`Chamber Pot`)
 - TALK TO Vicar (Father Foskett)
-- >**ACHIEVEMENT:** Ghost Stories (7/???)
+- >**ACHIEVEMENT:** Ghost Stories (10/23)
   >- USE `Magazine` on Father Foskett
 - TALK TO Colonel (Colonel Bloom)
-- >**ACHIEVEMENT:** Ghost Stories (8/???)
+- >**ACHIEVEMENT:** Ghost Stories (11/23)
   >- USE `Magazine` on Colonel Bloom
 - ENTER (left) door
 
@@ -307,7 +312,7 @@
   - USE powder on pistols
   - USE shot on pistols
   - USE ramrod on pistols
-- >**ACHIEVEMENT:** Ghost Stories (9/???)
+- >**ACHIEVEMENT:** Ghost Stories (12/23)
   >- USE `Magazine` on Tallulah
 - USE `Auger` on carving
 - USE table
@@ -331,7 +336,7 @@
 - LOOK AT machine
 - >**ACHIEVEMENT:** The Actor's Fate
   >- TALK TO pianist (Ezra Hughes)
-- >**ACHIEVEMENT:** Ghost Stories (10/???)
+- >**ACHIEVEMENT:** Ghost Stories (13/23)
   >- USE `Magazine` on Ezra
 - PICK UP record (on the machine) (`Record`)
 - EXIT east
@@ -342,7 +347,7 @@
 - WALK upstairs
 - USE `Knife` on vine
 - TALK TO gardener (Rupert Riddle)
-- >**ACHIEVEMENT:** Ghost Stories (11/???)
+- >**ACHIEVEMENT:** Ghost Stories (14/23)
   >- USE `Magazine` on Rupert
 
 - EXIT southwest
@@ -387,6 +392,8 @@
 - USE trunk
 - >**ACHIEVEMENT:** The Scientist's Fate
   >- TALK TO Sebastian Pock
+- >**ACHIEVEMENT:** Ghost Stories (15/23)
+  >- USE `Magazine` on Sebastian
 - TALK TO Sebastian Pock (again)
   - "You seek, I'll hide."
 - **QUICK:** USE `Twine` on Sebastian
@@ -404,6 +411,8 @@
 
 - >**ACHIEVEMENT:** The Explorer's Fate
   >- TALK TO Cordelia Lockitt
+- >**ACHIEVEMENT:** Ghost Stories (16/23)
+  >- USE `Magazine` on Cordelia
 - ENTER Bride's bedroom
 
 ##### 5.1.17.1. Bride's Bedroom
@@ -452,6 +461,7 @@
 
 - USE `Bottle of Rum` on thorns
 - USE `Knife` on rose (`Rose`)
+- TALK TO Rupert
 
 #### 5.1.24. Cellar
 
@@ -464,6 +474,7 @@
 - PICK UP ear trumpet (`Ear trumpet`)
 - USE `Candles` on pot (in the fireplace)
 - USE `Record` on pot
+- TALK To Father Foskett
 - ENTER (left) door
 
 #### 5.1.26. Staircase Labyrinth
@@ -526,15 +537,17 @@
 
 #### 6.1.1. Grand Hall
 
+- >**ACHIEVEMENT:** Ghost Stories (17/23)
+  >- USE `Magazine` on Abigail
 - TALK TO Abigail
 
 #### 6.1.2. Braid's Corridor
 
 ##### 6.1.2.1. Parlor
 
-- TALK TO Madame Planchette (`Necklace`)
-- >**ACHIEVEMENT:** Ghost Stories (11/???)
+- >**ACHIEVEMENT:** Ghost Stories (18/23)
   >- USE `Magazine` on Madame Planchette
+- TALK TO Madame Planchette (`Necklace`)
 
 ##### 6.1.2.2. Bride's Bedroom
 
@@ -561,9 +574,9 @@
   >- USE `Bottle` on pond (`Bottle of Water`)
 - ENTER tea party (on the right side)
   - PICK UP teaspoon (`Teaspoon`)
-  - >**ACHIEVEMENT:** Ghost Stories (12/???)
+  - >**ACHIEVEMENT:** Ghost Stories (19/23)
     >- USE `Magazine` on Shrunken Ted
-    >- **NOTE:** If you forgot to show the magazine to Mallory earlier:
+    >- **NOTE:** If you forgot to show the magazine to Mallory earlier, you now have a second chance
     >   - USE `Magazine` on Mallory
 
 #### 6.2.1. Carriage House
@@ -581,6 +594,7 @@
 - LOOK AT jalopy
   - USE `Scissors` on stitch
   - PICK UP spring (`Spring`)
+- LOOK AT jalopy
   - USE `Pliers` on bolt (`Horn`)
 
 #### 6.4.1. Cemetery
@@ -591,10 +605,12 @@
 
 - PICK UP flask (`Flask`)
 - TALK TO beachcomber (Muffy Carlisle)
-- >**ACHIEVEMENT:** Ghost Stories (13/???)
+- >**ACHIEVEMENT:** Ghost Stories (20/23)
   >- USE `Magazine` on Muffy
 
 ### 6.6. Deadnettle
+
+- TALK TO Ned
 
 #### 6.6.1. Newspaper Office
 
@@ -605,24 +621,24 @@
 #### 6.6.2. The Captain's Club
 
 - TALK TO lighthouse keeper (Captain Moot)
-- >**ACHIEVEMENT:** Ghost Stories (14/???)
+- >**ACHIEVEMENT:** Ghost Stories (21/23)
   >- USE `Magazine` on Captain Moot
 - PICK UP trophy
 - TALK TO billiard player (Captain Pemperley)
-- >**ACHIEVEMENT:** Ghost Stories (15/???)
+- >**ACHIEVEMENT:** Ghost Stories (22/23)
   >- USE `Magazine` on Captain Pemperley
 
 ### 6.7. Deadnettle
 
 - TALK TO ferryman (Crabb Macready) (`Flag`)
-- >**ACHIEVEMENT:** Ghost Stories (16/???)
+- >**ACHIEVEMENT:** Ghost Stories (23/23)
   >- USE `Magazine` on Crabb
 
 #### 6.7.1. Jewelry
 
 - TALK TO Jasper
 - USE `Brooch` on Jasper
-- USE `Chamber Pot` on Granny's home (`Goldfish Bowl`, `Tissue Paper`)
+- USE `Chamber Pot` on Granny's bowl (`Goldfish Bowl`, `Tissue Paper`)
 
 ### 6.8. Baxter's Mill
 
@@ -630,54 +646,69 @@
 
 - USE `Flag` on grease (`Greasy Rag`)
 
-### 6.9. Bellemore Manor
+### 6.9. Deadnettle
 
-#### 6.9.1. Braid's Corridor
+#### 6.9.1. Newspaper Office
 
-##### 6.9.1.1. Parlor
+- >**ACHIEVEMENT:** The Devil's Rock Devil (1/10)
+  >- ENTER the office and listen to Evelyn
+
+### 6.10. Bellemore Manor
+
+#### 6.10.1. Braid's Corridor
+
+##### 6.10.1.1. Parlor
 
 - USE `Teacup` on Madame Planchette
 - USE `Goldfish Bowl` on Madame Planchette
 - USE `Printing Sheet` on Madame Planchette
+- TALK TO Madame Planchette
 
-#### 6.9.2. Brother's Corridor
+#### 6.10.2. Brother's Corridor
 
-##### 6.9.2.1. Xavier's Room
+##### 6.10.2.1. Xavier's Room
 
 - PICK UP map (`Treasure Map`)
 
-##### 6.9.2.2. Cecil's Room
+##### 6.10.2.2. Cecil's Room
 
 - USE lab coat (`Engraved Coin`)
 
-##### 6.9.2.3. Yardley's Room
+##### 6.10.2.3. Yardley's Room
 
 - USE tanks
 - USE `Flask` on dry ice machine (`Flask of Dry Ice`)
 
-#### 6.9.3. Brother's Corridor
+#### 6.10.3. Brother's Corridor
 
 - TALK TO Sebastian
   - "Paddleball with your eyes closed"
 - USE `Scissors` on Sebastian
 
-#### 6.9.4. Landing
+#### 6.10.4. Landing
 
 - PICK UP rubber ball (`Rubber Ball`)
 
-### 6.10. St. Juniper's Church
+### 6.11. Deadnettle
 
-#### 6.10.1. Church
+#### 6.11.1. Newspaper Office
+
+- TALK TO Evelyn
+  - "How's the Devil's Rock Devil investigation going?"
+
+### 6.12. St. Juniper's Church
+
+#### 6.12.1. Church
 
 - USE `Flask of Dry Ice` on collection plate
 
-### 6.11. St. Juniper's Church
+### 6.13. St. Juniper's Church
 
 - LOOK AT generator
   - USE `Fuse` on socket
   - USE dial
 
-#### 6.11.1. Church
+#### 6.13.1. Church
 
 - USE bell rope
 - USE stained glass window
@@ -685,25 +716,25 @@
   - PICK UP book (`Bible`)
 - EXIT church
 
-### 6.12. St. Juniper's Church
+### 6.14. St. Juniper's Church
 
 - ENTER jalopy
   - PICK UP crank (`Crank`)
 
-#### 6.12.1. Cemetery
+#### 6.14.1. Cemetery
 
 - LOOK AT crypt
 - TALK TO Edgar
 
-### 6.13. Bellemore Manor
+### 6.15. Bellemore Manor
 
-#### 6.13.1. Ballroom
+#### 6.15.1. Ballroom
 
 - >**ACHIEVEMENT:** Barely Afloat (1/2)
   >- TALK TO Elaine
   >   - Ask about Captain Bloom
 
-#### 6.13.2. Trophy Room
+#### 6.15.2. Trophy Room
 
 - >**ACHIEVEMENT:** Hymns & Hiccups
   >- TALK TO Father Foskett
@@ -711,33 +742,36 @@
   >   - Ask about crypt
 - USE `Bible` on Father Foskett (`Crucifix`)
 
-#### 6.13.3. Brother's Corridor
+#### 6.15.3. Brother's Corridor
 
-##### 6.13.3.1. Yardley's Room
+##### 6.15.3.1. Yardley's Room
 
 - USE tanks
 - USE `Flask` on dry ice machine (`Flask of Dry Ice`)
 
-### 6.14. Deadnettle
+### 6.16. Deadnettle
 
-#### 6.14.1. Jewelers
+#### 6.16.1. Newspaper Office
+
+- >**ACHIEVEMENT:** The Devil's Rock Devil (2/10)
+  >- ENTER the office and listen to Evelyn
+
+#### 6.16.2. Jewelers
 
 - USE `Engraved Coin` on Jeweler's microscope
   - USE left dial **2 times**
   - USE right dial **2 times**
 
-#### 6.14.2. Courtyard
+#### 6.16.3. Courtyard
 
 - PICK UP matchbooks (`Matchbook`)
 - >**ACHIEVEMENT:** Squawkin' Hawkins
   >- TALK TO Felix
-- >**ACHIEVEMENT:** Bottled It (7/???)
-  >- USE `Bottle` on fountain (`Bottle of Water`)
 
-#### 6.14.3. Captain's Club
+#### 6.16.4. Captain's Club
 
 - >**ACHIEVEMENT:** Barely Afloat (2/2)
-  >- TALK TO Captain Bloom
+  >- TALK TO Captain Moot
   >   - Talk about Elaine
 - USE `Rubber Ball` on billiard table
 - TALK TO Captain Pemperley
@@ -745,30 +779,56 @@
 - PICK UP trophy (`Billiards Trophy`)
 - ENTER balcony
 
-##### 6.14.3.1. Balcony
+##### 6.16.4.1. Balcony
 
 - USE `Flask of Dry Ice` on window box
 - USE `Bottle of Water` on window box
+  - **NOTE:** Do not use the switch in den Captain's Club - we need to fill the bottle at the fountain in order to get the Bottled It achievement and then refill the flask with dry ice.
 - EXIT balcony
 
-#### 6.14.4. Captain's Club
+#### 6.16.5. Courtyard
 
-- **NOTE:**
-  - **ACHIEVEMENT:** Bottled It (x/???)
-  - There must be another water source in this part, so do not use the switch in order to empty the bottle in the window box and refill the bottle
+- >**ACHIEVEMENT:** Bottled It (7/???)
+  >- USE `Bottle` on fountain (`Bottle of Water`)
+- TALK TO Felix
+
+### 6.17. Bellemore Manor
+
+#### 6.17.1. Brother's Corridor
+
+##### 6.17.1.1. Yardley's Room
+
+- USE tanks
+- USE `Flask` on dry ice machine (`Flask of Dry Ice`)
+
+#### 6.17.2. Captain's Club
+
+- TALK TO Captain Moot
+- TALK TO Captin Pemperley
+
+##### 6.17.2.1. Balcony
+
+- USE `Flask of Dry Ice` on window box
+- USE `Bottle of Water` on window box
+
+#### 6.17.3. Captain's Club
+
 - >**ACHIEVEMENT:** Kleptomaniac
   >- USE switch (`Fort Key`)
+  >- **NOTE:** If you have the `Gunpowder` in your inventory, you get this achievement here, if you do not have it in your inventory, travel to the Fort in order to get the achievement.
 
-### 6.15. Fort De La Mort
+### 6.18. Fort De La Mort
 
 - ENTER fort
 
-#### 6.15.1. Fort
+#### 6.18.1. Fort
 
+- **NOTE:** If you do not have the gunpowder:
+  - PICK UP gunpowder (`Gunpowder`) and you get the achievement Kleptomaniac
 - USE `Fort Key` on lock
 - EXIT upstairs
 
-##### 6.15.1.1. Ramparts
+##### 6.18.1.1. Ramparts
 
 - USE switch
 - USE wheel **2 times** (so the light beam directs to the St. Juniper Church)
@@ -777,9 +837,16 @@
 - PICK UP ramrod
   - USE cannon
 
-### 6.16. St. Juniper's Church
+### 6.19. Deadnettle
 
-#### 6.16.1. Church
+#### 6.19.1. Newspaper Office
+
+- >**ACHIEVEMENT:** The Devil's Rock Devil (3/10)
+  >- ENTER the office and listen to Evelyn
+
+### 6.20. St. Juniper's Church
+
+#### 6.20.1. Church
 
 - USE stained glass window
   - USE `Crucifix` on indentation
@@ -793,81 +860,102 @@
     - The four greenish tiles must touch themselves in the inner part of the pattern
 - ENTER passageway
 
-##### 6.16.1.1. Tunnel
+##### 6.20.1.1. Tunnel
 
 - EXIT east
 
-##### 6.16.1.2. Crypt
+##### 6.20.1.2. Crypt
 
 - EXIT northwest through the passageway and immediately enter the crypt again
 - USE `Shovel` on brick wall
 - LOOK AT hole
   - PICK UP Yardley's key (`Actor's Key`)
 
-#### 6.16.2. Cemetery
+#### 6.20.2. Cemetery
 
-##### 6.16.2.1. Coffin
+##### 6.20.2.1. Coffin
 
 - USE `Screw Jack` on coffin
 - >**ACHIEVEMENT:** The Actor's Key
   >- TALK TO gravedigger
 
-### 6.17. Deadnettle
+### 6.21. Deadnettle
+
+#### 6.21.1. Newspaper Office
+
+- >**ACHIEVEMENT:** The Devil's Rock Devil (4/10)
+  >- ENTER the office and listen to Evelyn
+
+### 6.22. Deadnettle
 
 - USE `Treasure Map` on Crabb
 - LOOK AT puppet theater
   - USE `Horn` at red puppet
   - USE `Tissue Paper` on `Comb` (`Kazoo`)
   - USE `Kazoo` on green puppet
+- TALK TO Crabb
 - USE `Treasure Map` on Crabb
 
-### 6.18. Causeway Beach
+#### 6.22.1. Newspaper Office
+
+- >**ACHIEVEMENT:** The Devil's Rock Devil (5/10)
+  >- ENTER the office and listen to Evelyn
+
+### 6.23. Causeway Beach
 
 - USE `Treasure Map` on Muffy (`Check`)
 
-### 6.19. Deadnettle
+### 6.24. Deadnettle
 
 - USE `Check` on Crabb (`Flag`)
 
-### 6.20. Fort De La Mort
+### 6.25. Crossbone Cove
 
-#### 6.20.1. Fort
+- LOOK AT rock pile
+- TALK TO Muffy (`Gemstones`)
+- LOOK AT rockfall
+- TALK TO Crabb
 
-##### 6.20.1.1. Ramparts
+### 6.26. Fort De La Mort
+
+#### 6.26.1. Fort
+
+##### 6.26.1.1. Ramparts
 
 - USE wheel **2 times** (so the light beam lightens Crossbone Cove)
 
-### 6.21. Crossbone Cove
+### 6.27. Deadnettle
 
-- LOOK AT Rockfall
-- TALK TO Muffy (`Gemstones`)
-- TALK TO Crabb
-
-### 6.22. Deadnettle
-
-#### 6.22.1. Jeweler
+#### 6.27.1. Jeweler
 
 - USE `Gemstones` on Jasper
-- LOOK AT cabinet (the one under the cash register) (`Fossil`)
+- LOOK AT cabinet (the one below the cash register) (`Fossil`)
 
-### 6.23. Crossbone Cove
+### 6.28. Crossbone Cove
 
-- USE `Fossil` on Muffy
 - USE `Brooch` on cairn
+- USE `Fossil` on Muffy
 
-### 6.24. Fort De La Mort
+### 6.29. Fort De La Mort
 
-#### 6.24.1. Fort
+#### 6.29.1. Fort
 
-##### 6.24.1.1. Ramparts
+##### 6.29.1.1. Ramparts
 
 - USE `Matchbook` on cannon
 
-### 6.25. Crossbone Cove
+### 6.30. Deadnettle
+
+#### 6.30.1. Newspaper Office
+
+- >**ACHIEVEMENT:** The Devil's Rock Devil (6/10)
+  >- ENTER the office and listen to Evelyn
+
+### 6.31. Crossbone Cove
 
 - ENTER cave
 
-#### 6.25.1. Cave
+#### 6.31.1. Cave
 
 - >**ACHIEVEMENT:** Bottled It (8/???)
   >- USE `Bottle` (or `Bottle of Water`) on algae (water) (`Bottle of Algae Water`)
@@ -878,33 +966,42 @@
 - >**ACHIEVEMENT:** The Explorer's Key
   >- USE `Bottle of Algae Water` on whirlpool/lights
 
-### 6.26. Bellemore Manor
+### 6.32. Deadnettle
 
-#### 6.26.1. Conservatory
+#### 6.32.1. Newspaper Office
 
+- >**ACHIEVEMENT:** The Devil's Rock Devil (7/10)
+  >- ENTER the office and listen to Evelyn
+
+### 6.33. Bellemore Manor
+
+#### 6.33.1. Conservatory
+
+- TALK TO Rupert
 - USE `Engraved Coin` on statue
 - USE `Greasy Rag` on automaton
 - USE `Engraved Coin` on statue
 - PICK UP paper (`Death Certificate`)
 
-### 6.27. Deadnettle
+### 6.34. Deadnettle
 
-#### 6.27.1. Newspaper Office
+#### 6.34.1. Newspaper Office
 
 - USE `Death Certificate` on Evelyn
 - TALK TO Evelyn
 
-### 6.28. Deadnettle
+### 6.35. Deadnettle
 
+- TALK TO Ned
 - USE `Bellows` on fish
 
-#### 6.28.1. Newspaper Office
+#### 6.35.1. Newspaper Office
 
 - USE `Death Certificate` on filing cabinets (`Clipping`)
 
-### 6.29. St. Juniper's Church
+### 6.36. St. Juniper's Church
 
-#### 6.29.1. Cemetery
+#### 6.36.1. Cemetery
 
 - USE `Clipping` on graves
 - USE `Shovel` on Eleonore Hine's grave
@@ -913,26 +1010,40 @@
   - LOOK AT engraving
   - PICK UP lens (`Lens`)
 
-### 6.30. Bellemore Manor
+### 6.37. Deadnettle
 
-#### 6.30.1. Cupola
+#### 6.37.1. Newspaper Office
+
+- >**ACHIEVEMENT:** The Devil's Rock Devil (8/10)
+  >- ENTER the office and listen to Evelyn
+
+### 6.38. Bellemore Manor
+
+#### 6.38.1. Cupola
 
 - USE `Lens` on telescope
   - LOOK AT mermaid weathervane
 - EXIT west
 
-#### 6.30.2. Backside Balcony
+#### 6.38.2. Backside Balcony
 
 - USE `Firework` on drainpipe
 - USE `Matchbook` on firework
 
-#### 6.30.3. Cupola
+#### 6.38.3. Cupola
 
 - USE `Lens` on telescope
   - LOOK AT mermaid weathervane
-- EXIT manor and make your way to the ? on the map
 
-### 6.31. Gorgon's Well
+### 6.39. Deadnettle
+
+#### 6.39.1. Newspaper Office
+
+- >**ACHIEVEMENT:** The Devil's Rock Devil (9/10)
+  >- ENTER the office and listen to Evelyn
+- EXIT and make your way to the ? on the map
+
+### 6.40. Gorgon's Well
 
 - >**ACHIEVEMENT:** Bottled It (9/???)
   >- USE `Bottle` on swamp (`Bottle of Water`)
@@ -940,7 +1051,7 @@
 - USE crank
 - USE rope
 
-#### 6.31.1. Well
+#### 6.40.1. Well
 
 - PICK UP spindle (`Broken Spindle`, `Rope`)
 - USE `Greasy Rag` on `Broken Spindle` (`Torch`)
@@ -948,27 +1059,34 @@
 - USE button
 - ENTER cave
 
-#### 6.31.2. Tunnel
+#### 6.40.2. Tunnel
 
 - EXIT upstairs
 
-#### 6.31.3. Laboratory
+#### 6.40.3. Laboratory
 
 - USE obstruction
 - LOOK AT skeleton
   - PICK UP Cecil's key (`Scientist's Key`)
 
-### 6.32. Baxter's Mill
+### 6.41. Baxter's Mill
 
-#### 6.32.1. Mill
+#### 6.41.1. Mill
 
 - USE `Hand Restraints` on buzzsaw
 - >**ACHIEVEMENT:** The Scientist's Key
   >- USE `Scissors` on foot restraints
 
-### 6.33. Bellemore Manor
+### 6.42. Deadnettle
 
-#### 6.33.1. Grand Hall
+#### 6.42.1. Newspaper Office
+
+- >**ACHIEVEMENT:** The Devil's Rock Devil (10/10)
+  >- ENTER the office and listen to Evelyn
+
+### 6.43. Bellemore Manor
+
+#### 6.43.1. Grand Hall
 
 - LOOK AT fireplace
   - USE `Actor's Key` on first keyhole
@@ -1015,7 +1133,7 @@
 - USE `Flag` on chalkboard (`Chalky Rag`)
 - USE `Chalky Rag` on `Gris-Gris`
 
-#### 7.1.4. West Corridor
+#### 7.1.4. Bride's Corridor
 
 ##### 7.1.4.1. Bride's Bedroom
 
