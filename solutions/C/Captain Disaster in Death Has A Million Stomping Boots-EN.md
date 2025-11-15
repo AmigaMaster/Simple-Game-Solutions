@@ -34,7 +34,7 @@ Buy the game from [itch.io](https://captaind.itch.io/captain-disaster-in-death-h
 ### 5.1. Main Marketplace
 
 - WAIT until the red alien leaves his stall, then
-  - TAKE flash grenade (`Flash grenade`)
+  - TAKE flash grenades (`Flash grenade`)
 - >**EASTER EGGS:**
   >- The grey pixel left of the ammo box - its really just one pixel in size
 - ENTER 1st Acturan Bank (`300 galactic credits`)
@@ -442,4 +442,3 @@ Buy the game from [itch.io](https://captaind.itch.io/captain-disaster-in-death-h
   - LOOK AT `Instructions card`
   - USE the following settings: P:7, B:5, S:5, G:3
   - USE small red button
-
