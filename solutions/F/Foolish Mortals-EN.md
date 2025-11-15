@@ -257,7 +257,7 @@
   >- USE `Magazine` on Loa
 - USE `Magazine` on `Gris-Gris`
 - >**ACHIEVEMENT:** Bottled It (3/???)
-  >- USE `Bottle` on tide (`Bottle of Spirit Water`)
+  >- USE `Bottle` on spirit pool (`Bottle of Spirit Water`)
 - >**ACHIEVEMENT:** Part Two
   >- USE `Bottle of Spirit Water` on flames
 
@@ -465,8 +465,7 @@
 
 #### 5.1.24. Cellar
 
-- >**ACHIEVEMENT:** Bottled It (5/???)
-  >- USE `Bottle` on barrel (`Bottle of Rum`)
+- USE `Bottle` on barrel (`Bottle of Rum`)
 
 #### 5.1.25. Trophy Room
 
@@ -570,7 +569,7 @@
 
 ### 6.2. Bellemore Manor
 
-- >**ACHIEVEMENT:** Bottled It (6/???)
+- >**ACHIEVEMENT:** Bottled It (5/???)
   >- USE `Bottle` on pond (`Bottle of Water`)
 - ENTER tea party (on the right side)
   - PICK UP teaspoon (`Teaspoon`)
@@ -788,7 +787,7 @@
 
 #### 6.16.5. Courtyard
 
-- >**ACHIEVEMENT:** Bottled It (7/???)
+- >**ACHIEVEMENT:** Bottled It (6/???)
   >- USE `Bottle` on fountain (`Bottle of Water`)
 - TALK TO Felix
 
@@ -957,7 +956,7 @@
 
 #### 6.31.1. Cave
 
-- >**ACHIEVEMENT:** Bottled It (8/???)
+- >**ACHIEVEMENT:** Bottled It (7/???)
   >- USE `Bottle` (or `Bottle of Water`) on algae (water) (`Bottle of Algae Water`)
 - USE skeleton
   - PICK UP Xavier's key (`Explorer's Key`)
@@ -1045,7 +1044,7 @@
 
 ### 6.40. Gorgon's Well
 
-- >**ACHIEVEMENT:** Bottled It (9/???)
+- >**ACHIEVEMENT:** Bottled It (8/???)
   >- USE `Bottle` on swamp (`Bottle of Water`)
 - USE `Crank` on pulley
 - USE crank
@@ -1097,13 +1096,13 @@
 
 ## 7. Part IV: The Coffin Stone
 
-### 7.1. Baxter's Mill
+### 7.1. Bellemore Manor
 
 #### 7.1.1. Grand Hall
 
 ##### 7.1.1.1. Cave
 
-- >**ACHIEVEMENT:** Bottled It (10/???)
+- >**ACHIEVEMENT:** Bottled It (9/???)
   >- USE `Bottle` (or `Bottle of Water`) on spirit water (`Bottle of Spirit Water`)
 - PICK UP handwheel (`Handwheel`)
 - USE `Handwheel` on crane
