@@ -2,6 +2,7 @@
 
 | Version | Date       | Author
 |:-------:|------------|-------------------------------------------
+|   1.05  | 16.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Add alternative solution to waltz puzzle, add missing observation at the cake action (both thanks to SIDKidd)
 |   1.04  | 15.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add Bottled It achievement
 |   1.03  | 14.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add Ghost Stories & The Devil's Rock Devil achievements
 |   1.02  | 13.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add Captain Crumb achievement
@@ -381,7 +382,17 @@
       6. Joyette
       7. Vienes
       8. Carousel
-- USE `Knife` on cake (`Slice of Cake`)
+    - Another possible solution for this puzzle:
+      1. Promenade
+      2. Vienes
+      3. Joyette
+      4. Progres
+      5. Carousel
+      6. Joyette
+      7. Vienes
+      8. Carousel
+- WAIT until Elaine touches her temples, then
+  - USE `Knife` on cake (`Slice of Cake`)
 
 #### 5.1.14. Landing
 
