@@ -159,7 +159,7 @@ Buy the game from [itch.io](https://captaind.itch.io/captain-disaster-in-death-h
     The Stinging Smell of Sulphur overwhelms me
     I lose consciousness… all is lost.
     ```
-  - Stop the colored wheels in teh following porder (clockwise beginning with the loest left wheel):
+  - Stop the colored wheels at the following colors (clockwise beginning with the bottom left wheel):
   - `GREEN YELLOW PURPLE RED YELLOW BLACK`
   - Location "LOST"
 
@@ -229,7 +229,7 @@ Buy the game from [itch.io](https://captaind.itch.io/captain-disaster-in-death-h
 - LOOK AT `Quadcorder`
   - SELECT magnet mode (`Quadcorder (magnet mode)`)
 - USE `Quadcorder (magnet mode)` with copious dust (`Iron ring`)
-- USE `Gold spraycan` with `Irocn ring` (`Gold ring`)
+- USE `Gold spraycan` with `Iron ring` (`Gold ring`)
 - USE coolant pipe (until you hand is numb)
 - LOOK AT `Handscan printout`
   - USE `X-shaped stapler` with thumb
@@ -354,6 +354,7 @@ Buy the game from [itch.io](https://captaind.itch.io/captain-disaster-in-death-h
 
 ## 34. Rocky Area
 
+- USE `Dutainium powder` with rocks
 - USE `Biscotti` with dutainium
 - USE `Java Lava` with dutainium with biscotti
 - ENTER cave
@@ -371,8 +372,8 @@ Buy the game from [itch.io](https://captaind.itch.io/captain-disaster-in-death-h
   - "...interesting."
   - "...terrible."
   - "...Stains"
-  - "Not at all." (`Rose-color4ed glasses`)
-- USE `Rose-color4ed glasses` with `Ancioscope` (`Ancioscope (Repaired)`)
+  - "Not at all." (`Rose-colored glasses`)
+- USE `Rose-colored glasses` with `Ancioscope` (`Ancioscope (Repaired)`)
 
 ## 36. Rocky Area
 
@@ -390,7 +391,8 @@ Buy the game from [itch.io](https://captaind.itch.io/captain-disaster-in-death-h
 
 ## 37. Complex
 
-- WAIT until the commander orders his Java Lava, then:
+- STAND next to the door panel
+- WAIT until the commander orders his Java Lava, then WAIT a few seconds and:
   - USE `Invisibility device`
   - **NOTE:** The door code `7176` (This code changes every playthrough)
 - USE door
@@ -419,7 +421,7 @@ Buy the game from [itch.io](https://captaind.itch.io/captain-disaster-in-death-h
     - TAKE three components (`Component`, `Component`, `Component`)
     - USE `Metal coffee stirrer` with the top left and lower middle component (`Component`, `Component`)
     - LOOK AT (rectangle shaped) `Component` (you can pry it apart)
-    - USE `Metal coffee stirrer` with  (rectangle shaped)`Component` (`Component piece`, `Component piece`)
+    - USE `Metal coffee stirrer` with (rectangle shaped)`Component` (`Component piece`, `Component piece`)
     - PUT all component pieces back at places where they do not belong to
 
 ### 37.4. Megapede
