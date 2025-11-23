@@ -2,6 +2,7 @@
 
 | Version | Date       | Author
 |:-------:|------------|-------------------------------------------
+|   1.06  | 23.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add requirement for Speedrun achievement (thank you to Lugum)
 |   1.05  | 16.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Add alternative solution to waltz puzzle, add missing observation at the cake action (both thanks to SIDKidd)
 |   1.04  | 15.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add Bottled It achievement
 |   1.03  | 14.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add Ghost Stories & The Devil's Rock Devil achievements
@@ -13,10 +14,11 @@
 
 - For the GOG version you need to install the update from 15th November (shown an V1.01 in GOG launcher and V1.1 in the game settings menu) to fix a bug with the `Bottled It` achievement
 
-- Do not use any hints during the game in order to get Master of Mystery achievement
+- Do not use any hints during the game in order to get the Master of Mystery achievement
 
-- Unclear achievements:
-  - Speedrun: Complete the game... quickly (The exact time is currently unknown)
+- >**ACHIEVEMENT:** Speedrun
+  >- Complete the game... quickly (in less than 5 hours)
+  >- **NOTE:** You can skip most (not all) dialogues with the `.` key or the left mouse button button and can try to skip some scenes with the ESC key. Save often as the game sometimes softlocks when you skip scenes and crashes at some scenes.
 
 ## 2. Causeway Beach
 
@@ -542,6 +544,9 @@
 
 ## 6. Part III: The Skeleton Keys
 
+- >**ACHIEVEMENT:** Kleptomaniac (1/2)
+  >- **NOTE:** Avoid combining inventory items unless absolutely necessary, and collect as many items as possible to fill your inventory. This will earn you the Kleptomaniac achievement later in this chapter.
+
 ### 6.1. Bellemore Manor
 
 #### 6.1.1. Grand Hall
@@ -810,7 +815,7 @@
 
 #### 6.16.3. Captain's Club
 
-- >**ACHIEVEMENT:** Kleptomaniac
+- >**ACHIEVEMENT:** Kleptomaniac (2/2)
   >- USE switch (`Fort Key`)
   >- **NOTE:** If you have the `Gunpowder` in your inventory, you get this achievement here, if you do not have it in your inventory, travel to the Fort in order to get the achievement.
 
@@ -1134,3 +1139,5 @@
   >- Complete the game... quickly
 - >**ACHIEVEMENT:** One Last Drink
   >- Watch the credits
+- >**ACHIEVEMENT:** Speedrun
+  >- Complete the game... quickly (if you completed the game in less than 5 hours)
