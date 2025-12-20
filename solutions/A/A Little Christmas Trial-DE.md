@@ -87,3 +87,8 @@ Download des Spiels auf offiziellen [Homepage](https://fireorange.itch.io/a-litt
 - "Lass uns Eroberungspläne schmieden" (andere Optionen führen zu nichts)
 - "Ich möchte dich etwas fragen, Va Parotti!"
 
+## 4. Video Walkthrough
+
+Little Christmas Trial Lösung (Deutsch) (PC, Windows) - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/5_dc9HeMXY8/0.jpg)](https://www.youtube.com/watch?v=5_dc9HeMXY8)
