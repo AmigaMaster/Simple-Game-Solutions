@@ -1,8 +1,9 @@
-# Captain Disaster in The Dark Side of the Moon - Walkthrough
+# Captain Disaster in: The Dark Side of the Moon - Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 06.12.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author
+|:-------:|------------|-------------------------------------------
+|   1.01  | 09.12.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add missing achievements, minor fixes
+|   1.0   | 06.12.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 Download the free game from [itch.io](https://captaind.itch.io/captain-disaster-in-the-dark-side-of-the-moon)
 
@@ -15,14 +16,10 @@ Download the free game from [itch.io](https://captaind.itch.io/captain-disaster-
 - >**ACHIEVEMENT:** Speedster
   >- Complete the game in under half an hour.
 
-### 1.1. Missing Achievements
-
-- >**ACHIEVEMENT:** Chatty Man (Currently Missing)
-  >- Go through every dialogue option with Floyd.
-
 ## 2. Western Moon
 
 - LOOK AT Camper Van
+  - PICK UP Duct Tape (`Duct Tape`)
 - >**ACHIEVEMENT:** Explorer (1/4)
   >- Walk northwest
   >- Visit all four corners of the moon.
@@ -59,6 +56,7 @@ Download the free game from [itch.io](https://captaind.itch.io/captain-disaster-
 - **ATTENTION:** SAVE YOUR GAME HERE
 - WALK exactly north our south of the ice cube and WALK onto the ice
   - You slide over the ice and push the ice cube from the ice
+- USE `Hand Phaser` on ice cube (`Small Flying Saucer`)
 - LOOK AT Hotel
 - >**ACHIEVEMENT:** Explorer (2/4)
   >- Walk southwest
@@ -105,7 +103,6 @@ Download the free game from [itch.io](https://captaind.itch.io/captain-disaster-
 
 - WALK west
 - USE Camper van
-  - PICK UP duct tape (`Duct Tape`)
   - USE `Enhancement Lens` with `Hand Phaser` (`Enhanced Phaser`)
   - USE `Enhanced Phaser` with toolbox (`Hand Phaser`)
   - USE toolbox (`Crowbar`, `Jump Leads`)
@@ -127,21 +124,15 @@ Download the free game from [itch.io](https://captaind.itch.io/captain-disaster-
   - PICK UP dull crystal (`Dull Crystal`)
   - USE `Jump Leads` with `Dull Crystal` (`Crystal & Jump Leads`)
   - EXIT
-
-## 7. Western Moon
-
-- WALK south to the ice
-  - Try to push the ice cube from the center
-- USE `Hand Phaser` on ice cube (`Small Flying Saucer`)
 - USE `Crystal & Jump Leads` with `Small Flying Saucer` (`Active Flying Saucer`)
 - USE `Active Flying Saucer` on `Duct Tape` (`Taped Flying Saucer`)
 - USE `Taped Flying Saucer` with `Bjork Hand` (`Flying Hand`)
 - WALK southwest
 - USE Hotel Entrance
 
-### 7.1. Hotel
+### 6.1. Hotel
 
-#### 7.1.1. Ground Floor
+#### 6.1.1. Ground Floor
 
 - LOOK AT lift
 - LOOK AT **all** four paintings
@@ -176,28 +167,27 @@ Download the free game from [itch.io](https://captaind.itch.io/captain-disaster-
 - USE `Flying Hand` with buttons
 - USE lift door
 
-#### 7.1.2. First Floor
+#### 6.1.2. First Floor
 
 - PICK UP megaphone (`Megaphone`)
 - USE `Hand Phaser` with Beachball Alien (`Cube`)
 - LOOK AT painting
 
-#### 7.1.3. Second Floor
+#### 6.1.3. Second Floor
 
 - PICK UP camera
-- OPEN (right) wardrobe door
-- OPEN (left) wardrobe door
-- LOOK AT (right wardrobe) (`Gordian Knot`)
+- OPEN wardrobe **2 times**
+- LOOK AT wardrobe (`Gordian Knot`)
 - LOOK AT painting
 
-#### 7.1.4. Third Floor
+#### 6.1.4. Third Floor
 
 - PICK UP widget (`Widget`)
 - USE wardrobe **2 times**
 - LOOK AT wardrobe
 - LOOK AT painting
 
-#### 7.1.5. Fourth Floor
+#### 6.1.5. Fourth Floor
 
 - USE computer
 - >**ACHIEVEMENT:** Snooper
@@ -208,12 +198,12 @@ Download the free game from [itch.io](https://captaind.itch.io/captain-disaster-
 - >**ACHIEVEMENT:** Hoarder
   >- Have 14 items in your inventory at one time.
 
-#### 7.1.6. Ground Floor
+#### 6.1.6. Ground Floor
 
 - USE `Widget` with Transmat
 - USE Transmat
 
-#### 7.1.7. Top Floor
+#### 6.1.7. Top Floor
 
 - >**ACHIEVEMENT:** Art Lover
   >- LOOK AT **all** four paintings
@@ -222,15 +212,15 @@ Download the free game from [itch.io](https://captaind.itch.io/captain-disaster-
 - LOOK AT (third) drawer (`Suspenders`)
 - USE Transmat
 
-#### 7.1.8. Ground Floor
+#### 6.1.8. Ground Floor
 
 - EXIT west
 
-## 8. Western Moon
+## 7. Western Moon
 
 - USE train
 
-## 9. Eastern Moon
+## 8. Eastern Moon
 
 - >**ACHIEVEMENT:** False Hope
   >- USE `Pudding` with `Roddenberry` (`Sundae`)
@@ -253,17 +243,21 @@ Download the free game from [itch.io](https://captaind.itch.io/captain-disaster-
   >- Disappear into three holes in the ground.
 - USE train
 
-## 10. Western Moon
+## 9. Western Moon
 
-### 10.1. Hotel
+### 9.1. Hotel
 
-#### 10.1.1. Ground Floor
+#### 9.1.1. Ground Floor
 
 - >**ACHIEVEMENT:** Chatty Man (2/2)
   >- Go through every dialogue option with Floyd.
   >- TALK TO Floyd
   >   - Defeated
   >   - Diamond is working again
+- EXIT hotel
+
+## 10. Western Moon
+
 - USE Stargate Controls
   - USE `Crystal` with Open Panel
   - LOOK AT `Stargate Manual`
@@ -283,7 +277,7 @@ Download the free game from [itch.io](https://captaind.itch.io/captain-disaster-
       - 8  <-> 9
       - 12 <-> 16
       - 13 <-> 15
-      - The final code differs for each playthrough
+      - The final code changes in each playthrough
       - USE activation button
 - >**ACHIEVEMENT:** Finisher
   >- Complete the game
