@@ -79,7 +79,7 @@ Download the free games from the AGS homepage:
 ##### 1.1.8.1. Break Room
 
 - USE Settee (`Pound coin`) (2/23)
-- USE pound coin with Piggy bank (1/24)
+- USE `Pound coin` with Piggy bank (1/24)
 - USE tea caddy (`Tea bag`) (1/25)
 - USE Sugar bowl
 - USE June
@@ -100,7 +100,7 @@ Download the free games from the AGS homepage:
 ##### 1.1.10.1. Evidence Room
 
 - USE Evidence bags (`Evidence bags`) (1/31)
-- TALK TO Mridge (`milk`) (1/32)
+- USE fridge (`Milk`) (1/32)
 - USE `Milk` with `Mug with tea and sugar` (`Finished brew`) (1/33)
 - EXIT west **2 times**
 
@@ -858,4 +858,3 @@ Download the free games from the AGS homepage:
 ### 4.27. Press Conference
 
 - SHOOT at the loudspeaker (4/101)
-
