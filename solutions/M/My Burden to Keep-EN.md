@@ -1,10 +1,10 @@
 # My Burden to Keep - Walkthrough
 
-| Version | Datum      | Autor                                     |
+| Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 23.06.2023 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the free game at [Itch.io](https://perpetualdiversion.itch.io/mbtk)
+Download the free game at [Itch.io](https://perpetualdiversion.itch.io/mbtk)
 
 ## 1. Basement
 

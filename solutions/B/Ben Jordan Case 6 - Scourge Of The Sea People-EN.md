@@ -1,10 +1,10 @@
 # Ben Jordan Case 6 - Scourge Of The Sea People - Walkthrough
 
-| Version | Datum      | Autor                                     |
+| Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 26.12.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the free game from [Archive.org](hhttps://archive.org/details/Ben_Jordan_Case_6_Scourge_of_the_Sea_People)
+Download the free game from [Archive.org](hhttps://archive.org/details/Ben_Jordan_Case_6_Scourge_of_the_Sea_People)
 
 ## 1. Airport
 

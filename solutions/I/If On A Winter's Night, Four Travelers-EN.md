@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 01.12.2021 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the game at the [Itch.io Website](https://laurahunt.itch.io/if-on-a-winters-night-four-travelers)
+Download the free game from [Itch.io](https://laurahunt.itch.io/if-on-a-winters-night-four-travelers)
 
 ## 1. Act I - The Silent Room
 

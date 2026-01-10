@@ -1,10 +1,10 @@
 # Ben Jordan Case 2 - The Lost Galleon Of The Salton Sea Deluxe Edition - Walkthrough
 
-| Version | Datum      | Autor                                     |
+| Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 22.12.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the free game from [Archive.org](https://archive.org/details/ben-jordan-paranormal-investigator-case-2-deluxe)
+Download the free game from [Archive.org](https://archive.org/details/ben-jordan-paranormal-investigator-case-2-deluxe)
 
 ## 1. Annie's House
 

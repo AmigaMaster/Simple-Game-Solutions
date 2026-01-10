@@ -1,10 +1,10 @@
 # Ben Jordan Case 5 - Land of the Rising Dead - Walkthrough
 
-| Version | Datum      | Autor                                     |
+| Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 25.12.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the free game from [Archive.org](https://archive.org/details/Ben_Jordan_Case_5_Land_of_the_Rising_Dead)
+Download the free game from [Archive.org](https://archive.org/details/Ben_Jordan_Case_5_Land_of_the_Rising_Dead)
 
 ## 1. Hotel
 

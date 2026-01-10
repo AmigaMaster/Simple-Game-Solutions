@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 02.10.2024 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Play the game directly in your browser from the [Homepage](https://rootbound.itch.io/mort-manageably-ok-response-team)
+Play the game directly in your browser from the [Homepage](https://rootbound.itch.io/mort-manageably-ok-response-team) or download the game from [archive.org](https://archive.org/details/mort-manageably.-ok.-response.-team.-7z)
 
 ## 1. Rooftop
 

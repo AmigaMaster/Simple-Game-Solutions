@@ -1,10 +1,10 @@
 # Ben Jordan Case 1 - In Search Of The Skunk Ape Deluxe Edition - Walkthrough
 
-| Version | Datum      | Autor                                     |
+| Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 21.12.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the free game from [Archive.org](https://archive.org/details/Ben_Jordan_Case_1_In_Search_of_the_SkunkApe)
+Download the free game from [Archive.org](https://archive.org/details/Ben_Jordan_Case_1_In_Search_of_the_SkunkApe)
 
 ## 1. Murder Scene
 

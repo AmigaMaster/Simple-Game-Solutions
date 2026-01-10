@@ -1,10 +1,10 @@
 # Ben Jordan Case 3 - The Sorceress of Smailholm - Walkthrough
 
-| Version | Datum      | Autor                                     |
+| Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 23.12.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the free game from [Archive.org](https://archive.org/details/Ben_Jordan_Case_3_The_Sorceress_of_Smailholm)
+Download the free game from [Archive.org](https://archive.org/details/Ben_Jordan_Case_3_The_Sorceress_of_Smailholm)
 
 ## 1. Smailholm
 
