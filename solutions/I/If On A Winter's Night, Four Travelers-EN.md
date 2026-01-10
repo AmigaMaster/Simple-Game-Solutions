@@ -325,3 +325,11 @@ Download the free game from [Itch.io](https://laurahunt.itch.io/if-on-a-winters-
 
 - TAKE invitation (from the bed)
 - USE mirror
+
+--------------------------------------------------------------------------------
+
+## 13. Video Walkthrough
+
+If On A Winter's Night, Four Travelers - Walkthrough (English) (PC, Win) [60 FPS] - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/Q_QBqH5wSQ8/0.jpg)](https://www.youtube.com/watch?v=Q_QBqH5wSQ8)
