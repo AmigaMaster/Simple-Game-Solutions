@@ -1,8 +1,9 @@
 # Broken Windows - All Chapters - Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 28.02.2025 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author
+|:-------:|------------|-------------------------------------------
+|  1.01   | 20.01.2026 | Amiga Master (AmigaMaster-NG@t-online.de), thanks to cireja from the AGS forum: Add missing point in chapter 2
+|  1.0    | 28.02.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 Download the free games from the AGS homepage:
 
@@ -293,6 +294,7 @@ Download the free games from the AGS homepage:
 
 #### 2.2.1. Oxfam Charity Shop
 
+- USE ladder (behind the shop manager)
 - TALK TO Shop manager
 - USE `Christie Omnibus` with Shop manager
 - EXIT south
@@ -323,7 +325,9 @@ Download the free games from the AGS homepage:
 
 - USE Freezer
 - USE Sandwiches (2/28)
-- TALK TO Shopkeeper (`Ice pop`) (3/31)
+- LOOK AT DVD's **6 times**
+- TALK TO shopkeeper
+- USE Freezer (`Ice pop`) (3/31)
 
 ### 2.7. Shopping Parade 129-131
 
@@ -346,97 +350,99 @@ Download the free games from the AGS homepage:
 
 - LOOK AT Stain (1/38)
 - USE ? (Above the Stain) (`Scrap of Material`) (1/39)
+- USE stain
 - TALK TO Man (`Cotton bud`) (2/41)
 - USE `Cotton bud` with Stain (`Blood sample`) (2/43)
 - EXIT west
 
 ### 2.11. Shopping Parade 123-125
 
+- USE window (1/44)
 - USE Ladder to climb down
 
 ### 2.12. Working Men's Club
 
 #### 2.12.1. Back Alley
 
-- USE Footprint (2/45)
-- USE ? (under the right bin) (2/47)
-- LOOK AT Graffito (2/49)
+- USE Footprint (2/46)
+- USE ? (under the right bin) (2/48)
+- LOOK AT Graffito (2/50)
 - EXIT west
 
 ### 2.13. Working Men's Club
 
 - USE Bins (at the right side of the screen)
-- USE `Blood sample` with Gary Lukic (1/50)
-- USE `Scrap of material` with Gary Lukic (1/51)
-- USE `Match book` with Gary Lukic (1/52)
+- USE `Blood sample` with Gary Lukic (1/51)
+- USE `Scrap of material` with Gary Lukic (1/52)
+- USE `Match book` with Gary Lukic (1/53)
 - EXIT west
 
 ### 2.14. Kirk Road
 
-- LOOK AT Plaque (1/53)
-- USE Door (1/54)
-- USE Bin (`Bundle`) (2/56)
-- USE `Bundle` (`Newspaper`) (1/57)
-- LOOK AT `Newspaper` (1/58)
-- USE `Newspaper` with Geoff (1/59)
+- LOOK AT Plaque (1/54)
+- USE Door (1/55)
+- USE Bin (`Bundle`) (2/57)
+- LOOK AT `Bundle` (`Newspaper`) (1/58)
+- LOOK AT `Newspaper` (1/59)
+- USE `Newspaper` with Geoff (1/60)
 - USE Gate
-- LOOK AT Crack (2/61)
-- USE Door (`Gate key`) (2/63)
-- USE `Gate key` with Gate (2/65)
+- LOOK AT Crack (2/62)
+- USE Door (`Gate key`) (2/64)
+- USE `Gate key` with Gate (2/66)
 
 #### 2.14.1. Church Back Hall
 
-- TAKE Cigarettes (from the floor) (`Cigarettes`) (1/66)
-- USE (left) door
+- TAKE Cigarettes (from the floor) (`Cigarettes`) (1/67)
+- USE (lower left) door
 - TALK TO Cavalier
-- USE (left) door (Jack kicks it)
-- USE `Cigarettes` with hole (in the left wall right above the door) (2/68)
-- USE Tableau (`Trunk key`) (2/70)
-- USE (right back) door (`Jacket`) (2/72)
+- USE (lower left) door (Jack kicks it)
+- USE `Cigarettes` with hole (in the left wall right above the door) (2/69)
+- USE Tableau (`Trunk key`) (2/71)
+- USE (right back) door (`Jacket`) (2/73)
 - LOOK AT `Jacket`
-- TAKE Card (from the floor between Cavalier and the Soldiers) (`Slip`) (1/73)
-- USE `Trunk key` with Chest (`Sword`) (2/75)
-- LOOK AT `Sword` (2/77)
-- USE `Sword` with Gary Lukic (2/79)
+- TAKE Card (from the floor between Cavalier and the Soldiers) (`Slip`) (1/74)
+- USE `Trunk key` with Chest (`Sword`) (2/76)
+- LOOK AT `Sword` (2/78)
+- USE `Sword` with Gary Lukic (2/80)
 
 ### 2.15. Smithfield Yard, Flats 1 & 3
 
-- TAKE Gravel (`Gravel`) (1/80)
-- USE door (to flat 1) (1/81)
-- USE `Gravel` with (upper, yellow lid) Window (2/83)
+- TAKE Gravel (`Gravel`) (1/81)
+- USE door (to flat 1) (1/82)
+- USE `Gravel` with (upper, yellow lid) Window (2/84)
 - EXIT west
 
 ### 2.16. Smithfield Yard, Flats 2 & 4
 
-- TAKE Milk bottles (`Milk bottles`) (1/84)
+- TAKE Milk bottles (`Milk bottles`) (1/85)
 - EXIT east
 
 ### 2.17. Smithfield Yard, Flats 1 & 3
 
-- USE `Milk bottles` with door (to flat 1) (3/87)
+- USE `Milk bottles` with door (to flat 1) (3/88)
 
 #### 2.17.1. Living Room
 
-- USE Goldfish bowl (`Trident`) (1/88)
+- USE Goldfish bowl (`Trident`) (1/89)
 - USE (left) door
 - EXIT east
 
 #### 2.17.2. Kitchen
 
-- USE Fridge (`Cheese and Pineapple`) (1/89)
-- USE `Cheese and Pineapple` with Jack (`Cocktail stick`) (1/90)
-- USE Bin (`Takeaway menus`) (1/91)
-- LOOK AT `Takeaway menus` (`Paperclip`) (2/93)
-- USE Knife block (`Skewer`) (1/94)
+- USE Fridge (`Cheese and Pineapple`) (1/90)
+- USE `Cheese and Pineapple` with Jack (`Cocktail stick`) (1/91)
+- USE Bin (`Takeaway menus`) (1/92)
+- LOOK AT `Takeaway menus` (`Paperclip`) (2/94)
+- USE Knife block (`Skewer`) (1/95)
 - EXIT west
 
 #### 2.17.3. Living Room
 
-- USE `Paperclip` with Geoff (3/97)
+- USE `Paperclip` with Geoff (3/98)
 
 #### 2.17.4. Bed Room
 
-- USE Jeans (3/100)
+- USE Jeans (3/101)
 
 --------------------------------------------------------------------------------
 
