@@ -351,3 +351,11 @@ Get the game at the [Adventure Game Studio Website](https://www.adventuregamestu
 #### 4.5.4. Control Room
 
 - USE `Shill Harm Crystal` with Anubis
+
+--------------------------------------------------------------------------------
+
+## 5. Video Walkthrough
+
+Stargate Adventure - Walkthrough (English) (PC, Windows) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/R6Qzek_kXDw/0.jpg)](https://www.youtube.com/watch?v=R6Qzek_kXDw)
