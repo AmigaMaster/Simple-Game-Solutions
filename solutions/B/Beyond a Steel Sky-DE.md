@@ -818,3 +818,11 @@
   >- Complete the game
 - >**ACHIEVEMENT:** Brain The Size Of A Planet
   >- Complete the game without using any hints
+
+--------------------------------------------------------------------------------
+
+## 24. Video Walkthrough
+
+Beyond a Steel Sky Lösung (Deutsch) (PC, Win) [60 FPS] - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/lGvGZDyAgSE/0.jpg)](https://www.youtube.com/watch?v=lGvGZDyAgSE)
