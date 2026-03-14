@@ -155,3 +155,11 @@ Get the game for free at the [Adventure Game Studio Website](https://www.adventu
 - USE `CommKey` on trap door
 - USE machine (the red button)
 - USE `small hammer` on jamming machine
+
+--------------------------------------------------------------------------------
+
+## 21. Video Walkthrough
+
+Adventure: The Inside Job - Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/tE4MAHoovKU/0.jpg)](https://www.youtube.com/watch?v=tE4MAHoovKU)
