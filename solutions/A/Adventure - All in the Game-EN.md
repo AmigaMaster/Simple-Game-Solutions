@@ -249,3 +249,10 @@ Now there are two possible ways to continue. The easier one is to avoid talking 
 - USE panel
   - Enter code `442`
 
+--------------------------------------------------------------------------------
+
+## 35. Video Walkthrough
+
+Adventure: All in the Game Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/ZVUbo1hoIqc/0.jpg)](https://www.youtube.com/watch?v=ZVUbo1hoIqc)
