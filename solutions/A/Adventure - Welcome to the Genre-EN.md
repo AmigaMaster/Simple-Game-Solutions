@@ -368,22 +368,22 @@ Get the game for free at the [game website](http://akril15.com/games/aaitg/aaitg
 
 ## 19. The Mega-Game
 
-### 19.2. Village
+### 19.1. Village
 
 - TALK TO Kyvist
   - "Do you have a recording of 'Symphony in D Minor'?"
 - USE `crank` with Kyvist
 
-### 19.3. Clearing
+### 19.2. Clearing
 
 - USE `pig sculpture` with pile of pixels (`old looking pig sculpture`)
 
-### 19.4. Ruins
+### 19.3. Ruins
 
 - USE `old looking pig sculpture` with woman
 - PICK UP tape recorder (`casette player`)
 
-### 19.5. Village
+### 19.4. Village
 
 - USE `casette player` with gramophone
 - TALK TO Kyvist
@@ -557,3 +557,11 @@ Now there are two possible ways to continue
 - TALK TO Alex
 - USE `casette player` with Dr. Chu
 - SWAP minds with alien
+
+--------------------------------------------------------------------------------
+
+## 30. Video Walkthrough
+
+Adventure: Welcome to the Genre Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/z2z_F8HaT4U/0.jpg)](https://www.youtube.com/watch?v=z2z_F8HaT4U)
