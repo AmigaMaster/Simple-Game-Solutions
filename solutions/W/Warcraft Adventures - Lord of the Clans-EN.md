@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 18.09.2022 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Download the free game at [Itch.io](https://lorenzob.itch.io/clotilde2)
+Download the free game at [archive.org](https://archive.org/details/warcraft-adventures-lord-of-the-clans-remaster-project)
 
 ## 1. C01 Chapter 1 - Escaping the Prison
 
@@ -508,3 +508,11 @@ Download the free game at [Itch.io](https://lorenzob.itch.io/clotilde2)
 - PICK UP ceremonial bowl of blood (`Ceremonial Bowl of Blood`)
 - USE `Ceremonial Bowl of Blood` on `Eternal Damnation Scroll`
 - USE `Eternal Damnation Scroll` on Rend or Maim
+
+--------------------------------------------------------------------------------
+
+## 6. Video Walkthrough
+
+Warcraft Adventures Remaster Project Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/ozDgbAeDtOg/0.jpg)](https://www.youtube.com/watch?v=ozDgbAeDtOg)
