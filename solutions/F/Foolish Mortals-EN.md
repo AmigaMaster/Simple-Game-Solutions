@@ -1136,8 +1136,6 @@
 - >**ACHIEVEMENT:** Master of Mystery
   >- Complete the game without hints
 - >**ACHIEVEMENT:** Speedrun
-  >- Complete the game... quickly
-- >**ACHIEVEMENT:** One Last Drink
-  >- Watch the credits
-- >**ACHIEVEMENT:** Speedrun
   >- Complete the game... quickly (if you completed the game in less than 5 hours)
+- - >**ACHIEVEMENT:** One Last Drink
+  >- Watch the credits
