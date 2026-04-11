@@ -1062,3 +1062,11 @@ Farbe:
   - Es dürfen nur die beiden Ziele ohne Helm geschlagen werden.
   - Nach dem ersten falschen Treffer weiß man, welche Formen man treffen muss und welche nicht
 - Verlasse die Kammer
+
+--------------------------------------------------------------------------------
+
+## 6. Video Walkthrough
+
+Irony Curtain: From Matryoshka with Love Lösung (Deutsch/Englisch) (PC, Win) [60FPS] - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/-T2EIvl8kc8/0.jpg)](https://www.youtube.com/watch?v=-T2EIvl8kc8)
