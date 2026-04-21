@@ -1807,7 +1807,7 @@ Download the free game from [Mediafire](https://www.mediafire.com/download/876mx
 
 - USE `Pieces to a picture` on panel (on the right wall)
   - This is a quite hard picture puzzle
-  - [Picture Puzzle Solution](https://github.com/AmigaMaster/Simple-Game-Solutions/raw/f2b9b020112b920fe89cc1d9e53c210250417093/solutions/T/The%20Treasured%Medallion-Puzzle-Pieces.png)
+    ![Picture Puzzle Solution](https://raw.githubusercontent.com/AmigaMaster/Simple-Game-Solutions/refs/heads/master/solutions/T/The%20Treasured%20Medallion-Puzzle-Pieces.png)
   - RETURN
 - USE scorpion chest (`Necklace`)
 - EXIT south, east
