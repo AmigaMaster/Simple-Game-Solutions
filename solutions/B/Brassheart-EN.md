@@ -2,7 +2,22 @@
 
 | Version | Date       | Author
 |:-------:|------------|-------------------------------------------
+|  1.01   | 18.04.2026 | Thank you to Tmsoft E for pointing out some bugs that apparently haven't been fixed yet
 |  1.0    | 28.06.2025 | Amiga Master (AmigaMaster-NG@t-online.de)
+
+## Known Game breaking Bug
+
+If you didn't get the `Camera` after you talked to the reporter, edit your savegame file. On Windows, open the folder
+
+`C:\Users\*USERNAME*\AppData\LocalLow\Hexy Studio\Brassheart\Saves\`
+
+and make a copy of all files in this folder, then open the broken savegame file with a text editor.
+
+Search for `"inventoryData":` and append `|30:1` at the end of the line, but before the `"` and save the file. Example:
+
+`"inventoryData":"128:1|6:1|27:1|0:1|30:1"`
+
+Thank you to kaiman for his [Steam post](https://steamcommunity.com/app/1072550/discussions/0/603026670105943797/?ctp=3#c689745580010852961).
 
 ## 1. Valkiria
 
@@ -845,10 +860,11 @@
     - Burning the blueprints (If you burnt the blueprints choose `Assistance`, otherwise `Innovation`)
 
 ### 6.5. Valkiria
-
 - TALK TO Valkiria
   - Longda
     - CHOOSE Free / Imprison, depending on your choice
+    - **NOTE:** Possible bug
+      > The exact circumstances are not yet entirely clear but if you cannot progress in the Longda question, even though you gave the correct answer based on your own decision what you did to the solders (Free / Imprison), select the other answer and the game continues.
   - MC
     - CHOOSE Deal (you made a deal with the Countess) / Confront (You told the truth), depending on your choice
   - Suli
