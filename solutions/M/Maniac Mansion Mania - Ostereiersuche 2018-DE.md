@@ -13,14 +13,9 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 
 Die Festivitäten sind Episoden abseits der normalen Hauptreihe, die zu Weihnachten oder Ostern erscheinen und auf die Feiertage Bezug nehmen.
 
-## Geheimer Entwicklermodus
+## 1. Geheimer Entwicklermodus
 
 Im Spielverzeichnis eine Datei mit dem Namen `WEIHNACHTEN` erstellen und das Spiel starten. Jetzt können alle Eier auf einmal gefunden werden.
-
-## 1. Titelbildschirm
-
-- >EASTER EGG:
-  >- Das Ei in der Blüte im gelben großen Ei anklicken
 
 ## 2. Spielablauf
 
