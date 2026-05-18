@@ -15,7 +15,7 @@ Die Festivitäten sind Episoden abseits der normalen Hauptreihe, die zu Weihnach
 ## 1. Titelbildschirm
 
 - >EASTER EGG:
-  >- Das Ei linke neben dem Wort "Mania" anklicken
+  >- Das Ei links neben dem Wort "Mania" anklicken
 
 ## 2. Spielablauf
 
