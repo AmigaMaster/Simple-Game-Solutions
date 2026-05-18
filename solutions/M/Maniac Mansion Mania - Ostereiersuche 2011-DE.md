@@ -19,7 +19,7 @@ Die Festivitäten sind Episoden abseits der normalen Hauptreihe, die zu Weihnach
 
 ## 2. Spielablauf
 
-Ziel ist es, 14 Ostereier aus insgesamt 27 möglichen Verstecken zu finden. Welche Ostereier auffindbar sind, ist bei jedem Spielverlauf unterschiedlich.
+Ziel ist es, 14 Ostereier aus insgesamt 20 möglichen Verstecken zu finden. Welche Ostereier auffindbar sind, ist bei jedem Spielverlauf unterschiedlich.
 
 ### 2.1. Flur Obergeschoss
 
