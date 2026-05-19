@@ -6,7 +6,11 @@
 
 ## 1. Missing Achievements
 
-- 4 secret achievements
+- Polyglot raviolo: Performed the ritual with all possible wordings
+- Better luck next time, Indiana: Failed to get the crowbar
+- Prolific nomenclator: Gave all possible names to the town of [redacted]
+- Who am I, uncle Lee?: Attempted to break the space-time continuum
+- Too many colours: Finished episode 4 in black & white mode
 
 ## 2. Prologue: Will it Cook?
 
@@ -26,8 +30,8 @@
   >- USE `Spare Moustache` on cat
   >- USE cat (`Spare Moustache`)
 - USE `Spare Moustache` on pot
+- USE `Atomic Clock` on pot
 - >**ACHIEVEMENT:** It did not cook
-  >- USE `Atomic Clock` on pot
 
 ## 3. Episode 1: Uncle Lee Strikes Again
 
