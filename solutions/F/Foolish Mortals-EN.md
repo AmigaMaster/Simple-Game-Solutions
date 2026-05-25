@@ -2,6 +2,7 @@
 
 | Version | Date       | Author
 |:-------:|------------|-------------------------------------------
+|   1.07  | 25.05.2026 | Amiga Master (AmigaMaster-NG@t-online.de), fix two character names and updates to Housewarming achievement (Thank you to Tmsoft E for letting me know)
 |   1.06  | 23.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add requirement for Speedrun achievement (thank you to Lugum)
 |   1.05  | 16.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), Add alternative solution to waltz puzzle, add missing observation at the cake action (both thanks to SIDKidd)
 |   1.04  | 15.11.2025 | Amiga Master (AmigaMaster-NG@t-online.de), add Bottled It achievement
@@ -254,11 +255,12 @@
 
 #### 4.14.1. Riverboat
 
-- >**ACHIEVEMENT:** Housewarming
-  >- USE `Magazine` on Witch Doctor
 - >**ACHIEVEMENT:** Ghost Stories (8/23)
   >- USE `Magazine` on Loa
-- USE `Magazine` on `Gris-Gris`
+  >- USE `Magazine` on Witch Doctor
+  >   - **NOTE:** This is your last chance to show the magazine to the Witch Doctor
+- >**ACHIEVEMENT:** Housewarming
+  >- USE `Magazine` on `Gris-Gris`
 - >**ACHIEVEMENT:** Bottled It (3/10)
   >- USE `Bottle` on spirit pool (`Bottle of Spirit Water`)
 - >**ACHIEVEMENT:** Part Two
@@ -738,7 +740,7 @@
 
 - >**ACHIEVEMENT:** Barely Afloat (1/2)
   >- TALK TO Elaine
-  >   - Ask about Captain Bloom
+  >   - Ask about Captain Moot
 
 #### 6.14.2. Trophy Room
 
@@ -1086,7 +1088,7 @@
 
 #### 7.1.3. Grand Hall
 
-- TALK TO Evelyn
+- TALK TO Elaine
 - USE `Wedding Schedule` on Elaine
 - USE `Flag` on chalkboard (`Chalky Rag`)
 - USE `Chalky Rag` on `Gris-Gris`
