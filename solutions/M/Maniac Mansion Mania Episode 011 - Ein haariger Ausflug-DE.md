@@ -1,8 +1,8 @@
-# Maniac Mansion Mania Episode 011: Ein haariger Ausflug Lösung
+# Maniac Mansion Mania Episode 011: Ein haariger Ausflug - Lösung
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
-|  1.0    | 19.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.0   | 19.01.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -123,12 +123,16 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 - BENUTZE `Ballon` mit See (`Wasserbombe`)
 - BENUTZE `Wasserbombe` mit Katapult
 
-## 11. Höhleneingang
+## 11. Lagerplatz
+
+- Verlasse Richtung Osten
+
+## 12. Höhleneingang
 
 - BENUTZE `Spaten` mit Blume (`Blume`)
 - Gehe rechts in die Höhle
 
-### 11.1. Höhle
+### 12.1. Höhle
 
 - BENUTZE `Parfum` mit `Blume` (`Parfumierte Blume`)
 - BENUTZE `Parfumierte Blume` mit Bigfoot
@@ -137,8 +141,12 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
 
 --------------------------------------------------------------------------------
 
-## 12. Video Walkthrough
+## 13. Video Walkthrough
 
-Maniac Mansion Mania Episode 011 - Ein haariger Ausflug Lösung (Deutsch) (PC, Win) - Unkommentiert
+Maniac Mansion Mania Episode 011: Ein haariger Ausflug Lösung (Deutsch) (PC, Win) - Unkommentiert
 
 [![Walkthrough](https://img.youtube.com/vi/9yo9Uafy-b8/0.jpg)](https://www.youtube.com/watch?v=9yo9Uafy-b8)
+
+Maniac Mansion Mania Episode 011: Ein haariger Ausflug (Talkie) Lösung (Deutsch) (PC, Win) - Unkomm.
+
+[![Walkthrough](https://img.youtube.com/vi/ceYL_-DwtYE/0.jpg)](https://www.youtube.com/watch?v=ceYL_-DwtYE)
