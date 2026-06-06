@@ -1,16 +1,13 @@
 # Uncle Lee's Cookbook: Five Recipes for Disaster - Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 14.05.2026 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author
+|:-------:|------------|-------------------------------------------
+|   1.01  | 06.06.2026 | Amiga Master (AmigaMaster-NG@t-online.de), add missing achievements
+|   1.0   | 14.05.2026 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 ## 1. Missing Achievements
 
-- Polyglot raviolo: Performed the ritual with all possible wordings
-- Better luck next time, Indiana: Failed to get the crowbar
 - Prolific nomenclator: Gave all possible names to the town of [redacted]
-- Who am I, uncle Lee?: Attempted to break the space-time continuum
-- Too many colours: Finished episode 4 in black & white mode
 
 ## 2. Prologue: Will it Cook?
 
@@ -111,7 +108,7 @@
 ### 4.3. Living Room
 
 - TALK TO eel
-- USE `Chain` on uncle Lee (`Magnetised Chain`)
+- **ATTENTION:** Do not use the chain on uncle Lee now, you need the normal chain to get an achievement later in the game
 - TALK TO uncle Lee
   - "Do the electric thing again!..."
 - **QUICK:**
@@ -125,39 +122,50 @@
 
 #### 4.4.1. Storage Room
 
+- >**ACHIEVEMENT:** Better luck next time, Indiana
+  >- USE `Chain` on crowbar
+- USE air vent
+
+### 4.5. Upside down Living Room
+
+- USE `Chain` on uncle Lee (`Magnetised Chain`)
+- USE air vent
+
+#### 4.5.1. Storage Room
+
 - USE `Magnetised Chain` on crowbar (`Crowbar`, `Chain`)
 - TALK TO uncle Lee
   - "Do the electric thing again!..."
 - **QUICK:**
   - EXIT west
 
-### 4.5. Upside down Bedroom
+### 4.6. Upside down Bedroom
 
 - USE `Crowbar` on door to the attic
 
-### 4.6. Upside down Attic
+### 4.7. Upside down Attic
 
 - PICK UP pliers (`Pink Filter(TM)`)
 - USE `Pink Filter(TM)`
 - USE (middle) door
 - ENTER trapdoor
 
-### 4.7. Living Room
+### 4.8. Living Room
 
 - TALK TO uncle Lee
   - "Do the electric thing again!..."
 - **QUICK:**
   - EXIT east
 
-### 4.8. Upside down Living Room
+### 4.9. Upside down Living Room
 
 - USE air vent
 
-#### 4.8.1. Storage Room
+#### 4.9.1. Storage Room
 
 - PICK UP pink triangle
 
-### 4.9. Living Room
+### 4.10. Living Room
 
 - OPEN bathroom door
 - >**ACHIEVEMENT:** Good old Freddy
@@ -177,7 +185,7 @@
 - TALK TO uncle Lee?
 - USE `Reality-fixing Device(TM) (broken)` on opening
 
-### 5.3. 's Van
+### 5.3. 90's Van
 
 - TALK TO ?
   - >**ACHIEVEMENT:** Inquisitive mind
@@ -187,7 +195,7 @@
 - USE `Navigator` to travel to any other location, then don't move and return back here
 - PICK UP tape recorder (`Tape Recorder`)
 
-### 5.4. 's Van
+### 5.4. 60's Van
 
 - TALK TO musicians of low moral fiber
   - "I'm looking for something."
@@ -200,23 +208,31 @@
   - "Are you working on some song?" (`Cassette Tape`)
 - USE `Cassette Tape` on glove compartment
 
-### 5.5. 's Van
+### 5.5. 90's Van
 
 - USE glove compartment (`Aged Cassette Tape`)
+
+### 5.6. Present Van
+
+- >**ACHIEVEMENT:** Who am I, uncle Lee?
+  >- USE glove compartment
+
+### 5.7. 90's Van
+
 - USE `Aged Cassette Tape` on collector
 - USE poster
 - PICK UP pick (form the poster) (`Guitar Pick`)
 - WALK TO the left side of the van, then travel to the future
 
-### 5.6. Future Van
+### 5.8. Future Van
 
 - PICK UP coin (`Coin`)
 
-### 5.7. 's Van
+### 5.9. 60's Van
 
 - USE `Guitar Pick` on musicians of low moral fiber (`Magnetic Pickup`)
 
-### 5.8. Future Van
+### 5.10. Future Van
 
 - USE `Magnetic Pickup` on holeegram
 - USE `Coin` on holeegram (`Reality-fixing Device(TM) (hopefully working)`)
@@ -224,7 +240,7 @@
 - TALK TO holeegram
   - "Do you have any idea..."
 
-### 5.9. 's Van
+### 5.11. 90's Van
 
 - USE `Reality-fixing Device(TM) (hopefully working)` on plant
 - >**ACHIEVEMENT:** Lake Fenfef, here we come
@@ -314,11 +330,13 @@
 
 - >**ACHIEVEMENT:** Psychonaut (3/5)
   >- USE `Mind-reading Spell` on trinity
-- TALK TO trinity
-  - "You don't happen to know the name..."
-  - "I hear you have a problem..."
-  - Start a vote
-  - CHOOSE any name
+- **ATTENTION:** SAVE YOUR GAME HERE
+- >**ACHIEVEMENT:** Prolific nomenclator
+  >- TALK TO trinity
+  >   - "You don't happen to know the name..."
+  >   - "I hear you have a problem..."
+  >   - Start a vote
+  >   - CHOOSE all names (keep reloading your saved game after you selected one name)
 - **QUICK:**
   - >**ACHIEVEMENT:** Spellcaster (5/7)
     >- USE `Inversion spell` on trinity
@@ -425,8 +443,11 @@
   - **NOTE:** You get the date and month info from the tombstone on the cemetery and you get the required name, for example aunt Julianne while talking to Brianne and Susanne
   - Select the correct decade, for example "1750-1759" and "1755" for aunt `Julianne`
   - Select the correct month, for example "March" for aunt `Julianne` (`Forged Letter`)
+- >**ACHIEVEMENT:** Too many colours (1/2)
+  >- USE `Noir Spell` (to switch to black and white mode and kee this mode until the end of episode 4)
 - USE `Forged Letter` on Joe
 - >**ACHIEVEMENT:** They're growing on me
+- >**ACHIEVEMENT:** Too many colours (2/2)
 
 ## 7. Episode 5: Triple Trouble
 
@@ -472,6 +493,9 @@
     - SELECT Uncle Lee's Law #3 "Look inside yourself"
 - TALK TO Leeanne
   - "I'll need you to perform the WRATH..."
+- **NOTE:** SAVE YOUR GAME HERE
+  - >**ACHIEVEMENT:** Polgylot Raviolo
+    >- Finish the rest of the game and performe the ritual with all four wordings
 - TALK TO mirror
   - "If you're from the future..."
   - CHOOSE any words
