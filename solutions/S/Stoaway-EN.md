@@ -61,3 +61,11 @@ Get the game for free from [Itch.io](https://georgebroussard.itch.io/stowaway)
 - USE `Captain's access card` with Captain's Equipment Drawer
 - USE Captain's Equipment Drawer (`A Blaster`)
 - USE `A Blaster` with Tentacles **3 times**
+
+---
+
+## 10. Walkthrough Video
+
+Stoaway Walkthrough (English) (PC, Win) [60 FPS] - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/Dt3PtXLf3R4/0.jpg)](https://www.youtube.com/watch?v=dJngK8GJJWk)
