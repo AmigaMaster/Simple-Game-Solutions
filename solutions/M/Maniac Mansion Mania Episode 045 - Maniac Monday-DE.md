@@ -1,4 +1,4 @@
-# Maniac Mansion Mania Episode 045: Razors grosser Auftritt Lösung
+# Maniac Mansion Mania Episode 045: Maniac Monday Lösung
 
 | Version | Datum      | Autor                                     |
 |:-------:|------------|-------------------------------------------|
