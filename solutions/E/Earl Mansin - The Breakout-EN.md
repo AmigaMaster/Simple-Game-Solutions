@@ -4,6 +4,8 @@
 |:-------:|------------|-------------------------------------------
 |   1.0   | 03.05.2026 | Amiga Master (AmigaMaster-NG@t-online.de)
 
+Get the free game from [archive.org](https://archive.org/details/Earl_Mansin)
+
 ## 1. Cell
 
 - LOOK AT clock
