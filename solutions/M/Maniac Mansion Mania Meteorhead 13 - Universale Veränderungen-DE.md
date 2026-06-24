@@ -101,7 +101,7 @@ Meteorhead ist ein Spinoff der Maniac Mansion Mania Reihe, in der Bernard einen 
   >- **SPEICHERN:**
   >- BENUTZE *alle* `Nudeln` mit Kabine  
   >  **HINWEIS:** Es gibt eine vom Spiel zufällig ausgewählte Nudelpackung, die hier eine Cutscene triggert.
-  >- **Spielstand wieder laden!** Sofern wir nicht noch ausreichend Nudelpackungen übrig haben, den Spielstand wieder laden, da wir diese noch nn anderen Orten nutzen können)
+  >- **Spielstand wieder laden!** Sofern wir nicht noch ausreichend Nudelpackungen übrig haben, den Spielstand wieder laden, da wir diese noch an anderen Orten nutzen können)
   >- BENUTZE verschiedene Inventargegenstände mit Kabine
 
 ### 3.2. Schlammbäder
