@@ -378,8 +378,8 @@ Get the game for free at [Itch.io](https://postmodernadventures.itch.io/urban-wi
 
 --------------------------------------------------------------------------------
 
-## 8. Video Walkthrough
+## 21. Video Walkthrough
 
+Urban Witch Story Walkthrough (English) (PC, Win) - No Commentary
 
-
-[![Walkthrough](https://img.youtube.com/vi/2ibZz4BQm7Q/0.jpg)](https://www.youtube.com/watch?v=2ibZz4BQm7Q)
+[![Walkthrough](https://img.youtube.com/vi/AymN7U22akY/0.jpg)](https://www.youtube.com/watch?v=AymN7U22akY)
