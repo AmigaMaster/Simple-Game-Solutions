@@ -132,3 +132,11 @@
 ##### 16.1.3.1. Parlor
 
 - USE `Paw` with Mr. White
+
+--------------------------------------------------------------------------------
+
+## 5. Walkthrough Video
+
+The Third Wish Walkthrough (English) (PC, Windows) [60 FPS] - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/5d9urXVUikw/0.jpg)](https://www.youtube.com/watch?v=5d9urXVUikw)
