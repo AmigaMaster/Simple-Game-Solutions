@@ -621,7 +621,6 @@
 
 - BETRETE Stabstahl
   - REDE MIT Kranführer
-Interact with the Steel bar at the Construction site again to return to the Crane operator and unlock the Final Frontier Achievement.
 - BETRETE bodenloses Loch
 
 ## 4. Kapitel Drei - Das geheime Treffen
