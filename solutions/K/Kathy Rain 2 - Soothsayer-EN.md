@@ -933,3 +933,11 @@
 
 - EXIT east
 - >**ACHIEVEMENT:** A fate serene
+
+--------------------------------------------------------------------------------
+
+## 9. Video Walkthrough
+
+Kathy Rain 2 - Soothsayer Walkthrough (German/English) (PC, Win) [60 FPS] - No Commantary
+
+[![Walkthrough](https://img.youtube.com/vi/1d1SGgXDKJY/0.jpg)](https://www.youtube.com/watch?v=1d1SGgXDKJY)
