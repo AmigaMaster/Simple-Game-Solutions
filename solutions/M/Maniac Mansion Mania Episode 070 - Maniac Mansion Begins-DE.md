@@ -363,12 +363,12 @@ und fristen unser Dasein im
 - GIB `Skalpell` an Schwester Edna
 - GIB `Käse` an Schwester Edna
 - WECHSEL ZU Schwester Edna
-- BENUTZE `Skalpell` mit `verrotteter Braten` (``Bratenscheibe``)
+- BENUTZE `Skalpell` mit `verrotteter Braten` (`Bratenscheibe`)
 - BENUTZE `Skalpell` mit Toastbrot (`Toastbrotscheibe`)
 - BENUTZE `Toastbrotscheibe` mit `Bratenscheibe` (`Toastbrot mit Braten`)
 - BENUTZE `Käse` mit `Toastbrot mit Braten` (`Brot + Käse + Schinken`)
 - ÖFFNE Mikrowelle
-- BENUTZE `Brot + Käse + Schinken` mit Mikrowelle (`Braten-Toast mir Käse`)
+- BENUTZE `Brot + Käse + Schinken` mit Mikrowelle (`Braten-Toast mit Käse`)
 - WECHSEL ZU Dr. Fred
 - Gehe in den
 
@@ -446,7 +446,7 @@ und fristen unser Dasein im
 
 #### 2.8.3. Aufenthaltsraum
 
-- BENUTZE Spieler mit Kassette
+- BENUTZE (Spieler mit) Kassette
 - Gehe in die
 
 ##### 2.8.3.1. Bibliothek
@@ -518,13 +518,13 @@ und fristen unser Dasein im
 
 - BENUTZE `Vase (mit Wasser)` mit Feuer
 - NIMM Schlüssel (`roter Schlüssel`)
-- BENUTZE `roter Schlüssel` mit (rechter) Tür
+- BENUTZE `Schlüssel` mit (rechter) Tür
 - ÖFFNE (rechte) Tür
 - Verlasse Kaminzimmer durch (rechte) Tür
 
 ##### 3.1.3.1. Ted's Zimmer
 
-- BENUTZE Lampe
+- BENUTZE Lampe (oben leicht links von der Mitte)
 - NIMM Schlinge (`Schlinge`)
 - ÖFFNE `Schlinge` (`Seil`)
 - Gehe in
@@ -538,7 +538,6 @@ und fristen unser Dasein im
 
 ### 3.2. Garage
 
-- BENUTZE `Kettensäge (voll)` mit Edsel
 - BENUTZE `gelber Schlüssel` mit Edsel
   - "Zur Ronville High-School"
 
@@ -699,7 +698,7 @@ und fristen unser Dasein im
   - Zahlen merken: `29612` und `3-9-1949`
 - NIMM altes Foto (`ganzes Foto`)
 - SCHAU AN `ganzes Foto`
-  - Merken: `Dann multipliziere mit Zwei`
+  - Merken: `Dann multipliziere mal zwei`
 - Gehe in den
 
 #### 3.5.16. Kraftraum
@@ -735,13 +734,9 @@ und fristen unser Dasein im
 
 #### 3.5.18. Flur Unterer Eingangsbereich
 
-- WECHSEL ZU Weird Ed
+- WECHSEL ZU Dr. Fred
 
-#### 3.5.19. Flur Erste Etage
-
-- Gehe in den
-
-#### 3.5.20. Flur Unterer Eingangsbereich
+#### 3.5.19. Küche
 
 - GIB `Hamster` an Weird Ed
 - GIB `Käfig` an Weird Ed
@@ -767,7 +762,7 @@ und fristen unser Dasein im
 
 ### 3.9. Weg durch den Wald
 
-- Die Anzahl der Steine (inklusive Grabsteine) sowie der Bäume ist zu zählen
+- Die Anzahl der Steine (inklusive Grabsteine) sowie der Bäume sind zu zählen
 - **ACHTUNG:** Die Grabsteine ANSCHAUEN. Es dürfen nur die mitgezählt werden, die VOR dem 06.09.1965 aufgestellt wurden.
 - Ausschlaggebend ist die Position, in der die Schrift auf dem alten Schriftstück steht (links / rechts)
 - Beispiel Lösungsweg:
@@ -802,8 +797,7 @@ und fristen unser Dasein im
 
 ### 3.14. Pool
 
-- Wieder zurück zur
-- WECHSEL ZU Weird Ed
+- WECHSEL ZU Dr. Fred
 
 #### 3.14.1. Flur Unterer Eingangsbereich
 
@@ -824,11 +818,12 @@ und fristen unser Dasein im
 
 - ÖFFNE Pepsiautomat
 - NIMM lebloser Körper
+- BENUTZE `Quarter` mit Pepsiautomat
 - BENUTZE Hebel 2
 
 ## 4. Kapitel 4 - How To Pick Up Girls
 
-#### 4.0.2. Zom-Bi-Mat
+#### 4.0.2. Geheimraum
 
 - Gehe zum
 
@@ -839,7 +834,6 @@ und fristen unser Dasein im
 
 ### 4.1. Vor der Villa
 
-- REDE MIT Purpur Tentakel
 - NIMM Telegramm
 - REDE MIT Purpur Tentakel
   - "Warte auf mich in der Garage!"
@@ -891,15 +885,16 @@ und fristen unser Dasein im
 - BENUTZE `sehr kleiner Schlüssel` mit Schrank
 - ÖFFNE Schrank
 - SCHAU AN Schublade (`alter Lappen`)
-- Gehe nach unten in den
+- Gehe nach unten in das
 
-#### 4.3.3. Flur Unterer Eingangsbereich
+#### 4.3.3. Flur Erste Etage
+
+##### 4.3.3.1. Spielzimmer
 
 - GIB `Kamera` an Weird Ed
 - WECHSEL ZU Weird Ed
-- Gehe in die
 
-##### 4.3.3.1. Gruft
+### 4.4. Gruft
 
 - BENUTZE `Streichhölzer` mit Kerzenhalter
 - SCHAU AN Inschrift
@@ -908,27 +903,33 @@ und fristen unser Dasein im
 - REDE MIT Dad Edison
 - Gehe zurück in den
 
-#### 4.3.4. Flur Unterer Eingangsbereich
+### 4.5. Villa
+
+#### 4.5.1. Flur Unterer Eingangsbereich
 
 - GIB `Streichhölzer` an Dr. Fred
 - WECHSEL ZU Dr. Fred
 - Gehe zur
 
-### 4.4. Garage
+### 4.6. Garage
 
 - BENUTZE `gelber Schlüssel` mit Edsel
   - "Zur Bushaltestelle"
+
+### 4.7. Bushaltestelle
+
 - REDE MIT Purpur Tentakel
-- REDE MIT Sandy
+- REDE MIT Sandy **2 mal**
 - BENUTZE `Laborkittel` mit Mülleimer
 - BENUTZE `alter Lappen` mit (anderem) Mülleimer
 - BENUTZE `Streichhölzer` mit Mülleimer
-- REDE MIT Sandy
-- REDE MIT Purpur Tentakel
-  - "Ich glaube sie hat keine Angst vor mir."
 - REDE MIT Purpur Tentakel
   - "Jetzt kannst du dich anschleichen!"
 - REDE MIT Sandy
+
+### 4.8. Pool
+
+- Nach dem kurzen Gespräch die Escape-Taste drücken
 
 --------------------------------------------------------------------------------
 
