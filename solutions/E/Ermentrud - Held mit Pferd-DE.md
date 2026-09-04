@@ -296,7 +296,7 @@ Download des Spiels auf der [itch.io Seite](https://inutilis.itch.io/ermentrud)
 ### 18.2. Nach Vina
 
 - BENUTZE `Schlüssel zu Vina` mit Schloss
-- BETRETE Tor (`Saft der VIna-Rübe`)
+- BETRETE Tor (`Saft der Vina-Rübe`)
 
 ### 18.3. Weg
 
