@@ -70,3 +70,11 @@ Download the free game from [archive.org](https://archive.org/details/donnie-dar
 - USE `Paperclip` with `Plastic Twig` (`Makeshift Hook`)
 - USE `Makeshift Hook` with `Pair of Pliers` (`Extended Hook`)
 - USE `Extended Hook` with Barricade
+
+-------------------------------------------------------------------------------
+
+## 7. Video Walkthrough
+
+Donnie Darko - The Adventure Game Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/kKeUBTWUP1k/0.jpg)](https://www.youtube.com/watch?v=kKeUBTWUP1k)
