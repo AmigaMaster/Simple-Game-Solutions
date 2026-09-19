@@ -81,3 +81,11 @@ Das kostenlose Spiel kann auf der [itch.io Webseite](https://kaera-art.itch.io/l
 - BENUTZE `Klebriger Pinsel` mit `Sprosse` (`Klebrige Sprosse`)
 - BENUTZE `Klebrige Sprosse` mit `lackiertes Vogelhaus` (`Vogelhaus am Stiel`)
 - BENUTZE `Vogelhaus am Stiel` mit Standfuss
+
+--------------------------------------------------------------------------------
+
+## 8. Video Walkthrough
+
+Lolas Adventure Lösung (Deutsch) (PC, Win) [4k, 60 FPS] - Unkommentiert
+
+[![Walkthrough](https://img.youtube.com/vi/9AjvKbATuro/0.jpg)](https://www.youtube.com/watch?v=9AjvKbATuro)
