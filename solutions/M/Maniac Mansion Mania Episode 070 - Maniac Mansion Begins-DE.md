@@ -4,6 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 01.06.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
 |   1.01  | 02.04.2020 | Amiga Master (AmigaMaster-NG@t-online.de) |
+|   1.02  | 19.09.2026 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -170,7 +171,7 @@ und fristen unser Dasein im
 
 - ÖFFNE Briefkasten
 - NIMM Zeitung (`Zeitung`)
-- BENUTZE `Zeitung`
+- SCHAU AN `Zeitung`
 - Zurück in die Villa in den
 
 #### 2.1.1. Flur Unterer Eingangsbereich
@@ -328,7 +329,7 @@ und fristen unser Dasein im
 
 - NIMM Vogelkäfig (`Käfig`)
 - >**EASTER EGG:**
-  >- SCHAU AN Teleskop
+  >- BENUTZE Teleskop
 - Gehe nach unten in den
 
 #### 2.1.23. Flur Unterer Eingangsbereich
@@ -392,6 +393,7 @@ und fristen unser Dasein im
 
 - SCHAU AN Junge
 - NIMM Junge (`Musikkassette`)
+  - **HINWEIS:** Wenn man diese Aktion verpasst hat, findet sich die Kassette später in der Garage
 - ZIEHE Junge
 - NIMM Münze (`Quarter`)
 - BENUTZE Scheinwerfer
@@ -461,7 +463,7 @@ und fristen unser Dasein im
 
 ##### 2.8.4.1. Bibliothek
 
-- NIMM Toter Ted
+- NIMM Toter Ted (`Schlüssel`)
 
 ## 3. Kapitel 3 - Birth Of The Tentacles
 
@@ -510,7 +512,7 @@ und fristen unser Dasein im
 
 ##### 3.1.2.4. Badezimmer
 
-- BENUTZE Hahn
+- BENUTZE Hahn (an der Dusche)
 - BENUTZE `Vase` mit Wasser (`Vase (mit Wasser)`)
 - Gehe ins
 
@@ -593,6 +595,7 @@ und fristen unser Dasein im
 
 - BENUTZE `gelber Schlüssel` mit Kofferraum
 - NIMM lebloser Körper
+  - **Hinweis:** Wenn man die Kassette nicht am Unfallort gefunden hat, liegt diese jetzt nach dieser Aktion in der Garage auf dem Boden. (`Musikkassette`)
 - Gehe zum
 
 #### 3.5.1. Zom-Bi-Mat
@@ -735,9 +738,6 @@ und fristen unser Dasein im
 #### 3.5.18. Flur Unterer Eingangsbereich
 
 - WECHSEL ZU Dr. Fred
-
-#### 3.5.19. Küche
-
 - GIB `Hamster` an Weird Ed
 - GIB `Käfig` an Weird Ed
 - WECHSEL ZU Weird Ed
@@ -774,7 +774,7 @@ und fristen unser Dasein im
 ### 3.10. Grufteingang
 
 - BENUTZE `Hamster` mit Eisengitter
-- BENUTZE `Käse` mit rechtem Loch (Auge im Felsen)
+- BENUTZE `Käse` mit rechtem Loch (Auge im Felsen ganz oben am Bildschirmrand)
 - BENUTZE `Käfig` mit stabiler Ast
 - BENUTZE `Fliegen auf Klebeband` mit Käfig
 - Verlasse Richtung Osten und kehre direkt wieder zurück (`Fledermaus im Käfig`)
