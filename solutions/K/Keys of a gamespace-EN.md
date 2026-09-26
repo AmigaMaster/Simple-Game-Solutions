@@ -116,3 +116,10 @@ Download the free game from [Itch.io](https://expressivegames.itch.io/keys-of-a-
 - Your decision:
   - "I don't believe..." **OR**
   - "Yes, perhaps..."
+--------------------------------------------------------------------------------
+
+## 14. Video Walkthrough
+
+Keys of a gamespace - Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/lUl9reWrP0k/0.jpg)](https://www.youtube.com/watch?v=lUl9reWrP0k)
