@@ -270,3 +270,11 @@ Download the free game from the [AGS homepage](https://www.adventuregamestudio.c
 ### 10.4. Office
 
 - USE `Gun` with light (above yourself)
+
+--------------------------------------------------------------------------------
+
+## 11. Video Walkthrough
+
+Reactor 09 Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/pOeHOXTlrT4/0.jpg)](https://www.youtube.com/watch?v=pOeHOXTlrT4)
