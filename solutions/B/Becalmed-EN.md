@@ -136,3 +136,11 @@ Download the free game from the [AGS homepage](https://www.adventuregamestudio.c
 - USE `Knife` with holes (`Buckshot`)
 - USE `Buckshot` with `Whistle` (`Working whistle`)
 - USE `Working whistle` with you (10/100)
+
+--------------------------------------------------------------------------------
+
+## 12. Video Walkthrough
+
+Becalmed Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/JjmicIhVARI/0.jpg)](https://www.youtube.com/watch?v=JjmicIhVARI)
