@@ -1,0 +1,26 @@
+# Site Identity & Metadata
+title: "Simple Game Solutions"
+description: "Command-oriented walkthroughs and solutions for video games."
+author: "AmigaMaster"
+
+# Repository & URL Settings (Crucial for GitHub Project Pages)
+url: "https://amigamaster.github.io"
+baseurl: "/Simple-Game-Solutions"
+
+# Build & Theme Settings
+markdown: kramdown
+theme: minima
+
+# Optional: Enable default GitHub Pages plugins for better SEO and feeds
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude source/development files from being built into the final site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - LICENSE
