@@ -9,7 +9,6 @@ baseurl: "/Simple-Game-Solutions"
 
 # Build & Theme Settings
 markdown: kramdown
-theme: minima
 
 # Optional: Enable default GitHub Pages plugins for better SEO and feeds
 plugins:
@@ -22,5 +21,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - README.md
   - LICENSE
