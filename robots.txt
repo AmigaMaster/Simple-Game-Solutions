@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amigamaster.github.io/Simple-Game-Solutions/sitemap.xml
