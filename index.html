@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0"
+        name="viewport">
+  <title>Simple Game Solutions</title><!-- Tailwind CSS with Typography Plugin -->
+
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script><!-- Marked.js for Markdown Rendering -->
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 h-screen flex flex-col overflow-hidden">
+  <!-- Header with toggle buttons for left and right menus -->
+  <header class="bg-gray-800 border-b border-gray-700 px-6 py-3 shadow-md flex justify-between items-center shrink-0">
+    <div class="flex items-center gap-4">
+      <button class="bg-gray-700 hover:bg-gray-600 text-emerald-400 px-3 py-1.5 rounded text-sm font-medium transition-colors flex items-center gap-2 shadow"
+           data-i18n-title="menuToggleTitle"
+           onclick="toggleSidebar()"><span>📁</span> <span data-i18n="menuBtn">Menü</span></button>
+      <h1 class="text-lg font-bold text-emerald-400">🎮 Simple Game Solutions</h1>
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="text-xs text-gray-400 hidden md:inline"
+           data-i18n="subtitle">Automatic Documentation</span> <select class="bg-gray-700 text-emerald-300 text-xs px-2 py-1.5 rounded border border-gray-600 focus:outline-none cursor-pointer"
+           id="langSelect"
+           onchange="changeLanguage(this.value)">
+        <option value="de">
+          🇩🇪 Deutsch
+        </option>
+        <option value="en">
+          🇬🇧 English
+        </option>
+      </select> <button class="bg-gray-700 hover:bg-gray-600 text-emerald-400 px-3 py-1.5 rounded text-sm font-medium transition-colors flex items-center gap-2 shadow"
+           data-i18n-title="tocToggleTitle"
+           onclick="toggleToc()"><span>📑</span> <span data-i18n="tocBtn">Contents</span></button>
+    </div>
+  </header>
+  <main class="flex-1 flex flex-row overflow-hidden p-4 gap-2">
+    <!-- 1. Sidebar: Navigation / Tree Structure (Left) -->
+    <aside class="min-w-[180px] max-w-[600px] bg-gray-800 border border-gray-700 rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-lg"
+           id="sidebar"
+           style="width: 280px;">
+      <div class="mb-3 border-b border-gray-700 pb-2 shrink-0 flex justify-between items-center">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400"
+            data-i18n="directoriesTitle">Directories</h2><button class="text-gray-400 hover:text-white text-xs px-1.5 py-0.5 rounded bg-gray-700/50"
+             data-i18n-title="close"
+             onclick="toggleSidebar()">✕</button>
+      </div><!-- Real-time Filter Input -->
+      <div class="mb-3 shrink-0">
+        <input class="w-full bg-gray-900 text-gray-200 border border-gray-700 rounded px-3 py-1.5 text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
+             data-i18n-placeholder="searchPlaceholder"
+             id="searchInput"
+             oninput="filterTree(this.value)"
+             placeholder="Search..."
+             type="text">
+      </div><!-- Scrollable area for the tree structure -->
+      <div class="space-y-1 text-sm flex-1 overflow-y-auto pr-1"
+           id="tree-container">
+        <p class="text-gray-500 animate-pulse"
+           data-i18n="loadingStructure">Loading structure...</p>
+      </div>
+    </aside><!-- Divider 1 (Left Resizer) -->
+    <div class="w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors flex items-center justify-center group shrink-0"
+         data-i18n-title="resizeWidth"
+         id="resizer-left">
+      <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
+    </div><!-- 2. Content Area: File Viewer (Center) -->
+    <section class="flex-1 bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col h-full overflow-hidden shadow-lg min-w-[300px]">
+      <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2"
+           id="content-viewer">
+        <div class="text-center text-gray-500 py-20">
+          <p class="text-lg"
+             data-i18n="welcomeMessage">Select a category and file on the left to view the solution.</p>
+        </div>
+      </div>
+    </section><!-- Divider 2 (Right Resizer) -->
+    <div class="w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors flex items-center justify-center group shrink-0"
+         data-i18n-title="resizeWidth"
+         id="resizer-right">
+      <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
+    </div><!-- 3. Table of Contents (Right) -->
+    <aside class="min-w-[180px] max-w-[450px] bg-gray-800 border border-gray-700 rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-lg"
+           id="toc-sidebar"
+           style="width: 260px;">
+      <div class="mb-3 border-b border-gray-700 pb-2 shrink-0 flex justify-between items-center">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400"
+            data-i18n="chaptersTitle">Chapters</h2><button class="text-gray-400 hover:text-white text-xs px-1.5 py-0.5 rounded bg-gray-700/50"
+             data-i18n-title="close"
+             onclick="toggleToc()">✕</button>
+      </div><!-- Scrollable area for the TOC -->
+      <div class="space-y-1 text-sm flex-1 overflow-y-auto pr-1"
+           id="toc-container">
+        <p class="text-gray-500 italic"
+           data-i18n="noFileLoaded">No file loaded.</p>
+      </div>
+    </aside>
+  </main><!-- Control Script -->
+  <script>
+        // Translation dictionary
+        const translations = {
+            de: {
+                menuBtn: "Menü",
+                menuToggleTitle: "Verzeichnisse ein-/ausblenden",
+                subtitle: "Automatische Dokumentation",
+                tocBtn: "Inhalt",
+                tocToggleTitle: "Inhaltsverzeichnis ein-/ausblenden",
+                directoriesTitle: "Verzeichnisse",
+                chaptersTitle: "Kapitel",
+                loadingStructure: "Lade Struktur...",
+                welcomeMessage: "Wähle links eine Kategorie und eine Datei aus, um die Lösung anzuzeigen.",
+                noFileLoaded: "Keine Datei geladen.",
+                analyzing: "Analysiere Kapitel...",
+                noHeadings: "Keine Kapitel gefunden.",
+                loadingFile: "Lade Lösung...",
+                fileNotFound: "Datei nicht gefunden",
+                errorLoadingFile: "Fehler beim Laden der Datei:",
+                errorLoadingStruct: "Fehler beim Laden der Struktur.",
+                resizeWidth: "Breite anpassen",
+                searchPlaceholder: "Suchen...",
+                noResults: "Keine Treffer gefunden."
+            },
+            en: {
+                menuBtn: "Menu",
+                menuToggleTitle: "Toggle directories",
+                subtitle: "Automatic Documentation",
+                tocBtn: "Contents",
+                tocToggleTitle: "Toggle table of contents",
+                directoriesTitle: "Directories",
+                chaptersTitle: "Chapters",
+                loadingStructure: "Loading structure...",
+                welcomeMessage: "Select a category and file on the left to view the solution.",
+                noFileLoaded: "No file loaded.",
+                analyzing: "Analyzing chapters...",
+                noHeadings: "No chapters found.",
+                loadingFile: "Loading solution...",
+                fileNotFound: "File not found",
+                errorLoadingFile: "Error loading file:",
+                errorLoadingStruct: "Error loading structure.",
+                resizeWidth: "Adjust width",
+                searchPlaceholder: "Search...",
+                noResults: "No matching files found."
+            }
+        };
+
+        // Detect browser language (default to 'de' if English is not detected)
+        function getBrowserLanguage() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang && browserLang.startsWith('en')) {
+                return 'en';
+            }
+            return 'de';
+        }
+
+        let currentLang = getBrowserLanguage();
+        document.getElementById('langSelect').value = currentLang;
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+            document.querySelectorAll('[data-i18n-title]').forEach(el => {
+                const key = el.getAttribute('data-i18n-title');
+                if (translations[currentLang][key]) {
+                    el.setAttribute('title', translations[currentLang][key]);
+                }
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[currentLang][key]) {
+                    el.setAttribute('placeholder', translations[currentLang][key]);
+                }
+            });
+        }
+
+        function changeLanguage(lang) {
+            setLanguage(lang);
+            // Re-filter if search input has content
+            filterTree(document.getElementById('searchInput').value);
+        }
+
+        let structureData = null;
+
+        async function init() {
+            setLanguage(currentLang);
+            try {
+                const response = await fetch('structure.json');
+                structureData = await response.json();
+                renderTree(structureData, document.getElementById('tree-container'));
+            } catch (error) {
+                console.error('Error loading structure:', error);
+                document.getElementById('tree-container').innerHTML = `<p class="text-red-400">${translations[currentLang].errorLoadingStruct}<\/p>`;
+            }
+        }
+
+        function renderTree(node, container, filterQuery = '') {
+            container.innerHTML = '';
+            const query = filterQuery.trim().toLowerCase();
+
+            // Filter recursive tree data
+            function filterNode(item) {
+                if (item.type === 'file') {
+                    const matches = item.name.toLowerCase().includes(query);
+                    return matches ? { ...item } : null;
+                } else if (item.type === 'directory') {
+                    const dirMatches = item.name.toLowerCase().includes(query);
+                    const matchingChildren = (item.children || [])
+                        .map(child => filterNode(child))
+                        .filter(child => child !== null);
+
+                    if (dirMatches || matchingChildren.length > 0) {
+                        return {
+                            ...item,
+                            children: matchingChildren
+                        };
+                    }
+                }
+                return null;
+            }
+
+            let displayNode = node;
+            if (query !== '') {
+                const filteredChildren = (node.children || [])
+                    .map(child => filterNode(child))
+                    .filter(child => child !== null);
+
+                if (filteredChildren.length === 0) {
+                    container.innerHTML = `<p class="text-gray-500 italic text-xs py-2">${translations[currentLang].noResults}<\/p>`;
+                    return;
+                }
+                displayNode = { ...node, children: filteredChildren };
+            }
+            
+            function buildNode(item, parentEl) {
+                if (item.type === 'directory') {
+                    const details = document.createElement('details');
+                    details.className = 'ml-1 my-1';
+                    // Open automatically if filtering, otherwise keep collapsed
+                    details.open = query !== '';
+
+                    const summary = document.createElement('summary');
+                    summary.className = 'cursor-pointer font-medium text-emerald-300 hover:text-emerald-200 py-1 px-2 rounded hover:bg-gray-700/50 select-none break-words';
+                    summary.textContent = `📁 ${item.name}`;
+                    details.appendChild(summary);
+
+                    const childrenContainer = document.createElement('div');
+                    childrenContainer.className = 'pl-3 border-l border-gray-700 ml-2 space-y-1 mt-1';
+                    
+                    item.children = item.children || [];
+                    item.children.forEach(child => buildNode(child, childrenContainer));
+                    details.appendChild(childrenContainer);
+                    parentEl.appendChild(details);
+                } else if (item.type === 'file') {
+                    const fileLink = document.createElement('button');
+                    fileLink.className = 'block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-sm break-words';
+                    fileLink.textContent = `📄 ${item.name}`;
+                    fileLink.onclick = () => loadFile(item.path);
+                    parentEl.appendChild(fileLink);
+                }
+            }
+
+            if (displayNode.children) {
+                displayNode.children.forEach(child => buildNode(child, container));
+            }
+        }
+
+        function filterTree(query) {
+            if (structureData) {
+                renderTree(structureData, document.getElementById('tree-container'), query);
+            }
+        }
+
+        async function loadFile(filePath) {
+            const viewer = document.getElementById('content-viewer');
+            const tocContainer = document.getElementById('toc-container');
+            
+            viewer.innerHTML = `<p class="text-gray-400 animate-pulse">${translations[currentLang].loadingFile}<\/p>`;
+            tocContainer.innerHTML = `<p class="text-gray-500 italic">${translations[currentLang].analyzing}<\/p>`;
+
+            try {
+                const response = await fetch(`solutions/${filePath}`);
+                if (!response.ok) throw new Error(translations[currentLang].fileNotFound);
+                const text = await response.text();
+
+                if (filePath.endsWith('.md')) {
+                    viewer.innerHTML = marked.parse(text);
+                } else {
+                    viewer.innerHTML = `<pre class="whitespace-pre-wrap font-mono text-sm bg-gray-900 p-4 rounded">${escapeHtml(text)}<\/pre>`;
+                }
+
+                // Adjust links to open in a new tab securely
+                viewer.querySelectorAll('a').forEach(link => {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                    link.className = 'text-emerald-400 hover:underline';
+                });
+
+                // Generate table of contents (TOC) from headings
+                generateToc(viewer, tocContainer);
+
+            } catch (error) {
+                viewer.innerHTML = `<p class="text-red-400">${translations[currentLang].errorLoadingFile} ${filePath}<\/p>`;
+                tocContainer.innerHTML = `<p class="text-red-400">${translations[currentLang].noFileLoaded}<\/p>`;
+            }
+        }
+
+        function generateToc(contentViewer, tocContainer) {
+            tocContainer.innerHTML = '';
+            const headings = contentViewer.querySelectorAll('h1, h2, h3, h4, h5, h6, h7');
+
+            if (headings.length === 0) {
+                tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].noHeadings}<\/p>`;
+                return;
+            }
+
+            headings.forEach((heading, index) => {
+                if (!heading.id) {
+                    heading.id = `heading-${index}`;
+                }
+
+                const tocItem = document.createElement('button');
+                
+                let indentClass = 'pl-1';
+                if (heading.tagName === 'H2') indentClass = 'pl-2';
+                if (heading.tagName === 'H3') indentClass = 'pl-4 text-xs';
+                if (heading.tagName === 'H4') indentClass = 'pl-6 text-xs';
+                if (heading.tagName === 'H5') indentClass = 'pl-8 text-xs';
+                if (heading.tagName === 'H6') indentClass = 'pl-10 text-xs';
+                if (heading.tagName === 'H7') indentClass = 'pl-12 text-xs';
+
+                tocItem.className = `block w-full text-left py-1 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors break-words ${indentClass}`;
+                tocItem.textContent = heading.textContent;
+                
+                tocItem.onclick = () => {
+                    heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                };
+
+                tocContainer.appendChild(tocItem);
+            });
+        }
+
+        function escapeHtml(text) {
+            return text
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;');
+        }
+
+        // --- Resizer Logic (Left Sidebar) ---
+        const sidebar = document.getElementById('sidebar');
+        const resizerLeft = document.getElementById('resizer-left');
+        let isResizingLeft = false;
+
+        resizerLeft.addEventListener('mousedown', (e) => {
+            isResizingLeft = true;
+            document.body.style.cursor = 'ew-resize';
+            e.preventDefault();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isResizingLeft) return;
+            const newWidth = e.clientX - sidebar.getBoundingClientRect().left;
+            if (newWidth >= 180 && newWidth <= 600) {
+                sidebar.style.width = `${newWidth}px`;
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isResizingLeft) {
+                isResizingLeft = false;
+                document.body.style.cursor = 'default';
+            }
+        });
+
+        // --- Resizer Logic (Right TOC) ---
+        const tocSidebar = document.getElementById('toc-sidebar');
+        const resizerRight = document.getElementById('resizer-right');
+        let isResizingRight = false;
+
+        resizerRight.addEventListener('mousedown', (e) => {
+            isResizingRight = true;
+            document.body.style.cursor = 'ew-resize';
+            e.preventDefault();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isResizingRight) return;
+            const containerRight = document.querySelector('main').getBoundingClientRect().right;
+            const calculatedWidth = containerRight - e.clientX;
+            
+            if (calculatedWidth >= 180 && calculatedWidth <= 450) {
+                tocSidebar.style.width = `${calculatedWidth}px`;
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isResizingRight) {
+                isResizingRight = false;
+                document.body.style.cursor = 'default';
+            }
+        });
+
+        // --- Toggle Left Sidebar ---
+        function toggleSidebar() {
+            const isHidden = sidebar.style.display === 'none';
+            sidebar.style.display = isHidden ? 'flex' : 'none';
+            resizerLeft.style.display = isHidden ? 'flex' : 'none';
+        }
+
+        // --- Toggle Right TOC ---
+        function toggleToc() {
+            const isHidden = tocSidebar.style.display === 'none';
+            tocSidebar.style.display = isHidden ? 'flex' : 'none';
+            resizerRight.style.display = isHidden ? 'flex' : 'none';
+        }
+
+        init();
+  </script>
+</body>
+</html>

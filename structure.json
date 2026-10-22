@@ -1,0 +1,3337 @@
+{
+  "name": "solutions",
+  "type": "directory",
+  "children": [
+    {
+      "name": "0-9",
+      "type": "directory",
+      "children": [
+        {
+          "name": "!-EN.md",
+          "type": "file",
+          "path": "0-9/!-EN.md"
+        },
+        {
+          "name": "1 1-2 Ritter - Auf der Suche nach der hinreißenden Herzelinde-DE.md",
+          "type": "file",
+          "path": "0-9/1 1-2 Ritter - Auf der Suche nach der hinreißenden Herzelinde-DE.md"
+        },
+        {
+          "name": "2080 Wall City Lockdown-EN.md",
+          "type": "file",
+          "path": "0-9/2080 Wall City Lockdown-EN.md"
+        },
+        {
+          "name": "3 Minutes to Midnight-EN.md",
+          "type": "file",
+          "path": "0-9/3 Minutes to Midnight-EN.md"
+        },
+        {
+          "name": "5 Days a Stranger Special Edition-EN.md",
+          "type": "file",
+          "path": "0-9/5 Days a Stranger Special Edition-EN.md"
+        },
+        {
+          "name": "6 Days a Sacrifice Special Edition-EN.md",
+          "type": "file",
+          "path": "0-9/6 Days a Sacrifice Special Edition-EN.md"
+        },
+        {
+          "name": "7 Days A Skeptic Special Edition-EN.md",
+          "type": "file",
+          "path": "0-9/7 Days A Skeptic Special Edition-EN.md"
+        },
+        {
+          "name": "^_^-EN.md",
+          "type": "file",
+          "path": "0-9/^_^-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "A",
+      "type": "directory",
+      "children": [
+        {
+          "name": "A Cat's Night 2-EN.md",
+          "type": "file",
+          "path": "A/A Cat's Night 2-EN.md"
+        },
+        {
+          "name": "A Cat's Night-EN.md",
+          "type": "file",
+          "path": "A/A Cat's Night-EN.md"
+        },
+        {
+          "name": "A Day In The Future-EN.md",
+          "type": "file",
+          "path": "A/A Day In The Future-EN.md"
+        },
+        {
+          "name": "A G-G-Ghost!-EN.md",
+          "type": "file",
+          "path": "A/A G-G-Ghost!-EN.md"
+        },
+        {
+          "name": "A Golden Wake-EN.md",
+          "type": "file",
+          "path": "A/A Golden Wake-EN.md"
+        },
+        {
+          "name": "A Little Christmas Trial-DE.md",
+          "type": "file",
+          "path": "A/A Little Christmas Trial-DE.md"
+        },
+        {
+          "name": "A Night in Berry-Long Version-EN.md",
+          "type": "file",
+          "path": "A/A Night in Berry-Long Version-EN.md"
+        },
+        {
+          "name": "A Night To Remember-EN.md",
+          "type": "file",
+          "path": "A/A Night To Remember-EN.md"
+        },
+        {
+          "name": "A Place of Significance-EN.md",
+          "type": "file",
+          "path": "A/A Place of Significance-EN.md"
+        },
+        {
+          "name": "A Second Face - The Eye of Geltz is Watching Us-EN.md",
+          "type": "file",
+          "path": "A/A Second Face - The Eye of Geltz is Watching Us-EN.md"
+        },
+        {
+          "name": "Adventure - All in the Game-EN.md",
+          "type": "file",
+          "path": "A/Adventure - All in the Game-EN.md"
+        },
+        {
+          "name": "Adventure - The Inside Job-EN.md",
+          "type": "file",
+          "path": "A/Adventure - The Inside Job-EN.md"
+        },
+        {
+          "name": "Adventure - Welcome to the Genre-EN.md",
+          "type": "file",
+          "path": "A/Adventure - Welcome to the Genre-EN.md"
+        },
+        {
+          "name": "Adventures in the Galaxy of Fantabulous Wonderment-EN.md",
+          "type": "file",
+          "path": "A/Adventures in the Galaxy of Fantabulous Wonderment-EN.md"
+        },
+        {
+          "name": "Alfred Hitchcock's Psycho Adventure Game-EN.md",
+          "type": "file",
+          "path": "A/Alfred Hitchcock's Psycho Adventure Game-EN.md"
+        },
+        {
+          "name": "Alice in Maniacland-EN.md",
+          "type": "file",
+          "path": "A/Alice in Maniacland-EN.md"
+        },
+        {
+          "name": "Alien Science-EN.md",
+          "type": "file",
+          "path": "A/Alien Science-EN.md"
+        },
+        {
+          "name": "Alluvium-EN.md",
+          "type": "file",
+          "path": "A/Alluvium-EN.md"
+        },
+        {
+          "name": "Alpha Dog-EN.md",
+          "type": "file",
+          "path": "A/Alpha Dog-EN.md"
+        },
+        {
+          "name": "An English Haunting-EN.md",
+          "type": "file",
+          "path": "A/An English Haunting-EN.md"
+        },
+        {
+          "name": "Angelgaze Demo-EN.md",
+          "type": "file",
+          "path": "A/Angelgaze Demo-EN.md"
+        },
+        {
+          "name": "Annie Android - Automated Affection-EN.md",
+          "type": "file",
+          "path": "A/Annie Android - Automated Affection-EN.md"
+        },
+        {
+          "name": "Ardent Fever-EN.md",
+          "type": "file",
+          "path": "A/Ardent Fever-EN.md"
+        },
+        {
+          "name": "Atapi-EN.md",
+          "type": "file",
+          "path": "A/Atapi-EN.md"
+        },
+        {
+          "name": "~airwave~ - I Fought the Law, and the Law One-EN.md",
+          "type": "file",
+          "path": "A/~airwave~ - I Fought the Law, and the Law One-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "B",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Back Door Man-EN.md",
+          "type": "file",
+          "path": "B/Back Door Man-EN.md"
+        },
+        {
+          "name": "Back to the Future Part III - Timeline of Monkey Island Walkthrough-EN.md",
+          "type": "file",
+          "path": "B/Back to the Future Part III - Timeline of Monkey Island Walkthrough-EN.md"
+        },
+        {
+          "name": "Back to the Future Part IV - The Multitasking crystal-EN.md",
+          "type": "file",
+          "path": "B/Back to the Future Part IV - The Multitasking crystal-EN.md"
+        },
+        {
+          "name": "Back to the Future Part V - Multidimensional Space-EN.md",
+          "type": "file",
+          "path": "B/Back to the Future Part V - Multidimensional Space-EN.md"
+        },
+        {
+          "name": "Baphomets Fluch 2.5-DE.md",
+          "type": "file",
+          "path": "B/Baphomets Fluch 2.5-DE.md"
+        },
+        {
+          "name": "Barbarian vs. Robot-EN.md",
+          "type": "file",
+          "path": "B/Barbarian vs. Robot-EN.md"
+        },
+        {
+          "name": "Barely Floating-EN.md",
+          "type": "file",
+          "path": "B/Barely Floating-EN.md"
+        },
+        {
+          "name": "Barn Runner - The QTE Affair-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner - The QTE Affair-EN.md"
+        },
+        {
+          "name": "Barn Runner 01 - The Armageddon Eclair-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner 01 - The Armageddon Eclair-EN.md"
+        },
+        {
+          "name": "Barn Runner 02 - The Ejection Rejection-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner 02 - The Ejection Rejection-EN.md"
+        },
+        {
+          "name": "Barn Runner 03 - Don't Jerk The Trigger of Love-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner 03 - Don't Jerk The Trigger of Love-EN.md"
+        },
+        {
+          "name": "Barn Runner 04 - The Prick Who Came From The Cold-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner 04 - The Prick Who Came From The Cold-EN.md"
+        },
+        {
+          "name": "Barn Runner 05 - The Forever Friday-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner 05 - The Forever Friday-EN.md"
+        },
+        {
+          "name": "Barn Runner Bake Sale 01 - The Rich Dame Who Cut The Cheese-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner Bake Sale 01 - The Rich Dame Who Cut The Cheese-EN.md"
+        },
+        {
+          "name": "Barn Runner Halloween 01 - Fully Automatic Mojo-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner Halloween 01 - Fully Automatic Mojo-EN.md"
+        },
+        {
+          "name": "Barn Runner Kiss 01 - Fashionably Late-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner Kiss 01 - Fashionably Late-EN.md"
+        },
+        {
+          "name": "Barn Runner Valentine 01 - Pucker Factor-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner Valentine 01 - Pucker Factor-EN.md"
+        },
+        {
+          "name": "Barn Runner Visual Novel 01 - The Mayor's New Dress-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner Visual Novel 01 - The Mayor's New Dress-EN.md"
+        },
+        {
+          "name": "Barn Runner XMAS 00 - Christmas Soup-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner XMAS 00 - Christmas Soup-EN.md"
+        },
+        {
+          "name": "Barn Runner XMAS 01 - Cyclone Alley-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner XMAS 01 - Cyclone Alley-EN.md"
+        },
+        {
+          "name": "Barn Runner XMAS 02 - Wreck The Halls-EN.md",
+          "type": "file",
+          "path": "B/Barn Runner XMAS 02 - Wreck The Halls-EN.md"
+        },
+        {
+          "name": "Barrier-EN.md",
+          "type": "file",
+          "path": "B/Barrier-EN.md"
+        },
+        {
+          "name": "Beacon-EN.md",
+          "type": "file",
+          "path": "B/Beacon-EN.md"
+        },
+        {
+          "name": "Becalmed-EN.md",
+          "type": "file",
+          "path": "B/Becalmed-EN.md"
+        },
+        {
+          "name": "Below Zero - Prologue-EN.md",
+          "type": "file",
+          "path": "B/Below Zero - Prologue-EN.md"
+        },
+        {
+          "name": "Ben Chandler - Paranormal Investigator!-EN.md",
+          "type": "file",
+          "path": "B/Ben Chandler - Paranormal Investigator!-EN.md"
+        },
+        {
+          "name": "Ben Jordan Case 1 - In Search Of The Skunk Ape Deluxe Edition-EN.md",
+          "type": "file",
+          "path": "B/Ben Jordan Case 1 - In Search Of The Skunk Ape Deluxe Edition-EN.md"
+        },
+        {
+          "name": "Ben Jordan Case 2 - The Lost Galleon Of The Salton Sea Deluxe Edition-EN.md",
+          "type": "file",
+          "path": "B/Ben Jordan Case 2 - The Lost Galleon Of The Salton Sea Deluxe Edition-EN.md"
+        },
+        {
+          "name": "Ben Jordan Case 3 - The Sorceress of Smailholm-EN.md",
+          "type": "file",
+          "path": "B/Ben Jordan Case 3 - The Sorceress of Smailholm-EN.md"
+        },
+        {
+          "name": "Ben Jordan Case 4 - Horror At Number 50-EN.md",
+          "type": "file",
+          "path": "B/Ben Jordan Case 4 - Horror At Number 50-EN.md"
+        },
+        {
+          "name": "Ben Jordan Case 5 - Land of the Rising Dead-EN.md",
+          "type": "file",
+          "path": "B/Ben Jordan Case 5 - Land of the Rising Dead-EN.md"
+        },
+        {
+          "name": "Ben Jordan Case 6 - Scourge Of The Sea People-EN.md",
+          "type": "file",
+          "path": "B/Ben Jordan Case 6 - Scourge Of The Sea People-EN.md"
+        },
+        {
+          "name": "Ben Jordan Case 7 - The Cardinal Sins-EN.md",
+          "type": "file",
+          "path": "B/Ben Jordan Case 7 - The Cardinal Sins-EN.md"
+        },
+        {
+          "name": "Ben Jordan Case 8 - Relics of the Past-EN.md",
+          "type": "file",
+          "path": "B/Ben Jordan Case 8 - Relics of the Past-EN.md"
+        },
+        {
+          "name": "Beyond a Steel Sky-DE.md",
+          "type": "file",
+          "path": "B/Beyond a Steel Sky-DE.md"
+        },
+        {
+          "name": "Beyond Reality-EN.md",
+          "type": "file",
+          "path": "B/Beyond Reality-EN.md"
+        },
+        {
+          "name": "Beyond The Edge Of Owlsgard-DE.md",
+          "type": "file",
+          "path": "B/Beyond The Edge Of Owlsgard-DE.md"
+        },
+        {
+          "name": "Big Time Monkey-DE.md",
+          "type": "file",
+          "path": "B/Big Time Monkey-DE.md"
+        },
+        {
+          "name": "Billy Boy's Important Wine Lottery-EN.md",
+          "type": "file",
+          "path": "B/Billy Boy's Important Wine Lottery-EN.md"
+        },
+        {
+          "name": "Billy Masters Was Right-DE.md",
+          "type": "file",
+          "path": "B/Billy Masters Was Right-DE.md"
+        },
+        {
+          "name": "Black Friday-EN.md",
+          "type": "file",
+          "path": "B/Black Friday-EN.md"
+        },
+        {
+          "name": "Black Sect Remake-EN.md",
+          "type": "file",
+          "path": "B/Black Sect Remake-EN.md"
+        },
+        {
+          "name": "Blazing Dragons-DE.md",
+          "type": "file",
+          "path": "B/Blazing Dragons-DE.md"
+        },
+        {
+          "name": "Bog's Adventure In Easy3D-EN.md",
+          "type": "file",
+          "path": "B/Bog's Adventure In Easy3D-EN.md"
+        },
+        {
+          "name": "Bog's Adventures in the Underworld-EN.md",
+          "type": "file",
+          "path": "B/Bog's Adventures in the Underworld-EN.md"
+        },
+        {
+          "name": "Border Cafe-EN.md",
+          "type": "file",
+          "path": "B/Border Cafe-EN.md"
+        },
+        {
+          "name": "Born Punk-EN.md",
+          "type": "file",
+          "path": "B/Born Punk-EN.md"
+        },
+        {
+          "name": "Brassheart-EN.md",
+          "type": "file",
+          "path": "B/Brassheart-EN.md"
+        },
+        {
+          "name": "Breakage-EN.md",
+          "type": "file",
+          "path": "B/Breakage-EN.md"
+        },
+        {
+          "name": "Broken Sword - Lost Scenes-EN.md",
+          "type": "file",
+          "path": "B/Broken Sword - Lost Scenes-EN.md"
+        },
+        {
+          "name": "Broken Windows - All Chapters-EN.md",
+          "type": "file",
+          "path": "B/Broken Windows - All Chapters-EN.md"
+        },
+        {
+          "name": "Bustin' the Bastille-EN.md",
+          "type": "file",
+          "path": "B/Bustin' the Bastille-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "C",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Captain Disaster in Death Has A Million Stomping Boots-EN.md",
+          "type": "file",
+          "path": "C/Captain Disaster in Death Has A Million Stomping Boots-EN.md"
+        },
+        {
+          "name": "Captain Disaster in The Dark Side of the Moon-EN.md",
+          "type": "file",
+          "path": "C/Captain Disaster in The Dark Side of the Moon-EN.md"
+        },
+        {
+          "name": "Captain Gysi - Galaxis Futura-DE.md",
+          "type": "file",
+          "path": "C/Captain Gysi - Galaxis Futura-DE.md"
+        },
+        {
+          "name": "Captain Gysi und das Raumschiff Bonn-DE.md",
+          "type": "file",
+          "path": "C/Captain Gysi und das Raumschiff Bonn-DE.md"
+        },
+        {
+          "name": "Carver Island 2 - Mrs. Rodriguez's Revenge-EN.md",
+          "type": "file",
+          "path": "C/Carver Island 2 - Mrs. Rodriguez's Revenge-EN.md"
+        },
+        {
+          "name": "Case Noir-EN.md",
+          "type": "file",
+          "path": "C/Case Noir-EN.md"
+        },
+        {
+          "name": "Catacombic-EN.md",
+          "type": "file",
+          "path": "C/Catacombic-EN.md"
+        },
+        {
+          "name": "Cedric and the Revolution-EN.md",
+          "type": "file",
+          "path": "C/Cedric and the Revolution-EN.md"
+        },
+        {
+          "name": "Challenge of the Tentacle-DE.md",
+          "type": "file",
+          "path": "C/Challenge of the Tentacle-DE.md"
+        },
+        {
+          "name": "Champy the Useless Vampire-DE.md",
+          "type": "file",
+          "path": "C/Champy the Useless Vampire-DE.md"
+        },
+        {
+          "name": "Chick Chaser-EN.md",
+          "type": "file",
+          "path": "C/Chick Chaser-EN.md"
+        },
+        {
+          "name": "Clotilde Soffritti in - Never Buy a Used Spaceship-EN.md",
+          "type": "file",
+          "path": "C/Clotilde Soffritti in - Never Buy a Used Spaceship-EN.md"
+        },
+        {
+          "name": "Clotilde Soffritti in - Never Double Park your Spaceship-EN.md",
+          "type": "file",
+          "path": "C/Clotilde Soffritti in - Never Double Park your Spaceship-EN.md"
+        },
+        {
+          "name": "Cold Meat-EN.md",
+          "type": "file",
+          "path": "C/Cold Meat-EN.md"
+        },
+        {
+          "name": "Conspiracy of Songo-EN.md",
+          "type": "file",
+          "path": "C/Conspiracy of Songo-EN.md"
+        },
+        {
+          "name": "Cosmos Quest I - To Find A Sun-EN.md",
+          "type": "file",
+          "path": "C/Cosmos Quest I - To Find A Sun-EN.md"
+        },
+        {
+          "name": "Cosmos Quest II - To Find A Sun-EN.md",
+          "type": "file",
+          "path": "C/Cosmos Quest II - To Find A Sun-EN.md"
+        },
+        {
+          "name": "Cosmos Quest III - The mines of Isagor-EN.md",
+          "type": "file",
+          "path": "C/Cosmos Quest III - The mines of Isagor-EN.md"
+        },
+        {
+          "name": "Cosmos Quest IV - The Ayatolian March-EN.md",
+          "type": "file",
+          "path": "C/Cosmos Quest IV - The Ayatolian March-EN.md"
+        },
+        {
+          "name": "Crackwell Unhinged-EN.md",
+          "type": "file",
+          "path": "C/Crackwell Unhinged-EN.md"
+        },
+        {
+          "name": "Crave-EN.md",
+          "type": "file",
+          "path": "C/Crave-EN.md"
+        },
+        {
+          "name": "Crepe Fields - A Scare Among Crows-EN.md",
+          "type": "file",
+          "path": "C/Crepe Fields - A Scare Among Crows-EN.md"
+        },
+        {
+          "name": "Cryptic-EN.md",
+          "type": "file",
+          "path": "C/Cryptic-EN.md"
+        },
+        {
+          "name": "Curse of Rabenstein, The-EN.md",
+          "type": "file",
+          "path": "C/Curse of Rabenstein, The-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "D",
+      "type": "directory",
+      "children": [
+        {
+          "name": "D-List Diva-EN.md",
+          "type": "file",
+          "path": "D/D-List Diva-EN.md"
+        },
+        {
+          "name": "D3ad Hand-EN.md",
+          "type": "file",
+          "path": "D/D3ad Hand-EN.md"
+        },
+        {
+          "name": "Dada - Stagnation In Blue-EN.md",
+          "type": "file",
+          "path": "D/Dada - Stagnation In Blue-EN.md"
+        },
+        {
+          "name": "Dada Christmas Special - Stagnation In Red & White-EN.md",
+          "type": "file",
+          "path": "D/Dada Christmas Special - Stagnation In Red & White-EN.md"
+        },
+        {
+          "name": "Dance Til' You Drop-EN.md",
+          "type": "file",
+          "path": "D/Dance Til' You Drop-EN.md"
+        },
+        {
+          "name": "Danny Dread Is On Call-EN.md",
+          "type": "file",
+          "path": "D/Danny Dread Is On Call-EN.md"
+        },
+        {
+          "name": "Das Niemandsland-DE.md",
+          "type": "file",
+          "path": "D/Das Niemandsland-DE.md"
+        },
+        {
+          "name": "Das schwarze Auge - Satinavs Ketten-DE.md",
+          "type": "file",
+          "path": "D/Das schwarze Auge - Satinavs Ketten-DE.md"
+        },
+        {
+          "name": "Day of the Hamster-EN.md",
+          "type": "file",
+          "path": "D/Day of the Hamster-EN.md"
+        },
+        {
+          "name": "Day of the Sandwich-EN.md",
+          "type": "file",
+          "path": "D/Day of the Sandwich-EN.md"
+        },
+        {
+          "name": "Dead Silence-EN.md",
+          "type": "file",
+          "path": "D/Dead Silence-EN.md"
+        },
+        {
+          "name": "Death Episode 01 - The Scythe Of Unlimited Power-EN.md",
+          "type": "file",
+          "path": "D/Death Episode 01 - The Scythe Of Unlimited Power-EN.md"
+        },
+        {
+          "name": "Death Wore Endless Feathers-EN.md",
+          "type": "file",
+          "path": "D/Death Wore Endless Feathers-EN.md"
+        },
+        {
+          "name": "Deity-EN.md",
+          "type": "file",
+          "path": "D/Deity-EN.md"
+        },
+        {
+          "name": "Der neue Wahnsinn der Familie Herfurth-DE.md",
+          "type": "file",
+          "path": "D/Der neue Wahnsinn der Familie Herfurth-DE.md"
+        },
+        {
+          "name": "Der Verschwundene Husky-DE.md",
+          "type": "file",
+          "path": "D/Der Verschwundene Husky-DE.md"
+        },
+        {
+          "name": "Dexter Stardust - Adventures in Outer Space-EN.md",
+          "type": "file",
+          "path": "D/Dexter Stardust - Adventures in Outer Space-EN.md"
+        },
+        {
+          "name": "Die drei Fragezeichen - Der Plan der Chamäleonbande-DE.md",
+          "type": "file",
+          "path": "D/Die drei Fragezeichen - Der Plan der Chamäleonbande-DE.md"
+        },
+        {
+          "name": "Die drei Fragezeichen - Der Plan der Chamäleonbande-Schieberätsel.png",
+          "type": "file",
+          "path": "D/Die drei Fragezeichen - Der Plan der Chamäleonbande-Schieberätsel.png"
+        },
+        {
+          "name": "Die drei Fragezeichen - Ruf der Trolle-DE.md",
+          "type": "file",
+          "path": "D/Die drei Fragezeichen - Ruf der Trolle-DE.md"
+        },
+        {
+          "name": "Die Karaoke Verschwörung-DE.md",
+          "type": "file",
+          "path": "D/Die Karaoke Verschwörung-DE.md"
+        },
+        {
+          "name": "Die neuen Abenteuer des Zak McKracken-DE.md",
+          "type": "file",
+          "path": "D/Die neuen Abenteuer des Zak McKracken-DE.md"
+        },
+        {
+          "name": "Disparu - A Dream Cat Mystery-DE.md",
+          "type": "file",
+          "path": "D/Disparu - A Dream Cat Mystery-DE.md"
+        },
+        {
+          "name": "DOMM - Day of Maniac Mansion-DE.md",
+          "type": "file",
+          "path": "D/DOMM - Day of Maniac Mansion-DE.md"
+        },
+        {
+          "name": "Donald Dowell and the Ghost of Barker Manor-EN.md",
+          "type": "file",
+          "path": "D/Donald Dowell and the Ghost of Barker Manor-EN.md"
+        },
+        {
+          "name": "Donnie Darko - The Adventure Game-EN.md",
+          "type": "file",
+          "path": "D/Donnie Darko - The Adventure Game-EN.md"
+        },
+        {
+          "name": "Doris und Lotti-DE.md",
+          "type": "file",
+          "path": "D/Doris und Lotti-DE.md"
+        },
+        {
+          "name": "Dr. Lutz and the Time Travel Machine-EN.md",
+          "type": "file",
+          "path": "D/Dr. Lutz and the Time Travel Machine-EN.md"
+        },
+        {
+          "name": "Drowning Cross-EN.md",
+          "type": "file",
+          "path": "D/Drowning Cross-EN.md"
+        },
+        {
+          "name": "Duke Stanley - National Hero in the 30 Minute War-EN.md",
+          "type": "file",
+          "path": "D/Duke Stanley - National Hero in the 30 Minute War-EN.md"
+        },
+        {
+          "name": "Dust 'n' Rust-EN.md",
+          "type": "file",
+          "path": "D/Dust 'n' Rust-EN.md"
+        },
+        {
+          "name": "Duty And Beyond-EN.md",
+          "type": "file",
+          "path": "D/Duty And Beyond-EN.md"
+        },
+        {
+          "name": "Dünnes Eis - Das Spiel zum Song-DE.md",
+          "type": "file",
+          "path": "D/Dünnes Eis - Das Spiel zum Song-DE.md"
+        }
+      ]
+    },
+    {
+      "name": "E",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Earl Bobby is Looking for a Loo-EN.md",
+          "type": "file",
+          "path": "E/Earl Bobby is Looking for a Loo-EN.md"
+        },
+        {
+          "name": "Earl Bobby is looking for his Balls-EN.md",
+          "type": "file",
+          "path": "E/Earl Bobby is looking for his Balls-EN.md"
+        },
+        {
+          "name": "Earl Bobby is looking for his Shoes-EN.md",
+          "type": "file",
+          "path": "E/Earl Bobby is looking for his Shoes-EN.md"
+        },
+        {
+          "name": "Earl Mansin - The Breakout-EN.md",
+          "type": "file",
+          "path": "E/Earl Mansin - The Breakout-EN.md"
+        },
+        {
+          "name": "Earth must Die-EN.md",
+          "type": "file",
+          "path": "E/Earth must Die-EN.md"
+        },
+        {
+          "name": "Ejected Star Prologue-EN.md",
+          "type": "file",
+          "path": "E/Ejected Star Prologue-EN.md"
+        },
+        {
+          "name": "Elroy and the Aliens-EN.md",
+          "type": "file",
+          "path": "E/Elroy and the Aliens-EN.md"
+        },
+        {
+          "name": "Enclosure-EN.md",
+          "type": "file",
+          "path": "E/Enclosure-EN.md"
+        },
+        {
+          "name": "ENCODYA-DE.md",
+          "type": "file",
+          "path": "E/ENCODYA-DE.md"
+        },
+        {
+          "name": "Erben der Erde - Die große Suche-DE.md",
+          "type": "file",
+          "path": "E/Erben der Erde - Die große Suche-DE.md"
+        },
+        {
+          "name": "Ermentrud - Held mit Pferd-DE.md",
+          "type": "file",
+          "path": "E/Ermentrud - Held mit Pferd-DE.md"
+        },
+        {
+          "name": "Escape from DIMANSION-EN.md",
+          "type": "file",
+          "path": "E/Escape from DIMANSION-EN.md"
+        },
+        {
+          "name": "Escape From The Chaotic City-EN.md",
+          "type": "file",
+          "path": "E/Escape From The Chaotic City-EN.md"
+        },
+        {
+          "name": "ESPER - The Town on the Edge of Darkness-EN.md",
+          "type": "file",
+          "path": "E/ESPER - The Town on the Edge of Darkness-EN.md"
+        },
+        {
+          "name": "Eternally Us-EN.md",
+          "type": "file",
+          "path": "E/Eternally Us-EN.md"
+        },
+        {
+          "name": "Ex Machina-EN.md",
+          "type": "file",
+          "path": "E/Ex Machina-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "F",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Famous Five 4 - Dangerous Discovery-EN.md",
+          "type": "file",
+          "path": "F/Famous Five 4 - Dangerous Discovery-EN.md"
+        },
+        {
+          "name": "Famous Five 5 - Five on a Secret Mission-EN.md",
+          "type": "file",
+          "path": "F/Famous Five 5 - Five on a Secret Mission-EN.md"
+        },
+        {
+          "name": "Faye King - Jungle Jeopardy-EN.md",
+          "type": "file",
+          "path": "F/Faye King - Jungle Jeopardy-EN.md"
+        },
+        {
+          "name": "Featherweight-EN.md",
+          "type": "file",
+          "path": "F/Featherweight-EN.md"
+        },
+        {
+          "name": "Feuersturm - Kapitel 1 bis 3-DE.md",
+          "type": "file",
+          "path": "F/Feuersturm - Kapitel 1 bis 3-DE.md"
+        },
+        {
+          "name": "Final Countdown-EN.md",
+          "type": "file",
+          "path": "F/Final Countdown-EN.md"
+        },
+        {
+          "name": "Flash McCoy-EN.md",
+          "type": "file",
+          "path": "F/Flash McCoy-EN.md"
+        },
+        {
+          "name": "Foolish Mortals-EN.md",
+          "type": "file",
+          "path": "F/Foolish Mortals-EN.md"
+        },
+        {
+          "name": "Forge - Chapter 1 DEMO-EN.md",
+          "type": "file",
+          "path": "F/Forge - Chapter 1 DEMO-EN.md"
+        },
+        {
+          "name": "Fortress of Wonders-EN.md",
+          "type": "file",
+          "path": "F/Fortress of Wonders-EN.md"
+        },
+        {
+          "name": "Frank the Farmhand - Part 1-EN.md",
+          "type": "file",
+          "path": "F/Frank the Farmhand - Part 1-EN.md"
+        },
+        {
+          "name": "Frank the Farmhand - Part 2-EN.md",
+          "type": "file",
+          "path": "F/Frank the Farmhand - Part 2-EN.md"
+        },
+        {
+          "name": "From Lex to Rex-EN.md",
+          "type": "file",
+          "path": "F/From Lex to Rex-EN.md"
+        },
+        {
+          "name": "Frontier Fugitive-EN.md",
+          "type": "file",
+          "path": "F/Frontier Fugitive-EN.md"
+        },
+        {
+          "name": "Frontier Fugitive-WantedPoster.png",
+          "type": "file",
+          "path": "F/Frontier Fugitive-WantedPoster.png"
+        },
+        {
+          "name": "Fun, Sun & Mishaps-EN.md",
+          "type": "file",
+          "path": "F/Fun, Sun & Mishaps-EN.md"
+        },
+        {
+          "name": "Fünf Freunde - Auf Schatzsuche-DE.md",
+          "type": "file",
+          "path": "F/Fünf Freunde - Auf Schatzsuche-DE.md"
+        },
+        {
+          "name": "Fünf Freunde 2 - Das Geheimnis um den silbernen Turm-DE.md",
+          "type": "file",
+          "path": "F/Fünf Freunde 2 - Das Geheimnis um den silbernen Turm-DE.md"
+        },
+        {
+          "name": "Fünf Freunde 3 - Auf Entführerjagd-DE.md",
+          "type": "file",
+          "path": "F/Fünf Freunde 3 - Auf Entführerjagd-DE.md"
+        }
+      ]
+    },
+    {
+      "name": "G",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Geheimakte 2 - Puritas Cordis-DE.md",
+          "type": "file",
+          "path": "G/Geheimakte 2 - Puritas Cordis-DE.md"
+        },
+        {
+          "name": "Geheimakte 3-DE.md",
+          "type": "file",
+          "path": "G/Geheimakte 3-DE.md"
+        },
+        {
+          "name": "Geheimakte Sam Peters-DE.md",
+          "type": "file",
+          "path": "G/Geheimakte Sam Peters-DE.md"
+        },
+        {
+          "name": "Geheimakte Tunguska-DE.md",
+          "type": "file",
+          "path": "G/Geheimakte Tunguska-DE.md"
+        },
+        {
+          "name": "Ghostbusters and the Secret of Monkey Island-EN.md",
+          "type": "file",
+          "path": "G/Ghostbusters and the Secret of Monkey Island-EN.md"
+        },
+        {
+          "name": "Gibbous - A Cthulhu Adventure-EN.md",
+          "type": "file",
+          "path": "G/Gibbous - A Cthulhu Adventure-EN.md"
+        },
+        {
+          "name": "Gobliiins 5-EN.md",
+          "type": "file",
+          "path": "G/Gobliiins 5-EN.md"
+        },
+        {
+          "name": "Gobliins 6-EN.md",
+          "type": "file",
+          "path": "G/Gobliins 6-EN.md"
+        },
+        {
+          "name": "Golden Life - Unterwegs nach Brasilien-DE.md",
+          "type": "file",
+          "path": "G/Golden Life - Unterwegs nach Brasilien-DE.md"
+        },
+        {
+          "name": "Gurk in Trouble - A Yip Quest Story-EN.md",
+          "type": "file",
+          "path": "G/Gurk in Trouble - A Yip Quest Story-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "H",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Hard Space - Conquest of the Gayliks-EN.md",
+          "type": "file",
+          "path": "H/Hard Space - Conquest of the Gayliks-EN.md"
+        },
+        {
+          "name": "Heatwave-EN.md",
+          "type": "file",
+          "path": "H/Heatwave-EN.md"
+        },
+        {
+          "name": "Heed-EN.md",
+          "type": "file",
+          "path": "H/Heed-EN.md"
+        },
+        {
+          "name": "Highland Spirit-EN.md",
+          "type": "file",
+          "path": "H/Highland Spirit-EN.md"
+        },
+        {
+          "name": "Hitchhiker's Guide To The Galaxy Remake-EN.md",
+          "type": "file",
+          "path": "H/Hitchhiker's Guide To The Galaxy Remake-EN.md"
+        },
+        {
+          "name": "Hollywood Monsters-EN.md",
+          "type": "file",
+          "path": "H/Hollywood Monsters-EN.md"
+        },
+        {
+          "name": "Hollywood Monsters-Tile Puzzle.png",
+          "type": "file",
+          "path": "H/Hollywood Monsters-Tile Puzzle.png"
+        },
+        {
+          "name": "How We Know We're Alive-EN.md",
+          "type": "file",
+          "path": "H/How We Know We're Alive-EN.md"
+        },
+        {
+          "name": "Hungry-EN.md",
+          "type": "file",
+          "path": "H/Hungry-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "I",
+      "type": "directory",
+      "children": [
+        {
+          "name": "I want out!-EN.md",
+          "type": "file",
+          "path": "I/I want out!-EN.md"
+        },
+        {
+          "name": "I'll Be Back to the Future With a Terminator-EN.md",
+          "type": "file",
+          "path": "I/I'll Be Back to the Future With a Terminator-EN.md"
+        },
+        {
+          "name": "iD-EN.md",
+          "type": "file",
+          "path": "I/iD-EN.md"
+        },
+        {
+          "name": "If On A Winter's Night, Four Travelers-EN.md",
+          "type": "file",
+          "path": "I/If On A Winter's Night, Four Travelers-EN.md"
+        },
+        {
+          "name": "Igor - Objective Uikokahonia-EN.md",
+          "type": "file",
+          "path": "I/Igor - Objective Uikokahonia-EN.md"
+        },
+        {
+          "name": "Ikarus-EN.md",
+          "type": "file",
+          "path": "I/Ikarus-EN.md"
+        },
+        {
+          "name": "In Shadow of Time-EN.md",
+          "type": "file",
+          "path": "I/In Shadow of Time-EN.md"
+        },
+        {
+          "name": "Indiana Jones and the Crown of Solomon-DE.md",
+          "type": "file",
+          "path": "I/Indiana Jones and the Crown of Solomon-DE.md"
+        },
+        {
+          "name": "Indiana Jones and the Fountain of Youth Demo-EN.md",
+          "type": "file",
+          "path": "I/Indiana Jones and the Fountain of Youth Demo-EN.md"
+        },
+        {
+          "name": "Indiana Jones and the Gold of Genghis Khan-EN.md",
+          "type": "file",
+          "path": "I/Indiana Jones and the Gold of Genghis Khan-EN.md"
+        },
+        {
+          "name": "Indiana Jones and the Passage of Saints-EN.md",
+          "type": "file",
+          "path": "I/Indiana Jones and the Passage of Saints-EN.md"
+        },
+        {
+          "name": "Indiana Jones and the Relic of the Viking-DE.md",
+          "type": "file",
+          "path": "I/Indiana Jones and the Relic of the Viking-DE.md"
+        },
+        {
+          "name": "Indiana Jones and the Temple of Spheres-EN.md",
+          "type": "file",
+          "path": "I/Indiana Jones and the Temple of Spheres-EN.md"
+        },
+        {
+          "name": "Indiana Jones and the Window of the Crystal Cursor DEMO-EN.md",
+          "type": "file",
+          "path": "I/Indiana Jones and the Window of the Crystal Cursor DEMO-EN.md"
+        },
+        {
+          "name": "Innocent until caught 2 - Guilty-DE.md",
+          "type": "file",
+          "path": "I/Innocent until caught 2 - Guilty-DE.md"
+        },
+        {
+          "name": "Innocent until caught-DE.md",
+          "type": "file",
+          "path": "I/Innocent until caught-DE.md"
+        },
+        {
+          "name": "Inside Monkey Island-Chapter 1-EN.md",
+          "type": "file",
+          "path": "I/Inside Monkey Island-Chapter 1-EN.md"
+        },
+        {
+          "name": "Inside Monkey Island-Chapter 2-EN.md",
+          "type": "file",
+          "path": "I/Inside Monkey Island-Chapter 2-EN.md"
+        },
+        {
+          "name": "Inside Monkey Island-Chapter 3-EN.md",
+          "type": "file",
+          "path": "I/Inside Monkey Island-Chapter 3-EN.md"
+        },
+        {
+          "name": "Intergalactic Wizard Force-EN.md",
+          "type": "file",
+          "path": "I/Intergalactic Wizard Force-EN.md"
+        },
+        {
+          "name": "Interstellar Interruption-EN.md",
+          "type": "file",
+          "path": "I/Interstellar Interruption-EN.md"
+        },
+        {
+          "name": "Irony Curtain - From Matryoshka with Love-DE.md",
+          "type": "file",
+          "path": "I/Irony Curtain - From Matryoshka with Love-DE.md"
+        },
+        {
+          "name": "It takes two to tangle-EN.md",
+          "type": "file",
+          "path": "I/It takes two to tangle-EN.md"
+        },
+        {
+          "name": "IWWHIIWWHITOMIROTPG-EN.md",
+          "type": "file",
+          "path": "I/IWWHIIWWHITOMIROTPG-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "J",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Jenseits von Traum und Zeit-DE.md",
+          "type": "file",
+          "path": "J/Jenseits von Traum und Zeit-DE.md"
+        },
+        {
+          "name": "Jimmy The Squatter - Episode 1-EN.md",
+          "type": "file",
+          "path": "J/Jimmy The Squatter - Episode 1-EN.md"
+        },
+        {
+          "name": "Jimmy The Squatter - Episode 2-EN.md",
+          "type": "file",
+          "path": "J/Jimmy The Squatter - Episode 2-EN.md"
+        },
+        {
+          "name": "Jimmy The Squatter - Episode 3-EN.md",
+          "type": "file",
+          "path": "J/Jimmy The Squatter - Episode 3-EN.md"
+        },
+        {
+          "name": "Jimmy The Squatter - I hate my Job-EN.md",
+          "type": "file",
+          "path": "J/Jimmy The Squatter - I hate my Job-EN.md"
+        },
+        {
+          "name": "Jimmy the Troublemaker-EN.md",
+          "type": "file",
+          "path": "J/Jimmy the Troublemaker-EN.md"
+        },
+        {
+          "name": "Jinx o' Clock-DE.md",
+          "type": "file",
+          "path": "J/Jinx o' Clock-DE.md"
+        },
+        {
+          "name": "John Jebediah Gun and Sepheret Island-EN.md",
+          "type": "file",
+          "path": "J/John Jebediah Gun and Sepheret Island-EN.md"
+        },
+        {
+          "name": "Journey Home-EN.md",
+          "type": "file",
+          "path": "J/Journey Home-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "K",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Kathy Rain 2 - Soothsayer-EN.md",
+          "type": "file",
+          "path": "K/Kathy Rain 2 - Soothsayer-EN.md"
+        },
+        {
+          "name": "Keys of a gamespace-EN.md",
+          "type": "file",
+          "path": "K/Keys of a gamespace-EN.md"
+        },
+        {
+          "name": "KIDNAME ICEBOY-EN.md",
+          "type": "file",
+          "path": "K/KIDNAME ICEBOY-EN.md"
+        },
+        {
+          "name": "King's Quest 2 - Romancing the Stones VGA-EN.md",
+          "type": "file",
+          "path": "K/King's Quest 2 - Romancing the Stones VGA-EN.md"
+        },
+        {
+          "name": "King's Quest 3 - To Heir is Human - Redux VGA-EN.md",
+          "type": "file",
+          "path": "K/King's Quest 3 - To Heir is Human - Redux VGA-EN.md"
+        },
+        {
+          "name": "King’s Quest 1 - Quest for the Crown VGA-EN.md",
+          "type": "file",
+          "path": "K/King’s Quest 1 - Quest for the Crown VGA-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "L",
+      "type": "directory",
+      "children": [
+        {
+          "name": "LeChuck Stories-DE.md",
+          "type": "file",
+          "path": "L/LeChuck Stories-DE.md"
+        },
+        {
+          "name": "Less than Three-EN.md",
+          "type": "file",
+          "path": "L/Less than Three-EN.md"
+        },
+        {
+          "name": "Let Sleeping Dogs Die-EN.md",
+          "type": "file",
+          "path": "L/Let Sleeping Dogs Die-EN.md"
+        },
+        {
+          "name": "Living Nightmare - Endless Dream-EN.md",
+          "type": "file",
+          "path": "L/Living Nightmare - Endless Dream-EN.md"
+        },
+        {
+          "name": "Loco Motive - Game Jam Version-EN.md",
+          "type": "file",
+          "path": "L/Loco Motive - Game Jam Version-EN.md"
+        },
+        {
+          "name": "Loco Motive-DE.md",
+          "type": "file",
+          "path": "L/Loco Motive-DE.md"
+        },
+        {
+          "name": "Loftus and the Sky Cap-EN.md",
+          "type": "file",
+          "path": "L/Loftus and the Sky Cap-EN.md"
+        },
+        {
+          "name": "Lola's Adventure-DE.md",
+          "type": "file",
+          "path": "L/Lola's Adventure-DE.md"
+        },
+        {
+          "name": "Lona - Realms of Colors-EN.md",
+          "type": "file",
+          "path": "L/Lona - Realms of Colors-EN.md"
+        },
+        {
+          "name": "Lucas Maniac!-EN.md",
+          "type": "file",
+          "path": "L/Lucas Maniac!-EN.md"
+        },
+        {
+          "name": "Lucy Dreaming-DE.md",
+          "type": "file",
+          "path": "L/Lucy Dreaming-DE.md"
+        }
+      ]
+    },
+    {
+      "name": "M",
+      "type": "directory",
+      "children": [
+        {
+          "name": "ManiacMansionMania.res",
+          "type": "directory",
+          "children": [
+            {
+              "name": "banner.png",
+              "type": "file",
+              "path": "M/ManiacMansionMania.res/banner.png"
+            }
+          ]
+        },
+        {
+          "name": "Magret und FaceDeBouc - The buddy-buddy case-DE.md",
+          "type": "file",
+          "path": "M/Magret und FaceDeBouc - The buddy-buddy case-DE.md"
+        },
+        {
+          "name": "Magsic II-EN.md",
+          "type": "file",
+          "path": "M/Magsic II-EN.md"
+        },
+        {
+          "name": "Magsic-EN.md",
+          "type": "file",
+          "path": "M/Magsic-EN.md"
+        },
+        {
+          "name": "Maniac Dungeon - Alle Räume-DE.md",
+          "type": "file",
+          "path": "M/Maniac Dungeon - Alle Räume-DE.md"
+        },
+        {
+          "name": "Maniac Dungeon 7 - inoffizielle Urversion-DE.md",
+          "type": "file",
+          "path": "M/Maniac Dungeon 7 - inoffizielle Urversion-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania - A Christmas Odyssey - Christmas 2008-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania - A Christmas Odyssey - Christmas 2008-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania - Ostereiersuche 2010-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania - Ostereiersuche 2010-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania - Ostereiersuche 2011-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania - Ostereiersuche 2011-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania - Ostereiersuche 2018-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania - Ostereiersuche 2018-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania - Ronville Viper-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania - Ronville Viper-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania - Three Days Before Christmas-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania - Three Days Before Christmas-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Demo - Das Experiment-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Demo - Das Experiment-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Demo - Das Textadventure-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Demo - Das Textadventure-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 001 - Geschwisterliebe-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 001 - Geschwisterliebe-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 002 - Unruhen-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 002 - Unruhen-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 003 - Stubenarrest-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 003 - Stubenarrest-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 004 - Mimikry der Emotionen-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 004 - Mimikry der Emotionen-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 005 - Rhythmen zum Reinbeißen-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 005 - Rhythmen zum Reinbeißen-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 006 - Er is weg-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 006 - Er is weg-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 007 - Right said Fred-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 007 - Right said Fred-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 008 - Die Abfuhr-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 008 - Die Abfuhr-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 009 - Radioaktiv-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 009 - Radioaktiv-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 010 - Tales of the Weird Ed-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 010 - Tales of the Weird Ed-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 011 - Ein haariger Ausflug-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 011 - Ein haariger Ausflug-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 012 - Serien-Special GIGA Mansion-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 012 - Serien-Special GIGA Mansion-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 013 - Nur geträumt-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 013 - Nur geträumt-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 014 - Ed's Rache für den Hamsterbraten-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 014 - Ed's Rache für den Hamsterbraten-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 015 - Ortmaschine-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 015 - Ortmaschine-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 016 - Meteor Family - Die Rückkehr des Meteoriten-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 016 - Meteor Family - Die Rückkehr des Meteoriten-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 017 - Das Labor-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 017 - Das Labor-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 018 - Shit Happens!-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 018 - Shit Happens!-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 019 - Das Date-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 019 - Das Date-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 020 - Das Date 2-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 020 - Das Date 2-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 021 - Rettet Kanal 13!-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 021 - Rettet Kanal 13!-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 022 - Presserummel-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 022 - Presserummel-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 023 - Das verflixte Geschenk-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 023 - Das verflixte Geschenk-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 024 - Time Machine-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 024 - Time Machine-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 025 - Bernard stört-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 025 - Bernard stört-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 026 - Zeitenwende-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 026 - Zeitenwende-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 027 - Hamsternator-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 027 - Hamsternator-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 028 - Time Machine 2-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 028 - Time Machine 2-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 029 - Flucht des Meteoriten-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 029 - Flucht des Meteoriten-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 030 - Memories of Zak-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 030 - Memories of Zak-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 031 - Britneys Suche-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 031 - Britneys Suche-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 032 - The Secret of Maniac Mansion-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 032 - The Secret of Maniac Mansion-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 033 - Carry on Smiley!-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 033 - Carry on Smiley!-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 034 - Helden des Tages-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 034 - Helden des Tages-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 035 - Weggebeamt-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 035 - Weggebeamt-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 036 - Der Liebesbrief-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 036 - Der Liebesbrief-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 037 - Verabredung mit Dave-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 037 - Verabredung mit Dave-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 038 - Rescue Mission-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 038 - Rescue Mission-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 039 - Erinnerungen-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 039 - Erinnerungen-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 040 - Verflixte Türen-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 040 - Verflixte Türen-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 041 - Das neue Jugendschutzgesetz V3-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 041 - Das neue Jugendschutzgesetz V3-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 041 - Das neue Jugendschutzgesetz-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 041 - Das neue Jugendschutzgesetz-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 042 - Die furchtbaren Pläne des Psycho Bernie-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 042 - Die furchtbaren Pläne des Psycho Bernie-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 043 - Vorsicht, Edna kommt!-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 043 - Vorsicht, Edna kommt!-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 044 - Razors grosser Auftritt - Directors Cut-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 044 - Razors grosser Auftritt - Directors Cut-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 044 - Razors grosser Auftritt-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 044 - Razors grosser Auftritt-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 045 - Maniac Monday-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 045 - Maniac Monday-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 046 - Verschollen-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 046 - Verschollen-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 047 - Maniac Ostern-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 047 - Maniac Ostern-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 048 - Wendy und das Buch des Todes-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 048 - Wendy und das Buch des Todes-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 049 - Clouso's großer Coup-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 049 - Clouso's großer Coup-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 050 - Das Date 3-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 050 - Das Date 3-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 051 - Ortmaschine II-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 051 - Ortmaschine II-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 052 - Ein irrer Tag eines Ronvillers-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 052 - Ein irrer Tag eines Ronvillers-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 053 - Der Klaus schlägt zurück-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 053 - Der Klaus schlägt zurück-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 054 - CSI RONVILLE-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 054 - CSI RONVILLE-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 055 - Hamsters of the mysterious man - Chapter of dream-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 055 - Hamsters of the mysterious man - Chapter of dream-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 056 - Grotten-Urlaub-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 056 - Grotten-Urlaub-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 057 - Ein geheimnisvoller Ausflug-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 057 - Ein geheimnisvoller Ausflug-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 058 - The People's Court-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 058 - The People's Court-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 059 - Computerliebe-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 059 - Computerliebe-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 060 - Jahrmarkt der Verdammten-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 060 - Jahrmarkt der Verdammten-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 061 - Bernards Room-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 061 - Bernards Room-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 062 - Bernard gegen Berthold-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 062 - Bernard gegen Berthold-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 063 - Books - Deals unter Nachbarn-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 063 - Books - Deals unter Nachbarn-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 064 - Baranoia-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 064 - Baranoia-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 065 - Save Smiley!-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 065 - Save Smiley!-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 066 - Hoagies neuer Freund - Akt 3 - Der verbotene Akt-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 066 - Hoagies neuer Freund - Akt 3 - Der verbotene Akt-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 066 - Hoagies neuer Freund-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 066 - Hoagies neuer Freund-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 067 - Die Schöne und das Biest-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 067 - Die Schöne und das Biest-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 068 - MaMMa ante Portas-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 068 - MaMMa ante Portas-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 069 - Samstag-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 069 - Samstag-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 070 - Maniac Mansion Begins-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 070 - Maniac Mansion Begins-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 071 - Neue Abenteuer auf Terra-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 071 - Neue Abenteuer auf Terra-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 072 - Mindbending TV-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 072 - Mindbending TV-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 073 - Even a broken clock-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 073 - Even a broken clock-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 074 - Ted Edison and the Curse of King Rooten Tooten-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 074 - Ted Edison and the Curse of King Rooten Tooten-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 075 - Das Necronomicon-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 075 - Das Necronomicon-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 076 - The Bernoulli-Show-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 076 - The Bernoulli-Show-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 077 - Schwer verquer-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 077 - Schwer verquer-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 078 - Dumm geholfen-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 078 - Dumm geholfen-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 079 - Der Wunsch-O-Mat-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 079 - Der Wunsch-O-Mat-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 080 - Spiel des Lebens-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 080 - Spiel des Lebens-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 081 - Bernard bricht aus-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 081 - Bernard bricht aus-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 082 - Freundin mit Hindernissen-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 082 - Freundin mit Hindernissen-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 083 - Chasing Hoagie-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 083 - Chasing Hoagie-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 084 - Surf'n'Ronville-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 084 - Surf'n'Ronville-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 085 - Freundin mit Hindernissen Part 2-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 085 - Freundin mit Hindernissen Part 2-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 086 - Bernard bekommt Besuch-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 086 - Bernard bekommt Besuch-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 087 - Das Geheimnis des Blakes Hotel von Ronville-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 087 - Das Geheimnis des Blakes Hotel von Ronville-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 088 - Der alltaegliche Wahnsinn-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 088 - Der alltaegliche Wahnsinn-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 089 - Der Weltrettungsalgorithmus-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 089 - Der Weltrettungsalgorithmus-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 090 - Kofferpacken-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 090 - Kofferpacken-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 091 - Fels in der Brandung-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 091 - Fels in der Brandung-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 092 - Project False Start-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 092 - Project False Start-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 093 - Murder at the Moonshine Mansion-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 093 - Murder at the Moonshine Mansion-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 094 - Maniac on the Mississippi-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 094 - Maniac on the Mississippi-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 095 - Britney's Flucht-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 095 - Britney's Flucht-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 096 - Dave's Home Odyssey-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 096 - Dave's Home Odyssey-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 097 - Tollhaus-Weihnachten-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 097 - Tollhaus-Weihnachten-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 098 - Maniac Apartment-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 098 - Maniac Apartment-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 099 - Die Premiere-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 099 - Die Premiere-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 100 - Money Mansion-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 100 - Money Mansion-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 101 - Mit anderen Augen-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 101 - Mit anderen Augen-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Episode 102 - Michaels Nacht-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Episode 102 - Michaels Nacht-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2005-01 - Ohne Titel-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2005-01 - Ohne Titel-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2005-02 - Escape from Maniac Mansion-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2005-02 - Escape from Maniac Mansion-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2005-03 - Day of the Dead-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2005-03 - Day of the Dead-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2005-04 - MMM-Horror-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2005-04 - MMM-Horror-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2005-05 - Redrum-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2005-05 - Redrum-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2006-01 - The Curse of Maniac Mansion-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2006-01 - The Curse of Maniac Mansion-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2006-02 - Hä. Ich glaub ich spinne-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2006-02 - Hä. Ich glaub ich spinne-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2010-01 - Das Monster aus der Racoon Lagoon-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2010-01 - Das Monster aus der Racoon Lagoon-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2010-02 - T.M.M.C.M.F.H-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2010-02 - T.M.M.C.M.F.H-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2010-03 - Und Bernard läutet zur Geisterstunde-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2010-03 - Und Bernard läutet zur Geisterstunde-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2010-04 - Bad and Mad-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2010-04 - Bad and Mad-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Halloween 2011-01 - Man stirbt nur zweimal-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Halloween 2011-01 - Man stirbt nur zweimal-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 01-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 01-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 02 - Rückkehr eines Idioten-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 02 - Rückkehr eines Idioten-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 03 - Spiel mir das 1337 vom Tod-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 03 - Spiel mir das 1337 vom Tod-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 04 - Forgotten Memories-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 04 - Forgotten Memories-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 05 - Die Universalkraft-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 05 - Die Universalkraft-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 06 - Verbannt ins Exühl-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 06 - Verbannt ins Exühl-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 07 - Meteorhead Man und Peter Pommes retten die Fast Food-Industrie-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 07 - Meteorhead Man und Peter Pommes retten die Fast Food-Industrie-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 08 - Rettet Meteorhead Man-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 08 - Rettet Meteorhead Man-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 09 - Razors Mutation-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 09 - Razors Mutation-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 10 - Eine Frage der Ausrede-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 10 - Eine Frage der Ausrede-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 11 - Die Klauung des güldenen Headgars-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 11 - Die Klauung des güldenen Headgars-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 13 - Universale Veränderungen-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 13 - Universale Veränderungen-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 14 - A Road Movie-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 14 - A Road Movie-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 15 - Die unverträgliche Dreistigkeit des Schweins-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 15 - Die unverträgliche Dreistigkeit des Schweins-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Meteorhead 16 - The Final Chapter - Die Qual des Wals-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Meteorhead 16 - The Final Chapter - Die Qual des Wals-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Mini Masterpiece #01 - Eds Paket-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Mini Masterpiece #01 - Eds Paket-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Mini Masterpiece #02 - Wendy im finsteren Keller-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Mini Masterpiece #02 - Wendy im finsteren Keller-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Mini Masterpiece #03 - Harrys verwegener Tag-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Mini Masterpiece #03 - Harrys verwegener Tag-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Mini Masterpiece #04 - Bertholds Rückkehr-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Mini Masterpiece #04 - Bertholds Rückkehr-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Mini Masterpiece #05 - Marcys Bestimmung-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Mini Masterpiece #05 - Marcys Bestimmung-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Staffel 01 Edgar Award-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Staffel 01 Edgar Award-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Staffel 02 Edgar Award-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Staffel 02 Edgar Award-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Staffel 03 Edgar Award-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Staffel 03 Edgar Award-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Staffel 04 Edgar Award-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Staffel 04 Edgar Award-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Staffel 05 Edgar Award-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Staffel 05 Edgar Award-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Staffel 06 Edgar Award-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Staffel 06 Edgar Award-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Staffel 07 Edgar Award-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Staffel 07 Edgar Award-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Staffel 08 Edgar Award-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Staffel 08 Edgar Award-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Staffel 09 Edgar Award-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Staffel 09 Edgar Award-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Bernard muss 2 mahl-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Bernard muss 2 mahl-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Bernard muss 3 mahl-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Bernard muss 3 mahl-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Bernard muss 4 mahl-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Bernard muss 4 mahl-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Bernard muss mahl-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Bernard muss mahl-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Britney muss mahl-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Britney muss mahl-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Eine Traumepisode-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Eine Traumepisode-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Frühjahrsputz-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Frühjahrsputz-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Herrschaft der Futanaris 2-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Herrschaft der Futanaris 2-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Herrschaft der Futanaris 3-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Herrschaft der Futanaris 3-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Herrschaft der Futanaris 4-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Herrschaft der Futanaris 4-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Herrschaft der Futanaris-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Herrschaft der Futanaris-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Iasons Testepisode-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Iasons Testepisode-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Jagd auf rotes Tentakel-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Jagd auf rotes Tentakel-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - MS - F--king Vista!-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - MS - F--king Vista!-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - No GUI-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - No GUI-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Rettet Sandy-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Rettet Sandy-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Run Hoagie Run-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Run Hoagie Run-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Wink Smiley sucht den MMM-Millionär - Bloody Halloween Version-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Wink Smiley sucht den MMM-Millionär - Bloody Halloween Version-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Wink Smiley sucht den MMM-Millionär - Vol. II-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Wink Smiley sucht den MMM-Millionär - Vol. II-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Wink Smiley sucht den MMM-Millionär-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Wink Smiley sucht den MMM-Millionär-DE.md"
+        },
+        {
+          "name": "Maniac Mansion Mania Trash - Wink Smiley sucht den Trash-Millionär-DE.md",
+          "type": "file",
+          "path": "M/Maniac Mansion Mania Trash - Wink Smiley sucht den Trash-Millionär-DE.md"
+        },
+        {
+          "name": "Maniac Metalhead Mania II-DE.md",
+          "type": "file",
+          "path": "M/Maniac Metalhead Mania II-DE.md"
+        },
+        {
+          "name": "Maniac Metalhead Mania-DE.md",
+          "type": "file",
+          "path": "M/Maniac Metalhead Mania-DE.md"
+        },
+        {
+          "name": "MASH - The Adventure Game-EN.md",
+          "type": "file",
+          "path": "M/MASH - The Adventure Game-EN.md"
+        },
+        {
+          "name": "Matt To The Future Demo-EN.md",
+          "type": "file",
+          "path": "M/Matt To The Future Demo-EN.md"
+        },
+        {
+          "name": "Maverick Gunn and the Eye of Oggun-EN.md",
+          "type": "file",
+          "path": "M/Maverick Gunn and the Eye of Oggun-EN.md"
+        },
+        {
+          "name": "Me and the Robot-DE.md",
+          "type": "file",
+          "path": "M/Me and the Robot-DE.md"
+        },
+        {
+          "name": "Midnight Saturn-EN.md",
+          "type": "file",
+          "path": "M/Midnight Saturn-EN.md"
+        },
+        {
+          "name": "Minor Minion-EN.md",
+          "type": "file",
+          "path": "M/Minor Minion-EN.md"
+        },
+        {
+          "name": "Monkey Island 2 - LeChuck's Revenge-DE.md",
+          "type": "file",
+          "path": "M/Monkey Island 2 - LeChuck's Revenge-DE.md"
+        },
+        {
+          "name": "Mord im Laufrad-DE.md",
+          "type": "file",
+          "path": "M/Mord im Laufrad-DE.md"
+        },
+        {
+          "name": "MORT-Manageably OK Response Team-EN.md",
+          "type": "file",
+          "path": "M/MORT-Manageably OK Response Team-EN.md"
+        },
+        {
+          "name": "My Burden to Keep-EN.md",
+          "type": "file",
+          "path": "M/My Burden to Keep-EN.md"
+        },
+        {
+          "name": "Mykendia-EN.md",
+          "type": "file",
+          "path": "M/Mykendia-EN.md"
+        },
+        {
+          "name": "Mänick Mänschion-DE.md",
+          "type": "file",
+          "path": "M/Mänick Mänschion-DE.md"
+        }
+      ]
+    },
+    {
+      "name": "N",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Necro Quest 1 Deluxe-EN.md",
+          "type": "file",
+          "path": "N/Necro Quest 1 Deluxe-EN.md"
+        },
+        {
+          "name": "Nelly Cootalot - Spoonbeaks Ahoy!-EN.md",
+          "type": "file",
+          "path": "N/Nelly Cootalot - Spoonbeaks Ahoy!-EN.md"
+        },
+        {
+          "name": "Neon Hearts City-EN.md",
+          "type": "file",
+          "path": "N/Neon Hearts City-EN.md"
+        },
+        {
+          "name": "Night of the Hermit-EN.md",
+          "type": "file",
+          "path": "N/Night of the Hermit-EN.md"
+        },
+        {
+          "name": "Nightmare Frames-EN.md",
+          "type": "file",
+          "path": "N/Nightmare Frames-EN.md"
+        },
+        {
+          "name": "Nippon Safes Inc-EN.md",
+          "type": "file",
+          "path": "N/Nippon Safes Inc-EN.md"
+        },
+        {
+          "name": "No Rest for the Wicked-EN.md",
+          "type": "file",
+          "path": "N/No Rest for the Wicked-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "O",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Old Skies-Achievement-Sera-fia.png",
+          "type": "file",
+          "path": "O/Old Skies-Achievement-Sera-fia.png"
+        },
+        {
+          "name": "Old Skies-EN.md",
+          "type": "file",
+          "path": "O/Old Skies-EN.md"
+        },
+        {
+          "name": "One of a Kind - A Divine Comedy of Mistakes-EN.md",
+          "type": "file",
+          "path": "O/One of a Kind - A Divine Comedy of Mistakes-EN.md"
+        },
+        {
+          "name": "Orbital Cargo Division-EN.md",
+          "type": "file",
+          "path": "O/Orbital Cargo Division-EN.md"
+        },
+        {
+          "name": "Orion Burger-DE.md",
+          "type": "file",
+          "path": "O/Orion Burger-DE.md"
+        },
+        {
+          "name": "Otaku Rivals-EN.md",
+          "type": "file",
+          "path": "O/Otaku Rivals-EN.md"
+        },
+        {
+          "name": "Outlaw's Gold-EN.md",
+          "type": "file",
+          "path": "O/Outlaw's Gold-EN.md"
+        },
+        {
+          "name": "Owl's Quest - Every Owl has its day-EN.md",
+          "type": "file",
+          "path": "O/Owl's Quest - Every Owl has its day-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "P",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Perfect Tides-EN.md",
+          "type": "file",
+          "path": "P/Perfect Tides-EN.md"
+        },
+        {
+          "name": "Peridium-EN.md",
+          "type": "file",
+          "path": "P/Peridium-EN.md"
+        },
+        {
+          "name": "Perilous Night-EN.md",
+          "type": "file",
+          "path": "P/Perilous Night-EN.md"
+        },
+        {
+          "name": "Perilous Wilde-EN.md",
+          "type": "file",
+          "path": "P/Perilous Wilde-EN.md"
+        },
+        {
+          "name": "Perils of Poom-EN.md",
+          "type": "file",
+          "path": "P/Perils of Poom-EN.md"
+        },
+        {
+          "name": "Perry Rhodan - Thoregon - Die verbotene Stadt-DE.md",
+          "type": "file",
+          "path": "P/Perry Rhodan - Thoregon - Die verbotene Stadt-DE.md"
+        },
+        {
+          "name": "Phoenix1-EN.md",
+          "type": "file",
+          "path": "P/Phoenix1-EN.md"
+        },
+        {
+          "name": "Pig in a poke-EN.md",
+          "type": "file",
+          "path": "P/Pig in a poke-EN.md"
+        },
+        {
+          "name": "Pink Panthers Gefaehrliche Mission-DE.md",
+          "type": "file",
+          "path": "P/Pink Panthers Gefaehrliche Mission-DE.md"
+        },
+        {
+          "name": "Pirate Theme Park - A Short Adventure-EN.md",
+          "type": "file",
+          "path": "P/Pirate Theme Park - A Short Adventure-EN.md"
+        },
+        {
+          "name": "PISS-EN.md",
+          "type": "file",
+          "path": "P/PISS-EN.md"
+        },
+        {
+          "name": "PocketFluff.Yay!-EN.md",
+          "type": "file",
+          "path": "P/PocketFluff.Yay!-EN.md"
+        },
+        {
+          "name": "PocketFluff.Yay!-Savegame.7z",
+          "type": "file",
+          "path": "P/PocketFluff.Yay!-Savegame.7z"
+        },
+        {
+          "name": "Police Quest - Panama Nights-EN.md",
+          "type": "file",
+          "path": "P/Police Quest - Panama Nights-EN.md"
+        },
+        {
+          "name": "Postcard Adventure-EN.md",
+          "type": "file",
+          "path": "P/Postcard Adventure-EN.md"
+        },
+        {
+          "name": "Powers in the Basement-EN.md",
+          "type": "file",
+          "path": "P/Powers in the Basement-EN.md"
+        },
+        {
+          "name": "Professor Neely And The Death Ray Of Doom-EN.md",
+          "type": "file",
+          "path": "P/Professor Neely And The Death Ray Of Doom-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "Q",
+      "type": "directory",
+      "children": []
+    },
+    {
+      "name": "R",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Rabbit Hill-EN.md",
+          "type": "file",
+          "path": "R/Rabbit Hill-EN.md"
+        },
+        {
+          "name": "Razors In The Night-EN.md",
+          "type": "file",
+          "path": "R/Razors In The Night-EN.md"
+        },
+        {
+          "name": "Reactor 09-EN.md",
+          "type": "file",
+          "path": "R/Reactor 09-EN.md"
+        },
+        {
+          "name": "Reality-On-The-Norm 081 - The Case of the Muffin Diver-EN.md",
+          "type": "file",
+          "path": "R/Reality-On-The-Norm 081 - The Case of the Muffin Diver-EN.md"
+        },
+        {
+          "name": "Rein-EN.md",
+          "type": "file",
+          "path": "R/Rein-EN.md"
+        },
+        {
+          "name": "Relics of Deldroneye 1.5 - Return to Zantis-EN.md",
+          "type": "file",
+          "path": "R/Relics of Deldroneye 1.5 - Return to Zantis-EN.md"
+        },
+        {
+          "name": "Relics of Deldroneye 2 - Island Of Debreen-EN.md",
+          "type": "file",
+          "path": "R/Relics of Deldroneye 2 - Island Of Debreen-EN.md"
+        },
+        {
+          "name": "Relics of Deldroneye-EN.md",
+          "type": "file",
+          "path": "R/Relics of Deldroneye-EN.md"
+        },
+        {
+          "name": "Return Home-EN.md",
+          "type": "file",
+          "path": "R/Return Home-EN.md"
+        },
+        {
+          "name": "Return to Monkey Island-DE.md",
+          "type": "file",
+          "path": "R/Return to Monkey Island-DE.md"
+        },
+        {
+          "name": "River of Rage-EN.md",
+          "type": "file",
+          "path": "R/River of Rage-EN.md"
+        },
+        {
+          "name": "Rob - The Massacre Of Chainsawness-EN.md",
+          "type": "file",
+          "path": "R/Rob - The Massacre Of Chainsawness-EN.md"
+        },
+        {
+          "name": "Rob Blanc I - Better Days of a Defender of the Universe-EN.md",
+          "type": "file",
+          "path": "R/Rob Blanc I - Better Days of a Defender of the Universe-EN.md"
+        },
+        {
+          "name": "Rob Blanc II - Planet of the Pasteurised Pestilence-EN.md",
+          "type": "file",
+          "path": "R/Rob Blanc II - Planet of the Pasteurised Pestilence-EN.md"
+        },
+        {
+          "name": "Rob Blanc III - The Temporal Terrorists-EN.md",
+          "type": "file",
+          "path": "R/Rob Blanc III - The Temporal Terrorists-EN.md"
+        },
+        {
+          "name": "Robotragedy 2-EN.md",
+          "type": "file",
+          "path": "R/Robotragedy 2-EN.md"
+        },
+        {
+          "name": "Robotragedy-EN.md",
+          "type": "file",
+          "path": "R/Robotragedy-EN.md"
+        },
+        {
+          "name": "Roots in the Sky - The Hand of Glory 2-EN.md",
+          "type": "file",
+          "path": "R/Roots in the Sky - The Hand of Glory 2-EN.md"
+        },
+        {
+          "name": "Rosewater-EN.md",
+          "type": "file",
+          "path": "R/Rosewater-EN.md"
+        },
+        {
+          "name": "Rowen Goes To Work-EN.md",
+          "type": "file",
+          "path": "R/Rowen Goes To Work-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "S",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Samaritan Paradox, The-EN.md",
+          "type": "file",
+          "path": "S/Samaritan Paradox, The-EN.md"
+        },
+        {
+          "name": "Santa Quest-EN.md",
+          "type": "file",
+          "path": "S/Santa Quest-EN.md"
+        },
+        {
+          "name": "SAW 2-EN.md",
+          "type": "file",
+          "path": "S/SAW 2-EN.md"
+        },
+        {
+          "name": "SAW Deluxe-EN.md",
+          "type": "file",
+          "path": "S/SAW Deluxe-EN.md"
+        },
+        {
+          "name": "Secrets Of Sultan Kanuni-EN.md",
+          "type": "file",
+          "path": "S/Secrets Of Sultan Kanuni-EN.md"
+        },
+        {
+          "name": "Shadows Of Serenity-EN.md",
+          "type": "file",
+          "path": "S/Shadows Of Serenity-EN.md"
+        },
+        {
+          "name": "Shadows of the Afterland-EN.md",
+          "type": "file",
+          "path": "S/Shadows of the Afterland-EN.md"
+        },
+        {
+          "name": "Shards of God-EN.md",
+          "type": "file",
+          "path": "S/Shards of God-EN.md"
+        },
+        {
+          "name": "Shifter's Box - Outside In-EN.md",
+          "type": "file",
+          "path": "S/Shifter's Box - Outside In-EN.md"
+        },
+        {
+          "name": "Shifter-EN.md",
+          "type": "file",
+          "path": "S/Shifter-EN.md"
+        },
+        {
+          "name": "Shoot, I Got Abducted!-EN.md",
+          "type": "file",
+          "path": "S/Shoot, I Got Abducted!-EN.md"
+        },
+        {
+          "name": "ShortCUT-EN.md",
+          "type": "file",
+          "path": "S/ShortCUT-EN.md"
+        },
+        {
+          "name": "Sinkhole Sy-EN.md",
+          "type": "file",
+          "path": "S/Sinkhole Sy-EN.md"
+        },
+        {
+          "name": "Siren-EN.md",
+          "type": "file",
+          "path": "S/Siren-EN.md"
+        },
+        {
+          "name": "Slender Threads-EN.md",
+          "type": "file",
+          "path": "S/Slender Threads-EN.md"
+        },
+        {
+          "name": "Slug Princess-EN.md",
+          "type": "file",
+          "path": "S/Slug Princess-EN.md"
+        },
+        {
+          "name": "Snake-EN.md",
+          "type": "file",
+          "path": "S/Snake-EN.md"
+        },
+        {
+          "name": "Snakes of Avalon-EN.md",
+          "type": "file",
+          "path": "S/Snakes of Avalon-EN.md"
+        },
+        {
+          "name": "Snarl-EN.md",
+          "type": "file",
+          "path": "S/Snarl-EN.md"
+        },
+        {
+          "name": "Snow Queen - After The Apocalypse-EN.md",
+          "type": "file",
+          "path": "S/Snow Queen - After The Apocalypse-EN.md"
+        },
+        {
+          "name": "Space Adventure-EN.md",
+          "type": "file",
+          "path": "S/Space Adventure-EN.md"
+        },
+        {
+          "name": "Space Quest - A Son of Xenon-EN.md",
+          "type": "file",
+          "path": "S/Space Quest - A Son of Xenon-EN.md"
+        },
+        {
+          "name": "Space Quest - Decision of the Elders-EN.md",
+          "type": "file",
+          "path": "S/Space Quest - Decision of the Elders-EN.md"
+        },
+        {
+          "name": "Space Quest 0 - Replicated-EN.md",
+          "type": "file",
+          "path": "S/Space Quest 0 - Replicated-EN.md"
+        },
+        {
+          "name": "Space Quest 2 - Vohaul's Revenge Remake-EN.md",
+          "type": "file",
+          "path": "S/Space Quest 2 - Vohaul's Revenge Remake-EN.md"
+        },
+        {
+          "name": "Spaceman in Space-EN.md",
+          "type": "file",
+          "path": "S/Spaceman in Space-EN.md"
+        },
+        {
+          "name": "Star Trek Newton - Part One - Anomaly-EN.md",
+          "type": "file",
+          "path": "S/Star Trek Newton - Part One - Anomaly-EN.md"
+        },
+        {
+          "name": "Stargate Adventure-EN.md",
+          "type": "file",
+          "path": "S/Stargate Adventure-EN.md"
+        },
+        {
+          "name": "Stately Groan-EN.md",
+          "type": "file",
+          "path": "S/Stately Groan-EN.md"
+        },
+        {
+          "name": "Steeplejack-EN.md",
+          "type": "file",
+          "path": "S/Steeplejack-EN.md"
+        },
+        {
+          "name": "Stellar Mess - The Princess Conundrum-EN.md",
+          "type": "file",
+          "path": "S/Stellar Mess - The Princess Conundrum-EN.md"
+        },
+        {
+          "name": "Stoaway-EN.md",
+          "type": "file",
+          "path": "S/Stoaway-EN.md"
+        },
+        {
+          "name": "Stranger By Night-EN.md",
+          "type": "file",
+          "path": "S/Stranger By Night-EN.md"
+        },
+        {
+          "name": "Stranger in Utopia-EN.md",
+          "type": "file",
+          "path": "S/Stranger in Utopia-EN.md"
+        },
+        {
+          "name": "Submerged - LaSol - Special Edition-EN.md",
+          "type": "file",
+          "path": "S/Submerged - LaSol - Special Edition-EN.md"
+        },
+        {
+          "name": "Sydney Finds Employment-EN.md",
+          "type": "file",
+          "path": "S/Sydney Finds Employment-EN.md"
+        },
+        {
+          "name": "Sydney Treads The Catwalk-EN.md",
+          "type": "file",
+          "path": "S/Sydney Treads The Catwalk-EN.md"
+        },
+        {
+          "name": "sync--routine-EN.md",
+          "type": "file",
+          "path": "S/sync--routine-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "T",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Tachyon Dreams I - The Radiant Fish of the Apocalypse-EN.md",
+          "type": "file",
+          "path": "T/Tachyon Dreams I - The Radiant Fish of the Apocalypse-EN.md"
+        },
+        {
+          "name": "Tachyon Dreams II - The Bloated Can of Space Root Beer-EN.md",
+          "type": "file",
+          "path": "T/Tachyon Dreams II - The Bloated Can of Space Root Beer-EN.md"
+        },
+        {
+          "name": "Tachyon Dreams III - The Rancid Buttermilk from Andromeda-EN.md",
+          "type": "file",
+          "path": "T/Tachyon Dreams III - The Rancid Buttermilk from Andromeda-EN.md"
+        },
+        {
+          "name": "Tal-mer-EN.md",
+          "type": "file",
+          "path": "T/Tal-mer-EN.md"
+        },
+        {
+          "name": "Technobabylon Freeware Part 1 - The Prisoner of Fate-EN.md",
+          "type": "file",
+          "path": "T/Technobabylon Freeware Part 1 - The Prisoner of Fate-EN.md"
+        },
+        {
+          "name": "Technobabylon Freeware Part 2 - The Weight of the World-EN.md",
+          "type": "file",
+          "path": "T/Technobabylon Freeware Part 2 - The Weight of the World-EN.md"
+        },
+        {
+          "name": "Technobabylon Freeware Part 3 - In Nuntius Veritas-EN.md",
+          "type": "file",
+          "path": "T/Technobabylon Freeware Part 3 - In Nuntius Veritas-EN.md"
+        },
+        {
+          "name": "Technobabylon-EN.md",
+          "type": "file",
+          "path": "T/Technobabylon-EN.md"
+        },
+        {
+          "name": "Teeth of Glass-EN.md",
+          "type": "file",
+          "path": "T/Teeth of Glass-EN.md"
+        },
+        {
+          "name": "The Abbey-DE.md",
+          "type": "file",
+          "path": "T/The Abbey-DE.md"
+        },
+        {
+          "name": "The Adventures of Commander Shepard-EN.md",
+          "type": "file",
+          "path": "T/The Adventures of Commander Shepard-EN.md"
+        },
+        {
+          "name": "The Adventures of Fatman-EN.md",
+          "type": "file",
+          "path": "T/The Adventures of Fatman-EN.md"
+        },
+        {
+          "name": "The Alignment Paradox-EN.md",
+          "type": "file",
+          "path": "T/The Alignment Paradox-EN.md"
+        },
+        {
+          "name": "The Beekeepers Picnic-EN.md",
+          "type": "file",
+          "path": "T/The Beekeepers Picnic-EN.md"
+        },
+        {
+          "name": "The Booze of Monkey Island-DE.md",
+          "type": "file",
+          "path": "T/The Booze of Monkey Island-DE.md"
+        },
+        {
+          "name": "The Bum-EN.md",
+          "type": "file",
+          "path": "T/The Bum-EN.md"
+        },
+        {
+          "name": "The Campsite-EN.md",
+          "type": "file",
+          "path": "T/The Campsite-EN.md"
+        },
+        {
+          "name": "The Castle-DE.md",
+          "type": "file",
+          "path": "T/The Castle-DE.md"
+        },
+        {
+          "name": "The Chronomancers-EN.md",
+          "type": "file",
+          "path": "T/The Chronomancers-EN.md"
+        },
+        {
+          "name": "The Colorless Sylph-EN.md",
+          "type": "file",
+          "path": "T/The Colorless Sylph-EN.md"
+        },
+        {
+          "name": "The Dark Rites of Arkham-EN.md",
+          "type": "file",
+          "path": "T/The Dark Rites of Arkham-EN.md"
+        },
+        {
+          "name": "The Day That John Saved Christmas-EN.md",
+          "type": "file",
+          "path": "T/The Day That John Saved Christmas-EN.md"
+        },
+        {
+          "name": "The Devil's Teeth-EN.md",
+          "type": "file",
+          "path": "T/The Devil's Teeth-EN.md"
+        },
+        {
+          "name": "The Dig-DE.md",
+          "type": "file",
+          "path": "T/The Dig-DE.md"
+        },
+        {
+          "name": "The Drifter-EN.md",
+          "type": "file",
+          "path": "T/The Drifter-EN.md"
+        },
+        {
+          "name": "The Excavation Of Hob's Barrow-EN.md",
+          "type": "file",
+          "path": "T/The Excavation Of Hob's Barrow-EN.md"
+        },
+        {
+          "name": "The Experiment 1 - The Laboratory-EN.md",
+          "type": "file",
+          "path": "T/The Experiment 1 - The Laboratory-EN.md"
+        },
+        {
+          "name": "The Goonies-EN.md",
+          "type": "file",
+          "path": "T/The Goonies-EN.md"
+        },
+        {
+          "name": "The Great Stroke Off-EN.md",
+          "type": "file",
+          "path": "T/The Great Stroke Off-EN.md"
+        },
+        {
+          "name": "The Hamlet-EN.md",
+          "type": "file",
+          "path": "T/The Hamlet-EN.md"
+        },
+        {
+          "name": "The Hand of Glory-EN.md",
+          "type": "file",
+          "path": "T/The Hand of Glory-EN.md"
+        },
+        {
+          "name": "The inanimate Mr. Coatrack-DE.md",
+          "type": "file",
+          "path": "T/The inanimate Mr. Coatrack-DE.md"
+        },
+        {
+          "name": "The inanimate Mr. Coatrack-EN.md",
+          "type": "file",
+          "path": "T/The inanimate Mr. Coatrack-EN.md"
+        },
+        {
+          "name": "The Interactive Adventures of Dog Mendonça and Pizzaboy-EN.md",
+          "type": "file",
+          "path": "T/The Interactive Adventures of Dog Mendonça and Pizzaboy-EN.md"
+        },
+        {
+          "name": "The Job Interview-EN.md",
+          "type": "file",
+          "path": "T/The Job Interview-EN.md"
+        },
+        {
+          "name": "The Last Bus-EN.md",
+          "type": "file",
+          "path": "T/The Last Bus-EN.md"
+        },
+        {
+          "name": "The Legend of Skye-DE.md",
+          "type": "file",
+          "path": "T/The Legend of Skye-DE.md"
+        },
+        {
+          "name": "The Lighthouse-EN.md",
+          "type": "file",
+          "path": "T/The Lighthouse-EN.md"
+        },
+        {
+          "name": "The Museum-EN.md",
+          "type": "file",
+          "path": "T/The Museum-EN.md"
+        },
+        {
+          "name": "The Mystery of Haunted Hollow-EN.md",
+          "type": "file",
+          "path": "T/The Mystery of Haunted Hollow-EN.md"
+        },
+        {
+          "name": "The Path Of The Pumpkin-EN.md",
+          "type": "file",
+          "path": "T/The Path Of The Pumpkin-EN.md"
+        },
+        {
+          "name": "The Path to Enlightenment-DE.md",
+          "type": "file",
+          "path": "T/The Path to Enlightenment-DE.md"
+        },
+        {
+          "name": "The Phantom Fellows-EN.md",
+          "type": "file",
+          "path": "T/The Phantom Fellows-EN.md"
+        },
+        {
+          "name": "The Pixel has you Disk 1-EN.md",
+          "type": "file",
+          "path": "T/The Pixel has you Disk 1-EN.md"
+        },
+        {
+          "name": "The Quest For The Holy Salsa-EN.md",
+          "type": "file",
+          "path": "T/The Quest For The Holy Salsa-EN.md"
+        },
+        {
+          "name": "The Reaper-EN.md",
+          "type": "file",
+          "path": "T/The Reaper-EN.md"
+        },
+        {
+          "name": "The Rebirth-EN.md",
+          "type": "file",
+          "path": "T/The Rebirth-EN.md"
+        },
+        {
+          "name": "The Secret of Carver Island-EN.md",
+          "type": "file",
+          "path": "T/The Secret of Carver Island-EN.md"
+        },
+        {
+          "name": "The Secret Of Chunky Salsa-EN.md",
+          "type": "file",
+          "path": "T/The Secret Of Chunky Salsa-EN.md"
+        },
+        {
+          "name": "The Secret of Monkey Island RECODED-EN.md",
+          "type": "file",
+          "path": "T/The Secret of Monkey Island RECODED-EN.md"
+        },
+        {
+          "name": "The Silver Crow-EN.md",
+          "type": "file",
+          "path": "T/The Silver Crow-EN.md"
+        },
+        {
+          "name": "The Tale of Lonkey Island-DE.md",
+          "type": "file",
+          "path": "T/The Tale of Lonkey Island-DE.md"
+        },
+        {
+          "name": "The Telwynium - Book Three-EN.md",
+          "type": "file",
+          "path": "T/The Telwynium - Book Three-EN.md"
+        },
+        {
+          "name": "The Telwynium - Book Two-EN.md",
+          "type": "file",
+          "path": "T/The Telwynium - Book Two-EN.md"
+        },
+        {
+          "name": "The Telwynium-EN.md",
+          "type": "file",
+          "path": "T/The Telwynium-EN.md"
+        },
+        {
+          "name": "The Third Wish-EN.md",
+          "type": "file",
+          "path": "T/The Third Wish-EN.md"
+        },
+        {
+          "name": "The Treasured Medallion-EN.md",
+          "type": "file",
+          "path": "T/The Treasured Medallion-EN.md"
+        },
+        {
+          "name": "The Treasured Medallion-Puzzle-Pieces.png",
+          "type": "file",
+          "path": "T/The Treasured Medallion-Puzzle-Pieces.png"
+        },
+        {
+          "name": "The Unicated-EN.md",
+          "type": "file",
+          "path": "T/The Unicated-EN.md"
+        },
+        {
+          "name": "The Void-EN.md",
+          "type": "file",
+          "path": "T/The Void-EN.md"
+        },
+        {
+          "name": "The Will of Arthur Flabbington-EN.md",
+          "type": "file",
+          "path": "T/The Will of Arthur Flabbington-EN.md"
+        },
+        {
+          "name": "Theropods-EN.md",
+          "type": "file",
+          "path": "T/Theropods-EN.md"
+        },
+        {
+          "name": "This odd Feeling-EN.md",
+          "type": "file",
+          "path": "T/This odd Feeling-EN.md"
+        },
+        {
+          "name": "Three Lions-EN.md",
+          "type": "file",
+          "path": "T/Three Lions-EN.md"
+        },
+        {
+          "name": "Tim und Struppi - Tintin Reporter - Die Zigarren Des Pharaos-DE.md",
+          "type": "file",
+          "path": "T/Tim und Struppi - Tintin Reporter - Die Zigarren Des Pharaos-DE.md"
+        },
+        {
+          "name": "Timanfaya - Verschollen in den Feuerbergen-DE.md",
+          "type": "file",
+          "path": "T/Timanfaya - Verschollen in den Feuerbergen-DE.md"
+        },
+        {
+          "name": "To Croak Or Not To Croak-EN.md",
+          "type": "file",
+          "path": "T/To Croak Or Not To Croak-EN.md"
+        },
+        {
+          "name": "Tommy Gun Witches-EN.md",
+          "type": "file",
+          "path": "T/Tommy Gun Witches-EN.md"
+        },
+        {
+          "name": "Trance-Pacific-EN.md",
+          "type": "file",
+          "path": "T/Trance-Pacific-EN.md"
+        },
+        {
+          "name": "Trapped on the Balcony-EN.md",
+          "type": "file",
+          "path": "T/Trapped on the Balcony-EN.md"
+        },
+        {
+          "name": "Trial of the Schnellersparrow-EN.md",
+          "type": "file",
+          "path": "T/Trial of the Schnellersparrow-EN.md"
+        },
+        {
+          "name": "Trilby's Notes-EN.md",
+          "type": "file",
+          "path": "T/Trilby's Notes-EN.md"
+        },
+        {
+          "name": "Tropic of Capricorn-EN.md",
+          "type": "file",
+          "path": "T/Tropic of Capricorn-EN.md"
+        },
+        {
+          "name": "Tukult Demo-DE.md",
+          "type": "file",
+          "path": "T/Tukult Demo-DE.md"
+        },
+        {
+          "name": "Twilight Oracle-EN.md",
+          "type": "file",
+          "path": "T/Twilight Oracle-EN.md"
+        },
+        {
+          "name": "Twisted Times in Twinsmouth-EN.md",
+          "type": "file",
+          "path": "T/Twisted Times in Twinsmouth-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "U",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Uncle Lee's Cookbook - Five Recipes for Disaster-EN.md",
+          "type": "file",
+          "path": "U/Uncle Lee's Cookbook - Five Recipes for Disaster-EN.md"
+        },
+        {
+          "name": "Under the Sea-DE.md",
+          "type": "file",
+          "path": "U/Under the Sea-DE.md"
+        },
+        {
+          "name": "Unexpected Quest-EN.md",
+          "type": "file",
+          "path": "U/Unexpected Quest-EN.md"
+        },
+        {
+          "name": "Unlicensed to Kill-EN.md",
+          "type": "file",
+          "path": "U/Unlicensed to Kill-EN.md"
+        },
+        {
+          "name": "Unusual Findings-EN.md",
+          "type": "file",
+          "path": "U/Unusual Findings-EN.md"
+        },
+        {
+          "name": "Upstairs-EN.md",
+          "type": "file",
+          "path": "U/Upstairs-EN.md"
+        },
+        {
+          "name": "Urban Witch Story-EN.md",
+          "type": "file",
+          "path": "U/Urban Witch Story-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "V",
+      "type": "directory",
+      "children": [
+        {
+          "name": "VirtuaVerse-DE.md",
+          "type": "file",
+          "path": "V/VirtuaVerse-DE.md"
+        },
+        {
+          "name": "Void Quest-EN.md",
+          "type": "file",
+          "path": "V/Void Quest-EN.md"
+        },
+        {
+          "name": "Vollgas-DE.md",
+          "type": "file",
+          "path": "V/Vollgas-DE.md"
+        },
+        {
+          "name": "Voodoo Detective-EN.md",
+          "type": "file",
+          "path": "V/Voodoo Detective-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "W",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Warcraft Adventures - Lord of the Clans-EN.md",
+          "type": "file",
+          "path": "W/Warcraft Adventures - Lord of the Clans-EN.md"
+        },
+        {
+          "name": "Warp Cinema-EN.md",
+          "type": "file",
+          "path": "W/Warp Cinema-EN.md"
+        },
+        {
+          "name": "What Makes You Tick-EN.md",
+          "type": "file",
+          "path": "W/What Makes You Tick-EN.md"
+        },
+        {
+          "name": "Where did the humans go-EN.md",
+          "type": "file",
+          "path": "W/Where did the humans go-EN.md"
+        },
+        {
+          "name": "Whirlight - No Time To Trip-EN.md",
+          "type": "file",
+          "path": "W/Whirlight - No Time To Trip-EN.md"
+        },
+        {
+          "name": "Winterfest-DE.md",
+          "type": "file",
+          "path": "W/Winterfest-DE.md"
+        }
+      ]
+    },
+    {
+      "name": "X",
+      "type": "directory",
+      "children": []
+    },
+    {
+      "name": "Y",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Yip Quest-EN.md",
+          "type": "file",
+          "path": "Y/Yip Quest-EN.md"
+        },
+        {
+          "name": "Yoda-EN.md",
+          "type": "file",
+          "path": "Y/Yoda-EN.md"
+        },
+        {
+          "name": "You're Watching ICEBOX!-EN.md",
+          "type": "file",
+          "path": "Y/You're Watching ICEBOX!-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "Z",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Zak McKracken - A Mansion, a Meteor and the Alien Mindbenders-EN.md",
+          "type": "file",
+          "path": "Z/Zak McKracken - A Mansion, a Meteor and the Alien Mindbenders-EN.md"
+        },
+        {
+          "name": "Zak McKracken Between Time and Space - Directors Cut-DE.md",
+          "type": "file",
+          "path": "Z/Zak McKracken Between Time and Space - Directors Cut-DE.md"
+        },
+        {
+          "name": "Zak McKracken goes looking for Hot Coffee (in several wrong places)-DE.md",
+          "type": "file",
+          "path": "Z/Zak McKracken goes looking for Hot Coffee (in several wrong places)-DE.md"
+        },
+        {
+          "name": "Zak the Maniac - An Interactive Music Video-EN.md",
+          "type": "file",
+          "path": "Z/Zak the Maniac - An Interactive Music Video-EN.md"
+        },
+        {
+          "name": "Zniw Adventure-EN.md",
+          "type": "file",
+          "path": "Z/Zniw Adventure-EN.md"
+        }
+      ]
+    },
+    {
+      "name": "Template-EN.md",
+      "type": "file",
+      "path": "Template-EN.md"
+    }
+  ]
+}
