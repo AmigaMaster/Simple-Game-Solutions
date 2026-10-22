@@ -199,19 +199,21 @@
         function renderTree(node, container, filterQuery = '') {
             container.innerHTML = '';
             const query = filterQuery.trim().toLowerCase();
+            const terms = query.split(/\s+/).filter(t => t.length > 0);
 
-            // Filter recursive tree data
+            // Filter recursive tree data using logical AND across terms
             function filterNode(item) {
+                const nameLower = item.name.toLowerCase();
+                const matches = terms.length === 0 || terms.every(term => nameLower.includes(term));
+
                 if (item.type === 'file') {
-                    const matches = item.name.toLowerCase().includes(query);
                     return matches ? { ...item } : null;
                 } else if (item.type === 'directory') {
-                    const dirMatches = item.name.toLowerCase().includes(query);
                     const matchingChildren = (item.children || [])
                         .map(child => filterNode(child))
                         .filter(child => child !== null);
 
-                    if (dirMatches || matchingChildren.length > 0) {
+                    if (matches || matchingChildren.length > 0) {
                         return {
                             ...item,
                             children: matchingChildren
