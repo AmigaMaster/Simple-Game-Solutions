@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="de">
+<html class="h-full"
+      lang="de">
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0"
@@ -10,97 +11,102 @@
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<body class="bg-gray-900 text-gray-100 h-screen flex flex-col overflow-hidden">
-  <!-- Header with toggle buttons for left and right menus -->
-  <header class="bg-gray-800 border-b border-gray-700 px-6 py-3 shadow-md flex justify-between items-center shrink-0 relative z-30">
-    <div class="flex items-center gap-4">
-      <button class="bg-gray-700 hover:bg-gray-600 text-emerald-400 px-3 py-1.5 rounded text-sm font-medium transition-colors flex items-center gap-2 shadow"
+<body class="bg-gray-900 text-gray-100 h-full flex flex-col overflow-hidden antialiased">
+  <!-- Header with toggle buttons, search, and language selector -->
+  <header class="bg-gray-800 border-b border-gray-700 px-4 py-3 shadow-md flex justify-between items-center shrink-0 relative z-40 gap-2">
+    <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+      <!-- Prominent Menu Toggle Button -->
+      <button class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
            data-i18n-title="menuToggleTitle"
            onclick="toggleSidebar()"><span>📁</span> <span data-i18n="menuBtn">Menü</span></button>
-      <h1 class="text-lg font-bold text-emerald-400">🎮 Simple Game Solutions</h1>
+      <h1 class="text-sm sm:text-lg font-bold text-emerald-400 hidden sm:block">🎮 Simple Game Solutions</h1>
     </div><!-- Global Search Input in Header with Real-time Dropdown & Clear Button -->
-    <div class="relative flex-1 max-w-sm mx-4 flex items-center">
+    <div class="relative flex-1 max-w-xs sm:max-w-sm mx-2 flex items-center">
       <input autocomplete="off"
-           class="w-full bg-gray-900 text-gray-200 border border-gray-700 rounded px-3 py-1.5 pr-8 text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
+           class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-3 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
            data-i18n-placeholder="searchPlaceholder"
            id="searchInput"
            oninput="handleGlobalSearch(this.value)"
-           placeholder="Search..."
+           placeholder="Suchen..."
            type="text"> <!-- Clear Button ("x") -->
-       <button class="absolute right-2.5 text-gray-400 hover:text-white text-sm hidden focus:outline-none"
+       <button class="absolute right-2.5 text-gray-400 hover:text-white text-sm hidden focus:outline-none cursor-pointer"
            id="clearSearchBtn"
            onclick="clearSearch()"
            title="Suche löschen">✕</button> <!-- Dropdown Results Container -->
-      <div class="absolute left-0 right-0 top-full mt-1 bg-gray-800 border border-gray-700 rounded shadow-xl max-h-60 overflow-y-auto z-50 hidden"
+      <div class="absolute left-0 right-0 top-full mt-1 bg-gray-800 border border-gray-700 rounded-md shadow-2xl max-h-60 overflow-y-auto z-50 hidden"
            id="searchDropdown">
         <!-- Results injected dynamically -->
       </div>
     </div>
-    <div class="flex items-center gap-4">
-      <span class="text-xs text-gray-400 hidden md:inline"
-           data-i18n="subtitle">Automatic Documentation</span> <select class="bg-gray-700 text-emerald-300 text-xs px-2 py-1.5 rounded border border-gray-600 focus:outline-none cursor-pointer"
+    <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+      <!-- Language selection dropdown -->
+      <select class="bg-gray-700 text-emerald-300 text-xs px-2 py-1.5 rounded-md border border-gray-600 focus:outline-none cursor-pointer"
            id="langSelect"
            onchange="changeLanguage(this.value)">
         <option value="de">
-          🇩🇪 Deutsch
+          🇩🇪 DE
         </option>
         <option value="en">
-          🇬🇧 English
+          🇬🇧 EN
         </option>
-      </select> <button class="bg-gray-700 hover:bg-gray-600 text-emerald-400 px-3 py-1.5 rounded text-sm font-medium transition-colors flex items-center gap-2 shadow"
+      </select> <!-- Prominent TOC Toggle Button -->
+       <button class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
            data-i18n-title="tocToggleTitle"
-           onclick="toggleToc()"><span>📑</span> <span data-i18n="tocBtn">Contents</span></button>
+           onclick="toggleToc()"><span>📑</span> <span data-i18n="tocBtn">Inhalt</span></button>
     </div>
-  </header>
-  <main class="flex-1 flex flex-row overflow-hidden p-4 gap-2">
-    <!-- 1. Sidebar: Navigation / Tree Structure (Left) -->
-    <aside class="min-w-[180px] max-w-[600px] bg-gray-800 border border-gray-700 rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-lg"
-           id="sidebar"
-           style="width: 280px;">
+  </header><!-- Main Container -->
+  <main class="flex-1 flex flex-row overflow-hidden p-2 sm:p-4 gap-2 relative">
+    <!-- Backdrop for mobile overlays -->
+    <div class="fixed inset-0 bg-black/60 z-20 hidden md:hidden transition-opacity"
+         id="mobileBackdrop"
+         onclick="closeAllOverlays()"></div><!-- 1. Sidebar: Navigation / Tree Structure (Left) -->
+    <aside class=
+    "fixed md:relative inset-y-0 left-0 w-72 md:w-[280px] bg-gray-800 border-r md:border border-gray-700 rounded-r-lg md:rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl md:shadow-lg z-30 transform -translate-x-full md:translate-x-0 transition-transform duration-200"
+           id="sidebar">
       <div class="mb-3 border-b border-gray-700 pb-2 shrink-0 flex justify-between items-center">
         <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400"
-            data-i18n="directoriesTitle">Directories</h2><button class="text-gray-400 hover:text-white text-xs px-1.5 py-0.5 rounded bg-gray-700/50"
+            data-i18n="directoriesTitle">Verzeichnisse</h2><button class="text-gray-400 hover:text-white text-xs px-2 py-1 rounded bg-gray-700 cursor-pointer"
              data-i18n-title="close"
              onclick="toggleSidebar()">✕</button>
       </div><!-- Scrollable area for the tree structure -->
       <div class="space-y-1 text-sm flex-1 overflow-y-auto pr-1"
            id="tree-container">
-        <p class="text-gray-500 animate-pulse"
-           data-i18n="loadingStructure">Loading structure...</p>
+        <p class="text-gray-500 animate-pulse text-xs"
+           data-i18n="loadingStructure">Lade Struktur...</p>
       </div>
-    </aside><!-- Divider 1 (Left Resizer) -->
-    <div class="w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors flex items-center justify-center group shrink-0"
+    </aside><!-- Divider 1 (Left Resizer - Desktop only) -->
+    <div class="hidden md:flex w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors items-center justify-center group shrink-0"
          data-i18n-title="resizeWidth"
          id="resizer-left">
       <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
     </div><!-- 2. Content Area: File Viewer (Center) -->
-    <section class="flex-1 bg-gray-800 border border-gray-700 rounded-lg p-6 flex flex-col h-full overflow-hidden shadow-lg min-w-[300px]">
-      <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2"
+    <section class="flex-1 bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6 flex flex-col h-full overflow-hidden shadow-lg min-w-0">
+      <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 text-sm sm:text-base leading-relaxed"
            id="content-viewer">
         <div class="text-center text-gray-500 py-20">
-          <p class="text-lg"
-             data-i18n="welcomeMessage">Select a category and file on the left to view the solution.</p>
+          <p class="text-base sm:text-lg"
+             data-i18n="welcomeMessage">Wähle links eine Kategorie und eine Datei aus, um die Lösung anzuzeigen.</p>
         </div>
       </div>
-    </section><!-- Divider 2 (Right Resizer) -->
-    <div class="w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors flex items-center justify-center group shrink-0"
+    </section><!-- Divider 2 (Right Resizer - Desktop only) -->
+    <div class="hidden md:flex w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors items-center justify-center group shrink-0"
          data-i18n-title="resizeWidth"
          id="resizer-right">
       <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
     </div><!-- 3. Table of Contents (Right) -->
-    <aside class="min-w-[180px] max-w-[450px] bg-gray-800 border border-gray-700 rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-lg"
-           id="toc-sidebar"
-           style="width: 260px;">
+    <aside class=
+    "fixed md:relative inset-y-0 right-0 w-64 md:w-[260px] bg-gray-800 border-l md:border border-gray-700 rounded-l-lg md:rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl md:shadow-lg z-30 transform translate-x-full md:translate-x-0 transition-transform duration-200"
+           id="toc-sidebar">
       <div class="mb-3 border-b border-gray-700 pb-2 shrink-0 flex justify-between items-center">
         <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400"
-            data-i18n="chaptersTitle">Chapters</h2><button class="text-gray-400 hover:text-white text-xs px-1.5 py-0.5 rounded bg-gray-700/50"
+            data-i18n="chaptersTitle">Kapitel</h2><button class="text-gray-400 hover:text-white text-xs px-2 py-1 rounded bg-gray-700 cursor-pointer"
              data-i18n-title="close"
              onclick="toggleToc()">✕</button>
       </div><!-- Scrollable area for the TOC -->
       <div class="space-y-1 text-sm flex-1 overflow-y-auto pr-1"
            id="toc-container">
-        <p class="text-gray-500 italic"
-           data-i18n="noFileLoaded">No file loaded.</p>
+        <p class="text-gray-500 italic text-xs"
+           data-i18n="noFileLoaded">Keine Datei geladen.</p>
       </div>
     </aside>
   </main><!-- Control Script -->
@@ -116,7 +122,7 @@
                 directoriesTitle: "Verzeichnisse",
                 chaptersTitle: "Kapitel",
                 loadingStructure: "Lade Struktur...",
-                welcomeMessage: "Wähle links eine Kategorie und eine Datei aus, um die Lösung anzuzeigen.",
+                welcomeMessage: "Wähle oben über die Suche oder links im Menü eine Lösung aus.",
                 noFileLoaded: "Keine Datei geladen.",
                 analyzing: "Analysiere Kapitel...",
                 noHeadings: "Keine Kapitel gefunden.",
@@ -137,16 +143,16 @@
                 directoriesTitle: "Directories",
                 chaptersTitle: "Chapters",
                 loadingStructure: "Loading structure...",
-                welcomeMessage: "Select a category and file on the left to view the solution.",
+                welcomeMessage: "Select a solution via search or menu.",
                 noFileLoaded: "No file loaded.",
                 analyzing: "Analyzing chapters...",
                 noHeadings: "No chapters found.",
-                loadingFile: "Loading solution.",
+                loadingFile: "Loading solution...",
                 fileNotFound: "File not found",
                 errorLoadingFile: "Error loading file:",
                 errorLoadingStruct: "Error loading structure.",
                 resizeWidth: "Adjust width",
-                searchPlaceholder: "Search (e.g. Maniac AND Ostern OR 101)...",
+                searchPlaceholder: "Search (e.g. Maniac AND Easter OR 101)...",
                 noResults: "No matching files found."
             }
         };
@@ -187,7 +193,6 @@
 
         function changeLanguage(lang) {
             setLanguage(lang);
-            // Re-filter if search input has content
             handleGlobalSearch(document.getElementById('searchInput').value);
         }
 
@@ -201,7 +206,7 @@
                 renderTree(structureData, document.getElementById('tree-container'));
             } catch (error) {
                 console.error('Error loading structure:', error);
-                document.getElementById('tree-container').innerHTML = `<p class="text-red-400">${translations[currentLang].errorLoadingStruct}<\/p>`;
+                document.getElementById('tree-container').innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].errorLoadingStruct}<\/p>`;
             }
         }
 
@@ -210,17 +215,13 @@
             const q = query.trim();
             if (!q) return true;
 
-            // Split query by OR / ODER (case-insensitive)
             const orClauses = q.toLowerCase().split(/\b(?:or|oder)\b/);
 
             return orClauses.some(clause => {
-                // Within each clause, treat AND / UND as spaces and split by whitespace
                 const cleanClause = clause.replace(/\b(?:and|und)\b/g, ' ');
                 const terms = cleanClause.split(/\s+/).filter(t => t.length > 0);
                 
                 if (terms.length === 0) return false;
-                
-                // All terms in this clause must match (AND)
                 return terms.every(term => nameLower.includes(term));
             });
         }
@@ -268,7 +269,7 @@
 
             let html = '';
             matchingFiles.forEach(file => {
-                html += `<button onclick="selectSearchResult('${file.path}')" class="w-full text-left px-3 py-2 text-xs text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 truncate block">
+                html += `<button onclick="selectSearchResult('${file.path}')" class="w-full text-left px-3 py-2 text-xs text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 truncate block cursor-pointer">
                     📄 ${file.name} <span class="text-gray-400 text-[10px] block">${file.path}<\/span>
                 <\/button>`;
             });
@@ -292,6 +293,9 @@
             document.getElementById('searchInput').value = '';
             document.getElementById('clearSearchBtn').classList.add('hidden');
             filterTree(''); // Reset sidebar filter
+            if (window.innerWidth < 768) {
+                closeAllOverlays();
+            }
         }
 
         // Close dropdown when clicking outside
@@ -306,7 +310,6 @@
             container.innerHTML = '';
             const query = filterQuery.trim();
 
-            // Filter recursive tree data using boolean query parser
             function filterNode(item) {
                 const nameLower = item.name.toLowerCase();
                 const matches = matchQuery(nameLower, query);
@@ -345,11 +348,10 @@
                 if (item.type === 'directory') {
                     const details = document.createElement('details');
                     details.className = 'ml-1 my-1';
-                    // Open automatically if filtering, otherwise keep collapsed
                     details.open = query !== '';
 
                     const summary = document.createElement('summary');
-                    summary.className = 'cursor-pointer font-medium text-emerald-300 hover:text-emerald-200 py-1 px-2 rounded hover:bg-gray-700/50 select-none break-words';
+                    summary.className = 'cursor-pointer font-medium text-emerald-300 hover:text-emerald-200 py-1 px-2 rounded hover:bg-gray-700/50 select-none text-xs sm:text-sm break-words';
                     summary.textContent = `📁 ${item.name}`;
                     details.appendChild(summary);
 
@@ -362,9 +364,14 @@
                     parentEl.appendChild(details);
                 } else if (item.type === 'file') {
                     const fileLink = document.createElement('button');
-                    fileLink.className = 'block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-sm break-words';
+                    fileLink.className = 'block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words cursor-pointer';
                     fileLink.textContent = `📄 ${item.name}`;
-                    fileLink.onclick = () => loadFile(item.path);
+                    fileLink.onclick = () => {
+                        loadFile(item.path);
+                        if (window.innerWidth < 768) {
+                            closeAllOverlays();
+                        }
+                    };
                     parentEl.appendChild(fileLink);
                 }
             }
@@ -384,8 +391,8 @@
             const viewer = document.getElementById('content-viewer');
             const tocContainer = document.getElementById('toc-container');
             
-            viewer.innerHTML = `<p class="text-gray-400 animate-pulse">${translations[currentLang].loadingFile}<\/p>`;
-            tocContainer.innerHTML = `<p class="text-gray-500 italic">${translations[currentLang].analyzing}<\/p>`;
+            viewer.innerHTML = `<p class="text-gray-400 animate-pulse text-sm">${translations[currentLang].loadingFile}<\/p>`;
+            tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].analyzing}<\/p>`;
 
             try {
                 const response = await fetch(`solutions/${filePath}`);
@@ -395,22 +402,20 @@
                 if (filePath.endsWith('.md')) {
                     viewer.innerHTML = marked.parse(text);
                 } else {
-                    viewer.innerHTML = `<pre class="whitespace-pre-wrap font-mono text-sm bg-gray-900 p-4 rounded">${escapeHtml(text)}<\/pre>`;
+                    viewer.innerHTML = `<pre class="whitespace-pre-wrap font-mono text-xs sm:text-sm bg-gray-950 p-4 rounded">${escapeHtml(text)}<\/pre>`;
                 }
 
-                // Adjust links to open in a new tab securely
                 viewer.querySelectorAll('a').forEach(link => {
                     link.setAttribute('target', '_blank');
                     link.setAttribute('rel', 'noopener noreferrer');
                     link.className = 'text-emerald-400 hover:underline';
                 });
 
-                // Generate table of contents (TOC) from headings
                 generateToc(viewer, tocContainer);
 
             } catch (error) {
-                viewer.innerHTML = `<p class="text-red-400">${translations[currentLang].errorLoadingFile} ${filePath}<\/p>`;
-                tocContainer.innerHTML = `<p class="text-red-400">${translations[currentLang].noFileLoaded}<\/p>`;
+                viewer.innerHTML = `<p class="text-red-400 text-sm">${translations[currentLang].errorLoadingFile} ${filePath}<\/p>`;
+                tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}<\/p>`;
             }
         }
 
@@ -434,15 +439,15 @@
                 if (heading.tagName === 'H2') indentClass = 'pl-2';
                 if (heading.tagName === 'H3') indentClass = 'pl-4 text-xs';
                 if (heading.tagName === 'H4') indentClass = 'pl-6 text-xs';
-                if (heading.tagName === 'H5') indentClass = 'pl-8 text-xs';
-                if (heading.tagName === 'H6') indentClass = 'pl-10 text-xs';
-                if (heading.tagName === 'H7') indentClass = 'pl-12 text-xs';
 
-                tocItem.className = `block w-full text-left py-1 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors break-words ${indentClass}`;
+                tocItem.className = `block w-full text-left py-1 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors text-xs break-words ${indentClass} cursor-pointer`;
                 tocItem.textContent = heading.textContent;
                 
                 tocItem.onclick = () => {
                     heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (window.innerWidth < 768) {
+                        closeAllOverlays();
+                    }
                 };
 
                 tocContainer.appendChild(tocItem);
@@ -458,6 +463,8 @@
 
         // --- Resizer Logic (Left Sidebar) ---
         const sidebar = document.getElementById('sidebar');
+        const tocSidebar = document.getElementById('toc-sidebar');
+        const mobileBackdrop = document.getElementById('mobileBackdrop');
         const resizerLeft = document.getElementById('resizer-left');
         let isResizingLeft = false;
 
@@ -483,7 +490,6 @@
         });
 
         // --- Resizer Logic (Right TOC) ---
-        const tocSidebar = document.getElementById('toc-sidebar');
         const resizerRight = document.getElementById('resizer-right');
         let isResizingRight = false;
 
@@ -510,18 +516,49 @@
             }
         });
 
-        // --- Toggle Left Sidebar ---
+        // --- Toggle Overlays / Sidebars ---
         function toggleSidebar() {
-            const isHidden = sidebar.style.display === 'none';
-            sidebar.style.display = isHidden ? 'flex' : 'none';
-            resizerLeft.style.display = isHidden ? 'flex' : 'none';
+            if (window.innerWidth < 768) {
+                const isOpen = !sidebar.classList.contains('-translate-x-full');
+                if (isOpen) {
+                    closeAllOverlays();
+                } else {
+                    tocSidebar.classList.add('translate-x-full');
+                    sidebar.classList.remove('-translate-x-full');
+                    mobileBackdrop.classList.remove('hidden');
+                }
+            } else {
+                // Desktop toggle
+                const isHidden = sidebar.style.display === 'none';
+                sidebar.style.display = isHidden ? 'flex' : 'none';
+                if (resizerLeft) resizerLeft.style.display = isHidden ? 'flex' : 'none';
+            }
         }
 
-        // --- Toggle Right TOC ---
         function toggleToc() {
-            const isHidden = tocSidebar.style.display === 'none';
-            tocSidebar.style.display = isHidden ? 'flex' : 'none';
-            resizerRight.style.display = isHidden ? 'flex' : 'none';
+            if (window.innerWidth < 768) {
+                const isOpen = !tocSidebar.classList.contains('translate-x-full');
+                if (isOpen) {
+                    closeAllOverlays();
+                } else {
+                    sidebar.classList.add('-translate-x-full');
+                    tocSidebar.classList.remove('translate-x-full');
+                    mobileBackdrop.classList.remove('hidden');
+                }
+            } else {
+                // Desktop toggle
+                const isHidden = tocSidebar.style.display === 'none';
+                tocSidebar.style.display = isHidden ? 'flex' : 'none';
+                if (resizerRight) resizerRight.style.display = isHidden ? 'flex' : 'none';
+            }
+        }
+
+        function closeAllOverlays() {
+            if (window.innerWidth < 768) {
+                sidebar.classList.add('-translate-x-full');
+                tocSidebar.classList.add('translate-x-full');
+                mobileBackdrop.classList.add('hidden');
+            }
         }
 
         init();
