@@ -436,6 +436,60 @@
             }
         }
 
+        function createCopyButton(headingId, isToc = false) {
+            const copyBtn = document.createElement("button");
+            copyBtn.className = `${isToc ? 'toc-copy-btn' : 'heading-copy-btn'} inline-flex items-center ${isToc ? 'ml-2' : 'mr-2'} opacity-70 sm:opacity-0 sm:group-hover${isToc ? '/toc' : ''}:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative shrink-0`;
+            copyBtn.title = currentLang === "de" ? "Kapitel-Link kopieren" : "Copy chapter link";
+
+            const iconSpan = document.createElement("span");
+            iconSpan.textContent = "🔗";
+
+            const popupSpan = document.createElement("span");
+            if (isToc) {
+                popupSpan.className = "absolute right-full mr-2 px-2 py-0.5 bg-gray-800 text-emerald-300 text-xs rounded shadow-lg whitespace-nowrap opacity-0 pointer-events-none border border-gray-700 z-50";
+            } else {
+                popupSpan.className = "absolute left-full ml-2 px-2 py-0.5 bg-gray-800 text-emerald-300 text-xs rounded shadow-lg whitespace-nowrap opacity-0 pointer-events-none border border-gray-700 z-50";
+            }
+            popupSpan.textContent = translations[currentLang].linkCopied;
+
+            copyBtn.appendChild(iconSpan);
+            copyBtn.appendChild(popupSpan);
+
+            let copyTimeout = null;
+
+            copyBtn.onclick = (e) => {
+                e.stopPropagation();
+                const baseUrl = window.location.href.split('?')[0].split('#')[0];
+                const cleanUrl = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}#${headingId}`;
+                navigator.clipboard.writeText(cleanUrl).then(() => {
+                    iconSpan.textContent = "✓";
+                    popupSpan.textContent = translations[currentLang].linkCopied;
+                    
+                    copyBtn.style.transition = 'none';
+                    popupSpan.style.transition = 'none';
+                    copyBtn.style.opacity = "1";
+                    popupSpan.style.opacity = "1";
+
+                    void popupSpan.offsetWidth;
+
+                    if (copyTimeout) clearTimeout(copyTimeout);
+                    copyTimeout = setTimeout(() => {
+                        copyBtn.style.transition = 'opacity 500ms ease';
+                        popupSpan.style.transition = 'opacity 500ms ease';
+                        popupSpan.style.opacity = "0";
+                        
+                        setTimeout(() => {
+                            iconSpan.textContent = "🔗";
+                            copyBtn.style.opacity = "";
+                            copyBtn.style.transition = "";
+                            popupSpan.style.transition = "";
+                        }, 500);
+                    }, 1500);
+                });
+            };
+            return copyBtn;
+        }
+
         function generateToc(contentViewer, tocContainer) {
             tocContainer.innerHTML = "";
             const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
@@ -448,50 +502,16 @@
                     heading.id = `heading-${index}`
                 }
 
-                // Ursprünglichen Text vor dem Hinzufügen des Buttons speichern
                 const originalText = heading.textContent;
 
+                // Hauptbereich Überschriften-Button
                 if (!heading.querySelector(".heading-copy-btn")) {
                     heading.classList.add("group", "relative");
-                    const copyBtn = document.createElement("button");
-                    copyBtn.className = "heading-copy-btn inline-flex items-center mr-2 opacity-70 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative";
-                    copyBtn.title = currentLang === "de" ? "Kapitel-Link kopieren" : "Copy chapter link";
-
-                    const iconSpan = document.createElement("span");
-                    iconSpan.textContent = "🔗";
-
-                    const popupSpan = document.createElement("span");
-                    popupSpan.className = "absolute left-full ml-2 px-2 py-0.5 bg-gray-800 text-emerald-300 text-xs rounded shadow-lg whitespace-nowrap opacity-0 transition-opacity pointer-events-none border border-gray-700 z-50";
-                    popupSpan.textContent = translations[currentLang].linkCopied;
-
-                    copyBtn.appendChild(iconSpan);
-                    copyBtn.appendChild(popupSpan);
-
-                    let copyTimeout = null;
-
-                    copyBtn.onclick = (e) => {
-                        e.stopPropagation();
-                        const baseUrl = window.location.href.split('?')[0].split('#')[0];
-                        const cleanUrl = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}#${heading.id}`;
-                        navigator.clipboard.writeText(cleanUrl).then(() => {
-                            iconSpan.textContent = "✓";
-                            popupSpan.textContent = translations[currentLang].linkCopied;
-                            
-                            copyBtn.style.opacity = "1";
-                            popupSpan.style.opacity = "1";
-
-                            if (copyTimeout) clearTimeout(copyTimeout);
-                            copyTimeout = setTimeout(() => {
-                                iconSpan.textContent = "🔗";
-                                popupSpan.style.opacity = "0";
-                                copyBtn.style.opacity = "";
-                            }, 1500);
-                        });
-                    };
+                    const copyBtn = createCopyButton(heading.id, false);
                     heading.prepend(copyBtn);
                 }
 
-                const tocItem = document.createElement("button");
+                // Rechtes Inhaltsverzeichnis Element
                 let indentClass = "pl-1";
                 if (heading.tagName === "H2") indentClass = "pl-2";
                 if (heading.tagName === "H3") indentClass = "pl-4";
@@ -499,10 +519,15 @@
                 if (heading.tagName === "H5") indentClass = "pl-8";
                 if (heading.tagName === "H6") indentClass = "pl-10";
                 if (heading.tagName === "H7") indentClass = "pl-12";
-                tocItem.className = `block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors text-xs sm:text-sm break-words ${indentClass} cursor-pointer`;
-                tocItem.textContent = originalText;
-                tocItem.dataset.targetId = heading.id;
-                tocItem.onclick = () => {
+
+                const tocItem = document.createElement("div");
+                tocItem.className = `flex items-center justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors text-xs sm:text-sm break-words ${indentClass} group/toc relative`;
+
+                const tocTextBtn = document.createElement("button");
+                tocTextBtn.className = "flex-1 text-left bg-transparent border-none text-inherit text-xs sm:text-sm cursor-pointer truncate focus:outline-none";
+                tocTextBtn.textContent = originalText;
+                tocTextBtn.dataset.targetId = heading.id;
+                tocTextBtn.onclick = () => {
                     heading.scrollIntoView({
                         behavior: "smooth",
                         block: "start"
@@ -511,13 +536,18 @@
                         closeAllOverlays()
                     }
                 };
-                tocContainer.appendChild(tocItem)
+
+                const tocCopyBtn = createCopyButton(heading.id, true);
+
+                tocItem.appendChild(tocTextBtn);
+                tocItem.appendChild(tocCopyBtn);
+                tocContainer.appendChild(tocItem);
             })
         }
 
         function setupScrollSpy(contentViewer, tocContainer) {
             const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
-            const tocButtons = tocContainer.querySelectorAll("button");
+            const tocButtons = tocContainer.querySelectorAll("[data-target-id]");
             if (headings.length === 0 || tocButtons.length === 0) return;
 
             let lastActiveId = null;
@@ -627,7 +657,7 @@
                 } else {
                     sidebar.classList.add("-translate-x-full");
                     tocSidebar.classList.remove("translate-x-full");
-                    mobileBackdrop.classList.remove("hidden")
+                    mobileBackdrop.classList.add("hidden")
                 }
             } else {
                 const isHidden = tocSidebar.style.display === "none";
@@ -636,7 +666,7 @@
             }
         }
 
-        function closeAllOverlays() {
+        closeAllOverlays = function() {
             if (window.innerWidth < 1060) {
                 sidebar.classList.add("-translate-x-full")
             }
