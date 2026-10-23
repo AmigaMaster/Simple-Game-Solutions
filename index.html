@@ -12,12 +12,25 @@
 </head>
 <body class="bg-gray-900 text-gray-100 h-screen flex flex-col overflow-hidden">
   <!-- Header with toggle buttons for left and right menus -->
-  <header class="bg-gray-800 border-b border-gray-700 px-6 py-3 shadow-md flex justify-between items-center shrink-0">
+  <header class="bg-gray-800 border-b border-gray-700 px-6 py-3 shadow-md flex justify-between items-center shrink-0 relative z-30">
     <div class="flex items-center gap-4">
       <button class="bg-gray-700 hover:bg-gray-600 text-emerald-400 px-3 py-1.5 rounded text-sm font-medium transition-colors flex items-center gap-2 shadow"
            data-i18n-title="menuToggleTitle"
            onclick="toggleSidebar()"><span>📁</span> <span data-i18n="menuBtn">Menü</span></button>
       <h1 class="text-lg font-bold text-emerald-400">🎮 Simple Game Solutions</h1>
+    </div><!-- Global Search Input in Header with Real-time Dropdown -->
+    <div class="relative flex-1 max-w-sm mx-4">
+      <input autocomplete="off"
+           class="w-full bg-gray-900 text-gray-200 border border-gray-700 rounded px-3 py-1.5 text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
+           data-i18n-placeholder="searchPlaceholder"
+           id="searchInput"
+           oninput="handleGlobalSearch(this.value)"
+           placeholder="Search..."
+           type="text"> <!-- Dropdown Results Container -->
+      <div class="absolute left-0 right-0 top-full mt-1 bg-gray-800 border border-gray-700 rounded shadow-xl max-h-60 overflow-y-auto z-50 hidden"
+           id="searchDropdown">
+        <!-- Results injected dynamically -->
+      </div>
     </div>
     <div class="flex items-center gap-4">
       <span class="text-xs text-gray-400 hidden md:inline"
@@ -45,14 +58,6 @@
             data-i18n="directoriesTitle">Directories</h2><button class="text-gray-400 hover:text-white text-xs px-1.5 py-0.5 rounded bg-gray-700/50"
              data-i18n-title="close"
              onclick="toggleSidebar()">✕</button>
-      </div><!-- Real-time Filter Input -->
-      <div class="mb-3 shrink-0">
-        <input class="w-full bg-gray-900 text-gray-200 border border-gray-700 rounded px-3 py-1.5 text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
-             data-i18n-placeholder="searchPlaceholder"
-             id="searchInput"
-             oninput="filterTree(this.value)"
-             placeholder="Search..."
-             type="text">
       </div><!-- Scrollable area for the tree structure -->
       <div class="space-y-1 text-sm flex-1 overflow-y-auto pr-1"
            id="tree-container">
@@ -179,7 +184,7 @@
         function changeLanguage(lang) {
             setLanguage(lang);
             // Re-filter if search input has content
-            filterTree(document.getElementById('searchInput').value);
+            handleGlobalSearch(document.getElementById('searchInput').value);
         }
 
         let structureData = null;
@@ -215,6 +220,66 @@
                 return terms.every(term => nameLower.includes(term));
             });
         }
+
+        // Handle Global Search for both Sidebar Tree and Dropdown suggestions
+        function handleGlobalSearch(query) {
+            // 1. Update the sidebar tree in real-time
+            filterTree(query);
+
+            // 2. Update the dropdown results
+            const dropdown = document.getElementById('searchDropdown');
+            const q = query.trim();
+
+            if (!q || !structureData) {
+                dropdown.innerHTML = '';
+                dropdown.classList.add('hidden');
+                return;
+            }
+
+            const matchingFiles = [];
+            function collectFiles(node) {
+                if (!node) return;
+                if (node.type === 'file') {
+                    if (matchQuery(node.name.toLowerCase(), q)) {
+                        matchingFiles.push(node);
+                    }
+                } else if (node.type === 'directory' && node.children) {
+                    node.children.forEach(child => collectFiles(child));
+                }
+            }
+            collectFiles(structureData);
+
+            if (matchingFiles.length === 0) {
+                dropdown.innerHTML = `<div class="p-2 text-xs text-gray-400 italic">${translations[currentLang].noResults}<\/div>`;
+                dropdown.classList.remove('hidden');
+                return;
+            }
+
+            let html = '';
+            matchingFiles.forEach(file => {
+                html += `<button onclick="selectSearchResult('${file.path}')" class="w-full text-left px-3 py-2 text-xs text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 truncate block">
+                    📄 ${file.name} <span class="text-gray-400 text-[10px] block">${file.path}<\/span>
+                <\/button>`;
+            });
+
+            dropdown.innerHTML = html;
+            dropdown.classList.remove('hidden');
+        }
+
+        function selectSearchResult(path) {
+            loadFile(path);
+            document.getElementById('searchDropdown').classList.add('hidden');
+            document.getElementById('searchInput').value = '';
+            filterTree(''); // Reset sidebar filter
+        }
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', (e) => {
+            const searchContainer = document.getElementById('searchInput').parentElement;
+            if (!searchContainer.contains(e.target)) {
+                document.getElementById('searchDropdown').classList.add('hidden');
+            }
+        });
 
         function renderTree(node, container, filterQuery = '') {
             container.innerHTML = '';
