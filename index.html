@@ -123,7 +123,8 @@
                 errorLoadingStruct: "Fehler beim Laden der Struktur.",
                 resizeWidth: "Breite anpassen",
                 searchPlaceholder: "Suchen (z.B. Maniac AND Ostern OR 101)...",
-                noResults: "Keine Treffer gefunden."
+                noResults: "Keine Treffer gefunden.",
+                linkCopied: "Link kopiert"
             },
             en: {
                 menuBtn: "Menu",
@@ -144,7 +145,8 @@
                 errorLoadingStruct: "Error loading structure.",
                 resizeWidth: "Adjust width",
                 searchPlaceholder: "Search (e.g. Maniac AND Ostern OR 101)...",
-                noResults: "No matching files found."
+                noResults: "No matching files found.",
+                linkCopied: "Link copied"
             }
         };
 
@@ -185,15 +187,32 @@
             handleGlobalSearch(document.getElementById("searchInput").value)
         }
         let structureData = null;
+        let currentFilePath = null;
+
         async function init() {
             setLanguage(currentLang);
             try {
                 const response = await fetch("structure.json");
                 structureData = await response.json();
-                renderTree(structureData, document.getElementById("tree-container"))
+                renderTree(structureData, document.getElementById("tree-container"));
+
+                const urlParams = new URLSearchParams(window.location.search);
+                const fileParam = urlParams.get('file');
+                if (fileParam) {
+                    await loadFile(fileParam);
+                    if (window.location.hash) {
+                        setTimeout(() => {
+                            const targetId = window.location.hash.substring(1);
+                            const targetEl = document.getElementById(targetId);
+                            if (targetEl) {
+                                targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+                            }
+                        }, 300);
+                    }
+                }
             } catch (error) {
                 console.error("Error loading structure:", error);
-                document.getElementById("tree-container").innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].errorLoadingStruct}<\/p>`
+                document.getElementById("tree-container").innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].errorLoadingStruct}</p>`
             }
         }
 
@@ -238,13 +257,15 @@
             }
             collectFiles(structureData);
             if (matchingFiles.length === 0) {
-                dropdown.innerHTML = `<div class="p-3 text-xs sm:text-sm text-gray-400 italic">${translations[currentLang].noResults}<\/div>`;
+                dropdown.innerHTML = `<div class="p-3 text-xs sm:text-sm text-gray-400 italic">${translations[currentLang].noResults}</div>`;
                 dropdown.classList.remove("hidden");
                 return
             }
             let html = "";
             matchingFiles.forEach((file, index) => {
-                html += `<button type="button" onclick="selectSearchResult('${file.path}')" onkeydown="handleDropdownKeydown(event, ${index}, '${file.path}')" class="w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex items-center gap-2 cursor-pointer focus:outline-none">\n                    <span>📄<\/span> <span class="font-medium">${file.name}<\/span>\n                <\/button>`
+                html += `<button type="button" onclick="selectSearchResult('${file.path}')" onkeydown="handleDropdownKeydown(event, ${index}, '${file.path}')" class="w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex items-center gap-2 cursor-pointer focus:outline-none">
+                    <span>📄</span> <span class="font-medium">${file.name}</span>
+                </button>`
             });
             dropdown.innerHTML = html;
             dropdown.classList.remove("hidden")
@@ -339,7 +360,7 @@
             if (query !== "") {
                 const filteredChildren = (node.children || []).map(child => filterNode(child)).filter(child => child !== null);
                 if (filteredChildren.length === 0) {
-                    container.innerHTML = `<p class="text-gray-500 italic text-xs py-2">${translations[currentLang].noResults}<\/p>`;
+                    container.innerHTML = `<p class="text-gray-500 italic text-xs py-2">${translations[currentLang].noResults}</p>`;
                     return
                 }
                 displayNode = {
@@ -386,11 +407,13 @@
                 renderTree(structureData, document.getElementById("tree-container"), query)
             }
         }
+
         async function loadFile(filePath) {
+            currentFilePath = filePath;
             const viewer = document.getElementById("content-viewer");
             const tocContainer = document.getElementById("toc-container");
-            viewer.innerHTML = `<p class="text-gray-400 animate-pulse text-sm">${translations[currentLang].loadingFile}<\/p>`;
-            tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].analyzing}<\/p>`;
+            viewer.innerHTML = `<p class="text-gray-400 animate-pulse text-sm">${translations[currentLang].loadingFile}</p>`;
+            tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].analyzing}</p>`;
             try {
                 const response = await fetch(`solutions/${filePath}`);
                 if (!response.ok) throw new Error(translations[currentLang].fileNotFound);
@@ -398,7 +421,7 @@
                 if (filePath.endsWith(".md")) {
                     viewer.innerHTML = marked.parse(text)
                 } else {
-                    viewer.innerHTML = `<pre class="whitespace-pre-wrap font-mono text-xs sm:text-sm bg-gray-950 p-4 rounded">${escapeHtml(text)}<\/pre>`
+                    viewer.innerHTML = `<pre class="whitespace-pre-wrap font-mono text-xs sm:text-sm bg-gray-950 p-4 rounded">${escapeHtml(text)}</pre>`
                 }
                 viewer.querySelectorAll("a").forEach(link => {
                     link.setAttribute("target", "_blank");
@@ -408,8 +431,8 @@
                 generateToc(viewer, tocContainer);
                 setupScrollSpy(viewer, tocContainer);
             } catch (error) {
-                viewer.innerHTML = `<p class="text-red-400 text-sm">${translations[currentLang].errorLoadingFile} ${filePath}<\/p>`;
-                tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}<\/p>`
+                viewer.innerHTML = `<p class="text-red-400 text-sm">${translations[currentLang].errorLoadingFile} ${filePath}</p>`;
+                tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`
             }
         }
 
@@ -417,20 +440,67 @@
             tocContainer.innerHTML = "";
             const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
             if (headings.length === 0) {
-                tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].noHeadings}<\/p>`;
+                tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs sm:text-sm">${translations[currentLang].noHeadings}</p>`;
                 return
             }
             headings.forEach((heading, index) => {
                 if (!heading.id) {
                     heading.id = `heading-${index}`
                 }
+
+                // Ursprünglichen Text vor dem Hinzufügen des Buttons speichern
+                const originalText = heading.textContent;
+
+                if (!heading.querySelector(".heading-copy-btn")) {
+                    heading.classList.add("group", "relative");
+                    const copyBtn = document.createElement("button");
+                    copyBtn.className = "heading-copy-btn inline-flex items-center mr-2 opacity-70 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative";
+                    copyBtn.title = currentLang === "de" ? "Kapitel-Link kopieren" : "Copy chapter link";
+
+                    const iconSpan = document.createElement("span");
+                    iconSpan.textContent = "🔗";
+
+                    const popupSpan = document.createElement("span");
+                    popupSpan.className = "absolute left-full ml-2 px-2 py-0.5 bg-gray-800 text-emerald-300 text-xs rounded shadow-lg whitespace-nowrap opacity-0 transition-opacity pointer-events-none border border-gray-700 z-50";
+                    popupSpan.textContent = translations[currentLang].linkCopied;
+
+                    copyBtn.appendChild(iconSpan);
+                    copyBtn.appendChild(popupSpan);
+
+                    let copyTimeout = null;
+
+                    copyBtn.onclick = (e) => {
+                        e.stopPropagation();
+                        const baseUrl = window.location.href.split('?')[0].split('#')[0];
+                        const cleanUrl = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}#${heading.id}`;
+                        navigator.clipboard.writeText(cleanUrl).then(() => {
+                            iconSpan.textContent = "✓";
+                            popupSpan.textContent = translations[currentLang].linkCopied;
+                            
+                            copyBtn.style.opacity = "1";
+                            popupSpan.style.opacity = "1";
+
+                            if (copyTimeout) clearTimeout(copyTimeout);
+                            copyTimeout = setTimeout(() => {
+                                iconSpan.textContent = "🔗";
+                                popupSpan.style.opacity = "0";
+                                copyBtn.style.opacity = "";
+                            }, 1500);
+                        });
+                    };
+                    heading.prepend(copyBtn);
+                }
+
                 const tocItem = document.createElement("button");
                 let indentClass = "pl-1";
                 if (heading.tagName === "H2") indentClass = "pl-2";
-                if (heading.tagName === "H3") indentClass = "pl-4 text-xs";
-                if (heading.tagName === "H4") indentClass = "pl-6 text-xs";
-                tocItem.className = `block w-full text-left py-1 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors text-xs break-words ${indentClass} cursor-pointer`;
-                tocItem.textContent = heading.textContent;
+                if (heading.tagName === "H3") indentClass = "pl-4";
+                if (heading.tagName === "H4") indentClass = "pl-6";
+                if (heading.tagName === "H5") indentClass = "pl-8";
+                if (heading.tagName === "H6") indentClass = "pl-10";
+                if (heading.tagName === "H7") indentClass = "pl-12";
+                tocItem.className = `block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors text-xs sm:text-sm break-words ${indentClass} cursor-pointer`;
+                tocItem.textContent = originalText;
                 tocItem.dataset.targetId = heading.id;
                 tocItem.onclick = () => {
                     heading.scrollIntoView({
