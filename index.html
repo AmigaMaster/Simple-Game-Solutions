@@ -27,6 +27,7 @@
            data-i18n-placeholder="searchPlaceholder"
            id="searchInput"
            oninput="handleGlobalSearch(this.value)"
+           onkeydown="handleSearchInputKeydown(event)"
            placeholder="Suchen..."
            type="text"> <!-- Clear Button ("x") -->
        <button class="absolute right-2.5 text-gray-400 hover:text-white text-sm hidden focus:outline-none cursor-pointer"
@@ -268,15 +269,51 @@
             }
 
             let html = '';
-            matchingFiles.forEach(file => {
-                html += `<button onclick="selectSearchResult('${file.path}')" class="w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex justify-between items-center cursor-pointer">
-                    <span>📄 <span class="font-medium">${file.name}<\/span><\/span>
-                    <span class="text-gray-400 text-xs ml-2 font-mono">${file.path}<\/span>
+            matchingFiles.forEach((file, index) => {
+                html += `<button type="button" onclick="selectSearchResult('${file.path}')" onkeydown="handleDropdownKeydown(event, ${index}, '${file.path}')" class="w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex items-center gap-2 cursor-pointer focus:outline-none">
+                    <span>📄<\/span> <span class="font-medium">${file.name}<\/span>
                 <\/button>`;
             });
 
             dropdown.innerHTML = html;
             dropdown.classList.remove('hidden');
+        }
+
+        function handleSearchInputKeydown(e) {
+            const dropdown = document.getElementById('searchDropdown');
+            const items = dropdown.querySelectorAll('button');
+            if (e.key === 'ArrowDown' && !dropdown.classList.contains('hidden') && items.length > 0) {
+                e.preventDefault();
+                items[0].focus();
+            } else if (e.key === 'Escape') {
+                dropdown.classList.add('hidden');
+            }
+        }
+
+        function handleDropdownKeydown(e, index, path) {
+            const dropdown = document.getElementById('searchDropdown');
+            const items = dropdown.querySelectorAll('button');
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (index + 1 < items.length) {
+                    items[index + 1].focus();
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (index > 0) {
+                    items[index - 1].focus();
+                } else {
+                    document.getElementById('searchInput').focus();
+                }
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                selectSearchResult(path);
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                dropdown.classList.add('hidden');
+                document.getElementById('searchInput').focus();
+            }
         }
 
         function clearSearch() {
