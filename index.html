@@ -43,10 +43,10 @@
                 class="bg-gray-700 text-emerald-300 text-xs px-2 py-1.5 rounded-md border border-gray-600 focus:outline-none cursor-pointer"
                 id="langSelect" onchange="changeLanguage(this.value);">
                 <option value="de">
-                    🇩🇪 DE
+                    🇩🇪 Deutsch
                 </option>
                 <option value="en">
-                    🇬🇧 EN
+                    🇬🇧 English
                 </option>
             </select> <button
                 class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
@@ -405,7 +405,8 @@
                     link.setAttribute("rel", "noopener noreferrer");
                     link.className = "text-emerald-400 hover:underline"
                 });
-                generateToc(viewer, tocContainer)
+                generateToc(viewer, tocContainer);
+                setupScrollSpy(viewer, tocContainer);
             } catch (error) {
                 viewer.innerHTML = `<p class="text-red-400 text-sm">${translations[currentLang].errorLoadingFile} ${filePath}<\/p>`;
                 tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}<\/p>`
@@ -430,6 +431,7 @@
                 if (heading.tagName === "H4") indentClass = "pl-6 text-xs";
                 tocItem.className = `block w-full text-left py-1 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors text-xs break-words ${indentClass} cursor-pointer`;
                 tocItem.textContent = heading.textContent;
+                tocItem.dataset.targetId = heading.id;
                 tocItem.onclick = () => {
                     heading.scrollIntoView({
                         behavior: "smooth",
@@ -441,6 +443,45 @@
                 };
                 tocContainer.appendChild(tocItem)
             })
+        }
+
+        function setupScrollSpy(contentViewer, tocContainer) {
+            const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
+            const tocButtons = tocContainer.querySelectorAll("button");
+            if (headings.length === 0 || tocButtons.length === 0) return;
+
+            let lastActiveId = null;
+
+            function updateScrollPosition() {
+                const scrollTop = contentViewer.scrollTop;
+                const scrollHeight = contentViewer.scrollHeight;
+                const clientHeight = contentViewer.clientHeight;
+
+                let activeId = headings[0].id;
+
+                if (scrollTop + clientHeight >= scrollHeight - 15) {
+                    activeId = headings[headings.length - 1].id;
+                } else {
+                    for (let i = 0; i < headings.length; i++) {
+                        const headingTop = headings[i].getBoundingClientRect().top - contentViewer.getBoundingClientRect().top + scrollTop;
+                        if (scrollTop >= headingTop - 120) {
+                            activeId = headings[i].id;
+                        }
+                    }
+                }
+
+                if (activeId !== lastActiveId) {
+                    lastActiveId = activeId;
+                    tocButtons.forEach(btn => {
+                        if (btn.dataset.targetId === activeId) {
+                            btn.scrollIntoView({ behavior: "smooth", block: "center" });
+                        }
+                    });
+                }
+            }
+
+            contentViewer.onscroll = updateScrollPosition;
+            updateScrollPosition();
         }
 
         function escapeHtml(text) {
