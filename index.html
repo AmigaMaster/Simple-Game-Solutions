@@ -442,6 +442,7 @@
             copyBtn.title = currentLang === "de" ? "Kapitel-Link kopieren" : "Copy chapter link";
 
             const iconSpan = document.createElement("span");
+            iconSpan.className = "inline-block w-6 text-center";
             iconSpan.textContent = "🔗";
 
             const popupSpan = document.createElement("span");
@@ -477,6 +478,7 @@
                         copyBtn.style.transition = 'opacity 500ms ease';
                         popupSpan.style.transition = 'opacity 500ms ease';
                         popupSpan.style.opacity = "0";
+                        copyBtn.style.opacity = "0";
                         
                         setTimeout(() => {
                             iconSpan.textContent = "🔗";
@@ -657,7 +659,7 @@
                 } else {
                     sidebar.classList.add("-translate-x-full");
                     tocSidebar.classList.remove("translate-x-full");
-                    mobileBackdrop.classList.add("hidden")
+                    mobileBackdrop.classList.remove("hidden")
                 }
             } else {
                 const isHidden = tocSidebar.style.display === "none";
@@ -666,7 +668,7 @@
             }
         }
 
-        closeAllOverlays = function() {
+        function closeAllOverlays() {
             if (window.innerWidth < 1060) {
                 sidebar.classList.add("-translate-x-full")
             }
