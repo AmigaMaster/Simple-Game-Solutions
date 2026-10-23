@@ -116,7 +116,7 @@
                 errorLoadingFile: "Fehler beim Laden der Datei:",
                 errorLoadingStruct: "Fehler beim Laden der Struktur.",
                 resizeWidth: "Breite anpassen",
-                searchPlaceholder: "Suchen...",
+                searchPlaceholder: "Suchen (z.B. Maniac AND Ostern OR 101)...",
                 noResults: "Keine Treffer gefunden."
             },
             en: {
@@ -137,7 +137,7 @@
                 errorLoadingFile: "Error loading file:",
                 errorLoadingStruct: "Error loading structure.",
                 resizeWidth: "Adjust width",
-                searchPlaceholder: "Search...",
+                searchPlaceholder: "Search (e.g. Maniac AND Ostern OR 101)...",
                 noResults: "No matching files found."
             }
         };
@@ -196,15 +196,34 @@
             }
         }
 
+        // Helper function to evaluate boolean search query (AND/UND, OR/ODER) with default AND
+        function matchQuery(nameLower, query) {
+            const q = query.trim();
+            if (!q) return true;
+
+            // Split query by OR / ODER (case-insensitive)
+            const orClauses = q.toLowerCase().split(/\b(?:or|oder)\b/);
+
+            return orClauses.some(clause => {
+                // Within each clause, treat AND / UND as spaces and split by whitespace
+                const cleanClause = clause.replace(/\b(?:and|und)\b/g, ' ');
+                const terms = cleanClause.split(/\s+/).filter(t => t.length > 0);
+                
+                if (terms.length === 0) return false;
+                
+                // All terms in this clause must match (AND)
+                return terms.every(term => nameLower.includes(term));
+            });
+        }
+
         function renderTree(node, container, filterQuery = '') {
             container.innerHTML = '';
-            const query = filterQuery.trim().toLowerCase();
-            const terms = query.split(/\s+/).filter(t => t.length > 0);
+            const query = filterQuery.trim();
 
-            // Filter recursive tree data using logical AND across terms
+            // Filter recursive tree data using boolean query parser
             function filterNode(item) {
                 const nameLower = item.name.toLowerCase();
-                const matches = terms.length === 0 || terms.every(term => nameLower.includes(term));
+                const matches = matchQuery(nameLower, query);
 
                 if (item.type === 'file') {
                     return matches ? { ...item } : null;
