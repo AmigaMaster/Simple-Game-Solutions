@@ -10,6 +10,11 @@
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script><!-- Marked.js for Markdown Rendering -->
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    /* Remove default Tailwind typography backticks around inline code */
+    .prose code::before { content: "" !important; }
+    .prose code::after { content: "" !important; }
+  </style>
 </head>
 <body class="bg-gray-900 text-gray-100 h-full flex flex-col overflow-hidden antialiased">
   <!-- Header with toggle buttons, search, and language selector -->
@@ -80,9 +85,10 @@
          data-i18n-title="resizeWidth"
          id="resizer-left">
       <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
-    </div><!-- 2. Content Area: File Viewer (Center) - High Minimum Width to prevent squeezed text -->
-    <section class="flex-1 bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6 flex flex-col h-full overflow-hidden shadow-lg min-w-0 min-[1060px]:min-w-[450px]">
-      <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 text-sm sm:text-base leading-relaxed"
+    </div><!-- 2. Content Area: File Viewer (Center) - Soft, Muted Typography Styles -->
+    <section class="flex-1 bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6 flex flex-col h-full overflow-hidden shadow-lg min-w-0 min-[1050px]:min-w-[450px]">
+      <div class=
+      "prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 text-sm sm:text-base leading-relaxed prose-code:text-emerald-200/80 prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-gray-700/40 prose-blockquote:border-emerald-500/30 prose-blockquote:bg-gray-800/40 prose-blockquote:text-gray-300/90"
            id="content-viewer">
         <div class="text-center text-gray-500 py-20">
           <p class="text-base sm:text-lg"
