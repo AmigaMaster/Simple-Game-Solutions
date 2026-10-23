@@ -16,11 +16,11 @@
   <header class="bg-gray-800 border-b border-gray-700 px-4 py-3 shadow-md flex justify-between items-center shrink-0 relative z-40 gap-2">
     <div class="flex items-center gap-2 sm:gap-4 shrink-0">
       <!-- Prominent Menu Toggle Button -->
-      <button class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
+       <button class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
            data-i18n-title="menuToggleTitle"
            onclick="toggleSidebar()"><span>📁</span> <span data-i18n="menuBtn">Menü</span></button>
-      <h1 class="text-sm sm:text-lg font-bold text-emerald-400 hidden sm:block">🎮 Simple Game Solutions</h1>
-    </div><!-- Global Search Input in Header with Real-time Dropdown & Clear Button -->
+      <h1 class="text-sm sm:text-lg font-bold text-emerald-400 hidden sm:block">🎮 Game Solutions</h1>
+    </div><!-- Global Search Input in Header with Clear Button -->
     <div class="relative flex-1 max-w-xs sm:max-w-sm mx-2 flex items-center">
       <input autocomplete="off"
            class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-3 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
@@ -32,11 +32,11 @@
        <button class="absolute right-2.5 text-gray-400 hover:text-white text-sm hidden focus:outline-none cursor-pointer"
            id="clearSearchBtn"
            onclick="clearSearch()"
-           title="Suche löschen">✕</button> <!-- Dropdown Results Container -->
-      <div class="absolute left-0 right-0 top-full mt-1 bg-gray-800 border border-gray-700 rounded-md shadow-2xl max-h-60 overflow-y-auto z-50 hidden"
-           id="searchDropdown">
-        <!-- Results injected dynamically -->
-      </div>
+           title="Suche löschen">✕</button>
+    </div><!-- Wide Dropdown Results Container (spanning across the screen) -->
+    <div class="absolute left-3 right-3 sm:left-6 sm:right-6 top-full mt-1 bg-gray-800 border border-gray-700 rounded-md shadow-2xl max-h-80 overflow-y-auto z-50 hidden"
+         id="searchDropdown">
+      <!-- Results injected dynamically -->
     </div>
     <div class="flex items-center gap-2 sm:gap-4 shrink-0">
       <!-- Language selection dropdown -->
@@ -152,7 +152,7 @@
                 errorLoadingFile: "Error loading file:",
                 errorLoadingStruct: "Error loading structure.",
                 resizeWidth: "Adjust width",
-                searchPlaceholder: "Search (e.g. Maniac AND Easter OR 101)...",
+                searchPlaceholder: "Search (e.g. Maniac AND Ostern OR 101)...",
                 noResults: "No matching files found."
             }
         };
@@ -262,15 +262,16 @@
             collectFiles(structureData);
 
             if (matchingFiles.length === 0) {
-                dropdown.innerHTML = `<div class="p-2 text-xs text-gray-400 italic">${translations[currentLang].noResults}<\/div>`;
+                dropdown.innerHTML = `<div class="p-3 text-xs sm:text-sm text-gray-400 italic">${translations[currentLang].noResults}<\/div>`;
                 dropdown.classList.remove('hidden');
                 return;
             }
 
             let html = '';
             matchingFiles.forEach(file => {
-                html += `<button onclick="selectSearchResult('${file.path}')" class="w-full text-left px-3 py-2 text-xs text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 truncate block cursor-pointer">
-                    📄 ${file.name} <span class="text-gray-400 text-[10px] block">${file.path}<\/span>
+                html += `<button onclick="selectSearchResult('${file.path}')" class="w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex justify-between items-center cursor-pointer">
+                    <span>📄 <span class="font-medium">${file.name}<\/span><\/span>
+                    <span class="text-gray-400 text-xs ml-2 font-mono">${file.path}<\/span>
                 <\/button>`;
             });
 
@@ -301,8 +302,9 @@
         // Close dropdown when clicking outside
         window.addEventListener('click', (e) => {
             const searchContainer = document.getElementById('searchInput').parentElement;
-            if (!searchContainer.contains(e.target)) {
-                document.getElementById('searchDropdown').classList.add('hidden');
+            const dropdown = document.getElementById('searchDropdown');
+            if (!searchContainer.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.add('hidden');
             }
         });
 
@@ -528,7 +530,6 @@
                     mobileBackdrop.classList.remove('hidden');
                 }
             } else {
-                // Desktop toggle
                 const isHidden = sidebar.style.display === 'none';
                 sidebar.style.display = isHidden ? 'flex' : 'none';
                 if (resizerLeft) resizerLeft.style.display = isHidden ? 'flex' : 'none';
@@ -546,7 +547,6 @@
                     mobileBackdrop.classList.remove('hidden');
                 }
             } else {
-                // Desktop toggle
                 const isHidden = tocSidebar.style.display === 'none';
                 tocSidebar.style.display = isHidden ? 'flex' : 'none';
                 if (resizerRight) resizerRight.style.display = isHidden ? 'flex' : 'none';
