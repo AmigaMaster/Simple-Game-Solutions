@@ -5,6 +5,9 @@ from pathlib import Path
 SOLUTIONS_DIR = Path("solutions")
 OUTPUT_JSON = Path("structure.json")
 
+# Allowed text/documentation file extensions (images and binaries will be ignored)
+ALLOWED_EXTENSIONS = {".md", ".txt"}
+
 
 def scan_directory(path: Path) -> dict:
   """Recursive function to build the directory structure as a dictionary."""
@@ -17,15 +20,18 @@ def scan_directory(path: Path) -> dict:
     if item.name.startswith("."):
       continue  # Ignore hidden files/folders
     if item.is_dir():
-      tree["children"].append(scan_directory(item))
+      sub_tree = scan_directory(item)
+      if sub_tree["children"]:
+        tree["children"].append(sub_tree)
     elif item.is_file():
-      tree["children"].append({
-          "name": item.name,
-          "type": "file",
-          "path": str(item.relative_to(SOLUTIONS_DIR)).replace(  # Relative path for web access
-              "\\", "/"
-          ),
-      })
+      if item.suffix.lower() in ALLOWED_EXTENSIONS:
+        tree["children"].append({
+            "name": item.name,
+            "type": "file",
+            "path": str(item.relative_to(SOLUTIONS_DIR)).replace(
+                "\\", "/"
+            ),
+        })
   return tree
 
 
