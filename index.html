@@ -18,15 +18,19 @@
            data-i18n-title="menuToggleTitle"
            onclick="toggleSidebar()"><span>📁</span> <span data-i18n="menuBtn">Menü</span></button>
       <h1 class="text-lg font-bold text-emerald-400">🎮 Simple Game Solutions</h1>
-    </div><!-- Global Search Input in Header with Real-time Dropdown -->
-    <div class="relative flex-1 max-w-sm mx-4">
+    </div><!-- Global Search Input in Header with Real-time Dropdown & Clear Button -->
+    <div class="relative flex-1 max-w-sm mx-4 flex items-center">
       <input autocomplete="off"
-           class="w-full bg-gray-900 text-gray-200 border border-gray-700 rounded px-3 py-1.5 text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
+           class="w-full bg-gray-900 text-gray-200 border border-gray-700 rounded px-3 py-1.5 pr-8 text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
            data-i18n-placeholder="searchPlaceholder"
            id="searchInput"
            oninput="handleGlobalSearch(this.value)"
            placeholder="Search..."
-           type="text"> <!-- Dropdown Results Container -->
+           type="text"> <!-- Clear Button ("x") -->
+       <button class="absolute right-2.5 text-gray-400 hover:text-white text-sm hidden focus:outline-none"
+           id="clearSearchBtn"
+           onclick="clearSearch()"
+           title="Suche löschen">✕</button> <!-- Dropdown Results Container -->
       <div class="absolute left-0 right-0 top-full mt-1 bg-gray-800 border border-gray-700 rounded shadow-xl max-h-60 overflow-y-auto z-50 hidden"
            id="searchDropdown">
         <!-- Results injected dynamically -->
@@ -137,7 +141,7 @@
                 noFileLoaded: "No file loaded.",
                 analyzing: "Analyzing chapters...",
                 noHeadings: "No chapters found.",
-                loadingFile: "Loading solution...",
+                loadingFile: "Loading solution.",
                 fileNotFound: "File not found",
                 errorLoadingFile: "Error loading file:",
                 errorLoadingStruct: "Error loading structure.",
@@ -223,6 +227,13 @@
 
         // Handle Global Search for both Sidebar Tree and Dropdown suggestions
         function handleGlobalSearch(query) {
+            const clearBtn = document.getElementById('clearSearchBtn');
+            if (query.trim().length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
             // 1. Update the sidebar tree in real-time
             filterTree(query);
 
@@ -266,10 +277,20 @@
             dropdown.classList.remove('hidden');
         }
 
+        function clearSearch() {
+            const input = document.getElementById('searchInput');
+            input.value = '';
+            handleGlobalSearch('');
+            document.getElementById('searchDropdown').classList.add('hidden');
+            document.getElementById('clearSearchBtn').classList.add('hidden');
+            input.focus();
+        }
+
         function selectSearchResult(path) {
             loadFile(path);
             document.getElementById('searchDropdown').classList.add('hidden');
             document.getElementById('searchInput').value = '';
+            document.getElementById('clearSearchBtn').classList.add('hidden');
             filterTree(''); // Reset sidebar filter
         }
 
