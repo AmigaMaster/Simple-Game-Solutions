@@ -26,7 +26,7 @@ def scan_directory(path: Path) -> dict:
     elif item.is_file():
       if item.suffix.lower() in ALLOWED_EXTENSIONS:
         tree["children"].append({
-            "name": item.name,
+            "name": item.stem,
             "type": "file",
             "path": str(item.relative_to(SOLUTIONS_DIR)).replace(
                 "\\", "/"
