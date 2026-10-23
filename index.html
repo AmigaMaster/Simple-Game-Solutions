@@ -16,10 +16,10 @@
   <header class="bg-gray-800 border-b border-gray-700 px-4 py-3 shadow-md flex justify-between items-center shrink-0 relative z-40 gap-2">
     <div class="flex items-center gap-2 sm:gap-4 shrink-0">
       <!-- Prominent Menu Toggle Button -->
-       <button class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
+      <button class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
            data-i18n-title="menuToggleTitle"
            onclick="toggleSidebar()"><span>📁</span> <span data-i18n="menuBtn">Menü</span></button>
-      <h1 class="text-sm sm:text-lg font-bold text-emerald-400 hidden sm:block">🎮 Game Solutions</h1>
+      <h1 class="text-sm sm:text-lg font-bold text-emerald-400 hidden sm:block">🎮 Simple Game Solutions</h1>
     </div><!-- Global Search Input in Header with Clear Button -->
     <div class="relative flex-1 max-w-xs sm:max-w-sm mx-2 flex items-center">
       <input autocomplete="off"
@@ -58,11 +58,11 @@
   </header><!-- Main Container -->
   <main class="flex-1 flex flex-row overflow-hidden p-2 sm:p-4 gap-2 relative">
     <!-- Backdrop for mobile overlays -->
-    <div class="fixed inset-0 bg-black/60 z-20 hidden md:hidden transition-opacity"
+    <div class="fixed inset-0 bg-black/60 z-20 hidden min-[1060px]:hidden transition-opacity"
          id="mobileBackdrop"
          onclick="closeAllOverlays()"></div><!-- 1. Sidebar: Navigation / Tree Structure (Left) -->
     <aside class=
-    "fixed md:relative inset-y-0 left-0 w-72 md:w-[280px] bg-gray-800 border-r md:border border-gray-700 rounded-r-lg md:rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl md:shadow-lg z-30 transform -translate-x-full md:translate-x-0 transition-transform duration-200"
+    "fixed min-[1060px]:relative inset-y-0 left-0 w-72 min-[1060px]:w-[280px] bg-gray-800 border-r min-[1060px]:border border-gray-700 rounded-r-lg min-[1060px]:rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl min-[1060px]:shadow-lg z-30 transform -translate-x-full min-[1060px]:translate-x-0 transition-transform duration-200"
            id="sidebar">
       <div class="mb-3 border-b border-gray-700 pb-2 shrink-0 flex justify-between items-center">
         <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400"
@@ -76,12 +76,12 @@
            data-i18n="loadingStructure">Lade Struktur...</p>
       </div>
     </aside><!-- Divider 1 (Left Resizer - Desktop only) -->
-    <div class="hidden md:flex w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors items-center justify-center group shrink-0"
+    <div class="hidden min-[1060px]:flex w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors items-center justify-center group shrink-0"
          data-i18n-title="resizeWidth"
          id="resizer-left">
       <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
-    </div><!-- 2. Content Area: File Viewer (Center) -->
-    <section class="flex-1 bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6 flex flex-col h-full overflow-hidden shadow-lg min-w-0">
+    </div><!-- 2. Content Area: File Viewer (Center) - High Minimum Width to prevent squeezed text -->
+    <section class="flex-1 bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6 flex flex-col h-full overflow-hidden shadow-lg min-w-0 min-[1060px]:min-w-[450px]">
       <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 text-sm sm:text-base leading-relaxed"
            id="content-viewer">
         <div class="text-center text-gray-500 py-20">
@@ -90,13 +90,13 @@
         </div>
       </div>
     </section><!-- Divider 2 (Right Resizer - Desktop only) -->
-    <div class="hidden md:flex w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors items-center justify-center group shrink-0"
+    <div class="hidden min-[650px]:flex w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors items-center justify-center group shrink-0"
          data-i18n-title="resizeWidth"
          id="resizer-right">
       <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
     </div><!-- 3. Table of Contents (Right) -->
     <aside class=
-    "fixed md:relative inset-y-0 right-0 w-64 md:w-[260px] bg-gray-800 border-l md:border border-gray-700 rounded-l-lg md:rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl md:shadow-lg z-30 transform translate-x-full md:translate-x-0 transition-transform duration-200"
+    "fixed min-[650px]:relative inset-y-0 right-0 w-64 min-[650px]:w-[260px] bg-gray-800 border-l min-[650px]:border border-gray-700 rounded-l-lg min-[650px]:rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl min-[650px]:shadow-lg z-30 transform translate-x-full min-[650px]:translate-x-0 transition-transform duration-200"
            id="toc-sidebar">
       <div class="mb-3 border-b border-gray-700 pb-2 shrink-0 flex justify-between items-center">
         <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400"
@@ -148,7 +148,7 @@
                 noFileLoaded: "No file loaded.",
                 analyzing: "Analyzing chapters...",
                 noHeadings: "No chapters found.",
-                loadingFile: "Loading solution...",
+                loadingFile: "Loading solution.",
                 fileNotFound: "File not found",
                 errorLoadingFile: "Error loading file:",
                 errorLoadingStruct: "Error loading structure.",
@@ -331,7 +331,7 @@
             document.getElementById('searchInput').value = '';
             document.getElementById('clearSearchBtn').classList.add('hidden');
             filterTree(''); // Reset sidebar filter
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 1060) {
                 closeAllOverlays();
             }
         }
@@ -407,7 +407,7 @@
                     fileLink.textContent = `📄 ${item.name}`;
                     fileLink.onclick = () => {
                         loadFile(item.path);
-                        if (window.innerWidth < 768) {
+                        if (window.innerWidth < 1060) {
                             closeAllOverlays();
                         }
                     };
@@ -484,7 +484,7 @@
                 
                 tocItem.onclick = () => {
                     heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    if (window.innerWidth < 768) {
+                    if (window.innerWidth < 650) {
                         closeAllOverlays();
                     }
                 };
@@ -557,7 +557,7 @@
 
         // --- Toggle Overlays / Sidebars ---
         function toggleSidebar() {
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 1060) {
                 const isOpen = !sidebar.classList.contains('-translate-x-full');
                 if (isOpen) {
                     closeAllOverlays();
@@ -574,7 +574,7 @@
         }
 
         function toggleToc() {
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 650) {
                 const isOpen = !tocSidebar.classList.contains('translate-x-full');
                 if (isOpen) {
                     closeAllOverlays();
@@ -591,11 +591,13 @@
         }
 
         function closeAllOverlays() {
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 1060) {
                 sidebar.classList.add('-translate-x-full');
-                tocSidebar.classList.add('translate-x-full');
-                mobileBackdrop.classList.add('hidden');
             }
+            if (window.innerWidth < 650) {
+                tocSidebar.classList.add('translate-x-full');
+            }
+            mobileBackdrop.classList.add('hidden');
         }
 
         init();
