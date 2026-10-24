@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html class="h-full" lang="de">
+<html class="h-[100dvh] overflow-hidden" lang="de">
 
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <title>Simple Game Solutions</title>
+    <link rel="icon" type="res/img" href="favicon.gif">
     <meta property="og:title" content="Simple Game Solutions">
     <meta property="og:description" content="Discover and contribute to player-centric video game walkthroughs">
     <meta property="og:type" content="website">
@@ -24,29 +25,29 @@
     </style>
 </head>
 
-<body class="bg-gray-900 text-gray-100 h-full flex flex-col overflow-hidden antialiased">
+<body class="bg-gray-900 text-gray-100 h-[100dvh] w-screen overflow-hidden flex flex-col antialiased m-0 p-0">
     <header
-        class="bg-gray-800 border-b border-gray-700 px-4 py-3 shadow-md flex justify-between items-center shrink-0 relative z-40 gap-2">
-        <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+        class="bg-gray-800 border-b border-gray-700 px-2 sm:px-4 py-2 sm:py-3 shadow-md flex justify-between items-center shrink-0 relative z-40 gap-1.5 sm:gap-2 w-full max-w-full">
+        <div class="flex items-center gap-1.5 sm:gap-4 shrink-0">
             <button
-                class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
+                class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all flex items-center gap-1 shadow-lg cursor-pointer shrink-0"
                 data-i18n-title="menuToggleTitle" onclick="toggleSidebar();"><span>📁</span> <span
                     data-i18n="menuBtn">Menü</span></button>
             <h1 class="text-sm sm:text-lg font-bold text-emerald-400 hidden md:block">🎮 Simple Game Solutions</h1>
         </div>
-        <div class="relative flex-1 max-w-xs sm:max-w-sm mx-2 flex items-center min-w-[120px]">
+        <div class="relative flex-1 max-w-xs sm:max-w-sm mx-1 sm:mx-2 flex items-center min-w-[70px] sm:min-w-[120px]">
             <input autocomplete="off"
-                class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-3 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
+                class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 sm:px-3 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
                 data-i18n-placeholder="searchPlaceholder" id="searchInput" oninput="handleGlobalSearch(this.value);"
                 onkeydown="handleSearchInputKeydown(event);" placeholder="Suchen..." type="text"> <button
                 class="absolute right-2.5 text-gray-400 hover:text-white text-sm hidden focus:outline-none cursor-pointer"
                 id="clearSearchBtn" onclick="clearSearch();" title="Suche löschen">✕</button>
         </div>
-        <div class="absolute left-3 right-3 sm:left-6 sm:right-6 top-full mt-1 bg-gray-800 border border-gray-700 rounded-md shadow-2xl max-h-80 overflow-y-auto z-50 hidden"
+        <div class="absolute left-2 right-2 sm:left-6 sm:right-6 top-full mt-1 bg-gray-800 border border-gray-700 rounded-md shadow-2xl max-h-80 overflow-y-auto z-50 hidden"
             id="searchDropdown"></div>
-        <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+        <div class="flex items-center gap-1.5 sm:gap-4 shrink-0">
             <select
-                class="bg-gray-700 text-emerald-300 text-xs px-2 py-1.5 rounded-md border border-gray-600 focus:outline-none cursor-pointer"
+                class="bg-gray-700 text-emerald-300 text-xs px-1.5 sm:px-2 py-1.5 rounded-md border border-gray-600 focus:outline-none cursor-pointer shrink-0"
                 id="langSelect" onchange="changeLanguage(this.value);">
                 <option value="de">
                     🇩🇪
@@ -56,12 +57,12 @@
                 </option>
             </select>
             <button
-                class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
+                class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all flex items-center gap-1 shadow-lg cursor-pointer shrink-0"
                 data-i18n-title="tocToggleTitle" onclick="toggleToc();"><span>📑</span> <span
                     data-i18n="tocBtn">Inhalt</span></button>
         </div>
     </header>
-    <main class="flex-1 flex flex-row overflow-hidden p-2 sm:p-3 gap-2 relative">
+    <main class="flex-1 flex flex-row overflow-hidden p-1.5 sm:p-3 gap-1.5 sm:gap-2 relative w-full max-w-full">
         <aside
             class="fixed min-[1060px]:relative inset-y-0 left-0 w-72 min-[1060px]:w-[280px] bg-gray-800 border-r min-[1060px]:border border-gray-700 rounded-r-lg min-[1060px]:rounded-lg px-2 py-2 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl min-[1060px]:shadow-lg z-30 transform -translate-x-full min-[1060px]:translate-x-0 transition-transform duration-200"
             id="sidebar">
@@ -139,7 +140,7 @@
                 menuBtn: "Menu",
                 menuToggleTitle: "Toggle directories",
                 subtitle: "Automatic Documentation",
-                tocBtn: "Contents",
+                tocBtn: "Content",
                 tocToggleTitle: "Toggle table of contents",
                 directoriesTitle: "Directories",
                 chaptersTitle: "Chapters",
@@ -691,6 +692,7 @@
                 tocSidebar.classList.add("translate-x-full")
             }
         }
+        closeAllOverlays();
         init();
 
     </script>
