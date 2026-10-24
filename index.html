@@ -49,22 +49,19 @@
                     🇬🇧 English
                 </option>
             </select>
-            <span id="scrollIndicator"
-                class="text-xs font-mono text-emerald-300 bg-gray-950 py-1.5 rounded-md border border-gray-700 shrink-0 w-12 text-center"
-                title="Scroll-Fortschritt">0%</span>
             <button
                 class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
                 data-i18n-title="tocToggleTitle" onclick="toggleToc();"><span>📑</span> <span
                     data-i18n="tocBtn">Inhalt</span></button>
         </div>
     </header>
-    <main class="flex-1 flex flex-row overflow-hidden p-2 sm:p-4 gap-2 relative">
+    <main class="flex-1 flex flex-row overflow-hidden p-2 sm:p-3 gap-2 relative">
         <div class="fixed inset-0 bg-black/60 z-20 hidden min-[1060px]:hidden transition-opacity" id="mobileBackdrop"
             onclick="closeAllOverlays();"></div>
         <aside
-            class="fixed min-[1060px]:relative inset-y-0 left-0 w-72 min-[1060px]:w-[280px] bg-gray-800 border-r min-[1060px]:border border-gray-700 rounded-r-lg min-[1060px]:rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl min-[1060px]:shadow-lg z-30 transform -translate-x-full min-[1060px]:translate-x-0 transition-transform duration-200"
+            class="fixed min-[1060px]:relative inset-y-0 left-0 w-72 min-[1060px]:w-[280px] bg-gray-800 border-r min-[1060px]:border border-gray-700 rounded-r-lg min-[1060px]:rounded-lg px-2 py-2 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl min-[1060px]:shadow-lg z-30 transform -translate-x-full min-[1060px]:translate-x-0 transition-transform duration-200"
             id="sidebar">
-            <div class="mb-3 border-b border-gray-700 pb-2 shrink-0 flex justify-between items-center">
+            <div class="mb-2 border-b border-gray-700 pb-1.5 shrink-0 flex justify-between items-center">
                 <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400" data-i18n="directoriesTitle">
                     Verzeichnisse</h2><button
                     class="text-gray-400 hover:text-white text-xs px-2 py-1 rounded bg-gray-700 cursor-pointer"
@@ -79,8 +76,12 @@
             <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
         </div>
         <section
-            class="flex-1 bg-gray-800 border border-gray-700 rounded-lg p-4 sm:p-6 flex flex-col h-full overflow-hidden shadow-lg min-w-0 min-[1050px]:min-w-[450px]">
-            <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 text-sm sm:text-base leading-relaxed prose-code:text-emerald-200/80 prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-gray-700/40 prose-blockquote:border-emerald-500/30 prose-blockquote:bg-gray-800/40 prose-blockquote:text-gray-300/90"
+            class="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-2 pt-1 pb-2 sm:px-3 sm:pt-1 sm:pb-2 flex flex-col h-full overflow-hidden shadow-lg min-w-0 min-[1050px]:min-w-[450px] relative">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gray-800 z-20">
+                <div id="scrollProgressBar" class="h-full bg-emerald-500 transition-all duration-75" style="width: 0%;">
+                </div>
+            </div>
+            <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 pt-2 text-sm sm:text-base leading-relaxed prose-code:text-emerald-200/80 prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-gray-700/40 prose-blockquote:border-emerald-500/30 prose-blockquote:bg-gray-800/40 prose-blockquote:text-gray-300/90"
                 id="content-viewer">
                 <div class="text-center text-gray-500 py-20">
                     <p class="text-base sm:text-lg" data-i18n="welcomeMessage">Wähle links eine Kategorie und eine Datei
@@ -93,9 +94,9 @@
             <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
         </div>
         <aside
-            class="fixed min-[650px]:relative inset-y-0 right-0 w-64 min-[650px]:w-[260px] bg-gray-800 border-l min-[650px]:border border-gray-700 rounded-l-lg min-[650px]:rounded-lg p-4 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl min-[650px]:shadow-lg z-30 transform translate-x-full min-[650px]:translate-x-0 transition-transform duration-200"
+            class="fixed min-[650px]:relative inset-y-0 right-0 w-64 min-[650px]:w-[260px] bg-gray-800 border-l min-[650px]:border border-gray-700 rounded-l-lg min-[650px]:rounded-lg px-2 py-2 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl min-[650px]:shadow-lg z-30 transform translate-x-full min-[650px]:translate-x-0 transition-transform duration-200"
             id="toc-sidebar">
-            <div class="mb-3 border-b border-gray-700 pb-2 shrink-0 flex justify-between items-center">
+            <div class="mb-2 border-b border-gray-700 pb-1.5 shrink-0 flex justify-between items-center">
                 <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400" data-i18n="chaptersTitle">
                     Kapitel</h2><button
                     class="text-gray-400 hover:text-white text-xs px-2 py-1 rounded bg-gray-700 cursor-pointer"
@@ -416,8 +417,8 @@
             currentFilePath = filePath;
             const viewer = document.getElementById("content-viewer");
             const tocContainer = document.getElementById("toc-container");
-            const scrollIndicator = document.getElementById("scrollIndicator");
-            if (scrollIndicator) scrollIndicator.textContent = "0%";
+            const scrollProgressBar = document.getElementById("scrollProgressBar");
+            if (scrollProgressBar) scrollProgressBar.style.width = "0%";
             viewer.innerHTML = `<p class="text-gray-400 animate-pulse text-sm">${translations[currentLang].loadingFile}</p>`;
             tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].analyzing}</p>`;
             try {
@@ -554,18 +555,17 @@
         }
 
         function setupScrollSpy(contentViewer, tocContainer) {
-            const scrollIndicator = document.getElementById("scrollIndicator");
+            const scrollProgressBar = document.getElementById("scrollProgressBar");
 
             function updateScrollPosition() {
                 const scrollTop = contentViewer.scrollTop;
                 const scrollHeight = contentViewer.scrollHeight;
                 const clientHeight = contentViewer.clientHeight;
 
-                // Prozentanzeige aktualisieren (0% bis 100% als Integer)
-                if (scrollIndicator) {
+                if (scrollProgressBar) {
                     const maxScroll = scrollHeight - clientHeight;
-                    const percent = maxScroll > 0 ? Math.min(100, Math.max(0, Math.round((scrollTop / maxScroll) * 100))) : 0;
-                    scrollIndicator.textContent = percent + "%";
+                    const percent = maxScroll > 0 ? Math.min(100, Math.max(0, (scrollTop / maxScroll) * 100)) : 0;
+                    scrollProgressBar.style.width = percent + "%";
                 }
 
                 const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
