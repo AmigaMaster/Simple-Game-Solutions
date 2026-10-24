@@ -22,6 +22,28 @@
         .prose code::after {
             content: "" !important;
         }
+
+        .prose pre {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+            white-space: pre !important;
+            word-break: normal !important;
+            overflow-x: auto !important;
+            background-color: #030712 !important; /* bg-gray-950 für den gesamten Block */
+            border: 1px solid #374151 !important; /* border-gray-700 */
+            border-radius: 0.375rem !important;
+            padding: 1rem !important;
+        }
+
+        .prose pre code {
+            font-family: inherit !important;
+            background-color: transparent !important;
+            border: none !important; /* Entfernt die Rahmen um einzelne Zeilen/Begriffe */
+            border-radius: 0 !important;
+            padding: 0 !important;
+            font-weight: normal !important;
+            color: #a7f3d0 !important; /* prose-code:text-emerald-200/80 */
+            box-shadow: none !important;
+        }
     </style>
 </head>
 
