@@ -28,7 +28,7 @@
                     data-i18n="menuBtn">Menü</span></button>
             <h1 class="text-sm sm:text-lg font-bold text-emerald-400 hidden sm:block">🎮 Simple Game Solutions</h1>
         </div>
-        <div class="relative flex-1 max-w-xs sm:max-w-sm mx-2 flex items-center">
+        <div class="relative flex-1 max-w-xs sm:max-w-sm mx-2 flex items-center min-w-[120px]">
             <input autocomplete="off"
                 class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-3 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
                 data-i18n-placeholder="searchPlaceholder" id="searchInput" oninput="handleGlobalSearch(this.value);"
@@ -673,7 +673,7 @@
                 } else {
                     sidebar.classList.add("-translate-x-full");
                     tocSidebar.classList.remove("translate-x-full");
-                    mobileBackdrop.classList.remove("hidden")
+                    mobileBackdrop.classList.add("hidden")
                 }
             } else {
                 const isHidden = tocSidebar.style.display === "none";
