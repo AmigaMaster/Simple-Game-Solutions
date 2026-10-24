@@ -1,4 +1,6 @@
 import json
+import datetime
+import subprocess
 from pathlib import Path
 
 # Path to your solutions
@@ -7,6 +9,25 @@ OUTPUT_JSON = Path("structure.json")
 
 # Allowed text/documentation file extensions (images and binaries will be ignored)
 ALLOWED_EXTENSIONS = {".md", ".txt"}
+
+
+def get_last_modified(file_path: Path) -> str:
+    """Get the latest modified date from Git (if available), otherwise from file system."""
+    try:
+        result = subprocess.run(
+            ["git", "log", "-1", "--format=%cI", str(file_path)],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        date_str = result.stdout.strip()
+        if date_str:
+            return date_str
+    except Exception:
+        pass
+    
+    mtime = file_path.stat().st_mtime
+    return datetime.datetime.fromtimestamp(mtime, datetime.timezone.utc).isoformat()
 
 
 def scan_directory(path: Path) -> dict:
@@ -31,6 +52,7 @@ def scan_directory(path: Path) -> dict:
             "path": str(item.relative_to(SOLUTIONS_DIR)).replace(
                 "\\", "/"
             ),
+            "last_modified": get_last_modified(item),
         })
   return tree
 
