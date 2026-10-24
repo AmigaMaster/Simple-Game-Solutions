@@ -48,7 +48,11 @@
                 <option value="en">
                     🇬🇧 English
                 </option>
-            </select> <button
+            </select>
+            <span id="scrollIndicator"
+                class="text-xs font-mono text-emerald-300 bg-gray-950 py-1.5 rounded-md border border-gray-700 shrink-0 w-12 text-center"
+                title="Scroll-Fortschritt">0%</span>
+            <button
                 class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1.5 rounded-md text-sm font-semibold transition-all flex items-center gap-1.5 shadow-lg cursor-pointer"
                 data-i18n-title="tocToggleTitle" onclick="toggleToc();"><span>📑</span> <span
                     data-i18n="tocBtn">Inhalt</span></button>
@@ -412,6 +416,8 @@
             currentFilePath = filePath;
             const viewer = document.getElementById("content-viewer");
             const tocContainer = document.getElementById("toc-container");
+            const scrollIndicator = document.getElementById("scrollIndicator");
+            if (scrollIndicator) scrollIndicator.textContent = "0%";
             viewer.innerHTML = `<p class="text-gray-400 animate-pulse text-sm">${translations[currentLang].loadingFile}</p>`;
             tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].analyzing}</p>`;
             try {
@@ -465,7 +471,7 @@
                 navigator.clipboard.writeText(cleanUrl).then(() => {
                     iconSpan.textContent = "✓";
                     popupSpan.textContent = translations[currentLang].linkCopied;
-                    
+
                     copyBtn.style.transition = 'none';
                     popupSpan.style.transition = 'none';
                     copyBtn.style.opacity = "1";
@@ -479,7 +485,7 @@
                         popupSpan.style.transition = 'opacity 500ms ease';
                         popupSpan.style.opacity = "0";
                         copyBtn.style.opacity = "0";
-                        
+
                         setTimeout(() => {
                             iconSpan.textContent = "🔗";
                             copyBtn.style.opacity = "";
@@ -548,17 +554,25 @@
         }
 
         function setupScrollSpy(contentViewer, tocContainer) {
-            const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
-            const tocButtons = tocContainer.querySelectorAll("[data-target-id]");
-            if (headings.length === 0 || tocButtons.length === 0) return;
-
-            let lastActiveId = null;
+            const scrollIndicator = document.getElementById("scrollIndicator");
 
             function updateScrollPosition() {
                 const scrollTop = contentViewer.scrollTop;
                 const scrollHeight = contentViewer.scrollHeight;
                 const clientHeight = contentViewer.clientHeight;
 
+                // Prozentanzeige aktualisieren (0% bis 100% als Integer)
+                if (scrollIndicator) {
+                    const maxScroll = scrollHeight - clientHeight;
+                    const percent = maxScroll > 0 ? Math.min(100, Math.max(0, Math.round((scrollTop / maxScroll) * 100))) : 0;
+                    scrollIndicator.textContent = percent + "%";
+                }
+
+                const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
+                const tocButtons = tocContainer.querySelectorAll("[data-target-id]");
+                if (headings.length === 0 || tocButtons.length === 0) return;
+
+                let lastActiveId = window._lastActiveId || null;
                 let activeId = headings[0].id;
 
                 if (scrollTop + clientHeight >= scrollHeight - 15) {
@@ -573,7 +587,7 @@
                 }
 
                 if (activeId !== lastActiveId) {
-                    lastActiveId = activeId;
+                    window._lastActiveId = activeId;
                     tocButtons.forEach(btn => {
                         if (btn.dataset.targetId === activeId) {
                             btn.scrollIntoView({ behavior: "smooth", block: "center" });
