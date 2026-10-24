@@ -56,8 +56,6 @@
         </div>
     </header>
     <main class="flex-1 flex flex-row overflow-hidden p-2 sm:p-3 gap-2 relative">
-        <div class="fixed inset-0 bg-black/60 z-20 hidden min-[1060px]:hidden transition-opacity" id="mobileBackdrop"
-            onclick="closeAllOverlays();"></div>
         <aside
             class="fixed min-[1060px]:relative inset-y-0 left-0 w-72 min-[1060px]:w-[280px] bg-gray-800 border-r min-[1060px]:border border-gray-700 rounded-r-lg min-[1060px]:rounded-lg px-2 py-2 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl min-[1060px]:shadow-lg z-30 transform -translate-x-full min-[1060px]:translate-x-0 transition-transform duration-200"
             id="sidebar">
@@ -605,7 +603,6 @@
         }
         const sidebar = document.getElementById("sidebar");
         const tocSidebar = document.getElementById("toc-sidebar");
-        const mobileBackdrop = document.getElementById("mobileBackdrop");
         const resizerLeft = document.getElementById("resizer-left");
         let isResizingLeft = false;
         resizerLeft.addEventListener("mousedown", e => {
@@ -656,7 +653,6 @@
                 } else {
                     tocSidebar.classList.add("translate-x-full");
                     sidebar.classList.remove("-translate-x-full");
-                    mobileBackdrop.classList.remove("hidden")
                 }
             } else {
                 const isHidden = sidebar.style.display === "none";
@@ -673,7 +669,6 @@
                 } else {
                     sidebar.classList.add("-translate-x-full");
                     tocSidebar.classList.remove("translate-x-full");
-                    mobileBackdrop.classList.add("hidden")
                 }
             } else {
                 const isHidden = tocSidebar.style.display === "none";
@@ -689,7 +684,6 @@
             if (window.innerWidth < 650) {
                 tocSidebar.classList.add("translate-x-full")
             }
-            mobileBackdrop.classList.add("hidden")
         }
         init();
 
