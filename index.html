@@ -221,11 +221,30 @@
         let structureData = null;
         let currentFilePath = null;
 
+        function countFileObjects(obj) {
+            let count = 0;
+            if (obj && typeof obj === 'object') {
+                if (obj.type === 'file') {
+                    count++;
+                }
+                for (let key in obj) {
+                    count += countFileObjects(obj[key]);
+                }
+            }
+            return count;
+        }
+
         async function init() {
             setLanguage(currentLang);
             try {
                 const response = await fetch("structure.json");
                 structureData = await response.json();
+
+                const fileCount = countFileObjects(structureData);
+                translations.de.welcomeMessage = `Wähle oben über die Suche oder links im Menü eine Lösung aus. Wir haben aktuell ${fileCount} Lösungen.`;
+                translations.en.welcomeMessage = `Select a solution via search or menu. Currently we have ${fileCount} walkthroughs.`;
+                setLanguage(currentLang);
+
                 renderTree(structureData, document.getElementById("tree-container"));
 
                 const urlParams = new URLSearchParams(window.location.search);
@@ -297,7 +316,7 @@
                     isExternal: true
                 });
             }
-            
+
             if (matchingFiles.length === 0) {
                 dropdown.innerHTML = `<div class="p-3 text-xs sm:text-sm text-gray-400 italic">${translations[currentLang].noResults}</div>`;
                 dropdown.classList.remove("hidden");
