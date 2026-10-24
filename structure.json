@@ -7,11 +7,6 @@
       "type": "directory",
       "children": [
         {
-          "name": "!-EN",
-          "type": "file",
-          "path": "0-9/!-EN.md"
-        },
-        {
           "name": "1 1-2 Ritter - Auf der Suche nach der hinreißenden Herzelinde-DE",
           "type": "file",
           "path": "0-9/1 1-2 Ritter - Auf der Suche nach der hinreißenden Herzelinde-DE.md"
@@ -153,11 +148,6 @@
           "path": "A/An English Haunting-EN.md"
         },
         {
-          "name": "Angelgaze Demo-EN",
-          "type": "file",
-          "path": "A/Angelgaze Demo-EN.md"
-        },
-        {
           "name": "Annie Android - Automated Affection-EN",
           "type": "file",
           "path": "A/Annie Android - Automated Affection-EN.md"
@@ -171,11 +161,6 @@
           "name": "Atapi-EN",
           "type": "file",
           "path": "A/Atapi-EN.md"
-        },
-        {
-          "name": "~airwave~ - I Fought the Law, and the Law One-EN",
-          "type": "file",
-          "path": "A/~airwave~ - I Fought the Law, and the Law One-EN.md"
         }
       ]
     },
@@ -359,19 +344,9 @@
           "path": "B/Beyond a Steel Sky-DE.md"
         },
         {
-          "name": "Beyond Reality-EN",
-          "type": "file",
-          "path": "B/Beyond Reality-EN.md"
-        },
-        {
           "name": "Beyond The Edge Of Owlsgard-DE",
           "type": "file",
           "path": "B/Beyond The Edge Of Owlsgard-DE.md"
-        },
-        {
-          "name": "Big Time Monkey-DE",
-          "type": "file",
-          "path": "B/Big Time Monkey-DE.md"
         },
         {
           "name": "Billy Boy's Important Wine Lottery-EN",
@@ -387,11 +362,6 @@
           "name": "Black Friday-EN",
           "type": "file",
           "path": "B/Black Friday-EN.md"
-        },
-        {
-          "name": "Black Sect Remake-EN",
-          "type": "file",
-          "path": "B/Black Sect Remake-EN.md"
         },
         {
           "name": "Blazing Dragons-DE",
@@ -470,11 +440,6 @@
           "path": "C/Captain Gysi und das Raumschiff Bonn-DE.md"
         },
         {
-          "name": "Carver Island 2 - Mrs. Rodriguez's Revenge-EN",
-          "type": "file",
-          "path": "C/Carver Island 2 - Mrs. Rodriguez's Revenge-EN.md"
-        },
-        {
           "name": "Case Noir-EN",
           "type": "file",
           "path": "C/Case Noir-EN.md"
@@ -520,11 +485,6 @@
           "path": "C/Cold Meat-EN.md"
         },
         {
-          "name": "Conspiracy of Songo-EN",
-          "type": "file",
-          "path": "C/Conspiracy of Songo-EN.md"
-        },
-        {
           "name": "Cosmos Quest I - To Find A Sun-EN",
           "type": "file",
           "path": "C/Cosmos Quest I - To Find A Sun-EN.md"
@@ -548,16 +508,6 @@
           "name": "Crackwell Unhinged-EN",
           "type": "file",
           "path": "C/Crackwell Unhinged-EN.md"
-        },
-        {
-          "name": "Crave-EN",
-          "type": "file",
-          "path": "C/Crave-EN.md"
-        },
-        {
-          "name": "Crepe Fields - A Scare Among Crows-EN",
-          "type": "file",
-          "path": "C/Crepe Fields - A Scare Among Crows-EN.md"
         },
         {
           "name": "Cryptic-EN",
@@ -711,19 +661,9 @@
           "path": "D/Dr. Lutz and the Time Travel Machine-EN.md"
         },
         {
-          "name": "Drowning Cross-EN",
-          "type": "file",
-          "path": "D/Drowning Cross-EN.md"
-        },
-        {
           "name": "Duke Stanley - National Hero in the 30 Minute War-EN",
           "type": "file",
           "path": "D/Duke Stanley - National Hero in the 30 Minute War-EN.md"
-        },
-        {
-          "name": "Dust 'n' Rust-EN",
-          "type": "file",
-          "path": "D/Dust 'n' Rust-EN.md"
         },
         {
           "name": "Duty And Beyond-EN",
@@ -853,11 +793,6 @@
           "path": "F/Feuersturm - Kapitel 1 bis 3-DE.md"
         },
         {
-          "name": "Final Countdown-EN",
-          "type": "file",
-          "path": "F/Final Countdown-EN.md"
-        },
-        {
           "name": "Flash McCoy-EN",
           "type": "file",
           "path": "F/Flash McCoy-EN.md"
@@ -876,11 +811,6 @@
           "name": "Fortress of Wonders-EN",
           "type": "file",
           "path": "F/Fortress of Wonders-EN.md"
-        },
-        {
-          "name": "Frank the Farmhand - Part 1-EN",
-          "type": "file",
-          "path": "F/Frank the Farmhand - Part 1-EN.md"
         },
         {
           "name": "Frank the Farmhand - Part 2-EN",
@@ -995,11 +925,6 @@
           "path": "H/Heed-EN.md"
         },
         {
-          "name": "Highland Spirit-EN",
-          "type": "file",
-          "path": "H/Highland Spirit-EN.md"
-        },
-        {
           "name": "Hitchhiker's Guide To The Galaxy Remake-EN",
           "type": "file",
           "path": "H/Hitchhiker's Guide To The Galaxy Remake-EN.md"
@@ -1008,11 +933,6 @@
           "name": "Hollywood Monsters-EN",
           "type": "file",
           "path": "H/Hollywood Monsters-EN.md"
-        },
-        {
-          "name": "How We Know We're Alive-EN",
-          "type": "file",
-          "path": "H/How We Know We're Alive-EN.md"
         },
         {
           "name": "Hungry-EN",
@@ -1136,11 +1056,6 @@
           "path": "I/Irony Curtain - From Matryoshka with Love-DE.md"
         },
         {
-          "name": "It takes two to tangle-EN",
-          "type": "file",
-          "path": "I/It takes two to tangle-EN.md"
-        },
-        {
           "name": "IWWHIIWWHITOMIROTPG-EN",
           "type": "file",
           "path": "I/IWWHIIWWHITOMIROTPG-EN.md"
@@ -1187,11 +1102,6 @@
           "path": "J/Jinx o' Clock-DE.md"
         },
         {
-          "name": "John Jebediah Gun and Sepheret Island-EN",
-          "type": "file",
-          "path": "J/John Jebediah Gun and Sepheret Island-EN.md"
-        },
-        {
           "name": "Journey Home-EN",
           "type": "file",
           "path": "J/Journey Home-EN.md"
@@ -1218,19 +1128,9 @@
           "path": "K/KIDNAME ICEBOY-EN.md"
         },
         {
-          "name": "King's Quest 2 - Romancing the Stones VGA-EN",
-          "type": "file",
-          "path": "K/King's Quest 2 - Romancing the Stones VGA-EN.md"
-        },
-        {
           "name": "King's Quest 3 - To Heir is Human - Redux VGA-EN",
           "type": "file",
           "path": "K/King's Quest 3 - To Heir is Human - Redux VGA-EN.md"
-        },
-        {
-          "name": "King’s Quest 1 - Quest for the Crown VGA-EN",
-          "type": "file",
-          "path": "K/King’s Quest 1 - Quest for the Crown VGA-EN.md"
         }
       ]
     },
@@ -1247,11 +1147,6 @@
           "name": "Less than Three-EN",
           "type": "file",
           "path": "L/Less than Three-EN.md"
-        },
-        {
-          "name": "Let Sleeping Dogs Die-EN",
-          "type": "file",
-          "path": "L/Let Sleeping Dogs Die-EN.md"
         },
         {
           "name": "Living Nightmare - Endless Dream-EN",
@@ -2215,11 +2110,6 @@
           "path": "M/MASH - The Adventure Game-EN.md"
         },
         {
-          "name": "Matt To The Future Demo-EN",
-          "type": "file",
-          "path": "M/Matt To The Future Demo-EN.md"
-        },
-        {
           "name": "Maverick Gunn and the Eye of Oggun-EN",
           "type": "file",
           "path": "M/Maverick Gunn and the Eye of Oggun-EN.md"
@@ -2299,11 +2189,6 @@
           "name": "Nightmare Frames-EN",
           "type": "file",
           "path": "N/Nightmare Frames-EN.md"
-        },
-        {
-          "name": "Nippon Safes Inc-EN",
-          "type": "file",
-          "path": "N/Nippon Safes Inc-EN.md"
         },
         {
           "name": "No Rest for the Wicked-EN",
@@ -2403,11 +2288,6 @@
           "path": "P/Pink Panthers Gefaehrliche Mission-DE.md"
         },
         {
-          "name": "Pirate Theme Park - A Short Adventure-EN",
-          "type": "file",
-          "path": "P/Pirate Theme Park - A Short Adventure-EN.md"
-        },
-        {
           "name": "PISS-EN",
           "type": "file",
           "path": "P/PISS-EN.md"
@@ -2484,11 +2364,6 @@
           "path": "R/Relics of Deldroneye-EN.md"
         },
         {
-          "name": "Return Home-EN",
-          "type": "file",
-          "path": "R/Return Home-EN.md"
-        },
-        {
           "name": "Return to Monkey Island-DE",
           "type": "file",
           "path": "R/Return to Monkey Island-DE.md"
@@ -2517,16 +2392,6 @@
           "name": "Rob Blanc III - The Temporal Terrorists-EN",
           "type": "file",
           "path": "R/Rob Blanc III - The Temporal Terrorists-EN.md"
-        },
-        {
-          "name": "Robotragedy 2-EN",
-          "type": "file",
-          "path": "R/Robotragedy 2-EN.md"
-        },
-        {
-          "name": "Robotragedy-EN",
-          "type": "file",
-          "path": "R/Robotragedy-EN.md"
         },
         {
           "name": "Roots in the Sky - The Hand of Glory 2-EN",
@@ -2573,11 +2438,6 @@
           "name": "Secrets Of Sultan Kanuni-EN",
           "type": "file",
           "path": "S/Secrets Of Sultan Kanuni-EN.md"
-        },
-        {
-          "name": "Shadows Of Serenity-EN",
-          "type": "file",
-          "path": "S/Shadows Of Serenity-EN.md"
         },
         {
           "name": "Shadows of the Afterland-EN",
@@ -2695,11 +2555,6 @@
           "path": "S/Stately Groan-EN.md"
         },
         {
-          "name": "Steeplejack-EN",
-          "type": "file",
-          "path": "S/Steeplejack-EN.md"
-        },
-        {
           "name": "Stellar Mess - The Princess Conundrum-EN",
           "type": "file",
           "path": "S/Stellar Mess - The Princess Conundrum-EN.md"
@@ -2718,11 +2573,6 @@
           "name": "Stranger in Utopia-EN",
           "type": "file",
           "path": "S/Stranger in Utopia-EN.md"
-        },
-        {
-          "name": "Submerged - LaSol - Special Edition-EN",
-          "type": "file",
-          "path": "S/Submerged - LaSol - Special Edition-EN.md"
         },
         {
           "name": "Sydney Finds Employment-EN",
@@ -2841,11 +2691,6 @@
           "path": "T/The Chronomancers-EN.md"
         },
         {
-          "name": "The Colorless Sylph-EN",
-          "type": "file",
-          "path": "T/The Colorless Sylph-EN.md"
-        },
-        {
           "name": "The Dark Rites of Arkham-EN",
           "type": "file",
           "path": "T/The Dark Rites of Arkham-EN.md"
@@ -2939,11 +2784,6 @@
           "name": "The Museum-EN",
           "type": "file",
           "path": "T/The Museum-EN.md"
-        },
-        {
-          "name": "The Mystery of Haunted Hollow-EN",
-          "type": "file",
-          "path": "T/The Mystery of Haunted Hollow-EN.md"
         },
         {
           "name": "The Path Of The Pumpkin-EN",
@@ -3086,11 +2926,6 @@
           "path": "T/Trance-Pacific-EN.md"
         },
         {
-          "name": "Trapped on the Balcony-EN",
-          "type": "file",
-          "path": "T/Trapped on the Balcony-EN.md"
-        },
-        {
           "name": "Trial of the Schnellersparrow-EN",
           "type": "file",
           "path": "T/Trial of the Schnellersparrow-EN.md"
@@ -3199,11 +3034,6 @@
           "path": "W/Warcraft Adventures - Lord of the Clans-EN.md"
         },
         {
-          "name": "Warp Cinema-EN",
-          "type": "file",
-          "path": "W/Warp Cinema-EN.md"
-        },
-        {
           "name": "What Makes You Tick-EN",
           "type": "file",
           "path": "W/What Makes You Tick-EN.md"
@@ -3276,11 +3106,6 @@
           "path": "Z/Zniw Adventure-EN.md"
         }
       ]
-    },
-    {
-      "name": "Template-EN",
-      "type": "file",
-      "path": "Template-EN.md"
     }
   ]
 }
