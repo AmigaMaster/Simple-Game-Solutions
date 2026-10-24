@@ -529,10 +529,10 @@
                 if (heading.tagName === "H7") indentClass = "pl-12";
 
                 const tocItem = document.createElement("div");
-                tocItem.className = `flex items-center justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors text-xs sm:text-sm break-words ${indentClass} group/toc relative`;
+                tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors text-xs sm:text-sm break-words ${indentClass} group/toc relative`;
 
                 const tocTextBtn = document.createElement("button");
-                tocTextBtn.className = "flex-1 text-left bg-transparent border-none text-inherit text-xs sm:text-sm cursor-pointer truncate focus:outline-none";
+                tocTextBtn.className = "flex-1 text-left bg-transparent border-none text-inherit text-xs sm:text-sm cursor-pointer break-words focus:outline-none";
                 tocTextBtn.textContent = originalText;
                 tocTextBtn.dataset.targetId = heading.id;
                 tocTextBtn.onclick = () => {
