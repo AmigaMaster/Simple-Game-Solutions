@@ -55,7 +55,7 @@
                 class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all flex items-center gap-1 shadow-lg cursor-pointer shrink-0"
                 data-i18n-title="menuToggleTitle" onclick="toggleSidebar();"><span>📁</span> <span
                     data-i18n="menuBtn">Menü</span></button>
-            <h1 class="text-sm sm:text-lg font-bold text-emerald-400 hidden md:block">🎮 Simple Game Solutions</h1>
+            <h1 class="text-sm sm:text-lg font-bold text-emerald-400 hidden md:block cursor-pointer hover:text-emerald-300 transition-colors" onclick="goHome();" title="Zur Startseite">🎮 Simple Game Solutions</h1>
         </div>
         <div class="relative flex-1 max-w-xs sm:max-w-sm mx-1 sm:mx-2 flex items-center min-w-[70px] sm:min-w-[120px]">
             <input autocomplete="off"
@@ -111,8 +111,7 @@
             <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 pt-2 text-sm sm:text-base leading-relaxed prose-code:text-emerald-200/80 prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-gray-700/40 prose-blockquote:border-emerald-500/30 prose-blockquote:bg-gray-800/40 prose-blockquote:text-gray-300/90"
                 id="content-viewer">
                 <div class="text-center text-gray-500 py-20">
-                    <p class="text-base sm:text-lg" data-i18n="welcomeMessage">Wähle links eine Kategorie und eine Datei
-                        aus, um die Lösung anzuzeigen.</p>
+                    <p class="text-base sm:text-lg" data-i18n="welcomeMessage">Wähle oben über die Suche oder links im Menü eine Lösung aus.</p>
                 </div>
             </div>
         </section>
@@ -211,7 +210,10 @@
                 if (translations[currentLang][key]) {
                     el.setAttribute("placeholder", translations[currentLang][key])
                 }
-            })
+            });
+            if (!currentFilePath && structureData) {
+                renderWelcomeScreen();
+            }
         }
 
         function changeLanguage(lang) {
@@ -234,16 +236,58 @@
             return count;
         }
 
+        function renderWelcomeScreen() {
+            if (!structureData) return;
+            const fileCount = countFileObjects(structureData);
+            const welcomeText = currentLang === 'de'
+                ? `Wähle oben über die Suche oder links im Menü eine Lösung aus. Wir haben aktuell ${fileCount} Lösungen.`
+                : `Select a solution via search or menu. Currently we have ${fileCount} walkthroughs.`;
+
+            const allFiles = [];
+            function collect(node) {
+                if (!node) return;
+                if (node.type === 'file') allFiles.push(node);
+                else if (node.type === 'directory' && node.children) node.children.forEach(collect);
+            }
+            collect(structureData);
+
+            allFiles.sort((a, b) => new Date(b.last_modified) - new Date(a.last_modified));
+            const newest = allFiles.slice(0, 20);
+
+            let listHtml = `<div class="max-w-3xl mx-auto py-8 px-4">
+                <p class="text-base sm:text-lg text-center text-gray-300 mb-8" data-i18n="welcomeMessage">${welcomeText}</p>
+                <h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-4 border-b border-gray-700 pb-2">${currentLang === 'de' ? '🔥 Die 20 neuesten Lösungen' : '🔥 20 Newest Solutions'}</h2>
+                <div class="space-y-2">`;
+
+            newest.forEach(file => {
+                const dateStr = file.last_modified ? new Date(file.last_modified).toLocaleDateString(currentLang === 'de' ? 'de-DE' : 'en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '';
+                listHtml += `<button onclick="loadFile('${file.path}')" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border border-gray-700/60 rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
+                    <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${file.name}</span>
+                    <span class="text-gray-400 text-xs shrink-0 ml-2">${dateStr}</span>
+                </button>`;
+            });
+
+            listHtml += `</div></div>`;
+            document.getElementById("content-viewer").innerHTML = listHtml;
+        }
+
+        function goHome() {
+            currentFilePath = null;
+            if (history.pushState) {
+                history.pushState({}, '', window.location.pathname);
+            }
+            renderWelcomeScreen();
+            document.getElementById("toc-container").innerHTML = `<p class="text-gray-500 italic text-xs" data-i18n="noFileLoaded">${translations[currentLang].noFileLoaded}</p>`;
+            if (document.getElementById("scrollProgressBar")) {
+                document.getElementById("scrollProgressBar").style.width = "0%";
+            }
+        }
+
         async function init() {
             setLanguage(currentLang);
             try {
                 const response = await fetch("structure.json");
                 structureData = await response.json();
-
-                const fileCount = countFileObjects(structureData);
-                translations.de.welcomeMessage = `Wähle oben über die Suche oder links im Menü eine Lösung aus. Wir haben aktuell ${fileCount} Lösungen.`;
-                translations.en.welcomeMessage = `Select a solution via search or menu. Currently we have ${fileCount} walkthroughs.`;
-                setLanguage(currentLang);
 
                 renderTree(structureData, document.getElementById("tree-container"));
 
@@ -260,6 +304,8 @@
                             }
                         }, 300);
                     }
+                } else {
+                    renderWelcomeScreen();
                 }
             } catch (error) {
                 console.error("Error loading structure:", error);
