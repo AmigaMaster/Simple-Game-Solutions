@@ -323,8 +323,16 @@
 
                 const urlParams = new URLSearchParams(window.location.search);
                 const fileParam = urlParams.get('file');
+                const filterParam = urlParams.get('filter');
                 if (fileParam) {
                     await loadFile(fileParam);
+                    if (filterParam) {
+                        const filterInput = document.getElementById("contentFilterInput");
+                        if (filterInput) {
+                            filterInput.value = filterParam;
+                            handleContentFilter(filterParam);
+                        }
+                    }
                     if (window.location.hash) {
                         setTimeout(() => {
                             const targetId = window.location.hash.substring(1);
@@ -787,7 +795,15 @@
             copyBtn.onclick = (e) => {
                 e.stopPropagation();
                 const baseUrl = window.location.href.split('?')[0].split('#')[0];
-                const cleanUrl = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}#${headingId}`;
+                const filterInput = document.getElementById("contentFilterInput");
+                const filterVal = filterInput ? filterInput.value.trim() : "";
+                
+                let cleanUrl = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}`;
+                if (filterVal) {
+                    cleanUrl += `&filter=${encodeURIComponent(filterVal)}`;
+                }
+                cleanUrl += `#${headingId}`;
+
                 navigator.clipboard.writeText(cleanUrl).then(() => {
                     iconSpan.textContent = "✓";
                     popupSpan.textContent = translations[currentLang].linkCopied;
