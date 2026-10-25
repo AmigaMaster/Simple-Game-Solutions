@@ -59,9 +59,13 @@
         </div>
         <div class="relative flex-1 max-w-xs sm:max-w-sm mx-1 sm:mx-2 flex items-center min-w-[70px] sm:min-w-[120px]">
             <input autocomplete="off"
-                class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 sm:px-3 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
+                class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 sm:px-3 py-1.5 pr-14 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
                 data-i18n-placeholder="searchPlaceholder" id="searchInput" oninput="handleGlobalSearch(this.value);"
-                onkeydown="handleSearchInputKeydown(event);" placeholder="Suchen..." type="text"> <button
+                onkeydown="handleSearchInputKeydown(event);" placeholder="Suchen..." type="text">
+            <button
+                class="absolute right-8 text-emerald-400 hover:text-emerald-300 text-xs hidden focus:outline-none cursor-pointer"
+                data-i18n-title="copySearchLinkTitle" id="copySearchBtn" onclick="copySearchLink();" title="Suche-Link kopieren">🔗</button>
+            <button
                 class="absolute right-2.5 text-gray-400 hover:text-white text-sm hidden focus:outline-none cursor-pointer"
                 id="clearSearchBtn" onclick="clearSearch();" title="Suche löschen">✕</button>
         </div>
@@ -167,7 +171,8 @@
                 searchPlaceholder: "Suchen (z.B. Maniac AND Ostern OR 101)...",
                 filterPlaceholder: "Inhalt filtern...",
                 noResults: "Keine Treffer gefunden.",
-                linkCopied: "Link kopiert"
+                linkCopied: "Link kopiert",
+                copySearchLinkTitle: "Suche-Link kopieren"
             },
             en: {
                 menuBtn: "Menu",
@@ -190,7 +195,8 @@
                 searchPlaceholder: "Search (e.g. Maniac AND Ostern OR 101)...",
                 filterPlaceholder: "Filter content...",
                 noResults: "No matching files found.",
-                linkCopied: "Link copied"
+                linkCopied: "Link copied",
+                copySearchLinkTitle: "Copy search link"
             }
         };
 
@@ -377,10 +383,13 @@
 
         function handleGlobalSearch(query) {
             const clearBtn = document.getElementById("clearSearchBtn");
+            const copyBtn = document.getElementById("copySearchBtn");
             if (query.trim().length > 0) {
-                clearBtn.classList.remove("hidden")
+                clearBtn.classList.remove("hidden");
+                if (copyBtn) copyBtn.classList.remove("hidden");
             } else {
-                clearBtn.classList.add("hidden")
+                clearBtn.classList.add("hidden");
+                if (copyBtn) copyBtn.classList.add("hidden");
             }
             filterTree(query);
             const dropdown = document.getElementById("searchDropdown");
@@ -490,10 +499,30 @@
             handleGlobalSearch("");
             document.getElementById("searchDropdown").classList.add("hidden");
             document.getElementById("clearSearchBtn").classList.add("hidden");
+            const copyBtn = document.getElementById("copySearchBtn");
+            if (copyBtn) copyBtn.classList.add("hidden");
             
             setTimeout(() => {
                 input.focus();
             }, 0);
+        }
+
+        function copySearchLink() {
+            const input = document.getElementById("searchInput");
+            const searchVal = input ? input.value.trim() : "";
+            if (!searchVal) return;
+
+            const baseUrl = window.location.href.split('?')[0].split('#')[0];
+            const cleanUrl = `${baseUrl}?search=${encodeURIComponent(searchVal)}`;
+
+            navigator.clipboard.writeText(cleanUrl).then(() => {
+                const copyBtn = document.getElementById("copySearchBtn");
+                if (!copyBtn) return;
+                copyBtn.textContent = "✓";
+                setTimeout(() => {
+                    copyBtn.textContent = "🔗";
+                }, 1500);
+            });
         }
 
         function handleContentFilterKeydown(e) {
@@ -659,6 +688,8 @@
             document.getElementById("searchDropdown").classList.add("hidden");
             document.getElementById("searchInput").value = "";
             document.getElementById("clearSearchBtn").classList.add("hidden");
+            const copyBtn = document.getElementById("copySearchBtn");
+            if (copyBtn) copyBtn.classList.add("hidden");
             filterTree("");
             if (window.innerWidth < 1060) {
                 closeAllOverlays()
