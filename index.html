@@ -332,6 +332,8 @@
                     }
                 } else {
                     renderWelcomeScreen();
+                    const searchInput = document.getElementById("searchInput");
+                    if (searchInput) searchInput.focus();
                 }
             } catch (error) {
                 console.error("Error loading structure:", error);
@@ -412,7 +414,8 @@
                 e.preventDefault();
                 items[0].focus()
             } else if (e.key === "Escape") {
-                dropdown.classList.add("hidden")
+                e.preventDefault();
+                clearSearch();
             }
         }
 
@@ -447,7 +450,10 @@
             handleGlobalSearch("");
             document.getElementById("searchDropdown").classList.add("hidden");
             document.getElementById("clearSearchBtn").classList.add("hidden");
-            input.focus()
+            
+            setTimeout(() => {
+                input.focus();
+            }, 0);
         }
 
         // Event-Handler für ESC-Taste im Inhaltsfilter
@@ -551,7 +557,6 @@
             handleContentFilter("");
             document.getElementById("clearContentFilterBtn").classList.add("hidden");
             
-            // Verzögerter Fokus, um Browser-Events nach ESC abzufangen
             setTimeout(() => {
                 input.focus();
             }, 0);
@@ -695,7 +700,11 @@
                 rawFileContent = await response.text();
                 renderFileContent(rawFileContent, filePath);
                 
-                if (filterInput) filterInput.focus();
+                if (filterInput) {
+                    setTimeout(() => {
+                        filterInput.focus();
+                    }, 0);
+                }
             } catch (error) {
                 rawFileContent = null;
                 if (readingHeader) readingHeader.classList.add("hidden");
