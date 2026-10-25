@@ -242,6 +242,7 @@
         let structureData = null;
         let currentFilePath = null;
         let rawFileContent = null;
+        let searchSelectedIndex = -1;
 
         function countFileObjects(obj) {
             let count = 0;
@@ -403,6 +404,7 @@
         }
 
         function handleGlobalSearch(query) {
+            searchSelectedIndex = -1;
             const clearBtn = document.getElementById("clearSearchBtn");
             const copyBtn = document.getElementById("copySearchBtn");
             if (query.trim().length > 0) {
@@ -420,7 +422,6 @@
             const active = document.activeElement;
             const isFocusedInSearch = searchContainer.contains(active) || dropdown.contains(active);
             
-            // Only show dropdown if search container/input or dropdown has focus and has query text
             if (!q || !structureData || !isFocusedInSearch) {
                 dropdown.innerHTML = "";
                 dropdown.classList.add("hidden");
@@ -455,9 +456,9 @@
                 return
             }
             let html = "";
-            matchingFiles.forEach((file, index) => {
+            matchingFiles.forEach((file) => {
                 const icon = file.isExternal ? "🌐" : "📄";
-                html += `<button type="button" onclick="selectSearchResult('${file.path}', ${file.isExternal ? 'true' : 'false'})" onkeydown="handleDropdownKeydown(event, ${index}, '${file.path}', ${file.isExternal ? 'true' : 'false'})" class="w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white focus:bg-gray-700 focus:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex items-center gap-2 cursor-pointer focus:outline-none">
+                html += `<button type="button" onclick="selectSearchResult('${file.path}', ${file.isExternal ? 'true' : 'false'})" class="search-item w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex items-center gap-2 cursor-pointer focus:outline-none">
                     <span>${icon}</span> <span class="font-medium">${file.name}</span>
                 </button>`
             });
@@ -465,62 +466,65 @@
             dropdown.classList.remove("hidden")
         }
 
+        function updateDropdownHighlight(items) {
+            items.forEach((item, idx) => {
+                if (idx === searchSelectedIndex) {
+                    item.classList.add("bg-gray-700", "text-white");
+                    item.classList.remove("text-gray-200");
+                    item.scrollIntoView({ block: 'nearest' });
+                } else {
+                    item.classList.remove("bg-gray-700", "text-white");
+                    item.classList.add("text-gray-200");
+                }
+            });
+        }
+
         function handleSearchInputKeydown(e) {
             const dropdown = document.getElementById("searchDropdown");
-            const items = dropdown.querySelectorAll("button");
-            if (e.key === "ArrowDown" && !dropdown.classList.contains("hidden") && items.length > 0) {
-                e.preventDefault();
-                items[0].focus()
+            const items = dropdown.querySelectorAll("button.search-item");
+
+            if (e.key === "ArrowDown") {
+                if (!dropdown.classList.contains("hidden") && items.length > 0) {
+                    e.preventDefault();
+                    searchSelectedIndex = Math.min(searchSelectedIndex + 1, items.length - 1);
+                    updateDropdownHighlight(items);
+                }
+            } else if (e.key === "ArrowUp") {
+                if (!dropdown.classList.contains("hidden") && items.length > 0) {
+                    e.preventDefault();
+                    searchSelectedIndex = Math.max(searchSelectedIndex - 1, -1);
+                    updateDropdownHighlight(items);
+                }
             } else if (e.key === "Escape") {
                 e.preventDefault();
                 clearSearch();
             } else if (e.key === "Enter") {
-                e.preventDefault();
-                dropdown.classList.add("hidden");
-                
-                // Show directory pane if it is currently closed
-                const isSidebarClosed = window.innerWidth < 1060 
-                    ? sidebar.classList.contains("-translate-x-full") 
-                    : sidebar.style.display === "none";
-                
-                if (isSidebarClosed) {
-                    if (window.innerWidth < 1060) {
-                        tocSidebar.classList.add("translate-x-full");
-                        sidebar.classList.remove("-translate-x-full");
-                    } else {
-                        sidebar.style.display = "flex";
-                        if (resizerLeft) resizerLeft.style.display = "flex";
+                if (!dropdown.classList.contains("hidden") && searchSelectedIndex >= 0 && searchSelectedIndex < items.length) {
+                    e.preventDefault();
+                    items[searchSelectedIndex].click();
+                } else {
+                    e.preventDefault();
+                    dropdown.classList.add("hidden");
+                    
+                    const isSidebarClosed = window.innerWidth < 1060 
+                        ? sidebar.classList.contains("-translate-x-full") 
+                        : sidebar.style.display === "none";
+                    
+                    if (isSidebarClosed) {
+                        if (window.innerWidth < 1060) {
+                            tocSidebar.classList.add("translate-x-full");
+                            sidebar.classList.remove("-translate-x-full");
+                        } else {
+                            sidebar.style.display = "flex";
+                            if (resizerLeft) resizerLeft.style.display = "flex";
+                        }
                     }
                 }
             }
         }
 
-        function handleDropdownKeydown(e, index, path, isExternal = false) {
-            const dropdown = document.getElementById("searchDropdown");
-            const items = dropdown.querySelectorAll("button");
-            if (e.key === "ArrowDown") {
-                e.preventDefault();
-                if (index + 1 < items.length) {
-                    items[index + 1].focus()
-                }
-            } else if (e.key === "ArrowUp") {
-                e.preventDefault();
-                if (index > 0) {
-                    items[index - 1].focus()
-                } else {
-                    document.getElementById("searchInput").focus()
-                }
-            } else if (e.key === "Enter") {
-                e.preventDefault();
-                selectSearchResult(path, isExternal)
-            } else if (e.key === "Escape") {
-                e.preventDefault();
-                dropdown.classList.add("hidden");
-                document.getElementById("searchInput").focus()
-            }
-        }
-
         function clearSearch() {
+            searchSelectedIndex = -1;
             const input = document.getElementById("searchInput");
             input.value = "";
             handleGlobalSearch("");
@@ -939,14 +943,12 @@
 
                 const originalText = heading.textContent;
 
-                // Main section heading button
                 if (!heading.querySelector(".heading-copy-btn")) {
                     heading.classList.add("group", "relative");
                     const copyBtn = createCopyButton(heading.id, false);
                     heading.prepend(copyBtn);
                 }
 
-                // Right table of contents element
                 let indentClass = "pl-1";
                 if (heading.tagName === "H2") indentClass = "pl-2";
                 if (heading.tagName === "H3") indentClass = "pl-4";
@@ -1001,7 +1003,6 @@
                 const viewerRect = contentViewer.getBoundingClientRect();
                 const activeIndices = new Set();
 
-                // Section-based visibility check
                 headings.forEach((heading, i) => {
                     const headingRect = heading.getBoundingClientRect();
                     const nextHeading = headings[i + 1];
@@ -1015,7 +1016,6 @@
                     }
                 });
 
-                // Fallback in case absolutely no element is in the direct range
                 if (activeIndices.size === 0) {
                     let closestIdx = 0;
                     let minDistance = Infinity;
@@ -1029,7 +1029,6 @@
                     activeIndices.add(closestIdx);
                 }
 
-                // Cleanly update classes for all TOC entries
                 Array.from(tocItems).forEach((item, idx) => {
                     const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
                     
@@ -1040,7 +1039,6 @@
                     }
                 });
 
-                // Auto-scroll in TOC to the first active element
                 const firstActiveIdx = Array.from(activeIndices)[0];
                 if (firstActiveIdx !== undefined && firstActiveIdx !== window._lastFirstActiveIdx) {
                     window._lastFirstActiveIdx = firstActiveIdx;
