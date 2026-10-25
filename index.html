@@ -12,8 +12,11 @@
     <meta property="og:url" content="https://amigamaster.github.io/Simple-Game-Solutions">
     <meta name="theme-color" content="#10b981">
 
+    <!-- External Libraries: Tailwind CSS Typography Plugin & Marked.js -->
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Custom Typography & Markdown Code Block Styling -->
     <style>
         .prose code::before {
             content: "" !important;
@@ -48,8 +51,14 @@
 </head>
 
 <body class="bg-gray-900 text-gray-100 h-[100dvh] w-screen overflow-hidden flex flex-col antialiased m-0 p-0">
+    
+    <!-- ========================================== -->
+    <!-- HEADER & NAVIGATION BAR                    -->
+    <!-- ========================================== -->
     <header
         class="bg-gray-800 border-b border-gray-700 px-2 sm:px-4 py-2 sm:py-3 shadow-md flex justify-between items-center shrink-0 relative z-40 gap-1.5 sm:gap-2 w-full max-w-full">
+        
+        <!-- Left Section: Sidebar Toggle & App Title -->
         <div class="flex items-center gap-1.5 sm:gap-4 shrink-0">
             <button
                 class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all flex items-center gap-1 shadow-lg cursor-pointer shrink-0"
@@ -57,6 +66,8 @@
                     data-i18n="menuBtn">Menü</span></button>
             <h1 class="text-sm sm:text-lg font-bold text-emerald-400 hidden md:block cursor-pointer hover:text-emerald-300 transition-colors" onclick="goHome();" title="Zur Startseite">🎮 Simple Game Solutions</h1>
         </div>
+
+        <!-- Center Section: Global Search Input, Copy Link & Clear Search Buttons -->
         <div class="relative flex-1 max-w-xs sm:max-w-sm mx-1 sm:mx-2 flex items-center min-w-[70px] sm:min-w-[120px]">
             <input autocomplete="off"
                 class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 sm:px-3 py-1.5 pr-14 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
@@ -69,18 +80,18 @@
                 class="absolute right-2.5 text-gray-400 hover:text-white text-sm hidden focus:outline-none cursor-pointer"
                 id="clearSearchBtn" onclick="clearSearch();" title="Suche löschen">✕</button>
         </div>
+
+        <!-- Search Autocomplete Dropdown Container -->
         <div class="absolute left-2 right-2 sm:left-6 sm:right-6 top-full mt-1 bg-gray-800 border border-gray-700 rounded-md shadow-2xl max-h-80 overflow-y-auto z-50 hidden"
             id="searchDropdown"></div>
+
+        <!-- Right Section: Language Selector & Table of Contents (TOC) Toggle -->
         <div class="flex items-center gap-1.5 sm:gap-4 shrink-0">
             <select
                 class="bg-gray-700 text-emerald-300 text-xs px-1.5 sm:px-2 py-1.5 rounded-md border border-gray-600 focus:outline-none cursor-pointer shrink-0"
                 id="langSelect" onchange="changeLanguage(this.value);">
-                <option value="de">
-                    🇩🇪
-                </option>
-                <option value="en">
-                    🇬🇧
-                </option>
+                <option value="de">🇩🇪</option>
+                <option value="en">🇬🇧</option>
             </select>
             <button
                 class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all flex items-center gap-1 shadow-lg cursor-pointer shrink-0"
@@ -88,7 +99,13 @@
                     data-i18n="tocBtn">Inhalt</span></button>
         </div>
     </header>
+
+    <!-- ========================================== -->
+    <!-- MAIN APPLICATION LAYOUT                    -->
+    <!-- ========================================== -->
     <main class="flex-1 flex flex-row overflow-hidden p-1.5 sm:p-3 gap-1.5 sm:gap-2 relative w-full max-w-full">
+        
+        <!-- Left Sidebar: Directory Tree Menu Container -->
         <aside
             class="fixed min-[1060px]:relative inset-y-0 left-0 w-72 min-[1060px]:w-[280px] bg-gray-800 border-r min-[1060px]:border border-gray-700 rounded-r-lg min-[1060px]:rounded-lg px-2 py-2 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl min-[1060px]:shadow-lg z-30 transform -translate-x-full min-[1060px]:translate-x-0 transition-transform duration-200"
             id="sidebar">
@@ -102,16 +119,24 @@
                 <p class="text-gray-500 animate-pulse text-xs" data-i18n="loadingStructure">Lade Struktur...</p>
             </div>
         </aside>
+
+        <!-- Left Panel Resizer Bar -->
         <div class="hidden min-[1060px]:flex w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors items-center justify-center group shrink-0"
             data-i18n-title="resizeWidth" id="resizer-left">
             <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
         </div>
+
+        <!-- Center Section: Reading Pane & Document Viewer -->
         <section
             class="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-2 pt-1 pb-2 sm:px-3 sm:pt-1 sm:pb-2 flex flex-col h-full overflow-hidden shadow-lg min-w-0 min-[1050px]:min-w-[450px] relative">
+            
+            <!-- Scroll Progress Indicator Bar -->
             <div class="absolute top-0 left-0 right-0 h-1 bg-gray-800 z-20">
                 <div id="scrollProgressBar" class="h-full bg-emerald-500 transition-all duration-75" style="width: 0%;">
                 </div>
             </div>
+
+            <!-- In-Content Filter Header Bar -->
             <div id="readingPaneHeader" class="pt-1.5 pb-1 px-1 flex items-center gap-2 border-b border-gray-700/50 shrink-0 hidden">
                 <div class="relative w-full">
                     <input autocomplete="off"
@@ -123,6 +148,8 @@
                         id="clearContentFilterBtn" onclick="clearContentFilter();" title="Filter löschen">✕</button>
                 </div>
             </div>
+
+            <!-- Main Content Viewer Area (Markdown / Raw Text / Welcome Screen) -->
             <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 pt-2 text-sm sm:text-base leading-relaxed prose-code:text-emerald-200/80 prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-gray-700/40 prose-blockquote:border-emerald-500/30 prose-blockquote:bg-gray-800/40 prose-blockquote:text-gray-300/90"
                 id="content-viewer">
                 <div class="text-center text-gray-500 py-20">
@@ -130,10 +157,14 @@
                 </div>
             </div>
         </section>
+
+        <!-- Right Panel Resizer Bar -->
         <div class="hidden min-[650px]:flex w-2 bg-gray-800 hover:bg-emerald-500 cursor-ew-resize rounded transition-colors items-center justify-center group shrink-0"
             data-i18n-title="resizeWidth" id="resizer-right">
             <div class="h-8 w-0.5 bg-gray-600 group-hover:bg-gray-900 rounded-full"></div>
         </div>
+
+        <!-- Right Sidebar: Table of Contents (TOC) Container -->
         <aside
             class="fixed min-[650px]:relative inset-y-0 right-0 w-64 min-[650px]:w-[260px] bg-gray-800 border-l min-[650px]:border border-gray-700 rounded-l-lg min-[650px]:rounded-lg px-2 py-2 flex flex-col shrink-0 h-full overflow-hidden shadow-2xl min-[650px]:shadow-lg z-30 transform translate-x-full min-[650px]:translate-x-0 transition-transform duration-200"
             id="toc-sidebar">
@@ -148,7 +179,12 @@
             </div>
         </aside>
     </main>
+
+    <!-- ========================================== -->
+    <!-- JAVASCRIPT APPLICATION LOGIC               -->
+    <!-- ========================================== -->
     <script>
+        // --- SECTION 1: TRANSLATIONS & LOCALIZATION ---
         const translations = {
             de: {
                 menuBtn: "Menü",
@@ -200,6 +236,7 @@
             }
         };
 
+        // Detect and initialize browser language setting
         function getBrowserLanguage() {
             const browserLang = navigator.language || navigator.userLanguage;
             if (browserLang && browserLang.startsWith("en")) {
@@ -210,6 +247,7 @@
         let currentLang = getBrowserLanguage();
         document.getElementById("langSelect").value = currentLang;
 
+        // Apply selected language translations across UI elements
         function setLanguage(lang) {
             currentLang = lang;
             document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -239,11 +277,15 @@
             setLanguage(lang);
             handleGlobalSearch(document.getElementById("searchInput").value)
         }
+
+        // --- SECTION 2: GLOBAL STATE VARIABLES ---
         let structureData = null;
         let currentFilePath = null;
         let rawFileContent = null;
         let searchSelectedIndex = -1;
+        let searchBlurTimeout = null;
 
+        // Count total file objects inside directory structure JSON
         function countFileObjects(obj) {
             let count = 0;
             if (obj && typeof obj === 'object') {
@@ -257,6 +299,7 @@
             return count;
         }
 
+        // --- SECTION 3: WELCOME SCREEN & HOME NAVIGATION ---
         function renderWelcomeScreen() {
             if (!structureData) return;
 
@@ -305,6 +348,7 @@
             updateActiveFileInTree();
         }
 
+        // Reset application state back to home/welcome view
         function goHome() {
             currentFilePath = null;
             if (history.pushState) {
@@ -320,6 +364,7 @@
             updateActiveFileInTree();
         }
 
+        // --- SECTION 4: APPLICATION INITIALIZATION (BOOTSTRAP) ---
         async function init() {
             setLanguage(currentLang);
             try {
@@ -370,6 +415,8 @@
             }
         }
 
+        // --- SECTION 5: GLOBAL SEARCH SYSTEM & DROPDOWN ---
+        // Helper to evaluate search terms with support for AND/OR clauses
         function matchQuery(nameLower, query) {
             const q = query.trim();
             if (!q) return true;
@@ -381,8 +428,6 @@
                 return terms.every(term => nameLower.includes(term))
             })
         }
-
-        let searchBlurTimeout = null;
 
         function handleSearchFocus() {
             if (searchBlurTimeout) clearTimeout(searchBlurTimeout);
@@ -424,6 +469,7 @@
             
             if (!q || !structureData || !isFocusedInSearch) {
                 dropdown.innerHTML = "";
+                dropdown.scrollTop = 0;
                 dropdown.classList.add("hidden");
                 return
             }
@@ -452,6 +498,7 @@
 
             if (matchingFiles.length === 0) {
                 dropdown.innerHTML = `<div class="p-3 text-xs sm:text-sm text-gray-400 italic">${translations[currentLang].noResults}</div>`;
+                dropdown.scrollTop = 0;
                 dropdown.classList.remove("hidden");
                 return
             }
@@ -463,9 +510,11 @@
                 </button>`
             });
             dropdown.innerHTML = html;
+            dropdown.scrollTop = 0;
             dropdown.classList.remove("hidden")
         }
 
+        // Highlight selected dropdown search item during keyboard navigation
         function updateDropdownHighlight(items) {
             items.forEach((item, idx) => {
                 if (idx === searchSelectedIndex) {
@@ -479,6 +528,7 @@
             });
         }
 
+        // Global search input keyboard handler (Arrows, PageUp/Down, Enter, Escape)
         function handleSearchInputKeydown(e) {
             const dropdown = document.getElementById("searchDropdown");
             const items = dropdown.querySelectorAll("button.search-item");
@@ -538,6 +588,7 @@
             }
         }
 
+        // Clear search input state
         function clearSearch() {
             searchSelectedIndex = -1;
             const input = document.getElementById("searchInput");
@@ -553,6 +604,7 @@
             }, 0);
         }
 
+        // Copy a link which keeps the search field input
         function copySearchLink() {
             const input = document.getElementById("searchInput");
             const searchVal = input ? input.value.trim() : "";
@@ -571,6 +623,34 @@
             });
         }
 
+        // Select a search result item
+        function selectSearchResult(path, isExternal = false) {
+            if (isExternal) {
+                window.open(path, '_blank', 'noopener,noreferrer');
+            } else {
+                loadFile(path);
+            }
+            document.getElementById("searchDropdown").classList.add("hidden");
+            document.getElementById("searchInput").value = "";
+            document.getElementById("clearSearchBtn").classList.add("hidden");
+            const copyBtn = document.getElementById("copySearchBtn");
+            if (copyBtn) copyBtn.classList.add("hidden");
+            filterTree("");
+            if (window.innerWidth < 1060) {
+                closeAllOverlays()
+            }
+        }
+
+        // Global click listener to close search dropdown when clicking outside
+        window.addEventListener("click", e => {
+            const searchContainer = document.getElementById("searchInput").parentElement;
+            const dropdown = document.getElementById("searchDropdown");
+            if (!searchContainer.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.add("hidden")
+            }
+        });
+
+        // --- SECTION 6: IN-CONTENT FILTERING ---
         function handleContentFilterKeydown(e) {
             if (e.key === "Escape") {
                 e.preventDefault();
@@ -703,6 +783,42 @@
             }, 0);
         }
 
+        // --- SECTION 7: FILE & MARKDOWN CONTENT LOADING ---
+        async function loadFile(filePath) {
+            currentFilePath = filePath;
+            updateActiveFileInTree();
+
+            const viewer = document.getElementById("content-viewer");
+            const tocContainer = document.getElementById("toc-container");
+            const scrollProgressBar = document.getElementById("scrollProgressBar");
+            const readingHeader = document.getElementById("readingPaneHeader");
+            if (readingHeader) readingHeader.classList.remove("hidden");
+            const filterInput = document.getElementById("contentFilterInput");
+            if (filterInput) filterInput.value = "";
+            document.getElementById("clearContentFilterBtn").classList.add("hidden");
+
+            if (scrollProgressBar) scrollProgressBar.style.width = "0%";
+            viewer.innerHTML = `<p class="text-gray-400 animate-pulse text-sm">${translations[currentLang].loadingFile}</p>`;
+            tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].analyzing}</p>`;
+            try {
+                const response = await fetch(`solutions/${filePath}`);
+                if (!response.ok) throw new Error(translations[currentLang].fileNotFound);
+                rawFileContent = await response.text();
+                renderFileContent(rawFileContent, filePath);
+                
+                if (filterInput) {
+                    setTimeout(() => {
+                        filterInput.focus();
+                    }, 0);
+                }
+            } catch (error) {
+                rawFileContent = null;
+                if (readingHeader) readingHeader.classList.add("hidden");
+                viewer.innerHTML = `<p class="text-red-400 text-sm">${translations[currentLang].errorLoadingFile} ${filePath}</p>`;
+                tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`
+            }
+        }
+
         function renderFileContent(text, filePath) {
             const viewer = document.getElementById("content-viewer");
             const tocContainer = document.getElementById("toc-container");
@@ -725,30 +841,11 @@
             });
         }
 
-        function selectSearchResult(path, isExternal = false) {
-            if (isExternal) {
-                window.open(path, '_blank', 'noopener,noreferrer');
-            } else {
-                loadFile(path);
-            }
-            document.getElementById("searchDropdown").classList.add("hidden");
-            document.getElementById("searchInput").value = "";
-            document.getElementById("clearSearchBtn").classList.add("hidden");
-            const copyBtn = document.getElementById("copySearchBtn");
-            if (copyBtn) copyBtn.classList.add("hidden");
-            filterTree("");
-            if (window.innerWidth < 1060) {
-                closeAllOverlays()
-            }
+        function escapeHtml(text) {
+            return text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
         }
-        window.addEventListener("click", e => {
-            const searchContainer = document.getElementById("searchInput").parentElement;
-            const dropdown = document.getElementById("searchDropdown");
-            if (!searchContainer.contains(e.target) && !dropdown.contains(e.target)) {
-                dropdown.classList.add("hidden")
-            }
-        });
 
+        // --- SECTION 8: DIRECTORY TREE MENU RENDERING ---
         function renderTree(node, container, filterQuery = "") {
             container.innerHTML = "";
             const query = filterQuery.trim();
@@ -840,41 +937,7 @@
             });
         }
 
-        async function loadFile(filePath) {
-            currentFilePath = filePath;
-            updateActiveFileInTree();
-
-            const viewer = document.getElementById("content-viewer");
-            const tocContainer = document.getElementById("toc-container");
-            const scrollProgressBar = document.getElementById("scrollProgressBar");
-            const readingHeader = document.getElementById("readingPaneHeader");
-            if (readingHeader) readingHeader.classList.remove("hidden");
-            const filterInput = document.getElementById("contentFilterInput");
-            if (filterInput) filterInput.value = "";
-            document.getElementById("clearContentFilterBtn").classList.add("hidden");
-
-            if (scrollProgressBar) scrollProgressBar.style.width = "0%";
-            viewer.innerHTML = `<p class="text-gray-400 animate-pulse text-sm">${translations[currentLang].loadingFile}</p>`;
-            tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].analyzing}</p>`;
-            try {
-                const response = await fetch(`solutions/${filePath}`);
-                if (!response.ok) throw new Error(translations[currentLang].fileNotFound);
-                rawFileContent = await response.text();
-                renderFileContent(rawFileContent, filePath);
-                
-                if (filterInput) {
-                    setTimeout(() => {
-                        filterInput.focus();
-                    }, 0);
-                }
-            } catch (error) {
-                rawFileContent = null;
-                if (readingHeader) readingHeader.classList.add("hidden");
-                viewer.innerHTML = `<p class="text-red-400 text-sm">${translations[currentLang].errorLoadingFile} ${filePath}</p>`;
-                tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`
-            }
-        }
-
+        // --- SECTION 9: TABLE OF CONTENTS (TOC) & SCROLL SPY ---
         function createCopyButton(headingId, isToc = false) {
             const copyBtn = document.createElement("button");
             copyBtn.className = `${isToc ? 'toc-copy-btn' : 'heading-copy-btn'} inline-flex items-center ${isToc ? 'ml-2' : 'mr-2'} opacity-70 sm:opacity-0 sm:group-hover${isToc ? '/toc' : ''}:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative shrink-0`;
@@ -1068,10 +1131,7 @@
             updateScrollPosition();
         }
 
-        function escapeHtml(text) {
-            return text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
-        }
-
+        // --- SECTION 10: LAYOUT RESIZERS & OVERLAY TOGGLES ---
         const sidebar = document.getElementById("sidebar");
         const tocSidebar = document.getElementById("toc-sidebar");
         const resizerLeft = document.getElementById("resizer-left");
@@ -1162,6 +1222,8 @@
                 tocSidebar.classList.add("translate-x-full")
             }
         }
+
+        // --- SECTION 11: INITIAL EXECUTION ON LOAD ---
         closeAllOverlays();
         init();
 
