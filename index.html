@@ -827,14 +827,14 @@
 
                 const originalText = heading.textContent;
 
-                // Hauptbereich Überschriften-Button
+                // Main area headline copy button
                 if (!heading.querySelector(".heading-copy-btn")) {
                     heading.classList.add("group", "relative");
                     const copyBtn = createCopyButton(heading.id, false);
                     heading.prepend(copyBtn);
                 }
 
-                // Rechtes Inhaltsverzeichnis Element
+                // Right chapter view elements
                 let indentClass = "pl-1";
                 if (heading.tagName === "H2") indentClass = "pl-2";
                 if (heading.tagName === "H3") indentClass = "pl-4";
@@ -844,7 +844,7 @@
                 if (heading.tagName === "H7") indentClass = "pl-12";
 
                 const tocItem = document.createElement("div");
-                tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-emerald-300 transition-colors text-xs sm:text-sm break-words ${indentClass} group/toc relative`;
+                tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${indentClass} cursor-pointer`;
 
                 const tocTextBtn = document.createElement("button");
                 tocTextBtn.className = "flex-1 text-left bg-transparent border-none text-inherit text-xs sm:text-sm cursor-pointer break-words focus:outline-none";
@@ -883,30 +883,59 @@
                 }
 
                 const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
-                const tocButtons = tocContainer.querySelectorAll("[data-target-id]");
-                if (headings.length === 0 || tocButtons.length === 0) return;
+                const tocItems = tocContainer.children;
+                if (headings.length === 0 || tocItems.length === 0) return;
 
-                let lastActiveId = window._lastActiveId || null;
-                let activeId = headings[0].id;
+                const viewerRect = contentViewer.getBoundingClientRect();
+                const activeIndices = new Set();
 
-                if (scrollTop + clientHeight >= scrollHeight - 15) {
-                    activeId = headings[headings.length - 1].id;
-                } else {
-                    for (let i = 0; i < headings.length; i++) {
-                        const headingTop = headings[i].getBoundingClientRect().top - contentViewer.getBoundingClientRect().top + scrollTop;
-                        if (scrollTop >= headingTop - 120) {
-                            activeId = headings[i].id;
-                        }
+                // Paragraph visibility check
+                headings.forEach((heading, i) => {
+                    const headingRect = heading.getBoundingClientRect();
+                    const nextHeading = headings[i + 1];
+                    const nextHeadingRect = nextHeading ? nextHeading.getBoundingClientRect() : null;
+
+                    const sectionTop = headingRect.top;
+                    const sectionBottom = nextHeadingRect ? nextHeadingRect.top : Infinity;
+
+                    if (sectionTop < viewerRect.bottom && sectionBottom > viewerRect.top) {
+                        activeIndices.add(i);
                     }
-                }
+                });
 
-                if (activeId !== lastActiveId) {
-                    window._lastActiveId = activeId;
-                    tocButtons.forEach(btn => {
-                        if (btn.dataset.targetId === activeId) {
-                            btn.scrollIntoView({ behavior: "smooth", block: "center" });
+                // Fallback, if no element in viewport
+                if (activeIndices.size === 0) {
+                    let closestIdx = 0;
+                    let minDistance = Infinity;
+                    headings.forEach((heading, i) => {
+                        const dist = Math.abs(heading.getBoundingClientRect().top - viewerRect.top);
+                        if (dist < minDistance) {
+                            minDistance = dist;
+                            closestIdx = i;
                         }
                     });
+                    activeIndices.add(closestIdx);
+                }
+
+                // Update classes for all TOC-entries
+                Array.from(tocItems).forEach((item, idx) => {
+                    const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
+                    
+                    if (activeIndices.has(idx)) {
+                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer`;
+                    } else {
+                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer`;
+                    }
+                });
+
+                // Auto-Scroll in TOC to first active element
+                const firstActiveIdx = Array.from(activeIndices)[0];
+                if (firstActiveIdx !== undefined && firstActiveIdx !== window._lastFirstActiveIdx) {
+                    window._lastFirstActiveIdx = firstActiveIdx;
+                    const activeBtn = tocContainer.querySelector(`[data-target-id="${headings[firstActiveIdx].id}"]`);
+                    if (activeBtn) {
+                        activeBtn.parentElement.scrollIntoView({ behavior: "smooth", block: "center" });
+                    }
                 }
             }
 
@@ -917,49 +946,56 @@
         function escapeHtml(text) {
             return text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
         }
+
         const sidebar = document.getElementById("sidebar");
         const tocSidebar = document.getElementById("toc-sidebar");
         const resizerLeft = document.getElementById("resizer-left");
-        let isResizingLeft = false;
-        resizerLeft.addEventListener("mousedown", e => {
-            isResizingLeft = true;
-            document.body.style.cursor = "ew-resize";
-            e.preventDefault()
-        });
-        window.addEventListener("mousemove", e => {
-            if (!isResizingLeft) return;
-            const newWidth = e.clientX - sidebar.getBoundingClientRect().left;
-            if (newWidth >= 180 && newWidth <= 600) {
-                sidebar.style.width = `${newWidth}px`
-            }
-        });
-        window.addEventListener("mouseup", () => {
-            if (isResizingLeft) {
-                isResizingLeft = false;
-                document.body.style.cursor = "default"
-            }
-        });
+        
+        if (resizerLeft) {
+            let isResizingLeft = false;
+            resizerLeft.addEventListener("mousedown", e => {
+                isResizingLeft = true;
+                document.body.style.cursor = "ew-resize";
+                e.preventDefault()
+            });
+            window.addEventListener("mousemove", e => {
+                if (!isResizingLeft) return;
+                const newWidth = e.clientX - sidebar.getBoundingClientRect().left;
+                if (newWidth >= 180 && newWidth <= 600) {
+                    sidebar.style.width = `${newWidth}px`
+                }
+            });
+            window.addEventListener("mouseup", () => {
+                if (isResizingLeft) {
+                    isResizingLeft = false;
+                    document.body.style.cursor = "default"
+                }
+            });
+        }
+
         const resizerRight = document.getElementById("resizer-right");
-        let isResizingRight = false;
-        resizerRight.addEventListener("mousedown", e => {
-            isResizingRight = true;
-            document.body.style.cursor = "ew-resize";
-            e.preventDefault()
-        });
-        window.addEventListener("mousemove", e => {
-            if (!isResizingRight) return;
-            const containerRight = document.querySelector("main").getBoundingClientRect().right;
-            const calculatedWidth = containerRight - e.clientX;
-            if (calculatedWidth >= 180 && calculatedWidth <= 450) {
-                tocSidebar.style.width = `${calculatedWidth}px`
-            }
-        });
-        window.addEventListener("mouseup", () => {
-            if (isResizingRight) {
-                isResizingRight = false;
-                document.body.style.cursor = "default"
-            }
-        });
+        if (resizerRight) {
+            let isResizingRight = false;
+            resizerRight.addEventListener("mousedown", e => {
+                isResizingRight = true;
+                document.body.style.cursor = "ew-resize";
+                e.preventDefault()
+            });
+            window.addEventListener("mousemove", e => {
+                if (!isResizingRight) return;
+                const containerRight = document.querySelector("main").getBoundingClientRect().right;
+                const calculatedWidth = containerRight - e.clientX;
+                if (calculatedWidth >= 180 && calculatedWidth <= 450) {
+                    tocSidebar.style.width = `${calculatedWidth}px`
+                }
+            });
+            window.addEventListener("mouseup", () => {
+                if (isResizingRight) {
+                    isResizingRight = false;
+                    document.body.style.cursor = "default"
+                }
+            });
+        }
 
         function toggleSidebar() {
             if (window.innerWidth < 1060) {
