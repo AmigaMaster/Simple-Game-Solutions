@@ -393,8 +393,12 @@
 
         function handleSearchBlur() {
             searchBlurTimeout = setTimeout(() => {
+                const searchContainer = document.getElementById("searchInput").parentElement;
                 const dropdown = document.getElementById("searchDropdown");
-                if (dropdown) dropdown.classList.add("hidden");
+                const active = document.activeElement;
+                if (!searchContainer.contains(active) && !dropdown.contains(active)) {
+                    dropdown.classList.add("hidden");
+                }
             }, 200);
         }
 
@@ -412,9 +416,12 @@
             const dropdown = document.getElementById("searchDropdown");
             const q = query.trim();
             const searchInput = document.getElementById("searchInput");
+            const searchContainer = searchInput.parentElement;
+            const active = document.activeElement;
+            const isFocusedInSearch = searchContainer.contains(active) || dropdown.contains(active);
             
-            // Only show dropdown if searchInput has focus and has query text
-            if (!q || !structureData || document.activeElement !== searchInput) {
+            // Only show dropdown if search container/input or dropdown has focus and has query text
+            if (!q || !structureData || !isFocusedInSearch) {
                 dropdown.innerHTML = "";
                 dropdown.classList.add("hidden");
                 return
