@@ -303,6 +303,8 @@
                 history.pushState({}, '', window.location.pathname);
             }
             renderWelcomeScreen();
+            const viewer = document.getElementById("content-viewer");
+            if (viewer) viewer.scrollTop = 0;
             document.getElementById("toc-container").innerHTML = `<p class="text-gray-500 italic text-xs" data-i18n="noFileLoaded">${translations[currentLang].noFileLoaded}</p>`;
             if (document.getElementById("scrollProgressBar")) {
                 document.getElementById("scrollProgressBar").style.width = "0%";
