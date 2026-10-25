@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 592,
-    "total_words": 682058,
-    "total_actions": 83671
+    "total_files": 593,
+    "total_words": 682368,
+    "total_actions": 83697
   },
   "name": "solutions",
   "type": "directory",
@@ -3658,6 +3658,20 @@
           "last_modified": "2026-05-14T00:15:25+02:00",
           "words": 582,
           "actions": 70
+        }
+      ]
+    },
+    {
+      "name": "Q",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Quest for Yeti-EN",
+          "type": "file",
+          "path": "Q/Quest for Yeti-EN.md",
+          "last_modified": "2026-10-26T00:40:04+01:00",
+          "words": 310,
+          "actions": 26
         }
       ]
     },
