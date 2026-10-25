@@ -438,6 +438,24 @@
             } else if (e.key === "Escape") {
                 e.preventDefault();
                 clearSearch();
+            } else if (e.key === "Enter") {
+                e.preventDefault();
+                dropdown.classList.add("hidden");
+                
+                // Show directory pane if it is currently closed
+                const isSidebarClosed = window.innerWidth < 1060 
+                    ? sidebar.classList.contains("-translate-x-full") 
+                    : sidebar.style.display === "none";
+                
+                if (isSidebarClosed) {
+                    if (window.innerWidth < 1060) {
+                        tocSidebar.classList.add("translate-x-full");
+                        sidebar.classList.remove("-translate-x-full");
+                    } else {
+                        sidebar.style.display = "flex";
+                        if (resizerLeft) resizerLeft.style.display = "flex";
+                    }
+                }
             }
         }
 
