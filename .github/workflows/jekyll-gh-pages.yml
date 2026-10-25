@@ -34,13 +34,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Generate structure.json
+      - name: Generate structure.json and sitemap.xml
         run: python generator.py
-      - name: Commit and push structure.json
+      - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          file_pattern: structure.json
-          commit_message: "chore: auto-update structure.json"
+          file_pattern: structure.json sitemap.xml
+          commit_message: "chore: auto-update structure.json and sitemap.xml"
           branch: master
       - name: Setup Pages
         uses: actions/configure-pages@v5
