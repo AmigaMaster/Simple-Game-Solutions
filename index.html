@@ -205,7 +205,7 @@
                 errorLoadingStruct: "Fehler beim Laden der Struktur.",
                 resizeWidth: "Breite anpassen",
                 searchPlaceholder: "Suchen (z.B. Maniac AND Ostern OR 101)...",
-                filterPlaceholder: "Inhalt filtern...",
+                filterPlaceholder: "Inhalt filtern (z.B. Tür UND/ODER Schlüssel)...",
                 noResults: "Keine Treffer gefunden.",
                 linkCopied: "Link kopiert",
                 copySearchLinkTitle: "Suche-Link kopieren"
@@ -229,7 +229,7 @@
                 errorLoadingStruct: "Error loading structure.",
                 resizeWidth: "Adjust width",
                 searchPlaceholder: "Search (e.g. Maniac AND Ostern OR 101)...",
-                filterPlaceholder: "Filter content...",
+                filterPlaceholder: "Filter content (e.g. door AND/OR key)...",
                 noResults: "No matching files found.",
                 linkCopied: "Link copied",
                 copySearchLinkTitle: "Copy search link"
@@ -666,7 +666,7 @@
 
         function handleContentFilter(filterQuery) {
             const clearBtn = document.getElementById("clearContentFilterBtn");
-            const q = filterQuery.trim().toLowerCase();
+            const q = filterQuery.trim();
             if (q.length > 0) {
                 clearBtn.classList.remove("hidden");
             } else {
@@ -691,7 +691,7 @@
             const matchingSet = new Set();
             allBlocks.forEach(el => {
                 const text = el.tagName === 'LI' ? getDirectText(el) : el.textContent;
-                if (text.toLowerCase().includes(q)) {
+                if (matchQuery(text.toLowerCase(), filterQuery)) {
                     matchingSet.add(el);
                 }
             });
