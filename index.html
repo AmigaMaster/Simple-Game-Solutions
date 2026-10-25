@@ -108,6 +108,17 @@
                 <div id="scrollProgressBar" class="h-full bg-emerald-500 transition-all duration-75" style="width: 0%;">
                 </div>
             </div>
+            <div id="readingPaneHeader" class="pt-1.5 pb-1 px-1 flex items-center gap-2 border-b border-gray-700/50 shrink-0 hidden">
+                <div class="relative w-full">
+                    <input autocomplete="off"
+                        class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
+                        data-i18n-placeholder="filterPlaceholder" id="contentFilterInput" oninput="handleContentFilter(this.value);"
+                        onkeydown="handleContentFilterKeydown(event);"
+                        placeholder="Inhalt filtern..." type="text">
+                    <button class="absolute right-2.5 top-2.5 text-gray-400 hover:text-white text-xs hidden focus:outline-none cursor-pointer"
+                        id="clearContentFilterBtn" onclick="clearContentFilter();" title="Filter löschen">✕</button>
+                </div>
+            </div>
             <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 pt-2 text-sm sm:text-base leading-relaxed prose-code:text-emerald-200/80 prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-gray-700/40 prose-blockquote:border-emerald-500/30 prose-blockquote:bg-gray-800/40 prose-blockquote:text-gray-300/90"
                 id="content-viewer">
                 <div class="text-center text-gray-500 py-20">
@@ -154,6 +165,7 @@
                 errorLoadingStruct: "Fehler beim Laden der Struktur.",
                 resizeWidth: "Breite anpassen",
                 searchPlaceholder: "Suchen (z.B. Maniac AND Ostern OR 101)...",
+                filterPlaceholder: "Inhalt filtern...",
                 noResults: "Keine Treffer gefunden.",
                 linkCopied: "Link kopiert"
             },
@@ -176,6 +188,7 @@
                 errorLoadingStruct: "Error loading structure.",
                 resizeWidth: "Adjust width",
                 searchPlaceholder: "Search (e.g. Maniac AND Ostern OR 101)...",
+                filterPlaceholder: "Filter content...",
                 noResults: "No matching files found.",
                 linkCopied: "Link copied"
             }
@@ -222,6 +235,7 @@
         }
         let structureData = null;
         let currentFilePath = null;
+        let rawFileContent = null;
 
         function countFileObjects(obj) {
             let count = 0;
@@ -238,6 +252,13 @@
 
         function renderWelcomeScreen() {
             if (!structureData) return;
+
+            const readingHeader = document.getElementById("readingPaneHeader");
+            if (readingHeader) readingHeader.classList.add("hidden");
+            const filterInput = document.getElementById("contentFilterInput");
+            if (filterInput) filterInput.value = "";
+            document.getElementById("clearContentFilterBtn").classList.add("hidden");
+            rawFileContent = null;
 
             const stats = structureData.stats || { total_files: countFileObjects(structureData), total_words: 0, total_actions: 0 };
             const fileCount = stats.total_files || countFileObjects(structureData);
@@ -429,6 +450,135 @@
             input.focus()
         }
 
+        // Event-Handler für ESC-Taste im Inhaltsfilter
+        function handleContentFilterKeydown(e) {
+            if (e.key === "Escape") {
+                e.preventDefault();
+                clearContentFilter();
+            }
+        }
+
+        function handleContentFilter(filterQuery) {
+            const clearBtn = document.getElementById("clearContentFilterBtn");
+            if (filterQuery.trim().length > 0) {
+                clearBtn.classList.remove("hidden");
+            } else {
+                clearBtn.classList.add("hidden");
+            }
+
+            if (!rawFileContent) return;
+
+            const viewer = document.getElementById("content-viewer");
+            const q = filterQuery.trim().toLowerCase();
+
+            if (!q) {
+                renderFileContent(rawFileContent, currentFilePath);
+                return;
+            }
+
+            const lines = rawFileContent.split(/\r?\n/);
+            let filteredLines = [];
+            let currentHeading = null;
+            let bufferForCurrentHeading = [];
+            let headingHasMatch = false;
+
+            let inCodeBlock = false;
+            let currentCodeBlockLines = [];
+            let codeBlockHasMatch = false;
+
+            function flushHeadingBuffer() {
+                if (currentHeading && headingHasMatch) {
+                    filteredLines.push(currentHeading);
+                    filteredLines.push(...bufferForCurrentHeading);
+                }
+                bufferForCurrentHeading = [];
+                headingHasMatch = false;
+            }
+
+            for (let line of lines) {
+                const trimmed = line.trim();
+
+                if (trimmed.startsWith("```") || trimmed.startsWith("~~~")) {
+                    if (!inCodeBlock) {
+                        inCodeBlock = true;
+                        currentCodeBlockLines = [line];
+                        codeBlockHasMatch = line.toLowerCase().includes(q);
+                    } else {
+                        currentCodeBlockLines.push(line);
+                        if (line.toLowerCase().includes(q)) {
+                            codeBlockHasMatch = true;
+                        }
+                        inCodeBlock = false;
+
+                        if (codeBlockHasMatch) {
+                            headingHasMatch = true;
+                            bufferForCurrentHeading.push(...currentCodeBlockLines);
+                        }
+                        currentCodeBlockLines = [];
+                        codeBlockHasMatch = false;
+                    }
+                    continue;
+                }
+
+                if (inCodeBlock) {
+                    currentCodeBlockLines.push(line);
+                    if (line.toLowerCase().includes(q)) {
+                        codeBlockHasMatch = true;
+                    }
+                    continue;
+                }
+
+                if (trimmed.startsWith("#")) {
+                    flushHeadingBuffer();
+                    currentHeading = line;
+                } else {
+                    if (line.toLowerCase().includes(q)) {
+                        headingHasMatch = true;
+                        bufferForCurrentHeading.push(line.trimStart());
+                    }
+                }
+            }
+            flushHeadingBuffer();
+
+            const filteredText = filteredLines.join("\n");
+            viewer.innerHTML = marked.parse(filteredText);
+            postProcessViewer(viewer);
+        }
+
+        function clearContentFilter() {
+            const input = document.getElementById("contentFilterInput");
+            input.value = "";
+            handleContentFilter("");
+            document.getElementById("clearContentFilterBtn").classList.add("hidden");
+            
+            // Verzögerter Fokus, um Browser-Events nach ESC abzufangen
+            setTimeout(() => {
+                input.focus();
+            }, 0);
+        }
+
+        function renderFileContent(text, filePath) {
+            const viewer = document.getElementById("content-viewer");
+            const tocContainer = document.getElementById("toc-container");
+
+            if (filePath.endsWith(".md")) {
+                viewer.innerHTML = marked.parse(text);
+            } else {
+                viewer.innerHTML = `<pre class="whitespace-pre-wrap font-mono text-xs sm:text-sm bg-gray-950 p-4 rounded">${escapeHtml(text)}</pre>`;
+            }
+            postProcessViewer(viewer);
+            generateToc(viewer, tocContainer);
+            setupScrollSpy(viewer, tocContainer);
+        }
+
+        function postProcessViewer(viewer) {
+            viewer.querySelectorAll("a").forEach(link => {
+                link.setAttribute("target", "_blank");
+                link.setAttribute("rel", "noopener noreferrer");
+                link.className = "text-emerald-400 hover:underline";
+            });
+        }
+
         function selectSearchResult(path, isExternal = false) {
             if (isExternal) {
                 window.open(path, '_blank', 'noopener,noreferrer');
@@ -530,26 +680,25 @@
             const viewer = document.getElementById("content-viewer");
             const tocContainer = document.getElementById("toc-container");
             const scrollProgressBar = document.getElementById("scrollProgressBar");
+            const readingHeader = document.getElementById("readingPaneHeader");
+            if (readingHeader) readingHeader.classList.remove("hidden");
+            const filterInput = document.getElementById("contentFilterInput");
+            if (filterInput) filterInput.value = "";
+            document.getElementById("clearContentFilterBtn").classList.add("hidden");
+
             if (scrollProgressBar) scrollProgressBar.style.width = "0%";
             viewer.innerHTML = `<p class="text-gray-400 animate-pulse text-sm">${translations[currentLang].loadingFile}</p>`;
             tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].analyzing}</p>`;
             try {
                 const response = await fetch(`solutions/${filePath}`);
                 if (!response.ok) throw new Error(translations[currentLang].fileNotFound);
-                const text = await response.text();
-                if (filePath.endsWith(".md")) {
-                    viewer.innerHTML = marked.parse(text)
-                } else {
-                    viewer.innerHTML = `<pre class="whitespace-pre-wrap font-mono text-xs sm:text-sm bg-gray-950 p-4 rounded">${escapeHtml(text)}</pre>`
-                }
-                viewer.querySelectorAll("a").forEach(link => {
-                    link.setAttribute("target", "_blank");
-                    link.setAttribute("rel", "noopener noreferrer");
-                    link.className = "text-emerald-400 hover:underline"
-                });
-                generateToc(viewer, tocContainer);
-                setupScrollSpy(viewer, tocContainer);
+                rawFileContent = await response.text();
+                renderFileContent(rawFileContent, filePath);
+                
+                if (filterInput) filterInput.focus();
             } catch (error) {
+                rawFileContent = null;
+                if (readingHeader) readingHeader.classList.add("hidden");
                 viewer.innerHTML = `<p class="text-red-400 text-sm">${translations[currentLang].errorLoadingFile} ${filePath}</p>`;
                 tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`
             }
