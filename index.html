@@ -295,6 +295,7 @@
 
             listHtml += `</div></div>`;
             document.getElementById("content-viewer").innerHTML = listHtml;
+            updateActiveFileInTree();
         }
 
         function goHome() {
@@ -309,6 +310,7 @@
             if (document.getElementById("scrollProgressBar")) {
                 document.getElementById("scrollProgressBar").style.width = "0%";
             }
+            updateActiveFileInTree();
         }
 
         async function init() {
@@ -545,13 +547,12 @@
                 if (visibleElements.has(el)) {
                     el.style.display = "";
                     const tag = el.tagName;
-                    // Tabellen und Container bleiben unklickbar, aber p, li, pre, blockquote sowie Überschriften werden klickbar
                     if (tag !== 'TABLE' && tag !== 'UL' && tag !== 'OL' && tag !== 'DIV') {
                         el.classList.add("cursor-pointer", "hover:bg-gray-700/40", "rounded", "px-1", "transition-colors");
                         el.title = currentLang === "de" ? "Klicken, um zum Original im Text zu springen" : "Click to jump to original in text";
                         
                         el.onclick = (e) => {
-                            if (e.target.closest('button')) return; // Kopier-Button in Überschriften ignorieren
+                            if (e.target.closest('button')) return;
                             e.stopPropagation();
                             const targetEl = el;
                             
@@ -681,8 +682,12 @@
                     details.appendChild(childrenContainer);
                     parentEl.appendChild(details)
                 } else if (item.type === "file") {
+                    const isActive = (item.path === currentFilePath);
                     const fileLink = document.createElement("button");
-                    fileLink.className = "block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words cursor-pointer";
+                    fileLink.dataset.filepath = item.path;
+                    fileLink.className = isActive 
+                        ? "block w-full text-left py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors text-xs sm:text-sm break-words cursor-pointer"
+                        : "block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words cursor-pointer";
                     fileLink.textContent = `📄 ${item.name}`;
                     fileLink.onclick = () => {
                         loadFile(item.path);
@@ -704,8 +709,23 @@
             }
         }
 
+        function updateActiveFileInTree() {
+            const container = document.getElementById("tree-container");
+            if (!container) return;
+            container.querySelectorAll("button[data-filepath]").forEach(btn => {
+                const isActive = (btn.dataset.filepath === currentFilePath);
+                if (isActive) {
+                    btn.className = "block w-full text-left py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors text-xs sm:text-sm break-words cursor-pointer";
+                } else {
+                    btn.className = "block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words cursor-pointer";
+                }
+            });
+        }
+
         async function loadFile(filePath) {
             currentFilePath = filePath;
+            updateActiveFileInTree();
+
             const viewer = document.getElementById("content-viewer");
             const tocContainer = document.getElementById("toc-container");
             const scrollProgressBar = document.getElementById("scrollProgressBar");
