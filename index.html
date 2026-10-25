@@ -456,7 +456,6 @@
             }, 0);
         }
 
-        // Event-Handler für ESC-Taste im Inhaltsfilter
         function handleContentFilterKeydown(e) {
             if (e.key === "Escape") {
                 e.preventDefault();
@@ -464,91 +463,114 @@
             }
         }
 
+        function getDirectText(el) {
+            const clone = el.cloneNode(true);
+            clone.querySelectorAll("ul, ol").forEach(ul => ul.remove());
+            return clone.textContent.replace(/\s+/g, ' ').trim();
+        }
+
         function handleContentFilter(filterQuery) {
             const clearBtn = document.getElementById("clearContentFilterBtn");
-            if (filterQuery.trim().length > 0) {
+            const q = filterQuery.trim().toLowerCase();
+            if (q.length > 0) {
                 clearBtn.classList.remove("hidden");
             } else {
                 clearBtn.classList.add("hidden");
             }
 
-            if (!rawFileContent) return;
-
             const viewer = document.getElementById("content-viewer");
-            const q = filterQuery.trim().toLowerCase();
+            if (!viewer) return;
+
+            const allBlocks = viewer.querySelectorAll("h1, h2, h3, h4, h5, h6, p, li, blockquote, table, pre");
 
             if (!q) {
-                renderFileContent(rawFileContent, currentFilePath);
+                viewer.querySelectorAll("h1, h2, h3, h4, h5, h6, p, li, blockquote, table, pre, ul, ol, div").forEach(el => {
+                    el.style.display = "";
+                    el.classList.remove("cursor-pointer", "hover:bg-gray-700/40", "rounded", "px-1", "transition-colors", "bg-emerald-900/60");
+                    el.onclick = null;
+                    el.title = "";
+                });
                 return;
             }
 
-            const lines = rawFileContent.split(/\r?\n/);
-            let filteredLines = [];
+            const matchingSet = new Set();
+            allBlocks.forEach(el => {
+                const text = el.tagName === 'LI' ? getDirectText(el) : el.textContent;
+                if (text.toLowerCase().includes(q)) {
+                    matchingSet.add(el);
+                }
+            });
+
             let currentHeading = null;
-            let bufferForCurrentHeading = [];
-            let headingHasMatch = false;
+            const headingToMatchedBlocks = new Map();
 
-            let inCodeBlock = false;
-            let currentCodeBlockLines = [];
-            let codeBlockHasMatch = false;
-
-            function flushHeadingBuffer() {
-                if (currentHeading && headingHasMatch) {
-                    filteredLines.push(currentHeading);
-                    filteredLines.push(...bufferForCurrentHeading);
-                }
-                bufferForCurrentHeading = [];
-                headingHasMatch = false;
-            }
-
-            for (let line of lines) {
-                const trimmed = line.trim();
-
-                if (trimmed.startsWith("```") || trimmed.startsWith("~~~")) {
-                    if (!inCodeBlock) {
-                        inCodeBlock = true;
-                        currentCodeBlockLines = [line];
-                        codeBlockHasMatch = line.toLowerCase().includes(q);
-                    } else {
-                        currentCodeBlockLines.push(line);
-                        if (line.toLowerCase().includes(q)) {
-                            codeBlockHasMatch = true;
-                        }
-                        inCodeBlock = false;
-
-                        if (codeBlockHasMatch) {
-                            headingHasMatch = true;
-                            bufferForCurrentHeading.push(...currentCodeBlockLines);
-                        }
-                        currentCodeBlockLines = [];
-                        codeBlockHasMatch = false;
-                    }
-                    continue;
-                }
-
-                if (inCodeBlock) {
-                    currentCodeBlockLines.push(line);
-                    if (line.toLowerCase().includes(q)) {
-                        codeBlockHasMatch = true;
-                    }
-                    continue;
-                }
-
-                if (trimmed.startsWith("#")) {
-                    flushHeadingBuffer();
-                    currentHeading = line;
+            allBlocks.forEach(el => {
+                if (/^H[1-7]$/.test(el.tagName)) {
+                    currentHeading = el;
                 } else {
-                    if (line.toLowerCase().includes(q)) {
-                        headingHasMatch = true;
-                        bufferForCurrentHeading.push(line.trimStart());
+                    if (currentHeading && matchingSet.has(el)) {
+                        if (!headingToMatchedBlocks.has(currentHeading)) {
+                            headingToMatchedBlocks.set(currentHeading, new Set());
+                        }
+                        headingToMatchedBlocks.get(currentHeading).add(el);
                     }
                 }
-            }
-            flushHeadingBuffer();
+            });
 
-            const filteredText = filteredLines.join("\n");
-            viewer.innerHTML = marked.parse(filteredText);
-            postProcessViewer(viewer);
+            const visibleElements = new Set();
+
+            allBlocks.forEach(el => {
+                if (/^H[1-7]$/.test(el.tagName)) {
+                    if (matchingSet.has(el) || headingToMatchedBlocks.has(el)) {
+                        visibleElements.add(el);
+                    }
+                } else {
+                    if (matchingSet.has(el)) {
+                        visibleElements.add(el);
+                    }
+                }
+            });
+
+            visibleElements.forEach(el => {
+                let parent = el.parentElement;
+                while (parent && parent !== viewer) {
+                    visibleElements.add(parent);
+                    parent = parent.parentElement;
+                }
+            });
+
+            viewer.querySelectorAll("h1, h2, h3, h4, h5, h6, p, li, blockquote, table, pre, ul, ol, div").forEach(el => {
+                if (visibleElements.has(el)) {
+                    el.style.display = "";
+                    const tag = el.tagName;
+                    // Tabellen und Container bleiben unklickbar, aber p, li, pre, blockquote sowie Überschriften werden klickbar
+                    if (tag !== 'TABLE' && tag !== 'UL' && tag !== 'OL' && tag !== 'DIV') {
+                        el.classList.add("cursor-pointer", "hover:bg-gray-700/40", "rounded", "px-1", "transition-colors");
+                        el.title = currentLang === "de" ? "Klicken, um zum Original im Text zu springen" : "Click to jump to original in text";
+                        
+                        el.onclick = (e) => {
+                            if (e.target.closest('button')) return; // Kopier-Button in Überschriften ignorieren
+                            e.stopPropagation();
+                            const targetEl = el;
+                            
+                            clearContentFilter();
+
+                            setTimeout(() => {
+                                targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+                                targetEl.classList.add("bg-emerald-900/60", "transition-colors", "duration-1000");
+                                setTimeout(() => {
+                                    targetEl.classList.remove("bg-emerald-900/60");
+                                }, 1500);
+                            }, 50);
+                        };
+                    }
+                } else {
+                    el.style.display = "none";
+                    el.classList.remove("cursor-pointer", "hover:bg-gray-700/40", "rounded", "px-1", "transition-colors");
+                    el.onclick = null;
+                    el.title = "";
+                }
+            });
         }
 
         function clearContentFilter() {
