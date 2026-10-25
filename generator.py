@@ -33,9 +33,23 @@ def get_last_modified(file_path: Path) -> str:
     return datetime.datetime.fromtimestamp(mtime, datetime.timezone.utc).isoformat()
 
 
-def scan_directory(path: Path, sitemap_entries: list) -> dict:
+def analyze_file(file_path: Path) -> tuple[int, int]:
+    """Read file content and calculate number of words and actions (- )."""
+    try:
+        content = file_path.read_text(encoding="utf-8")
+        words = len(content.split())
+        actions = sum(1 for line in content.splitlines() if line.strip().startswith("- "))
+        return words, actions
+    except Exception:
+        return 0, 0
+
+
+def scan_directory(path: Path, sitemap_entries: list) -> tuple[dict, int, int, int]:
     """Recursive function to build the directory structure and collect sitemap entries."""
     tree = {"name": path.name, "type": "directory", "children": []}
+    total_files = 0
+    total_words = 0
+    total_actions = 0
 
     # Sort for consistent order
     items = sorted(path.iterdir(), key=lambda x: (not x.is_dir(), x.name.lower()))
@@ -43,29 +57,39 @@ def scan_directory(path: Path, sitemap_entries: list) -> dict:
     for item in items:
         if item.name.startswith("."):
             continue  # Ignore hidden files/folders
+            
         if item.is_dir():
-            sub_tree = scan_directory(item, sitemap_entries)
+            sub_tree, sub_files, sub_words, sub_actions = scan_directory(item, sitemap_entries)
             if sub_tree["children"]:
                 tree["children"].append(sub_tree)
-        elif item.is_file():
-            if item.suffix.lower() in ALLOWED_EXTENSIONS:
-                rel_path = item.relative_to(SOLUTIONS_DIR).as_posix()
-                # Map source extension to compiled .html extension
-                html_rel_path = str(Path(rel_path).with_suffix(".html"))
-                last_mod = get_last_modified(item)
+                total_files += sub_files
+                total_words += sub_words
+                total_actions += sub_actions
                 
-                tree["children"].append({
-                    "name": item.stem,
-                    "type": "file",
-                    "path": rel_path,
-                    "last_modified": last_mod,
-                })
-                
-                sitemap_entries.append({
-                    "loc": f"{BASE_URL}/solutions/{html_rel_path}",
-                    "lastmod": last_mod
-                })
-    return tree
+        elif item.is_file() and item.suffix.lower() in ALLOWED_EXTENSIONS:
+            rel_path = item.relative_to(SOLUTIONS_DIR).as_posix()
+            html_rel_path = str(Path(rel_path).with_suffix(".html"))
+            last_mod = get_last_modified(item)
+            words, actions = analyze_file(item)
+            
+            tree["children"].append({
+                "name": item.stem,
+                "type": "file",
+                "path": rel_path,
+                "last_modified": last_mod,
+                "words": words,
+                "actions": actions,
+            })
+            
+            sitemap_entries.append({
+                "loc": f"{BASE_URL}/solutions/{html_rel_path}",
+                "lastmod": last_mod
+            })
+            total_files += 1
+            total_words += words
+            total_actions += actions
+            
+    return tree, total_files, total_words, total_actions
 
 
 def main():
@@ -77,11 +101,22 @@ def main():
         return
 
     sitemap_entries = []
-    data = scan_directory(SOLUTIONS_DIR, sitemap_entries)
+    data, total_files, total_words, total_actions = scan_directory(SOLUTIONS_DIR, sitemap_entries)
+
+    output_data = {
+        "stats": {
+            "total_files": total_files,
+            "total_words": total_words,
+            "total_actions": total_actions
+        },
+        "name": data["name"],
+        "type": data["type"],
+        "children": data["children"]
+    }
 
     # 1. Write structure.json
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+        json.dump(output_data, f, ensure_ascii=False, indent=2)
     print(f"Structure successfully written to {OUTPUT_JSON}.")
 
     # 2. Build sitemap.xml

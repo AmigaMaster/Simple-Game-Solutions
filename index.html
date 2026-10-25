@@ -238,10 +238,15 @@
 
         function renderWelcomeScreen() {
             if (!structureData) return;
-            const fileCount = countFileObjects(structureData);
+
+            const stats = structureData.stats || { total_files: countFileObjects(structureData), total_words: 0, total_actions: 0 };
+            const fileCount = stats.total_files || countFileObjects(structureData);
+            const wordCount = stats.total_words ? stats.total_words.toLocaleString(currentLang === 'de' ? 'de-DE' : 'en-US') : '0';
+            const actionCount = stats.total_actions ? stats.total_actions.toLocaleString(currentLang === 'de' ? 'de-DE' : 'en-US') : '0';
+
             const welcomeText = currentLang === 'de'
-                ? `Wähle oben über die Suche oder links im Menü eine Lösung aus. Wir haben aktuell ${fileCount} Lösungen.`
-                : `Select a solution via search or menu. Currently we have ${fileCount} walkthroughs.`;
+                ? `Wähle oben über die Suche oder links im Menü eine Lösung aus. Aktuell umfasst die Sammlung ${fileCount} Lösungen mit insgesamt ${wordCount} Wörtern und ${actionCount} Aktionen.`
+                : `Select a solution via search or menu. Currently the collection includes ${fileCount} walkthroughs with a total of ${wordCount} words and ${actionCount} actions.`;
 
             const allFiles = [];
             function collect(node) {
@@ -256,7 +261,7 @@
 
             let listHtml = `<div class="max-w-3xl mx-auto py-8 px-4">
                 <p class="text-base sm:text-lg text-center text-gray-300 mb-8" data-i18n="welcomeMessage">${welcomeText}</p>
-                <h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-4 border-b border-gray-700 pb-2">${currentLang === 'de' ? '🔥 Die 20 neuesten Lösungen' : '🔥 20 Newest Solutions'}</h2>
+                <h2 class="text-sm font-semibold uppercase tracking-wider text-emerald-400 mb-4 border-b border-gray-700 pb-2">${currentLang === 'de' ? '🔥 Die 20 zuletzt geänderten Lösungen' : '🔥 20 most recently updated solutions'}</h2>
                 <div class="space-y-2">`;
 
             newest.forEach(file => {
