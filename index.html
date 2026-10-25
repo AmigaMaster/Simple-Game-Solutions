@@ -324,6 +324,16 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 const fileParam = urlParams.get('file');
                 const filterParam = urlParams.get('filter');
+                const searchParam = urlParams.get('search');
+
+                if (searchParam) {
+                    const searchInput = document.getElementById("searchInput");
+                    if (searchInput) {
+                        searchInput.value = searchParam;
+                        handleGlobalSearch(searchParam);
+                    }
+                }
+
                 if (fileParam) {
                     await loadFile(fileParam);
                     if (filterParam) {
@@ -345,7 +355,7 @@
                 } else {
                     renderWelcomeScreen();
                     const searchInput = document.getElementById("searchInput");
-                    if (searchInput) searchInput.focus();
+                    if (searchInput && !searchParam) searchInput.focus();
                 }
             } catch (error) {
                 console.error("Error loading structure:", error);
@@ -797,10 +807,15 @@
                 const baseUrl = window.location.href.split('?')[0].split('#')[0];
                 const filterInput = document.getElementById("contentFilterInput");
                 const filterVal = filterInput ? filterInput.value.trim() : "";
+                const searchInput = document.getElementById("searchInput");
+                const searchVal = searchInput ? searchInput.value.trim() : "";
                 
                 let cleanUrl = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}`;
                 if (filterVal) {
                     cleanUrl += `&filter=${encodeURIComponent(filterVal)}`;
+                }
+                if (searchVal) {
+                    cleanUrl += `&search=${encodeURIComponent(searchVal)}`;
                 }
                 cleanUrl += `#${headingId}`;
 
