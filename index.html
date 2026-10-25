@@ -482,6 +482,7 @@
         function handleSearchInputKeydown(e) {
             const dropdown = document.getElementById("searchDropdown");
             const items = dropdown.querySelectorAll("button.search-item");
+            const pageSize = 8;
 
             if (e.key === "ArrowDown") {
                 if (!dropdown.classList.contains("hidden") && items.length > 0) {
@@ -493,6 +494,20 @@
                 if (!dropdown.classList.contains("hidden") && items.length > 0) {
                     e.preventDefault();
                     searchSelectedIndex = Math.max(searchSelectedIndex - 1, -1);
+                    updateDropdownHighlight(items);
+                }
+            } else if (e.key === "PageDown") {
+                if (!dropdown.classList.contains("hidden") && items.length > 0) {
+                    e.preventDefault();
+                    searchSelectedIndex = searchSelectedIndex === -1 
+                        ? Math.min(pageSize - 1, items.length - 1) 
+                        : Math.min(searchSelectedIndex + pageSize, items.length - 1);
+                    updateDropdownHighlight(items);
+                }
+            } else if (e.key === "PageUp") {
+                if (!dropdown.classList.contains("hidden") && items.length > 0) {
+                    e.preventDefault();
+                    searchSelectedIndex = Math.max(searchSelectedIndex - pageSize, 0);
                     updateDropdownHighlight(items);
                 }
             } else if (e.key === "Escape") {
