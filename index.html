@@ -582,6 +582,11 @@
             handleContentFilter("");
             document.getElementById("clearContentFilterBtn").classList.add("hidden");
             
+            const viewer = document.getElementById("content-viewer");
+            if (viewer && typeof viewer.onscroll === 'function') {
+                viewer.onscroll();
+            }
+
             setTimeout(() => {
                 input.focus();
             }, 0);
@@ -827,14 +832,14 @@
 
                 const originalText = heading.textContent;
 
-                // Main area headline copy button
+                // Main section heading button
                 if (!heading.querySelector(".heading-copy-btn")) {
                     heading.classList.add("group", "relative");
                     const copyBtn = createCopyButton(heading.id, false);
                     heading.prepend(copyBtn);
                 }
 
-                // Right chapter view elements
+                // Right table of contents element
                 let indentClass = "pl-1";
                 if (heading.tagName === "H2") indentClass = "pl-2";
                 if (heading.tagName === "H3") indentClass = "pl-4";
@@ -889,7 +894,7 @@
                 const viewerRect = contentViewer.getBoundingClientRect();
                 const activeIndices = new Set();
 
-                // Paragraph visibility check
+                // Section-based visibility check
                 headings.forEach((heading, i) => {
                     const headingRect = heading.getBoundingClientRect();
                     const nextHeading = headings[i + 1];
@@ -903,7 +908,7 @@
                     }
                 });
 
-                // Fallback, if no element in viewport
+                // Fallback in case absolutely no element is in the direct range
                 if (activeIndices.size === 0) {
                     let closestIdx = 0;
                     let minDistance = Infinity;
@@ -917,7 +922,7 @@
                     activeIndices.add(closestIdx);
                 }
 
-                // Update classes for all TOC-entries
+                // Cleanly update classes for all TOC entries
                 Array.from(tocItems).forEach((item, idx) => {
                     const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
                     
@@ -928,7 +933,7 @@
                     }
                 });
 
-                // Auto-Scroll in TOC to first active element
+                // Auto-scroll in TOC to the first active element
                 const firstActiveIdx = Array.from(activeIndices)[0];
                 if (firstActiveIdx !== undefined && firstActiveIdx !== window._lastFirstActiveIdx) {
                     window._lastFirstActiveIdx = firstActiveIdx;
