@@ -60,7 +60,7 @@
         <div class="relative flex-1 max-w-xs sm:max-w-sm mx-1 sm:mx-2 flex items-center min-w-[70px] sm:min-w-[120px]">
             <input autocomplete="off"
                 class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 sm:px-3 py-1.5 pr-14 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
-                data-i18n-placeholder="searchPlaceholder" id="searchInput" oninput="handleGlobalSearch(this.value);"
+                data-i18n-placeholder="searchPlaceholder" id="searchInput" onblur="handleSearchBlur();" onfocus="handleSearchFocus();" oninput="handleGlobalSearch(this.value);"
                 onkeydown="handleSearchInputKeydown(event);" placeholder="Suchen..." type="text">
             <button
                 class="absolute right-8 text-emerald-400 hover:text-emerald-300 text-xs hidden focus:outline-none cursor-pointer"
@@ -381,6 +381,23 @@
             })
         }
 
+        let searchBlurTimeout = null;
+
+        function handleSearchFocus() {
+            if (searchBlurTimeout) clearTimeout(searchBlurTimeout);
+            const searchInput = document.getElementById("searchInput");
+            if (searchInput && searchInput.value.trim().length > 0) {
+                handleGlobalSearch(searchInput.value);
+            }
+        }
+
+        function handleSearchBlur() {
+            searchBlurTimeout = setTimeout(() => {
+                const dropdown = document.getElementById("searchDropdown");
+                if (dropdown) dropdown.classList.add("hidden");
+            }, 200);
+        }
+
         function handleGlobalSearch(query) {
             const clearBtn = document.getElementById("clearSearchBtn");
             const copyBtn = document.getElementById("copySearchBtn");
@@ -394,7 +411,10 @@
             filterTree(query);
             const dropdown = document.getElementById("searchDropdown");
             const q = query.trim();
-            if (!q || !structureData) {
+            const searchInput = document.getElementById("searchInput");
+            
+            // Only show dropdown if searchInput has focus and has query text
+            if (!q || !structureData || document.activeElement !== searchInput) {
                 dropdown.innerHTML = "";
                 dropdown.classList.add("hidden");
                 return
