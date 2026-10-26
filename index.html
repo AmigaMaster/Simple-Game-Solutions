@@ -640,6 +640,7 @@
             const copyBtn = document.getElementById("copySearchBtn");
             if (copyBtn) copyBtn.classList.add("hidden");
             filterTree("");
+            updateActiveFileInTree();
             if (window.innerWidth < 1060) {
                 closeAllOverlays()
             }
@@ -1062,7 +1063,7 @@
                 if (heading.tagName === "H7") indentClass = "pl-12";
 
                 const tocItem = document.createElement("div");
-                tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${indentClass} cursor-pointer`;
+                tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${indentClass} cursor-pointer group/toc`;
 
                 const tocTextBtn = document.createElement("button");
                 tocTextBtn.className = "flex-1 text-left bg-transparent border-none text-inherit text-xs sm:text-sm cursor-pointer break-words focus:outline-none";
@@ -1108,7 +1109,7 @@
                     if (tocItems) {
                         Array.from(tocItems).forEach((item) => {
                             const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
-                            item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer`;
+                            item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer group/toc`;
                         });
                     }
                     return;
@@ -1150,9 +1151,9 @@
                     const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
                     
                     if (activeIndices.has(idx)) {
-                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer`;
+                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer group/toc`;
                     } else {
-                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer`;
+                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer group/toc`;
                     }
                 });
 
