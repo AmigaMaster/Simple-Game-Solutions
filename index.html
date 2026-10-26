@@ -64,7 +64,10 @@
                 class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all flex items-center gap-1 shadow-lg cursor-pointer shrink-0"
                 data-i18n-title="menuToggleTitle" onclick="toggleSidebar();"><span>📁</span> <span
                     data-i18n="menuBtn">Menü</span></button>
-            <h1 class="text-sm sm:text-lg font-bold text-emerald-400 cursor-pointer hover:text-emerald-300 transition-colors" data-i18n-title="goHomeTitle" onclick="goHome();" title="Zur Startseite">🏠<span class="hidden md:inline"> Simple Game Solutions</span></h1>
+            <h1 class="text-sm sm:text-lg font-bold text-emerald-400 cursor-pointer hover:text-emerald-300 transition-colors relative inline-flex items-center" data-i18n-title="goHomeTitle" onclick="goHome();" title="Zur Startseite">
+                🏠<span class="hidden md:inline"> Simple Game Solutions</span>
+                <span id="homeUnreadBadge" class="absolute -top-2 -right-2 w-4 h-4 bg-red-500/75 text-white text-[10px] font-bold px-2 py-0.2 rounded-full flex items-center justify-center hidden shadow">0</span>
+            </h1>
         </div>
 
         <!-- Center Section: Global Search Input, Copy Link & Clear Search Buttons -->
@@ -190,7 +193,7 @@
                 <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400" data-i18n="chaptersTitle">
                     Kapitel</h2><button
                     class="text-gray-400 hover:text-white text-xs px-2 py-1 rounded bg-gray-700 cursor-pointer"
-                    data-i18n-title="close" onclick="toggleSidebar();">✕</button>
+                    data-i18n-title="close" onclick="toggleToc();">✕</button>
             </div>
             <div class="space-y-1 text-sm flex-1 overflow-y-auto pr-1" id="toc-container">
                 <p class="text-gray-500 italic text-xs" data-i18n="noFileLoaded">Keine Datei geladen.</p>
@@ -234,7 +237,8 @@
                 copySearchLinkTitle: "Suche-Link kopieren",
                 copyFileLinkTitle: "Lösungs-Link kopieren",
                 fontZoomTitle: "Schriftgröße anpassen",
-                fontSizeLabel: "Schriftgröße"
+                fontSizeLabel: "Schriftgröße",
+                markAllRead: "Alle als gelesen markieren"
             },
             en: {
                 menuBtn: "Menu",
@@ -262,7 +266,8 @@
                 copySearchLinkTitle: "Copy search link",
                 copyFileLinkTitle: "Copy solution link",
                 fontZoomTitle: "Adjust font size",
-                fontSizeLabel: "Font size"
+                fontSizeLabel: "Font size",
+                markAllRead: "Mark all as read"
             }
         };
 
@@ -383,6 +388,91 @@
                 recent = recent.slice(0, 20);
             }
             localStorage.setItem("sgs_recent_files", JSON.stringify(recent));
+
+            markFileAsRead(filePath);
+        }
+
+        function markFileAsRead(filePath) {
+            let readPaths = [];
+            try {
+                readPaths = JSON.parse(localStorage.getItem("sgs_read_modified_files") || "[]");
+            } catch (e) {
+                readPaths = [];
+            }
+            if (!readPaths.includes(filePath)) {
+                readPaths.push(filePath);
+                localStorage.setItem("sgs_read_modified_files", JSON.stringify(readPaths));
+            }
+            updateHomeBadge();
+        }
+
+        function markAllAsRead() {
+            if (!structureData) return;
+            const allFiles = [];
+            function collect(node) {
+                if (!node) return;
+                if (node.type === 'file') allFiles.push(node);
+                else if (node.type === 'directory' && node.children) node.children.forEach(collect);
+            }
+            collect(structureData);
+            allFiles.sort((a, b) => new Date(b.last_modified) - new Date(a.last_modified));
+            const newest = allFiles.slice(0, 20);
+
+            let readPaths = [];
+            try {
+                readPaths = JSON.parse(localStorage.getItem("sgs_read_modified_files") || "[]");
+            } catch (e) {
+                readPaths = [];
+            }
+
+            newest.forEach(file => {
+                if (!readPaths.includes(file.path)) {
+                    readPaths.push(file.path);
+                }
+            });
+            localStorage.setItem("sgs_read_modified_files", JSON.stringify(readPaths));
+            renderWelcomeScreen('modified');
+            updateHomeBadge();
+        }
+
+        function getUnreadModifiedCount() {
+            if (!structureData) return 0;
+            const allFiles = [];
+            function collect(node) {
+                if (!node) return;
+                if (node.type === 'file') allFiles.push(node);
+                else if (node.type === 'directory' && node.children) node.children.forEach(collect);
+            }
+            collect(structureData);
+            allFiles.sort((a, b) => new Date(b.last_modified) - new Date(a.last_modified));
+            const newest = allFiles.slice(0, 20);
+
+            let readPaths = [];
+            try {
+                readPaths = JSON.parse(localStorage.getItem("sgs_read_modified_files") || "[]");
+            } catch (e) {
+                readPaths = [];
+            }
+
+            let unreadCount = 0;
+            newest.forEach(file => {
+                if (!readPaths.includes(file.path)) {
+                    unreadCount++;
+                }
+            });
+            return unreadCount;
+        }
+
+        function updateHomeBadge() {
+            const badge = document.getElementById("homeUnreadBadge");
+            if (!badge) return;
+            const count = getUnreadModifiedCount();
+            if (count > 0) {
+                badge.textContent = count;
+                badge.classList.remove("hidden");
+            } else {
+                badge.classList.add("hidden");
+            }
         }
 
         // Count total file objects inside directory structure JSON
@@ -431,16 +521,24 @@
             let listHtml = `<div class="max-w-3xl mx-auto py-8 px-4">
                 <p class="text-base sm:text-lg text-center text-gray-300 mb-6" data-i18n="welcomeMessage">${welcomeText}</p>
                 
-                <!-- Welcome Screen Tab Navigation -->
-                <div class="flex justify-center gap-2 mb-6 border-b border-gray-700 pb-2">
-                    <button onclick="renderWelcomeScreen('modified')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${tab === 'modified' ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}">
-                        ${currentLang === 'de' ? '🔥 Zuletzt geändert' : '🔥 Recently Modified'}
-                    </button>
-                    <button onclick="renderWelcomeScreen('used')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${tab === 'used' ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}">
-                        ${currentLang === 'de' ? '⏱️ Zuletzt genutzt' : '⏱️ Recently Used'}
-                    </button>
-                </div>
-                <div class="space-y-2">`;
+                <!-- Welcome Screen Tab Navigation & Actions -->
+                <div class="flex flex-col sm:flex-row justify-between items-center gap-3 mb-6 border-b border-gray-700 pb-3">
+                    <div class="flex gap-2">
+                        <button onclick="renderWelcomeScreen('modified')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${tab === 'modified' ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}">
+                            ${currentLang === 'de' ? '🔥 Zuletzt geändert' : '🔥 Recently Modified'}
+                        </button>
+                        <button onclick="renderWelcomeScreen('used')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${tab === 'used' ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}">
+                            ${currentLang === 'de' ? '⏱️ Zuletzt genutzt' : '⏱️ Recently Used'}
+                        </button>
+                    </div>`;
+
+            if (tab === 'modified') {
+                listHtml += `<button onclick="markAllAsRead()" class="bg-gray-800 hover:bg-gray-700 text-emerald-400 border border-emerald-600/50 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors cursor-pointer flex items-center gap-1.5 shadow-sm">
+                    <span>✓</span> <span data-i18n="markAllRead">${translations[currentLang].markAllRead}</span>
+                </button>`;
+            }
+
+            listHtml += `</div><div class="space-y-2">`;
 
             if (tab === 'modified') {
                 const allFiles = [];
@@ -454,13 +552,21 @@
                 allFiles.sort((a, b) => new Date(b.last_modified) - new Date(a.last_modified));
                 const newest = allFiles.slice(0, 20);
 
+                let readPaths = [];
+                try {
+                    readPaths = JSON.parse(localStorage.getItem("sgs_read_modified_files") || "[]");
+                } catch (e) {
+                    readPaths = [];
+                }
+
                 if (newest.length === 0) {
                     listHtml += `<p class="text-center text-gray-500 text-xs italic py-4">${currentLang === 'de' ? 'Keine Lösungen gefunden.' : 'No solutions found.'}</p>`;
                 } else {
                     newest.forEach(file => {
                         const dateStr = file.last_modified ? new Date(file.last_modified).toLocaleDateString(currentLang === 'de' ? 'de-DE' : 'en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '';
-                        listHtml += `<button onclick="loadFile('${file.path}')" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border border-gray-700/60 rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
-                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${file.name}</span>
+                        const isUnread = !readPaths.includes(file.path);
+                        listHtml += `<button onclick="loadFile('${file.path}')" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border ${isUnread ? 'border-emerald-500/80 bg-emerald-950/20' : 'border-gray-700/60'} rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
+                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${file.name} ${isUnread ? '<span class="bg-emerald-500 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">NEW</span>' : ''}</span>
                             <span class="text-gray-400 text-xs shrink-0 ml-2">${dateStr}</span>
                         </button>`;
                     });
@@ -521,6 +627,7 @@
                 structureData = await response.json();
 
                 renderTree(structureData, document.getElementById("tree-container"));
+                updateHomeBadge();
 
                 const urlParams = new URLSearchParams(window.location.search);
                 const fileParam = urlParams.get('file');
