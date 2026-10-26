@@ -86,7 +86,7 @@
             id="searchDropdown"></div>
 
         <!-- Right Section: Language Selector & Table of Contents (TOC) Toggle -->
-        <div class="flex items-center gap-1.5 sm:gap-4 shrink-0">
+        <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <select
                 class="bg-gray-700 text-emerald-300 text-xs px-1.5 sm:px-2 py-1.5 rounded-md border border-gray-600 focus:outline-none cursor-pointer shrink-0"
                 id="langSelect" onchange="changeLanguage(this.value);">
@@ -136,9 +136,9 @@
                 </div>
             </div>
 
-            <!-- In-Content Filter Header Bar -->
+            <!-- In-Content Filter Header Bar & Font Size Button -->
             <div id="readingPaneHeader" class="pt-1.5 pb-1 px-1 flex items-center gap-2 border-b border-gray-700/50 shrink-0 hidden">
-                <div class="relative w-full">
+                <div class="relative flex-1">
                     <input autocomplete="off"
                         class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
                         data-i18n-placeholder="filterPlaceholder" id="contentFilterInput" oninput="handleContentFilter(this.value);"
@@ -146,6 +146,24 @@
                         placeholder="Inhalt filtern..." type="text">
                     <button class="absolute right-2.5 top-2.5 text-gray-400 hover:text-white text-xs hidden focus:outline-none cursor-pointer"
                         id="clearContentFilterBtn" onclick="clearContentFilter();" title="Filter löschen">✕</button>
+                </div>
+
+                <!-- Font Size Button & Dropdown Menu inside Header -->
+                <div class="relative shrink-0" id="fontOverlayContainer">
+                    <button onclick="toggleFontMenu();" class="bg-gray-950 hover:bg-gray-700 text-emerald-400 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-bold cursor-pointer flex items-center justify-center transition-colors shadow-sm" data-i18n-title="fontZoomTitle" title="Schriftgröße anpassen">
+                        Aa
+                    </button>
+                    <div id="fontMenuDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-2 hidden flex flex-col gap-1 min-w-[130px] z-50">
+                        <div class="text-[10px] uppercase tracking-wider text-gray-400 px-2 py-0.5 border-b border-gray-700 mb-1" data-i18n="fontSizeLabel">Schriftgröße</div>
+                        <button onclick="setZoom(80);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">80%</button>
+                        <button onclick="setZoom(90);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">90%</button>
+                        <button onclick="setZoom(100);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer font-bold text-emerald-400">100% (Standard)</button>
+                        <button onclick="setZoom(110);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">110%</button>
+                        <button onclick="setZoom(120);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">120%</button>
+                        <button onclick="setZoom(130);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">130%</button>
+                        <button onclick="setZoom(140);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">140%</button>
+                        <button onclick="setZoom(150);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">150%</button>
+                    </div>
                 </div>
             </div>
 
@@ -212,7 +230,10 @@
                 filterPlaceholder: "Inhalt filtern (z.B. Tür UND/ODER Schlüssel)...",
                 noResults: "Keine Treffer gefunden.",
                 linkCopied: "Link kopiert",
-                copySearchLinkTitle: "Suche-Link kopieren"
+                copySearchLinkTitle: "Suche-Link kopieren",
+                copyFileLinkTitle: "Lösungs-Link kopieren",
+                fontZoomTitle: "Schriftgröße anpassen",
+                fontSizeLabel: "Schriftgröße"
             },
             en: {
                 menuBtn: "Menu",
@@ -236,12 +257,17 @@
                 filterPlaceholder: "Filter content (e.g. door AND/OR key)...",
                 noResults: "No matching files found.",
                 linkCopied: "Link copied",
-                copySearchLinkTitle: "Copy search link"
+                copySearchLinkTitle: "Copy search link",
+                copyFileLinkTitle: "Copy solution link",
+                fontZoomTitle: "Adjust font size",
+                fontSizeLabel: "Font size"
             }
         };
 
         // Detect and initialize browser language setting
         function getBrowserLanguage() {
+            const savedLang = localStorage.getItem("sgs_lang");
+            if (savedLang) return savedLang;
             const browserLang = navigator.language || navigator.userLanguage;
             if (browserLang && browserLang.startsWith("en")) {
                 return "en"
@@ -254,6 +280,7 @@
         // Apply selected language translations across UI elements
         function setLanguage(lang) {
             currentLang = lang;
+            localStorage.setItem("sgs_lang", lang);
             document.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
                 if (translations[currentLang][key]) {
@@ -280,6 +307,54 @@
         function changeLanguage(lang) {
             setLanguage(lang);
             handleGlobalSearch(document.getElementById("searchInput").value)
+        }
+
+        // --- FONT ZOOM LOGIC (MATHEMATICAL PERCENTAGE SCALING) ---
+        function toggleFontMenu() {
+            const dropdown = document.getElementById("fontMenuDropdown");
+            if (dropdown) dropdown.classList.toggle("hidden");
+        }
+
+        window.addEventListener("click", e => {
+            const container = document.getElementById("fontOverlayContainer");
+            const dropdown = document.getElementById("fontMenuDropdown");
+            if (container && dropdown && !container.contains(e.target)) {
+                dropdown.classList.add("hidden");
+            }
+        });
+
+        function initZoom() {
+            const saved = localStorage.getItem("sgs_font_scale") || "100";
+            setZoom(parseInt(saved, 10), false);
+        }
+
+        function setZoom(percent, save = true) {
+            if (save) {
+                localStorage.setItem("sgs_font_scale", percent);
+            }
+            
+            // Scaled elements: Tree, Viewer, and TOC
+            const zoomVal = percent + "%";
+            const tree = document.getElementById("tree-container");
+            const viewer = document.getElementById("content-viewer");
+            const toc = document.getElementById("toc-container");
+
+            [tree, viewer, toc].forEach(el => {
+                if (el) {
+                    el.style.zoom = zoomVal;
+                }
+            });
+
+            document.querySelectorAll(".font-zoom-btn").forEach(btn => {
+                if (btn.textContent.includes(`${percent}%`)) {
+                    btn.classList.add("bg-emerald-900/60", "text-emerald-300", "font-bold");
+                } else {
+                    btn.classList.remove("bg-emerald-900/60", "text-emerald-300", "font-bold");
+                }
+            });
+
+            const dropdown = document.getElementById("fontMenuDropdown");
+            if (dropdown) dropdown.classList.add("hidden");
         }
 
         // --- SECTION 2: GLOBAL STATE VARIABLES ---
@@ -355,6 +430,7 @@
         // Reset application state back to home/welcome view
         function goHome() {
             currentFilePath = null;
+            localStorage.removeItem("sgs_last_file");
             if (history.pushState) {
                 history.pushState({}, '', window.location.pathname);
             }
@@ -371,6 +447,7 @@
         // --- SECTION 4: APPLICATION INITIALIZATION (BOOTSTRAP) ---
         async function init() {
             setLanguage(currentLang);
+            initZoom();
             try {
                 const response = await fetch("structure.json");
                 structureData = await response.json();
@@ -381,6 +458,7 @@
                 const fileParam = urlParams.get('file');
                 const filterParam = urlParams.get('filter');
                 const searchParam = urlParams.get('search');
+                const lastFile = localStorage.getItem("sgs_last_file");
 
                 if (searchParam) {
                     const searchInput = document.getElementById("searchInput");
@@ -408,6 +486,8 @@
                             }
                         }, 300);
                     }
+                } else if (lastFile) {
+                    await loadFile(lastFile);
                 } else {
                     renderWelcomeScreen();
                     const searchInput = document.getElementById("searchInput");
@@ -798,6 +878,7 @@
         // --- SECTION 7: FILE & MARKDOWN CONTENT LOADING ---
         async function loadFile(filePath) {
             currentFilePath = filePath;
+            localStorage.setItem("sgs_last_file", filePath);
             updateActiveFileInTree();
 
             const viewer = document.getElementById("content-viewer");
@@ -858,6 +939,59 @@
         }
 
         // --- SECTION 8: DIRECTORY TREE MENU RENDERING ---
+        function createFileTreeCopyButton(filePath) {
+            const copyBtn = document.createElement("button");
+            copyBtn.className = `file-copy-btn inline-flex items-center ml-2 opacity-70 sm:opacity-0 sm:group-hover/tree:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative shrink-0`;
+            copyBtn.title = translations[currentLang].copyFileLinkTitle || "Lösungs-Link kopieren";
+
+            const iconSpan = document.createElement("span");
+            iconSpan.className = "inline-block w-6 text-center";
+            iconSpan.textContent = "🔗";
+
+            const popupSpan = document.createElement("span");
+            popupSpan.className = "absolute right-full mr-2 px-2 py-0.5 bg-gray-800 text-emerald-300 text-xs rounded shadow-lg whitespace-nowrap opacity-0 pointer-events-none border border-gray-700 z-50";
+            popupSpan.textContent = translations[currentLang].linkCopied;
+
+            copyBtn.appendChild(iconSpan);
+            copyBtn.appendChild(popupSpan);
+
+            let copyTimeout = null;
+
+            copyBtn.onclick = (e) => {
+                e.stopPropagation();
+                const baseUrl = window.location.href.split('?')[0].split('#')[0];
+                let cleanUrl = `${baseUrl}?file=${encodeURIComponent(filePath)}`;
+
+                navigator.clipboard.writeText(cleanUrl).then(() => {
+                    iconSpan.textContent = "✓";
+                    popupSpan.textContent = translations[currentLang].linkCopied;
+
+                    copyBtn.style.transition = 'none';
+                    popupSpan.style.transition = 'none';
+                    copyBtn.style.opacity = "1";
+                    popupSpan.style.opacity = "1";
+
+                    void popupSpan.offsetWidth;
+
+                    if (copyTimeout) clearTimeout(copyTimeout);
+                    copyTimeout = setTimeout(() => {
+                        copyBtn.style.transition = 'opacity 500ms ease';
+                        popupSpan.style.transition = 'opacity 500ms ease';
+                        popupSpan.style.opacity = "0";
+                        copyBtn.style.opacity = "0";
+
+                        setTimeout(() => {
+                            iconSpan.textContent = "🔗";
+                            copyBtn.style.opacity = "";
+                            copyBtn.style.transition = "";
+                            popupSpan.style.transition = "";
+                        }, 500);
+                    }, 1500);
+                });
+            };
+            return copyBtn;
+        }
+
         function renderTree(node, container, filterQuery = "") {
             container.innerHTML = "";
             const query = filterQuery.trim();
@@ -899,7 +1033,7 @@
                     details.className = "ml-1 my-1";
                     details.open = query !== "";
                     const summary = document.createElement("summary");
-                    summary.className = "cursor-pointer font-medium text-emerald-300 hover:text-emerald-200 py-1 px-2 rounded hover:bg-gray-700/50 select-none text-xs sm:text-sm break-words";
+                    summary.className = "cursor-pointer font-medium text-emerald-300 hover:text-emerald-200 py-1 px-2 rounded hover:bg-gray-700/50 select-none break-words";
                     summary.textContent = `📁 ${item.name}`;
                     details.appendChild(summary);
                     const childrenContainer = document.createElement("div");
@@ -910,11 +1044,14 @@
                     parentEl.appendChild(details)
                 } else if (item.type === "file") {
                     const isActive = (item.path === currentFilePath);
+                    const fileRow = document.createElement("div");
+                    fileRow.dataset.filepath = item.path;
+                    fileRow.className = isActive 
+                        ? "flex items-center justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors break-words group/tree"
+                        : "flex items-center justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words group/tree";
+
                     const fileLink = document.createElement("button");
-                    fileLink.dataset.filepath = item.path;
-                    fileLink.className = isActive 
-                        ? "block w-full text-left py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors text-xs sm:text-sm break-words cursor-pointer"
-                        : "block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words cursor-pointer";
+                    fileLink.className = "flex-1 text-left bg-transparent border-none text-inherit cursor-pointer break-words focus:outline-none";
                     fileLink.textContent = `📄 ${item.name}`;
                     fileLink.onclick = () => {
                         loadFile(item.path);
@@ -922,7 +1059,12 @@
                             closeAllOverlays()
                         }
                     };
-                    parentEl.appendChild(fileLink)
+
+                    const copyBtn = createFileTreeCopyButton(item.path);
+
+                    fileRow.appendChild(fileLink);
+                    fileRow.appendChild(copyBtn);
+                    parentEl.appendChild(fileRow);
                 }
             }
             if (displayNode.children) {
@@ -940,26 +1082,26 @@
             const container = document.getElementById("tree-container");
             if (!container) return;
 
-            let targetBtn = null;
+            let targetRow = null;
 
-            container.querySelectorAll("button[data-filepath]").forEach(btn => {
-                const isActive = (btn.dataset.filepath === currentFilePath);
+            container.querySelectorAll("div[data-filepath]").forEach(row => {
+                const isActive = (row.dataset.filepath === currentFilePath);
                 if (isActive) {
-                    btn.className = "block w-full text-left py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors text-xs sm:text-sm break-words cursor-pointer";
-                    targetBtn = btn;
+                    row.className = "flex items-center justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors break-words group/tree";
+                    targetRow = row;
                 } else {
-                    btn.className = "block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words cursor-pointer";
+                    row.className = "flex items-center justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words group/tree";
                 }
             });
 
-            if (targetBtn) {
-                let parentDetails = targetBtn.closest("details");
+            if (targetRow) {
+                let parentDetails = targetRow.closest("details");
                 while (parentDetails) {
                     parentDetails.open = true;
                     parentDetails = parentDetails.parentElement ? parentDetails.parentElement.closest("details") : null;
                 }
                 setTimeout(() => {
-                    targetBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                    targetRow.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
                 }, 50);
             }
         }
@@ -1063,10 +1205,10 @@
                 if (heading.tagName === "H7") indentClass = "pl-12";
 
                 const tocItem = document.createElement("div");
-                tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${indentClass} cursor-pointer group/toc`;
+                tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words ${indentClass} cursor-pointer group/toc`;
 
                 const tocTextBtn = document.createElement("button");
-                tocTextBtn.className = "flex-1 text-left bg-transparent border-none text-inherit text-xs sm:text-sm cursor-pointer break-words focus:outline-none";
+                tocTextBtn.className = "flex-1 text-left bg-transparent border-none text-inherit cursor-pointer break-words focus:outline-none";
                 tocTextBtn.textContent = originalText;
                 tocTextBtn.dataset.targetId = heading.id;
                 tocTextBtn.onclick = () => {
@@ -1109,7 +1251,7 @@
                     if (tocItems) {
                         Array.from(tocItems).forEach((item) => {
                             const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
-                            item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer group/toc`;
+                            item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words ${baseIndentClass} cursor-pointer group/toc`;
                         });
                     }
                     return;
@@ -1151,9 +1293,9 @@
                     const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
                     
                     if (activeIndices.has(idx)) {
-                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer group/toc`;
+                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors break-words ${baseIndentClass} cursor-pointer group/toc`;
                     } else {
-                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer group/toc`;
+                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words ${baseIndentClass} cursor-pointer group/toc`;
                     }
                 });
 
