@@ -64,7 +64,7 @@
                 class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all flex items-center gap-1 shadow-lg cursor-pointer shrink-0"
                 data-i18n-title="menuToggleTitle" onclick="toggleSidebar();"><span>📁</span> <span
                     data-i18n="menuBtn">Menü</span></button>
-            <h1 class="text-sm sm:text-lg font-bold text-emerald-400 cursor-pointer hover:text-emerald-300 transition-colors" onclick="goHome();" title="Zur Startseite">🎮<span class="hidden md:inline"> Simple Game Solutions</span></h1>
+            <h1 class="text-sm sm:text-lg font-bold text-emerald-400 cursor-pointer hover:text-emerald-300 transition-colors" data-i18n-title="goHomeTitle" onclick="goHome();" title="Zur Startseite">🏠<span class="hidden md:inline"> Simple Game Solutions</span></h1>
         </div>
 
         <!-- Center Section: Global Search Input, Copy Link & Clear Search Buttons -->
@@ -190,7 +190,7 @@
                 <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400" data-i18n="chaptersTitle">
                     Kapitel</h2><button
                     class="text-gray-400 hover:text-white text-xs px-2 py-1 rounded bg-gray-700 cursor-pointer"
-                    data-i18n-title="close" onclick="toggleToc();">✕</button>
+                    data-i18n-title="close" onclick="toggleSidebar();">✕</button>
             </div>
             <div class="space-y-1 text-sm flex-1 overflow-y-auto pr-1" id="toc-container">
                 <p class="text-gray-500 italic text-xs" data-i18n="noFileLoaded">Keine Datei geladen.</p>
@@ -211,6 +211,7 @@
             de: {
                 menuBtn: "Menü",
                 menuToggleTitle: "Verzeichnisse ein-/ausblenden",
+                goHomeTitle: "Zur Startseite",
                 subtitle: "Automatische Dokumentation",
                 tocBtn: "Inhalt",
                 tocToggleTitle: "Inhaltsverzeichnis ein-/ausblenden",
@@ -238,6 +239,7 @@
             en: {
                 menuBtn: "Menu",
                 menuToggleTitle: "Toggle directories",
+                goHomeTitle: "Go to home page",
                 subtitle: "Automatic Documentation",
                 tocBtn: "Content",
                 tocToggleTitle: "Toggle table of contents",
