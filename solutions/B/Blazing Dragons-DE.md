@@ -1,8 +1,9 @@
 # Blazing Dragons - Walkthrough
 
-| Version | Datum      | Autor                                     |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 27.01.2024 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Datum      | Autor
+|:-------:|------------|-------------------------------------------
+|   1.01  | 08.10.2026 | Amiga Master (AmigaMaster-NG@t-online.de)
+|   1.0   | 27.01.2024 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 ## 1. Burg
 
@@ -31,55 +32,66 @@
 
 ### 1.3. Saal
 
-- BETRETE rechten Durchgang
+- VERLASSE durch rechten Durchgang
 
 ### 1.4. Flur vor den Gemächern
+
+- BETRETE linkes Zimmer
 
 #### 1.4.1. König Feuer und Flamme's Schlafgemach
 
 - NIMM Pfeifenreiniger (`Pfeifenreiniger`)
 - NIMM Monatsausgabe für Monarchisten (`Monatsausgabe für Monarchisten`)
+- VERLASSE das Zimmer
 
-#### 1.4.2. Prinzessin Flammes Zimmer
+### 1.5. Flur vor den Gemächern
+
+- BETRETE rechtes Zimmer
+
+#### 1.5.1. Prinzessin Flammes Zimmer
 
 - NIMM Haarwuchsmittel vom Kamin (`Haarwuchsmittel`)
 - REDE MIT Flamme
 - BENUTZE `Glas` mit Flamme (`Kuss im Glas`)
 - VERLASSE Zimmer
 
-### 1.5. Saal
+### 1.6. Flur vor den Gemächern
 
-- BETRETE nordöstlichen Durchgang
+- VERLASSE durch den Gang nach Norden
 
-### 1.6. Vorderer Eingangsbereich
+### 1.7. Saal
+
+- VERLASSE durch nordöstlichen Durchgang
+
+### 1.8. Vorderer Eingangsbereich
 
 - REDE MIT Kioskbetreiber (`Zauberkarte`)
 - VERLASSE Burg durch nördliche Tür
-- Reise zur Irrenanstalt im Südwesten
+- Reise zur Irrenanstalt im Südwesten (Der Ort mit dem Schild)
 
 ## 2. Vor der Irrenanstalt
 
-- NIMM Zauberbohne links unten vom Boden (`Zauberbohne`)
+- NIMM eine Zauberbohne (links unten vom Boden) (`Zauberbohne`)
 - BENUTZE `Haarwuchsmittel` mit Rapunzel
 - NIMM Haare (`Haare`)
 - REDE MIT Rapunzel (`Schere`)
-- Verlasse die Irrenanstalt und betrete den Garten im Westen
+- VERLASSE Richtung Süden und reise zum Garten im Westen (hinter der Burg)
 
 ## 3. Garten
 
 - BENUTZE `Zauberbohne` mit Gartenerde (`Kohle`)
-- Verlasse den Garten und betrete den Dorfplatz im Süden
+- VERLASSE nach Südwesten und betrete den Dorfplatz im Süden
 
 ## 4. Dorf
 
 ### 4.1. Dorfplatz
 
-- GEHE durch den Torbogen im Westen
+- VERLASSE durch den Torbogen im Westen
 
 ### 4.2. Vor dem Turnierplatz
 
 - BENUTZE `Pfeifenreiniger` mit Termiten (`Pfeifenreiniger mit Termiten`)
-- GEHE nach Westen
+- VERLASSE nach Osten
 
 ### 4.3. Übungsplatz
 
@@ -88,6 +100,7 @@
   - Ziele in der unteren Reihe einfach mit kurzem Klick treffen
   - Ziele in der oberen Reihe: Den Knopf kurz gedrückt halten, so dass das Katzapult zwei mal einrastet
   - Ziele oben auf dem Turm: Den Knopf gedrückt halten, bis das Katzapult drei mal einrastet
+  - Für das letzte Ziel ganz oben in der Mitte, das Katapult komplett spannen
 - NIMM Katze (`Katze`)
 
 ## 5. Vor der Irrenanstalt
@@ -99,12 +112,12 @@
 - BENUTZE `Pfeifenreiniger` mit Rattenfänger (`Schleife`)
 - BENUTZE `Kuss im Glas` mit nacktem Mann
 - NIMM Frosch (`Frosch`)
-- Verlasse die Irrenanstalt und reise nach Nordwesten zum
+- VERLASSE die Irrenanstalt und reise nach Nordwesten zum Tümpel
 
 ## 6. Tümpel
 
 - BENUTZE `Frosch` mit gelbem Frosch (`Spiegel`)
-- Verlasse den Tümpel und gehe zum neuen Ort auf der Karte
+- VERLASSE den Tümpel und gehe zum neuen Ort auf der Karte
 
 ## 7. Südlicher Waldweg
 
@@ -116,15 +129,12 @@
 ### 7.2. Auf dem Hügel
 
 - BENUTZE `Katze` mit Hund (`Waschpulver`)
-- NIMM Knochen (`Knochen`)
 
 ### 7.3. Flur vor den Gemächern
 
 #### 7.3.1. Prinzessin Flammes Zimmer
 
 - BENUTZE `Haare` mit Fenster
-- NIMM Koffer (`Koffer`)
-- NIMM Laken (`Laken`)
 
 ### 7.4. Vorderer Eingangsbereich
 
@@ -133,23 +143,24 @@
 #### 7.4.1. Gemach des Kanzlers
 
 - NIMM Cracker (`Cracker`)
-- NIMM Stempel  (`Dodo Stempel`, `Adler Stempel`)
+- NIMM Stempel (`Dodo Stempel`, `Adler Stempel`)
 - SCHAU AN Buch
+- VERLASSE das Gemach
 
 ### 7.5. Flur vor den Gemächern
 
 #### 7.5.1. Prinzessin Flammes Zimmer
 
 - NIMM Koffer (`Koffer`)
-- NIMM Laken (`Laken`)
+- NIMM Laken (`Gespenster-Kostüm`)
 
 ### 7.6. Saal
 
-- VERLASSE Richtung Westen
+- VERLASSE nach Westen (Die Treppe hinauf)
 
 ### 7.7. Runder Flur
 
-- GEHE durch den Torbogen im Osten
+- BETRETE den Torbogen im Osten
 
 #### 7.7.1. Bibliothek
 
@@ -164,62 +175,71 @@
 - BENUTZE `Spiegel` mit Dreifuß
 - BENUTZE `Koffer` mit Dreifuß
 
-## 8. Dorf
+## 8. Südlicher Waldweg
 
-### 8.1. Dorfplatz
+### 8.1. Auf dem Hügel
+
+- NIMM Knochen (`Knochen`)
+
+## 9. Dorf
+
+### 9.1. Dorfplatz
 
 - BENUTZE `Mistgabel` mit Weg unten
 - NIMM Maulwurf (`Maulwurf`)
-- BENUTZE `Laken` mit Maiskolben links am Rand
+- BENUTZE `Gespenster-Kostüm` mit Maiskolben links am Rand
 - NIMM Maiskolben (`Maiskolben`)
 - REDE MIT Bäcker
 - BENUTZE `Staubwedel` mit Bäcker
 - NIMM Pizzaschieber (`Pizzaschieber`)
 
-### 8.2. Vor dem Turnierplatz
+### 9.2. Vor dem Turnierplatz
 
 - REDE MIT Arbeiter
 - BENUTZE `Maulwurf` mit Boden am rechten Schildpfosten
 - NIMM Stelzen (`Stelzen`)
-- Verlasse den Tümpel und gehe zum See in der Mitte
+  - "Eddie Asche vom Abschnitt 47 schickt mich."
+- VERLASSE das Dorf und gehe zum See in der Mitte
 
-## 9. See Ohe
+## 10. See Ohe
 
 - REDE MIT Angler
-- BENUTZE `Stelzen` mit See
+- BENUTZE `Stelzen` mit See (an der schmalen Überquerung rechts)
 - NIMM Ruder (`Ruder`)
-- NIMM Schwert aus der Waschmaschine (`Schwert`)
-- DRÜCKE roten Knopf an der Waschmaschine
+- NIMM Schwert (aus der Waschmaschine) (`Schwert`)
+- DRÜCKE roten Knopf (an der Waschmaschine) (Es muss der Schongang aktiv sein)
 - BENUTZE `Maiskolben` mit Waschmaschine (`Mais`)
+- VERLASSE nach Süden und gehe in den Wald im Osten
 
-## 10. Wald
+## 11. Wald
 
 - REDE MIT Jäger
 - SCHAU AN Bärenfalle
-  - REDE MIT Ameise
+  - SCHAU AN Ameise
+- VERLASSE nach Südwesten
 
-## 11. Burg
+## 12. Burg
 
-### 11.1. Runder Flur
+### 12.1. Runder Flur
 
-#### 11.1.1. Bibliothek
+#### 12.1.1. Bibliothek
 
 - BENUTZE `Dodo Stempel` mit Plakat
-- Folge dem Dodo nach Osten
+- VERLASSE die Burg und folge dem Dodo auf der Karte
 
-## 12. Stadt im Osten
+## 13. Stadt im Osten
 
-### 12.1. Weggabelung
+### 13.1. Weggabelung
 
 - REDE MIT Bauern
 - BENUTZE `Kohle` mit Puppe
-- REDE MIT Cricketspieler
 - NIMM Ruder (`Ruder`)
 - NIMM Maske (`Sir George Maske`)
+- REDE MIT Cricketspieler
 - BENUTZE `Sir George Maske` mit Mistwagen unten links (`stinkende Sir George Maske`)
 - BETRETE Saftbar auf der rechten Seite
 
-#### 12.1.1. Saftbar
+#### 13.1.1. Saftbar
 
 - REDE MIT Mönche
 - REDE MIT Mann am Tisch
@@ -227,157 +247,162 @@
 - REDE MIT Mann am Tisch (Es geht ums Tanzen)
   - Tastenbelegung in ScummVM für die Playstationversion:
     ```
-      o     p
-         w
-      a     d
-         s
+      o   p
+        w
+      a   d
+        s
     ```
 - NIMM Comics (`Comics`)
 - VERLASSE das Gasthaus
 
-### 12.2. Weggabelung
+### 13.2. Weggabelung
 
 - REDE MIT Cricketspieler
 - BENUTZE `Cracker` mit Cricketspieler
 
-#### 12.2.1. Saftbar
+#### 13.2.1. Saftbar
 
 - NIMM Backpflaumen (`Backpflaumen`)
 - BENUTZE `Backpflaumen` mit `Comics` (`Eingepackte Backpflaumen`)
 - BENUTZE `Eingepackte Backpflaumen` mit `Schleife` (`Obst-Geschenkpackung`)
 - BENUTZE violettfarbene Gläser der Mönche **4 Mal**
 
-### 12.3. Weggabelung
+### 13.3. Weggabelung
 
 - VERLASSE Richtung Norden
 
-### 12.4. Eingang zu Sir Georges Burg
+### 13.4. Eingang zu Sir Georges Burg
 
-- BENUTZE Klingel
+- BENUTZE Klingel **2 mal**
 - BENUTZE `Obst-Geschenkpackung` mit Wache
 - BENUTZE `Salatbesteck` mit Zitteraal (`Zitteraal`)
+- VERLASSE nach Süden, Südosten
 
-## 13. See Ohe
+## 14. See Ohe
 
 - BENUTZE `Zitteraal` mit Angler
 
-## 14. Stadt im Osten
+## 15. Stadt im Osten
 
-### 14.1. Eingang zu Sir Georges Burg
+### 15.1. Eingang zu Sir Georges Burg
 
 - BETRETE den Eingang hinten rechts
 
-### 14.2. Hinterhof
+### 15.2. Hinterhof
 
 - BETRETE den linken Eingang
 
-#### 14.2.1. Klo
+#### 15.2.1. Klo
 
 - BENUTZE `stinkende Sir George Maske` mit Kammerdiener (`Rost-Fort`)
+- VERLASSE nach Osten
 
-### 14.3. Hinterhof
+### 15.3. Hinterhof
 
 - BETRETE den rechten Eingang
 
-### 14.4. Innenhof
+### 15.4. Innenhof
 
 - BENUTZE Drehrad (um das Tor zu senken)
 - BETRETE die Wendeltreppe
 
-#### 14.4.1. Mervins Labor
+#### 15.4.1. Mervins Labor
 
 - NIMM Papier vom Tisch (`Code`)
 - REDE MIT Mervin
+- VERLASSE nach oben
 
-### 14.5. Innenhof
+### 15.5. Innenhof
 
 - BENUTZE `Code` mit rechter Wache
 
-#### 14.5.1. Mervins Labor
+#### 15.5.1. Mervins Labor
 
 - BENUTZE `Knochen` mit Gefängniszelle
 
-## 15. Wald
+## 16. Wald
 
 - BENUTZE `Rost-Fort` mit Bärenfalle (`Trillerpfeife`)
 - GEHE zum neuen Ort auf der Karte
 
-## 16. Drachenfalle
+## 17. Drachenfalle
 
 - REDE MIT Ritter
+- VERLASSE nach Westen
 
-## 17. Minen
+## 18. Minen
 
+- NIMM weißes Pulver (`Ammoniumnitratpulver`)
 - BENUTZE `Monatsausgabe für Monarchisten` mit Vogel
 - NIMM Spitzhacke (`Spitzhacke`)
 - NIMM Treibstoffbehälter (`Treibstoffbehälter`)
-- NIMM weißes Pulver (`Ammoniumnitratpulver`)
+- VERLASSE nach Osten
 
-## 18. Drachenfalle
+## 19. Drachenfalle
 
-- BENUTZE Bodenluke
+- BETRETE Bodenluke
 
-### 18.1. Unter der Falle
+### 19.1. Unter der Falle
 
-- BENUTZE Antrieb
+- BENUTZE Drehkreuz
   - BENUTZE obere Holzabdeckung
   - BENUTZE `Spitzhacke` mit Splint (`Splint`)
 
-## 19. Stadt im Osten
+## 20. Stadt im Osten
 
-### 19.1. Weggabelung
+### 20.1. Weggabelung
 
-#### 19.1.1. Saftbar
+#### 20.1.1. Saftbar
 
 - BENUTZE `Splint` mit Cricketspieler (`Cricketschläger`)
 
-## 20. Drachenfalle
+## 21. Drachenfalle
 
 - BENUTZE `Cricketschläger` mit einem der Ritter
-- Nach der Cutscene über die Karte zum Wasserfall gehen
 
-## 21. Wasserfall
+## 22. Wasserfall
 
-- Gehe nach links oben
+- VERLASSE nach Westen (nach oben)
 
-### 21.1. Dilemma-Höhle
+### 22.1. Dilemma-Höhle
 
 1. Geschicklichkeitstest
-   - BENUTZE `Schere` mit Stachelschwein **3 Mal**
-   - BENUTZE Stachelschwein **3 Mal**
+   - BENUTZE `Schere` mit Stachelschwein
+   - BENUTZE **alle drei** Stachelschweine
 2. Stärketest
    - BENUTZE `Trillerpfeife` mit Felsen
 3. Koordinationstest
-   - Mit der linken Maustaste oder X auf dem Playstation Controller zur korrekten Zeit mit den Augen blinzeln.
-   - Den richtigen Hut auswählen. **HINWEIS:** In ScummVM immer unten rechts?
+   - Mit der linken Maustaste oder X auf dem Playstation Controller zur korrekten Zeit mit den Augen blinzeln
+   - Den Bewegungen der Hüte folgen
+   - Den richtigen Hut auswählen
 4. Gruseliger Test
    - BENUTZE `Ammoniumnitratpulver` mit grüner Wolke
    - BENUTZE `Waschpulver` mit Wäschemonster (`Diamant`)
 
-## 22. Dorf
+## 23. Dorf
 
-### 22.1. Dorfplatz
+### 23.1. Dorfplatz
 
-### 22.2. Vor dem Turnierplatz
+### 23.2. Vor dem Turnierplatz
 
 - VERLASSE Richtung Norden
 
-### 22.3. Turnierplatz
+### 23.3. Turnierplatz
 
-- Gewinne das Daumenhakeln.
-  - L1+L2+R1+R2+X drücken, wenn Ihr den Daumen habt oder gepackt werdet.
+- Gewinne das Daumenhakeln
+  - L1+L2+R1+R2+X drücken, wenn Ihr den Daumen habt oder gepackt werdet
   - ScummVM: `Cursortasten` für links/rechts und `linke Maustaste` zum zugreifen. Dann schnell und abwechselnd `o + p` drücken
 
-### 22.4. Vor dem Turnierplatz
+### 23.4. Vor dem Turnierplatz
 
 - BENUTZE `Mais` mit `Treibstoffbehälter` (`Maisbombe`)
 
-### 22.5. Übungsplatz
+### 23.5. Übungsplatz
 
 - BENUTZE `Maisbombe` mit Katzapult
 - ZIELEN und auf den Drachen schiessen
 
-## 23. Im Drachen
+## 24. Im Drachen
 
 - Ziel ist es den Motor abzuwürgen und dann das Seil durchzuschneiden
   - BENUTZE Hebel auf der rechten Seite (Schneller und langsamer)
