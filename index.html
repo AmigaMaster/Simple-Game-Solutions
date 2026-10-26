@@ -13,8 +13,8 @@
     <meta name="theme-color" content="#10b981">
 
     <!-- External Libraries: Tailwind CSS Typography Plugin & Marked.js -->
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
     <!-- Custom Typography & Markdown Code Block Styling -->
     <style>
@@ -938,14 +938,29 @@
         function updateActiveFileInTree() {
             const container = document.getElementById("tree-container");
             if (!container) return;
+
+            let targetBtn = null;
+
             container.querySelectorAll("button[data-filepath]").forEach(btn => {
                 const isActive = (btn.dataset.filepath === currentFilePath);
                 if (isActive) {
                     btn.className = "block w-full text-left py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors text-xs sm:text-sm break-words cursor-pointer";
+                    targetBtn = btn;
                 } else {
                     btn.className = "block w-full text-left py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words cursor-pointer";
                 }
             });
+
+            if (targetBtn) {
+                let parentDetails = targetBtn.closest("details");
+                while (parentDetails) {
+                    parentDetails.open = true;
+                    parentDetails = parentDetails.parentElement ? parentDetails.parentElement.closest("details") : null;
+                }
+                setTimeout(() => {
+                    targetBtn.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }, 50);
+            }
         }
 
         // --- SECTION 9: TABLE OF CONTENTS (TOC) & SCROLL SPY ---
