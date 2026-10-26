@@ -689,6 +689,9 @@
                     el.onclick = null;
                     el.title = "";
                 });
+                if (typeof viewer.onscroll === 'function') {
+                    viewer.onscroll();
+                }
                 return;
             }
 
@@ -769,6 +772,10 @@
                     el.title = "";
                 }
             });
+
+            if (typeof viewer.onscroll === 'function') {
+                viewer.onscroll();
+            }
         }
 
         function clearContentFilter() {
@@ -1078,8 +1085,21 @@
                     scrollProgressBar.style.width = percent + "%";
                 }
 
-                const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
+                const filterInput = document.getElementById("contentFilterInput");
+                const isFiltered = filterInput && filterInput.value.trim().length > 0;
                 const tocItems = tocContainer.children;
+
+                if (isFiltered) {
+                    if (tocItems) {
+                        Array.from(tocItems).forEach((item) => {
+                            const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
+                            item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors text-xs sm:text-sm break-words ${baseIndentClass} cursor-pointer`;
+                        });
+                    }
+                    return;
+                }
+
+                const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
                 if (headings.length === 0 || tocItems.length === 0) return;
 
                 const viewerRect = contentViewer.getBoundingClientRect();
