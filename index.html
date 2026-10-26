@@ -363,6 +363,8 @@
         let rawFileContent = null;
         let searchSelectedIndex = -1;
         let searchBlurTimeout = null;
+        let isRestoringScroll = false;
+        let targetPercentToRestore = null;
 
         // Count total file objects inside directory structure JSON
         function countFileObjects(obj) {
@@ -476,15 +478,6 @@
                             filterInput.value = filterParam;
                             handleContentFilter(filterParam);
                         }
-                    }
-                    if (window.location.hash) {
-                        setTimeout(() => {
-                            const targetId = window.location.hash.substring(1);
-                            const targetEl = document.getElementById(targetId);
-                            if (targetEl) {
-                                targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
-                            }
-                        }, 300);
                     }
                 } else if (lastFile) {
                     await loadFile(lastFile);
@@ -877,6 +870,10 @@
 
         // --- SECTION 7: FILE & MARKDOWN CONTENT LOADING ---
         async function loadFile(filePath) {
+            isRestoringScroll = true;
+            const rawSavedPercent = localStorage.getItem(`sgs_scroll_percent_${filePath}`);
+            targetPercentToRestore = rawSavedPercent !== null ? parseFloat(rawSavedPercent) : null;
+
             currentFilePath = filePath;
             localStorage.setItem("sgs_last_file", filePath);
             updateActiveFileInTree();
@@ -908,7 +905,8 @@
                 rawFileContent = null;
                 if (readingHeader) readingHeader.classList.add("hidden");
                 viewer.innerHTML = `<p class="text-red-400 text-sm">${translations[currentLang].errorLoadingFile} ${filePath}</p>`;
-                tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`
+                tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`;
+                isRestoringScroll = false;
             }
         }
 
@@ -924,6 +922,39 @@
             postProcessViewer(viewer);
             generateToc(viewer, tocContainer);
             setupScrollSpy(viewer, tocContainer);
+
+            // Restore scroll position using saved percentage after DOM rendering completes
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const targetId = window.location.hash.substring(1);
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                    isRestoringScroll = false;
+                }, 150);
+            } else {
+                const applyScrollPercentage = () => {
+                    if (targetPercentToRestore !== null && !isNaN(targetPercentToRestore)) {
+                        const maxScroll = viewer.scrollHeight - viewer.clientHeight;
+                        if (maxScroll > 0) {
+                            viewer.scrollTop = (targetPercentToRestore / 100) * maxScroll;
+                        }
+                    }
+                };
+
+                // Double animation-frame pass to guarantee full height layout calculation before scroll adjustment
+                requestAnimationFrame(() => {
+                    applyScrollPercentage();
+                    requestAnimationFrame(() => {
+                        applyScrollPercentage();
+                        setTimeout(() => {
+                            applyScrollPercentage();
+                            isRestoringScroll = false;
+                        }, 100);
+                    });
+                });
+            }
         }
 
         function postProcessViewer(viewer) {
@@ -1236,10 +1267,15 @@
                 const scrollTop = contentViewer.scrollTop;
                 const scrollHeight = contentViewer.scrollHeight;
                 const clientHeight = contentViewer.clientHeight;
+                const maxScroll = scrollHeight - clientHeight;
+                const percent = maxScroll > 0 ? Math.min(100, Math.max(0, (scrollTop / maxScroll) * 100)) : 0;
+
+                // Save current scroll progress percentage to localStorage if not actively restoring
+                if (currentFilePath && !isRestoringScroll) {
+                    localStorage.setItem(`sgs_scroll_percent_${currentFilePath}`, percent.toFixed(2));
+                }
 
                 if (scrollProgressBar) {
-                    const maxScroll = scrollHeight - clientHeight;
-                    const percent = maxScroll > 0 ? Math.min(100, Math.max(0, (scrollTop / maxScroll) * 100)) : 0;
                     scrollProgressBar.style.width = percent + "%";
                 }
 
