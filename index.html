@@ -602,10 +602,10 @@
         }
 
         // Reset application state back to home/welcome view
-        function goHome() {
+        function goHome(isHistoryNav = false) {
             currentFilePath = null;
             localStorage.removeItem("sgs_last_file");
-            if (history.pushState) {
+            if (!isHistoryNav && history.pushState) {
                 history.pushState({}, '', window.location.pathname);
             }
             renderWelcomeScreen();
@@ -644,7 +644,7 @@
                 }
 
                 if (fileParam) {
-                    await loadFile(fileParam);
+                    await loadFile(fileParam, false, true);
                     if (filterParam) {
                         const filterInput = document.getElementById("contentFilterInput");
                         if (filterInput) {
@@ -664,6 +664,40 @@
                 document.getElementById("tree-container").innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].errorLoadingStruct}</p>`
             }
         }
+
+        // Handle Browser Forward / Back Navigation
+        window.addEventListener('popstate', (e) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const fileParam = urlParams.get('file');
+            const filterParam = urlParams.get('filter');
+            const searchParam = urlParams.get('search');
+
+            if (searchParam) {
+                const searchInput = document.getElementById("searchInput");
+                if (searchInput) {
+                    searchInput.value = searchParam;
+                    handleGlobalSearch(searchParam);
+                }
+            } else {
+                const searchInput = document.getElementById("searchInput");
+                if (searchInput && searchInput.value) {
+                    clearSearch();
+                }
+            }
+
+            if (fileParam) {
+                loadFile(fileParam, false, true);
+                if (filterParam) {
+                    const filterInput = document.getElementById("contentFilterInput");
+                    if (filterInput) {
+                        filterInput.value = filterParam;
+                        handleContentFilter(filterParam);
+                    }
+                }
+            } else {
+                goHome(true);
+            }
+        });
 
         // --- SECTION 5: GLOBAL SEARCH SYSTEM & DROPDOWN ---
         // Helper to evaluate search terms with support for AND/OR clauses
@@ -1042,13 +1076,20 @@
         }
 
         // --- SECTION 7: FILE & MARKDOWN CONTENT LOADING ---
-        async function loadFile(filePath) {
+        async function loadFile(filePath, isExternal = false, isHistoryNav = false) {
             isRestoringScroll = true;
             const rawSavedPercent = localStorage.getItem(`sgs_scroll_percent_${filePath}`);
             targetPercentToRestore = rawSavedPercent !== null ? parseFloat(rawSavedPercent) : null;
 
             currentFilePath = filePath;
             localStorage.setItem("sgs_last_file", filePath);
+
+            if (!isHistoryNav && history.pushState) {
+                const baseUrl = window.location.href.split('?')[0].split('#')[0];
+                const cleanUrl = `${baseUrl}?file=${encodeURIComponent(filePath)}`;
+                history.pushState({ file: filePath }, '', cleanUrl);
+            }
+
             trackRecentFile(filePath);
             updateActiveFileInTree();
 
