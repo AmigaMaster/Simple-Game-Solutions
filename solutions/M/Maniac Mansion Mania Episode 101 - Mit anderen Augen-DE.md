@@ -2,8 +2,9 @@
 
 | Version | Datum      | Autor                                                           |
 |:-------:|------------|-----------------------------------------------------------------|
-|   1.01  | 15.04.2025 | Amiga Master nach Hinweis von Kiwa (Maniac Mansion Mania Forum) |
-|   1.0   | 22.03.2023 | Amiga Master (AmigaMaster-NG@t-online.de)                       |
+|  1.02   | 21.10.2062 | Amiga Master nach Hinweis von Cmdr (Maniac Mansion Mania Forum) |
+|  1.01   | 15.04.2025 | Amiga Master nach Hinweis von Kiwa (Maniac Mansion Mania Forum) |
+|  1.0    | 22.03.2023 | Amiga Master (AmigaMaster-NG@t-online.de)                       |
 
 [![MMMLogo](https://www.maniac-mansion-mania.com/banner/banner.png)](https://www.maniac-mansion-mania.com)
 
@@ -468,6 +469,7 @@ Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spann
   - BENUTZE `Klebestreifen mit Finger` mit `Radiergummi` (`Gefälschter Finger`)
   - BENUTZE `Gefälschter Finger` mit Fingerabdruck-Sensor
   - BENUTZE `Käfer` mit Kartenleser
+    - **HINWEIS:** Wenn der Käfer am Riechsensor angebracht wurde, ihn dort wieder entfernen
   - BENUTZE `Parfum` mit `Käse` (`Parfümierter Käse`)
   - BENUTZE `Parfümierter Käse` mit Nase
   - BENUTZE `Haariges Fleisch` mit Zunge
