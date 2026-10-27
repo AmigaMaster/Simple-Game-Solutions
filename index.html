@@ -47,6 +47,16 @@
             color: #a7f3d0 !important;
             box-shadow: none !important;
         }
+
+        /* Search Filter Term Highlighting */
+        mark.search-highlight {
+            background-color: #065f46 !important;
+            color: #ffffff !important;
+            padding: 0.1em 0.25em !important;
+            border-radius: 0.25rem !important;
+            font-weight: 600 !important;
+            box-shadow: 0 0 0 1px #10b981 !important;
+        }
     </style>
 </head>
 
@@ -1051,6 +1061,66 @@ ${t.issueSectionSuggestDesc}
             return clone.textContent.replace(/\s+/g, ' ').trim();
         }
 
+        // Helper function to escape special Regex characters
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // Removes search highlight tags and restores clean original text nodes
+        function removeHighlights(container) {
+            container.querySelectorAll("mark.search-highlight").forEach(mark => {
+                const parent = mark.parentNode;
+                parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                parent.normalize();
+            });
+        }
+
+        // Applies search term highlighting inside text nodes of an element
+        function applyHighlights(el, terms) {
+            if (terms.length === 0) return;
+            const regex = new RegExp(`(${terms.map(escapeRegExp).join('|')})`, 'gi');
+
+            const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+                acceptNode: (node) => {
+                    if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                    if (node.parentElement && (node.parentElement.tagName === 'SCRIPT' || node.parentElement.tagName === 'STYLE' || node.parentElement.tagName === 'BUTTON' || node.parentElement.classList.contains('search-highlight'))) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+
+            const textNodes = [];
+            let currentNode;
+            while (currentNode = walker.nextNode()) {
+                textNodes.push(currentNode);
+            }
+
+            textNodes.forEach(node => {
+                const text = node.nodeValue;
+                if (regex.test(text)) {
+                    const frag = document.createDocumentFragment();
+                    let lastIdx = 0;
+                    regex.lastIndex = 0;
+                    let match;
+                    while ((match = regex.exec(text)) !== null) {
+                        if (match.index > lastIdx) {
+                            frag.appendChild(document.createTextNode(text.substring(lastIdx, match.index)));
+                        }
+                        const mark = document.createElement("mark");
+                        mark.className = "search-highlight";
+                        mark.textContent = match[0];
+                        frag.appendChild(mark);
+                        lastIdx = regex.lastIndex;
+                    }
+                    if (lastIdx < text.length) {
+                        frag.appendChild(document.createTextNode(text.substring(lastIdx)));
+                    }
+                    node.parentNode.replaceChild(frag, node);
+                }
+            });
+        }
+
         function handleContentFilter(filterQuery) {
             const clearBtn = document.getElementById("clearContentFilterBtn");
             const q = filterQuery.trim();
@@ -1062,6 +1132,9 @@ ${t.issueSectionSuggestDesc}
 
             const viewer = document.getElementById("content-viewer");
             if (!viewer) return;
+
+            // Always remove previous highlights first
+            removeHighlights(viewer);
 
             const allBlocks = viewer.querySelectorAll("h1, h2, h3, h4, h5, h6, p, li, blockquote, table, pre");
 
@@ -1077,6 +1150,15 @@ ${t.issueSectionSuggestDesc}
                 }
                 return;
             }
+
+            // Extract search terms for text highlighting
+            const searchTerms = [];
+            q.toLowerCase().split(/\b(?:or|oder)\b/).forEach(clause => {
+                const cleanClause = clause.replace(/\b(?:and|und)\b/g, " ");
+                cleanClause.split(/\s+/).filter(t => t.length > 0).forEach(term => {
+                    if (!searchTerms.includes(term)) searchTerms.push(term);
+                });
+            });
 
             const matchingSet = new Set();
             allBlocks.forEach(el => {
@@ -1132,6 +1214,9 @@ ${t.issueSectionSuggestDesc}
                         el.classList.add("cursor-pointer", "hover:bg-gray-700/40", "rounded", "px-1", "transition-colors");
                         el.title = currentLang === "de" ? "Klicken, um zum Original im Text zu springen" : "Click to jump to original in text";
                         
+                        // Apply term highlights to matching visible text blocks
+                        applyHighlights(el, searchTerms);
+
                         el.onclick = (e) => {
                             if (e.target.closest('button')) return;
                             e.stopPropagation();
