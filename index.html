@@ -385,6 +385,7 @@
                     viewer.querySelectorAll(".heading-copy-btn").forEach(btn => btn.remove());
                     viewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7").forEach(h => h.classList.remove("group", "relative"));
                     generateToc(viewer, tocContainer);
+                    setupScrollSpy(viewer, tocContainer);
                 }
                 if (structureData) {
                     filterTree(document.getElementById("searchInput").value);
@@ -393,8 +394,37 @@
         }
 
         function changeLanguage(lang) {
+            // Save current tree scroll position and open folders before changing language
+            const treeContainer = document.getElementById("tree-container");
+            const treeScrollTop = treeContainer ? treeContainer.scrollTop : 0;
+
+            const openFolders = new Set();
+            document.querySelectorAll("#tree-container details").forEach(details => {
+                if (details.open) {
+                    const summary = details.querySelector("summary");
+                    if (summary) {
+                        openFolders.add(summary.textContent.trim());
+                    }
+                }
+            });
+
             setLanguage(lang);
-            handleGlobalSearch(document.getElementById("searchInput").value)
+            handleGlobalSearch(document.getElementById("searchInput").value);
+
+            // Restore open directory paths after tree re-render
+            if (openFolders.size > 0) {
+                document.querySelectorAll("#tree-container details").forEach(details => {
+                    const summary = details.querySelector("summary");
+                    if (summary && openFolders.has(summary.textContent.trim())) {
+                        details.open = true;
+                    }
+                });
+            }
+
+            // Restore tree scroll position
+            if (treeContainer) {
+                treeContainer.scrollTop = treeScrollTop;
+            }
         }
 
         // --- SETTINGS DROPDOWN & EXPORT/IMPORT ---
