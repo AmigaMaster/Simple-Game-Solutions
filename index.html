@@ -251,6 +251,7 @@
                 linkCopied: "Link kopiert",
                 copySearchLinkTitle: "Suche-Link kopieren",
                 copyFileLinkTitle: "Lösungs-Link kopieren",
+                copyChapterLinkTitle: "Kapitel-Link kopieren",
                 fontZoomTitle: "Schriftgröße anpassen",
                 fontSizeLabel: "Schriftgröße",
                 markAllRead: "Alle als gelesen markieren",
@@ -292,6 +293,7 @@
                 linkCopied: "Link copied",
                 copySearchLinkTitle: "Copy search link",
                 copyFileLinkTitle: "Copy solution link",
+                copyChapterLinkTitle: "Copy chapter link",
                 fontZoomTitle: "Adjust font size",
                 fontSizeLabel: "Font size",
                 markAllRead: "Mark all as read",
@@ -347,6 +349,18 @@
             });
             if (!currentFilePath && structureData) {
                 renderWelcomeScreen();
+            } else if (currentFilePath) {
+                // Re-render TOC and headings copy buttons dynamically to update localized tooltips & popups
+                const viewer = document.getElementById("content-viewer");
+                const tocContainer = document.getElementById("toc-container");
+                if (viewer && tocContainer) {
+                    viewer.querySelectorAll(".heading-copy-btn").forEach(btn => btn.remove());
+                    viewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7").forEach(h => h.classList.remove("group", "relative"));
+                    generateToc(viewer, tocContainer);
+                }
+                if (structureData) {
+                    filterTree(document.getElementById("searchInput").value);
+                }
             }
         }
 
@@ -1411,7 +1425,7 @@ ${t.issueSectionSuggestDesc}
         function createFileTreeCopyButton(filePath) {
             const copyBtn = document.createElement("button");
             copyBtn.className = `file-copy-btn inline-flex items-center ml-2 opacity-70 sm:opacity-0 sm:group-hover/tree:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative shrink-0`;
-            copyBtn.title = translations[currentLang].copyFileLinkTitle || "Lösungs-Link kopieren";
+            copyBtn.title = translations[currentLang].copyFileLinkTitle;
 
             const iconSpan = document.createElement("span");
             iconSpan.className = "inline-block w-6 text-center";
@@ -1579,7 +1593,7 @@ ${t.issueSectionSuggestDesc}
         function createCopyButton(headingId, isToc = false) {
             const copyBtn = document.createElement("button");
             copyBtn.className = `${isToc ? 'toc-copy-btn' : 'heading-copy-btn'} inline-flex items-center ${isToc ? 'ml-2' : 'mr-2'} opacity-70 sm:opacity-0 sm:group-hover${isToc ? '/toc' : ''}:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative shrink-0`;
-            copyBtn.title = currentLang === "de" ? "Kapitel-Link kopieren" : "Copy chapter link";
+            copyBtn.title = translations[currentLang].copyChapterLinkTitle;
 
             const iconSpan = document.createElement("span");
             iconSpan.className = "inline-block w-6 text-center";
@@ -1663,6 +1677,14 @@ ${t.issueSectionSuggestDesc}
                     heading.classList.add("group", "relative");
                     const copyBtn = createCopyButton(heading.id, false);
                     heading.prepend(copyBtn);
+                } else {
+                    // Update title of existing copy button if language changed
+                    const existingBtn = heading.querySelector(".heading-copy-btn");
+                    if (existingBtn) {
+                        existingBtn.title = translations[currentLang].copyChapterLinkTitle;
+                        const popup = existingBtn.querySelector("span:not(.inline-block)");
+                        if (popup) popup.textContent = translations[currentLang].linkCopied;
+                    }
                 }
 
                 let indentClass = "pl-1";
