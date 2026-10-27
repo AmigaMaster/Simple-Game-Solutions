@@ -1,8 +1,8 @@
 {
   "stats": {
     "total_files": 593,
-    "total_words": 682489,
-    "total_actions": 83709
+    "total_words": 682518,
+    "total_actions": 83710
   },
   "name": "solutions",
   "type": "directory",
@@ -2805,9 +2805,9 @@
           "name": "Maniac Mansion Mania Episode 101 - Mit anderen Augen-DE",
           "type": "file",
           "path": "M/Maniac Mansion Mania Episode 101 - Mit anderen Augen-DE.md",
-          "last_modified": "2025-04-15T00:39:12+02:00",
-          "words": 1950,
-          "actions": 268
+          "last_modified": "2026-10-28T00:20:42+01:00",
+          "words": 1979,
+          "actions": 269
         },
         {
           "name": "Maniac Mansion Mania Episode 102 - Michaels Nacht-DE",
