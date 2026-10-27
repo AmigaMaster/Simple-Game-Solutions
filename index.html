@@ -139,7 +139,7 @@
                 </div>
             </div>
 
-            <!-- In-Content Filter Header Bar & Font Size Button -->
+            <!-- In-Content Filter Header Bar, Report Button & Font Size Button -->
             <div id="readingPaneHeader" class="pt-1.5 pb-1 px-1 flex items-center gap-2 border-b border-gray-700/50 shrink-0 hidden">
                 <div class="relative flex-1">
                     <input autocomplete="off"
@@ -150,6 +150,11 @@
                     <button class="absolute right-2.5 top-2.5 text-gray-400 hover:text-white text-xs hidden focus:outline-none cursor-pointer"
                         id="clearContentFilterBtn" onclick="clearContentFilter();" title="Filter löschen">✕</button>
                 </div>
+
+                <!-- Report Issue Button -->
+                <button onclick="reportIssue();" class="bg-gray-950 hover:bg-red-900/40 text-red-400 hover:text-red-300 border border-gray-700 hover:border-red-600/50 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" title="Fehler in dieser Lösung auf GitHub melden">
+                    <span>🚨</span><span class="hidden sm:inline" data-i18n="reportIssueBtn"></span>
+                </button>
 
                 <!-- Font Size Button & Dropdown Menu inside Header -->
                 <div class="relative shrink-0" id="fontOverlayContainer">
@@ -238,7 +243,19 @@
                 copyFileLinkTitle: "Lösungs-Link kopieren",
                 fontZoomTitle: "Schriftgröße anpassen",
                 fontSizeLabel: "Schriftgröße",
-                markAllRead: "Alle als gelesen markieren"
+                markAllRead: "Alle als gelesen markieren",
+                reportIssueBtn: "",
+                reportIssueTitle: "Fehler in dieser Lösung auf GitHub melden",
+                issueTitlePrefix: "Fehler in Lösung",
+                issueChapterLabel: "Aktiv sichtbare(s) Kapitel",
+                issueLastModifiedLabel: "Letzte Änderung",
+                issuePositionLabel: "Position",
+                issueEntireDoc: "Gesamtes Dokument / Kein spezifisches Kapitel",
+                issueSectionWhere: "1. Wo tritt der Fehler auf?",
+                issueSectionWhat: "2. Was ist der Fehler?",
+                issueSectionWhatDesc: "<!-- Bitte beschreibe hier kurz den Fehler (z.B. Tippfehler, falsche Anweisung, fehlender Gegenstand) -->",
+                issueSectionSuggest: "3. Vorschlag zur Verbesserung",
+                issueSectionSuggestDesc: "<!-- (Optional) Hast du bereits einen Vorschlag, wie der Text korrigiert werden sollte? -->"
             },
             en: {
                 menuBtn: "Menu",
@@ -259,7 +276,7 @@
                 errorLoadingFile: "Error loading file:",
                 errorLoadingStruct: "Error loading structure.",
                 resizeWidth: "Adjust width",
-                searchPlaceholder: "Search (e.g. Maniac AND Ostern OR 101)...",
+                searchPlaceholder: "Search (e.g. maniac AND easter OR 101)...",
                 filterPlaceholder: "Filter content (e.g. door AND/OR key)...",
                 noResults: "No matching files found.",
                 linkCopied: "Link copied",
@@ -267,7 +284,19 @@
                 copyFileLinkTitle: "Copy solution link",
                 fontZoomTitle: "Adjust font size",
                 fontSizeLabel: "Font size",
-                markAllRead: "Mark all as read"
+                markAllRead: "Mark all as read",
+                reportIssueBtn: "",
+                reportIssueTitle: "Report issue for this walkthrough on GitHub",
+                issueTitlePrefix: "Issue in walkthrough",
+                issueChapterLabel: "Active visible chapter(s)",
+                issueLastModifiedLabel: "Last Modified",
+                issuePositionLabel: "Position",
+                issueEntireDoc: "Entire document / No specific chapter",
+                issueSectionWhere: "1. Where does the error occur?",
+                issueSectionWhat: "2. What is the error?",
+                issueSectionWhatDesc: "<!-- Please briefly describe the issue here (e.g., typo, incorrect instruction, missing item) -->",
+                issueSectionSuggest: "3. Suggested improvement",
+                issueSectionSuggestDesc: "<!-- (Optional) Do you already have a suggestion on how to fix this? -->"
             }
         };
 
@@ -487,6 +516,79 @@
                 }
             }
             return count;
+        }
+
+        // --- REPORT ISSUE ON GITHUB ---
+        function reportIssue() {
+            if (!currentFilePath) return;
+
+            const t = translations[currentLang];
+            const fileName = currentFilePath.split('/').pop().replace(/\.(md|txt)$/i, '');
+            
+            // Find last modified date for current file from structureData
+            let lastModStr = '';
+            if (structureData) {
+                function searchNode(node) {
+                    if (!node) return null;
+                    if (node.type === 'file' && node.path === currentFilePath) return node;
+                    if (node.children) {
+                        for (const child of node.children) {
+                            const res = searchNode(child);
+                            if (res) return res;
+                        }
+                    }
+                    return null;
+                }
+                const fNode = searchNode(structureData);
+                if (fNode && fNode.last_modified) {
+                    lastModStr = new Date(fNode.last_modified).toLocaleDateString(currentLang === 'de' ? 'de-DE' : 'en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+                }
+            }
+
+            // Calculate current scroll percentage and generate direct jump link
+            const viewer = document.getElementById("content-viewer");
+            const maxScroll = viewer ? viewer.scrollHeight - viewer.clientHeight : 0;
+            const scrollPercent = maxScroll > 0 ? Math.round((viewer.scrollTop / maxScroll) * 100) : 0;
+
+            const baseUrl = window.location.href.split('?')[0].split('#')[0];
+            const issueLink = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}&scroll=${scrollPercent}`;
+
+            // Get currently active chapters from Table of Contents (ignoring copy buttons / popup texts)
+            const activeChapterEls = document.querySelectorAll('#toc-container > div.bg-gray-700 button');
+            let activeChapters = [];
+            activeChapterEls.forEach(btn => {
+                const clone = btn.cloneNode(true);
+                clone.querySelectorAll('span').forEach(s => s.remove());
+                const chapterText = clone.textContent.trim();
+                if (chapterText) activeChapters.push(chapterText);
+            });
+
+            const activeChapterText = activeChapters.length > 0 
+                ? activeChapters.join(', ') 
+                : t.issueEntireDoc;
+
+            const title = `${t.issueTitlePrefix}: ${fileName}`;
+            
+            const body = `## ${t.issueSectionWhere}
+**Solution / Walkthrough:** \`${currentFilePath}\`
+**${t.issueLastModifiedLabel}:** ${lastModStr || '-'}
+**${t.issueChapterLabel}:** ${activeChapterText}
+**${t.issuePositionLabel}:** [${scrollPercent}% Fortschritt](${issueLink})
+
+---
+
+## ${t.issueSectionWhat}
+${t.issueSectionWhatDesc}
+
+
+---
+
+## ${t.issueSectionSuggest}
+${t.issueSectionSuggestDesc}
+`;
+
+            const issueUrl = `https://github.com/AmigaMaster/Simple-Game-Solutions/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=bug`;
+            window.open(issueUrl, '_blank', 'noopener,noreferrer');
         }
 
         // --- SECTION 3: WELCOME SCREEN & HOME NAVIGATION ---
@@ -1078,7 +1180,10 @@
         // --- SECTION 7: FILE & MARKDOWN CONTENT LOADING ---
         async function loadFile(filePath, isExternal = false, isHistoryNav = false) {
             isRestoringScroll = true;
-            const rawSavedPercent = localStorage.getItem(`sgs_scroll_percent_${filePath}`);
+            const urlParams = new URLSearchParams(window.location.search);
+            const scrollParam = urlParams.get('scroll');
+
+            const rawSavedPercent = (isHistoryNav && scrollParam !== null) ? scrollParam : localStorage.getItem(`sgs_scroll_percent_${filePath}`);
             targetPercentToRestore = rawSavedPercent !== null ? parseFloat(rawSavedPercent) : null;
 
             currentFilePath = filePath;
