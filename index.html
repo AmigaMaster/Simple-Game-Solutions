@@ -412,6 +412,7 @@
         let isRestoringScroll = false;
         let targetPercentToRestore = null;
         let currentWelcomeTab = 'modified';
+        let scrollPercentBeforeFilter = null;
 
         // Track recently used file paths in localStorage
         function trackRecentFile(filePath) {
@@ -716,6 +717,7 @@ ${t.issueSectionSuggestDesc}
         // Reset application state back to home/welcome view
         function goHome(isHistoryNav = false) {
             currentFilePath = null;
+            scrollPercentBeforeFilter = null;
             localStorage.removeItem("sgs_last_file");
             if (!isHistoryNav && history.pushState) {
                 history.pushState({}, '', window.location.pathname);
@@ -778,7 +780,7 @@ ${t.issueSectionSuggestDesc}
         }
 
         // Handle Browser Forward / Back Navigation
-        window.addEventListener('popstate', (e) => {
+        window.addEventListener('popstate', async (e) => {
             const urlParams = new URLSearchParams(window.location.search);
             const fileParam = urlParams.get('file');
             const filterParam = urlParams.get('filter');
@@ -798,7 +800,7 @@ ${t.issueSectionSuggestDesc}
             }
 
             if (fileParam) {
-                loadFile(fileParam, false, true);
+                await loadFile(fileParam, false, true);
                 if (filterParam) {
                     const filterInput = document.getElementById("contentFilterInput");
                     if (filterInput) {
@@ -1020,11 +1022,11 @@ ${t.issueSectionSuggestDesc}
         }
 
         // Select a search result item
-        function selectSearchResult(path, isExternal = false) {
+        async function selectSearchResult(path, isExternal = false) {
             if (isExternal) {
                 window.open(path, '_blank', 'noopener,noreferrer');
             } else {
-                loadFile(path);
+                await loadFile(path);
             }
             document.getElementById("searchDropdown").classList.add("hidden");
             document.getElementById("searchInput").value = "";
@@ -1124,14 +1126,23 @@ ${t.issueSectionSuggestDesc}
         function handleContentFilter(filterQuery) {
             const clearBtn = document.getElementById("clearContentFilterBtn");
             const q = filterQuery.trim();
+            const viewer = document.getElementById("content-viewer");
+            if (!viewer) return;
+
+            if (q.length > 0 && scrollPercentBeforeFilter === null) {
+                const maxScroll = viewer.scrollHeight - viewer.clientHeight;
+                if (maxScroll > 0) {
+                    scrollPercentBeforeFilter = (viewer.scrollTop / maxScroll) * 100;
+                } else {
+                    scrollPercentBeforeFilter = 0;
+                }
+            }
+
             if (q.length > 0) {
                 clearBtn.classList.remove("hidden");
             } else {
                 clearBtn.classList.add("hidden");
             }
-
-            const viewer = document.getElementById("content-viewer");
-            if (!viewer) return;
 
             // Always remove previous highlights first
             removeHighlights(viewer);
@@ -1145,6 +1156,19 @@ ${t.issueSectionSuggestDesc}
                     el.onclick = null;
                     el.title = "";
                 });
+
+                // Restore scroll position when filter is cleared
+                if (scrollPercentBeforeFilter !== null) {
+                    const targetPercent = scrollPercentBeforeFilter;
+                    scrollPercentBeforeFilter = null;
+                    requestAnimationFrame(() => {
+                        const maxScroll = viewer.scrollHeight - viewer.clientHeight;
+                        if (maxScroll > 0) {
+                            viewer.scrollTop = (targetPercent / 100) * maxScroll;
+                        }
+                    });
+                }
+
                 if (typeof viewer.onscroll === 'function') {
                     viewer.onscroll();
                 }
@@ -1264,7 +1288,17 @@ ${t.issueSectionSuggestDesc}
 
         // --- SECTION 7: FILE & MARKDOWN CONTENT LOADING ---
         async function loadFile(filePath, isExternal = false, isHistoryNav = false) {
+            // CRITICAL TIMING FIX: If a filter is currently active, fully clear it first
+            // so the cached scroll position is properly written back to the current file's localStorage before switching.
+            const filterInput = document.getElementById("contentFilterInput");
+            if (filterInput && filterInput.value.trim().length > 0) {
+                clearContentFilter();
+                // Await a brief animation frame to ensure DOM reflow and scroll restoration finish
+                await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+            }
+
             isRestoringScroll = true;
+            scrollPercentBeforeFilter = null; 
             const urlParams = new URLSearchParams(window.location.search);
             const scrollParam = urlParams.get('scroll');
 
@@ -1288,7 +1322,6 @@ ${t.issueSectionSuggestDesc}
             const scrollProgressBar = document.getElementById("scrollProgressBar");
             const readingHeader = document.getElementById("readingPaneHeader");
             if (readingHeader) readingHeader.classList.remove("hidden");
-            const filterInput = document.getElementById("contentFilterInput");
             if (filterInput) filterInput.value = "";
             document.getElementById("clearContentFilterBtn").classList.add("hidden");
 
@@ -1489,8 +1522,8 @@ ${t.issueSectionSuggestDesc}
                     const fileLink = document.createElement("button");
                     fileLink.className = "flex-1 text-left bg-transparent border-none text-inherit cursor-pointer break-words focus:outline-none";
                     fileLink.textContent = `📄 ${item.name}`;
-                    fileLink.onclick = () => {
-                        loadFile(item.path);
+                    fileLink.onclick = async () => {
+                        await loadFile(item.path);
                         if (window.innerWidth < 1060) {
                             closeAllOverlays()
                         }
