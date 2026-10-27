@@ -98,8 +98,26 @@
         <div class="absolute left-2 right-2 sm:left-6 sm:right-6 top-full mt-1 bg-gray-800 border border-gray-700 rounded-md shadow-2xl max-h-80 overflow-y-auto z-50 hidden"
             id="searchDropdown"></div>
 
-        <!-- Right Section: Language Selector & Table of Contents (TOC) Toggle -->
+        <!-- Right Section: Settings Dropdown, Language Selector & Table of Contents (TOC) Toggle -->
         <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+            <!-- Hidden File Input for Importing Settings -->
+            <input type="file" id="importSettingsFile" accept=".json" class="hidden" onchange="importSettings(event)">
+            
+            <!-- Settings Dropdown Menu (Gear Icon) -->
+            <div class="relative shrink-0" id="settingsMenuContainer">
+                <button onclick="toggleSettingsMenu();" class="bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white px-2 py-1.5 rounded-md text-xs sm:text-sm border border-gray-600 focus:outline-none cursor-pointer transition-colors" data-i18n-title="settingsMenuTitle" title="Einstellungen">
+                    ⚙️
+                </button>
+                <div id="settingsDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[150px] z-50">
+                    <button onclick="exportSettings();" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                        <span>💾</span> <span data-i18n="exportBtn">Export</span>
+                    </button>
+                    <button onclick="document.getElementById('importSettingsFile').click();" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                        <span>📂</span> <span data-i18n="importBtn">Import</span>
+                    </button>
+                </div>
+            </div>
+
             <select
                 class="bg-gray-700 text-emerald-300 text-xs px-1.5 sm:px-2 py-1.5 rounded-md border border-gray-600 focus:outline-none cursor-pointer shrink-0"
                 id="langSelect" onchange="changeLanguage(this.value);">
@@ -255,6 +273,11 @@
                 fontZoomTitle: "Schriftgröße anpassen",
                 fontSizeLabel: "Schriftgröße",
                 markAllRead: "Alle als gelesen markieren",
+                exportBtn: "Export",
+                importBtn: "Import",
+                settingsMenuTitle: "Einstellungen",
+                importSuccess: "Einstellungen erfolgreich importiert!",
+                importError: "Fehler beim Importieren der Datei (ungültiges Format).",
                 reportIssueBtn: "",
                 reportIssueTitle: "Fehler in dieser Lösung auf GitHub melden",
                 issueTitlePrefix: "Fehler in Lösung",
@@ -297,6 +320,11 @@
                 fontZoomTitle: "Adjust font size",
                 fontSizeLabel: "Font size",
                 markAllRead: "Mark all as read",
+                exportBtn: "Export",
+                importBtn: "Import",
+                settingsMenuTitle: "Settings",
+                importSuccess: "Settings successfully imported!",
+                importError: "Error importing file (invalid format).",
                 reportIssueBtn: "",
                 reportIssueTitle: "Report issue for this walkthrough on GitHub",
                 issueTitlePrefix: "Issue in walkthrough",
@@ -367,6 +395,82 @@
         function changeLanguage(lang) {
             setLanguage(lang);
             handleGlobalSearch(document.getElementById("searchInput").value)
+        }
+
+        // --- SETTINGS DROPDOWN & EXPORT/IMPORT ---
+        function toggleSettingsMenu() {
+            const dropdown = document.getElementById("settingsDropdown");
+            if (dropdown) dropdown.classList.toggle("hidden");
+        }
+
+        window.addEventListener("click", e => {
+            const container = document.getElementById("settingsMenuContainer");
+            const dropdown = document.getElementById("settingsDropdown");
+            if (container && dropdown && !container.contains(e.target)) {
+                dropdown.classList.add("hidden");
+            }
+        });
+
+        function exportSettings() {
+            toggleSettingsMenu();
+            const data = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                data[key] = localStorage.getItem(key);
+            }
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            const dateStr = new Date().toISOString().split('T')[0];
+            a.download = `simple-game-solutions-settings-${dateStr}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function importSettings(event) {
+            toggleSettingsMenu();
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = async (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (typeof data !== 'object' || data === null) {
+                        throw new Error("Invalid format");
+                    }
+                    localStorage.clear();
+                    for (const [key, value] of Object.entries(data)) {
+                        localStorage.setItem(key, value);
+                    }
+                    alert(translations[currentLang].importSuccess || "Settings successfully imported!");
+                    
+                    currentLang = getBrowserLanguage();
+                    document.getElementById("langSelect").value = currentLang;
+                    setLanguage(currentLang);
+                    initZoom();
+                    updateHomeBadge();
+
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const fileParam = urlParams.get('file');
+                    const lastFile = localStorage.getItem("sgs_last_file");
+
+                    if (fileParam) {
+                        await loadFile(fileParam, false, true);
+                    } else if (lastFile) {
+                        await loadFile(lastFile);
+                    } else {
+                        renderWelcomeScreen();
+                    }
+                } catch (err) {
+                    alert(translations[currentLang].importError || "Error importing file.");
+                } finally {
+                    event.target.value = "";
+                }
+            };
+            reader.readAsText(file);
         }
 
         // --- FONT ZOOM LOGIC (MATHEMATICAL PERCENTAGE SCALING) ---
