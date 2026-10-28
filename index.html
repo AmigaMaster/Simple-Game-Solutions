@@ -198,12 +198,15 @@
                         id="clearContentFilterBtn" onclick="clearContentFilter();" title="Filter löschen">✕</button>
                 </div>
 
-                <!-- Report Dropdown Menu -->
+                <!-- Reading Panel Messsage Dropdown Menu -->
                 <div class="relative shrink-0" id="reportMenuContainer">
                     <button onclick="toggleReportMenu();" class="bg-gray-950 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" title="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden">
-                        <span>🗨️</span><span class="hidden sm:inline" data-i18n="reportIssueBtn">Melden</span>
+                        <span>🗨️</span><span class="hidden sm:inline" data-i18n="reportIssueBtn">Nachricht</span>
                     </button>
-                    <div id="reportDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[180px] z-50">
+                    <div id="reportDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[200px] z-50">
+                        <button onclick="openDiscussions();" class="group w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                            <span class="hover-wiggle inline-block transition-transform">💬</span> <span data-i18n="githubDiscussionsBtn">GitHub Diskussionen</span>
+                        </button>
                         <button onclick="reportIssue();" class="group w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                             <span class="hover-wiggle inline-block transition-transform">🚨</span> <span data-i18n="githubIssueBtn">GitHub Issue eröffnen</span>
                         </button>
@@ -306,6 +309,7 @@
                 importError: "Fehler beim Importieren der Datei (ungültiges Format).",
                 reportIssueBtn: "Nachricht",
                 reportIssueTitle: "Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden",
+                githubDiscussionsBtn: "GitHub Diskussionen",
                 githubIssueBtn: "GitHub Issue eröffnen",
                 issueTitlePrefix: "Fehler in Lösung",
                 issueChapterLabel: "Aktiv sichtbare(s) Kapitel",
@@ -354,6 +358,7 @@
                 importError: "Error importing file (invalid format).",
                 reportIssueBtn: "Message",
                 reportIssueTitle: "Start discussion or report an issue for this walkthrough on GitHub",
+                githubDiscussionsBtn: "GitHub Discussions",
                 githubIssueBtn: "Open GitHub Issue",
                 issueTitlePrefix: "Issue in walkthrough",
                 issueChapterLabel: "Active visible chapter(s)",
@@ -716,6 +721,34 @@
             return count;
         }
 
+        // --- HELPER: GET CLEANED GAME TITLE FROM FILE PATH ---
+        function getCleanGameTitle() {
+            if (!currentFilePath) return '';
+            // Get raw file name (e.g. "Blazing Dragons-IT.md" or "Blazing Dragons-DE.md")
+            const rawFileName = currentFilePath.split('/').pop();
+            // Remove extension (.md, .txt, etc.)
+            let title = rawFileName.replace(/\.(md|txt)$/i, '');
+            // Remove everything from the last "-" onwards (covers -IT, -DE, -EN, etc.)
+            const lastDashIndex = title.lastIndexOf('-');
+            if (lastDashIndex !== -1) {
+                title = title.substring(0, lastDashIndex);
+            }
+            // Replace remaining underscores/hyphens with spaces for clean search query
+            title = title.replace(/[-_]/g, ' ').trim();
+            return title;
+        }
+
+        // --- OPEN GITHUB DISCUSSIONS WITH PRE-FILLED GAME TITLE ---
+        function openDiscussions() {
+            toggleReportMenu();
+            const gameTitle = getCleanGameTitle();
+            let discUrl = "https://github.com/AmigaMaster/Simple-Game-Solutions/discussions";
+            if (gameTitle) {
+                discUrl += `?discussions_q=${encodeURIComponent(gameTitle)}`;
+            }
+            window.open(discUrl, '_blank', 'noopener,noreferrer');
+        }
+
         // --- REPORT ISSUE ON GITHUB ---
         function reportIssue() {
             toggleReportMenu();
@@ -864,7 +897,7 @@ ${t.issueSectionSuggestDesc}
                     listHtml += `<p class="text-center text-gray-500 text-xs italic py-4">${currentLang === 'de' ? 'Keine Lösungen gefunden.' : 'No solutions found.'}</p>`;
                 } else {
                     newest.forEach(file => {
-                        const dateStr = file.last_modified ? new Date(file.last_modified).toLocaleDateString(currentLang === 'de' ? 'de-DE' : 'en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '';
+                        const dateStr = file.last_modified ? new Date(file.last_modified).toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '';
                         const isUnread = !readPaths.includes(file.path);
                         listHtml += `<button onclick="loadFile('${file.path}')" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border ${isUnread ? 'border-emerald-500/80 bg-emerald-950/20' : 'border-gray-700/60'} rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
                             <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${file.name} ${isUnread ? '<span class="bg-emerald-500 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">NEW</span>' : ''}</span>
