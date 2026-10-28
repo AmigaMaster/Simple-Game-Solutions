@@ -198,10 +198,17 @@
                         id="clearContentFilterBtn" onclick="clearContentFilter();" title="Filter löschen">✕</button>
                 </div>
 
-                <!-- Report Issue Button -->
-                <button onclick="reportIssue();" class="bg-gray-950 hover:bg-red-900/40 text-red-400 hover:text-red-300 border border-gray-700 hover:border-red-600/50 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" title="Fehler in dieser Lösung auf GitHub melden">
-                    <span>🚨</span><span class="hidden sm:inline" data-i18n="reportIssueBtn"></span>
-                </button>
+                <!-- Report Dropdown Menu -->
+                <div class="relative shrink-0" id="reportMenuContainer">
+                    <button onclick="toggleReportMenu();" class="bg-gray-950 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" title="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden">
+                        <span>🗨️</span><span class="hidden sm:inline" data-i18n="reportIssueBtn">Melden</span>
+                    </button>
+                    <div id="reportDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[180px] z-50">
+                        <button onclick="reportIssue();" class="group w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                            <span class="hover-wiggle inline-block transition-transform">🚨</span> <span data-i18n="githubIssueBtn">GitHub Issue eröffnen</span>
+                        </button>
+                    </div>
+                </div>
 
                 <!-- Font Size Button & Dropdown Menu inside Header -->
                 <div class="relative shrink-0" id="fontOverlayContainer">
@@ -297,12 +304,13 @@
                 settingsMenuTitle: "Einstellungen",
                 importSuccess: "Einstellungen erfolgreich importiert!",
                 importError: "Fehler beim Importieren der Datei (ungültiges Format).",
-                reportIssueBtn: "",
-                reportIssueTitle: "Fehler in dieser Lösung auf GitHub melden",
+                reportIssueBtn: "Nachricht",
+                reportIssueTitle: "Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden",
+                githubIssueBtn: "GitHub Issue eröffnen",
                 issueTitlePrefix: "Fehler in Lösung",
                 issueChapterLabel: "Aktiv sichtbare(s) Kapitel",
                 issueLastModifiedLabel: "Letzte Änderung",
-                issuePositionLabel: "Position",
+                issuePositionLabel: "Fortschritt",
                 issueEntireDoc: "Gesamtes Dokument / Kein spezifisches Kapitel",
                 issueSectionWhere: "1. Wo tritt der Fehler auf?",
                 issueSectionWhat: "2. Was ist der Fehler?",
@@ -344,12 +352,13 @@
                 settingsMenuTitle: "Settings",
                 importSuccess: "Settings successfully imported!",
                 importError: "Error importing file (invalid format).",
-                reportIssueBtn: "",
-                reportIssueTitle: "Report issue for this walkthrough on GitHub",
+                reportIssueBtn: "Message",
+                reportIssueTitle: "Start discussion or report an issue for this walkthrough on GitHub",
+                githubIssueBtn: "Open GitHub Issue",
                 issueTitlePrefix: "Issue in walkthrough",
                 issueChapterLabel: "Active visible chapter(s)",
                 issueLastModifiedLabel: "Last Modified",
-                issuePositionLabel: "Position",
+                issuePositionLabel: "Progress",
                 issueEntireDoc: "Entire document / No specific chapter",
                 issueSectionWhere: "1. Where does the error occur?",
                 issueSectionWhat: "2. What is the error?",
@@ -446,9 +455,14 @@
             }
         }
 
-        // --- SETTINGS DROPDOWN & EXPORT/IMPORT ---
+        // --- SETTINGS & REPORT DROPDOWN MENUS ---
         function toggleSettingsMenu() {
             const dropdown = document.getElementById("settingsDropdown");
+            if (dropdown) dropdown.classList.toggle("hidden");
+        }
+
+        function toggleReportMenu() {
+            const dropdown = document.getElementById("reportDropdown");
             if (dropdown) dropdown.classList.toggle("hidden");
         }
 
@@ -457,6 +471,12 @@
             const dropdown = document.getElementById("settingsDropdown");
             if (container && dropdown && !container.contains(e.target)) {
                 dropdown.classList.add("hidden");
+            }
+
+            const reportContainer = document.getElementById("reportMenuContainer");
+            const reportDropdown = document.getElementById("reportDropdown");
+            if (reportContainer && reportDropdown && !reportContainer.contains(e.target)) {
+                reportDropdown.classList.add("hidden");
             }
         });
 
@@ -698,6 +718,7 @@
 
         // --- REPORT ISSUE ON GITHUB ---
         function reportIssue() {
+            toggleReportMenu();
             if (!currentFilePath) return;
 
             const t = translations[currentLang];
@@ -719,7 +740,7 @@
                 }
                 const fNode = searchNode(structureData);
                 if (fNode && fNode.last_modified) {
-                    lastModStr = new Date(fNode.last_modified).toLocaleDateString(currentLang === 'de' ? 'de-DE' : 'en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+                    lastModStr = new Date(fNode.last_modified).toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' });
                 }
             }
 
@@ -748,10 +769,10 @@
             const title = `${t.issueTitlePrefix}: ${fileName}`;
             
             const body = `## ${t.issueSectionWhere}
-**Solution / Walkthrough:** \`${currentFilePath}\`
+**Walkthrough:** [\`${currentFilePath}\`](${issueLink})
 **${t.issueLastModifiedLabel}:** ${lastModStr || '-'}
 **${t.issueChapterLabel}:** ${activeChapterText}
-**${t.issuePositionLabel}:** [${scrollPercent}% Fortschritt](${issueLink})
+**${t.issuePositionLabel}:** ${scrollPercent}%
 
 ---
 
