@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 593,
-    "total_words": 682518,
-    "total_actions": 83710
+    "total_files": 594,
+    "total_words": 683072,
+    "total_actions": 83767
   },
   "name": "solutions",
   "type": "directory",
@@ -3610,6 +3610,14 @@
           "last_modified": "2025-08-07T22:14:26+02:00",
           "words": 1911,
           "actions": 303
+        },
+        {
+          "name": "Pirate Theme Park - A Short Adventure-EN",
+          "type": "file",
+          "path": "P/Pirate Theme Park - A Short Adventure-EN.md",
+          "last_modified": "2026-10-29T00:04:17+01:00",
+          "words": 554,
+          "actions": 57
         },
         {
           "name": "PISS-EN",
