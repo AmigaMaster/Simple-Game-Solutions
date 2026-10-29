@@ -1302,17 +1302,10 @@ ${t.issueSectionSuggestDesc}
         });
 
         let searchTimeout;
+        let searchDebounceTimer = null;
         function debounceGlobalSearch(query) {
             clearTimeout(searchTimeout);
             searchTimeout = setTimeout(() => {
-                handleGlobalSearch(query);
-            }, 200);
-        }
-
-        let searchDebounceTimer = null;
-        function debounceGlobalSearch(query) {
-            clearTimeout(searchDebounceTimer);
-            searchDebounceTimer = setTimeout(() => {
                 handleGlobalSearch(query);
             }, 200);
         }
@@ -2007,8 +2000,9 @@ ${t.issueSectionSuggestDesc}
 
             let lastExecutionTime = 0;
             const updateInterval = 333;
+            let scrollEndTimeout = null;
 
-            function updateScrollPosition() {
+            function updateScrollPosition(forced = false) {
                 const scrollTop = contentViewer.scrollTop;
                 const scrollHeight = contentViewer.scrollHeight;
                 const clientHeight = contentViewer.clientHeight;
@@ -2025,8 +2019,7 @@ ${t.issueSectionSuggestDesc}
                 }
 
                 const now = performance.now();
-                // Limit sidebar refresh interval for performance reasons
-                if (now - lastExecutionTime < updateInterval) {
+                if (!forced && (now - lastExecutionTime < updateInterval)) {
                     return;
                 }
                 lastExecutionTime = now;
@@ -2097,8 +2090,17 @@ ${t.issueSectionSuggestDesc}
                 }
             }
 
-            contentViewer.onscroll = updateScrollPosition;
-            updateScrollPosition();
+            contentViewer.onscroll = () => {
+                updateScrollPosition(false);
+
+                // Force update after last scroll movement
+                clearTimeout(scrollEndTimeout);
+                scrollEndTimeout = setTimeout(() => {
+                    updateScrollPosition(true);
+                }, 150);
+            };
+
+            updateScrollPosition(true);
         }
 
         // --- SECTION 10: LAYOUT RESIZERS & OVERLAY TOGGLES ---
