@@ -81,17 +81,6 @@
         .group:hover .hover-wiggle {
             animation: subtle-wiggle 0.4s ease-in-out normal;
         }
-
-        #content-viewer h1, 
-        #content-viewer h2, 
-        #content-viewer h3, 
-        #content-viewer p, 
-        #content-viewer ul, 
-        #content-viewer ol, 
-        #content-viewer blockquote {
-            content-visibility: auto;
-            contain-intrinsic-size: 1px 30px;
-        }
     </style>
 </head>
 
@@ -810,11 +799,11 @@
             const issueLink = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}&scroll=${scrollPercent}`;
 
             // Get currently active chapters from Table of Contents (ignoring copy buttons / popup texts)
-            const activeChapterEls = document.querySelectorAll('#toc-container > div.bg-gray-700 button');
+            const activeChapterEls = document.querySelectorAll('#toc-container > div.bg-gray-700');
             let activeChapters = [];
-            activeChapterEls.forEach(btn => {
-                const clone = btn.cloneNode(true);
-                clone.querySelectorAll('span').forEach(s => s.remove());
+            activeChapterEls.forEach(row => {
+                const clone = row.cloneNode(true);
+                clone.querySelectorAll('button, span').forEach(el => el.remove());
                 const chapterText = clone.textContent.trim();
                 if (chapterText) activeChapters.push(chapterText);
             });
@@ -988,6 +977,7 @@ ${t.issueSectionSuggestDesc}
         async function init() {
             setLanguage(currentLang);
             initZoom();
+            initEventDelegation();
             try {
                 const response = await fetch("structure.json");
                 structureData = await response.json();
@@ -1155,7 +1145,7 @@ ${t.issueSectionSuggestDesc}
             let html = "";
             matchingFiles.forEach((file) => {
                 const icon = file.isExternal ? "🌐" : "📄";
-                html += `<button type="button" onclick="selectSearchResult('${file.path}', ${file.isExternal ? 'true' : 'false'})" class="search-item w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex items-center gap-2 cursor-pointer focus:outline-none">
+                html += `<button type="button" data-path="${file.path}" data-external="${file.isExternal ? 'true' : 'false'}" class="search-item w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex items-center gap-2 cursor-pointer focus:outline-none">
                     <span>${icon}</span> <span class="font-medium">${file.name}</span>
                 </button>`
             });
@@ -1302,7 +1292,6 @@ ${t.issueSectionSuggestDesc}
         });
 
         let searchTimeout;
-        let searchDebounceTimer = null;
         function debounceGlobalSearch(query) {
             clearTimeout(searchTimeout);
             searchTimeout = setTimeout(() => {
@@ -1316,6 +1305,84 @@ ${t.issueSectionSuggestDesc}
             filterDebounceTimer = setTimeout(() => {
                 handleContentFilter(query);
             }, 200);
+        }
+
+        // --- EVENT DELEGATION INITIALIZATION ---
+        function initEventDelegation() {
+            // 1. Search Dropdown Results Delegation
+            const searchDropdown = document.getElementById("searchDropdown");
+            if (searchDropdown) {
+                searchDropdown.addEventListener("click", (e) => {
+                    const item = e.target.closest("button.search-item");
+                    if (!item) return;
+                    const path = item.dataset.path;
+                    const isExternal = item.dataset.external === "true";
+                    selectSearchResult(path, isExternal);
+                });
+            }
+
+            // 2. Directory Tree Menu Delegation
+            const treeContainer = document.getElementById("tree-container");
+            if (treeContainer) {
+                treeContainer.addEventListener("click", async (e) => {
+                    const fileRow = e.target.closest("div[data-filepath]");
+                    if (!fileRow) return;
+                    if (e.target.closest("button.file-copy-btn")) return;
+
+                    const filePath = fileRow.dataset.filepath;
+                    await loadFile(filePath);
+                    if (window.innerWidth < 1060) {
+                        closeAllOverlays();
+                    }
+                });
+            }
+
+            // 3. Table of Contents (TOC) Delegation
+            const tocContainer = document.getElementById("toc-container");
+            if (tocContainer) {
+                tocContainer.addEventListener("click", (e) => {
+                    if (e.target.closest("button.toc-copy-btn")) return;
+                    const tocTextBtn = e.target.closest("[data-target-id]");
+                    if (!tocTextBtn) return;
+
+                    const targetId = tocTextBtn.dataset.targetId;
+                    const heading = document.getElementById(targetId);
+                    if (heading) {
+                        heading.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                        if (window.innerWidth < 650) {
+                            closeAllOverlays();
+                        }
+                    }
+                });
+            }
+
+            // 4. Content Viewer Filter Click Delegation
+            const contentViewer = document.getElementById("content-viewer");
+            if (contentViewer) {
+                contentViewer.addEventListener("click", (e) => {
+                    if (e.target.closest('button')) return;
+                    const filterInput = document.getElementById("contentFilterInput");
+                    const isFiltered = filterInput && filterInput.value.trim().length > 0;
+                    if (!isFiltered) return;
+
+                    const blockEl = e.target.closest("h1, h2, h3, h4, h5, h6, p, li, blockquote, pre");
+                    if (!blockEl || blockEl.style.display === "none") return;
+
+                    const targetEl = blockEl;
+                    clearContentFilter();
+
+                    setTimeout(() => {
+                        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+                        targetEl.classList.add("bg-emerald-900/60", "transition-colors", "duration-1000");
+                        setTimeout(() => {
+                            targetEl.classList.remove("bg-emerald-900/60");
+                        }, 1500);
+                    }, 50);
+                });
+            }
         }
 
         // --- SECTION 6: IN-CONTENT FILTERING ---
@@ -1432,7 +1499,6 @@ ${t.issueSectionSuggestDesc}
                 viewer.querySelectorAll("h1, h2, h3, h4, h5, h6, p, li, blockquote, table, pre, ul, ol, div").forEach(el => {
                     el.style.display = "";
                     el.classList.remove("cursor-pointer", "hover:bg-gray-700/40", "rounded", "px-1", "transition-colors", "bg-emerald-900/60");
-                    el.onclick = null;
                     el.title = "";
                 });
 
@@ -1519,27 +1585,10 @@ ${t.issueSectionSuggestDesc}
                         
                         // Apply term highlights to matching visible text blocks
                         applyHighlights(el, searchTerms);
-
-                        el.onclick = (e) => {
-                            if (e.target.closest('button')) return;
-                            e.stopPropagation();
-                            const targetEl = el;
-                            
-                            clearContentFilter();
-
-                            setTimeout(() => {
-                                targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
-                                targetEl.classList.add("bg-emerald-900/60", "transition-colors", "duration-1000");
-                                setTimeout(() => {
-                                    targetEl.classList.remove("bg-emerald-900/60");
-                                }, 1500);
-                            }, 50);
-                        };
                     }
                 } else {
                     el.style.display = "none";
                     el.classList.remove("cursor-pointer", "hover:bg-gray-700/40", "rounded", "px-1", "transition-colors");
-                    el.onclick = null;
                     el.title = "";
                 }
             });
@@ -1808,15 +1857,9 @@ ${t.issueSectionSuggestDesc}
                         ? "flex items-center justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors break-words group/tree"
                         : "flex items-center justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words group/tree";
 
-                    const fileLink = document.createElement("button");
-                    fileLink.className = "flex-1 text-left bg-transparent border-none text-inherit cursor-pointer break-words focus:outline-none";
+                    const fileLink = document.createElement("div");
+                    fileLink.className = "flex-1 text-left cursor-pointer break-words";
                     fileLink.textContent = `📄 ${item.name}`;
-                    fileLink.onclick = async () => {
-                        await loadFile(item.path);
-                        if (window.innerWidth < 1060) {
-                            closeAllOverlays()
-                        }
-                    };
 
                     const copyBtn = createFileTreeCopyButton(item.path);
 
@@ -1946,7 +1989,10 @@ ${t.issueSectionSuggestDesc}
                     heading.id = `heading-${index}`
                 }
 
-                const originalText = heading.textContent;
+                // Extract clean text without existing copy buttons
+                const headingClone = heading.cloneNode(true);
+                headingClone.querySelectorAll('.heading-copy-btn, span').forEach(el => el.remove());
+                const originalText = headingClone.textContent.trim();
 
                 if (!heading.querySelector(".heading-copy-btn")) {
                     heading.classList.add("group", "relative");
@@ -1971,21 +2017,12 @@ ${t.issueSectionSuggestDesc}
                 if (heading.tagName === "H7") indentClass = "pl-12";
 
                 const tocItem = document.createElement("div");
-                tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words ${indentClass} cursor-pointer group/toc`;
+                tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words scroll-m-2 ${indentClass} cursor-pointer group/toc`;
 
-                const tocTextBtn = document.createElement("button");
-                tocTextBtn.className = "flex-1 text-left bg-transparent border-none text-inherit cursor-pointer break-words focus:outline-none";
+                const tocTextBtn = document.createElement("div");
+                tocTextBtn.className = "flex-1 text-left cursor-pointer break-words";
                 tocTextBtn.textContent = originalText;
                 tocTextBtn.dataset.targetId = heading.id;
-                tocTextBtn.onclick = () => {
-                    heading.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-                    if (window.innerWidth < 650) {
-                        closeAllOverlays()
-                    }
-                };
 
                 const tocCopyBtn = createCopyButton(heading.id, true);
 
@@ -2032,7 +2069,7 @@ ${t.issueSectionSuggestDesc}
                     if (tocItems) {
                         Array.from(tocItems).forEach((item) => {
                             const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
-                            item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words ${baseIndentClass} cursor-pointer group/toc`;
+                            item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words scroll-m-2 ${baseIndentClass} cursor-pointer group/toc`;
                         });
                     }
                     return;
@@ -2074,18 +2111,19 @@ ${t.issueSectionSuggestDesc}
                     const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
                     
                     if (activeIndices.has(idx)) {
-                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors break-words ${baseIndentClass} cursor-pointer group/toc`;
+                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors break-words scroll-m-2 ${baseIndentClass} cursor-pointer group/toc`;
                     } else {
-                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words ${baseIndentClass} cursor-pointer group/toc`;
+                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words scroll-m-2 ${baseIndentClass} cursor-pointer group/toc`;
                     }
                 });
 
                 const firstActiveIdx = Array.from(activeIndices)[0];
                 if (firstActiveIdx !== undefined && firstActiveIdx !== window._lastFirstActiveIdx) {
                     window._lastFirstActiveIdx = firstActiveIdx;
-                    const activeBtn = tocContainer.querySelector(`[data-target-id="${headings[firstActiveIdx].id}"]`);
-                    if (activeBtn) {
-                        activeBtn.parentElement.scrollIntoView({ behavior: "smooth", block: "center" });
+                    const activeItem = tocContainer.querySelector(`[data-target-id="${headings[firstActiveIdx].id}"]`);
+                    if (activeItem) {
+                        const tocRow = activeItem.closest('.group\\/toc') || activeItem;
+                        tocRow.scrollIntoView({ behavior: "smooth", block: "center" });
                     }
                 }
             }
