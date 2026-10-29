@@ -81,6 +81,17 @@
         .group:hover .hover-wiggle {
             animation: subtle-wiggle 0.4s ease-in-out normal;
         }
+
+        #content-viewer h1, 
+        #content-viewer h2, 
+        #content-viewer h3, 
+        #content-viewer p, 
+        #content-viewer ul, 
+        #content-viewer ol, 
+        #content-viewer blockquote {
+            content-visibility: auto;
+            contain-intrinsic-size: 1px 30px;
+        }
     </style>
 </head>
 
@@ -1335,14 +1346,19 @@ ${t.issueSectionSuggestDesc}
 
         // Removes search highlight tags and restores clean original text nodes
         function removeHighlights(container) {
-            container.querySelectorAll("mark.search-highlight").forEach(mark => {
+            const marks = Array.from(container.querySelectorAll("mark.search-highlight"));
+            if (marks.length === 0) return;
+
+            marks.forEach(mark => {
                 const parent = mark.parentNode;
-                parent.replaceChild(document.createTextNode(mark.textContent), mark);
-                parent.normalize();
+                if (parent) {
+                    parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                }
             });
+            container.normalize();
         }
 
-        // Applies search term highlighting inside text nodes of an element
+        // Applies search term highlighting inside text nodes using DocumentFragments
         function applyHighlights(el, terms) {
             if (terms.length === 0) return;
             const regex = new RegExp(`(${terms.map(escapeRegExp).join('|')})`, 'gi');
@@ -1350,7 +1366,12 @@ ${t.issueSectionSuggestDesc}
             const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
                 acceptNode: (node) => {
                     if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-                    if (node.parentElement && (node.parentElement.tagName === 'SCRIPT' || node.parentElement.tagName === 'STYLE' || node.parentElement.tagName === 'BUTTON' || node.parentElement.classList.contains('search-highlight'))) {
+                    if (node.parentElement && (
+                        node.parentElement.tagName === 'SCRIPT' || 
+                        node.parentElement.tagName === 'STYLE' || 
+                        node.parentElement.tagName === 'BUTTON' || 
+                        node.parentElement.classList.contains('search-highlight')
+                    )) {
                         return NodeFilter.FILTER_REJECT;
                     }
                     return NodeFilter.FILTER_ACCEPT;
