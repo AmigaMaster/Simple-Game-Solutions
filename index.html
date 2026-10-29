@@ -108,7 +108,7 @@
         <div class="relative flex-1 max-w-xs sm:max-w-sm mx-1 sm:mx-2 flex items-center min-w-[70px] sm:min-w-[120px]">
             <input autocomplete="off"
                 class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 sm:px-3 py-1.5 pr-14 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
-                data-i18n-placeholder="searchPlaceholder" id="searchInput" onblur="handleSearchBlur();" onfocus="handleSearchFocus();" oninput="handleGlobalSearch(this.value);"
+                data-i18n-placeholder="searchPlaceholder" id="searchInput" onblur="handleSearchBlur();" onfocus="handleSearchFocus();" oninput="debounceGlobalSearch(this.value);"
                 onkeydown="handleSearchInputKeydown(event);" placeholder="Suchen..." type="text">
             <button
                 class="absolute right-8 text-emerald-400 hover:text-emerald-300 text-xs hidden focus:outline-none cursor-pointer"
@@ -204,7 +204,7 @@
                 <div class="relative flex-1">
                     <input autocomplete="off"
                         class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
-                        data-i18n-placeholder="filterPlaceholder" id="contentFilterInput" oninput="handleContentFilter(this.value);"
+                        data-i18n-placeholder="filterPlaceholder" id="contentFilterInput" oninput="debounceContentFilter(this.value);"
                         onkeydown="handleContentFilterKeydown(event);"
                         placeholder="Inhalt filtern..." type="text">
                     <button class="absolute right-2.5 top-2.5 text-gray-400 hover:text-white text-xs hidden focus:outline-none cursor-pointer"
@@ -1290,6 +1290,30 @@ ${t.issueSectionSuggestDesc}
             }
         });
 
+        let searchTimeout;
+        function debounceGlobalSearch(query) {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                handleGlobalSearch(query);
+            }, 200);
+        }
+
+        let searchDebounceTimer = null;
+        function debounceGlobalSearch(query) {
+            clearTimeout(searchDebounceTimer);
+            searchDebounceTimer = setTimeout(() => {
+                handleGlobalSearch(query);
+            }, 200);
+        }
+
+        let filterDebounceTimer = null;
+        function debounceContentFilter(query) {
+            clearTimeout(filterDebounceTimer);
+            filterDebounceTimer = setTimeout(() => {
+                handleContentFilter(query);
+            }, 200);
+        }
+
         // --- SECTION 6: IN-CONTENT FILTERING ---
         function handleContentFilterKeydown(e) {
             if (e.key === "Escape") {
@@ -1960,6 +1984,9 @@ ${t.issueSectionSuggestDesc}
         function setupScrollSpy(contentViewer, tocContainer) {
             const scrollProgressBar = document.getElementById("scrollProgressBar");
 
+            let lastExecutionTime = 0;
+            const updateInterval = 333;
+
             function updateScrollPosition() {
                 const scrollTop = contentViewer.scrollTop;
                 const scrollHeight = contentViewer.scrollHeight;
@@ -1975,6 +2002,13 @@ ${t.issueSectionSuggestDesc}
                 if (scrollProgressBar) {
                     scrollProgressBar.style.width = percent + "%";
                 }
+
+                const now = performance.now();
+                // Limit sidebar refresh interval for performance reasons
+                if (now - lastExecutionTime < updateInterval) {
+                    return;
+                }
+                lastExecutionTime = now;
 
                 const filterInput = document.getElementById("contentFilterInput");
                 const isFiltered = filterInput && filterInput.value.trim().length > 0;
