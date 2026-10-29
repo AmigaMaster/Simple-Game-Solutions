@@ -4,13 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <title>Simple Game Solutions</title>
+    <title>Simple Game Solutions | Interactive Adventure Game Walkthroughs & Guides</title>
+    <meta name="description" content="Discover interactive video game walkthroughs, guides, and solutions for classic adventure games with chapter search and reading progress tracking.">
+    <meta name="keywords" content="walkthrough, game solution, adventure games, point and click, guide, gaming tips">
     <link rel="icon" type="res/img" href="favicon.gif">
     <meta property="og:title" content="Simple Game Solutions">
     <meta property="og:description" content="Discover and contribute to player-centric video game walkthroughs">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://amigamaster.github.io/Simple-Game-Solutions">
     <meta name="theme-color" content="#10b981">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Simple Game Solutions",
+      "url": "https://amigamaster.github.io/Simple-Game-Solutions",
+      "description": "Interactive and player-centric video game walkthroughs and guides for classic adventure games.",
+      "inLanguage": ["de", "en"]
+    }
+    </script>
 
     <!-- External Libraries: Tailwind CSS Typography Plugin & Marked.js -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -198,7 +211,7 @@
                         id="clearContentFilterBtn" onclick="clearContentFilter();" title="Filter löschen">✕</button>
                 </div>
 
-                <!-- Reading Panel Messsage Dropdown Menu -->
+                <!-- Report & Discussions Dropdown Menu -->
                 <div class="relative shrink-0" id="reportMenuContainer">
                     <button onclick="toggleReportMenu();" class="bg-gray-950 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" title="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden">
                         <span>🗨️</span><span class="hidden sm:inline" data-i18n="reportIssueBtn">Nachricht</span>
@@ -834,6 +847,13 @@ ${t.issueSectionSuggestDesc}
             if (filterInput) filterInput.value = "";
             document.getElementById("clearContentFilterBtn").classList.add("hidden");
             rawFileContent = null;
+
+            // Reset dynamic document title and meta description when returning home
+            document.title = "Simple Game Solutions | Interactive Adventure Game Walkthroughs & Guides";
+            let metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) {
+                metaDesc.setAttribute("content", "Discover interactive video game walkthroughs, guides, and solutions for classic adventure games with chapter search and reading progress tracking.");
+            }
 
             const stats = structureData.stats || { total_files: countFileObjects(structureData), total_words: 0, total_actions: 0 };
             const fileCount = stats.total_files || countFileObjects(structureData);
@@ -1537,6 +1557,16 @@ ${t.issueSectionSuggestDesc}
 
             trackRecentFile(filePath);
             updateActiveFileInTree();
+
+            // Dynamic SEO Updates for loaded solution files
+            const cleanGameTitle = getCleanGameTitle();
+            if (cleanGameTitle) {
+                document.title = `${cleanGameTitle} - Walkthrough & Guide | Simple Game Solutions`;
+                let metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) {
+                    metaDesc.setAttribute("content", `Comprehensive walkthrough, solutions, and hints for ${cleanGameTitle} on Simple Game Solutions.`);
+                }
+            }
 
             const viewer = document.getElementById("content-viewer");
             const tocContainer = document.getElementById("toc-container");
