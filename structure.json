@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 594,
-    "total_words": 683072,
-    "total_actions": 83767
+    "total_files": 595,
+    "total_words": 683194,
+    "total_actions": 83786
   },
   "name": "solutions",
   "type": "directory",
@@ -4804,6 +4804,14 @@
           "last_modified": "2026-04-05T00:11:39+02:00",
           "words": 1808,
           "actions": 213
+        },
+        {
+          "name": "Warp Cinema-EN",
+          "type": "file",
+          "path": "W/Warp Cinema-EN.md",
+          "last_modified": "2026-10-30T00:32:54+01:00",
+          "words": 122,
+          "actions": 19
         },
         {
           "name": "What Makes You Tick-EN",
