@@ -2,7 +2,7 @@
 
 | Version | Date       | Author                                    |
 |:-------:|------------|-------------------------------------------|
-|   1.0   | 04.09.2022 | Amiga Master                              |
+|   1.0   | 04.09.2022 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
 ## 1. Level 1
 
