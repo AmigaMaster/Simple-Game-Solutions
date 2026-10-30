@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 595,
-    "total_words": 683194,
-    "total_actions": 83786
+    "total_files": 596,
+    "total_words": 683845,
+    "total_actions": 83888
   },
   "name": "solutions",
   "type": "directory",
@@ -550,6 +550,14 @@
           "last_modified": "2023-01-15T10:39:54+01:00",
           "words": 2353,
           "actions": 325
+        },
+        {
+          "name": "Big Time Monkey-DE",
+          "type": "file",
+          "path": "B/Big Time Monkey-DE.md",
+          "last_modified": "2026-10-31T00:02:21+01:00",
+          "words": 650,
+          "actions": 102
         },
         {
           "name": "Billy Boy's Important Wine Lottery-EN",
@@ -1847,8 +1855,8 @@
           "name": "Lona - Realms of Colors-EN",
           "type": "file",
           "path": "L/Lona - Realms of Colors-EN.md",
-          "last_modified": "2026-10-13T23:10:47+02:00",
-          "words": 766,
+          "last_modified": "2026-10-30T23:59:19+01:00",
+          "words": 767,
           "actions": 92
         },
         {
