@@ -293,6 +293,9 @@
     <!-- ========================================== -->
     <script>
         // --- SAFE localStorage HELPERS (storage may be blocked or full) ---
+        // HTML only knows h1-h6
+        const HEADING_SELECTOR = "h1, h2, h3, h4, h5, h6";
+
         function lsGet(key) {
             try { return localStorage.getItem(key); } catch (e) { return null; }
         }
@@ -327,6 +330,8 @@
             de: {
                 menuBtn: "Menü",
                 menuToggleTitle: "Verzeichnisse ein-/ausblenden",
+                close: "Schließen",
+                copyFailed: "Kopieren fehlgeschlagen",
                 goHomeTitle: "Zur Startseite",
                 subtitle: "Automatische Dokumentation",
                 tocBtn: "Inhalt",
@@ -376,6 +381,8 @@
             en: {
                 menuBtn: "Menu",
                 menuToggleTitle: "Toggle directories",
+                close: "Close",
+                copyFailed: "Copy failed",
                 goHomeTitle: "Go to home page",
                 subtitle: "Automatic Documentation",
                 tocBtn: "Content",
@@ -441,6 +448,7 @@
         function setLanguage(lang) {
             currentLang = lang;
             lsSet("sgs_lang", lang);
+            document.documentElement.lang = lang;
             document.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
                 if (translations[currentLang][key]) {
@@ -467,7 +475,7 @@
                 const tocContainer = document.getElementById("toc-container");
                 if (viewer && tocContainer) {
                     viewer.querySelectorAll(".heading-copy-btn").forEach(btn => btn.remove());
-                    viewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7").forEach(h => h.classList.remove("group", "relative"));
+                    viewer.querySelectorAll(HEADING_SELECTOR).forEach(h => h.classList.remove("group", "relative"));
                     generateToc(viewer, tocContainer);
                     setupScrollSpy(viewer, tocContainer);
                 }
@@ -919,14 +927,6 @@ ${t.issueSectionSuggestDesc}
                 ? `Wähle oben über die Suche oder links im Menü eine Lösung aus. Aktuell umfasst die Sammlung ${fileCount} Lösungen mit insgesamt ${wordCount} Wörtern und ${actionCount} Aktionen.`
                 : `Select a solution via search or menu. Currently the collection includes ${fileCount} walkthroughs with a total of ${wordCount} words and ${actionCount} actions.`;
 
-            const fileMap = new Map();
-            function collectMap(node) {
-                if (!node) return;
-                if (node.type === 'file') fileMap.set(node.path, node);
-                else if (node.type === 'directory' && node.children) node.children.forEach(collectMap);
-            }
-            collectMap(structureData);
-
             let listHtml = `<div class="max-w-3xl mx-auto py-8 px-4">
                 <p class="text-base sm:text-lg text-center text-gray-300 mb-6" data-i18n="welcomeMessage">${welcomeText}</p>
                 
@@ -950,16 +950,7 @@ ${t.issueSectionSuggestDesc}
             listHtml += `</div><div class="space-y-2">`;
 
             if (tab === 'modified') {
-                const allFiles = [];
-                function collect(node) {
-                    if (!node) return;
-                    if (node.type === 'file') allFiles.push(node);
-                    else if (node.type === 'directory' && node.children) node.children.forEach(collect);
-                }
-                collect(structureData);
-
-                allFiles.sort((a, b) => new Date(b.last_modified) - new Date(a.last_modified));
-                const newest = allFiles.slice(0, 20);
+                const newest = getNewestFiles(20);
 
                 const readMap = readReadMap();
 
@@ -982,7 +973,7 @@ ${t.issueSectionSuggestDesc}
                     listHtml += `<p class="text-center text-gray-500 text-xs italic py-4">${currentLang === 'de' ? 'Keine kürzlich genutzten Lösungen vorhanden.' : 'No recently used solutions found.'}</p>`;
                 } else {
                     recentPaths.forEach(path => {
-                        const file = fileMap.get(path);
+                        const file = fileIndex.get(path);
                         const fileName = file ? file.name : path.split('/').pop();
                         const percentVal = lsGet(`sgs_scroll_percent_${path}`);
                         const badgeText = percentVal !== null ? `${Math.round(parseFloat(percentVal))}%` : '0%';
@@ -1161,19 +1152,8 @@ ${t.issueSectionSuggestDesc}
                 dropdown.classList.add("hidden");
                 return
             }
-            const matchingFiles = [];
-
-            function collectFiles(node) {
-                if (!node) return;
-                if (node.type === "file") {
-                    if (matchQuery(node.name.toLowerCase(), q)) {
-                        matchingFiles.push(node)
-                    }
-                } else if (node.type === "directory" && node.children) {
-                    node.children.forEach(child => collectFiles(child))
-                }
-            }
-            collectFiles(structureData);
+            const matchingFiles = Array.from(fileIndex.values())
+                .filter(file => matchQuery(file.name.toLowerCase(), q));
 
             const qLower = q.toLowerCase();
             if (qLower === "4823" || qLower.includes("call edna") || qLower.includes("edna anrufen")) {
@@ -1281,7 +1261,7 @@ ${t.issueSectionSuggestDesc}
         }
 
         // Copy a link which keeps the search field input
-        function copySearchLink() {
+        async function copySearchLink() {
             const input = document.getElementById("searchInput");
             const searchVal = input ? input.value.trim() : "";
             if (!searchVal) return;
@@ -1289,14 +1269,13 @@ ${t.issueSectionSuggestDesc}
             const baseUrl = window.location.href.split('?')[0].split('#')[0];
             const cleanUrl = `${baseUrl}?search=${encodeURIComponent(searchVal)}`;
 
-            navigator.clipboard.writeText(cleanUrl).then(() => {
-                const copyBtn = document.getElementById("copySearchBtn");
-                if (!copyBtn) return;
-                copyBtn.textContent = "✓";
-                setTimeout(() => {
-                    copyBtn.textContent = "🔗";
-                }, 1500);
-            });
+            const ok = await copyTextToClipboard(cleanUrl);
+            const copyBtn = document.getElementById("copySearchBtn");
+            if (!copyBtn) return;
+            copyBtn.textContent = ok ? "✓" : "✗";
+            setTimeout(() => {
+                copyBtn.textContent = "🔗";
+            }, 1500);
         }
 
         // Select a search result item
@@ -1836,17 +1815,47 @@ ${t.issueSectionSuggestDesc}
         }
 
         // --- SECTION 8: DIRECTORY TREE MENU RENDERING ---
-        function createFileTreeCopyButton(filePath) {
+        // Copies text to the clipboard. Falls back to execCommand when the Clipboard API is
+        // unavailable or denied (non-HTTPS context, missing permission). Resolves to true/false, never throws.
+        async function copyTextToClipboard(text) {
+            try {
+                await navigator.clipboard.writeText(text);
+                return true;
+            } catch (e) {
+                try {
+                    const area = document.createElement("textarea");
+                    area.value = text;
+                    area.setAttribute("readonly", "");
+                    area.style.position = "fixed";
+                    area.style.opacity = "0";
+                    document.body.appendChild(area);
+                    area.select();
+                    const ok = document.execCommand("copy");
+                    document.body.removeChild(area);
+                    return ok;
+                } catch (e2) {
+                    return false;
+                }
+            }
+        }
+
+        const COPY_POPUP_CLASSES = "px-2 py-0.5 bg-gray-800 text-emerald-300 text-xs rounded shadow-lg whitespace-nowrap opacity-0 pointer-events-none border border-gray-700 z-50";
+        const COPY_POPUP_LEFT = `absolute right-full mr-2 ${COPY_POPUP_CLASSES}`;
+        const COPY_POPUP_RIGHT = `absolute left-full ml-2 ${COPY_POPUP_CLASSES}`;
+
+        // Shared "copy link" button (directory tree, chapter headings, table of contents).
+        // getUrl is evaluated at click time so the link always reflects the current state.
+        function createLinkCopyButton({ className, popupClassName, title, getUrl }) {
             const copyBtn = document.createElement("button");
-            copyBtn.className = `file-copy-btn inline-flex items-center ml-2 opacity-70 sm:opacity-0 sm:group-hover/tree:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative shrink-0`;
-            copyBtn.title = translations[currentLang].copyFileLinkTitle;
+            copyBtn.className = className;
+            copyBtn.title = title;
 
             const iconSpan = document.createElement("span");
             iconSpan.className = "inline-block w-6 text-center";
             iconSpan.textContent = "🔗";
 
             const popupSpan = document.createElement("span");
-            popupSpan.className = "absolute right-full mr-2 px-2 py-0.5 bg-gray-800 text-emerald-300 text-xs rounded shadow-lg whitespace-nowrap opacity-0 pointer-events-none border border-gray-700 z-50";
+            popupSpan.className = popupClassName;
             popupSpan.textContent = translations[currentLang].linkCopied;
 
             copyBtn.appendChild(iconSpan);
@@ -1854,39 +1863,47 @@ ${t.issueSectionSuggestDesc}
 
             let copyTimeout = null;
 
-            copyBtn.onclick = (e) => {
+            copyBtn.onclick = async (e) => {
                 e.stopPropagation();
-                const baseUrl = window.location.href.split('?')[0].split('#')[0];
-                let cleanUrl = `${baseUrl}?file=${encodeURIComponent(filePath)}`;
+                const ok = await copyTextToClipboard(getUrl());
+                iconSpan.textContent = ok ? "✓" : "✗";
+                popupSpan.textContent = ok ? translations[currentLang].linkCopied : translations[currentLang].copyFailed;
 
-                navigator.clipboard.writeText(cleanUrl).then(() => {
-                    iconSpan.textContent = "✓";
-                    popupSpan.textContent = translations[currentLang].linkCopied;
+                copyBtn.style.transition = 'none';
+                popupSpan.style.transition = 'none';
+                copyBtn.style.opacity = "1";
+                popupSpan.style.opacity = "1";
 
-                    copyBtn.style.transition = 'none';
-                    popupSpan.style.transition = 'none';
-                    copyBtn.style.opacity = "1";
-                    popupSpan.style.opacity = "1";
+                void popupSpan.offsetWidth;
 
-                    void popupSpan.offsetWidth;
+                if (copyTimeout) clearTimeout(copyTimeout);
+                copyTimeout = setTimeout(() => {
+                    copyBtn.style.transition = 'opacity 500ms ease';
+                    popupSpan.style.transition = 'opacity 500ms ease';
+                    popupSpan.style.opacity = "0";
+                    copyBtn.style.opacity = "0";
 
-                    if (copyTimeout) clearTimeout(copyTimeout);
-                    copyTimeout = setTimeout(() => {
-                        copyBtn.style.transition = 'opacity 500ms ease';
-                        popupSpan.style.transition = 'opacity 500ms ease';
-                        popupSpan.style.opacity = "0";
-                        copyBtn.style.opacity = "0";
-
-                        setTimeout(() => {
-                            iconSpan.textContent = "🔗";
-                            copyBtn.style.opacity = "";
-                            copyBtn.style.transition = "";
-                            popupSpan.style.transition = "";
-                        }, 500);
-                    }, 1500);
-                });
+                    setTimeout(() => {
+                        iconSpan.textContent = "🔗";
+                        copyBtn.style.opacity = "";
+                        copyBtn.style.transition = "";
+                        popupSpan.style.transition = "";
+                    }, 500);
+                }, 1500);
             };
             return copyBtn;
+        }
+
+        function createFileTreeCopyButton(filePath) {
+            return createLinkCopyButton({
+                className: "file-copy-btn inline-flex items-center ml-2 opacity-70 sm:opacity-0 sm:group-hover/tree:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative shrink-0",
+                popupClassName: COPY_POPUP_LEFT,
+                title: translations[currentLang].copyFileLinkTitle,
+                getUrl: () => {
+                    const baseUrl = window.location.href.split('?')[0].split('#')[0];
+                    return `${baseUrl}?file=${encodeURIComponent(filePath)}`;
+                }
+            });
         }
 
         function renderTree(node, container, filterQuery = "") {
@@ -1999,77 +2016,32 @@ ${t.issueSectionSuggestDesc}
 
         // --- SECTION 9: TABLE OF CONTENTS (TOC) & SCROLL SPY ---
         function createCopyButton(headingId, isToc = false) {
-            const copyBtn = document.createElement("button");
-            copyBtn.className = `${isToc ? 'toc-copy-btn' : 'heading-copy-btn'} inline-flex items-center ${isToc ? 'ml-2' : 'mr-2'} opacity-70 sm:opacity-0 sm:group-hover${isToc ? '/toc' : ''}:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative shrink-0`;
-            copyBtn.title = translations[currentLang].copyChapterLinkTitle;
+            return createLinkCopyButton({
+                className: `${isToc ? 'toc-copy-btn' : 'heading-copy-btn'} inline-flex items-center ${isToc ? 'ml-2' : 'mr-2'} opacity-70 sm:opacity-0 sm:group-hover${isToc ? '/toc' : ''}:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative shrink-0`,
+                popupClassName: isToc ? COPY_POPUP_LEFT : COPY_POPUP_RIGHT,
+                title: translations[currentLang].copyChapterLinkTitle,
+                getUrl: () => {
+                    const baseUrl = window.location.href.split('?')[0].split('#')[0];
+                    const filterInput = document.getElementById("contentFilterInput");
+                    const filterVal = filterInput ? filterInput.value.trim() : "";
+                    const searchInput = document.getElementById("searchInput");
+                    const searchVal = searchInput ? searchInput.value.trim() : "";
 
-            const iconSpan = document.createElement("span");
-            iconSpan.className = "inline-block w-6 text-center";
-            iconSpan.textContent = "🔗";
-
-            const popupSpan = document.createElement("span");
-            if (isToc) {
-                popupSpan.className = "absolute right-full mr-2 px-2 py-0.5 bg-gray-800 text-emerald-300 text-xs rounded shadow-lg whitespace-nowrap opacity-0 pointer-events-none border border-gray-700 z-50";
-            } else {
-                popupSpan.className = "absolute left-full ml-2 px-2 py-0.5 bg-gray-800 text-emerald-300 text-xs rounded shadow-lg whitespace-nowrap opacity-0 pointer-events-none border border-gray-700 z-50";
-            }
-            popupSpan.textContent = translations[currentLang].linkCopied;
-
-            copyBtn.appendChild(iconSpan);
-            copyBtn.appendChild(popupSpan);
-
-            let copyTimeout = null;
-
-            copyBtn.onclick = (e) => {
-                e.stopPropagation();
-                const baseUrl = window.location.href.split('?')[0].split('#')[0];
-                const filterInput = document.getElementById("contentFilterInput");
-                const filterVal = filterInput ? filterInput.value.trim() : "";
-                const searchInput = document.getElementById("searchInput");
-                const searchVal = searchInput ? searchInput.value.trim() : "";
-                
-                let cleanUrl = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}`;
-                if (filterVal) {
-                    cleanUrl += `&filter=${encodeURIComponent(filterVal)}`;
+                    let cleanUrl = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}`;
+                    if (filterVal) {
+                        cleanUrl += `&filter=${encodeURIComponent(filterVal)}`;
+                    }
+                    if (searchVal) {
+                        cleanUrl += `&search=${encodeURIComponent(searchVal)}`;
+                    }
+                    return cleanUrl + `#${headingId}`;
                 }
-                if (searchVal) {
-                    cleanUrl += `&search=${encodeURIComponent(searchVal)}`;
-                }
-                cleanUrl += `#${headingId}`;
-
-                navigator.clipboard.writeText(cleanUrl).then(() => {
-                    iconSpan.textContent = "✓";
-                    popupSpan.textContent = translations[currentLang].linkCopied;
-
-                    copyBtn.style.transition = 'none';
-                    popupSpan.style.transition = 'none';
-                    copyBtn.style.opacity = "1";
-                    popupSpan.style.opacity = "1";
-
-                    void popupSpan.offsetWidth;
-
-                    if (copyTimeout) clearTimeout(copyTimeout);
-                    copyTimeout = setTimeout(() => {
-                        copyBtn.style.transition = 'opacity 500ms ease';
-                        popupSpan.style.transition = 'opacity 500ms ease';
-                        popupSpan.style.opacity = "0";
-                        copyBtn.style.opacity = "0";
-
-                        setTimeout(() => {
-                            iconSpan.textContent = "🔗";
-                            copyBtn.style.opacity = "";
-                            copyBtn.style.transition = "";
-                            popupSpan.style.transition = "";
-                        }, 500);
-                    }, 1500);
-                });
-            };
-            return copyBtn;
+            });
         }
 
         function generateToc(contentViewer, tocContainer) {
             tocContainer.innerHTML = "";
-            const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
+            const headings = contentViewer.querySelectorAll(HEADING_SELECTOR);
             if (headings.length === 0) {
                 tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs sm:text-sm">${translations[currentLang].noHeadings}</p>`;
                 return
@@ -2165,7 +2137,7 @@ ${t.issueSectionSuggestDesc}
                     return;
                 }
 
-                const headings = contentViewer.querySelectorAll("h1, h2, h3, h4, h5, h6, h7");
+                const headings = contentViewer.querySelectorAll(HEADING_SELECTOR);
                 if (headings.length === 0 || tocItems.length === 0) return;
 
                 const viewerRect = contentViewer.getBoundingClientRect();
