@@ -1766,8 +1766,7 @@ ${t.issueSectionSuggestDesc}
             // Restore scroll position using saved percentage after DOM rendering completes
             if (window.location.hash) {
                 setTimeout(() => {
-                    const targetId = window.location.hash.substring(1);
-                    const targetEl = document.getElementById(targetId);
+                    const targetEl = findAnchorTarget(window.location.hash);
                     if (targetEl) {
                         targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
                     }
@@ -2039,6 +2038,48 @@ ${t.issueSectionSuggestDesc}
             });
         }
 
+        // --- STABLE HEADING IDs ---
+        // IDs are derived from the heading text ("Kapitel 3: Die Höhle" -> "kapitel-3-die-hoehle"),
+        // so shared chapter links keep working when headings are added or moved.
+        function slugifyHeading(text) {
+            return String(text)
+                .toLowerCase()
+                .replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue").replace(/ß/g, "ss")
+                .normalize("NFKD").replace(/[\u0300-\u036f]/g, "")   // é -> e
+                .replace(/[^a-z0-9]+/g, "-")
+                .slice(0, 80)
+                .replace(/^-+|-+$/g, "");
+        }
+
+        // Unique ID within the document: duplicates get -2, -3 ... (in document order, like GitHub),
+        // and IDs of the page's own elements (sidebar, searchInput, ...) are never reused.
+        function makeHeadingId(text, index, usedIds) {
+            const base = slugifyHeading(text) || `heading-${index}`;
+            let candidate = base;
+            let n = 2;
+            while (usedIds.has(candidate) || document.getElementById(candidate)) {
+                candidate = `${base}-${n++}`;
+            }
+            usedIds.add(candidate);
+            return candidate;
+        }
+
+        // Finds the chapter a URL hash points to (only inside the document viewer).
+        // Also resolves old index-based links (#heading-7) that were shared before slug IDs existed.
+        function findAnchorTarget(rawHash) {
+            const viewer = document.getElementById("content-viewer");
+            let id = String(rawHash).replace(/^#/, "");
+            try { id = decodeURIComponent(id); } catch (e) { /* keep raw value */ }
+            if (!id) return null;
+            let el = document.getElementById(id);
+            if (el && !viewer.contains(el)) el = null;
+            if (!el) {
+                const legacy = /^heading-(\d+)$/.exec(id);
+                if (legacy) el = viewer.querySelectorAll(HEADING_SELECTOR)[Number(legacy[1])] || null;
+            }
+            return el;
+        }
+
         function generateToc(contentViewer, tocContainer) {
             tocContainer.innerHTML = "";
             const headings = contentViewer.querySelectorAll(HEADING_SELECTOR);
@@ -2046,15 +2087,18 @@ ${t.issueSectionSuggestDesc}
                 tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs sm:text-sm">${translations[currentLang].noHeadings}</p>`;
                 return
             }
-            headings.forEach((heading, index) => {
-                if (!heading.id) {
-                    heading.id = `heading-${index}`
-                }
+            const usedIds = new Set();
+            headings.forEach(heading => { if (heading.id) usedIds.add(heading.id); });
 
+            headings.forEach((heading, index) => {
                 // Extract clean text without existing copy buttons
                 const headingClone = heading.cloneNode(true);
                 headingClone.querySelectorAll('.heading-copy-btn, span').forEach(el => el.remove());
                 const originalText = headingClone.textContent.trim();
+
+                if (!heading.id) {
+                    heading.id = makeHeadingId(originalText, index, usedIds);
+                }
 
                 if (!heading.querySelector(".heading-copy-btn")) {
                     heading.classList.add("group", "relative");
@@ -2076,7 +2120,6 @@ ${t.issueSectionSuggestDesc}
                 if (heading.tagName === "H4") indentClass = "pl-6";
                 if (heading.tagName === "H5") indentClass = "pl-8";
                 if (heading.tagName === "H6") indentClass = "pl-10";
-                if (heading.tagName === "H7") indentClass = "pl-12";
 
                 const tocItem = document.createElement("div");
                 tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words scroll-m-2 ${indentClass} cursor-pointer group/toc`;
