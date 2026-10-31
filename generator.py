@@ -89,8 +89,10 @@ def scan_directory(path: Path, sitemap_entries: list) -> tuple[dict, int, int, i
                 "actions": actions,
             })
             
+            # The web app opens solutions via ?file=<path> (same URL format as the app's share links).
+            # There are no static .html pages, so the sitemap must not point to them.
             sitemap_entries.append({
-                "loc": f"{BASE_URL}/solutions/{html_rel_path}",
+                "loc": f"{BASE_URL}/?file={quote(rel_path, safe='')}",
                 "lastmod": last_mod
             })
             total_files += 1
@@ -155,20 +157,17 @@ def main():
     ]
 
     # Add root index page entry
-    root_lastmod = datetime.datetime.now(datetime.timezone.utc).isoformat()
     xml_lines.append("  <url>")
-    xml_lines.append(f"    <loc>{quote(BASE_URL + '/', safe=':/%()')}</loc>")
-    xml_lines.append(f"    <lastmod>{root_lastmod}</lastmod>")
+    xml_lines.append(f"    <loc>{xml_escape(BASE_URL + '/')}</loc>")
+    xml_lines.append(f"    <lastmod>{newest_lastmod(sitemap_entries)}</lastmod>")
     xml_lines.append("  </url>")
 
     # Sort entries alphabetically by URL location for clean output
     sitemap_entries = sorted(sitemap_entries, key=lambda x: x["loc"])
 
     for entry in sitemap_entries:
-        # Properly percent-encode special characters (like %20 and %27) without escaping via &apos;
-        encoded_loc = quote(entry["loc"], safe=":/%()")
         xml_lines.append("  <url>")
-        xml_lines.append(f"    <loc>{encoded_loc}</loc>")
+        xml_lines.append(f"    <loc>{xml_escape(entry['loc'])}</loc>")
         xml_lines.append(f"    <lastmod>{entry['lastmod']}</lastmod>")
         xml_lines.append("  </url>")
 
