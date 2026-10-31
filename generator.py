@@ -1,8 +1,10 @@
 import json
 import datetime
 import subprocess
+import sys
 from pathlib import Path
 from urllib.parse import quote
+from xml.sax.saxutils import escape as xml_escape
 
 # Path to your solutions
 SOLUTIONS_DIR = Path("solutions")
@@ -12,6 +14,9 @@ BASE_URL = "https://amigamaster.github.io/Simple-Game-Solutions"
 
 # Allowed text/documentation file extensions (images and binaries will be ignored)
 ALLOWED_EXTENSIONS = {".md", ".txt"}
+
+# Files that are not walkthroughs (paths relative to SOLUTIONS_DIR, posix style)
+EXCLUDED_FILES = {"Template-EN.md"}
 
 
 def get_last_modified(file_path: Path) -> str:
@@ -40,7 +45,9 @@ def analyze_file(file_path: Path) -> tuple[int, int]:
         words = len(content.split())
         actions = sum(1 for line in content.splitlines() if line.strip().startswith("- "))
         return words, actions
-    except Exception:
+    except Exception as exc:
+        # Do not hide unreadable files (e.g. wrong encoding): show a warning in the Actions log
+        print(f"::warning file={file_path.as_posix()}::Could not analyze file: {exc}", file=sys.stderr)
         return 0, 0
 
 
@@ -68,7 +75,8 @@ def scan_directory(path: Path, sitemap_entries: list) -> tuple[dict, int, int, i
                 
         elif item.is_file() and item.suffix.lower() in ALLOWED_EXTENSIONS:
             rel_path = item.relative_to(SOLUTIONS_DIR).as_posix()
-            html_rel_path = str(Path(rel_path).with_suffix(".html"))
+            if rel_path in EXCLUDED_FILES:
+                continue
             last_mod = get_last_modified(item)
             words, actions = analyze_file(item)
             
@@ -92,13 +100,31 @@ def scan_directory(path: Path, sitemap_entries: list) -> tuple[dict, int, int, i
     return tree, total_files, total_words, total_actions
 
 
+def newest_lastmod(entries: list) -> str:
+    """Newest lastmod of all entries (deterministic, so sitemap.xml only changes when content changes)."""
+    newest = None
+    for entry in entries:
+        try:
+            dt = datetime.datetime.fromisoformat(entry["lastmod"])
+        except ValueError:
+            continue
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=datetime.timezone.utc)
+        if newest is None or dt > newest[0]:
+            newest = (dt, entry["lastmod"])
+    if newest:
+        return newest[1]
+    return datetime.datetime.now(datetime.timezone.utc).isoformat()
+
+
 def main():
     if not SOLUTIONS_DIR.exists():
         print(
             f"Folder {SOLUTIONS_DIR} not found. Please create the directory"
-            " structure."
+            " structure.",
+            file=sys.stderr
         )
-        return
+        sys.exit(1)  # fail the workflow instead of deploying an incomplete site
 
     sitemap_entries = []
     data, total_files, total_words, total_actions = scan_directory(SOLUTIONS_DIR, sitemap_entries)
