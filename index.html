@@ -26,7 +26,8 @@
     </script>
 
     <!-- External Libraries: Tailwind CSS Typography Plugin & Marked.js -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
     
     <!-- Custom Typography & Markdown Code Block Styling -->
@@ -280,6 +281,32 @@
     <!-- JAVASCRIPT APPLICATION LOGIC               -->
     <!-- ========================================== -->
     <script>
+        // --- SAFE localStorage HELPERS (storage may be blocked or full) ---
+        function lsGet(key) {
+            try { return localStorage.getItem(key); } catch (e) { return null; }
+        }
+        function lsSet(key, value) {
+            try { localStorage.setItem(key, value); return true; } catch (e) { return false; }
+        }
+        function lsRemove(key) {
+            try { localStorage.removeItem(key); } catch (e) { /* ignore */ }
+        }
+        function readJsonArray(key) {
+            try {
+                const v = JSON.parse(lsGet(key) || "[]");
+                return Array.isArray(v) ? v.filter(x => typeof x === "string") : [];
+            } catch (e) { return []; }
+        }
+        function readJsonObject(key) {
+            try {
+                const v = JSON.parse(lsGet(key) || "{}");
+                return (v && typeof v === "object" && !Array.isArray(v)) ? v : {};
+            } catch (e) { return {}; }
+        }
+        function writeJson(key, value) {
+            return lsSet(key, JSON.stringify(value));
+        }
+
         function isDesktopDevice() {
             return window.innerWidth >= 768 && window.matchMedia('(pointer: fine)').matches;
         }
@@ -388,8 +415,8 @@
 
         // Detect and initialize browser language setting
         function getBrowserLanguage() {
-            const savedLang = localStorage.getItem("sgs_lang");
-            if (savedLang) return savedLang;
+            const savedLang = lsGet("sgs_lang");
+            if (savedLang === "de" || savedLang === "en") return savedLang;
             const browserLang = navigator.language || navigator.userLanguage;
             if (browserLang && browserLang.startsWith("en")) {
                 return "en"
@@ -402,7 +429,7 @@
         // Apply selected language translations across UI elements
         function setLanguage(lang) {
             currentLang = lang;
-            localStorage.setItem("sgs_lang", lang);
+            lsSet("sgs_lang", lang);
             document.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
                 if (translations[currentLang][key]) {
@@ -501,10 +528,15 @@
         function exportSettings() {
             toggleSettingsMenu();
             const data = {};
-            for (let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i);
-                data[key] = localStorage.getItem(key);
-            }
+            // Only export this app's own keys (the origin is shared with other projects)
+            try {
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && key.startsWith("sgs_")) {
+                        data[key] = localStorage.getItem(key);
+                    }
+                }
+            } catch (e) { /* storage unavailable: export stays empty */ }
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
             const url = URL.createObjectURL(blob);
             const a = document.createElement("a");
@@ -528,10 +560,21 @@
                     if (typeof data !== 'object' || data === null) {
                         throw new Error("Invalid format");
                     }
-                    localStorage.clear();
-                    for (const [key, value] of Object.entries(data)) {
-                        localStorage.setItem(key, value);
+                    if (Array.isArray(data)) {
+                        throw new Error("Invalid format");
                     }
+                    // Accept only this app's own keys with string values
+                    const entries = Object.entries(data).filter(([key, value]) =>
+                        key.startsWith("sgs_") && typeof value === "string" && value.length < 500000);
+                    if (entries.length === 0) {
+                        throw new Error("No valid settings found");
+                    }
+                    // Replace own keys only, never touch other data on this origin
+                    Object.keys(localStorage)
+                        .filter(key => key.startsWith("sgs_"))
+                        .forEach(key => localStorage.removeItem(key));
+                    entries.forEach(([key, value]) => localStorage.setItem(key, value));
+                    migrateReadState();
                     alert(translations[currentLang].importSuccess || "Settings successfully imported!");
                     
                     currentLang = getBrowserLanguage();
@@ -542,7 +585,7 @@
 
                     const urlParams = new URLSearchParams(window.location.search);
                     const fileParam = urlParams.get('file');
-                    const lastFile = localStorage.getItem("sgs_last_file");
+                    const lastFile = getValidLastFile();
 
                     if (fileParam) {
                         await loadFile(fileParam, false, true);
@@ -575,13 +618,13 @@
         });
 
         function initZoom() {
-            const saved = localStorage.getItem("sgs_font_scale") || "100";
-            setZoom(parseInt(saved, 10), false);
+            const saved = parseInt(lsGet("sgs_font_scale") || "100", 10);
+            setZoom(saved >= 50 && saved <= 200 ? saved : 100, false);
         }
 
         function setZoom(percent, save = true) {
             if (save) {
-                localStorage.setItem("sgs_font_scale", percent);
+                lsSet("sgs_font_scale", percent);
             }
             
             // Scaled elements: Tree, Viewer, and TOC
@@ -619,93 +662,94 @@
         let currentWelcomeTab = 'modified';
         let scrollPercentBeforeFilter = null;
 
+        // --- FILE INDEX (path -> node from structure.json) ---
+        let fileIndex = new Map();
+        function buildFileIndex() {
+            fileIndex = new Map();
+            (function walk(node) {
+                if (!node) return;
+                if (node.type === 'file') fileIndex.set(node.path, node);
+                else if (node.children) node.children.forEach(walk);
+            })(structureData);
+        }
+
+        function getNewestFiles(n = 20) {
+            return Array.from(fileIndex.values())
+                .sort((a, b) => new Date(b.last_modified) - new Date(a.last_modified))
+                .slice(0, n);
+        }
+
+        // Returns the last opened file, or null if it no longer exists (and forgets it)
+        function getValidLastFile() {
+            const f = lsGet("sgs_last_file");
+            if (!f) return null;
+            if (fileIndex.size > 0 && !fileIndex.has(f)) {
+                lsRemove("sgs_last_file");
+                return null;
+            }
+            return f;
+        }
+
+        // --- READ STATE: path -> last_modified that the user has seen ---
+        // A file counts as unread again as soon as it was modified after it was read.
+        function readReadMap() {
+            return readJsonObject("sgs_read_v2");
+        }
+
+        function isFileUnread(file, readMap) {
+            const seen = readMap[file.path];
+            if (!seen) return true;
+            if (!file.last_modified) return false;
+            return new Date(file.last_modified) > new Date(seen);
+        }
+
+        // One-time migration from the old format (plain list of read paths)
+        function migrateReadState() {
+            if (lsGet("sgs_read_modified_files") === null || fileIndex.size === 0) return;
+            if (lsGet("sgs_read_v2") === null) {
+                const map = {};
+                readJsonArray("sgs_read_modified_files").forEach(p => {
+                    const node = fileIndex.get(p);
+                    if (node) map[p] = node.last_modified || new Date().toISOString();
+                });
+                writeJson("sgs_read_v2", map);
+            }
+            lsRemove("sgs_read_modified_files");
+        }
+
         // Track recently used file paths in localStorage
         function trackRecentFile(filePath) {
-            let recent = [];
-            try {
-                recent = JSON.parse(localStorage.getItem("sgs_recent_files") || "[]");
-            } catch (e) {
-                recent = [];
-            }
-            recent = recent.filter(p => p !== filePath);
+            const recent = readJsonArray("sgs_recent_files").filter(p => p !== filePath);
             recent.unshift(filePath);
-            if (recent.length > 20) {
-                recent = recent.slice(0, 20);
-            }
-            localStorage.setItem("sgs_recent_files", JSON.stringify(recent));
-
+            writeJson("sgs_recent_files", recent.slice(0, 20));
             markFileAsRead(filePath);
         }
 
         function markFileAsRead(filePath) {
-            let readPaths = [];
-            try {
-                readPaths = JSON.parse(localStorage.getItem("sgs_read_modified_files") || "[]");
-            } catch (e) {
-                readPaths = [];
-            }
-            if (!readPaths.includes(filePath)) {
-                readPaths.push(filePath);
-                localStorage.setItem("sgs_read_modified_files", JSON.stringify(readPaths));
+            const node = fileIndex.get(filePath);
+            if (node) {
+                const map = readReadMap();
+                map[filePath] = node.last_modified || new Date().toISOString();
+                writeJson("sgs_read_v2", map);
             }
             updateHomeBadge();
         }
 
         function markAllAsRead() {
             if (!structureData) return;
-            const allFiles = [];
-            function collect(node) {
-                if (!node) return;
-                if (node.type === 'file') allFiles.push(node);
-                else if (node.type === 'directory' && node.children) node.children.forEach(collect);
-            }
-            collect(structureData);
-            allFiles.sort((a, b) => new Date(b.last_modified) - new Date(a.last_modified));
-            const newest = allFiles.slice(0, 20);
-
-            let readPaths = [];
-            try {
-                readPaths = JSON.parse(localStorage.getItem("sgs_read_modified_files") || "[]");
-            } catch (e) {
-                readPaths = [];
-            }
-
-            newest.forEach(file => {
-                if (!readPaths.includes(file.path)) {
-                    readPaths.push(file.path);
-                }
+            const map = readReadMap();
+            getNewestFiles(20).forEach(file => {
+                map[file.path] = file.last_modified || new Date().toISOString();
             });
-            localStorage.setItem("sgs_read_modified_files", JSON.stringify(readPaths));
+            writeJson("sgs_read_v2", map);
             renderWelcomeScreen('modified');
             updateHomeBadge();
         }
 
         function getUnreadModifiedCount() {
             if (!structureData) return 0;
-            const allFiles = [];
-            function collect(node) {
-                if (!node) return;
-                if (node.type === 'file') allFiles.push(node);
-                else if (node.type === 'directory' && node.children) node.children.forEach(collect);
-            }
-            collect(structureData);
-            allFiles.sort((a, b) => new Date(b.last_modified) - new Date(a.last_modified));
-            const newest = allFiles.slice(0, 20);
-
-            let readPaths = [];
-            try {
-                readPaths = JSON.parse(localStorage.getItem("sgs_read_modified_files") || "[]");
-            } catch (e) {
-                readPaths = [];
-            }
-
-            let unreadCount = 0;
-            newest.forEach(file => {
-                if (!readPaths.includes(file.path)) {
-                    unreadCount++;
-                }
-            });
-            return unreadCount;
+            const map = readReadMap();
+            return getNewestFiles(20).filter(file => isFileUnread(file, map)).length;
         }
 
         function updateHomeBadge() {
@@ -906,32 +950,22 @@ ${t.issueSectionSuggestDesc}
                 allFiles.sort((a, b) => new Date(b.last_modified) - new Date(a.last_modified));
                 const newest = allFiles.slice(0, 20);
 
-                let readPaths = [];
-                try {
-                    readPaths = JSON.parse(localStorage.getItem("sgs_read_modified_files") || "[]");
-                } catch (e) {
-                    readPaths = [];
-                }
+                const readMap = readReadMap();
 
                 if (newest.length === 0) {
                     listHtml += `<p class="text-center text-gray-500 text-xs italic py-4">${currentLang === 'de' ? 'Keine Lösungen gefunden.' : 'No solutions found.'}</p>`;
                 } else {
                     newest.forEach(file => {
                         const dateStr = file.last_modified ? new Date(file.last_modified).toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '';
-                        const isUnread = !readPaths.includes(file.path);
-                        listHtml += `<button onclick="loadFile('${file.path}')" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border ${isUnread ? 'border-emerald-500/80 bg-emerald-950/20' : 'border-gray-700/60'} rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
-                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${file.name} ${isUnread ? '<span class="bg-emerald-500 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">NEW</span>' : ''}</span>
+                        const isUnread = isFileUnread(file, readMap);
+                        listHtml += `<button data-load-path="${escapeHtml(file.path)}" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border ${isUnread ? 'border-emerald-500/80 bg-emerald-950/20' : 'border-gray-700/60'} rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
+                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(file.name)} ${isUnread ? '<span class="bg-emerald-500 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">NEW</span>' : ''}</span>
                             <span class="text-gray-400 text-xs shrink-0 ml-2">${dateStr}</span>
                         </button>`;
                     });
                 }
             } else {
-                let recentPaths = [];
-                try {
-                    recentPaths = JSON.parse(localStorage.getItem('sgs_recent_files') || '[]');
-                } catch (e) {
-                    recentPaths = [];
-                }
+                const recentPaths = readJsonArray('sgs_recent_files');
 
                 if (recentPaths.length === 0) {
                     listHtml += `<p class="text-center text-gray-500 text-xs italic py-4">${currentLang === 'de' ? 'Keine kürzlich genutzten Lösungen vorhanden.' : 'No recently used solutions found.'}</p>`;
@@ -939,11 +973,11 @@ ${t.issueSectionSuggestDesc}
                     recentPaths.forEach(path => {
                         const file = fileMap.get(path);
                         const fileName = file ? file.name : path.split('/').pop();
-                        const percentVal = localStorage.getItem(`sgs_scroll_percent_${path}`);
+                        const percentVal = lsGet(`sgs_scroll_percent_${path}`);
                         const badgeText = percentVal !== null ? `${Math.round(parseFloat(percentVal))}%` : '0%';
                         
-                        listHtml += `<button onclick="loadFile('${path}')" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border border-gray-700/60 rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
-                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${fileName}</span>
+                        listHtml += `<button data-load-path="${escapeHtml(path)}" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border border-gray-700/60 rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
+                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(fileName)}</span>
                             <span class="bg-emerald-900/60 text-emerald-300 border border-emerald-700/50 px-2 py-0.5 rounded text-[11px] shrink-0 ml-2 font-mono">${badgeText}</span>
                         </button>`;
                     });
@@ -959,7 +993,7 @@ ${t.issueSectionSuggestDesc}
         function goHome(isHistoryNav = false) {
             currentFilePath = null;
             scrollPercentBeforeFilter = null;
-            localStorage.removeItem("sgs_last_file");
+            lsRemove("sgs_last_file");
             if (!isHistoryNav && history.pushState) {
                 history.pushState({}, '', window.location.pathname);
             }
@@ -980,7 +1014,10 @@ ${t.issueSectionSuggestDesc}
             initEventDelegation();
             try {
                 const response = await fetch("structure.json");
+                if (!response.ok) throw new Error("HTTP " + response.status);
                 structureData = await response.json();
+                buildFileIndex();
+                migrateReadState();
 
                 renderTree(structureData, document.getElementById("tree-container"));
                 updateHomeBadge();
@@ -989,7 +1026,7 @@ ${t.issueSectionSuggestDesc}
                 const fileParam = urlParams.get('file');
                 const filterParam = urlParams.get('filter');
                 const searchParam = urlParams.get('search');
-                const lastFile = localStorage.getItem("sgs_last_file");
+                const lastFile = getValidLastFile();
 
                 if (searchParam) {
                     const searchInput = document.getElementById("searchInput");
@@ -1145,8 +1182,8 @@ ${t.issueSectionSuggestDesc}
             let html = "";
             matchingFiles.forEach((file) => {
                 const icon = file.isExternal ? "🌐" : "📄";
-                html += `<button type="button" data-path="${file.path}" data-external="${file.isExternal ? 'true' : 'false'}" class="search-item w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex items-center gap-2 cursor-pointer focus:outline-none">
-                    <span>${icon}</span> <span class="font-medium">${file.name}</span>
+                html += `<button type="button" data-path="${escapeHtml(file.path)}" data-external="${file.isExternal ? 'true' : 'false'}" class="search-item w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex items-center gap-2 cursor-pointer focus:outline-none">
+                    <span>${icon}</span> <span class="font-medium">${escapeHtml(file.name)}</span>
                 </button>`
             });
             dropdown.innerHTML = html;
@@ -1363,6 +1400,11 @@ ${t.issueSectionSuggestDesc}
             const contentViewer = document.getElementById("content-viewer");
             if (contentViewer) {
                 contentViewer.addEventListener("click", (e) => {
+                    const loadBtn = e.target.closest("button[data-load-path]");
+                    if (loadBtn) {
+                        loadFile(loadBtn.dataset.loadPath);
+                        return;
+                    }
                     if (e.target.closest('button')) return;
                     const filterInput = document.getElementById("contentFilterInput");
                     const isFiltered = filterInput && filterInput.value.trim().length > 0;
@@ -1615,7 +1657,26 @@ ${t.issueSectionSuggestDesc}
         }
 
         // --- SECTION 7: FILE & MARKDOWN CONTENT LOADING ---
+        let loadToken = 0;
+
+        // Shows an error message as plain text (never as HTML: the path may come from the URL)
+        function showViewerError(viewer, message) {
+            viewer.textContent = "";
+            const p = document.createElement("p");
+            p.className = "text-red-400 text-sm";
+            p.textContent = message;
+            viewer.appendChild(p);
+        }
+
+        // Encodes every path segment (file names may contain #, ?, %, ' ...)
+        function encodeSolutionPath(filePath) {
+            return "solutions/" + filePath.split("/").map(encodeURIComponent).join("/");
+        }
+
         async function loadFile(filePath, isExternal = false, isHistoryNav = false) {
+            // Only the most recent call may update the UI (prevents slow responses overwriting newer ones)
+            const myToken = ++loadToken;
+
             // CRITICAL TIMING FIX: If a filter is currently active, fully clear it first
             // so the cached scroll position is properly written back to the current file's localStorage before switching.
             const filterInput = document.getElementById("contentFilterInput");
@@ -1623,6 +1684,26 @@ ${t.issueSectionSuggestDesc}
                 clearContentFilter();
                 // Await a brief animation frame to ensure DOM reflow and scroll restoration finish
                 await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+                if (myToken !== loadToken) return;
+            }
+
+            const viewer = document.getElementById("content-viewer");
+            const tocContainer = document.getElementById("toc-container");
+            const scrollProgressBar = document.getElementById("scrollProgressBar");
+            const readingHeader = document.getElementById("readingPaneHeader");
+
+            // Unknown path (typo, deleted file, manipulated link): show error, remember nothing
+            if (fileIndex.size > 0 && !fileIndex.has(filePath)) {
+                currentFilePath = null;
+                rawFileContent = null;
+                isRestoringScroll = false;
+                if (lsGet("sgs_last_file") === filePath) lsRemove("sgs_last_file");
+                if (readingHeader) readingHeader.classList.add("hidden");
+                if (scrollProgressBar) scrollProgressBar.style.width = "0%";
+                showViewerError(viewer, `${translations[currentLang].errorLoadingFile} ${filePath}`);
+                tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`;
+                updateActiveFileInTree();
+                return;
             }
 
             isRestoringScroll = true;
@@ -1630,11 +1711,10 @@ ${t.issueSectionSuggestDesc}
             const urlParams = new URLSearchParams(window.location.search);
             const scrollParam = urlParams.get('scroll');
 
-            const rawSavedPercent = (isHistoryNav && scrollParam !== null) ? scrollParam : localStorage.getItem(`sgs_scroll_percent_${filePath}`);
+            const rawSavedPercent = (isHistoryNav && scrollParam !== null) ? scrollParam : lsGet(`sgs_scroll_percent_${filePath}`);
             targetPercentToRestore = rawSavedPercent !== null ? parseFloat(rawSavedPercent) : null;
 
             currentFilePath = filePath;
-            localStorage.setItem("sgs_last_file", filePath);
 
             if (!isHistoryNav && history.pushState) {
                 const baseUrl = window.location.href.split('?')[0].split('#')[0];
@@ -1642,7 +1722,6 @@ ${t.issueSectionSuggestDesc}
                 history.pushState({ file: filePath }, '', cleanUrl);
             }
 
-            trackRecentFile(filePath);
             updateActiveFileInTree();
 
             // Dynamic SEO Updates for loaded solution files
@@ -1655,10 +1734,6 @@ ${t.issueSectionSuggestDesc}
                 }
             }
 
-            const viewer = document.getElementById("content-viewer");
-            const tocContainer = document.getElementById("toc-container");
-            const scrollProgressBar = document.getElementById("scrollProgressBar");
-            const readingHeader = document.getElementById("readingPaneHeader");
             if (readingHeader) readingHeader.classList.remove("hidden");
             if (filterInput) filterInput.value = "";
             document.getElementById("clearContentFilterBtn").classList.add("hidden");
@@ -1667,10 +1742,17 @@ ${t.issueSectionSuggestDesc}
             viewer.innerHTML = `<p class="text-gray-400 animate-pulse text-sm">${translations[currentLang].loadingFile}</p>`;
             tocContainer.innerHTML = `<p class="text-gray-500 italic text-xs">${translations[currentLang].analyzing}</p>`;
             try {
-                const response = await fetch(`solutions/${filePath}`);
+                const response = await fetch(encodeSolutionPath(filePath));
+                if (myToken !== loadToken) return;
                 if (!response.ok) throw new Error(translations[currentLang].fileNotFound);
-                rawFileContent = await response.text();
+                const text = await response.text();
+                if (myToken !== loadToken) return;
+                rawFileContent = text;
                 renderFileContent(rawFileContent, filePath);
+
+                // Remember the file only after it was loaded successfully
+                lsSet("sgs_last_file", filePath);
+                trackRecentFile(filePath);
                 
                 if (filterInput && isDesktopDevice()) {
                     setTimeout(() => {
@@ -1678,9 +1760,11 @@ ${t.issueSectionSuggestDesc}
                     }, 0);
                 }
             } catch (error) {
+                if (myToken !== loadToken) return;
                 rawFileContent = null;
+                if (lsGet("sgs_last_file") === filePath) lsRemove("sgs_last_file");
                 if (readingHeader) readingHeader.classList.add("hidden");
-                viewer.innerHTML = `<p class="text-red-400 text-sm">${translations[currentLang].errorLoadingFile} ${filePath}</p>`;
+                showViewerError(viewer, `${translations[currentLang].errorLoadingFile} ${filePath}`);
                 tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`;
                 isRestoringScroll = false;
             }
@@ -1690,9 +1774,11 @@ ${t.issueSectionSuggestDesc}
             const viewer = document.getElementById("content-viewer");
             const tocContainer = document.getElementById("toc-container");
 
-            if (filePath.endsWith(".md")) {
-                viewer.innerHTML = marked.parse(text);
+            if (filePath.endsWith(".md") && typeof marked !== "undefined" && typeof DOMPurify !== "undefined") {
+                // Markdown may contain raw HTML (pull requests!): always sanitize before inserting
+                viewer.innerHTML = DOMPurify.sanitize(marked.parse(text));
             } else {
+                // .txt files, or fallback when a CDN script is blocked: show as plain text, never as HTML
                 viewer.innerHTML = `<pre class="whitespace-pre-wrap font-mono text-xs sm:text-sm bg-gray-950 p-4 rounded">${escapeHtml(text)}</pre>`;
             }
             postProcessViewer(viewer);
@@ -1742,7 +1828,12 @@ ${t.issueSectionSuggestDesc}
         }
 
         function escapeHtml(text) {
-            return text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+            return String(text)
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#39;");
         }
 
         // --- SECTION 8: DIRECTORY TREE MENU RENDERING ---
@@ -2048,7 +2139,7 @@ ${t.issueSectionSuggestDesc}
 
                 // Save current scroll progress percentage to localStorage if not actively restoring
                 if (currentFilePath && !isRestoringScroll) {
-                    localStorage.setItem(`sgs_scroll_percent_${currentFilePath}`, percent.toFixed(2));
+                    lsSet(`sgs_scroll_percent_${currentFilePath}`, percent.toFixed(2));
                 }
 
                 if (scrollProgressBar) {
