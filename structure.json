@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 596,
-    "total_words": 683845,
-    "total_actions": 83888
+    "total_files": 597,
+    "total_words": 685229,
+    "total_actions": 84070
   },
   "name": "solutions",
   "type": "directory",
@@ -1584,6 +1584,14 @@
           "last_modified": "2021-12-24T00:26:19+01:00",
           "words": 822,
           "actions": 93
+        },
+        {
+          "name": "Indiana Jones and the Temple of Doom-EN",
+          "type": "file",
+          "path": "I/Indiana Jones and the Temple of Doom-EN.md",
+          "last_modified": "2026-11-01T00:03:32+01:00",
+          "words": 1384,
+          "actions": 182
         },
         {
           "name": "Indiana Jones and the Temple of Spheres-EN",
