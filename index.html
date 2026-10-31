@@ -82,6 +82,17 @@
         .group:hover .hover-wiggle {
             animation: subtle-wiggle 0.4s ease-in-out normal;
         }
+
+        /* Desktop panel state (collapsed / dragged width) only applies at the desktop breakpoints.
+           It must never be written as inline style: that would override the mobile off-canvas layout. */
+        @media (min-width: 1060px) {
+            #sidebar { width: var(--sb-w, 280px); }
+            #sidebar.panel-collapsed, #resizer-left.panel-collapsed { display: none !important; }
+        }
+        @media (min-width: 650px) {
+            #toc-sidebar { width: var(--toc-w, 260px); }
+            #toc-sidebar.panel-collapsed, #resizer-right.panel-collapsed { display: none !important; }
+        }
     </style>
 </head>
 
@@ -1248,19 +1259,7 @@ ${t.issueSectionSuggestDesc}
                     e.preventDefault();
                     dropdown.classList.add("hidden");
                     
-                    const isSidebarClosed = window.innerWidth < 1060 
-                        ? sidebar.classList.contains("-translate-x-full") 
-                        : sidebar.style.display === "none";
-                    
-                    if (isSidebarClosed) {
-                        if (window.innerWidth < 1060) {
-                            tocSidebar.classList.add("translate-x-full");
-                            sidebar.classList.remove("-translate-x-full");
-                        } else {
-                            sidebar.style.display = "flex";
-                            if (resizerLeft) resizerLeft.style.display = "flex";
-                        }
-                    }
+                    if (!isSidebarOpen()) setSidebarOpen(true);
                 }
             }
         }
@@ -2248,7 +2247,7 @@ ${t.issueSectionSuggestDesc}
                 if (!isResizingLeft) return;
                 const newWidth = e.clientX - sidebar.getBoundingClientRect().left;
                 if (newWidth >= 180 && newWidth <= 600) {
-                    sidebar.style.width = `${newWidth}px`
+                    sidebar.style.setProperty("--sb-w", `${newWidth}px`)
                 }
             });
             window.addEventListener("mouseup", () => {
@@ -2272,7 +2271,7 @@ ${t.issueSectionSuggestDesc}
                 const containerRight = document.querySelector("main").getBoundingClientRect().right;
                 const calculatedWidth = containerRight - e.clientX;
                 if (calculatedWidth >= 180 && calculatedWidth <= 450) {
-                    tocSidebar.style.width = `${calculatedWidth}px`
+                    tocSidebar.style.setProperty("--toc-w", `${calculatedWidth}px`)
                 }
             });
             window.addEventListener("mouseup", () => {
@@ -2283,36 +2282,55 @@ ${t.issueSectionSuggestDesc}
             });
         }
 
-        function toggleSidebar() {
+        // Mobile (< breakpoint): off-canvas drawer via translate classes.
+        // Desktop (>= breakpoint): docked panel, collapsed via the "panel-collapsed" class.
+        // Both states are class-based, so switching between layouts can never leave a panel stuck hidden.
+        function isSidebarOpen() {
+            return window.innerWidth < 1060
+                ? !sidebar.classList.contains("-translate-x-full")
+                : !sidebar.classList.contains("panel-collapsed");
+        }
+
+        function setSidebarOpen(open) {
             if (window.innerWidth < 1060) {
-                const isOpen = !sidebar.classList.contains("-translate-x-full");
-                if (isOpen) {
-                    closeAllOverlays()
-                } else {
+                if (open) {
                     tocSidebar.classList.add("translate-x-full");
                     sidebar.classList.remove("-translate-x-full");
+                } else {
+                    closeAllOverlays();
                 }
             } else {
-                const isHidden = sidebar.style.display === "none";
-                sidebar.style.display = isHidden ? "flex" : "none";
-                if (resizerLeft) resizerLeft.style.display = isHidden ? "flex" : "none"
+                sidebar.classList.toggle("panel-collapsed", !open);
+                if (resizerLeft) resizerLeft.classList.toggle("panel-collapsed", !open);
             }
         }
 
-        function toggleToc() {
+        function isTocOpen() {
+            return window.innerWidth < 650
+                ? !tocSidebar.classList.contains("translate-x-full")
+                : !tocSidebar.classList.contains("panel-collapsed");
+        }
+
+        function setTocOpen(open) {
             if (window.innerWidth < 650) {
-                const isOpen = !tocSidebar.classList.contains("translate-x-full");
-                if (isOpen) {
-                    closeAllOverlays()
-                } else {
+                if (open) {
                     sidebar.classList.add("-translate-x-full");
                     tocSidebar.classList.remove("translate-x-full");
+                } else {
+                    closeAllOverlays();
                 }
             } else {
-                const isHidden = tocSidebar.style.display === "none";
-                tocSidebar.style.display = isHidden ? "flex" : "none";
-                if (resizerRight) resizerRight.style.display = isHidden ? "flex" : "none"
+                tocSidebar.classList.toggle("panel-collapsed", !open);
+                if (resizerRight) resizerRight.classList.toggle("panel-collapsed", !open);
             }
+        }
+
+        function toggleSidebar() {
+            setSidebarOpen(!isSidebarOpen());
+        }
+
+        function toggleToc() {
+            setTocOpen(!isTocOpen());
         }
 
         function closeAllOverlays() {
@@ -2323,6 +2341,10 @@ ${t.issueSectionSuggestDesc}
                 tocSidebar.classList.add("translate-x-full")
             }
         }
+
+        // Crossing a breakpoint (resize, rotating a tablet): never keep a stale mobile overlay open
+        ["(min-width: 1060px)", "(min-width: 650px)"].forEach(query =>
+            window.matchMedia(query).addEventListener("change", closeAllOverlays));
 
         // --- SECTION 11: INITIAL EXECUTION ON LOAD ---
         closeAllOverlays();
