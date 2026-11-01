@@ -190,6 +190,14 @@
                     class="text-gray-400 hover:text-white text-xs px-2 py-1 rounded bg-gray-700 cursor-pointer"
                     data-i18n-title="close" onclick="toggleSidebar();">✕</button>
             </div>
+            <div class="mb-2 shrink-0 flex flex-wrap gap-1" id="treeScopeBar" role="group" data-i18n-title="treeScopeLabel">
+                <button type="button" data-tree-scope="all" onclick="setTreeScope('all');" aria-pressed="true"
+                    class="px-2 py-1 text-[11px] rounded border border-gray-700 bg-gray-900 text-gray-400 hover:text-white hover:bg-gray-700 cursor-pointer transition-colors">📚 <span data-i18n="treeScopeAll">Alle</span></button>
+                <button type="button" data-tree-scope="favorites" onclick="setTreeScope('favorites');" aria-pressed="false"
+                    class="px-2 py-1 text-[11px] rounded border border-gray-700 bg-gray-900 text-gray-400 hover:text-white hover:bg-gray-700 cursor-pointer transition-colors">⭐ <span data-i18n="treeScopeFavorites">Favoriten</span></button>
+                <button type="button" data-tree-scope="mine" onclick="setTreeScope('mine');" aria-pressed="false"
+                    class="px-2 py-1 text-[11px] rounded border border-gray-700 bg-gray-900 text-gray-400 hover:text-white hover:bg-gray-700 cursor-pointer transition-colors">🎮 <span data-i18n="treeScopeMine">Meine Spiele</span></button>
+            </div>
             <div class="space-y-1 text-sm flex-1 overflow-y-auto pr-1" id="tree-container">
                 <p class="text-gray-500 animate-pulse text-xs" data-i18n="loadingStructure">Lade Struktur...</p>
             </div>
@@ -392,6 +400,13 @@
                 mineDone: "Fertig",
                 mineEmpty: "Noch keine Spiele markiert. Öffne eine Lösung und nutze den Stern oder den Status-Button oben rechts.",
                 continueReadingAt: "Weiterlesen bei {pct}",
+                treeScopeLabel: "Verzeichnis filtern",
+                treeScopeAll: "Alle",
+                treeScopeFavorites: "Favoriten",
+                treeScopeMine: "Meine Spiele",
+                treeScopeEmptyFavorites: "Noch keine Favoriten. Markiere ein Spiel mit ☆.",
+                treeScopeEmptyMine: "Noch keine Spiele markiert.",
+                treeScopeReset: "Filter zurücksetzen",
                 exportBtn: "Export",
                 importBtn: "Import",
                 settingsMenuTitle: "Einstellungen",
@@ -456,6 +471,13 @@
                 mineDone: "Finished",
                 mineEmpty: "No games marked yet. Open a walkthrough and use the star or the status button at the top right.",
                 continueReadingAt: "Continue at {pct}",
+                treeScopeLabel: "Filter directory",
+                treeScopeAll: "All",
+                treeScopeFavorites: "Favorites",
+                treeScopeMine: "My Games",
+                treeScopeEmptyFavorites: "No favorites yet. Mark a game with ☆.",
+                treeScopeEmptyMine: "No games marked yet.",
+                treeScopeReset: "Reset filter",
                 exportBtn: "Export",
                 importBtn: "Import",
                 settingsMenuTitle: "Settings",
@@ -649,7 +671,7 @@
                     setLanguage(currentLang);
                     initZoom();
                     updateHomeBadge();
-                    refreshTreeMarkers();
+                    loadTreeScope();
 
                     const urlParams = new URLSearchParams(window.location.search);
                     const fileParam = urlParams.get('file');
@@ -821,6 +843,7 @@
         }
 
         // --- MY GAMES: favorites, play status and "continue reading" ---
+        // Stored locally (sgs_favorites, sgs_game_status), so they are part of the settings export/import.
         const GAME_STATUSES = ["playing", "done"];
 
         function readFavorites() {
@@ -862,12 +885,6 @@
             else delete map[path];
             writeJson("sgs_game_status", map);
             onGameStateChanged();
-        }
-
-        // none -> playing -> done -> none
-        function cycleGameStatus(path) {
-            const current = getGameStatus(path);
-            setGameStatus(path, current === null ? "playing" : (current === "playing" ? "done" : null));
         }
 
         function getStatusIcon(status) {
@@ -949,9 +966,107 @@
 
         function onGameStateChanged() {
             updateGameControls();
-            refreshTreeMarkers();
+            // With an active directory filter the set of visible games may change: redraw instead of only updating markers
+            if (treeScope === "all") refreshTreeMarkers(); else rerenderTree();
             if (!currentFilePath && structureData) renderWelcomeScreen();
         }
+
+        // --- DIRECTORY FILTER (all / favorites / everything under "My Games") ---
+        let treeScope = "all";
+
+        function loadTreeScope() {
+            const saved = lsGet("sgs_tree_scope");
+            treeScope = (saved === "favorites" || saved === "mine") ? saved : "all";
+            updateTreeScopeUi();
+            rerenderTree();
+        }
+
+        function setTreeScope(scope) {
+            treeScope = (scope === "favorites" || scope === "mine") ? scope : "all";
+            if (treeScope === "all") lsRemove("sgs_tree_scope"); else lsSet("sgs_tree_scope", treeScope);
+            updateTreeScopeUi();
+            rerenderTree();
+        }
+
+        function rerenderTree() {
+            const input = document.getElementById("searchInput");
+            filterTree(input ? input.value : "");
+        }
+
+        function updateTreeScopeUi() {
+            document.querySelectorAll("#treeScopeBar [data-tree-scope]").forEach(btn => {
+                const active = btn.dataset.treeScope === treeScope;
+                btn.setAttribute("aria-pressed", String(active));
+                btn.classList.toggle("bg-emerald-600", active);
+                btn.classList.toggle("text-white", active);
+                btn.classList.toggle("border-emerald-500", active);
+                btn.classList.toggle("bg-gray-900", !active);
+                btn.classList.toggle("text-gray-400", !active);
+                btn.classList.toggle("border-gray-700", !active);
+            });
+        }
+
+        // --- STATUS MENU FOR ROWS IN "MY GAMES" (one shared floating menu, same look as in the reading header) ---
+        let statusPopupEl = null;
+        let statusPopupPath = null;
+
+        function getStatusPopup() {
+            if (statusPopupEl) return statusPopupEl;
+            const el = document.createElement("div");
+            el.id = "gameStatusPopup";
+            el.setAttribute("role", "menu");
+            el.className = "fixed z-[60] bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[190px]";
+            el.addEventListener("click", e => {
+                const btn = e.target.closest("button[data-popup-status]");
+                if (!btn) return;
+                const path = statusPopupPath;
+                closeGameStatusPopup();
+                if (path) setGameStatus(path, btn.dataset.popupStatus || null);
+            });
+            document.body.appendChild(el);
+            statusPopupEl = el;
+            return el;
+        }
+
+        function closeGameStatusPopup() {
+            if (statusPopupEl) statusPopupEl.classList.add("hidden");
+            statusPopupPath = null;
+        }
+
+        function toggleGameStatusPopup(anchor, path) {
+            const popup = getStatusPopup();
+            if (statusPopupPath === path && !popup.classList.contains("hidden")) {
+                closeGameStatusPopup();
+                return;
+            }
+            const tr = translations[currentLang];
+            const current = getGameStatus(path) || "";
+            popup.innerHTML = [["", "○", tr.statusNone], ["playing", "🎮", tr.statusPlaying], ["done", "✅", tr.statusDone]]
+                .map(([value, icon, label]) => `<button type="button" role="menuitem" data-popup-status="${value}" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 flex items-center gap-2 cursor-pointer transition-colors ${value === current ? "bg-gray-700 text-emerald-300" : "text-gray-200 hover:text-white"}"><span>${icon}</span> <span>${escapeHtml(label)}</span></button>`)
+                .join("");
+            statusPopupPath = path;
+
+            // Measure while invisible, then place below the button (above it if there is no room), right-aligned
+            popup.style.visibility = "hidden";
+            popup.classList.remove("hidden");
+            const rect = anchor.getBoundingClientRect();
+            const width = popup.offsetWidth, height = popup.offsetHeight;
+            const left = Math.min(Math.max(8, rect.right - width), Math.max(8, window.innerWidth - width - 8));
+            let top = rect.bottom + 4;
+            if (top + height > window.innerHeight - 8) top = Math.max(8, rect.top - height - 4);
+            popup.style.left = `${left}px`;
+            popup.style.top = `${top}px`;
+            popup.style.visibility = "";
+        }
+
+        window.addEventListener("click", e => {
+            if (!statusPopupEl || statusPopupEl.classList.contains("hidden")) return;
+            if (statusPopupEl.contains(e.target) || e.target.closest("[data-status-menu]")) return;
+            closeGameStatusPopup();
+        });
+        document.addEventListener("keydown", e => { if (e.key === "Escape") closeGameStatusPopup(); });
+        window.addEventListener("scroll", closeGameStatusPopup, true);
+        window.addEventListener("resize", closeGameStatusPopup);
 
         function toggleCurrentFavorite() {
             if (currentFilePath) toggleFavorite(currentFilePath);
@@ -1020,7 +1135,7 @@
                     <span class="bg-emerald-900/60 text-emerald-300 border border-emerald-700/50 px-2 py-0.5 rounded text-[11px] shrink-0 ml-2 font-mono">${badge}</span>
                 </button>
                 <button data-fav-toggle="${escapeHtml(path)}" aria-pressed="${fav}" title="${escapeHtml(fav ? t.favoriteRemove : t.favoriteAdd)}" class="shrink-0 w-9 bg-gray-800/80 hover:bg-gray-700 border border-gray-700/60 rounded-md text-base cursor-pointer transition-colors ${fav ? 'text-amber-400' : 'text-gray-400'}">${fav ? "★" : "☆"}</button>
-                <button data-status-cycle="${escapeHtml(path)}" title="${escapeHtml(t.statusMenuTitle + ": " + getStatusText(status))}" class="shrink-0 w-9 bg-gray-800/80 hover:bg-gray-700 border ${status ? 'border-emerald-600/70' : 'border-gray-700/60'} rounded-md text-sm cursor-pointer transition-colors">${getStatusIcon(status)}</button>
+                <button data-status-menu="${escapeHtml(path)}" aria-haspopup="true" title="${escapeHtml(t.statusMenuTitle + ": " + getStatusText(status))}" class="shrink-0 min-w-[2.75rem] px-1.5 bg-gray-800/80 hover:bg-gray-700 border ${status ? 'border-emerald-600/70' : 'border-gray-700/60'} rounded-md text-sm cursor-pointer transition-colors flex items-center justify-center gap-0.5">${getStatusIcon(status)}<span class="text-[9px] text-gray-400">▾</span></button>
             </div>`;
         }
 
@@ -1180,6 +1295,7 @@ ${t.issueSectionSuggestDesc}
         // --- SECTION 3: WELCOME SCREEN & HOME NAVIGATION ---
         function renderWelcomeScreen(tab = currentWelcomeTab) {
             if (!structureData) return;
+            closeGameStatusPopup();
             currentWelcomeTab = tab;
 
             const readingHeader = document.getElementById("readingPaneHeader");
@@ -1675,9 +1791,9 @@ ${t.issueSectionSuggestDesc}
                         toggleFavorite(favToggle.dataset.favToggle);
                         return;
                     }
-                    const statusCycle = e.target.closest("button[data-status-cycle]");
-                    if (statusCycle) {
-                        cycleGameStatus(statusCycle.dataset.statusCycle);
+                    const statusMenuBtn = e.target.closest("button[data-status-menu]");
+                    if (statusMenuBtn) {
+                        toggleGameStatusPopup(statusMenuBtn, statusMenuBtn.dataset.statusMenu);
                         return;
                     }
                     if (e.target.closest('button')) return;
@@ -1951,6 +2067,7 @@ ${t.issueSectionSuggestDesc}
         async function loadFile(filePath, isExternal = false, isHistoryNav = false) {
             // Only the most recent call may update the UI (prevents slow responses overwriting newer ones)
             const myToken = ++loadToken;
+            closeGameStatusPopup();
 
             // CRITICAL TIMING FIX: If a filter is currently active, fully clear it first
             // so the cached scroll position is properly written back to the current file's localStorage before switching.
@@ -2208,16 +2325,21 @@ ${t.issueSectionSuggestDesc}
             const markerState = getMarkerState();
             const query = filterQuery.trim();
 
+            // Directory scope: all files, only favorites, or everything shown under "My Games"
+            const scopePaths = treeScope === "favorites" ? markerState.favs
+                : (treeScope === "mine" ? new Set([...markerState.favs, ...Object.keys(markerState.map)]) : null);
+            const scoped = scopePaths !== null;
+
             function filterNode(item) {
                 const nameLower = item.name.toLowerCase();
                 const matches = matchQuery(nameLower, query);
                 if (item.type === "file") {
-                    return matches ? {
+                    return (matches && (!scoped || scopePaths.has(item.path))) ? {
                         ...item
                     } : null
                 } else if (item.type === "directory") {
                     const matchingChildren = (item.children || []).map(child => filterNode(child)).filter(child => child !== null);
-                    if (matches || matchingChildren.length > 0) {
+                    if ((matches && !scoped) || matchingChildren.length > 0) {
                         return {
                             ...item,
                             children: matchingChildren
@@ -2227,10 +2349,16 @@ ${t.issueSectionSuggestDesc}
                 return null
             }
             let displayNode = node;
-            if (query !== "") {
+            if (query !== "" || scoped) {
                 const filteredChildren = (node.children || []).map(child => filterNode(child)).filter(child => child !== null);
                 if (filteredChildren.length === 0) {
-                    container.innerHTML = `<p class="text-gray-500 italic text-xs py-2">${translations[currentLang].noResults}</p>`;
+                    const tr = translations[currentLang];
+                    let message = tr.noResults;
+                    if (scoped && query === "") {
+                        message = treeScope === "favorites" ? tr.treeScopeEmptyFavorites : tr.treeScopeEmptyMine;
+                    }
+                    container.innerHTML = `<p class="text-gray-500 italic text-xs py-2">${message}</p>`
+                        + (scoped ? `<button type="button" onclick="setTreeScope('all');" class="mt-1 text-xs text-emerald-400 hover:underline cursor-pointer">${tr.treeScopeReset}</button>` : "");
                     return
                 }
                 displayNode = {
@@ -2243,7 +2371,7 @@ ${t.issueSectionSuggestDesc}
                 if (item.type === "directory") {
                     const details = document.createElement("details");
                     details.className = "ml-1 my-1";
-                    details.open = query !== "";
+                    details.open = query !== "" || scoped;
                     const summary = document.createElement("summary");
                     summary.className = "cursor-pointer font-medium text-emerald-300 hover:text-emerald-200 py-1 px-2 rounded hover:bg-gray-700/50 select-none break-words";
                     summary.textContent = `📁 ${item.name}`;
@@ -2665,6 +2793,8 @@ ${t.issueSectionSuggestDesc}
             window.matchMedia(query).addEventListener("change", closeAllOverlays));
 
         // --- SECTION 11: INITIAL EXECUTION ON LOAD ---
+        treeScope = (["favorites", "mine"].includes(lsGet("sgs_tree_scope"))) ? lsGet("sgs_tree_scope") : "all";
+        updateTreeScopeUi();
         closeAllOverlays();
         init();
 
