@@ -223,6 +223,27 @@
                         id="clearContentFilterBtn" onclick="clearContentFilter();" title="Filter löschen">✕</button>
                 </div>
 
+                <!-- Favorite star & play status menu -->
+                <button id="favoriteBtn" type="button" onclick="toggleCurrentFavorite();" aria-pressed="false"
+                    class="shrink-0 bg-gray-950 hover:bg-gray-700 text-gray-400 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm cursor-pointer transition-colors">☆</button>
+                <div class="relative shrink-0" id="statusMenuContainer">
+                    <button id="statusBtn" type="button" onclick="toggleStatusMenu();" aria-haspopup="true"
+                        class="bg-gray-950 hover:bg-gray-700 text-gray-300 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1.5 transition-colors">
+                        <span id="statusBtnIcon">○</span><span class="hidden sm:inline" id="statusBtnLabel">Status</span>
+                    </button>
+                    <div id="statusDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[190px] z-50">
+                        <button type="button" data-status-option="" onclick="setCurrentGameStatus(this.dataset.statusOption);" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                            <span>○</span> <span data-i18n="statusNone">Kein Status</span>
+                        </button>
+                        <button type="button" data-status-option="playing" onclick="setCurrentGameStatus(this.dataset.statusOption);" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                            <span>🎮</span> <span data-i18n="statusPlaying">Ich spiele gerade</span>
+                        </button>
+                        <button type="button" data-status-option="done" onclick="setCurrentGameStatus(this.dataset.statusOption);" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                            <span>✅</span> <span data-i18n="statusDone">Fertig</span>
+                        </button>
+                    </div>
+                </div>
+
                 <!-- Report & Discussions Dropdown Menu -->
                 <div class="relative shrink-0" id="reportMenuContainer">
                     <button onclick="toggleReportMenu();" class="bg-gray-950 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" title="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden">
@@ -358,6 +379,19 @@
                 fontZoomTitle: "Schriftgröße anpassen",
                 fontSizeLabel: "Schriftgröße",
                 markAllRead: "Alle als gelesen markieren",
+                favoriteAdd: "Zu Favoriten hinzufügen",
+                favoriteRemove: "Aus Favoriten entfernen",
+                statusLabel: "Status",
+                statusMenuTitle: "Spielstatus setzen",
+                statusNone: "Kein Status",
+                statusPlaying: "Ich spiele gerade",
+                statusDone: "Fertig",
+                tabMine: "Meine Spiele",
+                mineFavorites: "Favoriten",
+                minePlaying: "Ich spiele gerade",
+                mineDone: "Fertig",
+                mineEmpty: "Noch keine Spiele markiert. Öffne eine Lösung und nutze den Stern oder den Status-Button oben rechts.",
+                continueReadingAt: "Weiterlesen bei {pct}",
                 exportBtn: "Export",
                 importBtn: "Import",
                 settingsMenuTitle: "Einstellungen",
@@ -409,6 +443,19 @@
                 fontZoomTitle: "Adjust font size",
                 fontSizeLabel: "Font size",
                 markAllRead: "Mark all as read",
+                favoriteAdd: "Add to favorites",
+                favoriteRemove: "Remove from favorites",
+                statusLabel: "Status",
+                statusMenuTitle: "Set play status",
+                statusNone: "No status",
+                statusPlaying: "Playing now",
+                statusDone: "Finished",
+                tabMine: "My Games",
+                mineFavorites: "Favorites",
+                minePlaying: "Playing now",
+                mineDone: "Finished",
+                mineEmpty: "No games marked yet. Open a walkthrough and use the star or the status button at the top right.",
+                continueReadingAt: "Continue at {pct}",
                 exportBtn: "Export",
                 importBtn: "Import",
                 settingsMenuTitle: "Settings",
@@ -479,6 +526,7 @@
                     generateToc(viewer, tocContainer);
                     setupScrollSpy(viewer, tocContainer);
                 }
+                updateGameControls();
                 if (structureData) {
                     filterTree(document.getElementById("searchInput").value);
                 }
@@ -601,6 +649,7 @@
                     setLanguage(currentLang);
                     initZoom();
                     updateHomeBadge();
+                    refreshTreeMarkers();
 
                     const urlParams = new URLSearchParams(window.location.search);
                     const fileParam = urlParams.get('file');
@@ -771,6 +820,235 @@
             return getNewestFiles(20).filter(file => isFileUnread(file, map)).length;
         }
 
+        // --- MY GAMES: favorites, play status and "continue reading" ---
+        const GAME_STATUSES = ["playing", "done"];
+
+        function readFavorites() {
+            return readJsonArray("sgs_favorites");
+        }
+
+        function isFavorite(path) {
+            return readFavorites().includes(path);
+        }
+
+        function setFavorite(path, on) {
+            const favs = readFavorites().filter(p => p !== path);
+            if (on) favs.push(path);
+            writeJson("sgs_favorites", favs);
+            onGameStateChanged();
+        }
+
+        function toggleFavorite(path) {
+            setFavorite(path, !isFavorite(path));
+        }
+
+        // Only known status values are accepted (settings files may contain anything)
+        function readGameStatusMap() {
+            const raw = readJsonObject("sgs_game_status");
+            const map = {};
+            Object.keys(raw).forEach(path => {
+                if (GAME_STATUSES.includes(raw[path])) map[path] = raw[path];
+            });
+            return map;
+        }
+
+        function getGameStatus(path) {
+            return readGameStatusMap()[path] || null;
+        }
+
+        function setGameStatus(path, status) {
+            const map = readGameStatusMap();
+            if (GAME_STATUSES.includes(status)) map[path] = status;
+            else delete map[path];
+            writeJson("sgs_game_status", map);
+            onGameStateChanged();
+        }
+
+        // none -> playing -> done -> none
+        function cycleGameStatus(path) {
+            const current = getGameStatus(path);
+            setGameStatus(path, current === null ? "playing" : (current === "playing" ? "done" : null));
+        }
+
+        function getStatusIcon(status) {
+            return status === "playing" ? "🎮" : (status === "done" ? "✅" : "○");
+        }
+
+        function getStatusText(status) {
+            const t = translations[currentLang];
+            return status === "playing" ? t.statusPlaying : (status === "done" ? t.statusDone : t.statusNone);
+        }
+
+        // Last saved reading position (0-100) or null
+        function getReadingProgress(path) {
+            const raw = lsGet(`sgs_scroll_percent_${path}`);
+            if (raw === null) return null;
+            const value = parseFloat(raw);
+            return Number.isFinite(value) ? Math.min(100, Math.max(0, value)) : null;
+        }
+
+        function formatPercent(n) {
+            return currentLang === "de" ? `${n} %` : `${n}%`;
+        }
+
+        // Read the stored state once and reuse it for many rows
+        function getMarkerState() {
+            return { favs: new Set(readFavorites()), map: readGameStatusMap() };
+        }
+
+        function gameMarkersText(path, state = getMarkerState()) {
+            let text = state.favs.has(path) ? "⭐" : "";
+            if (state.map[path] === "playing") text += "🎮";
+            else if (state.map[path] === "done") text += "✅";
+            return text;
+        }
+
+        function gameMarkersHtml(path, state) {
+            const text = gameMarkersText(path, state);
+            return text ? `<span class="text-[11px] shrink-0">${text}</span>` : "";
+        }
+
+        function refreshTreeMarkers() {
+            const container = document.getElementById("tree-container");
+            if (!container) return;
+            const state = getMarkerState();
+            container.querySelectorAll("div[data-filepath]").forEach(row => {
+                const markers = row.querySelector(".game-markers");
+                if (markers) markers.textContent = gameMarkersText(row.dataset.filepath, state);
+            });
+        }
+
+        // Header buttons of the open walkthrough (star + status)
+        function updateGameControls() {
+            const favBtn = document.getElementById("favoriteBtn");
+            const statusBtn = document.getElementById("statusBtn");
+            if (!favBtn || !statusBtn || !currentFilePath) return;
+            const t = translations[currentLang];
+
+            const fav = isFavorite(currentFilePath);
+            favBtn.textContent = fav ? "★" : "☆";
+            favBtn.title = fav ? t.favoriteRemove : t.favoriteAdd;
+            favBtn.setAttribute("aria-pressed", String(fav));
+            favBtn.classList.toggle("text-amber-400", fav);
+            favBtn.classList.toggle("text-gray-400", !fav);
+
+            const status = getGameStatus(currentFilePath);
+            document.getElementById("statusBtnIcon").textContent = getStatusIcon(status);
+            document.getElementById("statusBtnLabel").textContent = status ? getStatusText(status) : t.statusLabel;
+            statusBtn.title = t.statusMenuTitle;
+            statusBtn.classList.toggle("border-emerald-600", !!status);
+            statusBtn.classList.toggle("text-emerald-300", !!status);
+            statusBtn.classList.toggle("border-gray-700", !status);
+            statusBtn.classList.toggle("text-gray-300", !status);
+            document.querySelectorAll("#statusDropdown [data-status-option]").forEach(btn => {
+                const active = btn.dataset.statusOption === (status || "");
+                btn.classList.toggle("bg-gray-700", active);
+                btn.classList.toggle("text-emerald-300", active);
+            });
+        }
+
+        function onGameStateChanged() {
+            updateGameControls();
+            refreshTreeMarkers();
+            if (!currentFilePath && structureData) renderWelcomeScreen();
+        }
+
+        function toggleCurrentFavorite() {
+            if (currentFilePath) toggleFavorite(currentFilePath);
+        }
+
+        function toggleStatusMenu() {
+            const dropdown = document.getElementById("statusDropdown");
+            if (dropdown) dropdown.classList.toggle("hidden");
+        }
+
+        function setCurrentGameStatus(status) {
+            const dropdown = document.getElementById("statusDropdown");
+            if (dropdown) dropdown.classList.add("hidden");
+            if (currentFilePath) setGameStatus(currentFilePath, status || null);
+        }
+
+        window.addEventListener("click", e => {
+            const container = document.getElementById("statusMenuContainer");
+            const dropdown = document.getElementById("statusDropdown");
+            if (container && dropdown && !container.contains(e.target)) {
+                dropdown.classList.add("hidden");
+            }
+        });
+
+        // Most recently used walkthrough that is in progress (and not marked as finished)
+        function getContinueReadingCandidate() {
+            const map = readGameStatusMap();
+            for (const path of readJsonArray("sgs_recent_files")) {
+                const node = fileIndex.get(path);
+                if (!node || map[path] === "done") continue;
+                const progress = getReadingProgress(path);
+                if (progress !== null && progress >= 1 && progress < 98) {
+                    return { path, name: node.name, percent: Math.round(progress) };
+                }
+            }
+            return null;
+        }
+
+        function renderContinueBanner() {
+            const candidate = getContinueReadingCandidate();
+            if (!candidate) return "";
+            const label = translations[currentLang].continueReadingAt.replace("{pct}", formatPercent(candidate.percent));
+            return `<button data-load-path="${escapeHtml(candidate.path)}" class="w-full mb-6 text-left bg-emerald-950/40 hover:bg-emerald-900/40 border border-emerald-600/60 rounded-lg px-4 py-3 transition-colors cursor-pointer group">
+                <span class="flex items-center justify-between gap-3">
+                    <span class="min-w-0">
+                        <span class="block text-[11px] uppercase tracking-wider text-emerald-400 font-semibold">📖 ${escapeHtml(label)}</span>
+                        <span class="block text-sm sm:text-base text-gray-100 font-medium truncate">${escapeHtml(candidate.name)}</span>
+                    </span>
+                    <span class="text-emerald-400 text-lg shrink-0 group-hover:translate-x-1 transition-transform">→</span>
+                </span>
+                <span class="block h-1.5 bg-gray-700 rounded mt-2.5 overflow-hidden"><span class="block h-full bg-emerald-500 rounded" style="width: ${candidate.percent}%"></span></span>
+            </button>`;
+        }
+
+        // One row of the "My Games" tab: open button + star toggle + status cycle button
+        function gameRowHtml(path, state) {
+            const t = translations[currentLang];
+            const node = fileIndex.get(path);
+            const fav = state.favs.has(path);
+            const status = state.map[path] || null;
+            const progress = getReadingProgress(path);
+            const badge = progress !== null ? `${Math.round(progress)}%` : "0%";
+            return `<div class="flex items-stretch gap-1.5">
+                <button data-load-path="${escapeHtml(path)}" class="flex-1 min-w-0 text-left bg-gray-800/80 hover:bg-gray-700 border border-gray-700/60 rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
+                    <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(node.name)}</span>
+                    <span class="bg-emerald-900/60 text-emerald-300 border border-emerald-700/50 px-2 py-0.5 rounded text-[11px] shrink-0 ml-2 font-mono">${badge}</span>
+                </button>
+                <button data-fav-toggle="${escapeHtml(path)}" aria-pressed="${fav}" title="${escapeHtml(fav ? t.favoriteRemove : t.favoriteAdd)}" class="shrink-0 w-9 bg-gray-800/80 hover:bg-gray-700 border border-gray-700/60 rounded-md text-base cursor-pointer transition-colors ${fav ? 'text-amber-400' : 'text-gray-400'}">${fav ? "★" : "☆"}</button>
+                <button data-status-cycle="${escapeHtml(path)}" title="${escapeHtml(t.statusMenuTitle + ": " + getStatusText(status))}" class="shrink-0 w-9 bg-gray-800/80 hover:bg-gray-700 border ${status ? 'border-emerald-600/70' : 'border-gray-700/60'} rounded-md text-sm cursor-pointer transition-colors">${getStatusIcon(status)}</button>
+            </div>`;
+        }
+
+        function renderMyGamesHtml() {
+            const t = translations[currentLang];
+            const state = getMarkerState();
+            const recent = readJsonArray("sgs_recent_files");
+            const rank = path => { const i = recent.indexOf(path); return i === -1 ? Infinity : i; };
+            const sortPaths = paths => paths.sort((a, b) =>
+                (rank(a) - rank(b)) || fileIndex.get(a).name.localeCompare(fileIndex.get(b).name));
+            const known = path => fileIndex.has(path);
+            const byStatus = wanted => Object.keys(state.map).filter(path => state.map[path] === wanted && known(path));
+
+            const sections = [
+                { icon: "⭐", title: t.mineFavorites, paths: Array.from(state.favs).filter(known) },
+                { icon: "🎮", title: t.minePlaying, paths: byStatus("playing") },
+                { icon: "✅", title: t.mineDone, paths: byStatus("done") }
+            ].filter(section => section.paths.length > 0);
+
+            if (sections.length === 0) {
+                return `<p class="text-center text-gray-500 text-xs italic py-4">${escapeHtml(t.mineEmpty)}</p>`;
+            }
+            return sections.map(section => `<div class="mb-5">
+                <div class="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-2 flex items-center gap-2"><span>${section.icon}</span><span>${escapeHtml(section.title)}</span><span class="text-gray-500 normal-case tracking-normal">(${section.paths.length})</span></div>
+                <div class="space-y-2">${sortPaths(section.paths).map(path => gameRowHtml(path, state)).join("")}</div>
+            </div>`).join("");
+        }
+
         function updateHomeBadge() {
             const badge = document.getElementById("homeUnreadBadge");
             if (!badge) return;
@@ -930,14 +1208,19 @@ ${t.issueSectionSuggestDesc}
             let listHtml = `<div class="max-w-3xl mx-auto py-8 px-4">
                 <p class="text-base sm:text-lg text-center text-gray-300 mb-6" data-i18n="welcomeMessage">${welcomeText}</p>
                 
+                ${renderContinueBanner()}
+
                 <!-- Welcome Screen Tab Navigation & Actions -->
                 <div class="flex flex-col sm:flex-row justify-between items-center gap-3 mb-6 border-b border-gray-700 pb-3">
-                    <div class="flex gap-2">
+                    <div class="flex flex-wrap gap-2">
                         <button onclick="renderWelcomeScreen('modified')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${tab === 'modified' ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}">
                             ${currentLang === 'de' ? '🔥 Zuletzt geändert' : '🔥 Recently Modified'}
                         </button>
                         <button onclick="renderWelcomeScreen('used')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${tab === 'used' ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}">
                             ${currentLang === 'de' ? '⏱️ Zuletzt genutzt' : '⏱️ Recently Used'}
+                        </button>
+                        <button onclick="renderWelcomeScreen('mine')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${tab === 'mine' ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}">
+                            ⭐ ${escapeHtml(translations[currentLang].tabMine)}
                         </button>
                     </div>`;
 
@@ -953,6 +1236,7 @@ ${t.issueSectionSuggestDesc}
                 const newest = getNewestFiles(20);
 
                 const readMap = readReadMap();
+                const markerState = getMarkerState();
 
                 if (newest.length === 0) {
                     listHtml += `<p class="text-center text-gray-500 text-xs italic py-4">${currentLang === 'de' ? 'Keine Lösungen gefunden.' : 'No solutions found.'}</p>`;
@@ -961,13 +1245,16 @@ ${t.issueSectionSuggestDesc}
                         const dateStr = file.last_modified ? new Date(file.last_modified).toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '';
                         const isUnread = isFileUnread(file, readMap);
                         listHtml += `<button data-load-path="${escapeHtml(file.path)}" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border ${isUnread ? 'border-emerald-500/80 bg-emerald-950/20' : 'border-gray-700/60'} rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
-                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(file.name)} ${isUnread ? '<span class="bg-emerald-500 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">NEW</span>' : ''}</span>
+                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(file.name)} ${gameMarkersHtml(file.path, markerState)} ${isUnread ? '<span class="bg-emerald-500 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">NEW</span>' : ''}</span>
                             <span class="text-gray-400 text-xs shrink-0 ml-2">${dateStr}</span>
                         </button>`;
                     });
                 }
+            } else if (tab === 'mine') {
+                listHtml += renderMyGamesHtml();
             } else {
                 const recentPaths = readJsonArray('sgs_recent_files');
+                const markerState = getMarkerState();
 
                 if (recentPaths.length === 0) {
                     listHtml += `<p class="text-center text-gray-500 text-xs italic py-4">${currentLang === 'de' ? 'Keine kürzlich genutzten Lösungen vorhanden.' : 'No recently used solutions found.'}</p>`;
@@ -975,11 +1262,11 @@ ${t.issueSectionSuggestDesc}
                     recentPaths.forEach(path => {
                         const file = fileIndex.get(path);
                         const fileName = file ? file.name : path.split('/').pop();
-                        const percentVal = lsGet(`sgs_scroll_percent_${path}`);
-                        const badgeText = percentVal !== null ? `${Math.round(parseFloat(percentVal))}%` : '0%';
+                        const progressVal = getReadingProgress(path);
+                        const badgeText = progressVal !== null ? `${Math.round(progressVal)}%` : '0%';
                         
                         listHtml += `<button data-load-path="${escapeHtml(path)}" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border border-gray-700/60 rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
-                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(fileName)}</span>
+                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(fileName)} ${gameMarkersHtml(path, markerState)}</span>
                             <span class="bg-emerald-900/60 text-emerald-300 border border-emerald-700/50 px-2 py-0.5 rounded text-[11px] shrink-0 ml-2 font-mono">${badgeText}</span>
                         </button>`;
                     });
@@ -1383,6 +1670,16 @@ ${t.issueSectionSuggestDesc}
                         loadFile(loadBtn.dataset.loadPath);
                         return;
                     }
+                    const favToggle = e.target.closest("button[data-fav-toggle]");
+                    if (favToggle) {
+                        toggleFavorite(favToggle.dataset.favToggle);
+                        return;
+                    }
+                    const statusCycle = e.target.closest("button[data-status-cycle]");
+                    if (statusCycle) {
+                        cycleGameStatus(statusCycle.dataset.statusCycle);
+                        return;
+                    }
                     if (e.target.closest('button')) return;
                     const filterInput = document.getElementById("contentFilterInput");
                     const isFiltered = filterInput && filterInput.value.trim().length > 0;
@@ -1713,6 +2010,7 @@ ${t.issueSectionSuggestDesc}
             }
 
             if (readingHeader) readingHeader.classList.remove("hidden");
+            updateGameControls();
             if (filterInput) filterInput.value = "";
             document.getElementById("clearContentFilterBtn").classList.add("hidden");
 
@@ -1907,6 +2205,7 @@ ${t.issueSectionSuggestDesc}
 
         function renderTree(node, container, filterQuery = "") {
             container.innerHTML = "";
+            const markerState = getMarkerState();
             const query = filterQuery.trim();
 
             function filterNode(item) {
@@ -1966,6 +2265,10 @@ ${t.issueSectionSuggestDesc}
                     const fileLink = document.createElement("div");
                     fileLink.className = "flex-1 text-left cursor-pointer break-words";
                     fileLink.textContent = `📄 ${item.name}`;
+                    const markers = document.createElement("span");
+                    markers.className = "game-markers ml-1 text-[11px] whitespace-nowrap";
+                    markers.textContent = gameMarkersText(item.path, markerState);
+                    fileLink.appendChild(markers);
 
                     const copyBtn = createFileTreeCopyButton(item.path);
 
