@@ -4,17 +4,19 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 03.07.2024 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-## 1. Emulationsnotizen:
+## 1. Emulationsnotizen
 
 Das Spiel läuft mit Anpassungen auch unter Windows 10:
 
 1. Spiel installieren
 2. Ordner „Gysi2cd“ ins Installationsverzeichnis kopieren
 3. Die folgenden Dateien kopieren und die Kopie umbenennen, ansonsten stürzt das Spiel beim Betreten der Bar und dem Untergrund ab:
-   gysihüpf ➡ gysihьpf
+   ```
+   gysihüpf  ➡ gysihьpf
    gysihüpf1 ➡ gysihьpf1
-   gysitür ➡ gysitьr
-   gywürger ➡ gywьrger
+   gysitür   ➡ gysitьr
+   gywürger  ➡ gywьrger
+   ```
 4. Optional: Spiel mit DXWND (https://sourceforge.net/projects/dxwnd/files/Latest%20build/) im Fenstermodus starten.
 
 ## 2. Planet
