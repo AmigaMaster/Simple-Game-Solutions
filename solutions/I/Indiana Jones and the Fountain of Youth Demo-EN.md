@@ -187,4 +187,4 @@ Unless otherwise described:
 
 Indiana Jones and the Fountain of Youth Demo Walkthrough (English) (PC, Win)
 
-[![Walkthrough](https://img.youtube.com/vi/CqzGRbM8Oo4/0.jpg)](https://www.youtube.com/watch?CqzGRbM8Oo4)
+[![Walkthrough](https://img.youtube.com/vi/CqzGRbM8Oo4/0.jpg)](https://www.youtube.com/watch?v=CqzGRbM8Oo4)

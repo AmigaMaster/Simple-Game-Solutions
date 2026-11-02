@@ -385,4 +385,4 @@ Maniac Mansion Mania is a fan adventure series that is all about bringing the ex
 
 Lucas Maniac! Walkthrough (English) (PC, Win) - No Commentary
 
-[![Walkthrough](https://img.youtube.com/vi/ygnSqxxc-7s/0.jpg)](https://www.youtube.com/watch?ygnSqxxc-7s)
+[![Walkthrough](https://img.youtube.com/vi/ygnSqxxc-7s/0.jpg)](https://www.youtube.com/watch?v=ygnSqxxc-7s)

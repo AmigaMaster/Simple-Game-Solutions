@@ -461,4 +461,4 @@ Keyboard shortcuts:
 
 Back to the Future Part V - Multidimensional Space Walkthrough (English) (PC, Win)
 
-[![Walkthrough](https://img.youtube.com/vi/XGMT_iwqxMo/0.jpg)](https://www.youtube.com/watch?XGMT_iwqxMo)
+[![Walkthrough](https://img.youtube.com/vi/XGMT_iwqxMo/0.jpg)](https://www.youtube.com/watch?v=XGMT_iwqxMo)
