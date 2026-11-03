@@ -93,6 +93,12 @@
             #toc-sidebar { width: var(--toc-w, 260px); }
             #toc-sidebar.panel-collapsed, #resizer-right.panel-collapsed { display: none !important; }
         }
+
+        /* Spoiler protection: steps that are not revealed yet, collapsible chapter headings */
+        #content-viewer:not(.spoiler-searching) .spoiler-hidden { display: none !important; }
+        .spoiler-heading { cursor: pointer; }
+        .spoiler-heading:hover { color: #6ee7b7; }
+        .spoiler-chevron { display: inline-block; width: 1.1em; color: #34d399; font-size: 0.8em; }
     </style>
 </head>
 
@@ -220,10 +226,10 @@
             </div>
 
             <!-- In-Content Filter Header Bar, Report Button & Font Size Button -->
-            <div id="readingPaneHeader" class="pt-1.5 pb-1 px-1 flex items-center gap-2 border-b border-gray-700/50 shrink-0 hidden">
-                <div class="relative flex-1">
+            <div id="readingPaneHeader" class="pt-1.5 pb-1 px-1 flex flex-wrap items-center gap-2 border-b border-gray-700/50 shrink-0 hidden">
+                <div class="relative flex-1 min-w-[7rem]">
                     <input autocomplete="off"
-                        class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
+                        class="w-full min-w-0 bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
                         data-i18n-placeholder="filterPlaceholder" id="contentFilterInput" oninput="debounceContentFilter(this.value);"
                         onkeydown="handleContentFilterKeydown(event);"
                         placeholder="Inhalt filtern..." type="text">
@@ -231,13 +237,15 @@
                         id="clearContentFilterBtn" onclick="clearContentFilter();" title="Filter löschen">✕</button>
                 </div>
 
+                <!-- Buttons: stay together, right-aligned; when the pane gets too narrow they wrap below the filter field instead of leaving the screen -->
+                <div class="flex flex-wrap items-center justify-end gap-2 ml-auto max-w-full">
                 <!-- Favorite star & play status menu -->
                 <button id="favoriteBtn" type="button" onclick="toggleCurrentFavorite();" aria-pressed="false"
                     class="shrink-0 bg-gray-950 hover:bg-gray-700 text-gray-400 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm cursor-pointer transition-colors">☆</button>
                 <div class="relative shrink-0" id="statusMenuContainer">
                     <button id="statusBtn" type="button" onclick="toggleStatusMenu();" aria-haspopup="true"
                         class="bg-gray-950 hover:bg-gray-700 text-gray-300 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1.5 transition-colors">
-                        <span id="statusBtnIcon">○</span><span class="hidden sm:inline" id="statusBtnLabel">Status</span>
+                        <span id="statusBtnIcon">○</span>
                     </button>
                     <div id="statusDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[190px] z-50">
                         <button type="button" data-status-option="" onclick="setCurrentGameStatus(this.dataset.statusOption);" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
@@ -252,10 +260,14 @@
                     </div>
                 </div>
 
+                <!-- Spoiler protection toggle -->
+                <button id="spoilerBtn" type="button" onclick="toggleSpoilerMode();" aria-pressed="false"
+                    class="shrink-0 bg-gray-950 hover:bg-gray-700 text-gray-400 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm cursor-pointer transition-colors">🙈</button>
+
                 <!-- Report & Discussions Dropdown Menu -->
                 <div class="relative shrink-0" id="reportMenuContainer">
-                    <button onclick="toggleReportMenu();" class="bg-gray-950 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" title="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden">
-                        <span>🗨️</span><span class="hidden sm:inline" data-i18n="reportIssueBtn">Nachricht</span>
+                    <button onclick="toggleReportMenu();" class="bg-gray-950 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" data-i18n-aria-label="reportIssueTitle" title="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden" aria-label="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden">
+                        <span>🗨️</span>
                     </button>
                     <div id="reportDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[200px] z-50">
                         <button onclick="openDiscussions();" class="group w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
@@ -283,6 +295,7 @@
                         <button onclick="setZoom(140);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">140%</button>
                         <button onclick="setZoom(150);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">150%</button>
                     </div>
+                </div>
                 </div>
             </div>
 
@@ -389,7 +402,6 @@
                 markAllRead: "Alle als gelesen markieren",
                 favoriteAdd: "Zu Favoriten hinzufügen",
                 favoriteRemove: "Aus Favoriten entfernen",
-                statusLabel: "Status",
                 statusMenuTitle: "Spielstatus setzen",
                 statusNone: "Kein Status",
                 statusPlaying: "Ich spiele gerade",
@@ -407,12 +419,18 @@
                 treeScopeEmptyFavorites: "Noch keine Favoriten. Markiere ein Spiel mit ☆.",
                 treeScopeEmptyMine: "Noch keine Spiele markiert.",
                 treeScopeReset: "Filter zurücksetzen",
+                spoilerOnTitle: "Spoiler-Schutz ist an – klicken zum Ausschalten",
+                spoilerOffTitle: "Spoiler-Schutz einschalten: nur Überschriften zeigen, Kapitel einzeln aufklappen",
+                spoilerExpandTitle: "Kapitel aufklappen",
+                spoilerCollapseTitle: "Kapitel einklappen",
+                spoilerNextStep: "Nächster Schritt",
+                spoilerNext3: "+3 Schritte",
+                spoilerRest: "Rest des Kapitels",
                 exportBtn: "Export",
                 importBtn: "Import",
                 settingsMenuTitle: "Einstellungen",
                 importSuccess: "Einstellungen erfolgreich importiert!",
                 importError: "Fehler beim Importieren der Datei (ungültiges Format).",
-                reportIssueBtn: "Nachricht",
                 reportIssueTitle: "Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden",
                 githubDiscussionsBtn: "GitHub Diskussionen",
                 githubIssueBtn: "GitHub Issue eröffnen",
@@ -460,7 +478,6 @@
                 markAllRead: "Mark all as read",
                 favoriteAdd: "Add to favorites",
                 favoriteRemove: "Remove from favorites",
-                statusLabel: "Status",
                 statusMenuTitle: "Set play status",
                 statusNone: "No status",
                 statusPlaying: "Playing now",
@@ -478,12 +495,18 @@
                 treeScopeEmptyFavorites: "No favorites yet. Mark a game with ☆.",
                 treeScopeEmptyMine: "No games marked yet.",
                 treeScopeReset: "Reset filter",
+                spoilerOnTitle: "Spoiler protection is on – click to turn off",
+                spoilerOffTitle: "Turn on spoiler protection: show headings only, open chapters one by one",
+                spoilerExpandTitle: "Open chapter",
+                spoilerCollapseTitle: "Close chapter",
+                spoilerNextStep: "Next step",
+                spoilerNext3: "+3 steps",
+                spoilerRest: "Rest of chapter",
                 exportBtn: "Export",
                 importBtn: "Import",
                 settingsMenuTitle: "Settings",
                 importSuccess: "Settings successfully imported!",
                 importError: "Error importing file (invalid format).",
-                reportIssueBtn: "Message",
                 reportIssueTitle: "Start discussion or report an issue for this walkthrough on GitHub",
                 githubDiscussionsBtn: "GitHub Discussions",
                 githubIssueBtn: "Open GitHub Issue",
@@ -530,6 +553,12 @@
                     el.setAttribute("title", translations[currentLang][key])
                 }
             });
+            document.querySelectorAll("[data-i18n-aria-label]").forEach(el => {
+                const key = el.getAttribute("data-i18n-aria-label");
+                if (translations[currentLang][key]) {
+                    el.setAttribute("aria-label", translations[currentLang][key])
+                }
+            });
             document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
                 const key = el.getAttribute("data-i18n-placeholder");
                 if (translations[currentLang][key]) {
@@ -549,6 +578,8 @@
                     setupScrollSpy(viewer, tocContainer);
                 }
                 updateGameControls();
+                updateSpoilerButton();
+                refreshSpoilerUi();
                 if (structureData) {
                     filterTree(document.getElementById("searchInput").value);
                 }
@@ -951,8 +982,8 @@
 
             const status = getGameStatus(currentFilePath);
             document.getElementById("statusBtnIcon").textContent = getStatusIcon(status);
-            document.getElementById("statusBtnLabel").textContent = status ? getStatusText(status) : t.statusLabel;
-            statusBtn.title = t.statusMenuTitle;
+            statusBtn.title = `${t.statusMenuTitle}: ${getStatusText(status)}`;
+            statusBtn.setAttribute("aria-label", statusBtn.title);
             statusBtn.classList.toggle("border-emerald-600", !!status);
             statusBtn.classList.toggle("text-emerald-300", !!status);
             statusBtn.classList.toggle("border-gray-700", !status);
@@ -1296,6 +1327,7 @@ ${t.issueSectionSuggestDesc}
         function renderWelcomeScreen(tab = currentWelcomeTab) {
             if (!structureData) return;
             closeGameStatusPopup();
+            clearSpoilerModel();
             currentWelcomeTab = tab;
 
             const readingHeader = document.getElementById("readingPaneHeader");
@@ -1786,6 +1818,19 @@ ${t.issueSectionSuggestDesc}
                         loadFile(loadBtn.dataset.loadPath);
                         return;
                     }
+                    const searchBox = document.getElementById("contentFilterInput");
+                    const searching = !!searchBox && searchBox.value.trim().length > 0;
+                    const spoilerAction = searching ? null : e.target.closest("button[data-spoiler-action]");
+                    if (spoilerAction) {
+                        const controlEl = spoilerAction.closest("[data-spoiler-control]");
+                        if (controlEl) spoilerChapterAction(Number(controlEl.dataset.spoilerControl), spoilerAction.dataset.spoilerAction, controlEl);
+                        return;
+                    }
+                    const chapterHeading = searching ? null : e.target.closest("[data-spoiler-chapter]");
+                    if (chapterHeading && !e.target.closest("a, button")) {
+                        toggleSpoilerChapter(Number(chapterHeading.dataset.spoilerChapter));
+                        return;
+                    }
                     const favToggle = e.target.closest("button[data-fav-toggle]");
                     if (favToggle) {
                         toggleFavorite(favToggle.dataset.favToggle);
@@ -1805,6 +1850,7 @@ ${t.issueSectionSuggestDesc}
                     if (!blockEl || blockEl.style.display === "none") return;
 
                     const targetEl = blockEl;
+                    revealSpoilerStep(targetEl);   // a result from a closed chapter becomes visible before the filter is cleared
                     clearContentFilter();
 
                     setTimeout(() => {
@@ -1907,6 +1953,9 @@ ${t.issueSectionSuggestDesc}
             const q = filterQuery.trim();
             const viewer = document.getElementById("content-viewer");
             if (!viewer) return;
+
+            // The filter always searches the whole solution: while it is active, spoiler protection hides nothing
+            viewer.classList.toggle("spoiler-searching", q.length > 0);
 
             if (q.length > 0 && scrollPercentBeforeFilter === null) {
                 const maxScroll = viewer.scrollHeight - viewer.clientHeight;
@@ -2052,6 +2101,7 @@ ${t.issueSectionSuggestDesc}
 
         // Shows an error message as plain text (never as HTML: the path may come from the URL)
         function showViewerError(viewer, message) {
+            clearSpoilerModel();
             viewer.textContent = "";
             const p = document.createElement("p");
             p.className = "text-red-400 text-sm";
@@ -2163,6 +2213,287 @@ ${t.issueSectionSuggestDesc}
             }
         }
 
+        // --- SPOILER PROTECTION: collapsible chapters ---
+        // While active, only the headings are shown. Every heading that has content is a collapsible chapter:
+        // opening it reveals the first action; more actions can be revealed one by one, three at a time or all at once.
+        // Closing a chapter hides everything again, reopening starts at the first action again.
+        // Nothing is stored: after a reload all chapters are closed. Everything before the first section
+        // (title, version table, availability, general info) stays visible.
+        const SPOILER_MODE_KEY = "sgs_spoiler_mode";
+        lsRemove("sgs_spoiler_progress");   // obsolete: the reveal state is no longer stored
+        let spoilerModel = null;
+
+        function isSpoilerModeOn() {
+            return lsGet(SPOILER_MODE_KEY) === "1";
+        }
+
+        // A chapter is "open" while revealed > 0 (number of visible actions)
+        function buildSpoilerModel(viewer) {
+            const children = Array.from(viewer.children);
+            const start = children.findIndex(el => /^H[2-6]$/.test(el.tagName));
+            if (start === -1) return null;
+
+            const chapters = [];
+            let current = null;
+            for (let i = start; i < children.length; i++) {
+                const el = children[i];
+                if (/^H[1-6]$/.test(el.tagName)) {
+                    current = { heading: el, steps: [], revealed: 0 };
+                    chapters.push(current);
+                } else if (el.tagName === "UL" || el.tagName === "OL") {
+                    el.querySelectorAll("li").forEach(li => current.steps.push(li));
+                } else {
+                    current.steps.push(el);
+                }
+            }
+            if (!chapters.some(chapter => chapter.steps.length > 0)) return null;
+            return { path: null, chapters };
+        }
+
+        function clearSpoilerModel() {
+            spoilerModel = null;
+        }
+
+        // Removes everything the spoiler protection added to the rendered document
+        function clearSpoilerDecorations(viewer) {
+            viewer.querySelectorAll(".spoiler-chevron, .spoiler-chapter-control").forEach(el => el.remove());
+            viewer.querySelectorAll(".spoiler-hidden").forEach(el => el.classList.remove("spoiler-hidden"));
+            viewer.querySelectorAll(".spoiler-heading").forEach(heading => {
+                heading.classList.remove("spoiler-heading");
+                ["data-spoiler-chapter", "role", "tabindex", "aria-expanded", "title"].forEach(attr => heading.removeAttribute(attr));
+            });
+        }
+
+        function setupSpoilerProtection(viewer, filePath) {
+            clearSpoilerModel();
+            clearSpoilerDecorations(viewer);
+            updateSpoilerButton();
+            if (!isSpoilerModeOn() || !filePath.endsWith(".md")) return;
+
+            const model = buildSpoilerModel(viewer);
+            if (!model) return;
+            model.path = filePath;
+
+            // Headings with content become chapter toggles (chevron, keyboard access)
+            model.chapters.forEach((chapter, index) => {
+                if (chapter.steps.length === 0) return;
+                const heading = chapter.heading;
+                heading.classList.add("spoiler-heading");
+                heading.setAttribute("data-spoiler-chapter", String(index));
+                heading.setAttribute("role", "button");
+                heading.setAttribute("tabindex", "0");
+                const chevron = document.createElement("span");
+                chevron.className = "spoiler-chevron";
+                chevron.setAttribute("aria-hidden", "true");
+                const copyButton = heading.querySelector(".heading-copy-btn");
+                if (copyButton) copyButton.after(chevron); else heading.prepend(chevron);
+            });
+
+            spoilerModel = model;
+            applySpoilerState();
+        }
+
+        // Shows exactly the revealed steps of open chapters, hides the rest
+        function applySpoilerState() {
+            const m = spoilerModel;
+            if (!m) return;
+            m.chapters.forEach(chapter => chapter.steps.forEach((el, i) =>
+                el.classList.toggle("spoiler-hidden", i >= chapter.revealed)));
+            // Lists without any visible item disappear completely (deepest lists first)
+            const viewer = document.getElementById("content-viewer");
+            Array.from(viewer.querySelectorAll("ul, ol")).reverse().forEach(list => {
+                const anyVisible = Array.from(list.children).some(child => !child.classList.contains("spoiler-hidden"));
+                list.classList.toggle("spoiler-hidden", !anyVisible);
+            });
+            refreshSpoilerUi();
+        }
+
+        // Chevrons, tooltips and controls (also used after a language change)
+        function refreshSpoilerUi() {
+            updateChapterHeadings();
+            renderChapterControls();
+        }
+
+        function updateChapterHeadings() {
+            const m = spoilerModel;
+            if (!m) return;
+            const tr = translations[currentLang];
+            m.chapters.forEach(chapter => {
+                if (chapter.steps.length === 0) return;
+                const open = chapter.revealed > 0;
+                const chevron = chapter.heading.querySelector(".spoiler-chevron");
+                if (chevron) chevron.textContent = open ? "▾" : "▸";
+                chapter.heading.setAttribute("aria-expanded", String(open));
+                chapter.heading.title = open ? tr.spoilerCollapseTitle : tr.spoilerExpandTitle;
+            });
+        }
+
+        function topLevelOf(viewer, el) {
+            let node = el;
+            while (node.parentElement && node.parentElement !== viewer) node = node.parentElement;
+            return node;
+        }
+
+        // Every open chapter with hidden steps gets a small control directly below its last visible step
+        function renderChapterControls() {
+            const m = spoilerModel;
+            const viewer = document.getElementById("content-viewer");
+            if (!viewer) return;
+            viewer.querySelectorAll(".spoiler-chapter-control").forEach(el => el.remove());
+            if (!m) return;
+            const tr = translations[currentLang];
+            const secondary = "px-3 py-1.5 rounded-md bg-gray-800 hover:bg-gray-700 border border-gray-600 text-gray-200 whitespace-nowrap cursor-pointer transition-colors";
+
+            m.chapters.forEach((chapter, index) => {
+                if (chapter.revealed < 1 || chapter.revealed >= chapter.steps.length) return;
+                const control = document.createElement("div");
+                control.className = "spoiler-chapter-control not-prose my-2 flex flex-wrap items-center gap-2 text-xs";
+                control.setAttribute("data-spoiler-control", String(index));
+                control.innerHTML = `
+                    <button type="button" data-spoiler-action="next" class="px-3 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white font-semibold whitespace-nowrap cursor-pointer transition-colors">▼ ${tr.spoilerNextStep}</button>
+                    <button type="button" data-spoiler-action="next3" class="${secondary}">${tr.spoilerNext3}</button>
+                    <button type="button" data-spoiler-action="rest" class="${secondary}">${tr.spoilerRest}</button>`;
+                topLevelOf(viewer, chapter.steps[chapter.revealed - 1]).after(control);
+            });
+        }
+
+        function updateSpoilerButton() {
+            const btn = document.getElementById("spoilerBtn");
+            if (!btn) return;
+            const on = isSpoilerModeOn();
+            const tr = translations[currentLang];
+            btn.title = on ? tr.spoilerOnTitle : tr.spoilerOffTitle;
+            btn.setAttribute("aria-pressed", String(on));
+            btn.classList.toggle("border-emerald-600", on);
+            btn.classList.toggle("text-emerald-300", on);
+            btn.classList.toggle("border-gray-700", !on);
+            btn.classList.toggle("text-gray-400", !on);
+        }
+
+        // An active text filter hides elements with inline styles: apply it again to the new state
+        function afterSpoilerChange() {
+            applySpoilerState();
+            const filterInput = document.getElementById("contentFilterInput");
+            if (filterInput && filterInput.value.trim()) handleContentFilter(filterInput.value);
+        }
+
+        // Brings newly revealed steps into view with the least possible movement
+        function scrollToRevealed(firstEl, lastEl, count) {
+            const viewer = document.getElementById("content-viewer");
+            if (!viewer || !firstEl || !lastEl) return;
+            const vr = viewer.getBoundingClientRect();
+            const fr = firstEl.getBoundingClientRect();
+            let delta = 0;
+            if (count === 1) {
+                const lr = lastEl.getBoundingClientRect();
+                if (lr.height > vr.height) delta = fr.top - vr.top - 8;
+                else if (lr.bottom > vr.bottom) delta = lr.bottom - vr.bottom + 12;
+                else if (lr.top < vr.top) delta = lr.top - vr.top - 8;
+            } else if (fr.top < vr.top || fr.top > vr.bottom - 48) {
+                delta = fr.top - vr.top - 8;
+            }
+            if (delta !== 0) viewer.scrollBy({ top: delta, behavior: "smooth" });
+        }
+
+        // The heading the reader is currently looking at: the first heading inside the visible area, otherwise
+        // the heading of the chapter shown at the top edge. offset = distance from the top edge of the reading area.
+        function findScrollAnchor(viewer) {
+            const vr = viewer.getBoundingClientRect();
+            let above = null;
+            for (const heading of viewer.querySelectorAll(HEADING_SELECTOR)) {
+                const r = heading.getBoundingClientRect();
+                if (r.height === 0) continue;   // hidden (e.g. by the text filter)
+                if (r.top >= vr.top && r.top < vr.bottom) return { heading, offset: r.top - vr.top };
+                if (r.top < vr.top) above = heading;
+            }
+            return above ? { heading: above, offset: 8 } : null;
+        }
+
+        // Runs a change that alters the document height and keeps the reader at the same chapter
+        function withStableScroll(viewer, change) {
+            const anchor = findScrollAnchor(viewer);
+            change();
+            if (!anchor) return;
+            const delta = anchor.heading.getBoundingClientRect().top - viewer.getBoundingClientRect().top - anchor.offset;
+            if (delta !== 0) viewer.scrollTo({ top: viewer.scrollTop + delta, behavior: "instant" });
+        }
+
+        function toggleSpoilerChapter(index) {
+            const m = spoilerModel;
+            const chapter = m && m.chapters[index];
+            if (!chapter || chapter.steps.length === 0) return;
+            const opening = chapter.revealed === 0;
+            chapter.revealed = opening ? 1 : 0;   // opening shows the first action; closing forgets the progress
+            afterSpoilerChange();
+            if (opening) {
+                requestAnimationFrame(() => scrollToRevealed(chapter.steps[0], chapter.steps[0], 1));
+            }
+        }
+
+        // Reveal more actions of an open chapter. The control keeps its place on screen while the new steps
+        // appear above it, so repeated clicks never make the button run away.
+        function spoilerChapterAction(index, action, controlEl) {
+            const m = spoilerModel;
+            const chapter = m && m.chapters[index];
+            if (!chapter || chapter.revealed < 1) return;
+            const anchorTop = controlEl ? controlEl.getBoundingClientRect().top : null;
+            const length = chapter.steps.length;
+            if (action === "next") chapter.revealed = Math.min(length, chapter.revealed + 1);
+            else if (action === "next3") chapter.revealed = Math.min(length, chapter.revealed + 3);
+            else if (action === "rest") chapter.revealed = length;
+            else return;
+            afterSpoilerChange();
+
+            if (action !== "rest" && anchorTop !== null) {
+                const viewer = document.getElementById("content-viewer");
+                const control = viewer.querySelector(`[data-spoiler-control="${index}"]`);
+                if (control) {
+                    const delta = control.getBoundingClientRect().top - anchorTop;
+                    if (delta !== 0) viewer.scrollTo({ top: viewer.scrollTop + delta, behavior: "instant" });
+                }
+            }
+        }
+
+        // Makes sure a step is visible (used when a search result inside a still closed chapter is opened):
+        // opens the chapter just far enough to show it
+        function revealSpoilerStep(el) {
+            const m = spoilerModel;
+            if (!m || !el) return;
+            for (const chapter of m.chapters) {
+                let index = chapter.steps.indexOf(el);
+                if (index === -1) chapter.steps.forEach((step, i) => { if (step.contains(el)) index = i; });
+                if (index === -1) continue;
+                if (chapter.revealed <= index) {
+                    chapter.revealed = index + 1;
+                    afterSpoilerChange();
+                }
+                return;
+            }
+        }
+
+        function handleSpoilerKeydown(e) {
+            if (e.key !== "Enter" && e.key !== " ") return;
+            const heading = e.target.closest ? e.target.closest("[data-spoiler-chapter]") : null;
+            if (!heading || e.target !== heading) return;
+            e.preventDefault();
+            toggleSpoilerChapter(Number(heading.dataset.spoilerChapter));
+        }
+
+        // Turning the protection on or off keeps the reader at the chapter currently in view
+        function toggleSpoilerMode() {
+            if (isSpoilerModeOn()) lsRemove(SPOILER_MODE_KEY); else lsSet(SPOILER_MODE_KEY, "1");
+            const viewer = document.getElementById("content-viewer");
+            if (!currentFilePath || rawFileContent === null || !viewer) {
+                updateSpoilerButton();
+                return;
+            }
+            withStableScroll(viewer, () => {
+                setupSpoilerProtection(viewer, currentFilePath);
+                const filterInput = document.getElementById("contentFilterInput");
+                if (filterInput && filterInput.value.trim()) handleContentFilter(filterInput.value);
+            });
+        }
+
         function renderFileContent(text, filePath) {
             const viewer = document.getElementById("content-viewer");
             const tocContainer = document.getElementById("toc-container");
@@ -2176,6 +2507,7 @@ ${t.issueSectionSuggestDesc}
             }
             postProcessViewer(viewer);
             generateToc(viewer, tocContainer);
+            setupSpoilerProtection(viewer, filePath);
             setupScrollSpy(viewer, tocContainer);
 
             // Restore scroll position using saved percentage after DOM rendering completes
@@ -2472,6 +2804,7 @@ ${t.issueSectionSuggestDesc}
         // --- STABLE HEADING IDs ---
         // IDs are derived from the heading text ("Kapitel 3: Die Höhle" -> "kapitel-3-die-hoehle"),
         // so shared chapter links keep working when headings are added or moved.
+        // ASCII only: no percent-encoding in URLs, and the same result in every browser.
         function slugifyHeading(text) {
             return String(text)
                 .toLowerCase()
@@ -2791,6 +3124,8 @@ ${t.issueSectionSuggestDesc}
         // Crossing a breakpoint (resize, rotating a tablet): never keep a stale mobile overlay open
         ["(min-width: 1060px)", "(min-width: 650px)"].forEach(query =>
             window.matchMedia(query).addEventListener("change", closeAllOverlays));
+
+        document.getElementById("content-viewer").addEventListener("keydown", handleSpoilerKeydown);
 
         // --- SECTION 11: INITIAL EXECUTION ON LOAD ---
         treeScope = (["favorites", "mine"].includes(lsGet("sgs_tree_scope"))) ? lsGet("sgs_tree_scope") : "all";
