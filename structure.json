@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 597,
-    "total_words": 685231,
-    "total_actions": 84070
+    "total_files": 598,
+    "total_words": 686829,
+    "total_actions": 84302
   },
   "name": "solutions",
   "type": "directory",
@@ -582,6 +582,14 @@
           "last_modified": "2025-09-20T08:17:02+02:00",
           "words": 283,
           "actions": 40
+        },
+        {
+          "name": "Black Sect Remake-EN",
+          "type": "file",
+          "path": "B/Black Sect Remake-EN.md",
+          "last_modified": "2026-11-04T00:03:57+01:00",
+          "words": 1598,
+          "actions": 232
         },
         {
           "name": "Blazing Dragons-DE",
