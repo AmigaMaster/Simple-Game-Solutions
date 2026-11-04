@@ -1614,7 +1614,9 @@ ${t.issueSectionSuggestDesc}
             });
             dropdown.innerHTML = html;
             dropdown.scrollTop = 0;
-            dropdown.classList.remove("hidden")
+            dropdown.classList.remove("hidden");
+            searchSelectedIndex = 0;
+            updateDropdownHighlight(dropdown.querySelectorAll("button.search-item"));
         }
 
         // Highlight selected dropdown search item during keyboard navigation
@@ -1633,6 +1635,7 @@ ${t.issueSectionSuggestDesc}
 
         // Global search input keyboard handler (Arrows, PageUp/Down, Enter, Escape)
         function handleSearchInputKeydown(e) {
+            if (e.key === "Enter") flushPendingGlobalSearch();
             const dropdown = document.getElementById("searchDropdown");
             const items = dropdown.querySelectorAll("button.search-item");
             const pageSize = 8;
@@ -1681,6 +1684,7 @@ ${t.issueSectionSuggestDesc}
 
         // Clear search input state
         function clearSearch() {
+            cancelPendingGlobalSearch();
             searchSelectedIndex = -1;
             const input = document.getElementById("searchInput");
             input.value = "";
@@ -1715,6 +1719,7 @@ ${t.issueSectionSuggestDesc}
 
         // Select a search result item
         async function selectSearchResult(path, isExternal = false) {
+            cancelPendingGlobalSearch();
             if (isExternal) {
                 window.open(path, '_blank', 'noopener,noreferrer');
             } else {
@@ -1742,11 +1747,28 @@ ${t.issueSectionSuggestDesc}
         });
 
         let searchTimeout;
+        let globalSearchPending = false;
         function debounceGlobalSearch(query) {
             clearTimeout(searchTimeout);
+            globalSearchPending = true;
             searchTimeout = setTimeout(() => {
+                globalSearchPending = false;
                 handleGlobalSearch(query);
             }, 200);
+        }
+
+        // Runs a search that is still waiting for its debounce delay right now
+        function flushPendingGlobalSearch() {
+            if (!globalSearchPending) return;
+            clearTimeout(searchTimeout);
+            globalSearchPending = false;
+            handleGlobalSearch(document.getElementById("searchInput").value);
+        }
+
+        // Drops a search that has not run yet (field was cleared or a result was opened in the meantime)
+        function cancelPendingGlobalSearch() {
+            clearTimeout(searchTimeout);
+            globalSearchPending = false;
         }
 
         let filterDebounceTimer = null;
