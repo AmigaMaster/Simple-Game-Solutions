@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 598,
-    "total_words": 686829,
-    "total_actions": 84302
+    "total_files": 599,
+    "total_words": 686993,
+    "total_actions": 84314
   },
   "name": "solutions",
   "type": "directory",
@@ -1066,6 +1066,14 @@
           "last_modified": "2026-06-16T00:05:44+02:00",
           "words": 131,
           "actions": 11
+        },
+        {
+          "name": "Dust 'n' Rust-EN",
+          "type": "file",
+          "path": "D/Dust 'n' Rust-EN.md",
+          "last_modified": "2026-11-05T00:35:39+01:00",
+          "words": 164,
+          "actions": 12
         },
         {
           "name": "Duty And Beyond-EN",
