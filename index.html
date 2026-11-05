@@ -94,6 +94,9 @@
             #toc-sidebar.panel-collapsed, #resizer-right.panel-collapsed { display: none !important; }
         }
 
+        /* Reserve the scrollbar space so long result lists never clip their text */
+        #searchDropdown { scrollbar-gutter: stable; }
+
         /* Spoiler protection: steps that are not revealed yet, collapsible chapter headings */
         #content-viewer:not(.spoiler-searching) .spoiler-hidden { display: none !important; }
         .spoiler-heading { cursor: pointer; }
@@ -223,6 +226,14 @@
             <div class="absolute top-0 left-0 right-0 h-1 bg-gray-800 z-20">
                 <div id="scrollProgressBar" class="h-full bg-emerald-500 transition-all duration-75" style="width: 0%;">
                 </div>
+            </div>
+
+            <!-- Spoiler mode notice: part of the layout (covers nothing), visible as long as the mode is on -->
+            <div id="spoilerBanner" role="status"
+                class="hidden shrink-0 mt-1.5 mb-0.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-md border border-amber-600/60 bg-amber-900/30 px-2.5 py-1 text-xs text-amber-200">
+                <span class="font-semibold">🙈 <span data-i18n="spoilerBannerText">Spoilermodus aktiv</span></span>
+                <button type="button" onclick="toggleSpoilerMode();" data-i18n-title="spoilerBannerOffTitle" title="Spoilermodus ausschalten: Lösungen wieder vollständig anzeigen"
+                    class="px-2 py-0.5 rounded border border-amber-500/70 text-amber-100 hover:bg-amber-800/50 hover:text-white whitespace-nowrap cursor-pointer transition-colors"><span data-i18n="spoilerBannerOff">Ausschalten</span></button>
             </div>
 
             <!-- In-Content Filter Header Bar, Report Button & Font Size Button -->
@@ -419,8 +430,11 @@
                 treeScopeEmptyFavorites: "Noch keine Favoriten. Markiere ein Spiel mit ☆.",
                 treeScopeEmptyMine: "Noch keine Spiele markiert.",
                 treeScopeReset: "Filter zurücksetzen",
-                spoilerOnTitle: "Spoiler-Schutz ist an – klicken zum Ausschalten",
-                spoilerOffTitle: "Spoiler-Schutz einschalten: nur Überschriften zeigen, Kapitel einzeln aufklappen",
+                spoilerOnTitle: "Spoilermodus ist aktiv – klicken zum Ausschalten",
+                spoilerOffTitle: "Spoilermodus einschalten: nur Überschriften zeigen, Kapitel einzeln aufklappen",
+                spoilerBannerText: "Spoilermodus aktiv",
+                spoilerBannerOff: "Ausschalten",
+                spoilerBannerOffTitle: "Spoilermodus ausschalten: Lösungen wieder vollständig anzeigen",
                 spoilerExpandTitle: "Kapitel aufklappen",
                 spoilerCollapseTitle: "Kapitel einklappen",
                 spoilerNextStep: "Nächster Schritt",
@@ -495,8 +509,11 @@
                 treeScopeEmptyFavorites: "No favorites yet. Mark a game with ☆.",
                 treeScopeEmptyMine: "No games marked yet.",
                 treeScopeReset: "Reset filter",
-                spoilerOnTitle: "Spoiler protection is on – click to turn off",
-                spoilerOffTitle: "Turn on spoiler protection: show headings only, open chapters one by one",
+                spoilerOnTitle: "Spoiler mode is on – click to turn off",
+                spoilerOffTitle: "Turn on spoiler mode: show headings only, open chapters one by one",
+                spoilerBannerText: "Spoiler mode on",
+                spoilerBannerOff: "Turn off",
+                spoilerBannerOffTitle: "Turn off spoiler mode: show solutions in full again",
                 spoilerExpandTitle: "Open chapter",
                 spoilerCollapseTitle: "Close chapter",
                 spoilerNextStep: "Next step",
@@ -1603,6 +1620,7 @@ ${t.issueSectionSuggestDesc}
                 dropdown.innerHTML = `<div class="p-3 text-xs sm:text-sm text-gray-400 italic">${translations[currentLang].noResults}</div>`;
                 dropdown.scrollTop = 0;
                 dropdown.classList.remove("hidden");
+                positionSearchDropdown();
                 return
             }
             let html = "";
@@ -1615,6 +1633,7 @@ ${t.issueSectionSuggestDesc}
             dropdown.innerHTML = html;
             dropdown.scrollTop = 0;
             dropdown.classList.remove("hidden");
+            positionSearchDropdown();
             searchSelectedIndex = 0;
             updateDropdownHighlight(dropdown.querySelectorAll("button.search-item"));
         }
@@ -1635,6 +1654,7 @@ ${t.issueSectionSuggestDesc}
 
         // Global search input keyboard handler (Arrows, PageUp/Down, Enter, Escape)
         function handleSearchInputKeydown(e) {
+            // Fast typing + Enter: first apply the search for the complete input, then act on its first result
             if (e.key === "Enter") flushPendingGlobalSearch();
             const dropdown = document.getElementById("searchDropdown");
             const items = dropdown.querySelectorAll("button.search-item");
@@ -1745,6 +1765,26 @@ ${t.issueSectionSuggestDesc}
                 dropdown.classList.add("hidden")
             }
         });
+
+        // Desktop (>= 640px): the result list is as wide as its content, but never narrower than the search field
+        // and never wider than the space to the right edge of the window. Small screens keep the full-width list.
+        function positionSearchDropdown() {
+            const dropdown = document.getElementById("searchDropdown");
+            const input = document.getElementById("searchInput");
+            if (!dropdown || !input) return;
+            if (window.innerWidth < 640) {
+                ["left", "right", "width", "minWidth", "maxWidth"].forEach(prop => { dropdown.style[prop] = ""; });
+                return;
+            }
+            const field = input.getBoundingClientRect();
+            const header = dropdown.parentElement.getBoundingClientRect();
+            dropdown.style.left = `${field.left - header.left}px`;
+            dropdown.style.right = "auto";
+            dropdown.style.width = "max-content";
+            dropdown.style.minWidth = `${field.width}px`;
+            dropdown.style.maxWidth = `${Math.max(field.width, window.innerWidth - field.left - 12)}px`;
+        }
+        window.addEventListener("resize", positionSearchDropdown);
 
         let searchTimeout;
         let globalSearchPending = false;
@@ -2390,6 +2430,8 @@ ${t.issueSectionSuggestDesc}
             btn.classList.toggle("text-emerald-300", on);
             btn.classList.toggle("border-gray-700", !on);
             btn.classList.toggle("text-gray-400", !on);
+            const banner = document.getElementById("spoilerBanner");
+            if (banner) banner.classList.toggle("hidden", !on);
         }
 
         // An active text filter hides elements with inline styles: apply it again to the new state
@@ -3152,6 +3194,7 @@ ${t.issueSectionSuggestDesc}
         // --- SECTION 11: INITIAL EXECUTION ON LOAD ---
         treeScope = (["favorites", "mine"].includes(lsGet("sgs_tree_scope"))) ? lsGet("sgs_tree_scope") : "all";
         updateTreeScopeUi();
+        updateSpoilerButton();
         closeAllOverlays();
         init();
 
