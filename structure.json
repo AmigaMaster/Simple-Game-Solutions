@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 600,
-    "total_words": 689970,
-    "total_actions": 84705
+    "total_files": 601,
+    "total_words": 690188,
+    "total_actions": 84735
   },
   "name": "solutions",
   "type": "directory",
@@ -1490,6 +1490,14 @@
           "last_modified": "2023-08-19T02:21:56+02:00",
           "words": 3743,
           "actions": 438
+        },
+        {
+          "name": "How We Know We're Alive-EN",
+          "type": "file",
+          "path": "H/How We Know We're Alive-EN.md",
+          "last_modified": "2026-11-07T00:36:12+01:00",
+          "words": 218,
+          "actions": 30
         },
         {
           "name": "Hungry-EN",
