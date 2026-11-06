@@ -273,7 +273,7 @@
 
                 <!-- Spoiler protection toggle -->
                 <button id="spoilerBtn" type="button" onclick="toggleSpoilerMode();" aria-pressed="false"
-                    class="shrink-0 bg-gray-950 hover:bg-gray-700 text-gray-400 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm cursor-pointer transition-colors">🙈</button>
+                    class="shrink-0 bg-gray-950 [@media(hover:hover)]:hover:bg-gray-700 text-gray-400 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm cursor-pointer transition-colors">🙈</button>
 
                 <!-- Report & Discussions Dropdown Menu -->
                 <div class="relative shrink-0" id="reportMenuContainer">
@@ -307,6 +307,13 @@
                         <button onclick="setZoom(150);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">150%</button>
                     </div>
                 </div>
+                </div>
+
+                <div id="searchHitBar" class="hidden w-full flex items-center gap-2 text-xs">
+                    <button type="button" onclick="revealNextSearchHit();" data-i18n-title="searchNextHitTitle" title="Nächsten Treffer aufdecken (Enter)"
+                        class="flex-1 min-w-0 min-h-[2.25rem] px-3 py-1.5 rounded-md bg-emerald-600 [@media(hover:hover)]:hover:bg-emerald-500 text-white font-semibold whitespace-nowrap cursor-pointer transition-colors">▼ <span data-i18n="searchNextHit">Nächster Treffer</span> <span id="searchHitCount" class="font-normal opacity-80"></span></button>
+                    <button type="button" onclick="revealAllSearchHits();" data-i18n-title="searchAllHitsTitle" title="Alle Treffer aufdecken"
+                        class="shrink-0 min-h-[2.25rem] px-3 py-1.5 rounded-md bg-gray-800 [@media(hover:hover)]:hover:bg-gray-700 border border-gray-600 text-gray-200 whitespace-nowrap cursor-pointer transition-colors"><span data-i18n="searchAllHits">Alle anzeigen</span></button>
                 </div>
             </div>
 
@@ -435,6 +442,12 @@
                 spoilerBannerText: "Spoilermodus aktiv",
                 spoilerBannerOff: "Ausschalten",
                 spoilerBannerOffTitle: "Spoilermodus ausschalten: Lösungen wieder vollständig anzeigen",
+                searchNextHit: "Nächster Treffer",
+                searchNextHitTitle: "Nächsten Treffer aufdecken (Enter)",
+                searchAllHits: "Alle anzeigen",
+                searchAllHitsTitle: "Alle Treffer aufdecken",
+                searchChapterExpand: "Treffer dieses Kapitels aufdecken",
+                searchChapterCollapse: "Treffer dieses Kapitels wieder verbergen",
                 spoilerExpandTitle: "Kapitel aufklappen",
                 spoilerCollapseTitle: "Kapitel einklappen",
                 spoilerNextStep: "Nächster Schritt",
@@ -514,6 +527,12 @@
                 spoilerBannerText: "Spoiler mode on",
                 spoilerBannerOff: "Turn off",
                 spoilerBannerOffTitle: "Turn off spoiler mode: show solutions in full again",
+                searchNextHit: "Next match",
+                searchNextHitTitle: "Reveal next match (Enter)",
+                searchAllHits: "Show all",
+                searchAllHitsTitle: "Reveal all matches",
+                searchChapterExpand: "Reveal this chapter's matches",
+                searchChapterCollapse: "Hide this chapter's matches again",
                 spoilerExpandTitle: "Open chapter",
                 spoilerCollapseTitle: "Close chapter",
                 spoilerNextStep: "Next step",
@@ -1812,11 +1831,22 @@ ${t.issueSectionSuggestDesc}
         }
 
         let filterDebounceTimer = null;
+        let contentFilterPending = false;
         function debounceContentFilter(query) {
             clearTimeout(filterDebounceTimer);
+            contentFilterPending = true;
             filterDebounceTimer = setTimeout(() => {
+                contentFilterPending = false;
                 handleContentFilter(query);
             }, 200);
+        }
+
+        // Runs a filter that is still waiting for its debounce delay right now
+        function flushPendingContentFilter() {
+            if (!contentFilterPending) return;
+            clearTimeout(filterDebounceTimer);
+            contentFilterPending = false;
+            handleContentFilter(document.getElementById("contentFilterInput").value);
         }
 
         // --- EVENT DELEGATION INITIALIZATION ---
@@ -1882,6 +1912,13 @@ ${t.issueSectionSuggestDesc}
                     }
                     const searchBox = document.getElementById("contentFilterInput");
                     const searching = !!searchBox && searchBox.value.trim().length > 0;
+                    if (searching && spoilerModel) {
+                        const resultHeading = e.target.closest("h1, h2, h3, h4, h5, h6");
+                        if (resultHeading && searchChapterHits.has(resultHeading) && !e.target.closest("a, button")) {
+                            toggleSearchChapter(resultHeading);
+                            return;
+                        }
+                    }
                     const spoilerAction = searching ? null : e.target.closest("button[data-spoiler-action]");
                     if (spoilerAction) {
                         const controlEl = spoilerAction.closest("[data-spoiler-control]");
@@ -1927,10 +1964,28 @@ ${t.issueSectionSuggestDesc}
         }
 
         // --- SECTION 6: IN-CONTENT FILTERING ---
+        let contentFilterQuery = "";
+        let searchRevealed = new Set();
+        let searchRevealStarted = false;
+        let searchHits = [];
+        let searchChapterHits = new Map();
+
+        function resetSearchReveal() {
+            searchRevealed = new Set();
+            searchRevealStarted = false;
+        }
+
         function handleContentFilterKeydown(e) {
             if (e.key === "Escape") {
                 e.preventDefault();
                 clearContentFilter();
+            } else if (e.key === "Enter") {
+                flushPendingContentFilter();
+                const input = document.getElementById("contentFilterInput");
+                if (spoilerModel && input && input.value.trim() && searchHits.length > 0) {
+                    e.preventDefault();
+                    revealNextSearchHit();
+                }
             }
         }
 
@@ -2018,6 +2073,10 @@ ${t.issueSectionSuggestDesc}
 
             // The filter always searches the whole solution: while it is active, spoiler protection hides nothing
             viewer.classList.toggle("spoiler-searching", q.length > 0);
+            if (q !== contentFilterQuery) {
+                contentFilterQuery = q;
+                resetSearchReveal();
+            }
 
             if (q.length > 0 && scrollPercentBeforeFilter === null) {
                 const maxScroll = viewer.scrollHeight - viewer.clientHeight;
@@ -2045,6 +2104,9 @@ ${t.issueSectionSuggestDesc}
                     el.classList.remove("cursor-pointer", "hover:bg-gray-700/40", "rounded", "px-1", "transition-colors", "bg-emerald-900/60");
                     el.title = "";
                 });
+
+                hideSearchHitBar();
+                if (spoilerModel) updateChapterHeadings();
 
                 // Restore scroll position when filter is cleared
                 if (scrollPercentBeforeFilter !== null) {
@@ -2081,14 +2143,57 @@ ${t.issueSectionSuggestDesc}
                 }
             });
 
+            const isHeading = el => /^H[1-7]$/.test(el.tagName);
+            const hits = [];
+            const hitSet = new Set();
+            const covered = new Map();
+            const chapterHits = new Map();
+            let chapterHeading = null;
+            allBlocks.forEach(el => {
+                if (isHeading(el)) {
+                    chapterHeading = el;
+                    return;
+                }
+                if (!matchingSet.has(el)) return;
+                const owner = findCoveringHit(el, hitSet, viewer);
+                if (owner) {
+                    covered.get(owner).push(el);
+                    return;
+                }
+                hits.push(el);
+                hitSet.add(el);
+                covered.set(el, []);
+                if (chapterHeading) {
+                    if (!chapterHits.has(chapterHeading)) chapterHits.set(chapterHeading, []);
+                    chapterHits.get(chapterHeading).push(el);
+                }
+            });
+            searchHits = hits;
+            searchChapterHits = chapterHits;
+
+            let shownMatches = matchingSet;
+            if (spoilerModel) {
+                if (!searchRevealStarted && hits.length > 0) {
+                    searchRevealed.add(hits[0]);
+                    searchRevealStarted = true;
+                }
+                shownMatches = new Set();
+                hits.forEach(hit => {
+                    if (searchRevealed.has(hit)) {
+                        shownMatches.add(hit);
+                        covered.get(hit).forEach(el => shownMatches.add(el));
+                    }
+                });
+            }
+
             let currentHeading = null;
             const headingToMatchedBlocks = new Map();
 
             allBlocks.forEach(el => {
-                if (/^H[1-7]$/.test(el.tagName)) {
+                if (isHeading(el)) {
                     currentHeading = el;
                 } else {
-                    if (currentHeading && matchingSet.has(el)) {
+                    if (currentHeading && shownMatches.has(el)) {
                         if (!headingToMatchedBlocks.has(currentHeading)) {
                             headingToMatchedBlocks.set(currentHeading, new Set());
                         }
@@ -2100,12 +2205,12 @@ ${t.issueSectionSuggestDesc}
             const visibleElements = new Set();
 
             allBlocks.forEach(el => {
-                if (/^H[1-7]$/.test(el.tagName)) {
-                    if (matchingSet.has(el) || headingToMatchedBlocks.has(el)) {
+                if (isHeading(el)) {
+                    if (matchingSet.has(el) || (spoilerModel ? chapterHits.has(el) : headingToMatchedBlocks.has(el))) {
                         visibleElements.add(el);
                     }
                 } else {
-                    if (matchingSet.has(el)) {
+                    if (shownMatches.has(el)) {
                         visibleElements.add(el);
                     }
                 }
@@ -2137,8 +2242,86 @@ ${t.issueSectionSuggestDesc}
                 }
             });
 
+            if (spoilerModel) {
+                updateSearchChapterHeadings();
+                updateSearchHitBar(hits.length, hits.filter(hit => searchRevealed.has(hit)).length);
+            } else {
+                hideSearchHitBar();
+            }
+
             if (typeof viewer.onscroll === 'function') {
                 viewer.onscroll();
+            }
+        }
+
+        // A hit may contain further matching blocks (p inside li, p inside blockquote ...): they belong to it.
+        // A list item does not cover its nested lists: those items are separate hits.
+        function findCoveringHit(el, hitSet, root) {
+            let insideList = false;
+            for (let node = el.parentElement; node && node !== root; node = node.parentElement) {
+                if (node.tagName === "UL" || node.tagName === "OL") insideList = true;
+                if (hitSet.has(node) && !(node.tagName === "LI" && insideList)) return node;
+            }
+            return null;
+        }
+
+        function hideSearchHitBar() {
+            const bar = document.getElementById("searchHitBar");
+            if (bar) bar.classList.add("hidden");
+        }
+
+        function updateSearchHitBar(total, revealed) {
+            const bar = document.getElementById("searchHitBar");
+            if (!bar) return;
+            bar.classList.toggle("hidden", !(spoilerModel && total > revealed));
+            const count = document.getElementById("searchHitCount");
+            if (count) count.textContent = `${revealed}/${total}`;
+        }
+
+        function updateSearchChapterHeadings() {
+            const tr = translations[currentLang];
+            searchChapterHits.forEach((hits, heading) => {
+                const open = hits.some(hit => searchRevealed.has(hit));
+                const chevron = heading.querySelector(".spoiler-chevron");
+                if (chevron) chevron.textContent = open ? "▾" : "▸";
+                heading.title = open ? tr.searchChapterCollapse : tr.searchChapterExpand;
+            });
+        }
+
+        function rerunContentFilter() {
+            const input = document.getElementById("contentFilterInput");
+            if (input) handleContentFilter(input.value);
+        }
+
+        function revealNextSearchHit() {
+            if (!spoilerModel) return;
+            const next = searchHits.find(hit => !searchRevealed.has(hit));
+            if (!next) return;
+            searchRevealed.add(next);
+            rerunContentFilter();
+            requestAnimationFrame(() => scrollToRevealed(next, next, 1));
+        }
+
+        function revealAllSearchHits() {
+            if (!spoilerModel) return;
+            const fresh = searchHits.filter(hit => !searchRevealed.has(hit));
+            if (fresh.length === 0) return;
+            fresh.forEach(hit => searchRevealed.add(hit));
+            rerunContentFilter();
+            requestAnimationFrame(() => scrollToRevealed(fresh[0], fresh[fresh.length - 1], fresh.length));
+        }
+
+        function toggleSearchChapter(heading) {
+            const hits = searchChapterHits.get(heading);
+            if (!spoilerModel || !hits || hits.length === 0) return;
+            const fresh = hits.filter(hit => !searchRevealed.has(hit));
+            if (fresh.length > 0) {
+                fresh.forEach(hit => searchRevealed.add(hit));
+                rerunContentFilter();
+                requestAnimationFrame(() => scrollToRevealed(fresh[0], fresh[fresh.length - 1], fresh.length));
+            } else {
+                hits.forEach(hit => searchRevealed.delete(hit));
+                rerunContentFilter();
             }
         }
 
@@ -2426,10 +2609,14 @@ ${t.issueSectionSuggestDesc}
             const tr = translations[currentLang];
             btn.title = on ? tr.spoilerOnTitle : tr.spoilerOffTitle;
             btn.setAttribute("aria-pressed", String(on));
-            btn.classList.toggle("border-emerald-600", on);
-            btn.classList.toggle("text-emerald-300", on);
+            btn.classList.toggle("bg-emerald-600", on);
+            btn.classList.toggle("border-emerald-500", on);
+            btn.classList.toggle("text-white", on);
+            btn.classList.toggle("[@media(hover:hover)]:hover:bg-emerald-500", on);
+            btn.classList.toggle("bg-gray-950", !on);
             btn.classList.toggle("border-gray-700", !on);
             btn.classList.toggle("text-gray-400", !on);
+            btn.classList.toggle("[@media(hover:hover)]:hover:bg-gray-700", !on);
             const banner = document.getElementById("spoilerBanner");
             if (banner) banner.classList.toggle("hidden", !on);
         }
@@ -2540,6 +2727,11 @@ ${t.issueSectionSuggestDesc}
             const heading = e.target.closest ? e.target.closest("[data-spoiler-chapter]") : null;
             if (!heading || e.target !== heading) return;
             e.preventDefault();
+            const filterBox = document.getElementById("contentFilterInput");
+            if (spoilerModel && filterBox && filterBox.value.trim()) {
+                toggleSearchChapter(heading);
+                return;
+            }
             toggleSpoilerChapter(Number(heading.dataset.spoilerChapter));
         }
 
@@ -2553,6 +2745,7 @@ ${t.issueSectionSuggestDesc}
             }
             withStableScroll(viewer, () => {
                 setupSpoilerProtection(viewer, currentFilePath);
+                resetSearchReveal();
                 const filterInput = document.getElementById("contentFilterInput");
                 if (filterInput && filterInput.value.trim()) handleContentFilter(filterInput.value);
             });
