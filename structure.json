@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 599,
-    "total_words": 686993,
-    "total_actions": 84314
+    "total_files": 600,
+    "total_words": 689970,
+    "total_actions": 84705
   },
   "name": "solutions",
   "type": "directory",
@@ -1688,6 +1688,14 @@
           "last_modified": "2026-07-25T06:42:39+02:00",
           "words": 4782,
           "actions": 683
+        },
+        {
+          "name": "It takes two to tangle-EN",
+          "type": "file",
+          "path": "I/It takes two to tangle-EN.md",
+          "last_modified": "2026-11-06T07:50:35+01:00",
+          "words": 2977,
+          "actions": 391
         },
         {
           "name": "IWWHIIWWHITOMIROTPG-EN",
