@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 06.09.2022 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the game for free at [Itch.io](https://powerhoof.itch.io/the-telwynium)
+Download the free game from [Itch.io](https://powerhoof.itch.io/the-telwynium)
 
 ## 1. Camp
 
@@ -134,3 +134,11 @@ Get the game for free at [Itch.io](https://powerhoof.itch.io/the-telwynium)
 - USE `Staff` on all lights
 - USE `Staff` on Witt
 - Repeat for all lights
+
+--------------------------------------------------------------------------------
+
+## 21. Video Walkthrough
+
+The Telwynium: Book One - Winter's Dawn Walkthrough (English) (PC, Win) [60 FPS] - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/ao_OhygOUKs/0.jpg)](https://www.youtube.com/watch?v=ao_OhygOUKs)
