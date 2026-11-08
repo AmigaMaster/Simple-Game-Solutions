@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 601,
-    "total_words": 690209,
-    "total_actions": 84735
+    "total_files": 602,
+    "total_words": 695565,
+    "total_actions": 85307
   },
   "name": "solutions",
   "type": "directory",
@@ -1474,6 +1474,14 @@
           "last_modified": "2026-07-28T21:04:40+02:00",
           "words": 291,
           "actions": 49
+        },
+        {
+          "name": "Heir of the Dog-EN",
+          "type": "file",
+          "path": "H/Heir of the Dog-EN.md",
+          "last_modified": "2026-11-09T00:19:24+01:00",
+          "words": 5356,
+          "actions": 572
         },
         {
           "name": "Hitchhiker's Guide To The Galaxy Remake-EN",
