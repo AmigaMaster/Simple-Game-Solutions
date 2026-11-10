@@ -1,12 +1,14 @@
 # Whirlight - No Time To Trip - Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|   1.0   | 17.10.2026 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author
+|:-------:|------------|-------------------------------------------
+|   1.01  | 10.11.2026 | Amiga Master (AmigaMaster-NG@t-online.de) - Update achievements and fix several actions
+|   1.0   | 17.10.2026 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 ## 1. Prologue
 
-- PICK UP poster (`Poster`)
+- >ACHIEVEMENT: Well begun is half done...
+  >- PICK UP poster (`Poster`)
 - USE `Poster` on hearth
 - PICK UP sheet of paper (`Diploma`)
 - USE `Diploma` on sundial
@@ -33,7 +35,8 @@
 
 ### 2.3. Cave
 
-- USE `Magnifying Glass` on statue
+- >ACHIEVEMENT: Elvis the Pelvis
+  >- USE `Magnifying Glass` on statue
 - PICK UP treasure (`Can Opener`)
 
 ### 2.4. Outside Cave
@@ -90,11 +93,11 @@
 
 - USE `Glasses` on frog
 - PICK UP corks (`Giant Corks`)
-- USE `Giant Corks` on geysers `Giant Cork`
+- USE `Giant Corks` on geyser `Giant Cork`
 
 ### 2.15. Balloon
 
-- USE `Giant Cork` on geysers
+- USE `Giant Cork` on geyser
 
 ### 2.16. Upper Level with Electric Poles
 
@@ -120,11 +123,10 @@
 ###### 3.1.1.1.1. Kitchen
 
 - USE oven (`Mushrooms`)
-- EXIT east
+- EXIT east (`Diary`)
 
 ###### 3.1.1.1.2. Workshop
 
-- PICK UP diary (`Diary`)
 - PICK UP flute (`Flute`)
 - PICK UP spray (`Spray`)
 - EXIT west
@@ -132,8 +134,9 @@
 #### 3.1.2. Alley
 
 - USE Vespa
-- LOOK AT `Diary`
-  - EXIT diary view
+- >ACHIEVEMENT: Eureka
+  >- LOOK AT `Diary`
+  >   - EXIT diary view
 - EXIT north
 
 #### 3.1.3. Port
@@ -167,7 +170,7 @@
 
 ###### 3.1.6.1.1. Workshop
 
-- USE `Blowpipe-Flute`on bubble
+- USE `Blowpipe-Flute` on bubble
 - PICK UP mocha (`Moka Pot`)
 - USE `Moka Pot` on `Cup` (`Cup with Coffee`)
 
@@ -192,7 +195,8 @@
 
 #### 3.1.9. Alley
 
-- USE `Vespa Key` on Vespa
+- >ACHIEVEMENT: Bye Bye Baby
+  >- USE `Vespa Key` on Vespa
 
 #### 3.1.10. Port
 
@@ -273,6 +277,8 @@
 
 ### 3.9. Corte de la Pazienza
 
+- >ACHIEVEMENT: Master of Orientation (7/11)
+  >- LOOK AT street plaque
 - >ACHIEVEMENT: Story of a Thief (3/5)
   >- LOOK AT poster
 - PICK UP jar (`Modeling Plasticine`)
@@ -285,8 +291,6 @@
 
 ### 3.10. Corte de la Pazienza
 
-- >ACHIEVEMENT: Master of Orientation (7/11)
-  >- LOOK AT street plaque
 - EXIT north
 
 #### 3.10.1. Ramo del Volto
@@ -319,22 +323,26 @@
 ### 3.13. Campiello de la Chiesa
 
 - USE `Hazelnuts` on tree
-- USE `Flute` on squirrel
-- EXIT south
+- >ACHIEVEMENT: The scourge of rodents (1/4)
+  >- USE `Flute` on squirrel
+- EXIT northeast
 
 ## 4. Campo de le Gate
 
-- USE `Flute` on squirrel (above the street plaque)
+- >ACHIEVEMENT: The scourge of rodents (2/4)
+  >- USE `Flute` on squirrel (above the street plaque)
 - EXIT west
 
 ### 4.1. Campo dei Sechi
 
-- USE `Flute` on squirrel (above the Laundromat Cleaners shop)
+- >ACHIEVEMENT: The scourge of rodents (3/4)
+  >- USE `Flute` on squirrel (above the Laundromat Cleaners shop)
 - EXIT west **2 times**
 
 ### 4.2. Calle Rubina
 
-- USE `Flute` on squirrel
+- >ACHIEVEMENT: The scourge of rodents (4/4)
+  >- USE `Flute` on squirrel
 - PICK UP book (`Book`, `Voucher`)
 - USE `Book` on Leonard C. Klein
 - TALK TO Leonard C. Klein
@@ -357,7 +365,7 @@
 - LOOK AT Album (on the counter)
 - USE `Stickers` on Harold
 - TALK TO Harold
-  - "Do you happen to know what a Legendary Tiamat is?`"
+  - "Do you happen to know what a Legendary Tiamat is?"
 
 ### 4.6. Campiello de la Chiesa
 
@@ -371,23 +379,23 @@
 
 ### 4.7. Campiello de la Chiesa
 
-- >ACHIEVEMENT: Miraculous Catch (1/8)
+- >ACHIEVEMENT: Miraculous catch (1/8)
   >- USE `Magnetic Fishing Rod` on manhole (`Token`)
 
 ### 4.8. Campo de le Gate
 
-- >ACHIEVEMENT: Miraculous Catch (2/8)
+- >ACHIEVEMENT: Miraculous catch (2/8)
   >- USE `Magnetic Fishing Rod` on manhole
 
 #### 4.8.1. Sotoportego de la Bissa
 
-- >ACHIEVEMENT: Miraculous Catch (3/8)
+- >ACHIEVEMENT: Miraculous catch (3/8)
   >- USE `Magnetic Fishing Rod` on manhole (`Wind-up Key`)
 
 #### 4.8.2. Toy Shop
 
 - USE `Wind-up Key` on Harold (`Automaton`)
-- >ACHIEVEMENT: Gifts for Everyone
+- >ACHIEVEMENT: Gifts for everyone
   >- USE `Automaton` on the following characters in the given order:
   >   1. Fisherman (Port)
   >   2. Old Lady (Church)
@@ -402,12 +410,12 @@
 
 #### 4.9.1. Church
 
-- >ACHIEVEMENT: Little Rascal
+- >ACHIEVEMENT: Little rascal
   >- USE `Ball-Shooter` on old lady
 
 ### 4.10. Corte de la Pazienza
 
-- >ACHIEVEMENT: Miraculous Catch (4/8)
+- >ACHIEVEMENT: Miraculous catch (4/8)
   >- USE `Magnetic Fishing Rod` on manhole
 
 #### 4.10.1. Ramo del Volto
@@ -427,7 +435,7 @@
 
 ### 4.12. Campo dei Sechi
 
-- >ACHIEVEMENT: Miraculous Catch (5/8)
+- >ACHIEVEMENT: Miraculous catch (5/8)
   >- USE `Magnetic Fishing Rod` on manhole
 - EXIT north (you can't)
 
@@ -441,11 +449,11 @@
 
 ### 4.15. Lookout
 
-- >ACHIEVEMENT: Story of a Thief (5/5)
+- >ACHIEVEMENT: Story of a thief (5/5)
   >- LOOK AT poster
 - PICK UP acorns (`Acorns`)
 - USE `Acorns` on `Mushrooms` (`Special Acorns`)
-- PICK UP picnic (from the table) (`Polaroid`)
+- PICK UP picnic (`Polaroid`)
 
 ### 4.16. Harbor
 
@@ -453,15 +461,16 @@
 
 ##### 4.16.1.1. Apartment
 
-- ENTER work table
-  - USE the following items
-    1. `Poster` on work table
-    2. `Duck` on work table
-    3. `Glue` on duck
-    4. `Toy Dragon's Head` on duck
-    5. `Modeling Plasticine` on duck (`Rough Dragon's Head`)
-    6. `Rough Dragon's Head` on duck
-    7. `Paints` on dragons head
+- >ACHIEVEMENT: Mighty Tiamat
+  >- ENTER work table
+  >   - USE the following items
+  >     1. `Poster` on work table
+  >     2. `Duck` on work table
+  >     3. `Glue` on duck
+  >     4. `Toy Dragon's Head` on duck
+  >     5. `Modeling Plasticine` on duck (`Rough Dragon's Head`)
+  >     6. `Rough Dragon's Head` on duck
+  >     7. `Paints` on dragons head
 - USE `Polaroid` on Legendary Tiamat (`Legendary Tiamat Sticker`)
 
 ### 4.17. Campo dei Sechi
@@ -470,13 +479,13 @@
 
 ### 4.18. Corte Barbaro
 
-- >ACHIEVEMENT: Miraculous Catch (6/8)
+- >ACHIEVEMENT: Miraculous catch (6/8)
   >- USE `Magnetic Fishing Rod` on manhole
 - USE cat (`Hat`)
 
 ### 4.19. Calle Rubina
 
-- >ACHIEVEMENT: Miraculous Catch (7/8)
+- >ACHIEVEMENT: Miraculous catch (7/8)
   >- USE `Magnetic Fishing Rod` on manhole
 - USE `Hat` on Leonard C. Klein
 - FOLLOW Leonard C. Klein
@@ -500,7 +509,7 @@
 
 #### 4.23.1. Corte Sconta
 
-- >ACHIEVEMENT: Miraculous Catch (8/8)
+- >ACHIEVEMENT: Miraculous catch (8/8)
   >- USE `Magnetic Fishing Rod` on manhole
 - USE boxes
 - USE `TV` on boxes
@@ -508,16 +517,11 @@
 
 #### 4.23.2. Port
 
-- USE `Spray` on pole
-- PICK UP hourglass (`Hourglass`)
-
 #### 4.23.3. Alley
 
 ##### 4.23.3.1. Apartment
 
-###### 4.23.3.1.1. Workshop
-
-- (`Strange Invention`)
+- ENTER workshop (`Strange Invention`)
 
 ### 4.24. Campo de le Gate
 
@@ -580,7 +584,7 @@
 - USE `Coins` on coin changer (`Token`)
 - USE `Toaster` on outlet
 - USE `Token` on washing machine
-  - **REPEAT** until all 5 washing machines are running
+  - **REPEAT** until all 4 washing machines are running
 - PICK UP open drum (`Costume`)
 
 ### 4.33. Lookout
@@ -605,7 +609,8 @@
 
 #### 4.36.1. Church
 
-- USE `Strange Invention` on `Light-Shooter` (`Strange Invention turned on`)
+- >ACHIEVEMENT: Creation comes to life
+  >- USE `Strange Invention` on `Light-Shooter` (`Strange Invention turned on`)
 - USE `Strange Invention turned on` on ray (`Diary`, `Gadget`)
 
 ## 5. Chapter 2
@@ -619,9 +624,10 @@
 - PICK UP clamps (`Clamps`)
 - USE first aid kit (`Cable`)
 - USE `Cable` on `Clamps` (`Clamps with Cable`)
-- USE `Clamps with Cable` on lamp
+- >ACHIEVEMENT: 90s
+  >- USE `Clamps with Cable` on lamp
 - PICK UP newspaper scraps (`Newspaper Pieces`)
-- LOKO AT `Newspaper Pieces`
+- LOOK AT `Newspaper Pieces`
   - Complete the puzzle, its pretty easy. The main headline is `VB Mirror`, below on the left there is a photo and the article headline `Triumph! Pink Floyd Behind the Berlin Wall` (`Newspaper`)
 - USE `Newspaper` on Hector
 - USE computer
@@ -655,7 +661,7 @@
 
 ##### 5.2.2.1. Comic Book Shop
 
-- >ACHIEVEMENT: Magic Nights
+- >ACHIEVEMENT: Magic nights
   >- USE football mascot (on the left side left of the shoulder of the star trek cardboard cutout, the mascot with the football head and Italian colored extremities)
 - PICK UP balloons (`Balloons`)
 - USE `Balloons` (`Inflated Balloon`)
@@ -672,12 +678,12 @@
 - USE ticket office
   - "Let's go to the movies." (`Popcorn`)
 - USE `Popcorn` (`Coupon`)
-- USE ticket office
-  - "Let's go to the movies." (it has to be evening so the pilot is at the lookout)
 
 ### 5.5. Lookout
 
+- **NOTE:** You need to visit this location at the evening, when the balloon pilot is here
 - USE sign
+- TALK TO pilot
 - USE phone booth
 
 ### 5.6. Campiello de la Chiesa
@@ -690,14 +696,14 @@
 
 ### 5.7. Lookout
 
-- USE rope (bound to the balloon basket)
-- CHANGE to night time at the movies
+- PICK UP rope (bound to the balloon basket)
+- CHANGE to night time by using the ticket office at the cinema
 - ENTER well
 
 #### 5.7.1. Well
 
-- PICK UP toy car (`Toy Cars` (2))
 - PICK UP pocket watch (`Pocket Watch`)
+- PICK UP toy car (`Toy Cars` (2))
 - USE `Light-Squeezer` on water
 
 ### 5.8. Campo dei Sechi
@@ -749,9 +755,10 @@
   - USE `Light-Squeezer` on sea
 - CHANGE to evening
 
-### 5.14. Church
+### 5.14. Campiello de la Chiesa
 
-- USE `Rose` on `Inflated Balloon`
+- >ACHIEVEMENT: Shattered
+  >- USE `Rose` on `Inflated Balloon`
 
 ### 5.15. Campo de le Gate
 
@@ -767,7 +774,9 @@
 ##### 5.15.1.1. Klein's Basement
 
 - PICK UP ticket (`Museum Ticket`)
-- >ACHIEVEMENT: Reader and Bookworm
+- >ACHIEVEMENT: Reader
+  >- LOOK AT 10 of Klein's books
+- >ACHIEVEMENT: Bookworm
   >- LOOK AT 50 of Klein's books
 
 ### 5.16. Pier
@@ -778,7 +787,7 @@
 
 #### 5.16.1. Corte Scura
 
-- >ACHIEVEMENT: Master of Orientation (11/11)
+- >ACHIEVEMENT: Master of orientation (11/11)
   >- LOOK AT street plaque
 - EXIT east
 
@@ -995,27 +1004,28 @@
 
 - USE `Brillium` on weathervane
 
-### 5.34. Campo de le Gate
+### 5.34. Corte Barbaro
 
-- USE `Light-Squeezer` on purple ray
+- >ACHIEVEMENT: Playboy
+  >- USE `Goggles` on Hungry Hank (`Mirror Glasses`)
 
-### 5.35. Corte Barbaro
-
-- USE `Goggles` on Hungry Hank (`Mirror Glasses`)
-
-### 5.36. Campo dei Sechi
+### 5.35. Campo dei Sechi
 
 - USE `Mirror Glasses` on street artist
 - TALK TO street artist
   - "Ever heard of a game called D&B?"
   - "Do you know the origins of the bandoneón?"
 
+### 5.36. Campo de le Gate
+
+- USE `Light-Squeezer` on purple ray
+- CHANGE to night
+
 ### 5.37. Corte Barbaro
 
 - TALK TO guard
   - "Tell me, do you happen to know everything about D&B, too?"
   - "Really? How did he beat you?"
-- CHANGE to night
 
 ### 5.38. Pier
 
@@ -1065,7 +1075,8 @@
 - "Germany."
 - "Lemon balm."
 - "Johnny Craig."
-- "Arctic Mission."
+- >ACHIEVEMENT: Abracadabra
+  >- "Arctic Mission."
 
 ### 5.43. Campiello de la Chiesa
 
@@ -1087,7 +1098,7 @@
   - "Eggplant."
   - "Fried."
   - "Nothing, thanks."
-  - "Tabasco." (`Sandwich`)
+  - "Hot Tabasco." (`Sandwich`)
 - CHANGE to morning
 
 ### 5.45. Campo de le Gate
@@ -1097,7 +1108,8 @@
 ##### 5.45.1.1. Klein's Basement
 
 - USE `Sandwich` on carnivorous plant
-- USE `Light-Squeezer` on green ray
+- >ACHIEVEMENT: Rainbow
+  >- USE `Light-Squeezer` on green ray
 
 ### 5.46. Campiello de la Chiesa
 
@@ -1113,8 +1125,9 @@
 
 ### 5.48. Passage
 
-- USE `Flute` on Ascetic
-  - "Yes, I'm ready."
+- >ACHIEVEMENT: A touch of class
+  >- USE `Flute` on Ascetic
+  >   - "Yes, I'm ready."
 
 ### 5.49. Dream
 
@@ -1143,7 +1156,7 @@
 
 ##### 5.49.5.1. Stable
 
-- PICK UP deflated bag (`Deflated Bag`)
+- PICK UP bag (`Deflated Bag`)
 - TALK TO horse
 - EXIT west **2 times**
 
@@ -1183,7 +1196,8 @@
 
 - USE `Can of Spinach`
 - **QUICK:**
-  - USE punchball
+  - >ACHIEVEMENT: Master of bumps
+    >- USE punchball
 - PICK UP horseshoe (`Horseshoe`)
 - USE `Horseshoe` on `Tesla Coil` (`Magnetized Horseshoe`)
 
@@ -1210,12 +1224,14 @@
 - USE `Necklace` on statue
 - USE `Wax Block` on flame (`Inlay`)
 - USE `Inlay` on writing desk
+- LOOK AT `Baron's Diary`
+  - Note the green circle an its connections (bottom right, bottom left, top left, top right) and the arrows in the four corners
+  - Note the arrows in the corners and look at them in the order of the green dot and the connections
+  - You get `Left, top right, bottom right, bottom`
 - USE writing desk
-  - LOOK AT `Inlay`
-    - Note the green circle an its connections (bottom right, bottom left, top left, top right) and the arrows in the four corners
-    - Note the arrows in the corners and look at them in the order of the green dot and the connections
-    - You get `Left, top right, bottom right, bottom` - set the four inlays from left to right to these positions (`Hammer`)
-- USE `Hammer` on door
+  - set the four inlays from left to right to the positions you saw in Baron's Diary `Left, top right, bottom right, bottom` (`Hammer`)
+- >ACHIEVEMENT: Avengers
+  >- USE `Hammer` on door
 - EXIT west
 
 ##### 5.50.1.1. Entrance Hall
@@ -1285,23 +1301,23 @@
 
 ##### 5.50.1.11. Skeleton Room
 
-- >ACHIEVEMENT: Professional Photographer (1/18)
+- >ACHIEVEMENT: Professional photographer (1/18)
   >- USE `Polaroid` on whale
 
 ##### 5.50.1.12. Robot Room
 
 - USE monitor
 - TALK TO robot
-- >ACHIEVEMENT: Professional Photographer (2/18)
+- >ACHIEVEMENT: Professional photographer (2/18)
   >- USE `Polaroid` on monitor
-- >ACHIEVEMENT: Professional Photographer (3/18)
+- >ACHIEVEMENT: Professional photographer (3/18)
   >- USE `Polaroid` on robot
 
 ##### 5.50.1.13. Entrance Hall
 
 ###### 5.50.1.13.1. Vault
 
-- USE `Monitor Photo` on case (`Lemon`)
+- USE `Monitor Photo` (In the `Photo album`) on case (`Lemon`)
 - USE `Lemon` on `Energy Drink` (`Fuel`)
 
 ##### 5.50.1.14. Upper Floor
@@ -1310,7 +1326,8 @@
 
 - USE `Fuel` on airplane
 - USE propeller
-- EXIT west
+- >ACHIEVEMENT: Armageddon
+  >- EXIT west
 
 ## 6. Chapter 3
 
@@ -1320,7 +1337,7 @@
 
 ##### 6.1.1.1. Rooftop
 
-- >ACHIEVEMENT: Professional Photographer (4/18)
+- >ACHIEVEMENT: Professional photographer (4/18)
   >- USE `Polaroid` on Armageddon
 - EXIT downstairs
 
@@ -1331,7 +1348,7 @@
 
 ### 6.2. Pier
 
-- >ACHIEVEMENT: Professional Photographer (5/18)
+- >ACHIEVEMENT: Professional photographer (5/18)
   >- USE `Polaroid` on lunatic
 - >ACHIEVEMENT: Skynet
   >- USE Skynet logo on the container
@@ -1342,7 +1359,7 @@
 
 - PICK UP rope (`Rope`)
 - TALK TO seer
-- >ACHIEVEMENT: Professional Photographer (6/18)
+- >ACHIEVEMENT: Professional photographer (6/18)
   >- USE `Polaroid` on seer
 
 ### 6.4. Lookout
@@ -1362,14 +1379,15 @@
 
 - >ACHIEVEMENT: Back to the Future
   >- USE DeLorean
-- >ACHIEVEMENT: Professional Photographer (7/18)
+- >ACHIEVEMENT: Professional photographer (7/18)
   >- USE `Polaroid` on statue
 - USE `Hourglass` on hourglass-turner
 - ENTER manhole
 
 #### 6.6.1. Secret Room
 
-- PICK UP turbine (`Light-Blender`)
+- >ACHIEVEMENT: Light-Blender
+  >- PICK UP turbine (`Light-Blender`)
 - PICK UP robo-alarm (`Robo-Alarm`)
 
 ### 6.7. Campiello de la Chiesa
@@ -1388,7 +1406,7 @@
 
 ##### 6.8.1.1. Throne Room
 
-- >ACHIEVEMENT: Professional Photographer (8/18)
+- >ACHIEVEMENT: Professional photographer (8/18)
   >- USE `Polaroid` on mirror
 
 ##### 6.8.1.2. Balcony
@@ -1473,11 +1491,11 @@
 
 #### 6.18.2. Village Center
 
-- >ACHIEVEMENT: Professional Photographer (9/18)
+- >ACHIEVEMENT: Professional photographer (9/18)
   >- USE `Polaroid` on tribe member
 - WALK east (you automatically talk to the guard)
 - USE tree
-- EXIT northeast
+- EXIT up into the hut **2 times**
 
 ##### 6.18.2.1. Hut
 
@@ -1512,14 +1530,15 @@
 
 #### 6.19.1. Outside Cave
 
-- >ACHIEVEMENT: Professional Photographer (10/18)
+- >ACHIEVEMENT: Professional photographer (10/18)
   >- USE `Polaroid` on Mammoth
 - ENTER cave
 
 #### 6.19.2. Cave
 
-- USE `Brillium` on ice wall
-- >ACHIEVEMENT: Professional Photographer (11/18)
+- >ACHIEVEMENT: Brillium
+  >- USE `Brillium` on ice wall
+- >ACHIEVEMENT: Professional photographer (11/18)
   >- USE `Polaroid` on Tyrannosaurus Rex
 
 #### 6.19.3. Outside Cave
@@ -1528,7 +1547,7 @@
 
 ### 6.20. Gas Station
 
-- >ACHIEVEMENT: Professional Photographer (12/18)
+- >ACHIEVEMENT: Professional photographer (12/18)
   >- USE `Polaroid` on gas pump
 - OPEN door
 - ENTER door
@@ -1545,7 +1564,8 @@
 > Hector
 
 - OPEN door
-- ENTER door to the toilets
+- >ACHIEVEMENT: Parallel worlds
+  >- ENTER door to the toilets
 
 #### 6.20.2. Hotel Hallway
 
@@ -1578,12 +1598,13 @@
 ##### 6.20.6.1. Room 09
 
 - PICK UP flashlight (`Ultraviolet Flashlight`)
+- OPEN door
 - EXIT west
 
 ###### 6.20.6.1.1. Bathroom
 
 - OPEN drawer (`Gas Mask`)
-- EXIT west, south
+- EXIT east, south
 
 ##### 6.20.6.2. Room 10
 
@@ -1639,7 +1660,7 @@
 
 > Margaret
 
-- >ACHIEVEMENT: Professional Photographer (13/18)
+- >ACHIEVEMENT: Professional photographer (13/18)
   >- USE `Polaroid` on snail
 
 > Hector
@@ -1710,7 +1731,8 @@
 
 ##### 6.32.1.1. Basement
 
-- USE `Flute` on mouse hole
+- >ACHIEVEMENT: The beast
+  >- USE `Flute` on mouse hole
 - USE High Priest (`Key`)
 
 ### 6.33. Pier
@@ -1758,7 +1780,7 @@
 
 #### 6.37.2. Mansion Gate
 
-- >ACHIEVEMENT: Professional Photographer (14/18)
+- >ACHIEVEMENT: Professional photographer (14/18)
   >- USE `Polaroid` on mansion
 - USE gate
 - USE `Drumstick` on gate
@@ -1777,8 +1799,8 @@
 
 ##### 6.37.3.2. Study
 
-- TALK TO Lady
-- TALK TO Sir
+- TALK TO Lady (Mrs. LaCroix)
+- TALK TO Sir (Mr. Donovan)
 - LOOK AT certificate
 
 > Margaret
@@ -1787,7 +1809,7 @@
 
 #### 6.38.1. Town Center
 
-- >ACHIEVEMENT: Professional Photographer (15/18)
+- >ACHIEVEMENT: Professional photographer (15/18)
   >- USE `Polaroid` on Barber
 - TALK TO Barber
 - PICK UP piece of bread (`Piece of Bread`)
@@ -1801,7 +1823,7 @@
 
 > Hector
 
-- >ACHIEVEMENT: Only Fan
+- >ACHIEVEMENT: Only fan
   >- USE `Flute` on Clerk
 
 #### 6.38.2. Town Center
@@ -1832,11 +1854,11 @@
 
 - USE `Hat` on (middle) hole
 - USE `Piece of Bread` on one of the remaining holes
-- USE the third holeMargaret guard the third one.
+- USE the third hole (Margaret guards the third hole)
 
 > Hector
 
-- USE `Mug with Honey` on herring (a hotspot above the whole where you put the piece of bread) (`Mug with Honey and Herring Aroma`)
+- USE `Mug with Honey` on herring (`Mug with Honey and Herring Aroma`)
 
 ### 6.41. Snail
 
@@ -1860,14 +1882,17 @@
 - PICK UP currycomb (`Currycomb`)
 - USE `Tesla Coil`
   - "Yes, I want to go out."
+
+### 6.43. Snail
+
 - USE `Currycomb` on snail
 - USE `Mug with Honey and Herring Aroma` on slime (`Voice Medicine`)
 
-### 6.43. Sussex 1815
+### 6.44. Sussex 1815
 
-#### 6.43.1. Town Center
+#### 6.44.1. Town Center
 
-##### 6.43.1.1. Office
+##### 6.44.1.1. Office
 
 > Margaret
 
@@ -1880,11 +1905,11 @@
 
 - USE `Flute` on Clerk
 
-#### 6.43.2. Town Center
+#### 6.44.2. Town Center
 
 - USE `Voice Medicine` on Barber
 
-##### 6.43.2.1. Office
+##### 6.44.2.1. Office
 
 > Margaret
 
@@ -1893,17 +1918,18 @@
 
 > Hector
 
-### 6.44. Sussex 1895
+### 6.45. Sussex 1895
 
-#### 6.44.1. Mansion
+#### 6.45.1. Mansion
 
-##### 6.44.1.1. Study
+##### 6.45.1.1. Study
 
-- TALK TO Sir (`Suspenders`)
+- TALK TO Sir
+  - "How old are you?" (`Suspenders`)
 
-### 6.45. Sussex 1815
+### 6.46. Sussex 1815
 
-#### 6.45.1. Town Center
+#### 6.46.1. Town Center
 
 - TALK TO Barber
   - "What beautiful scissors."
@@ -1915,21 +1941,21 @@
     5. Fox
     6. Rabbit
 
-### 6.46. Sussex 1895
+### 6.47. Sussex 1895
 
-#### 6.46.1. Town Center
+#### 6.47.1. Town Center
 
 - PICK UP scissors (from the monument) (`Battered Scissors`)
 
-### 6.47. Village
+### 6.48. Village
 
-#### 6.47.1. Village Center
+#### 6.48.1. Village Center
 
 - USE `Battered Scissors` on whetstone (`Sharp Scissors`)
 
-### 6.48. Mammoth
+### 6.49. Mammoth
 
-#### 6.48.1. Outside Cave
+#### 6.49.1. Outside Cave
 
 - USE `Suspenders` on pine
 - USE `Sharp Scissors` on Margaret
@@ -1937,13 +1963,14 @@
 > Margaret
 
 - USE launching tree
-- USE `Sharp Scissors` on mammoth (`Mammoth Fur`)
+- >ACHIEVEMENT: Prehistoric punk
+  >- USE `Sharp Scissors` on mammoth (`Mammoth Fur`)
 
-### 6.49. Sussex 1895
+### 6.50. Sussex 1895
 
-#### 6.49.1. Mansion
+#### 6.50.1. Mansion
 
-##### 6.49.1.1. Study
+##### 6.50.1.1. Study
 
 > Hector
 
@@ -1951,14 +1978,14 @@
 - TALK TO Lady
   - "Might you wish to reconsider my application?"
 
-### 6.50. Arctic Laboratory
+### 6.51. Arctic Laboratory
 
-#### 6.50.1. Entrance Door
+#### 6.51.1. Entrance Door
 
 - USE door
 - ENTER door
 
-##### 6.50.1.1. Laboratory
+##### 6.51.1.1. Laboratory
 
 > Margaret
 
@@ -1967,184 +1994,188 @@
 - USE `Insulated Tuning Fork` on power socket
 - PICK UP Tokamak (`Tokamak`)
 
-### 6.51. Verice Bay 1962
+### 6.52. Verice Bay 1962
 
-#### 6.51.1. Corte Barbaro
+#### 6.52.1. Corte Barbaro
 
-- >ACHIEVEMENT: Professional Photographer (16/18)
+- >ACHIEVEMENT: Professional photographer (16/18)
   >- USE `Polaroid` on cat
 
-#### 6.51.2. Campiello de la Chiesa
+#### 6.52.2. Campiello de la Chiesa
 
-##### 6.51.2.1. Church
+##### 6.52.2.1. Church
 
 - USE `Candies` on Theodore
 - TALK TO Theodore
 
-#### 6.51.3. Campo de le Gate
+#### 6.52.3. Campo de le Gate
 
-##### 6.51.3.1. Sotoportego de la Bissa
+##### 6.52.3.1. Sotoportego de la Bissa
 
 - OPEN door
 - ENTER door
 
-###### 6.51.3.1.1. Theodore's House
+###### 6.52.3.1.1. Theodore's House
 
 - PICK UP bottle (`Bottle`)
 - TALK TO Theodore
 
-#### 6.51.4. Lookout
+#### 6.52.4. Lookout
 
 - TALK TO Hector
   - "Theodore is desperate because he's missing a component."
 
-#### 6.51.5. Campo de le Gate
+#### 6.52.5. Campo de le Gate
 
-##### 6.51.5.1. Toy Shop
+##### 6.52.5.1. Toy Shop
 
 - TALK TO Harold
   - "You must be Harold."
   - "Speaking of trouble..."
   - "Actually, we need another gem."
 
-### 6.52. Verice Bay 1990
-
-#### 6.52.1. Campo de le Gate
-
-- TALK TO old Lady
-
-### 6.53. Verice Bay 1962
+### 6.53. Verice Bay 1990
 
 #### 6.53.1. Campo de le Gate
 
-##### 6.53.1.1. Toy Shop
+- TALK TO old Lady
+
+### 6.54. Verice Bay 1962
+
+#### 6.54.1. Campo de le Gate
+
+##### 6.54.1.1. Toy Shop
 
 - TALK TO Harold
   - "How's Hilary?"
 
-##### 6.53.1.2. Corte Sconta
+##### 6.54.1.2. Corte Sconta
 
-###### 6.53.1.2.1. Klein's Basement
+###### 6.54.1.2.1. Klein's Basement
 
 - TALK TO Klein
   - "Could you write verses for a serenade?"
 
-#### 6.53.2. Lookout
+#### 6.54.2. Lookout
 
 - USE motorbike
   - TRAVEL to the northeast question mark
 
-### 6.54. Vineyard
+### 6.55. Vineyard
 
 - PICK UP chili pepper (`Chili Pepper`)
-- >ACHIEVEMENT: Professional Photographer (17/18)
+- >ACHIEVEMENT: Professional photographer (17/18)
   >- USE `Polaroid` on Ancestor
 - USE `Bottle` on Ancestor
 - TALK TO Ancestor
 
-### 6.55. Verice Bay 1962
+### 6.56. Verice Bay 1962
 
-#### 6.55.1. Campo de le Gate
+#### 6.56.1. Campo de le Gate
 
-##### 6.55.1.1. Corte Sconta
+##### 6.56.1.1. Corte Sconta
 
-###### 6.55.1.1.1. Klein's Basement
+###### 6.56.1.1.1. Klein's Basement
 
 - USE `Chili Pepper` on carnivorous plant
 - PICK UP seeds (from the window) (`Flora Seeds`)
 
-### 6.56. Vineyard
+### 6.57. Vineyard
 
 - USE `Flora Seeds` on Ancestor
 
-### 6.57. Verice Bay 1962
+### 6.58. Verice Bay 1962
 
-#### 6.57.1. Campo de le Gate
+#### 6.58.1. Campo de le Gate
 
-##### 6.57.1.1. Corte Sconta
+##### 6.58.1.1. Corte Sconta
 
-###### 6.57.1.1.1. Klein's House
+###### 6.58.1.1.1. Klein's House
 
-- >ACHIEVEMENT: Bowler Hat
+- >ACHIEVEMENT: Bowler hat
   >- USE hat (in the shelf left of the fireplace)
 - TALK TO Klein (`Serenade Lyrics`)
 - PICK UP mandolin (`Broken Mandolin`)
 - EXIT southeast
 
-##### 6.57.1.2. Toy Shop
+##### 6.58.1.2. Toy Shop
 
 - USE `Broken Mandolin` on Harold (`Mandolin`)
 
-### 6.58. Gas Station
+### 6.59. Gas Station
 
-- USE `Mandolin` on young man
+- >ACHIEVEMENT: Create a legend
+  >- USE `Mandolin` on young man
 - TALK TO young man
 
-### 6.59. Verice Bay 1962
-
-#### 6.59.1. Campo de le Gate
-
-##### 6.59.1.1. Toy Shop
-
-- USE `Serenade Lyrics` on Harold
-
-### 6.60. Verice Bay 1990
+### 6.60. Verice Bay 1962
 
 #### 6.60.1. Campo de le Gate
 
+##### 6.60.1.1. Toy Shop
+
+- >ACHIEVEMENT: Cupid
+  >- USE `Serenade Lyrics` on Harold
+
+### 6.61. Verice Bay 1990
+
+#### 6.61.1. Campo de le Gate
+
 - ENTER toy shop (`Gem`)
 
-##### 6.60.1.1. Toy Shop
+##### 6.61.1.1. Toy Shop
 
 - >ACHIEVEMENT: Memories
   >- USE toy ice cream truck (in the right shelf, the red truck left to the yellow ? cube)
 
-### 6.61. Verice Bay 1962
+### 6.62. Verice Bay 1962
 
-#### 6.61.1. Campo de le Gate
+#### 6.62.1. Campo de le Gate
 
-##### 6.61.1.1. Sotoportego de la Bissa
+##### 6.62.1.1. Sotoportego de la Bissa
 
-###### 6.61.1.1.1. Theodore's House
+###### 6.62.1.1.1. Theodore's House
 
 - USE `Gem` on Theodore
-- USE phone
+- >ACHIEVEMENT: Light-Shooter
+  >- USE phone
 - WALK to the lookout
 
-### 6.62. Harbor
+### 6.63. Harbor
 
-#### 6.62.1. Alley
+#### 6.63.1. Alley
 
-##### 6.62.1.1. Apartment
+##### 6.63.1.1. Apartment
 
-###### 6.62.1.1.1. Kitchen
+###### 6.63.1.1.1. Kitchen
 
-- >ACHIEVEMENT: Professional Photographer (18/18)
+- >ACHIEVEMENT: Professional photographer (18/18)
   >- USE `Polaroid` on Hector
 - PICK UP hourglass (`Hourglass`)
 
-###### 6.62.1.1.2. Workshop
+###### 6.63.1.1.2. Workshop
 
 - USE `Hourglass` on hourglass-turner
 
-###### 6.62.1.1.3. Kitchen
+###### 6.63.1.1.3. Kitchen
 
 - PICK UP screwdriver (`Screwdriver`)
 - OPEN door
 - ENTER door
 
-###### 6.62.1.1.4. Bathroom
+###### 6.63.1.1.4. Bathroom
 
 - USE `Screwdriver` on three-phase tube (`Three-Phase-Tube`)
 - EXIT apartment
 
-### 6.63. Verice Bay 2045
+### 6.64. Verice Bay 2045
 
-#### 6.63.1. Lookout
+#### 6.64.1. Lookout
 
 > Hector
 
-- USE `Tesla Coil` on motorbike
+- >ACHIEVEMENT: A welcome return
+  >- USE `Tesla Coil` on motorbike
 
 > Margaret
 
@@ -2155,4 +2186,5 @@
 
 - TALK TO Apocalypse
   - CHOOSE the first dialogue option and Apocalypse is on the green button
-  - CHOOSE third dialogue option
+  - >ACHIEVEMENT: The End
+    >- CHOOSE third dialogue option
