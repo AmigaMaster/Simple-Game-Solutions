@@ -10,7 +10,7 @@ Download der Spieleserie auf der offiziellen [Homepage](https://www.maniac-mansi
 
 Maniac Mansion Mania ist eine Fanadventure Serie, in der es darum geht die spannende Welt von Maniac Mansion weiterleben zu lassen und um neue Facetten zu erweitern. Die ganze Serie funktioniert im Episodenformat, damit jeder Entwickler seine eigene kleine Geschichte ins Universum von Maniac Mansion einbauen kann.
 
-## 1. BÜro
+## 1. Büro
 
 - NIMM (linke) KARTON(s) (`Karton F`, `Karton G`)
 - ÖFFNE `Karton F` und `Karton G` (`VHS`, `Kassette`)
