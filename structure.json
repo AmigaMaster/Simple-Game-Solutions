@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 603,
-    "total_words": 696393,
-    "total_actions": 85379
+    "total_files": 604,
+    "total_words": 696778,
+    "total_actions": 85437
   },
   "name": "solutions",
   "type": "directory",
@@ -2565,7 +2565,7 @@
           "name": "Maniac Mansion Mania Episode 064 - Baranoia-DE",
           "type": "file",
           "path": "M/Maniac Mansion Mania Episode 064 - Baranoia-DE.md",
-          "last_modified": "2021-02-13T17:08:07+01:00",
+          "last_modified": "2026-11-12T00:14:18+01:00",
           "words": 544,
           "actions": 52
         },
@@ -3932,6 +3932,14 @@
           "last_modified": "2026-05-17T00:06:27+02:00",
           "words": 519,
           "actions": 79
+        },
+        {
+          "name": "Shadows Of Serenity-EN",
+          "type": "file",
+          "path": "S/Shadows Of Serenity-EN.md",
+          "last_modified": "2026-11-12T00:16:26+01:00",
+          "words": 385,
+          "actions": 58
         },
         {
           "name": "Shadows of the Afterland-EN",
