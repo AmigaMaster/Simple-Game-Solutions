@@ -434,7 +434,13 @@
                 minePlaying: "Ich spiele gerade",
                 mineDone: "Fertig",
                 mineEmpty: "Noch keine Spiele markiert. Öffne eine Lösung und nutze den Stern oder den Status-Button oben rechts.",
-                continueReadingAt: "Weiterlesen bei {pct}",
+                welcomeTabHome: "Übersicht",
+                welcomeContinue: "Weitermachen",
+                welcomeNewUpdated: "Neu und aktualisiert",
+                cardContinue: "Weiter",
+                cardProgress: "Gelesen: {pct}",
+                markAllReadLink: "Alle als gelesen markieren",
+                noSolutionsFound: "Keine Lösungen gefunden.",
                 treeScopeLabel: "Verzeichnis filtern",
                 treeScopeAll: "Alle",
                 treeScopeFavorites: "Favoriten",
@@ -524,7 +530,13 @@
                 minePlaying: "Playing now",
                 mineDone: "Finished",
                 mineEmpty: "No games marked yet. Open a walkthrough and use the star or the status button at the top right.",
-                continueReadingAt: "Continue at {pct}",
+                welcomeTabHome: "Overview",
+                welcomeContinue: "Continue",
+                welcomeNewUpdated: "New and updated",
+                cardContinue: "Continue",
+                cardProgress: "Read: {pct}",
+                markAllReadLink: "Mark all as read",
+                noSolutionsFound: "No solutions found.",
                 treeScopeLabel: "Filter directory",
                 treeScopeAll: "All",
                 treeScopeFavorites: "Favorites",
@@ -826,7 +838,7 @@
         let searchBlurTimeout = null;
         let isRestoringScroll = false;
         let targetPercentToRestore = null;
-        let currentWelcomeTab = 'modified';
+        let currentWelcomeTab = 'home';
         let scrollPercentBeforeFilter = null;
 
         // --- FILE INDEX (path -> node from structure.json) ---
@@ -932,7 +944,7 @@
                 map[file.path] = file.last_modified || new Date().toISOString();
             });
             writeJson("sgs_read_v2", map);
-            renderWelcomeScreen('modified');
+            renderWelcomeScreen('home');
             updateHomeBadge();
         }
 
@@ -1191,36 +1203,6 @@
             }
         });
 
-        // Most recently used walkthrough that is in progress (and not marked as finished)
-        function getContinueReadingCandidate() {
-            const map = readGameStatusMap();
-            for (const path of readJsonArray("sgs_recent_files")) {
-                const node = fileIndex.get(path);
-                if (!node || map[path] === "done") continue;
-                const progress = getReadingProgress(path);
-                if (progress !== null && progress >= 1 && progress < 98) {
-                    return { path, name: node.name, percent: Math.round(progress) };
-                }
-            }
-            return null;
-        }
-
-        function renderContinueBanner() {
-            const candidate = getContinueReadingCandidate();
-            if (!candidate) return "";
-            const label = translations[currentLang].continueReadingAt.replace("{pct}", formatPercent(candidate.percent));
-            return `<button data-load-path="${escapeHtml(candidate.path)}" class="w-full mb-6 text-left bg-emerald-950/40 hover:bg-emerald-900/40 border border-emerald-600/60 rounded-lg px-4 py-3 transition-colors cursor-pointer group">
-                <span class="flex items-center justify-between gap-3">
-                    <span class="min-w-0">
-                        <span class="block text-[11px] uppercase tracking-wider text-emerald-400 font-semibold">📖 ${escapeHtml(label)}</span>
-                        <span class="block text-sm sm:text-base text-gray-100 font-medium truncate">${escapeHtml(candidate.name)}</span>
-                    </span>
-                    <span class="text-emerald-400 text-lg shrink-0 group-hover:translate-x-1 transition-transform">→</span>
-                </span>
-                <span class="block h-1.5 bg-gray-700 rounded mt-2.5 overflow-hidden"><span class="block h-full bg-emerald-500 rounded" style="width: ${candidate.percent}%"></span></span>
-            </button>`;
-        }
-
         // One row of the "My Games" tab: open button + star toggle + status cycle button
         function gameRowHtml(path, state) {
             const t = translations[currentLang];
@@ -1393,6 +1375,74 @@ ${t.issueSectionSuggestDesc}
         }
 
         // --- SECTION 3: WELCOME SCREEN & HOME NAVIGATION ---
+        const WELCOME_CONTINUE_MAX = 6;
+
+        function splitLangSuffix(name) {
+            const m = /^(.*?)\s*-([A-Z]{2,3})$/.exec(name || "");
+            return m && m[1] ? { title: m[1], lang: m[2] } : { title: name || "", lang: "" };
+        }
+
+        function welcomeCardHtml(file, metaHtml, footerHtml, borderStyle) {
+            const { title, lang } = splitLangSuffix(file.name);
+            const langTag = lang ? `<span class="text-[11px] font-semibold text-gray-300 border border-gray-600 bg-gray-800 rounded px-1.5 py-0.5">${escapeHtml(lang)}</span>` : "";
+            return `<button data-load-path="${escapeHtml(file.path)}" class="text-left bg-gray-800/60 hover:bg-gray-800 border ${borderStyle} rounded-lg p-4 transition-colors cursor-pointer flex flex-col gap-3 group min-w-0">
+                <span class="block font-semibold text-gray-100 text-sm sm:text-base break-words">${escapeHtml(title)}</span>
+                <span class="flex flex-wrap items-center gap-1.5 mt-auto">${langTag}${metaHtml}</span>
+                ${footerHtml}
+            </button>`;
+        }
+
+        function renderWelcomeOverviewHtml() {
+            const t = translations[currentLang];
+            const markerState = getMarkerState();
+            const readMap = readReadMap();
+            const grid = "grid grid-cols-[repeat(auto-fill,minmax(14rem,1fr))] gap-3";
+            let html = "";
+
+            // 1) Continue: most recently used solutions that are not marked as finished
+            const continuePaths = readJsonArray("sgs_recent_files")
+                .filter(path => fileIndex.has(path) && markerState.map[path] !== "done")
+                .slice(0, WELCOME_CONTINUE_MAX);
+            if (continuePaths.length > 0) {
+                html += `<h2 class="text-lg sm:text-xl font-bold text-white mb-3">${escapeHtml(t.welcomeContinue)}</h2><div class="${grid} mb-8">`;
+                continuePaths.forEach(path => {
+                    const file = fileIndex.get(path);
+                    const progress = getReadingProgress(path);
+                    const percent = progress !== null ? Math.round(progress) : 0;
+                    const marker = gameMarkersHtml(path, markerState);
+                    const meta = `${marker}<span class="text-xs text-gray-400 ml-auto">${escapeHtml(t.cardProgress.replace("{pct}", formatPercent(percent)))}</span>`;
+                    const footer = `<span class="block h-1.5 bg-gray-700 rounded overflow-hidden"><span class="block h-full bg-emerald-500 rounded" style="width: ${percent}%"></span></span>
+                        <span class="text-sm font-semibold text-emerald-400 flex items-center gap-1">${escapeHtml(t.cardContinue)} <span class="group-hover:translate-x-1 transition-transform">›</span></span>`;
+                    html += welcomeCardHtml(file, meta, footer, "border-gray-700/60");
+                });
+                html += `</div>`;
+            }
+
+            // 2) New and updated: newest solutions, unread ones highlighted with their badge
+            const newest = getNewestFiles(20);
+            html += `<h2 class="text-lg sm:text-xl font-bold text-white mb-3">${escapeHtml(t.welcomeNewUpdated)}</h2>`;
+            if (newest.length === 0) {
+                html += `<p class="text-center text-gray-500 text-xs italic py-4">${escapeHtml(t.noSolutionsFound)}</p>`;
+            } else {
+                let unreadCount = 0;
+                html += `<div class="${grid}">`;
+                newest.forEach(file => {
+                    const kind = getUnreadKind(file, readMap);
+                    if (kind) unreadCount++;
+                    const border = kind === "updated" ? "border-sky-400/80 bg-sky-950/20" : (kind === "new" ? "border-emerald-500/80 bg-emerald-950/20" : "border-gray-700/60");
+                    const badge = kind ? unreadBadgeHtml(kind, file) : "";
+                    const dateStr = formatBadgeDate(file.last_modified);
+                    const meta = `${gameMarkersHtml(file.path, markerState)}${badge}${dateStr ? `<span class="text-xs text-gray-400 ml-auto">${escapeHtml(dateStr)}</span>` : ""}`;
+                    html += welcomeCardHtml(file, meta, "", border);
+                });
+                html += `</div>`;
+                if (unreadCount > 0) {
+                    html += `<button onclick="markAllAsRead()" class="mt-4 text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2 cursor-pointer">${escapeHtml(t.markAllReadLink)}</button>`;
+                }
+            }
+            return html;
+        }
+
         function renderWelcomeScreen(tab = currentWelcomeTab) {
             if (!structureData) return;
             closeGameStatusPopup();
@@ -1422,76 +1472,18 @@ ${t.issueSectionSuggestDesc}
                 ? `Wähle oben über die Suche oder links im Menü eine Lösung aus. Aktuell umfasst die Sammlung ${fileCount} Lösungen mit insgesamt ${wordCount} Wörtern und ${actionCount} Aktionen.`
                 : `Select a solution via search or menu. Currently the collection includes ${fileCount} walkthroughs with a total of ${wordCount} words and ${actionCount} actions.`;
 
-            let listHtml = `<div class="max-w-3xl mx-auto py-8 px-4">
-                <p class="text-base sm:text-lg text-center text-gray-300 mb-6" data-i18n="welcomeMessage">${welcomeText}</p>
-                
-                ${renderContinueBanner()}
+            const tabClass = active => `px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${active ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}`;
+            let listHtml = `<div class="max-w-5xl mx-auto py-8 px-4">
+                <p class="text-base sm:text-lg text-center text-gray-300 mb-6 max-w-3xl mx-auto" data-i18n="welcomeMessage">${welcomeText}</p>
 
-                <!-- Welcome Screen Tab Navigation & Actions -->
-                <div class="flex flex-col sm:flex-row justify-between items-center gap-3 mb-6 border-b border-gray-700 pb-3">
-                    <div class="flex flex-wrap gap-2">
-                        <button onclick="renderWelcomeScreen('modified')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${tab === 'modified' ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}">
-                            ${currentLang === 'de' ? '🔥 Zuletzt geändert' : '🔥 Recently Modified'}
-                        </button>
-                        <button onclick="renderWelcomeScreen('used')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${tab === 'used' ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}">
-                            ${currentLang === 'de' ? '⏱️ Zuletzt genutzt' : '⏱️ Recently Used'}
-                        </button>
-                        <button onclick="renderWelcomeScreen('mine')" class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${tab === 'mine' ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}">
-                            ⭐ ${escapeHtml(translations[currentLang].tabMine)}
-                        </button>
-                    </div>`;
+                <!-- Welcome Screen Tab Navigation -->
+                <div class="flex flex-wrap gap-2 mb-6 border-b border-gray-700 pb-3">
+                    <button onclick="renderWelcomeScreen('home')" class="${tabClass(tab !== 'mine')}">🏠 ${escapeHtml(translations[currentLang].welcomeTabHome)}</button>
+                    <button onclick="renderWelcomeScreen('mine')" class="${tabClass(tab === 'mine')}">⭐ ${escapeHtml(translations[currentLang].tabMine)}</button>
+                </div>`;
 
-            if (tab === 'modified') {
-                listHtml += `<button onclick="markAllAsRead()" class="bg-gray-800 hover:bg-gray-700 text-emerald-400 border border-emerald-600/50 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors cursor-pointer flex items-center gap-1.5 shadow-sm">
-                    <span>✓</span> <span data-i18n="markAllRead">${translations[currentLang].markAllRead}</span>
-                </button>`;
-            }
-
-            listHtml += `</div><div class="space-y-2">`;
-
-            if (tab === 'modified') {
-                const newest = getNewestFiles(20);
-
-                const readMap = readReadMap();
-                const markerState = getMarkerState();
-
-                if (newest.length === 0) {
-                    listHtml += `<p class="text-center text-gray-500 text-xs italic py-4">${currentLang === 'de' ? 'Keine Lösungen gefunden.' : 'No solutions found.'}</p>`;
-                } else {
-                    newest.forEach(file => {
-                        const dateStr = file.last_modified ? new Date(file.last_modified).toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '';
-                        const kind = getUnreadKind(file, readMap);
-                        const rowStyle = kind === 'updated' ? 'border-sky-400/80 bg-sky-950/20' : (kind === 'new' ? 'border-emerald-500/80 bg-emerald-950/20' : 'border-gray-700/60');
-                        listHtml += `<button data-load-path="${escapeHtml(file.path)}" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border ${rowStyle} rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
-                            <span class="flex items-start gap-2 font-medium min-w-0"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform shrink-0">📄</span><span class="min-w-0 break-words">${escapeHtml(file.name)} ${gameMarkersHtml(file.path, markerState)} ${kind ? unreadBadgeHtml(kind, file) : ''}</span></span>
-                            <span class="text-gray-400 text-xs shrink-0 ml-2">${dateStr}</span>
-                        </button>`;
-                    });
-                }
-            } else if (tab === 'mine') {
-                listHtml += renderMyGamesHtml();
-            } else {
-                const recentPaths = readJsonArray('sgs_recent_files');
-                const markerState = getMarkerState();
-
-                if (recentPaths.length === 0) {
-                    listHtml += `<p class="text-center text-gray-500 text-xs italic py-4">${currentLang === 'de' ? 'Keine kürzlich genutzten Lösungen vorhanden.' : 'No recently used solutions found.'}</p>`;
-                } else {
-                    recentPaths.forEach(path => {
-                        const file = fileIndex.get(path);
-                        const fileName = file ? file.name : path.split('/').pop();
-                        const progressVal = getReadingProgress(path);
-                        const badgeText = progressVal !== null ? `${Math.round(progressVal)}%` : '0%';
-                        
-                        listHtml += `<button data-load-path="${escapeHtml(path)}" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border border-gray-700/60 rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
-                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(fileName)} ${gameMarkersHtml(path, markerState)}</span>
-                            <span class="bg-emerald-900/60 text-emerald-300 border border-emerald-700/50 px-2 py-0.5 rounded text-[11px] shrink-0 ml-2 font-mono">${badgeText}</span>
-                        </button>`;
-                    });
-                }
-            }
-
-            listHtml += `</div></div>`;
+            listHtml += tab === 'mine' ? renderMyGamesHtml() : renderWelcomeOverviewHtml();
+            listHtml += `</div>`;
             document.getElementById("content-viewer").innerHTML = listHtml;
             updateActiveFileInTree();
         }
