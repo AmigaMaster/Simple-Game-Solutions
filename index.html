@@ -1512,6 +1512,7 @@ ${t.issueSectionSuggestDesc}
                 document.getElementById("scrollProgressBar").style.width = "0%";
             }
             updateActiveFileInTree();
+            applyTocForView();
         }
 
         // --- SECTION 4: APPLICATION INITIALIZATION (BOOTSTRAP) ---
@@ -2431,6 +2432,7 @@ ${t.issueSectionSuggestDesc}
                 showViewerError(viewer, `${translations[currentLang].errorLoadingFile} ${filePath}`);
                 tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`;
                 updateActiveFileInTree();
+                applyTocForView();
                 return;
             }
 
@@ -2443,6 +2445,7 @@ ${t.issueSectionSuggestDesc}
             targetPercentToRestore = rawSavedPercent !== null ? parseFloat(rawSavedPercent) : null;
 
             currentFilePath = filePath;
+            applyTocForView();
 
             if (!isHistoryNav && history.pushState) {
                 const baseUrl = window.location.href.split('?')[0].split('#')[0];
@@ -3436,9 +3439,27 @@ ${t.issueSectionSuggestDesc}
                     closeAllOverlays();
                 }
             } else {
+                tocUserOpen = open;
                 tocSidebar.classList.toggle("panel-collapsed", !open);
                 if (resizerRight) resizerRight.classList.toggle("panel-collapsed", !open);
             }
+        }
+
+        let tocUserOpen = true;
+
+        function applyTocForView() {
+            const hasFile = !!currentFilePath;
+            if (window.innerWidth >= 650) {
+                const open = hasFile && tocUserOpen;
+                tocSidebar.classList.toggle("panel-collapsed", !open);
+                if (resizerRight) resizerRight.classList.toggle("panel-collapsed", !open);
+            } else if (!hasFile) {
+                tocSidebar.classList.add("translate-x-full");
+            }
+            document.querySelectorAll('[data-i18n-title="tocToggleTitle"]').forEach(btn => {
+                btn.classList.toggle("opacity-50", !hasFile);
+                btn.setAttribute("aria-disabled", String(!hasFile));
+            });
         }
 
         function toggleSidebar() {
@@ -3446,6 +3467,7 @@ ${t.issueSectionSuggestDesc}
         }
 
         function toggleToc() {
+            if (!currentFilePath) return; // nothing to show on the start page
             setTocOpen(!isTocOpen());
         }
 
@@ -3460,7 +3482,7 @@ ${t.issueSectionSuggestDesc}
 
         // Crossing a breakpoint (resize, rotating a tablet): never keep a stale mobile overlay open
         ["(min-width: 1060px)", "(min-width: 650px)"].forEach(query =>
-            window.matchMedia(query).addEventListener("change", closeAllOverlays));
+            window.matchMedia(query).addEventListener("change", () => { closeAllOverlays(); applyTocForView(); }));
 
         document.getElementById("content-viewer").addEventListener("keydown", handleSpoilerKeydown);
 
@@ -3469,6 +3491,7 @@ ${t.issueSectionSuggestDesc}
         updateTreeScopeUi();
         updateSpoilerButton();
         closeAllOverlays();
+        applyTocForView();
         init();
 
     </script>
