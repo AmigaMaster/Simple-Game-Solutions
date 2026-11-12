@@ -888,10 +888,10 @@
             const created = file.created ? formatBadgeDate(file.created) : "";
             if (kind === "updated") {
                 const title = (created ? tr.badgeUpdatedTitleAdded : tr.badgeUpdatedTitle).replace("{date}", modified).replace("{created}", created);
-                return `<span title="${escapeHtml(title)}" class="bg-sky-400 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">${escapeHtml(tr.badgeUpdated)}</span>`;
+                return `<span title="${escapeHtml(title)}" class="bg-sky-400 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1 whitespace-nowrap inline-block">${escapeHtml(tr.badgeUpdated)}</span>`;
             }
             const title = tr.badgeNewTitle.replace("{date}", created || modified);
-            return `<span title="${escapeHtml(title)}" class="bg-emerald-500 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">${escapeHtml(tr.badgeNew)}</span>`;
+            return `<span title="${escapeHtml(title)}" class="bg-emerald-500 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1 whitespace-nowrap inline-block">${escapeHtml(tr.badgeNew)}</span>`;
         }
 
         function migrateReadState() {
@@ -1463,7 +1463,7 @@ ${t.issueSectionSuggestDesc}
                         const kind = getUnreadKind(file, readMap);
                         const rowStyle = kind === 'updated' ? 'border-sky-400/80 bg-sky-950/20' : (kind === 'new' ? 'border-emerald-500/80 bg-emerald-950/20' : 'border-gray-700/60');
                         listHtml += `<button data-load-path="${escapeHtml(file.path)}" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border ${rowStyle} rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
-                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(file.name)} ${gameMarkersHtml(file.path, markerState)} ${kind ? unreadBadgeHtml(kind, file) : ''}</span>
+                            <span class="flex items-start gap-2 font-medium min-w-0"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform shrink-0">📄</span><span class="min-w-0 break-words">${escapeHtml(file.name)} ${gameMarkersHtml(file.path, markerState)} ${kind ? unreadBadgeHtml(kind, file) : ''}</span></span>
                             <span class="text-gray-400 text-xs shrink-0 ml-2">${dateStr}</span>
                         </button>`;
                     });
