@@ -452,6 +452,10 @@
                 spoilerOffTitle: "Spoilermodus einschalten: nur Überschriften zeigen, Kapitel einzeln aufklappen",
                 spoilerBannerHint: "Spoilermodus: Schritte einzeln aufdecken",
                 spoilerBannerOn: "Einschalten",
+                spoilerOffConfirmTitle: "Ganze Lösung anzeigen?",
+                spoilerOffConfirmText: "Dann siehst du auch alles, was noch kommt. Deine bisher aufgedeckten Schritte bleiben gespeichert.",
+                spoilerOffConfirmCancel: "Abbrechen",
+                spoilerOffConfirmOk: "Spoilermodus ausschalten",
                 spoilerBannerText: "Spoilermodus aktiv",
                 spoilerBannerOff: "Ausschalten",
                 spoilerBannerOffTitle: "Spoilermodus ausschalten: Lösungen wieder vollständig anzeigen",
@@ -550,6 +554,10 @@
                 spoilerOffTitle: "Turn on spoiler mode: show headings only, open chapters one by one",
                 spoilerBannerHint: "Spoiler mode: reveal steps one by one",
                 spoilerBannerOn: "Turn on",
+                spoilerOffConfirmTitle: "Show the whole solution?",
+                spoilerOffConfirmText: "You will also see everything that is still to come. The steps you have revealed so far stay saved.",
+                spoilerOffConfirmCancel: "Cancel",
+                spoilerOffConfirmOk: "Turn off spoiler mode",
                 spoilerBannerText: "Spoiler mode on",
                 spoilerBannerOff: "Turn off",
                 spoilerBannerOffTitle: "Turn off spoiler mode: show solutions in full again",
@@ -2837,7 +2845,51 @@ ${t.issueSectionSuggestDesc}
         }
 
         // Turning the protection on or off keeps the reader at the chapter currently in view
-        function toggleSpoilerMode() {
+        function showSpoilerOffConfirm() {
+            if (document.getElementById("spoilerOffDialog")) return;
+            const t = translations[currentLang];
+            const previousFocus = document.activeElement;
+            const overlay = document.createElement("div");
+            overlay.id = "spoilerOffDialog";
+            overlay.className = "fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/60";
+            overlay.innerHTML = `<div role="dialog" aria-modal="true" aria-labelledby="spoilerOffDialogTitle" aria-describedby="spoilerOffDialogText"
+                    class="w-full max-w-sm rounded-xl border border-emerald-600/60 bg-gray-900 p-5 shadow-2xl">
+                <h2 id="spoilerOffDialogTitle" class="text-base sm:text-lg font-bold text-white mb-2">🙈 ${escapeHtml(t.spoilerOffConfirmTitle)}</h2>
+                <p id="spoilerOffDialogText" class="text-sm text-gray-300 mb-5">${escapeHtml(t.spoilerOffConfirmText)}</p>
+                <div class="flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
+                    <button type="button" data-act="cancel" class="px-3 py-2 rounded-md border border-gray-600 bg-gray-800 text-gray-100 text-sm font-semibold hover:bg-gray-700 cursor-pointer transition-colors">${escapeHtml(t.spoilerOffConfirmCancel)}</button>
+                    <button type="button" data-act="confirm" class="px-3 py-2 rounded-md bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-500 cursor-pointer transition-colors">${escapeHtml(t.spoilerOffConfirmOk)}</button>
+                </div>
+            </div>`;
+            const close = () => {
+                overlay.remove();
+                if (previousFocus && document.contains(previousFocus) && previousFocus.focus) previousFocus.focus();
+            };
+            overlay.addEventListener("click", e => {
+                if (e.target === overlay) { close(); return; }
+                const act = e.target.closest("[data-act]");
+                if (!act) return;
+                close();
+                if (act.dataset.act === "confirm") toggleSpoilerMode(true);
+            });
+            overlay.addEventListener("keydown", e => {
+                if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); return; }
+                if (e.key === "Tab") { // keep focus inside the dialog
+                    const buttons = overlay.querySelectorAll("button");
+                    const first = buttons[0], last = buttons[buttons.length - 1];
+                    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+                }
+            });
+            document.body.appendChild(overlay);
+            overlay.querySelector('[data-act="cancel"]').focus(); // safe default: keep the mode on
+        }
+
+        function toggleSpoilerMode(confirmed) {
+            if (isSpoilerModeOn() && confirmed !== true) {
+                showSpoilerOffConfirm();
+                return;
+            }
             if (isSpoilerModeOn()) lsRemove(SPOILER_MODE_KEY); else lsSet(SPOILER_MODE_KEY, "1");
             const viewer = document.getElementById("content-viewer");
             if (!currentFilePath || rawFileContent === null || !viewer) {
