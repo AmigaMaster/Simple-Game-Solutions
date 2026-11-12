@@ -418,6 +418,11 @@
                 fontZoomTitle: "Schriftgröße anpassen",
                 fontSizeLabel: "Schriftgröße",
                 markAllRead: "Alle als gelesen markieren",
+                badgeNew: "Neu",
+                badgeUpdated: "Aktualisiert",
+                badgeNewTitle: "Neu hinzugefügt am {date}",
+                badgeUpdatedTitle: "Aktualisiert am {date}",
+                badgeUpdatedTitleAdded: "Aktualisiert am {date} (hinzugefügt am {created})",
                 favoriteAdd: "Zu Favoriten hinzufügen",
                 favoriteRemove: "Aus Favoriten entfernen",
                 statusMenuTitle: "Spielstatus setzen",
@@ -503,6 +508,11 @@
                 fontZoomTitle: "Adjust font size",
                 fontSizeLabel: "Font size",
                 markAllRead: "Mark all as read",
+                badgeNew: "New",
+                badgeUpdated: "Updated",
+                badgeNewTitle: "Added on {date}",
+                badgeUpdatedTitle: "Updated on {date}",
+                badgeUpdatedTitleAdded: "Updated on {date} (added on {created})",
                 favoriteAdd: "Add to favorites",
                 favoriteRemove: "Remove from favorites",
                 statusMenuTitle: "Set play status",
@@ -860,7 +870,30 @@
             return new Date(file.last_modified) > new Date(seen);
         }
 
-        // One-time migration from the old format (plain list of read paths)
+        function getUnreadKind(file, readMap) {
+            if (!isFileUnread(file, readMap)) return null;
+            if (readMap[file.path]) return "updated";
+            return file.status === "updated" ? "updated" : "new";
+        }
+
+        function formatBadgeDate(iso) {
+            const date = new Date(iso);
+            if (isNaN(date)) return "";
+            return date.toLocaleDateString(currentLang === "de" ? "de-DE" : "en-GB", { year: "numeric", month: "2-digit", day: "2-digit" });
+        }
+
+        function unreadBadgeHtml(kind, file) {
+            const tr = translations[currentLang];
+            const modified = formatBadgeDate(file.last_modified);
+            const created = file.created ? formatBadgeDate(file.created) : "";
+            if (kind === "updated") {
+                const title = (created ? tr.badgeUpdatedTitleAdded : tr.badgeUpdatedTitle).replace("{date}", modified).replace("{created}", created);
+                return `<span title="${escapeHtml(title)}" class="bg-sky-400 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">${escapeHtml(tr.badgeUpdated)}</span>`;
+            }
+            const title = tr.badgeNewTitle.replace("{date}", created || modified);
+            return `<span title="${escapeHtml(title)}" class="bg-emerald-500 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">${escapeHtml(tr.badgeNew)}</span>`;
+        }
+
         function migrateReadState() {
             if (lsGet("sgs_read_modified_files") === null || fileIndex.size === 0) return;
             if (lsGet("sgs_read_v2") === null) {
@@ -1427,9 +1460,10 @@ ${t.issueSectionSuggestDesc}
                 } else {
                     newest.forEach(file => {
                         const dateStr = file.last_modified ? new Date(file.last_modified).toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' }) : '';
-                        const isUnread = isFileUnread(file, readMap);
-                        listHtml += `<button data-load-path="${escapeHtml(file.path)}" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border ${isUnread ? 'border-emerald-500/80 bg-emerald-950/20' : 'border-gray-700/60'} rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
-                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(file.name)} ${gameMarkersHtml(file.path, markerState)} ${isUnread ? '<span class="bg-emerald-500 text-gray-950 text-[10px] font-bold px-1.5 py-0.2 rounded ml-1">NEW</span>' : ''}</span>
+                        const kind = getUnreadKind(file, readMap);
+                        const rowStyle = kind === 'updated' ? 'border-sky-400/80 bg-sky-950/20' : (kind === 'new' ? 'border-emerald-500/80 bg-emerald-950/20' : 'border-gray-700/60');
+                        listHtml += `<button data-load-path="${escapeHtml(file.path)}" class="w-full text-left bg-gray-800/80 hover:bg-gray-700 border ${rowStyle} rounded-md px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:text-white transition-colors flex justify-between items-center group cursor-pointer">
+                            <span class="flex items-center gap-2 font-medium truncate"><span class="text-emerald-400 group-hover:translate-x-1 transition-transform">📄</span> ${escapeHtml(file.name)} ${gameMarkersHtml(file.path, markerState)} ${kind ? unreadBadgeHtml(kind, file) : ''}</span>
                             <span class="text-gray-400 text-xs shrink-0 ml-2">${dateStr}</span>
                         </button>`;
                     });
@@ -1631,6 +1665,13 @@ ${t.issueSectionSuggestDesc}
                 matchingFiles.unshift({
                     name: "📞 Rufe Edna an...",
                     path: "https://www.maniac-mansion-mania.com",
+                    isExternal: true
+                });
+            }
+            if (qLower === "dksn" || qLower.includes("das klappt so nicht")) {
+                matchingFiles.unshift({
+                    name: "🕹 Gleichgesinnte gefunden...",
+                    path: "https://www.dasklapptsonicht.de",
                     isExternal: true
                 });
             }
@@ -2462,10 +2503,11 @@ ${t.issueSectionSuggestDesc}
         // While active, only the headings are shown. Every heading that has content is a collapsible chapter:
         // opening it reveals the first action; more actions can be revealed one by one, three at a time or all at once.
         // Closing a chapter hides everything again, reopening starts at the first action again.
-        // Nothing is stored: after a reload all chapters are closed. Everything before the first section
         // (title, version table, availability, general info) stays visible.
         const SPOILER_MODE_KEY = "sgs_spoiler_mode";
-        lsRemove("sgs_spoiler_progress");   // obsolete: the reveal state is no longer stored
+        lsRemove("sgs_spoiler_progress");
+        const SPOILER_STATE_KEY = "sgs_spoiler_state";
+        const SPOILER_STATE_MAX_SOLUTIONS = 80;
         let spoilerModel = null;
 
         function isSpoilerModeOn() {
@@ -2509,6 +2551,42 @@ ${t.issueSectionSuggestDesc}
             });
         }
 
+        // Restores which chapters were open and how many actions were revealed (per solution, by chapter ID)
+        function loadSpoilerState(model) {
+            const saved = readJsonObject(SPOILER_STATE_KEY)[model.path];
+            if (!saved || typeof saved !== "object" || !saved.c || typeof saved.c !== "object") return;
+            model.chapters.forEach(chapter => {
+                const revealed = saved.c[chapter.heading.id];
+                if (Number.isInteger(revealed) && revealed > 0) {
+                    chapter.revealed = Math.min(chapter.steps.length, revealed);
+                }
+            });
+        }
+
+        // Remembers the open chapters of this solution. Closed chapters are not stored, so reopening one starts at its first action.
+        function saveSpoilerState() {
+            const m = spoilerModel;
+            if (!m) return;
+            const states = readJsonObject(SPOILER_STATE_KEY);
+            const open = {};
+            let anyOpen = false;
+            m.chapters.forEach(chapter => {
+                if (chapter.revealed > 0 && chapter.heading.id) {
+                    open[chapter.heading.id] = chapter.revealed;
+                    anyOpen = true;
+                }
+            });
+            if (anyOpen) states[m.path] = { c: open, t: Date.now() };
+            else delete states[m.path];
+            const paths = Object.keys(states);
+            if (paths.length > SPOILER_STATE_MAX_SOLUTIONS) {
+                paths.sort((a, b) => ((states[b] && states[b].t) || 0) - ((states[a] && states[a].t) || 0))
+                    .slice(SPOILER_STATE_MAX_SOLUTIONS)
+                    .forEach(path => { delete states[path]; });
+            }
+            writeJson(SPOILER_STATE_KEY, states);
+        }
+
         function setupSpoilerProtection(viewer, filePath) {
             clearSpoilerModel();
             clearSpoilerDecorations(viewer);
@@ -2518,6 +2596,7 @@ ${t.issueSectionSuggestDesc}
             const model = buildSpoilerModel(viewer);
             if (!model) return;
             model.path = filePath;
+            loadSpoilerState(model);
 
             // Headings with content become chapter toggles (chevron, keyboard access)
             model.chapters.forEach((chapter, index) => {
@@ -2623,6 +2702,7 @@ ${t.issueSectionSuggestDesc}
 
         // An active text filter hides elements with inline styles: apply it again to the new state
         function afterSpoilerChange() {
+            saveSpoilerState();
             applySpoilerState();
             const filterInput = document.getElementById("contentFilterInput");
             if (filterInput && filterInput.value.trim()) handleContentFilter(filterInput.value);
