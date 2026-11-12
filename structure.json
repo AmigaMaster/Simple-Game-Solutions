@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 604,
-    "total_words": 696778,
-    "total_actions": 85437
+    "total_files": 605,
+    "total_words": 698076,
+    "total_actions": 85589
   },
   "name": "solutions",
   "type": "directory",
@@ -2276,6 +2276,16 @@
           "status": "new",
           "words": 3977,
           "actions": 539
+        },
+        {
+          "name": "King’s Quest 1 - Quest for the Crown VGA-EN",
+          "type": "file",
+          "path": "K/King’s Quest 1 - Quest for the Crown VGA-EN.md",
+          "last_modified": "2026-11-13T00:03:24+01:00",
+          "created": "2026-11-13T00:03:24+01:00",
+          "status": "new",
+          "words": 1298,
+          "actions": 152
         }
       ]
     },
