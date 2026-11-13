@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 605,
-    "total_words": 698076,
-    "total_actions": 85589
+    "total_files": 606,
+    "total_words": 701869,
+    "total_actions": 86018
   },
   "name": "solutions",
   "type": "directory",
@@ -2266,6 +2266,16 @@
           "status": "new",
           "words": 549,
           "actions": 72
+        },
+        {
+          "name": "King's Quest 2 - Romancing the Stones VGA-EN",
+          "type": "file",
+          "path": "K/King's Quest 2 - Romancing the Stones VGA-EN.md",
+          "last_modified": "2026-11-14T00:51:21+01:00",
+          "created": "2026-11-14T00:51:21+01:00",
+          "status": "new",
+          "words": 3793,
+          "actions": 429
         },
         {
           "name": "King's Quest 3 - To Heir is Human - Redux VGA-EN",
