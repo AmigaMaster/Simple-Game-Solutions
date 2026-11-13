@@ -116,26 +116,26 @@
         <!-- Left Section: Sidebar Toggle & App Title -->
         <div class="flex items-center gap-1.5 sm:gap-4 shrink-0">
             <button
-                class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all flex items-center gap-1 shadow-lg cursor-pointer shrink-0"
-                data-i18n-title="menuToggleTitle" onclick="toggleSidebar();"><span>📁</span> <span
+                class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-2 min-h-[40px] sm:min-h-0 sm:py-1.5 rounded-md text-lg sm:text-sm font-semibold transition-all flex items-center justify-center gap-1 shadow-lg cursor-pointer shrink-0"
+                data-i18n-title="menuToggleTitle" onclick="toggleSidebar();"><span>📁</span> <span class="hidden min-[480px]:inline"
                     data-i18n="menuBtn">Menü</span></button>
-            <h1 class="text-3xl sm:text-lg font-bold text-emerald-400 cursor-pointer hover:text-emerald-300 transition-colors relative inline-flex items-center justify-center min-w-[44px] min-h-[44px] -my-2 sm:min-w-0 sm:min-h-0 sm:my-0" data-i18n-title="goHomeTitle" onclick="goHome();" title="Zur Startseite">
+            <h1 class="text-4xl sm:text-lg font-bold text-emerald-400 cursor-pointer hover:text-emerald-300 transition-colors relative inline-flex items-center justify-center min-w-[44px] min-h-[44px] -my-2 sm:min-w-0 sm:min-h-0 sm:my-0" data-i18n-title="goHomeTitle" onclick="goHome();" title="Zur Startseite">
                 🏠<span class="hidden md:inline"> Simple Game Solutions</span>
                 <span id="homeUnreadBadge" class="absolute top-0.5 right-0 sm:-top-2 sm:-right-2 w-4 h-4 bg-red-500/75 text-white text-[10px] font-bold px-2 py-0.2 rounded-full flex items-center justify-center hidden shadow">0</span>
             </h1>
         </div>
 
         <!-- Center Section: Global Search Input, Copy Link & Clear Search Buttons -->
-        <div class="relative flex-1 max-w-xs sm:max-w-sm mx-1 sm:mx-2 flex items-center min-w-[70px] sm:min-w-[120px]">
+        <div class="relative flex-1 max-w-xs sm:max-w-sm mx-0.5 sm:mx-2 flex items-center min-w-[70px] sm:min-w-[120px]">
             <input autocomplete="off"
-                class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 sm:px-3 py-1.5 pr-14 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
+                class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 sm:px-3 py-2 min-h-[40px] sm:min-h-0 sm:py-1.5 pr-14 text-base sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
                 data-i18n-placeholder="searchPlaceholder" id="searchInput" onblur="handleSearchBlur();" onfocus="handleSearchFocus();" oninput="debounceGlobalSearch(this.value);"
                 onkeydown="handleSearchInputKeydown(event);" placeholder="Suchen..." type="text">
             <button
-                class="absolute right-8 text-emerald-400 hover:text-emerald-300 text-xs hidden focus:outline-none cursor-pointer"
+                class="absolute right-8 text-emerald-400 hover:text-emerald-300 text-base sm:text-xs hidden focus:outline-none cursor-pointer"
                 data-i18n-title="copySearchLinkTitle" id="copySearchBtn" onclick="copySearchLink();" title="Suche-Link kopieren">🔗</button>
             <button
-                class="absolute right-2.5 text-gray-400 hover:text-white text-sm hidden focus:outline-none cursor-pointer"
+                class="absolute right-2.5 text-gray-400 hover:text-white text-base sm:text-sm hidden focus:outline-none cursor-pointer"
                 id="clearSearchBtn" onclick="clearSearch();" title="Suche löschen">✕</button>
         </div>
 
@@ -150,17 +150,17 @@
             
             <!-- Settings Dropdown Menu (Gear Icon) -->
             <div class="relative shrink-0" id="settingsMenuContainer">
-                <button onclick="toggleSettingsMenu();" class="bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white px-2 py-1.5 rounded-md text-xs sm:text-sm border border-gray-600 focus:outline-none cursor-pointer transition-colors" data-i18n-title="settingsMenuTitle" title="Einstellungen">
+                <button onclick="toggleSettingsMenu();" class="bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white px-3 py-2 min-h-[40px] sm:min-h-0 sm:px-2 sm:py-1.5 rounded-md text-lg sm:text-sm border border-gray-600 focus:outline-none cursor-pointer transition-colors" data-i18n-title="settingsMenuTitle" title="Einstellungen">
                     ⚙️
                 </button>
                 <div id="settingsDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[150px] z-50">
-                    <button onclick="exportSettings();" class="group w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                    <button onclick="exportSettings();" class="group w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                         <span class="hover-wiggle inline-block transition-transform">💾</span> <span data-i18n="exportBtn">Export</span>
                     </button>
-                    <button onclick="document.getElementById('importSettingsFile').click();" class="group w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                    <button onclick="document.getElementById('importSettingsFile').click();" class="group w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                         <span class="hover-wiggle inline-block transition-transform">📂</span> <span data-i18n="importBtn">Import</span>
                     </button>
-                    <a href="https://discord.gg/trmXCtf" target="_blank" rel="noopener noreferrer" class="group w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                    <a href="https://discord.gg/trmXCtf" target="_blank" rel="noopener noreferrer" class="group w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                         <span class="hover-wiggle w-4 h-4 inline-flex items-center justify-center shrink-0">
                             <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 127.14 96.36">
                                 <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.79,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.81,11.1,105.25,105.25,0,0,0,32.25-16.15c2.63-27.29-4.53-51.17-21.45-72.15ZM42.45,65.69C36.18,65.69,31,60,31,53s5.18-12.72,11.45-12.72S53.9,46,53.88,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5.18-12.72,11.45-12.72S96.18,46,96.15,53,91,65.69,84.69,65.69Z"/>
@@ -172,14 +172,14 @@
             </div>
 
             <select
-                class="bg-gray-700 text-emerald-300 text-xs px-1.5 sm:px-2 py-1.5 rounded-md border border-gray-600 focus:outline-none cursor-pointer shrink-0"
+                class="bg-gray-700 text-emerald-300 text-lg sm:text-xs px-1.5 sm:px-2 py-2 min-h-[40px] sm:min-h-0 sm:py-1.5 rounded-md border border-gray-600 focus:outline-none cursor-pointer shrink-0"
                 id="langSelect" onchange="changeLanguage(this.value);">
                 <option value="de">🇩🇪</option>
                 <option value="en">🇬🇧</option>
             </select>
             <button
-                class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 sm:px-3 py-1.5 rounded-md text-xs sm:text-sm font-semibold transition-all flex items-center gap-1 shadow-lg cursor-pointer shrink-0"
-                data-i18n-title="tocToggleTitle" onclick="toggleToc();"><span>📑</span> <span
+                class="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-2 min-h-[40px] sm:min-h-0 sm:py-1.5 rounded-md text-lg sm:text-sm font-semibold transition-all flex items-center justify-center gap-1 shadow-lg cursor-pointer shrink-0"
+                data-i18n-title="tocToggleTitle" onclick="toggleToc();"><span>📑</span> <span class="hidden min-[480px]:inline"
                     data-i18n="tocBtn">Inhalt</span></button>
         </div>
     </header>
@@ -196,16 +196,16 @@
             <div class="mb-2 border-b border-gray-700 pb-1.5 shrink-0 flex justify-between items-center">
                 <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400" data-i18n="directoriesTitle">
                     Verzeichnisse</h2><button
-                    class="text-gray-400 hover:text-white text-xs px-2 py-1 rounded bg-gray-700 cursor-pointer"
+                    class="text-gray-400 hover:text-white text-base sm:text-xs px-3 py-1.5 sm:px-2 sm:py-1 rounded bg-gray-700 cursor-pointer"
                     data-i18n-title="close" onclick="toggleSidebar();">✕</button>
             </div>
             <div class="mb-2 shrink-0 flex flex-wrap gap-1" id="treeScopeBar" role="group" data-i18n-title="treeScopeLabel">
                 <button type="button" data-tree-scope="all" onclick="setTreeScope('all');" aria-pressed="true"
-                    class="px-2 py-1 text-[11px] rounded border border-gray-700 bg-gray-900 text-gray-400 hover:text-white hover:bg-gray-700 cursor-pointer transition-colors">📚 <span data-i18n="treeScopeAll">Alle</span></button>
+                    class="px-2.5 py-1.5 text-xs sm:px-2 sm:py-1 sm:text-[11px] rounded border border-gray-700 bg-gray-900 text-gray-400 hover:text-white hover:bg-gray-700 cursor-pointer transition-colors">📚 <span data-i18n="treeScopeAll">Alle</span></button>
                 <button type="button" data-tree-scope="favorites" onclick="setTreeScope('favorites');" aria-pressed="false"
-                    class="px-2 py-1 text-[11px] rounded border border-gray-700 bg-gray-900 text-gray-400 hover:text-white hover:bg-gray-700 cursor-pointer transition-colors">⭐ <span data-i18n="treeScopeFavorites">Favoriten</span></button>
+                    class="px-2.5 py-1.5 text-xs sm:px-2 sm:py-1 sm:text-[11px] rounded border border-gray-700 bg-gray-900 text-gray-400 hover:text-white hover:bg-gray-700 cursor-pointer transition-colors">⭐ <span data-i18n="treeScopeFavorites">Favoriten</span></button>
                 <button type="button" data-tree-scope="mine" onclick="setTreeScope('mine');" aria-pressed="false"
-                    class="px-2 py-1 text-[11px] rounded border border-gray-700 bg-gray-900 text-gray-400 hover:text-white hover:bg-gray-700 cursor-pointer transition-colors">🎮 <span data-i18n="treeScopeMine">Meine Spiele</span></button>
+                    class="px-2.5 py-1.5 text-xs sm:px-2 sm:py-1 sm:text-[11px] rounded border border-gray-700 bg-gray-900 text-gray-400 hover:text-white hover:bg-gray-700 cursor-pointer transition-colors">🎮 <span data-i18n="treeScopeMine">Meine Spiele</span></button>
             </div>
             <div class="space-y-1 text-sm flex-1 overflow-y-auto pr-1" id="tree-container">
                 <p class="text-gray-500 animate-pulse text-xs" data-i18n="loadingStructure">Lade Struktur...</p>
@@ -230,21 +230,21 @@
 
             <!-- Spoiler mode notice: part of the layout (covers nothing), visible as long as the mode is on -->
             <div id="spoilerBanner" role="status"
-                class="hidden shrink-0 mt-1.5 mb-0.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-md border border-amber-600/60 bg-amber-900/30 px-2.5 py-1 text-xs text-amber-200">
-                <span class="font-semibold">🙈 <span id="spoilerBannerLabel">Spoilermodus aktiv</span></span>
+                class="hidden shrink-0 mt-1 mb-0.5 flex items-center justify-between gap-x-3 rounded-md border border-amber-600/60 bg-amber-900/30 px-2.5 py-1 text-xs text-amber-200">
+                <span class="font-semibold min-w-0 leading-snug">🙈 <span id="spoilerBannerLabel">Spoilermodus aktiv</span></span>
                 <button id="spoilerBannerBtn" type="button" onclick="toggleSpoilerMode();" title="Spoilermodus ausschalten: Lösungen wieder vollständig anzeigen"
-                    class="px-2 py-0.5 rounded border border-amber-500/70 text-amber-100 hover:bg-amber-800/50 hover:text-white whitespace-nowrap cursor-pointer transition-colors"><span id="spoilerBannerBtnText">Ausschalten</span></button>
+                    class="shrink-0 px-3 py-1.5 sm:px-2 sm:py-0.5 font-semibold rounded border border-amber-500/70 text-amber-100 hover:bg-amber-800/50 hover:text-white whitespace-nowrap cursor-pointer transition-colors"><span id="spoilerBannerBtnText">Ausschalten</span></button>
             </div>
 
             <!-- In-Content Filter Header Bar, Report Button & Font Size Button -->
             <div id="readingPaneHeader" class="pt-1.5 pb-1 px-1 flex flex-wrap items-center gap-2 border-b border-gray-700/50 shrink-0 hidden">
                 <div class="relative flex-1 min-w-[7rem]">
                     <input autocomplete="off"
-                        class="w-full min-w-0 bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 py-1.5 pr-8 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
+                        class="w-full min-w-0 bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-3 py-2 min-h-[44px] sm:min-h-0 sm:px-2.5 sm:py-1.5 pr-10 sm:pr-8 text-base sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
                         data-i18n-placeholder="filterPlaceholder" id="contentFilterInput" oninput="debounceContentFilter(this.value);"
                         onkeydown="handleContentFilterKeydown(event);"
                         placeholder="Inhalt filtern..." type="text">
-                    <button class="absolute right-2.5 top-2.5 text-gray-400 hover:text-white text-xs hidden focus:outline-none cursor-pointer"
+                    <button class="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-white text-base sm:text-xs hidden focus:outline-none cursor-pointer"
                         id="clearContentFilterBtn" onclick="clearContentFilter();" title="Filter löschen">✕</button>
                 </div>
 
@@ -252,20 +252,20 @@
                 <div class="flex flex-wrap items-center justify-end gap-2 ml-auto max-w-full">
                 <!-- Favorite star & play status menu -->
                 <button id="favoriteBtn" type="button" onclick="toggleCurrentFavorite();" aria-pressed="false"
-                    class="shrink-0 bg-gray-950 hover:bg-gray-700 text-gray-400 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm cursor-pointer transition-colors">☆</button>
+                    class="shrink-0 bg-gray-950 hover:bg-gray-700 text-gray-400 border border-gray-700 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-2 sm:px-2.5 sm:py-1.5 text-lg sm:text-sm rounded-md cursor-pointer transition-colors flex items-center justify-center">☆</button>
                 <div class="relative shrink-0" id="statusMenuContainer">
                     <button id="statusBtn" type="button" onclick="toggleStatusMenu();" aria-haspopup="true"
-                        class="bg-gray-950 hover:bg-gray-700 text-gray-300 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1.5 transition-colors">
+                        class="bg-gray-950 hover:bg-gray-700 text-gray-300 border border-gray-700 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-2 sm:px-2.5 sm:py-1.5 text-lg sm:text-sm rounded-md font-semibold cursor-pointer flex items-center justify-center gap-1.5 transition-colors">
                         <span id="statusBtnIcon">○</span>
                     </button>
                     <div id="statusDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[190px] z-50">
-                        <button type="button" data-status-option="" onclick="setCurrentGameStatus(this.dataset.statusOption);" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                        <button type="button" data-status-option="" onclick="setCurrentGameStatus(this.dataset.statusOption);" class="w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                             <span>○</span> <span data-i18n="statusNone">Kein Status</span>
                         </button>
-                        <button type="button" data-status-option="playing" onclick="setCurrentGameStatus(this.dataset.statusOption);" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                        <button type="button" data-status-option="playing" onclick="setCurrentGameStatus(this.dataset.statusOption);" class="w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                             <span>🎮</span> <span data-i18n="statusPlaying">Ich spiele gerade</span>
                         </button>
-                        <button type="button" data-status-option="done" onclick="setCurrentGameStatus(this.dataset.statusOption);" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                        <button type="button" data-status-option="done" onclick="setCurrentGameStatus(this.dataset.statusOption);" class="w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                             <span>✅</span> <span data-i18n="statusDone">Fertig</span>
                         </button>
                     </div>
@@ -273,18 +273,18 @@
 
                 <!-- Spoiler protection toggle -->
                 <button id="spoilerBtn" type="button" onclick="toggleSpoilerMode();" aria-pressed="false"
-                    class="shrink-0 bg-gray-950 [@media(hover:hover)]:hover:bg-gray-700 text-gray-400 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm cursor-pointer transition-colors">🙈</button>
+                    class="shrink-0 bg-gray-950 [@media(hover:hover)]:hover:bg-gray-700 text-gray-400 border border-gray-700 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-2 sm:px-2.5 sm:py-1.5 text-lg sm:text-sm rounded-md cursor-pointer transition-colors flex items-center justify-center">🙈</button>
 
                 <!-- Report & Discussions Dropdown Menu -->
                 <div class="relative shrink-0" id="reportMenuContainer">
-                    <button onclick="toggleReportMenu();" class="bg-gray-950 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-semibold cursor-pointer flex items-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" data-i18n-aria-label="reportIssueTitle" title="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden" aria-label="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden">
+                    <button onclick="toggleReportMenu();" class="bg-gray-950 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-2 sm:px-2.5 sm:py-1.5 text-lg sm:text-sm rounded-md font-semibold cursor-pointer flex items-center justify-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" data-i18n-aria-label="reportIssueTitle" title="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden" aria-label="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden">
                         <span>🗨️</span>
                     </button>
                     <div id="reportDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[200px] z-50">
-                        <button onclick="openDiscussions();" class="group w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                        <button onclick="openDiscussions();" class="group w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                             <span class="hover-wiggle inline-block transition-transform">💬</span> <span data-i18n="githubDiscussionsBtn">GitHub Diskussionen</span>
                         </button>
-                        <button onclick="reportIssue();" class="group w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                        <button onclick="reportIssue();" class="group w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                             <span class="hover-wiggle inline-block transition-transform">🚨</span> <span data-i18n="githubIssueBtn">GitHub Issue eröffnen</span>
                         </button>
                     </div>
@@ -292,19 +292,19 @@
 
                 <!-- Font Size Button & Dropdown Menu inside Header -->
                 <div class="relative shrink-0" id="fontOverlayContainer">
-                    <button onclick="toggleFontMenu();" class="bg-gray-950 hover:bg-gray-700 text-emerald-400 border border-gray-700 px-2.5 py-1.5 rounded-md text-xs sm:text-sm font-bold cursor-pointer flex items-center justify-center transition-colors shadow-sm" data-i18n-title="fontZoomTitle" title="Schriftgröße anpassen">
+                    <button onclick="toggleFontMenu();" class="bg-gray-950 hover:bg-gray-700 text-emerald-400 border border-gray-700 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-2 sm:px-2.5 sm:py-1.5 text-lg sm:text-sm rounded-md font-bold cursor-pointer flex items-center justify-center transition-colors shadow-sm" data-i18n-title="fontZoomTitle" title="Schriftgröße anpassen">
                         Aa
                     </button>
                     <div id="fontMenuDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-2 hidden flex flex-col gap-1 min-w-[130px] z-50">
                         <div class="text-[10px] uppercase tracking-wider text-gray-400 px-2 py-0.5 border-b border-gray-700 mb-1" data-i18n="fontSizeLabel">Schriftgröße</div>
-                        <button onclick="setZoom(80);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">80%</button>
-                        <button onclick="setZoom(90);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">90%</button>
-                        <button onclick="setZoom(100);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer font-bold text-emerald-400">100% (Standard)</button>
-                        <button onclick="setZoom(110);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">110%</button>
-                        <button onclick="setZoom(120);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">120%</button>
-                        <button onclick="setZoom(130);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">130%</button>
-                        <button onclick="setZoom(140);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">140%</button>
-                        <button onclick="setZoom(150);" class="font-zoom-btn text-left px-2 py-1 text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">150%</button>
+                        <button onclick="setZoom(80);" class="font-zoom-btn text-left px-3 py-2 text-sm sm:px-2 sm:py-1 sm:text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">80%</button>
+                        <button onclick="setZoom(90);" class="font-zoom-btn text-left px-3 py-2 text-sm sm:px-2 sm:py-1 sm:text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">90%</button>
+                        <button onclick="setZoom(100);" class="font-zoom-btn text-left px-3 py-2 text-sm sm:px-2 sm:py-1 sm:text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer font-bold text-emerald-400">100% (Standard)</button>
+                        <button onclick="setZoom(110);" class="font-zoom-btn text-left px-3 py-2 text-sm sm:px-2 sm:py-1 sm:text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">110%</button>
+                        <button onclick="setZoom(120);" class="font-zoom-btn text-left px-3 py-2 text-sm sm:px-2 sm:py-1 sm:text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">120%</button>
+                        <button onclick="setZoom(130);" class="font-zoom-btn text-left px-3 py-2 text-sm sm:px-2 sm:py-1 sm:text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">130%</button>
+                        <button onclick="setZoom(140);" class="font-zoom-btn text-left px-3 py-2 text-sm sm:px-2 sm:py-1 sm:text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">140%</button>
+                        <button onclick="setZoom(150);" class="font-zoom-btn text-left px-3 py-2 text-sm sm:px-2 sm:py-1 sm:text-xs rounded hover:bg-gray-700 text-gray-300 hover:text-white cursor-pointer">150%</button>
                     </div>
                 </div>
                 </div>
@@ -339,7 +339,7 @@
             <div class="mb-2 border-b border-gray-700 pb-1.5 shrink-0 flex justify-between items-center">
                 <h2 class="text-sm font-semibold uppercase tracking-wider text-gray-400" data-i18n="chaptersTitle">
                     Kapitel</h2><button
-                    class="text-gray-400 hover:text-white text-xs px-2 py-1 rounded bg-gray-700 cursor-pointer"
+                    class="text-gray-400 hover:text-white text-base sm:text-xs px-3 py-1.5 sm:px-2 sm:py-1 rounded bg-gray-700 cursor-pointer"
                     data-i18n-title="close" onclick="toggleToc();">✕</button>
             </div>
             <div class="space-y-1 text-sm flex-1 overflow-y-auto pr-1" id="toc-container">
@@ -452,8 +452,9 @@
                 spoilerOffTitle: "Spoilermodus einschalten: nur Überschriften zeigen, Kapitel einzeln aufklappen",
                 spoilerBannerHint: "Spoilermodus: Schritte einzeln aufdecken",
                 spoilerBannerOn: "Einschalten",
+                spoilerToastOn: "Spoilermodus an – Schritte einzeln aufdecken",
                 spoilerOffConfirmTitle: "Ganze Lösung anzeigen?",
-                spoilerOffConfirmText: "Dann siehst du auch alles, was noch kommt. Deine bisher aufgedeckten Schritte bleiben gespeichert.",
+                spoilerOffConfirmText: "Es werden alle Schritte der Lösung angezeigt. Deine bisher aufgedeckten Schritte bleiben gespeichert.",
                 spoilerOffConfirmCancel: "Abbrechen",
                 spoilerOffConfirmOk: "Spoilermodus ausschalten",
                 spoilerBannerText: "Spoilermodus aktiv",
@@ -554,8 +555,9 @@
                 spoilerOffTitle: "Turn on spoiler mode: show headings only, open chapters one by one",
                 spoilerBannerHint: "Spoiler mode: reveal steps one by one",
                 spoilerBannerOn: "Turn on",
+                spoilerToastOn: "Spoiler mode on – reveal steps one by one",
                 spoilerOffConfirmTitle: "Show the whole solution?",
-                spoilerOffConfirmText: "You will also see everything that is still to come. The steps you have revealed so far stay saved.",
+                spoilerOffConfirmText: "This shows every step of the walkthrough. The steps you have revealed so far stay saved.",
                 spoilerOffConfirmCancel: "Cancel",
                 spoilerOffConfirmOk: "Turn off spoiler mode",
                 spoilerBannerText: "Spoiler mode on",
@@ -1166,7 +1168,7 @@
             const tr = translations[currentLang];
             const current = getGameStatus(path) || "";
             popup.innerHTML = [["", "○", tr.statusNone], ["playing", "🎮", tr.statusPlaying], ["done", "✅", tr.statusDone]]
-                .map(([value, icon, label]) => `<button type="button" role="menuitem" data-popup-status="${value}" class="w-full text-left px-3 py-1.5 text-xs rounded hover:bg-gray-700 flex items-center gap-2 cursor-pointer transition-colors ${value === current ? "bg-gray-700 text-emerald-300" : "text-gray-200 hover:text-white"}"><span>${icon}</span> <span>${escapeHtml(label)}</span></button>`)
+                .map(([value, icon, label]) => `<button type="button" role="menuitem" data-popup-status="${value}" class="w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 flex items-center gap-2 cursor-pointer transition-colors ${value === current ? "bg-gray-700 text-emerald-300" : "text-gray-200 hover:text-white"}"><span>${icon}</span> <span>${escapeHtml(label)}</span></button>`)
                 .join("");
             statusPopupPath = path;
 
@@ -2712,9 +2714,9 @@ ${t.issueSectionSuggestDesc}
             const banner = document.getElementById("spoilerBanner");
             if (!banner) return;
             const onStartPage = !currentFilePath;
-            banner.classList.toggle("hidden", !(on || onStartPage));
-            const base = "shrink-0 mt-1.5 mb-0.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-md border px-2.5 py-1 text-xs";
-            const hidden = (on || onStartPage) ? "" : "hidden ";
+            banner.classList.toggle("hidden", !onStartPage);
+            const base = "shrink-0 mt-1 mb-0.5 flex items-center justify-between gap-x-3 rounded-md border px-2.5 py-1 text-xs";
+            const hidden = onStartPage ? "" : "hidden ";
             banner.className = hidden + base + (on ? " border-amber-600/60 bg-amber-900/30 text-amber-200" : " border-gray-600/70 bg-gray-800/60 text-gray-300");
             const label = document.getElementById("spoilerBannerLabel");
             if (label) label.textContent = on ? tr.spoilerBannerText : tr.spoilerBannerHint;
@@ -2723,7 +2725,7 @@ ${t.issueSectionSuggestDesc}
             if (buttonText) buttonText.textContent = on ? tr.spoilerBannerOff : tr.spoilerBannerOn;
             if (button) {
                 button.title = on ? tr.spoilerBannerOffTitle : tr.spoilerOffTitle;
-                button.className = "px-2 py-0.5 rounded border whitespace-nowrap cursor-pointer transition-colors " + (on
+                button.className = "shrink-0 px-3 py-1.5 sm:px-2 sm:py-0.5 font-semibold rounded border whitespace-nowrap cursor-pointer transition-colors " + (on
                     ? "border-amber-500/70 text-amber-100 hover:bg-amber-800/50 hover:text-white"
                     : "border-emerald-500/70 text-emerald-200 hover:bg-emerald-700/40 hover:text-white");
             }
@@ -2857,8 +2859,8 @@ ${t.issueSectionSuggestDesc}
                 <h2 id="spoilerOffDialogTitle" class="text-base sm:text-lg font-bold text-white mb-2">🙈 ${escapeHtml(t.spoilerOffConfirmTitle)}</h2>
                 <p id="spoilerOffDialogText" class="text-sm text-gray-300 mb-5">${escapeHtml(t.spoilerOffConfirmText)}</p>
                 <div class="flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
-                    <button type="button" data-act="cancel" class="px-3 py-2 rounded-md border border-gray-600 bg-gray-800 text-gray-100 text-sm font-semibold hover:bg-gray-700 cursor-pointer transition-colors">${escapeHtml(t.spoilerOffConfirmCancel)}</button>
-                    <button type="button" data-act="confirm" class="px-3 py-2 rounded-md bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-500 cursor-pointer transition-colors">${escapeHtml(t.spoilerOffConfirmOk)}</button>
+                    <button type="button" data-act="cancel" class="px-4 py-3 sm:px-3 sm:py-2 rounded-md border border-gray-600 bg-gray-800 text-gray-100 text-base sm:text-sm font-semibold hover:bg-gray-700 cursor-pointer transition-colors">${escapeHtml(t.spoilerOffConfirmCancel)}</button>
+                    <button type="button" data-act="confirm" class="px-4 py-3 sm:px-3 sm:py-2 rounded-md bg-emerald-600 text-white text-base sm:text-sm font-semibold hover:bg-emerald-500 cursor-pointer transition-colors">${escapeHtml(t.spoilerOffConfirmOk)}</button>
                 </div>
             </div>`;
             const close = () => {
@@ -2885,12 +2887,32 @@ ${t.issueSectionSuggestDesc}
             overlay.querySelector('[data-act="cancel"]').focus(); // safe default: keep the mode on
         }
 
+        let spoilerToastTimer = null;
+        function showSpoilerToast() {
+            const t = translations[currentLang];
+            let toast = document.getElementById("spoilerToast");
+            if (!toast) {
+                toast = document.createElement("div");
+                toast.id = "spoilerToast";
+                toast.setAttribute("role", "status");
+                toast.setAttribute("aria-live", "polite");
+                toast.className = "fixed left-1/2 -translate-x-1/2 z-[900] max-w-[90vw] px-4 py-2.5 rounded-full bg-emerald-600 text-white text-sm font-semibold text-center shadow-lg pointer-events-none transition-opacity duration-300 opacity-0";
+                toast.style.bottom = "calc(env(safe-area-inset-bottom, 0px) + 1rem)";
+                document.body.appendChild(toast);
+            }
+            toast.textContent = "🙈 " + t.spoilerToastOn;
+            clearTimeout(spoilerToastTimer);
+            requestAnimationFrame(() => { toast.classList.remove("opacity-0"); });
+            spoilerToastTimer = setTimeout(() => { toast.classList.add("opacity-0"); }, 2500);
+        }
+
         function toggleSpoilerMode(confirmed) {
             if (isSpoilerModeOn() && confirmed !== true) {
                 showSpoilerOffConfirm();
                 return;
             }
             if (isSpoilerModeOn()) lsRemove(SPOILER_MODE_KEY); else lsSet(SPOILER_MODE_KEY, "1");
+            if (isSpoilerModeOn()) showSpoilerToast();
             const viewer = document.getElementById("content-viewer");
             if (!currentFilePath || rawFileContent === null || !viewer) {
                 updateSpoilerButton();
