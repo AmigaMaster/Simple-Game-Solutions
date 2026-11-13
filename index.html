@@ -150,9 +150,8 @@
             
             <!-- Settings Dropdown Menu (Sliders Icon) -->
             <div class="relative shrink-0" id="settingsMenuContainer">
-                <button onclick="toggleSettingsMenu();" class="text-gray-200 hover:text-white hover:bg-gray-700 px-3 py-2 min-h-[40px] sm:min-h-0 sm:px-2.5 sm:py-1.5 rounded-md text-sm font-semibold border border-gray-600 focus:outline-none cursor-pointer transition-colors flex items-center justify-center gap-1.5" data-i18n-title="settingsMenuTitle" title="Einstellungen">
-                    <svg class="w-5 h-5 sm:w-4 sm:h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg>
-                    <span class="hidden sm:inline" data-i18n="settingsMenuTitle">Einstellungen</span>
+                <button onclick="toggleSettingsMenu();" class="bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white px-3 py-2 min-h-[40px] sm:min-h-0 sm:px-2 sm:py-1.5 rounded-md text-lg sm:text-sm border border-gray-600 focus:outline-none cursor-pointer transition-colors" data-i18n-title="settingsMenuTitle" title="Einstellungen">
+                    ⚙️
                 </button>
                 <div id="settingsDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl p-3 hidden flex flex-col gap-3 z-50" style="width: min(16rem, calc(100vw - 1rem));">
                     <div>
@@ -323,6 +322,15 @@
                     <p class="text-base sm:text-lg" data-i18n="welcomeMessage">Wähle oben über die Suche oder links im Menü eine Lösung aus.</p>
                 </div>
             </div>
+
+            <div id="spoilerActionBar" class="hidden shrink-0 border-t border-emerald-700/50 bg-gray-900 px-1 pt-1.5" style="padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.375rem);">
+                <div id="spoilerActionInfo" class="text-[11px] sm:text-xs text-gray-400 truncate mb-1 px-0.5"></div>
+                <div class="flex items-stretch gap-1.5 sm:gap-2">
+                    <button type="button" id="spoilerActionNext" data-spoiler-action="next" class="flex-1 min-w-0 min-h-[44px] sm:min-h-0 px-2 sm:px-3 py-2 sm:py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white text-sm sm:text-xs font-semibold leading-tight cursor-pointer transition-colors"></button>
+                    <button type="button" id="spoilerActionNext3" data-spoiler-action="next3" class="min-h-[44px] sm:min-h-0 px-2 sm:px-3 py-2 sm:py-1.5 rounded-md bg-gray-800 hover:bg-gray-700 border border-gray-600 text-gray-200 text-sm sm:text-xs leading-tight cursor-pointer transition-colors"></button>
+                    <button type="button" id="spoilerActionRest" data-spoiler-action="rest" class="min-h-[44px] sm:min-h-0 px-2 sm:px-3 py-2 sm:py-1.5 rounded-md bg-gray-800 hover:bg-gray-700 border border-gray-600 text-gray-200 text-sm sm:text-xs leading-tight cursor-pointer transition-colors"></button>
+                </div>
+            </div>
         </section>
 
         <!-- Right Panel Resizer Bar -->
@@ -468,6 +476,9 @@
                 spoilerExpandTitle: "Kapitel aufklappen",
                 spoilerCollapseTitle: "Kapitel einklappen",
                 spoilerNextStep: "Nächster Schritt",
+                spoilerBarProgress: "{n} von {total} Schritten sichtbar",
+                spoilerBarDone: "Kapitel vollständig sichtbar",
+                spoilerNextChapter: "Nächstes Kapitel",
                 spoilerNext3: "+3 Schritte",
                 spoilerRest: "Rest des Kapitels",
                 exportBtn: "Export",
@@ -572,6 +583,9 @@
                 spoilerExpandTitle: "Open chapter",
                 spoilerCollapseTitle: "Close chapter",
                 spoilerNextStep: "Next step",
+                spoilerBarProgress: "{n} of {total} steps visible",
+                spoilerBarDone: "Chapter fully visible",
+                spoilerNextChapter: "Next chapter",
                 spoilerNext3: "+3 steps",
                 spoilerRest: "Rest of chapter",
                 exportBtn: "Export",
@@ -2112,6 +2126,7 @@ ${t.issueSectionSuggestDesc}
 
             // The filter always searches the whole solution: while it is active, spoiler protection hides nothing
             viewer.classList.toggle("spoiler-searching", q.length > 0);
+            updateSpoilerActionBar();
             if (q !== contentFilterQuery) {
                 contentFilterQuery = q;
                 resetSearchReveal();
@@ -2540,6 +2555,7 @@ ${t.issueSectionSuggestDesc}
 
         function clearSpoilerModel() {
             spoilerModel = null;
+            spoilerBarForcedIndex = -1;
         }
 
         // Removes everything the spoiler protection added to the rendered document
@@ -2659,27 +2675,127 @@ ${t.issueSectionSuggestDesc}
             return node;
         }
 
-        // Every open chapter with hidden steps gets a small control directly below its last visible step
         function renderChapterControls() {
+            updateSpoilerActionBar();
+        }
+
+        function pickSpoilerBarChapter() {
             const m = spoilerModel;
             const viewer = document.getElementById("content-viewer");
-            if (!viewer) return;
-            viewer.querySelectorAll(".spoiler-chapter-control").forEach(el => el.remove());
-            if (!m) return;
-            const tr = translations[currentLang];
-            const secondary = "px-3 py-1.5 rounded-md bg-gray-800 hover:bg-gray-700 border border-gray-600 text-gray-200 whitespace-nowrap cursor-pointer transition-colors";
-
-            m.chapters.forEach((chapter, index) => {
-                if (chapter.revealed < 1 || chapter.revealed >= chapter.steps.length) return;
-                const control = document.createElement("div");
-                control.className = "spoiler-chapter-control not-prose my-2 flex flex-wrap items-center gap-2 text-xs";
-                control.setAttribute("data-spoiler-control", String(index));
-                control.innerHTML = `
-                    <button type="button" data-spoiler-action="next" class="px-3 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white font-semibold whitespace-nowrap cursor-pointer transition-colors">▼ ${tr.spoilerNextStep}</button>
-                    <button type="button" data-spoiler-action="next3" class="${secondary}">${tr.spoilerNext3}</button>
-                    <button type="button" data-spoiler-action="rest" class="${secondary}">${tr.spoilerRest}</button>`;
-                topLevelOf(viewer, chapter.steps[chapter.revealed - 1]).after(control);
+            if (!m || !viewer) return null;
+            if (!m.chapters.some(chapter => chapter.revealed > 0)) return null;
+            const vr = viewer.getBoundingClientRect();
+            const line = vr.top + vr.height * 0.5;
+            let atLine = -1;
+            if (spoilerBarForcedIndex >= 0 && spoilerBarForcedIndex < m.chapters.length) {
+                atLine = spoilerBarForcedIndex;
+            } else {
+                m.chapters.forEach((chapter, i) => {
+                    const r = chapter.heading.getBoundingClientRect();
+                    if (r.height > 0 && r.top <= line) atLine = i;
+                });
+            }
+            const eligible = i => { const c = m.chapters[i]; return c.revealed >= 1 && c.revealed < c.steps.length; };
+            if (atLine >= 0 && eligible(atLine)) return { index: atLine, mode: "reveal" };
+            if (atLine >= 0) {
+                const current = m.chapters[atLine];
+                if (current.revealed >= current.steps.length && nextSpoilerChapterIndex(atLine) >= 0) {
+                    return { index: atLine, mode: "chapter" };
+                }
+            }
+            let best = -1, bestDist = Infinity;
+            m.chapters.forEach((chapter, i) => {
+                if (!eligible(i)) return;
+                const d = Math.abs(i - Math.max(atLine, 0));
+                if (d < bestDist) { best = i; bestDist = d; }
             });
+            return best >= 0 ? { index: best, mode: "reveal" } : null;
+        }
+
+        function nextSpoilerChapterIndex(index) {
+            const m = spoilerModel;
+            if (!m || index + 1 >= m.chapters.length) return -1;
+            return index + 1;
+        }
+
+        let spoilerBarForcedIndex = -1;
+        function goToNextSpoilerChapter(index) {
+            const m = spoilerModel;
+            const targetIndex = nextSpoilerChapterIndex(index);
+            const target = m && m.chapters[targetIndex];
+            if (!target) return;
+            spoilerBarForcedIndex = targetIndex;
+            if (target.steps.length > 0 && target.revealed === 0) {
+                target.revealed = 1;
+                afterSpoilerChange();
+            } else {
+                updateSpoilerActionBar();
+            }
+            const lastShown = target.steps.length > 0 && target.revealed > 0 ? target.steps[0] : target.heading;
+            requestAnimationFrame(() => scrollToRevealed(target.heading, lastShown, 1));
+        }
+
+        let spoilerBarKey = "";
+        function updateSpoilerActionBar() {
+            const bar = document.getElementById("spoilerActionBar");
+            if (!bar) return;
+            const viewer = document.getElementById("content-viewer");
+            const m = spoilerModel;
+            const active = !!(m && viewer && currentFilePath && m.path === currentFilePath && !viewer.classList.contains("spoiler-searching"));
+            const pick = active ? pickSpoilerBarChapter() : null;
+            if (!pick) {
+                bar.classList.add("hidden");
+                spoilerBarKey = "";
+                return;
+            }
+            const chapter = m.chapters[pick.index];
+            const total = chapter.steps.length;
+            bar.dataset.chapter = String(pick.index);
+            const key = [pick.index, pick.mode, chapter.revealed, total, currentLang].join(":");
+            if (key !== spoilerBarKey) {
+                spoilerBarKey = key;
+                const tr = translations[currentLang];
+                const clone = chapter.heading.cloneNode(true);
+                clone.querySelectorAll(".spoiler-chevron, .heading-copy-btn, button").forEach(el => el.remove());
+                const title = clone.textContent.trim();
+                const chapterMode = pick.mode === "chapter";
+                const progress = chapterMode
+                    ? tr.spoilerBarDone
+                    : tr.spoilerBarProgress.replace("{n}", String(chapter.revealed)).replace("{total}", String(total));
+                document.getElementById("spoilerActionInfo").textContent = title ? title + " · " + progress : progress;
+                const nextBtn = document.getElementById("spoilerActionNext");
+                nextBtn.dataset.spoilerAction = chapterMode ? "chapter" : "next";
+                nextBtn.textContent = "▼ " + (chapterMode ? tr.spoilerNextChapter : tr.spoilerNextStep);
+                document.getElementById("spoilerActionNext3").textContent = tr.spoilerNext3;
+                document.getElementById("spoilerActionRest").textContent = tr.spoilerRest;
+                const manyLeft = !chapterMode && total - chapter.revealed > 1;
+                document.getElementById("spoilerActionNext3").classList.toggle("hidden", !manyLeft);
+                document.getElementById("spoilerActionRest").classList.toggle("hidden", !manyLeft);
+            }
+            bar.classList.remove("hidden");
+        }
+
+        function initSpoilerActionBar() {
+            const bar = document.getElementById("spoilerActionBar");
+            const viewer = document.getElementById("content-viewer");
+            if (!bar || !viewer) return;
+            bar.addEventListener("click", e => {
+                const button = e.target.closest("button[data-spoiler-action]");
+                if (button) spoilerChapterAction(Number(bar.dataset.chapter), button.dataset.spoilerAction);
+            });
+            const releaseForced = e => {
+                if (spoilerBarForcedIndex < 0) return;
+                if (e && e.target && e.target.closest && e.target.closest("[data-spoiler-chapter]")) return;
+                spoilerBarForcedIndex = -1;
+                updateSpoilerActionBar();
+            };
+            ["wheel", "touchstart", "pointerdown", "keydown"].forEach(type =>
+                viewer.addEventListener(type, releaseForced, { passive: true }));
+            let frame = 0;
+            viewer.addEventListener("scroll", () => {
+                if (!spoilerModel || frame) return;
+                frame = requestAnimationFrame(() => { frame = 0; updateSpoilerActionBar(); });
+            }, { passive: true });
         }
 
         function updateSpoilerButton() {
@@ -2698,6 +2814,7 @@ ${t.issueSectionSuggestDesc}
             btn.classList.toggle("text-gray-400", !on);
             btn.classList.toggle("[@media(hover:hover)]:hover:bg-gray-700", !on);
             updateSpoilerBanner(on, tr);
+            updateSpoilerActionBar();
         }
 
         function updateSpoilerBanner(on, tr) {
@@ -2735,15 +2852,11 @@ ${t.issueSectionSuggestDesc}
             if (!viewer || !firstEl || !lastEl) return;
             const vr = viewer.getBoundingClientRect();
             const fr = firstEl.getBoundingClientRect();
+            const lr = lastEl.getBoundingClientRect();
             let delta = 0;
-            if (count === 1) {
-                const lr = lastEl.getBoundingClientRect();
-                if (lr.height > vr.height) delta = fr.top - vr.top - 8;
-                else if (lr.bottom > vr.bottom) delta = lr.bottom - vr.bottom + 12;
-                else if (lr.top < vr.top) delta = lr.top - vr.top - 8;
-            } else if (fr.top < vr.top || fr.top > vr.bottom - 48) {
-                delta = fr.top - vr.top - 8;
-            }
+            if (lr.bottom - fr.top > vr.height - 16) delta = fr.top - vr.top - 8;
+            else if (lr.bottom > vr.bottom) delta = lr.bottom - vr.bottom + 12;
+            else if (fr.top < vr.top) delta = fr.top - vr.top - 8;
             if (delta !== 0) viewer.scrollBy({ top: delta, behavior: "smooth" });
         }
 
@@ -2776,34 +2889,30 @@ ${t.issueSectionSuggestDesc}
             if (!chapter || chapter.steps.length === 0) return;
             const opening = chapter.revealed === 0;
             chapter.revealed = opening ? 1 : 0;   // opening shows the first action; closing forgets the progress
+            spoilerBarForcedIndex = index;
             afterSpoilerChange();
             if (opening) {
                 requestAnimationFrame(() => scrollToRevealed(chapter.steps[0], chapter.steps[0], 1));
             }
         }
 
-        // Reveal more actions of an open chapter. The control keeps its place on screen while the new steps
-        // appear above it, so repeated clicks never make the button run away.
-        function spoilerChapterAction(index, action, controlEl) {
+        function spoilerChapterAction(index, action) {
             const m = spoilerModel;
             const chapter = m && m.chapters[index];
-            if (!chapter || chapter.revealed < 1) return;
-            const anchorTop = controlEl ? controlEl.getBoundingClientRect().top : null;
+            if (!chapter) return;
+            if (action === "chapter") { goToNextSpoilerChapter(index); return; }
+            if (chapter.revealed < 1) return;
+            const before = chapter.revealed;
             const length = chapter.steps.length;
             if (action === "next") chapter.revealed = Math.min(length, chapter.revealed + 1);
             else if (action === "next3") chapter.revealed = Math.min(length, chapter.revealed + 3);
             else if (action === "rest") chapter.revealed = length;
             else return;
+            if (chapter.revealed === before) return;
+            const firstEl = chapter.steps[before];
+            const lastEl = chapter.steps[chapter.revealed - 1];
             afterSpoilerChange();
-
-            if (action !== "rest" && anchorTop !== null) {
-                const viewer = document.getElementById("content-viewer");
-                const control = viewer.querySelector(`[data-spoiler-control="${index}"]`);
-                if (control) {
-                    const delta = control.getBoundingClientRect().top - anchorTop;
-                    if (delta !== 0) viewer.scrollTo({ top: viewer.scrollTop + delta, behavior: "instant" });
-                }
-            }
+            requestAnimationFrame(() => scrollToRevealed(firstEl, lastEl, chapter.revealed - before));
         }
 
         // Makes sure a step is visible (used when a search result inside a still closed chapter is opened):
@@ -3574,6 +3683,7 @@ ${t.issueSectionSuggestDesc}
         updateSpoilerButton();
         closeAllOverlays();
         applyTocForView();
+        initSpoilerActionBar();
         init();
 
     </script>
