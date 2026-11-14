@@ -99,6 +99,31 @@
 
         /* Spoiler protection: steps that are not revealed yet, collapsible chapter headings */
         #content-viewer:not(.spoiler-searching) .spoiler-hidden { display: none !important; }
+        /* The most recently revealed action of each open chapter */
+        #content-viewer:not(.spoiler-searching) .spoiler-latest {
+            box-shadow: inset 3px 0 0 #34d399;
+            background: rgba(16, 185, 129, 0.12);
+            border-radius: 0 0.375rem 0.375rem 0;
+        }
+        #content-viewer:not(.spoiler-searching) :is(h1, h2, h3, h4, h5, h6).spoiler-latest {
+            margin-left: -0.5rem;
+            padding-left: 0.5rem;
+        }
+        /* Number of actions of an opened chapter (generated content, so it never ends up in heading texts / TOC) */
+        .spoiler-heading[data-spoiler-count]::after {
+            content: attr(data-spoiler-count);
+            display: inline-block;
+            margin-left: 0.6rem;
+            padding: 0.05rem 0.5rem;
+            border-radius: 999px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #9ca3af;
+            background: rgba(148, 163, 184, 0.15);
+            vertical-align: middle;
+            white-space: nowrap;
+        }
         .spoiler-heading { cursor: pointer; }
         .spoiler-heading:hover { color: #6ee7b7; }
         .spoiler-chevron { display: inline-block; width: 1.1em; color: #34d399; font-size: 0.8em; }
@@ -306,13 +331,6 @@
                 </div>
 
                 </div>
-
-                <div id="searchHitBar" class="hidden w-full flex items-center gap-2 text-xs">
-                    <button type="button" onclick="revealNextSearchHit();" data-i18n-title="searchNextHitTitle" title="Nächsten Treffer aufdecken (Enter)"
-                        class="flex-1 min-w-0 min-h-[2.25rem] px-3 py-1.5 rounded-md bg-emerald-600 [@media(hover:hover)]:hover:bg-emerald-500 text-white font-semibold whitespace-nowrap cursor-pointer transition-colors">▼ <span data-i18n="searchNextHit">Nächster Treffer</span> <span id="searchHitCount" class="font-normal opacity-80"></span></button>
-                    <button type="button" onclick="revealAllSearchHits();" data-i18n-title="searchAllHitsTitle" title="Alle Treffer aufdecken"
-                        class="shrink-0 min-h-[2.25rem] px-3 py-1.5 rounded-md bg-gray-800 [@media(hover:hover)]:hover:bg-gray-700 border border-gray-600 text-gray-200 whitespace-nowrap cursor-pointer transition-colors"><span data-i18n="searchAllHits">Alle anzeigen</span></button>
-                </div>
             </div>
 
             <!-- Main Content Viewer Area (Markdown / Raw Text / Welcome Screen) -->
@@ -321,6 +339,13 @@
                 <div class="text-center text-gray-500 py-20">
                     <p class="text-base sm:text-lg" data-i18n="welcomeMessage">Wähle oben über die Suche oder links im Menü eine Lösung aus.</p>
                 </div>
+            </div>
+
+            <div id="searchHitBar" class="hidden shrink-0 flex items-stretch gap-1.5 sm:gap-2 border-t border-emerald-700/50 bg-gray-900 px-1 pt-1.5 text-sm sm:text-xs" style="padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.375rem);">
+                <button type="button" onclick="revealNextSearchHit();" data-i18n-title="searchNextHitTitle" title="Nächsten Treffer aufdecken (Enter)"
+                    class="flex-1 min-w-0 min-h-[44px] sm:min-h-[2.25rem] px-2 sm:px-3 py-2 sm:py-1.5 rounded-md bg-emerald-600 [@media(hover:hover)]:hover:bg-emerald-500 text-white font-semibold whitespace-nowrap cursor-pointer transition-colors">▼ <span data-i18n="searchNextHit">Nächster Treffer</span> <span id="searchHitCount" class="font-normal opacity-80"></span></button>
+                <button type="button" onclick="revealAllSearchHits();" data-i18n-title="searchAllHitsTitle" title="Alle Treffer aufdecken"
+                    class="shrink-0 min-h-[44px] sm:min-h-[2.25rem] px-2 sm:px-3 py-2 sm:py-1.5 rounded-md bg-gray-800 [@media(hover:hover)]:hover:bg-gray-700 border border-gray-600 text-gray-200 whitespace-nowrap cursor-pointer transition-colors"><span data-i18n="searchAllHits">Alle anzeigen</span></button>
             </div>
 
             <div id="spoilerActionBar" class="hidden shrink-0 border-t border-emerald-700/50 bg-gray-900 px-1 pt-1.5" style="padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.375rem);">
@@ -476,6 +501,8 @@
                 spoilerExpandTitle: "Kapitel aufklappen",
                 spoilerCollapseTitle: "Kapitel einklappen",
                 spoilerNextStep: "Nächster Schritt",
+                spoilerCountOne: "1 Aktion",
+                spoilerCountMany: "{n} Aktionen",
                 spoilerBarProgress: "{n} von {total} Schritten sichtbar",
                 spoilerBarDone: "Kapitel vollständig sichtbar",
                 spoilerNextChapter: "Nächstes Kapitel",
@@ -583,6 +610,8 @@
                 spoilerExpandTitle: "Open chapter",
                 spoilerCollapseTitle: "Close chapter",
                 spoilerNextStep: "Next step",
+                spoilerCountOne: "1 action",
+                spoilerCountMany: "{n} actions",
                 spoilerBarProgress: "{n} of {total} steps visible",
                 spoilerBarDone: "Chapter fully visible",
                 spoilerNextChapter: "Next chapter",
@@ -2526,6 +2555,9 @@ ${t.issueSectionSuggestDesc}
         const SPOILER_STATE_MAX_SOLUTIONS = 80;
         let spoilerModel = null;
 
+        let spoilerLatestStepIndex = -1;
+        let spoilerLatestChapter = -1;
+
         function isSpoilerModeOn() {
             return lsGet(SPOILER_MODE_KEY) === "1";
         }
@@ -2556,12 +2588,16 @@ ${t.issueSectionSuggestDesc}
         function clearSpoilerModel() {
             spoilerModel = null;
             spoilerBarForcedIndex = -1;
+            spoilerLatestChapter = -1;
+            spoilerLatestStepIndex = -1;
         }
 
         // Removes everything the spoiler protection added to the rendered document
         function clearSpoilerDecorations(viewer) {
             viewer.querySelectorAll(".spoiler-chevron, .spoiler-chapter-control").forEach(el => el.remove());
             viewer.querySelectorAll(".spoiler-hidden").forEach(el => el.classList.remove("spoiler-hidden"));
+            viewer.querySelectorAll(".spoiler-latest").forEach(el => el.classList.remove("spoiler-latest"));
+            viewer.querySelectorAll("[data-spoiler-count]").forEach(el => el.removeAttribute("data-spoiler-count"));
             viewer.querySelectorAll(".spoiler-heading").forEach(heading => {
                 heading.classList.remove("spoiler-heading");
                 ["data-spoiler-chapter", "role", "tabindex", "aria-expanded", "title"].forEach(attr => heading.removeAttribute(attr));
@@ -2638,8 +2674,19 @@ ${t.issueSectionSuggestDesc}
         function applySpoilerState() {
             const m = spoilerModel;
             if (!m) return;
-            m.chapters.forEach(chapter => chapter.steps.forEach((el, i) =>
-                el.classList.toggle("spoiler-hidden", i >= chapter.revealed)));
+            let latest = spoilerLatestChapter;
+            if (!(latest >= 0 && m.chapters[latest] && (m.chapters[latest].revealed > 0 || m.chapters[latest].steps.length === 0))) {
+                latest = -1;
+                m.chapters.forEach((chapter, ci) => { if (chapter.revealed > 0) latest = ci; });
+            }
+            m.chapters.forEach((chapter, ci) => {
+                chapter.heading.classList.toggle("spoiler-latest", ci === latest && chapter.steps.length === 0);
+                chapter.steps.forEach((el, i) => {
+                    el.classList.toggle("spoiler-hidden", i >= chapter.revealed);
+                    const mark = spoilerLatestStepIndex >= 0 && spoilerLatestStepIndex < chapter.revealed ? spoilerLatestStepIndex : chapter.revealed - 1;
+                    el.classList.toggle("spoiler-latest", ci === latest && i === mark);
+                });
+            });
             // Lists without any visible item disappear completely (deepest lists first)
             const viewer = document.getElementById("content-viewer");
             Array.from(viewer.querySelectorAll("ul, ol")).reverse().forEach(list => {
@@ -2665,6 +2712,13 @@ ${t.issueSectionSuggestDesc}
                 const chevron = chapter.heading.querySelector(".spoiler-chevron");
                 if (chevron) chevron.textContent = open ? "▾" : "▸";
                 chapter.heading.setAttribute("aria-expanded", String(open));
+                // Action count only while the chapter is open
+                if (open) {
+                    const n = chapter.steps.length;
+                    chapter.heading.setAttribute("data-spoiler-count", n === 1 ? tr.spoilerCountOne : tr.spoilerCountMany.replace("{n}", String(n)));
+                } else {
+                    chapter.heading.removeAttribute("data-spoiler-count");
+                }
                 chapter.heading.title = open ? tr.spoilerCollapseTitle : tr.spoilerExpandTitle;
             });
         }
@@ -2681,58 +2735,68 @@ ${t.issueSectionSuggestDesc}
 
         function pickSpoilerBarChapter() {
             const m = spoilerModel;
-            const viewer = document.getElementById("content-viewer");
-            if (!m || !viewer) return null;
+            if (!m) return null;
+            // As long as no chapter is open, the bar stays hidden
             if (!m.chapters.some(chapter => chapter.revealed > 0)) return null;
-            const vr = viewer.getBoundingClientRect();
-            const line = vr.top + vr.height * 0.5;
-            let atLine = -1;
-            if (spoilerBarForcedIndex >= 0 && spoilerBarForcedIndex < m.chapters.length) {
-                atLine = spoilerBarForcedIndex;
-            } else {
-                m.chapters.forEach((chapter, i) => {
-                    const r = chapter.heading.getBoundingClientRect();
-                    if (r.height > 0 && r.top <= line) atLine = i;
-                });
+            let current = spoilerBarForcedIndex;
+            if (!(current >= 0 && current < m.chapters.length)) {
+                current = -1;
+                m.chapters.forEach((chapter, i) => { if (chapter.revealed > 0) current = i; });
             }
             const eligible = i => { const c = m.chapters[i]; return c.revealed >= 1 && c.revealed < c.steps.length; };
-            if (atLine >= 0 && eligible(atLine)) return { index: atLine, mode: "reveal" };
-            if (atLine >= 0) {
-                const current = m.chapters[atLine];
-                if (current.revealed >= current.steps.length && nextSpoilerChapterIndex(atLine) >= 0) {
-                    return { index: atLine, mode: "chapter" };
+            if (current >= 0 && eligible(current)) return { index: current, mode: "reveal" };
+            if (current >= 0) {
+                const chapter = m.chapters[current];
+                if (chapter.revealed >= chapter.steps.length && nextSpoilerChapterIndex(current) >= 0) {
+                    return { index: current, mode: "chapter" };
                 }
             }
+            // The chapter has nothing to continue with (e.g. it was just closed): nearest open chapter with hidden actions
             let best = -1, bestDist = Infinity;
             m.chapters.forEach((chapter, i) => {
                 if (!eligible(i)) return;
-                const d = Math.abs(i - Math.max(atLine, 0));
+                const d = Math.abs(i - Math.max(current, 0));
                 if (d < bestDist) { best = i; bestDist = d; }
             });
             return best >= 0 ? { index: best, mode: "reveal" } : null;
         }
 
+        // The next heading in document order (13 -> 13.1 -> 13.1.1 -> ... -> 14), also headings without steps of their own
         function nextSpoilerChapterIndex(index) {
             const m = spoilerModel;
             if (!m || index + 1 >= m.chapters.length) return -1;
             return index + 1;
         }
 
+        // After "Next chapter" the target counts as the current chapter until the reader scrolls or taps
+        // in the text themselves (the heading may be unable to reach the middle of the screen near the end)
         let spoilerBarForcedIndex = -1;
+
+        // Opens the next chapter (first step) if it is still closed and brings it into view with minimal scrolling
         function goToNextSpoilerChapter(index) {
             const m = spoilerModel;
             const targetIndex = nextSpoilerChapterIndex(index);
             const target = m && m.chapters[targetIndex];
             if (!target) return;
             spoilerBarForcedIndex = targetIndex;
-            if (target.steps.length > 0 && target.revealed === 0) {
-                target.revealed = 1;
+            if (target.steps.length > 0) {
+                // Closed: show its first action. Already (partly or fully) open: nothing to reveal, but the
+                // highlight still moves to this chapter's last revealed action.
+                if (target.revealed === 0) target.revealed = 1;
+                spoilerLatestChapter = targetIndex;
+                spoilerLatestStepIndex = -1;
                 afterSpoilerChange();
             } else {
-                updateSpoilerActionBar();
+                // Chapter without actions: highlight its heading
+                spoilerLatestChapter = targetIndex;
+                spoilerLatestStepIndex = -1;
+                afterSpoilerChange();
             }
-            const lastShown = target.steps.length > 0 && target.revealed > 0 ? target.steps[0] : target.heading;
-            requestAnimationFrame(() => scrollToRevealed(target.heading, lastShown, 1));
+            // Scroll only as far as needed so that the highlighted line is completely visible
+            // (heading included if it fits), exactly like revealing a normal next step
+            const markEl = target.steps.length > 0 ? target.steps[target.revealed - 1] : target.heading;
+            requestAnimationFrame(() => scrollChapterTargetIntoView(target.heading, markEl));
+            setTimeout(() => scrollHighlightIntoView(false), 500);
         }
 
         let spoilerBarKey = "";
@@ -2783,19 +2847,26 @@ ${t.issueSectionSuggestDesc}
                 const button = e.target.closest("button[data-spoiler-action]");
                 if (button) spoilerChapterAction(Number(bar.dataset.chapter), button.dataset.spoilerAction);
             });
-            const releaseForced = e => {
-                if (spoilerBarForcedIndex < 0) return;
-                if (e && e.target && e.target.closest && e.target.closest("[data-spoiler-chapter]")) return;
-                spoilerBarForcedIndex = -1;
-                updateSpoilerActionBar();
-            };
-            ["wheel", "touchstart", "pointerdown", "keydown"].forEach(type =>
-                viewer.addEventListener(type, releaseForced, { passive: true }));
-            let frame = 0;
-            viewer.addEventListener("scroll", () => {
-                if (!spoilerModel || frame) return;
-                frame = requestAnimationFrame(() => { frame = 0; updateSpoilerActionBar(); });
-            }, { passive: true });
+            // Clicking an already visible action (or a chapter heading without actions) makes it the current one:
+            // the bar below then refers to its chapter and continues from there.
+            viewer.addEventListener("click", e => {
+                const m = spoilerModel;
+                if (!m || viewer.classList.contains("spoiler-searching")) return;
+                if (e.target.closest(".spoiler-heading")) return;   // headings with actions: see toggleSpoilerChapter
+                let chapterIndex = -1, stepIndex = -1;
+                m.chapters.forEach((chapter, ci) => chapter.steps.forEach((el, si) => {
+                    if (si < chapter.revealed && el.contains(e.target)) { chapterIndex = ci; stepIndex = si; }   // innermost match wins
+                }));
+                if (chapterIndex < 0) {
+                    const emptyIndex = m.chapters.findIndex(chapter => chapter.steps.length === 0 && chapter.heading.contains(e.target));
+                    if (emptyIndex < 0) return;
+                    chapterIndex = emptyIndex;
+                }
+                spoilerBarForcedIndex = chapterIndex;
+                spoilerLatestChapter = chapterIndex;
+                spoilerLatestStepIndex = stepIndex;
+                applySpoilerState();
+            });
         }
 
         function updateSpoilerButton() {
@@ -2846,6 +2917,36 @@ ${t.issueSectionSuggestDesc}
             if (filterInput && filterInput.value.trim()) handleContentFilter(filterInput.value);
         }
 
+        // Makes sure the highlighted line is completely inside the visible reading area
+        function scrollHighlightIntoView(smooth) {
+            const viewer = document.getElementById("content-viewer");
+            const mark = viewer && viewer.querySelector(".spoiler-latest");
+            if (!mark) return;
+            const vr = viewer.getBoundingClientRect();
+            const mr = mark.getBoundingClientRect();
+            let delta = 0;
+            if (mr.height > vr.height - 20) delta = mr.top - vr.top - 8;
+            else if (mr.bottom > vr.bottom - 8) delta = mr.bottom - vr.bottom + 12;
+            else if (mr.top < vr.top + 4) delta = mr.top - vr.top - 8;
+            if (Math.abs(delta) >= 1) viewer.scrollBy({ top: delta, behavior: smooth ? "smooth" : "auto" });
+        }
+
+        // Scrolls to a chapter's highlighted line with the least movement; the heading is brought along when both fit
+        function scrollChapterTargetIntoView(headingEl, markEl) {
+            const viewer = document.getElementById("content-viewer");
+            if (!viewer || !markEl) return;
+            const vr = viewer.getBoundingClientRect();
+            const mr = markEl.getBoundingClientRect();
+            const hr = (headingEl || markEl).getBoundingClientRect();
+            let delta = 0;
+            if (mr.height > vr.height - 20) delta = mr.top - vr.top - 8;
+            else if (mr.bottom > vr.bottom - 8) delta = mr.bottom - vr.bottom + 12;
+            else if (mr.top < vr.top + 4) delta = mr.top - vr.top - 8;
+            // heading above the visible area after that movement, but heading and line fit together: include the heading
+            if (hr.top - delta < vr.top && (mr.bottom - hr.top) <= vr.height - 20) delta = hr.top - vr.top - 8;
+            if (Math.abs(delta) >= 1) viewer.scrollBy({ top: delta, behavior: "smooth" });
+        }
+
         // Brings newly revealed steps into view with the least possible movement
         function scrollToRevealed(firstEl, lastEl, count) {
             const viewer = document.getElementById("content-viewer");
@@ -2889,10 +2990,13 @@ ${t.issueSectionSuggestDesc}
             if (!chapter || chapter.steps.length === 0) return;
             const opening = chapter.revealed === 0;
             chapter.revealed = opening ? 1 : 0;   // opening shows the first action; closing forgets the progress
+            if (opening) spoilerLatestChapter = index;
+            spoilerLatestStepIndex = -1;
             spoilerBarForcedIndex = index;
             afterSpoilerChange();
             if (opening) {
                 requestAnimationFrame(() => scrollToRevealed(chapter.steps[0], chapter.steps[0], 1));
+                setTimeout(() => scrollHighlightIntoView(false), 500);
             }
         }
 
@@ -2909,10 +3013,14 @@ ${t.issueSectionSuggestDesc}
             else if (action === "rest") chapter.revealed = length;
             else return;
             if (chapter.revealed === before) return;
+            spoilerLatestChapter = index;
+            spoilerLatestStepIndex = -1;
+            spoilerBarForcedIndex = index;
             const firstEl = chapter.steps[before];
             const lastEl = chapter.steps[chapter.revealed - 1];
             afterSpoilerChange();
             requestAnimationFrame(() => scrollToRevealed(firstEl, lastEl, chapter.revealed - before));
+            setTimeout(() => scrollHighlightIntoView(false), 500);
         }
 
         // Makes sure a step is visible (used when a search result inside a still closed chapter is opened):
@@ -2926,6 +3034,9 @@ ${t.issueSectionSuggestDesc}
                 if (index === -1) continue;
                 if (chapter.revealed <= index) {
                     chapter.revealed = index + 1;
+                    spoilerLatestChapter = m.chapters.indexOf(chapter);
+                    spoilerLatestStepIndex = -1;
+                    spoilerBarForcedIndex = spoilerLatestChapter;
                     afterSpoilerChange();
                 }
                 return;
