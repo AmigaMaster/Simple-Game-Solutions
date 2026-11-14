@@ -501,8 +501,8 @@
                 spoilerExpandTitle: "Kapitel aufklappen",
                 spoilerCollapseTitle: "Kapitel einklappen",
                 spoilerNextStep: "Nächster Schritt",
-                spoilerCountOne: "1 Aktion",
-                spoilerCountMany: "{n} Aktionen",
+                spoilerCountOne: "{r}/1 Aktion",
+                spoilerCountMany: "{r}/{n} Aktionen",
                 spoilerBarProgress: "{n} von {total} Schritten sichtbar",
                 spoilerBarDone: "Kapitel vollständig sichtbar",
                 spoilerNextChapter: "Nächstes Kapitel",
@@ -610,8 +610,8 @@
                 spoilerExpandTitle: "Open chapter",
                 spoilerCollapseTitle: "Close chapter",
                 spoilerNextStep: "Next step",
-                spoilerCountOne: "1 action",
-                spoilerCountMany: "{n} actions",
+                spoilerCountOne: "{r}/1 action",
+                spoilerCountMany: "{r}/{n} actions",
                 spoilerBarProgress: "{n} of {total} steps visible",
                 spoilerBarDone: "Chapter fully visible",
                 spoilerNextChapter: "Next chapter",
@@ -2715,7 +2715,7 @@ ${t.issueSectionSuggestDesc}
                 // Action count only while the chapter is open
                 if (open) {
                     const n = chapter.steps.length;
-                    chapter.heading.setAttribute("data-spoiler-count", n === 1 ? tr.spoilerCountOne : tr.spoilerCountMany.replace("{n}", String(n)));
+                    chapter.heading.setAttribute("data-spoiler-count", (n === 1 ? tr.spoilerCountOne : tr.spoilerCountMany).replace("{r}", String(chapter.revealed)).replace("{n}", String(n)));
                 } else {
                     chapter.heading.removeAttribute("data-spoiler-count");
                 }
