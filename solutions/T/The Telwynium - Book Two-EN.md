@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 03.07.2023 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the game for free at [Itch.io](https://powerhoof.itch.io/the-telwynium-book-two)
+Download the free game from [Itch.io](https://powerhoof.itch.io/the-telwynium-book-two)
 
 ## 1. Tent
 
@@ -214,3 +214,11 @@ Get the game for free at [Itch.io](https://powerhoof.itch.io/the-telwynium-book-
 
 - TALK TO Gildaar **3 times**
 - USE `Sword` with Gildaar
+
+--------------------------------------------------------------------------------
+
+## 3. Video Walkthrough
+
+The Telwynium: Book Two - The Summer King Walkthrough (English) (PC, Win) [60 FPS] - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/oHPXHQsdDTc/0.jpg)](https://www.youtube.com/watch?v=oHPXHQsdDTc)
