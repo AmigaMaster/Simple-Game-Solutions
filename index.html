@@ -501,6 +501,8 @@
                 spoilerExpandTitle: "Kapitel aufklappen",
                 spoilerCollapseTitle: "Kapitel einklappen",
                 spoilerNextStep: "Nächster Schritt",
+                spoilerFinishedButton: "Glückwunsch – Spiel abgeschlossen!",
+                spoilerFinishedInfo: "Ende der Lösung erreicht – viel Spaß beim nächsten Spiel!",
                 spoilerCountOne: "{r}/1 Aktion",
                 spoilerCountMany: "{r}/{n} Aktionen",
                 spoilerBarProgress: "{n} von {total} Schritten sichtbar",
@@ -610,6 +612,8 @@
                 spoilerExpandTitle: "Open chapter",
                 spoilerCollapseTitle: "Close chapter",
                 spoilerNextStep: "Next step",
+                spoilerFinishedButton: "Congratulations – game completed!",
+                spoilerFinishedInfo: "End of the walkthrough reached – enjoy your next game!",
                 spoilerCountOne: "{r}/1 action",
                 spoilerCountMany: "{r}/{n} actions",
                 spoilerBarProgress: "{n} of {total} steps visible",
@@ -2747,8 +2751,8 @@ ${t.issueSectionSuggestDesc}
             if (current >= 0 && eligible(current)) return { index: current, mode: "reveal" };
             if (current >= 0) {
                 const chapter = m.chapters[current];
-                if (chapter.revealed >= chapter.steps.length && nextSpoilerChapterIndex(current) >= 0) {
-                    return { index: current, mode: "chapter" };
+                if (chapter.revealed >= chapter.steps.length) {
+                    return { index: current, mode: nextSpoilerChapterIndex(current) >= 0 ? "chapter" : "finished" };
                 }
             }
             // The chapter has nothing to continue with (e.g. it was just closed): nearest open chapter with hidden actions
@@ -2795,8 +2799,304 @@ ${t.issueSectionSuggestDesc}
             // Scroll only as far as needed so that the highlighted line is completely visible
             // (heading included if it fits), exactly like revealing a normal next step
             const markEl = target.steps.length > 0 ? target.steps[target.revealed - 1] : target.heading;
+            maybeCelebrateSpoilerEnd();
             requestAnimationFrame(() => scrollChapterTargetIntoView(target.heading, markEl));
             setTimeout(() => scrollHighlightIntoView(false), 500);
+        }
+
+        // --- End of the solution: congratulations with confetti and fireworks ---
+        let spoilerCelebrated = false;
+        function maybeCelebrateSpoilerEnd() {
+            const pick = spoilerModel ? pickSpoilerBarChapter() : null;
+            if (pick && pick.mode === "finished" && !spoilerCelebrated) {
+                spoilerCelebrated = true;
+                launchCelebration();
+            }
+        }
+
+        function launchCelebration() {
+            const calm = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+            if (document.getElementById("celebrationCanvas")) return;
+            const canvas = document.createElement("canvas");
+            canvas.id = "celebrationCanvas";
+            canvas.setAttribute("aria-hidden", "true");
+            canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1100;";
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            const W = window.innerWidth, H = window.innerHeight;
+            canvas.width = Math.round(W * dpr);
+            canvas.height = Math.round(H * dpr);
+            document.body.appendChild(canvas);
+            const ctx = canvas.getContext("2d");
+            ctx.scale(dpr, dpr);
+
+            const rand = (a, b) => a + Math.random() * (b - a);
+            const randInt = (a, b) => Math.floor(rand(a, b + 1));
+            const choose = list => list[Math.floor(Math.random() * list.length)];
+            const palette = ["#34d399", "#fbbf24", "#60a5fa", "#f472b6", "#f87171", "#a78bfa", "#ffffff", "#fb923c", "#22d3ee"];
+            const randomColor = () => Math.random() < 0.6 ? choose(palette) : `hsl(${randInt(0, 359)}, ${randInt(70, 100)}%, ${randInt(52, 72)}%)`;
+            const shapes = ["rect", "rect", "rect", "circle", "triangle", "star", "ribbon", "emoji"];
+            const emojis = ["🎉", "⭐", "🎮", "🕹️", "🏆", "✨", "🎊", "👾"];
+            const particles = [];
+
+            const confetti = (x, y, vx, vy) => {
+                const shape = choose(shapes);
+                particles.push({
+                    kind: "confetti", shape, emoji: choose(emojis), x, y, vx, vy,
+                    size: rand(5, 12), rot: rand(0, 6.28), vr: rand(-0.25, 0.25),
+                    sway: rand(0, 1.1), swayFreq: rand(0.04, 0.2), phase: rand(0, 6.28),
+                    flip: rand(0.04, 0.28), flipPhase: rand(0, 6.28),
+                    color: randomColor(), life: 1, decay: rand(0.003, 0.009), g: rand(0.07, 0.17), drag: rand(0.985, 0.997), age: 0
+                });
+            };
+
+            const spark = (x, y, vx, vy, color, opts = {}) => particles.push(Object.assign({
+                kind: "spark", x, y, vx, vy, color, size: rand(1.4, 3.2), life: 1, decay: rand(0.01, 0.022),
+                g: 0.06, drag: 0.985, trail: [], crackle: false
+            }, opts));
+
+            // Firework patterns, one is chosen at random per burst
+            const patterns = {
+                circle(x, y, S, c) {
+                    const n = randInt(45, 90);
+                    for (let i = 0; i < n; i++) { const t = rand(0, 6.283), v = S * rand(0.3, 1); spark(x, y, Math.cos(t) * v, Math.sin(t) * v, c); }
+                },
+                ring(x, y, S, c) {
+                    const n = randInt(36, 70);
+                    for (let i = 0; i < n; i++) { const t = (6.283 * i) / n; spark(x, y, Math.cos(t) * S, Math.sin(t) * S, c); }
+                },
+                doubleRing(x, y, S, c) {
+                    const c2 = randomColor(), n = randInt(28, 48);
+                    for (let i = 0; i < n; i++) {
+                        const t = (6.283 * i) / n;
+                        spark(x, y, Math.cos(t) * S, Math.sin(t) * S, c);
+                        spark(x, y, Math.cos(t) * S * 0.55, Math.sin(t) * S * 0.55, c2);
+                    }
+                },
+                star(x, y, S, c) {
+                    const points = randInt(5, 7), n = randInt(70, 110);
+                    for (let i = 0; i < n; i++) {
+                        const t = (6.283 * i) / n, r = 0.55 + 0.45 * Math.abs(Math.cos((points * t) / 2));
+                        spark(x, y, Math.cos(t) * S * r, Math.sin(t) * S * r, c, { drag: 0.98 });
+                    }
+                },
+                heart(x, y, S, c) {
+                    const n = randInt(50, 80);
+                    for (let i = 0; i < n; i++) {
+                        const t = (6.283 * i) / n;
+                        const hx = 16 * Math.pow(Math.sin(t), 3);
+                        const hy = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+                        spark(x, y, (hx / 16) * S, (hy / 16) * S, c, { g: 0.045, drag: 0.982 });
+                    }
+                },
+                willow(x, y, S, c) {
+                    const n = randInt(45, 75);
+                    for (let i = 0; i < n; i++) { const t = rand(0, 6.283), v = S * rand(0.4, 1); spark(x, y, Math.cos(t) * v, Math.sin(t) * v, "#fbbf24", { decay: rand(0.006, 0.01), g: 0.09, size: 1.6 }); }
+                },
+                crackle(x, y, S, c) {
+                    const n = randInt(30, 55);
+                    for (let i = 0; i < n; i++) { const t = rand(0, 6.283), v = S * rand(0.4, 1); spark(x, y, Math.cos(t) * v, Math.sin(t) * v, c, { crackle: true, decay: rand(0.01, 0.016) }); }
+                }
+            };
+            const patternNames = Object.keys(patterns);
+            const burst = (x, y) => patterns[choose(patternNames)](x, y, rand(3, 7), randomColor());
+
+            // Random confetti cannons (left, right, both or from the bottom middle) with random counts and angles
+            if (!calm) {
+                const side = choose(["left", "right", "both", "both", "middle"]);
+                const shoot = (x, dir) => {
+                    const n = randInt(40, 90);
+                    for (let i = 0; i < n; i++) {
+                        const speed = rand(7, 18) * (W < 600 ? 0.75 : 1.2);
+                        const angle = dir === 0 ? rand(-2.3, -0.85) : -Math.PI / 2 + dir * rand(0.15, 0.95);
+                        confetti(x, H, Math.cos(angle) * speed * (dir === 0 ? 0.8 : 1) * (dir < 0 ? 1 : 1), Math.sin(angle) * speed);
+                    }
+                };
+                if (side === "left" || side === "both") shoot(0, 1);
+                if (side === "right" || side === "both") shoot(W, -1);
+                if (side === "middle") shoot(W / 2, 0);
+            }
+
+            // Fireworks at random times and places, sometimes two at once
+            const bursts = [];
+            if (!calm) {
+                const count = randInt(5, 9);
+                for (let i = 0; i < count; i++) {
+                    const t = rand(150, 3400);
+                    bursts.push(t);
+                    if (Math.random() < 0.25) bursts.push(t + rand(30, 120));
+                }
+                bursts.sort((a, b) => a - b);
+            }
+            let nextBurst = 0;
+
+            const showerEnd = calm ? rand(2400, 3800) : rand(2000, 3400);
+            const showerRate = calm ? 1 : randInt(1, 3);
+            const showerChance = calm ? rand(0.35, 0.9) : 0.8;
+            const spawnEnd = calm ? showerEnd + 700 : showerEnd;
+            // calm variant: a random gentle wind plus softly fading sparkles and floating bubbles at random places
+            const wind = calm ? rand(-0.45, 0.45) : 0;
+            const twinkleChance = rand(0.05, 0.16), bubbleChance = rand(0.02, 0.07);
+            const twinkle = () => particles.push({
+                kind: "twinkle", x: rand(W * 0.05, W * 0.95), y: rand(H * 0.05, H * 0.8), size: rand(5, 15),
+                rot: rand(0, 3.14), vr: rand(-0.01, 0.01), color: randomColor(), age: 0, maxAge: rand(70, 170), life: 1
+            });
+            const bubble = () => particles.push({
+                kind: "bubble", x: rand(0, W), y: H + 30, size: rand(6, 24), rise: rand(0.3, 1.1),
+                sway: rand(0.1, 0.6), swayFreq: rand(0.02, 0.06), phase: rand(0, 6.28), color: randomColor(),
+                age: 0, maxAge: rand(240, 520), life: 1
+            });
+            const start = performance.now();
+            let last = start;
+
+            const drawStar = (r) => {
+                ctx.beginPath();
+                for (let i = 0; i < 10; i++) {
+                    const rr = i % 2 === 0 ? r : r * 0.45, t = (Math.PI * i) / 5 - Math.PI / 2;
+                    ctx.lineTo(Math.cos(t) * rr, Math.sin(t) * rr);
+                }
+                ctx.closePath();
+                ctx.fill();
+            };
+
+            function frame(now) {
+                const dt = Math.min(now - last, 50) / 16.67;
+                last = now;
+                const elapsed = now - start;
+                ctx.clearRect(0, 0, W, H);
+
+                while (nextBurst < bursts.length && elapsed >= bursts[nextBurst]) {
+                    burst(rand(W * 0.12, W * 0.88), rand(H * 0.12, H * 0.5));
+                    nextBurst++;
+                }
+                if (calm && elapsed < spawnEnd) {
+                    if (Math.random() < twinkleChance) twinkle();
+                    if (Math.random() < bubbleChance) bubble();
+                }
+                if (elapsed < showerEnd) {
+                    for (let i = 0; i < showerRate; i++) {
+                        if (Math.random() < showerChance) confetti(rand(0, W), -12, rand(-1.5, 1.5) * (calm ? 0.4 : 1), calm ? rand(0.5, 1.5) : rand(1, 3.2));
+                    }
+                }
+
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const p = particles[i];
+                    if (p.kind === "twinkle" || p.kind === "bubble") {
+                        p.age += dt;
+                        p.life = 1 - p.age / p.maxAge;
+                        if (p.life <= 0) { particles.splice(i, 1); continue; }
+                        const fade = Math.sin(Math.PI * p.life);   // soft fade in and out, no flashing
+                        ctx.fillStyle = p.color;
+                        ctx.strokeStyle = p.color;
+                        if (p.kind === "bubble") {
+                            p.y -= p.rise * dt;
+                            p.x += Math.sin(p.age * p.swayFreq + p.phase) * p.sway * dt;
+                            ctx.globalAlpha = 0.18 * fade;
+                            ctx.beginPath();
+                            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                            ctx.fill();
+                            ctx.globalAlpha = 0.55 * fade;
+                            ctx.lineWidth = 1.5;
+                            ctx.stroke();
+                        } else {
+                            p.rot += p.vr * dt;
+                            ctx.globalAlpha = 0.9 * fade;
+                            ctx.save();
+                            ctx.translate(p.x, p.y);
+                            ctx.rotate(p.rot);
+                            ctx.beginPath();
+                            for (let k = 0; k < 8; k++) {
+                                const r = k % 2 === 0 ? p.size : p.size * 0.22, t = (Math.PI * k) / 4;
+                                ctx.lineTo(Math.cos(t) * r, Math.sin(t) * r);
+                            }
+                            ctx.closePath();
+                            ctx.fill();
+                            ctx.restore();
+                        }
+                        continue;
+                    }
+                    p.vx *= Math.pow(p.drag, dt);
+                    p.vy = p.vy * Math.pow(p.drag, dt) + p.g * dt;
+                    if (p.kind === "confetti") {
+                        p.age += dt;
+                        p.x += (p.vx + wind + Math.sin(p.age * p.swayFreq * 6 + p.phase) * p.sway * 2) * dt;
+                        p.rot += p.vr * dt;
+                        p.flipPhase += p.flip * dt;
+                    } else {
+                        p.trail.push(p.x, p.y);
+                        if (p.trail.length > 8) p.trail.splice(0, 2);
+                        p.x += p.vx * dt;
+                    }
+                    p.y += p.vy * dt;
+                    p.life -= p.decay * dt;
+                    if (p.kind === "spark" && p.crackle && !p.popped && p.life < 0.35) {
+                        p.popped = true;
+                        for (let k = 0; k < 3; k++) spark(p.x, p.y, rand(-1.5, 1.5), rand(-1.5, 1.5), "#ffffff", { size: 1.2, decay: rand(0.03, 0.05), g: 0.03 });
+                    }
+                    if (p.life <= 0 || p.y > H + 40 || p.x < -60 || p.x > W + 60) { particles.splice(i, 1); continue; }
+
+                    ctx.globalAlpha = Math.max(0, Math.min(1, p.life * 1.5));
+                    ctx.fillStyle = p.color;
+                    ctx.strokeStyle = p.color;
+                    if (p.kind === "spark") {
+                        if (p.trail.length >= 4) {
+                            ctx.lineWidth = p.size * 0.7;
+                            ctx.beginPath();
+                            ctx.moveTo(p.trail[0], p.trail[1]);
+                            for (let k = 2; k < p.trail.length; k += 2) ctx.lineTo(p.trail[k], p.trail[k + 1]);
+                            ctx.lineTo(p.x, p.y);
+                            ctx.stroke();
+                        }
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                        ctx.fill();
+                        continue;
+                    }
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.rot);
+                    const flip = Math.cos(p.flipPhase);
+                    if (p.shape === "rect") {
+                        ctx.scale(1, flip);
+                        ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+                    } else if (p.shape === "circle") {
+                        ctx.scale(1, Math.max(0.25, Math.abs(flip)));
+                        ctx.beginPath();
+                        ctx.arc(0, 0, p.size / 2.2, 0, Math.PI * 2);
+                        ctx.fill();
+                    } else if (p.shape === "triangle") {
+                        ctx.scale(1, flip);
+                        ctx.beginPath();
+                        ctx.moveTo(0, -p.size / 2);
+                        ctx.lineTo(p.size / 2, p.size / 2);
+                        ctx.lineTo(-p.size / 2, p.size / 2);
+                        ctx.closePath();
+                        ctx.fill();
+                    } else if (p.shape === "star") {
+                        ctx.scale(Math.max(0.3, Math.abs(flip)), 1);
+                        drawStar(p.size * 0.65);
+                    } else if (p.shape === "ribbon") {
+                        ctx.lineWidth = 2.2;
+                        ctx.lineCap = "round";
+                        ctx.beginPath();
+                        ctx.moveTo(-p.size, 0);
+                        ctx.quadraticCurveTo(-p.size / 2, p.size * 0.9 * flip, 0, 0);
+                        ctx.quadraticCurveTo(p.size / 2, -p.size * 0.9 * flip, p.size, 0);
+                        ctx.stroke();
+                    } else {
+                        ctx.font = Math.round(p.size * 2.1) + "px sans-serif";
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        ctx.fillText(p.emoji, 0, 0);
+                    }
+                    ctx.restore();
+                }
+                ctx.globalAlpha = 1;
+
+                const spawningDone = elapsed >= spawnEnd && nextBurst >= bursts.length;
+                if ((spawningDone && particles.length === 0) || elapsed > 10000) { canvas.remove(); return; }
+                requestAnimationFrame(frame);
+            }
+            requestAnimationFrame(frame);
         }
 
         let spoilerBarKey = "";
@@ -2807,6 +3107,7 @@ ${t.issueSectionSuggestDesc}
             const m = spoilerModel;
             const active = !!(m && viewer && currentFilePath && m.path === currentFilePath && !viewer.classList.contains("spoiler-searching"));
             const pick = active ? pickSpoilerBarChapter() : null;
+            if (!pick || pick.mode !== "finished") spoilerCelebrated = false;
             if (!pick) {
                 bar.classList.add("hidden");
                 spoilerBarKey = "";
@@ -2823,16 +3124,25 @@ ${t.issueSectionSuggestDesc}
                 clone.querySelectorAll(".spoiler-chevron, .heading-copy-btn, button").forEach(el => el.remove());
                 const title = clone.textContent.trim();
                 const chapterMode = pick.mode === "chapter";
+                const finished = pick.mode === "finished";
                 const progress = chapterMode
                     ? tr.spoilerBarDone
                     : tr.spoilerBarProgress.replace("{n}", String(chapter.revealed)).replace("{total}", String(total));
-                document.getElementById("spoilerActionInfo").textContent = title ? title + " · " + progress : progress;
+                document.getElementById("spoilerActionInfo").textContent = finished
+                    ? tr.spoilerFinishedInfo
+                    : (title ? title + " · " + progress : progress);
                 const nextBtn = document.getElementById("spoilerActionNext");
-                nextBtn.dataset.spoilerAction = chapterMode ? "chapter" : "next";
-                nextBtn.textContent = "▼ " + (chapterMode ? tr.spoilerNextChapter : tr.spoilerNextStep);
+                nextBtn.dataset.spoilerAction = finished ? "finished" : (chapterMode ? "chapter" : "next");
+                nextBtn.textContent = finished ? "🎉 " + tr.spoilerFinishedButton : "▼ " + (chapterMode ? tr.spoilerNextChapter : tr.spoilerNextStep);
+                nextBtn.classList.toggle("bg-emerald-600", !finished);
+                nextBtn.classList.toggle("hover:bg-emerald-500", !finished);
+                nextBtn.classList.toggle("text-white", !finished);
+                nextBtn.classList.toggle("bg-amber-500", finished);
+                nextBtn.classList.toggle("hover:bg-amber-400", finished);
+                nextBtn.classList.toggle("text-gray-900", finished);
                 document.getElementById("spoilerActionNext3").textContent = tr.spoilerNext3;
                 document.getElementById("spoilerActionRest").textContent = tr.spoilerRest;
-                const manyLeft = !chapterMode && total - chapter.revealed > 1;
+                const manyLeft = !chapterMode && !finished && total - chapter.revealed > 1;
                 document.getElementById("spoilerActionNext3").classList.toggle("hidden", !manyLeft);
                 document.getElementById("spoilerActionRest").classList.toggle("hidden", !manyLeft);
             }
@@ -2994,6 +3304,7 @@ ${t.issueSectionSuggestDesc}
             spoilerLatestStepIndex = -1;
             spoilerBarForcedIndex = index;
             afterSpoilerChange();
+            maybeCelebrateSpoilerEnd();
             if (opening) {
                 requestAnimationFrame(() => scrollToRevealed(chapter.steps[0], chapter.steps[0], 1));
                 setTimeout(() => scrollHighlightIntoView(false), 500);
@@ -3005,6 +3316,7 @@ ${t.issueSectionSuggestDesc}
             const chapter = m && m.chapters[index];
             if (!chapter) return;
             if (action === "chapter") { goToNextSpoilerChapter(index); return; }
+            if (action === "finished") { launchCelebration(); return; }
             if (chapter.revealed < 1) return;
             const before = chapter.revealed;
             const length = chapter.steps.length;
@@ -3019,6 +3331,7 @@ ${t.issueSectionSuggestDesc}
             const firstEl = chapter.steps[before];
             const lastEl = chapter.steps[chapter.revealed - 1];
             afterSpoilerChange();
+            maybeCelebrateSpoilerEnd();
             requestAnimationFrame(() => scrollToRevealed(firstEl, lastEl, chapter.revealed - before));
             setTimeout(() => scrollHighlightIntoView(false), 500);
         }
