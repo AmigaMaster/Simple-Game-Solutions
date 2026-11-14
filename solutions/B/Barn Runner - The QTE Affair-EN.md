@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 04.06.2026 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the free game from the [Homepage](https://www.barnrunner.com/qte1.html)
+Download the free game from the [Homepage](https://www.barnrunner.com/qte1.html)
 
 ## 1. Main Menu
 
@@ -13,4 +13,4 @@ Get the free game from the [Homepage](https://www.barnrunner.com/qte1.html)
 
 ## 2. Pool
 
-- Simply hold the `h` key on your keyboard. There is no need to press is repeatedly.
+- Simply hold the `h` key on your keyboard. There is no need to press it repeatedly.
