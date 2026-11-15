@@ -1,8 +1,9 @@
 # Heir of the Dog - Walkthrough
 
-| Version | Date       | Author                                    |
-|:-------:|------------|-------------------------------------------|
-|   0.9   | 09.11.2026 | Amiga Master (AmigaMaster-NG@t-online.de) |
+| Version | Date       | Author
+|:-------:|------------|-------------------------------------------
+|   0.91  | 15.11.2026 | Amiga Master (AmigaMaster-NG@t-online.de), based on input from SIDKidd
+|   0.9   | 09.11.2026 | Amiga Master (AmigaMaster-NG@t-online.de)
 
 ## 1. Foreword
 
@@ -650,13 +651,17 @@ Whelp Street
 ### 41.3. Drawing Room
 
 - USE `Nutcrackers` with scent glands (`Tiger juice`)
-  - **NOTE:** You need the `Empty bottle` for this to work
+  - **NOTES:**
+    - You need the `Empty bottle` for this to work
+    - You must have talked to the hunter before you can do this action
 - LOOK AT Fannie the cat
   - **NOTE:** The Mayor tells you about a golden animal (changes each playthrough, for example a `Rat`)
 - USE zoetrope
 - LOOK AT zoetrope
   - **NOTE:** The Fannie plays with (changes each playthrough, for example a `Fish`)
 - TALK TO Mayor
+  - Ask for the cat and note her weak point
+    - **NOTE:** The weak point differs for each playthrough, for example `Elbow`
   - Ask for the lavatory
 
 ### 41.4. Upper Floor
@@ -697,7 +702,7 @@ Whelp Street
 
 - USE `Urchin pâté` with Urchin
 - USE `Cat toy` with Tony
-  - SELECT elbows
+  - SELECT the information you got from the Mayor (changes each playthrough, for example `Elbow`)
 - TALK TO Urchin **2 times**
   - "I think I've done everything you asked me to do."
 
