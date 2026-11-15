@@ -317,15 +317,22 @@
 
                 <!-- Report & Discussions Dropdown Menu -->
                 <div class="relative shrink-0" id="reportMenuContainer">
-                    <button onclick="toggleReportMenu();" class="bg-gray-950 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-2 sm:px-2.5 sm:py-1.5 text-lg sm:text-sm rounded-md font-semibold cursor-pointer flex items-center justify-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" data-i18n-aria-label="reportIssueTitle" title="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden" aria-label="Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden">
-                        <span>🗨️</span>
+                    <button onclick="toggleReportMenu();" class="bg-gray-950 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700 hover:border-gray-600 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-2 sm:px-2.5 sm:py-1.5 text-lg sm:text-sm rounded-md font-semibold cursor-pointer flex items-center justify-center gap-1 transition-colors shadow-sm shrink-0" data-i18n-title="reportIssueTitle" data-i18n-aria-label="reportIssueTitle" title="Mitmachen: Lösung auf GitHub bearbeiten, Änderungsverlauf ansehen, diskutieren oder Fehler melden" aria-label="Mitmachen: Lösung auf GitHub bearbeiten, Änderungsverlauf ansehen, diskutieren oder Fehler melden" aria-haspopup="true">
+                        <span>✏️</span>
                     </button>
                     <div id="reportDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-lg shadow-2xl p-1.5 hidden flex flex-col gap-1 min-w-[200px] z-50">
-                        <button onclick="openDiscussions();" class="group w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
-                            <span class="hover-wiggle inline-block transition-transform">💬</span> <span data-i18n="githubDiscussionsBtn">GitHub Diskussionen</span>
+                        <a id="githubEditLink" href="#" target="_blank" rel="noopener noreferrer" onclick="toggleReportMenu();" class="group w-full text-left px-3 py-2.5 min-h-[44px] sm:min-h-0 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                            <span class="hover-wiggle inline-block transition-transform">✏️</span> <span data-i18n="githubEditBtn">Auf GitHub bearbeiten</span>
+                        </a>
+                        <a id="githubHistoryLink" href="#" target="_blank" rel="noopener noreferrer" onclick="toggleReportMenu();" class="group w-full text-left px-3 py-2.5 min-h-[44px] sm:min-h-0 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                            <span class="hover-wiggle inline-block transition-transform">🕘</span> <span data-i18n="githubHistoryBtn">Änderungsverlauf</span>
+                        </a>
+                        <div class="border-t border-gray-700 my-0.5" role="separator"></div>
+                        <button onclick="openDiscussions();" class="group w-full text-left px-3 py-2.5 min-h-[44px] sm:min-h-0 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                            <span class="hover-wiggle inline-block transition-transform">💬</span> <span data-i18n="githubDiscussionsBtn">Diskutiere</span>
                         </button>
-                        <button onclick="reportIssue();" class="group w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
-                            <span class="hover-wiggle inline-block transition-transform">🚨</span> <span data-i18n="githubIssueBtn">GitHub Issue eröffnen</span>
+                        <button onclick="reportIssue();" class="group w-full text-left px-3 py-2.5 min-h-[44px] sm:min-h-0 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                            <span class="hover-wiggle inline-block transition-transform">🚨</span> <span data-i18n="githubIssueBtn">Fehler melden</span>
                         </button>
                     </div>
                 </div>
@@ -516,9 +523,12 @@
                 settingsLanguageLabel: "Sprache / Language",
                 importSuccess: "Einstellungen erfolgreich importiert!",
                 importError: "Fehler beim Importieren der Datei (ungültiges Format).",
-                reportIssueTitle: "Diskussion starten oder Fehler zu dieser Lösung auf GitHub melden",
-                githubDiscussionsBtn: "GitHub Diskussionen",
-                githubIssueBtn: "GitHub Issue eröffnen",
+                reportIssueTitle: "Mitmachen: Lösung auf GitHub bearbeiten, Änderungsverlauf ansehen, diskutieren oder Fehler melden",
+                githubEditBtn: "Auf GitHub bearbeiten",
+                githubHistoryBtn: "Änderungsverlauf",
+                githubHistoryTitle: "Änderungsverlauf dieser Lösung auf GitHub ansehen",
+                githubDiscussionsBtn: "Diskutiere",
+                githubIssueBtn: "Fehler melden",
                 issueTitlePrefix: "Fehler in Lösung",
                 issueChapterLabel: "Aktiv sichtbare(s) Kapitel",
                 issueLastModifiedLabel: "Letzte Änderung",
@@ -627,9 +637,12 @@
                 settingsLanguageLabel: "Language / Sprache",
                 importSuccess: "Settings successfully imported!",
                 importError: "Error importing file (invalid format).",
-                reportIssueTitle: "Start discussion or report an issue for this walkthrough on GitHub",
-                githubDiscussionsBtn: "GitHub Discussions",
-                githubIssueBtn: "Open GitHub Issue",
+                reportIssueTitle: "Contribute: edit this walkthrough on GitHub, view its change history, start a discussion or report an issue",
+                githubEditBtn: "Edit on GitHub",
+                githubHistoryBtn: "Change history",
+                githubHistoryTitle: "View the change history of this walkthrough on GitHub",
+                githubDiscussionsBtn: "Discuss",
+                githubIssueBtn: "Report an error",
                 issueTitlePrefix: "Issue in walkthrough",
                 issueChapterLabel: "Active visible chapter(s)",
                 issueLastModifiedLabel: "Last Modified",
@@ -749,6 +762,15 @@
         function toggleReportMenu() {
             const dropdown = document.getElementById("reportDropdown");
             if (dropdown) dropdown.classList.toggle("hidden");
+            updateGithubLinks();
+        }
+
+        function updateGithubLinks() {
+            if (!currentFilePath) return;
+            const edit = document.getElementById("githubEditLink");
+            const history = document.getElementById("githubHistoryLink");
+            if (edit) edit.href = githubSolutionUrl("edit", currentFilePath);
+            if (history) history.href = githubSolutionUrl("commits", currentFilePath);
         }
 
         window.addEventListener("click", e => {
@@ -891,6 +913,17 @@
         let targetPercentToRestore = null;
         let currentWelcomeTab = 'home';
         let scrollPercentBeforeFilter = null;
+
+        // --- GITHUB LINKS: edit page and change history of a solution ---
+        // path = path relative to the solutions folder, exactly as in structure.json
+        const GITHUB_REPO = "AmigaMaster/Simple-Game-Solutions";
+        const GITHUB_BRANCH = "master";
+        const GITHUB_SOLUTIONS_DIR = "solutions";
+        function githubSolutionUrl(kind, path) {
+            // kind: "edit" (GitHub web editor) or "commits" (change history of this one file)
+            const encoded = path.split("/").map(encodeURIComponent).join("/");
+            return `https://github.com/${GITHUB_REPO}/${kind}/${GITHUB_BRANCH}/${GITHUB_SOLUTIONS_DIR}/${encoded}`;
+        }
 
         // --- FILE INDEX (path -> node from structure.json) ---
         let fileIndex = new Map();
@@ -1433,14 +1466,21 @@ ${t.issueSectionSuggestDesc}
             return m && m[1] ? { title: m[1], lang: m[2] } : { title: name || "", lang: "" };
         }
 
-        function welcomeCardHtml(file, metaHtml, footerHtml, borderStyle) {
+        function welcomeCardHtml(file, metaHtml, footerHtml, borderStyle, withHistory = false) {
+            const t = translations[currentLang];
             const { title, lang } = splitLangSuffix(file.name);
             const langTag = lang ? `<span class="text-[11px] font-semibold text-gray-300 border border-gray-600 bg-gray-800 rounded px-1.5 py-0.5">${escapeHtml(lang)}</span>` : "";
-            return `<button data-load-path="${escapeHtml(file.path)}" class="text-left bg-gray-800/60 hover:bg-gray-800 border ${borderStyle} rounded-lg p-4 transition-colors cursor-pointer flex flex-col gap-3 group min-w-0">
-                <span class="block font-semibold text-gray-100 text-sm sm:text-base break-words">${escapeHtml(title)}</span>
-                <span class="flex flex-wrap items-center gap-1.5 mt-auto">${langTag}${metaHtml}</span>
-                ${footerHtml}
-            </button>`;
+            const history = withHistory
+                ? `<a href="${escapeHtml(githubSolutionUrl("commits", file.path))}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(t.githubHistoryTitle)}" class="not-prose no-underline flex items-center gap-1.5 min-h-[44px] sm:min-h-0 px-4 py-2 sm:py-1.5 border-t border-gray-700/60 rounded-b-lg text-xs sm:text-[11px] text-gray-400 hover:text-emerald-300 transition-colors">🕘 <span>${escapeHtml(t.githubHistoryBtn)}</span></a>`
+                : "";
+            return `<div class="bg-gray-800/60 hover:bg-gray-800 border ${borderStyle} rounded-lg transition-colors flex flex-col group min-w-0">
+                <button data-load-path="${escapeHtml(file.path)}" class="text-left p-4 flex flex-col gap-3 flex-1 min-w-0 cursor-pointer rounded-t-lg ${withHistory ? "" : "rounded-b-lg"}">
+                    <span class="block font-semibold text-gray-100 text-sm sm:text-base break-words">${escapeHtml(title)}</span>
+                    <span class="flex flex-wrap items-center gap-1.5 mt-auto">${langTag}${metaHtml}</span>
+                    ${footerHtml}
+                </button>
+                ${history}
+            </div>`;
         }
 
         function renderWelcomeOverviewHtml() {
@@ -1484,7 +1524,7 @@ ${t.issueSectionSuggestDesc}
                     const badge = kind ? unreadBadgeHtml(kind, file) : "";
                     const dateStr = formatBadgeDate(file.last_modified);
                     const meta = `${gameMarkersHtml(file.path, markerState)}${badge}${dateStr ? `<span class="text-xs text-gray-400 ml-auto">${escapeHtml(dateStr)}</span>` : ""}`;
-                    html += welcomeCardHtml(file, meta, "", border);
+                    html += welcomeCardHtml(file, meta, "", border, true);
                 });
                 html += `</div>`;
                 if (unreadCount > 0) {
