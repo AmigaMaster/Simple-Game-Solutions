@@ -2806,6 +2806,7 @@ ${t.issueSectionSuggestDesc}
 
         // --- End of the solution: congratulations with confetti and fireworks ---
         let spoilerCelebrated = false;
+
         function maybeCelebrateSpoilerEnd() {
             const pick = spoilerModel ? pickSpoilerBarChapter() : null;
             if (pick && pick.mode === "finished" && !spoilerCelebrated) {
@@ -2815,13 +2816,15 @@ ${t.issueSectionSuggestDesc}
         }
 
         function launchCelebration() {
+            // With "reduce motion" enabled in the system the show is calmer (slow confetti only, no cannons / fireworks)
+            // instead of being skipped completely
             const calm = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
             if (document.getElementById("celebrationCanvas")) return;
             const canvas = document.createElement("canvas");
             canvas.id = "celebrationCanvas";
             canvas.setAttribute("aria-hidden", "true");
             canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1100;";
-            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);   // fewer pixels to fill = cheaper frames
             const W = window.innerWidth, H = window.innerHeight;
             canvas.width = Math.round(W * dpr);
             canvas.height = Math.round(H * dpr);
@@ -2834,19 +2837,23 @@ ${t.issueSectionSuggestDesc}
             const choose = list => list[Math.floor(Math.random() * list.length)];
             const palette = ["#34d399", "#fbbf24", "#60a5fa", "#f472b6", "#f87171", "#a78bfa", "#ffffff", "#fb923c", "#22d3ee"];
             const randomColor = () => Math.random() < 0.6 ? choose(palette) : `hsl(${randInt(0, 359)}, ${randInt(70, 100)}%, ${randInt(52, 72)}%)`;
-            const shapes = ["rect", "rect", "rect", "circle", "triangle", "star", "ribbon", "emoji"];
-            const emojis = ["🎉", "⭐", "🎮", "🕹️", "🏆", "✨", "🎊", "👾"];
+            const shapes = ["rect", "rect", "rect", "circle", "triangle", "star", "ribbon", "emoji", "label", "label"];
+            const emojis = ["🎉", "⭐", "🎮", "🕹️", "🏆", "✨", "🎊", "👾", "💾", "📼", "🖥️", "💾"];
+            const labels = ["Commodore", "C64", "AMIGA", "SCUMM", "AGI", "SCI", "Kickstart", "Workbench", "SID", "Paula", "Boing!", "READY.", "Press Play on Tape", "1541", "Guru Meditation"];
+            const retroColors = ["#7c70da", "#a8a0ff", "#ff8800", "#0099ff", "#55ff55", "#55ffff", "#ff5555", "#ffff55", "#ffffff"];
             const particles = [];
 
             const confetti = (x, y, vx, vy) => {
                 const shape = choose(shapes);
                 particles.push({
                     kind: "confetti", shape, emoji: choose(emojis), x, y, vx, vy,
-                    size: rand(5, 12), rot: rand(0, 6.28), vr: rand(-0.25, 0.25),
+                    label: choose(labels), size: shape === "label" ? rand(11, 15) : rand(5, 12), rot: rand(0, 6.28), vr: rand(-0.25, 0.25),
                     sway: rand(0, 1.1), swayFreq: rand(0.04, 0.2), phase: rand(0, 6.28),
                     flip: rand(0.04, 0.28), flipPhase: rand(0, 6.28),
-                    color: randomColor(), life: 1, decay: rand(0.003, 0.009), g: rand(0.07, 0.17), drag: rand(0.985, 0.997), age: 0
+                    color: shape === "label" ? choose(retroColors) : randomColor(), life: 1, decay: rand(0.003, 0.009), g: rand(0.07, 0.17), drag: rand(0.985, 0.997), age: 0
                 });
+                // text labels keep a fixed random tilt: no spinning, no swaying, they just fall
+                if (shape === "label") { const q = particles[particles.length - 1]; q.rot = rand(-0.4, 0.4); q.vr = 0; q.sway = 0; q.decay = rand(0.003, 0.006); }
             };
 
             const spark = (x, y, vx, vy, color, opts = {}) => particles.push(Object.assign({
@@ -2916,6 +2923,125 @@ ${t.issueSectionSuggestDesc}
                 if (side === "middle") shoot(W / 2, 0);
             }
 
+            // Amiga "Boing Ball": red/white checkered sphere, bounces with a shadow on the floor
+            const floorY = H - 110;
+            const boing = () => {
+                const r = rand(20, 34) * (W < 600 ? 0.85 : 1.1), dir = Math.random() < 0.5 ? 1 : -1;
+                particles.push({
+                    kind: "boing", r, x: dir > 0 ? -r : W + r, y: rand(H * 0.1, H * 0.4), vx: dir * (calm ? rand(0.5, 1.1) : rand(1.8, 3.6)),
+                    vy: 0, g: calm ? 0.07 : 0.32, spin: rand(0, 6.28), age: 0, maxAge: calm ? 480 : 520, life: 1
+                });
+            };
+            const drawBoing = (x, y, r, spin, alpha) => {
+                ctx.save();
+                ctx.globalAlpha = alpha;
+                ctx.translate(x, y);
+                ctx.beginPath();
+                ctx.arc(0, 0, r, 0, Math.PI * 2);
+                ctx.clip();
+                ctx.fillStyle = "#ffffff";
+                ctx.fillRect(-r, -r, 2 * r, 2 * r);
+                ctx.rotate(-0.4);
+                ctx.fillStyle = "#e0262d";
+                const lon = 8, lat = 6, step = (Math.PI * 2) / lon;
+                const wrap = t => ((t + Math.PI) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2) - Math.PI;
+                const clampFront = t => Math.max(-Math.PI / 2, Math.min(Math.PI / 2, t));
+                for (let i = 0; i < lon; i++) {
+                    const mid = wrap(spin + (i + 0.5) * step);          // longitude of the band's middle, -PI..PI
+                    if (Math.abs(mid) > Math.PI / 2) continue;           // back side of the ball
+                    for (let j = 0; j < lat; j++) {
+                        if ((i + j) % 2) continue;
+                        const f1 = -Math.PI / 2 + (j * Math.PI) / lat, f2 = f1 + Math.PI / lat;
+                        ctx.beginPath();
+                        for (let k = 0; k <= 4; k++) {
+                            const t = clampFront(mid - step / 2 + (step * k) / 4);
+                            ctx.lineTo(r * Math.cos(f1) * Math.sin(t), r * Math.sin(f1));
+                        }
+                        for (let k = 4; k >= 0; k--) {
+                            const t = clampFront(mid - step / 2 + (step * k) / 4);
+                            ctx.lineTo(r * Math.cos(f2) * Math.sin(t), r * Math.sin(f2));
+                        }
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+                }
+                ctx.restore();
+            };
+
+            // A small retro "screen" pops up at a random place above the buttons; one of four styles per run
+            const bannerType = choose(["c64", "amiga", "sierra", "lucas"]);
+            const bannerStart = calm ? 500 : 350, bannerEnd = bannerStart + 6000;
+            const typed = (text, ms, cps) => text.slice(0, Math.max(0, Math.floor((ms / 1000) * cps)));
+            function drawBanner(ms) {
+                const fadeIn = Math.min(1, ms / 300), fadeOut = Math.min(1, (bannerEnd - bannerStart - ms) / 500);
+                const alpha = Math.max(0, Math.min(fadeIn, fadeOut));
+                if (alpha <= 0) return;
+                const bw = Math.min(W - 24, 330), bh = bannerType === "amiga" ? 100 : 118;
+                const bx = (W - bw) / 2, by = Math.max(10, H - bh - 128);
+                const cursorOn = calm ? true : Math.floor(ms / 450) % 2 === 0;
+                ctx.save();
+                ctx.globalAlpha = alpha;
+                ctx.font = "bold 12px 'Courier New', monospace";
+                ctx.textBaseline = "top";
+                ctx.textAlign = "left";
+                if (bannerType === "c64") {
+                    // Commodore 64: light blue border, blue screen, BASIC V2 prompt
+                    ctx.fillStyle = "#7c70da"; ctx.fillRect(bx, by, bw, bh);
+                    ctx.fillStyle = "#3e31a2"; ctx.fillRect(bx + 12, by + 12, bw - 24, bh - 24);
+                    ctx.fillStyle = "#7c70da";
+                    const lines = ["**** COMMODORE 64 BASIC V2 ****", "", "READY.", "RUN", "GAME COMPLETED!"];
+                    let t = ms, y = by + 17, last = "";
+                    for (const line of lines) {
+                        const shown = typed(line, t, 22);
+                        ctx.fillText(shown, bx + 18, y);
+                        last = shown; y += 14;
+                        t -= (line.length / 22) * 1000 + 250;
+                        if (t < 0) { y -= 14; break; }
+                    }
+                    if (cursorOn) ctx.fillRect(bx + 18 + ctx.measureText(last).width + 2, y + 1, 8, 11);
+                } else if (bannerType === "amiga") {
+                    // Amiga Workbench style requester
+                    ctx.fillStyle = "#ffffff"; ctx.fillRect(bx, by, bw, bh);
+                    ctx.strokeStyle = "#000000"; ctx.lineWidth = 2; ctx.strokeRect(bx + 1, by + 1, bw - 2, bh - 2);
+                    ctx.fillStyle = "#0055aa"; ctx.fillRect(bx + 2, by + 2, bw - 4, 20);
+                    ctx.fillStyle = "#ffffff"; ctx.fillText("Workbench", bx + 10, by + 6);
+                    ctx.fillStyle = "#000000"; ctx.fillText("Game completed successfully!", bx + 14, by + 38);
+                    ctx.fillStyle = "#555555"; ctx.fillText("Kickstart says: well done.", bx + 14, by + 56);
+                    ctx.fillStyle = "#ff8800"; ctx.fillRect(bx + bw - 64, by + bh - 30, 48, 20);
+                    ctx.strokeStyle = "#000000"; ctx.lineWidth = 1.5; ctx.strokeRect(bx + bw - 64, by + bh - 30, 48, 20);
+                    ctx.fillStyle = "#000000"; ctx.fillText("Ok", bx + bw - 50, by + bh - 26);
+                } else if (bannerType === "sierra") {
+                    // Sierra text adventure: white score bar, black screen, parser prompt
+                    const score = Math.min(999, Math.floor(Math.max(0, ms - 300) / 1.2));
+                    ctx.fillStyle = "#000000"; ctx.fillRect(bx, by, bw, bh);
+                    ctx.fillStyle = "#ffffff"; ctx.fillRect(bx, by, bw, 18);
+                    ctx.fillStyle = "#000000";
+                    ctx.fillText("Score: " + score + " of 999", bx + 8, by + 3);
+                    ctx.textAlign = "right"; ctx.fillText("Sound: on", bx + bw - 8, by + 3); ctx.textAlign = "left";
+                    ctx.fillStyle = "#ffffff";
+                    const cmd = "> " + typed("win game", Math.max(0, ms - 500), 9);
+                    ctx.fillText(cmd, bx + 10, by + 34);
+                    if (cursorOn && ms < 1700) ctx.fillText("_", bx + 10 + ctx.measureText(cmd).width, by + 34);
+                    if (ms > 1700) {
+                        ctx.fillStyle = "#55ffff";
+                        ctx.fillText("Congratulations! You have", bx + 10, by + 58);
+                        ctx.fillText("solved the game.", bx + 10, by + 74);
+                    }
+                } else {
+                    // LucasArts SCUMM verb screen: sentence line plus nine verbs, one lights up after another
+                    ctx.fillStyle = "#000000"; ctx.fillRect(bx, by, bw, bh);
+                    ctx.fillStyle = "#55ffff";
+                    ctx.fillText(typed("Use trophy with happy ending", ms, 20), bx + 10, by + 8);
+                    const verbs = ["Open", "Close", "Give", "Pick up", "Look at", "Talk to", "Use", "Push", "Pull"];
+                    const hot = Math.floor(ms / 380) % verbs.length;
+                    verbs.forEach((v, i) => {
+                        ctx.fillStyle = i === hot ? "#ffff55" : "#55ff55";
+                        ctx.fillText(v, bx + 12 + (i % 3) * (bw / 3), by + 34 + Math.floor(i / 3) * 24);
+                    });
+                }
+                ctx.restore();
+            }
+
             // Fireworks at random times and places, sometimes two at once
             const bursts = [];
             if (!calm) {
@@ -2928,8 +3054,10 @@ ${t.issueSectionSuggestDesc}
                 bursts.sort((a, b) => a - b);
             }
             let nextBurst = 0;
+            const boingTimes = calm ? [rand(300, 1200)] : [rand(250, 900), ...(Math.random() < 0.6 ? [rand(1200, 2200)] : [])];
+            let nextBoing = 0;
 
-            const showerEnd = calm ? rand(2400, 3800) : rand(2000, 3400);
+            const showerEnd = calm ? rand(2400, 4000) : rand(2000, 3400);
             const showerRate = calm ? 1 : randInt(1, 3);
             const showerChance = calm ? rand(0.35, 0.9) : 0.8;
             const spawnEnd = calm ? showerEnd + 700 : showerEnd;
@@ -2943,7 +3071,7 @@ ${t.issueSectionSuggestDesc}
             const bubble = () => particles.push({
                 kind: "bubble", x: rand(0, W), y: H + 30, size: rand(6, 24), rise: rand(0.3, 1.1),
                 sway: rand(0.1, 0.6), swayFreq: rand(0.02, 0.06), phase: rand(0, 6.28), color: randomColor(),
-                age: 0, maxAge: rand(240, 520), life: 1
+                age: 0, maxAge: rand(200, 400), life: 1
             });
             const start = performance.now();
             let last = start;
@@ -2958,28 +3086,52 @@ ${t.issueSectionSuggestDesc}
                 ctx.fill();
             };
 
+            const FRAME_MS = 1000 / 30, FRAME_TOLERANCE = 4;
             function frame(now) {
-                const dt = Math.min(now - last, 50) / 16.67;
+                if (now - last < FRAME_MS - FRAME_TOLERANCE) { requestAnimationFrame(frame); return; }
+                const dt = Math.min(now - last, 100) / 16.67;
                 last = now;
                 const elapsed = now - start;
+                const spawnRuns = Math.max(1, Math.round(dt));   // spawn rates were tuned per 60 Hz frame
                 ctx.clearRect(0, 0, W, H);
 
+                while (nextBoing < boingTimes.length && elapsed >= boingTimes[nextBoing]) { boing(); nextBoing++; }
                 while (nextBurst < bursts.length && elapsed >= bursts[nextBurst]) {
                     burst(rand(W * 0.12, W * 0.88), rand(H * 0.12, H * 0.5));
                     nextBurst++;
                 }
                 if (calm && elapsed < spawnEnd) {
-                    if (Math.random() < twinkleChance) twinkle();
-                    if (Math.random() < bubbleChance) bubble();
+                    for (let r = 0; r < spawnRuns; r++) {
+                        if (Math.random() < twinkleChance) twinkle();
+                        if (Math.random() < bubbleChance) bubble();
+                    }
                 }
                 if (elapsed < showerEnd) {
-                    for (let i = 0; i < showerRate; i++) {
+                    for (let i = 0; i < showerRate * spawnRuns; i++) {
                         if (Math.random() < showerChance) confetti(rand(0, W), -12, rand(-1.5, 1.5) * (calm ? 0.4 : 1), calm ? rand(0.5, 1.5) : rand(1, 3.2));
                     }
                 }
 
                 for (let i = particles.length - 1; i >= 0; i--) {
                     const p = particles[i];
+                    if (p.kind === "boing") {
+                        p.age += dt;
+                        if (p.age >= p.maxAge || p.x < -p.r * 3 || p.x > W + p.r * 3) { particles.splice(i, 1); continue; }
+                        p.vy += p.g * dt;
+                        p.x += p.vx * dt;
+                        p.y += p.vy * dt;
+                        if (p.y > floorY - p.r) { p.y = floorY - p.r; p.vy = -(calm ? 3.4 : 11); }
+                        p.spin += p.vx * 0.02 * dt;
+                        const a = Math.min(1, p.age / 25, (p.maxAge - p.age) / 40);
+                        ctx.globalAlpha = 0.28 * a * Math.max(0.2, 1 - (floorY - p.y) / H);
+                        ctx.fillStyle = "#000000";
+                        ctx.beginPath();
+                        ctx.ellipse(p.x + p.r * 0.4, floorY + 4, p.r * 0.9, p.r * 0.2, 0, 0, Math.PI * 2);
+                        ctx.fill();
+                        drawBoing(p.x, p.y, p.r, p.spin, a);
+                        ctx.globalAlpha = 1;
+                        continue;
+                    }
                     if (p.kind === "twinkle" || p.kind === "bubble") {
                         p.age += dt;
                         p.life = 1 - p.age / p.maxAge;
@@ -3023,7 +3175,7 @@ ${t.issueSectionSuggestDesc}
                         p.flipPhase += p.flip * dt;
                     } else {
                         p.trail.push(p.x, p.y);
-                        if (p.trail.length > 8) p.trail.splice(0, 2);
+                        if (p.trail.length > 6) p.trail.splice(0, 2);
                         p.x += p.vx * dt;
                     }
                     p.y += p.vy * dt;
@@ -3052,7 +3204,8 @@ ${t.issueSectionSuggestDesc}
                         continue;
                     }
                     ctx.save();
-                    ctx.translate(p.x, p.y);
+                    // labels are drawn on whole pixels so the text does not shimmer while it moves
+                    if (p.shape === "label") ctx.translate(Math.round(p.x), Math.round(p.y)); else ctx.translate(p.x, p.y);
                     ctx.rotate(p.rot);
                     const flip = Math.cos(p.flipPhase);
                     if (p.shape === "rect") {
@@ -3082,6 +3235,14 @@ ${t.issueSectionSuggestDesc}
                         ctx.quadraticCurveTo(-p.size / 2, p.size * 0.9 * flip, 0, 0);
                         ctx.quadraticCurveTo(p.size / 2, -p.size * 0.9 * flip, p.size, 0);
                         ctx.stroke();
+                    } else if (p.shape === "label") {
+                        ctx.font = "bold " + Math.round(p.size) + "px 'Courier New', monospace";
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        ctx.lineWidth = 3;
+                        ctx.strokeStyle = "rgba(0, 0, 0, 0.65)";
+                        ctx.strokeText(p.label, 0, 0);
+                        ctx.fillText(p.label, 0, 0);
                     } else {
                         ctx.font = Math.round(p.size * 2.1) + "px sans-serif";
                         ctx.textAlign = "center";
@@ -3091,9 +3252,10 @@ ${t.issueSectionSuggestDesc}
                     ctx.restore();
                 }
                 ctx.globalAlpha = 1;
+                if (elapsed >= bannerStart && elapsed <= bannerEnd) drawBanner(elapsed - bannerStart);
 
-                const spawningDone = elapsed >= spawnEnd && nextBurst >= bursts.length;
-                if ((spawningDone && particles.length === 0) || elapsed > 10000) { canvas.remove(); return; }
+                const spawningDone = elapsed >= Math.max(spawnEnd, bannerEnd) && nextBurst >= bursts.length && nextBoing >= boingTimes.length;
+                if ((spawningDone && particles.length === 0) || elapsed > 12000) { canvas.remove(); return; }
                 requestAnimationFrame(frame);
             }
             requestAnimationFrame(frame);
