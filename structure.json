@@ -1,8 +1,8 @@
 {
   "stats": {
     "total_files": 606,
-    "total_words": 701891,
-    "total_actions": 86018
+    "total_words": 701951,
+    "total_actions": 86022
   },
   "name": "solutions",
   "type": "directory",
@@ -1833,11 +1833,11 @@
           "name": "Heir of the Dog-EN",
           "type": "file",
           "path": "H/Heir of the Dog-EN.md",
-          "last_modified": "2026-11-09T00:19:24+01:00",
+          "last_modified": "2026-11-16T00:19:26+01:00",
           "created": "2026-11-09T00:19:24+01:00",
-          "status": "new",
-          "words": 5356,
-          "actions": 572
+          "status": "updated",
+          "words": 5416,
+          "actions": 576
         },
         {
           "name": "Highland Spirit-EN",
