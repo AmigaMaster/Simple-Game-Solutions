@@ -2839,7 +2839,8 @@ ${t.issueSectionSuggestDesc}
             const randomColor = () => Math.random() < 0.6 ? choose(palette) : `hsl(${randInt(0, 359)}, ${randInt(70, 100)}%, ${randInt(52, 72)}%)`;
             const shapes = ["rect", "rect", "rect", "circle", "triangle", "star", "ribbon", "emoji", "label", "label"];
             const emojis = ["🎉", "⭐", "🎮", "🕹️", "🏆", "✨", "🎊", "👾", "💾", "📼", "🖥️", "💾"];
-            const labels = ["Commodore", "C64", "AMIGA", "SCUMM", "AGI", "SCI", "Kickstart", "Workbench", "SID", "Paula", "Boing!", "READY.", "Press Play on Tape", "1541", "Guru Meditation"];
+            const labels = ["Commodore", "C64", "AMIGA", "SCUMM", "AGI", "SCI", "Kickstart", "Workbench",
+                "SID", "Paula", "Boing!", "READY.", "Press Play on Tape", "1541", "Guru Meditation"];
             const retroColors = ["#7c70da", "#a8a0ff", "#ff8800", "#0099ff", "#55ff55", "#55ffff", "#ff5555", "#ffff55", "#ffffff"];
             const particles = [];
 
@@ -2850,7 +2851,7 @@ ${t.issueSectionSuggestDesc}
                     label: choose(labels), size: shape === "label" ? rand(11, 15) : rand(5, 12), rot: rand(0, 6.28), vr: rand(-0.25, 0.25),
                     sway: rand(0, 1.1), swayFreq: rand(0.04, 0.2), phase: rand(0, 6.28),
                     flip: rand(0.04, 0.28), flipPhase: rand(0, 6.28),
-                    color: shape === "label" ? choose(retroColors) : randomColor(), life: 1, decay: rand(0.003, 0.009), g: rand(0.07, 0.17), drag: rand(0.985, 0.997), age: 0
+                    bounce: rand(0.45, 0.85), color: shape === "label" ? choose(retroColors) : randomColor(), life: 1, decay: rand(0.003, 0.009), g: rand(0.07, 0.17), drag: rand(0.985, 0.997), age: 0
                 });
                 // text labels keep a fixed random tilt: no spinning, no swaying, they just fall
                 if (shape === "label") { const q = particles[particles.length - 1]; q.rot = rand(-0.4, 0.4); q.vr = 0; q.sway = 0; q.decay = rand(0.003, 0.006); }
@@ -2858,7 +2859,7 @@ ${t.issueSectionSuggestDesc}
 
             const spark = (x, y, vx, vy, color, opts = {}) => particles.push(Object.assign({
                 kind: "spark", x, y, vx, vy, color, size: rand(1.4, 3.2), life: 1, decay: rand(0.01, 0.022),
-                g: 0.06, drag: 0.985, trail: [], crackle: false
+                g: 0.06, drag: 0.985, trail: [], crackle: false, bounce: rand(0.4, 0.75)
             }, opts));
 
             // Firework patterns, one is chosen at random per burst
@@ -2926,41 +2927,51 @@ ${t.issueSectionSuggestDesc}
             // Amiga "Boing Ball": red/white checkered sphere, bounces with a shadow on the floor
             const floorY = H - 110;
             const boing = () => {
-                const r = rand(20, 34) * (W < 600 ? 0.85 : 1.1), dir = Math.random() < 0.5 ? 1 : -1;
-                particles.push({
-                    kind: "boing", r, x: dir > 0 ? -r : W + r, y: rand(H * 0.1, H * 0.4), vx: dir * (calm ? rand(0.5, 1.1) : rand(1.8, 3.6)),
-                    vy: 0, g: calm ? 0.07 : 0.32, spin: rand(0, 6.28), age: 0, maxAge: calm ? 480 : 520, life: 1
-                });
+                const depth = rand(0, 1);
+                const r = rand(16, 40) * (W < 600 ? 0.85 : 1.1) * (1 - depth * 0.28);
+                const floor = floorY - depth * 70;
+                const startType = choose(["side", "side", "drop", "pop"]);
+                const dir = Math.random() < 0.5 ? 1 : -1;
+                const hop = calm ? rand(2.8, 4.4) : rand(8, 14);
+                const ball = {
+                    kind: "boing", r, floor, depth, hop, g: calm ? rand(0.06, 0.1) : rand(0.28, 0.38),
+                    vx: dir * (calm ? rand(0.4, 1.3) : rand(1.2, 4.2)), vy: 0, spin: rand(0, 6.283),
+                    spinV: rand(-0.04, 0.04), tilt: rand(-0.7, 0.25), lon: 16, lat: 8,
+                    squash: 0, entered: false, age: 0, maxAge: calm ? rand(380, 470) : rand(380, 640), life: 1
+                };
+                if (startType === "side") { ball.x = dir > 0 ? -r : W + r; ball.y = rand(H * 0.05, floor - r * 3); }
+                else if (startType === "drop") { ball.x = rand(W * 0.1, W * 0.9); ball.y = -r; ball.vx *= 0.4; ball.entered = true; }
+                else { ball.x = rand(W * 0.1, W * 0.9); ball.y = floor - r; ball.vy = -hop * rand(0.9, 1.3); ball.vx *= 0.5; ball.entered = true; }
+                particles.push(ball);
             };
-            const drawBoing = (x, y, r, spin, alpha) => {
+            // sx / sy: squash (on impact) and stretch (in flight); the bottom of the ball stays where it is
+            const drawBoing = (x, y, r, spin, alpha, tilt, lon, lat, sx, sy) => {
                 ctx.save();
                 ctx.globalAlpha = alpha;
-                ctx.translate(x, y);
+                ctx.translate(x, y + r * (1 - sy));
+                ctx.scale(sx, sy);
                 ctx.beginPath();
                 ctx.arc(0, 0, r, 0, Math.PI * 2);
                 ctx.clip();
                 ctx.fillStyle = "#ffffff";
                 ctx.fillRect(-r, -r, 2 * r, 2 * r);
-                ctx.rotate(-0.4);
+                ctx.rotate(tilt);
                 ctx.fillStyle = "#e0262d";
-                const lon = 8, lat = 6, step = (Math.PI * 2) / lon;
+                const step = (Math.PI * 2) / lon;
                 const wrap = t => ((t + Math.PI) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2) - Math.PI;
-                const clampFront = t => Math.max(-Math.PI / 2, Math.min(Math.PI / 2, t));
                 for (let i = 0; i < lon; i++) {
-                    const mid = wrap(spin + (i + 0.5) * step);          // longitude of the band's middle, -PI..PI
-                    if (Math.abs(mid) > Math.PI / 2) continue;           // back side of the ball
+                    const t1 = wrap(spin + i * step), t2 = t1 + step;
+                    const lo = Math.max(t1, -Math.PI / 2), hi = Math.min(t2, Math.PI / 2);
+                    if (hi - lo < 0.002) continue;
                     for (let j = 0; j < lat; j++) {
                         if ((i + j) % 2) continue;
                         const f1 = -Math.PI / 2 + (j * Math.PI) / lat, f2 = f1 + Math.PI / lat;
                         ctx.beginPath();
-                        for (let k = 0; k <= 4; k++) {
-                            const t = clampFront(mid - step / 2 + (step * k) / 4);
-                            ctx.lineTo(r * Math.cos(f1) * Math.sin(t), r * Math.sin(f1));
-                        }
-                        for (let k = 4; k >= 0; k--) {
-                            const t = clampFront(mid - step / 2 + (step * k) / 4);
-                            ctx.lineTo(r * Math.cos(f2) * Math.sin(t), r * Math.sin(f2));
-                        }
+                        const n = Math.max(5, Math.ceil((hi - lo) / 0.1)), m = Math.max(4, Math.ceil((f2 - f1) / 0.1));
+                        for (let k = 0; k <= m; k++) { const f = f1 + ((f2 - f1) * k) / m; ctx.lineTo(r * Math.cos(f) * Math.sin(lo), r * Math.sin(f)); }
+                        for (let k = 0; k <= n; k++) { const t = lo + ((hi - lo) * k) / n; ctx.lineTo(r * Math.cos(f2) * Math.sin(t), r * Math.sin(f2)); }
+                        for (let k = m; k >= 0; k--) { const f = f1 + ((f2 - f1) * k) / m; ctx.lineTo(r * Math.cos(f) * Math.sin(hi), r * Math.sin(f)); }
+                        for (let k = n; k >= 0; k--) { const t = lo + ((hi - lo) * k) / n; ctx.lineTo(r * Math.cos(f1) * Math.sin(t), r * Math.sin(f1)); }
                         ctx.closePath();
                         ctx.fill();
                     }
@@ -2970,14 +2981,16 @@ ${t.issueSectionSuggestDesc}
 
             // A small retro "screen" pops up at a random place above the buttons; one of four styles per run
             const bannerType = choose(["c64", "amiga", "sierra", "lucas"]);
+            // The pop-up window is solid: confetti, labels, emojis, sparks, bubbles and the Boing balls bounce off it
+            const BW = Math.min(W - 24, 330), BH = bannerType === "amiga" ? 100 : 118;
+            const BX = (W - BW) / 2, BY = Math.max(10, H - BH - 128);
             const bannerStart = calm ? 500 : 350, bannerEnd = bannerStart + 6000;
             const typed = (text, ms, cps) => text.slice(0, Math.max(0, Math.floor((ms / 1000) * cps)));
             function drawBanner(ms) {
                 const fadeIn = Math.min(1, ms / 300), fadeOut = Math.min(1, (bannerEnd - bannerStart - ms) / 500);
                 const alpha = Math.max(0, Math.min(fadeIn, fadeOut));
                 if (alpha <= 0) return;
-                const bw = Math.min(W - 24, 330), bh = bannerType === "amiga" ? 100 : 118;
-                const bx = (W - bw) / 2, by = Math.max(10, H - bh - 128);
+                const bw = BW, bh = BH, bx = BX, by = BY;
                 const cursorOn = calm ? true : Math.floor(ms / 450) % 2 === 0;
                 ctx.save();
                 ctx.globalAlpha = alpha;
@@ -3054,10 +3067,11 @@ ${t.issueSectionSuggestDesc}
                 bursts.sort((a, b) => a - b);
             }
             let nextBurst = 0;
-            const boingTimes = calm ? [rand(300, 1200)] : [rand(250, 900), ...(Math.random() < 0.6 ? [rand(1200, 2200)] : [])];
+            const boingTimes = [];
+            for (let n = calm ? randInt(1, Math.random() < 0.4 ? 2 : 1) : randInt(1, 3), t = rand(200, 900); n > 0; n--, t += rand(300, 1500)) boingTimes.push(t);
             let nextBoing = 0;
 
-            const showerEnd = calm ? rand(2400, 4000) : rand(2000, 3400);
+            const showerEnd = calm ? rand(2400, 3800) : rand(2000, 3400);
             const showerRate = calm ? 1 : randInt(1, 3);
             const showerChance = calm ? rand(0.35, 0.9) : 0.8;
             const spawnEnd = calm ? showerEnd + 700 : showerEnd;
@@ -3068,11 +3082,14 @@ ${t.issueSectionSuggestDesc}
                 kind: "twinkle", x: rand(W * 0.05, W * 0.95), y: rand(H * 0.05, H * 0.8), size: rand(5, 15),
                 rot: rand(0, 3.14), vr: rand(-0.01, 0.01), color: randomColor(), age: 0, maxAge: rand(70, 170), life: 1
             });
-            const bubble = () => particles.push({
-                kind: "bubble", x: rand(0, W), y: H + 30, size: rand(6, 24), rise: rand(0.3, 1.1),
-                sway: rand(0.1, 0.6), swayFreq: rand(0.02, 0.06), phase: rand(0, 6.28), color: randomColor(),
-                age: 0, maxAge: rand(200, 400), life: 1
-            });
+            const bubble = () => {
+                const rise = rand(0.3, 1.1);
+                particles.push({
+                    kind: "bubble", x: rand(0, W), y: H + 30, size: rand(6, 24), rise, riseBase: rise,
+                    sway: rand(0.1, 0.6), swayFreq: rand(0.02, 0.06), phase: rand(0, 6.28), color: randomColor(),
+                    age: 0, maxAge: rand(200, 400), life: 1
+                });
+            };
             const start = performance.now();
             let last = start;
 
@@ -3086,12 +3103,54 @@ ${t.issueSectionSuggestDesc}
                 ctx.fill();
             };
 
+            // Collision with the window: the window is solid while it is clearly visible (not while fading in / out)
+            const windowSolid = elapsed => elapsed >= bannerStart + 150 && elapsed <= bannerEnd - 250;
+            // Half size of a particle (labels are wide, emojis and stars bigger than the plain confetti pieces)
+            const halfExtents = p => {
+                if (p.kind === "spark") return [p.size, p.size];
+                if (p.shape === "label") return [p.label.length * p.size * 0.3, p.size * 0.6];
+                if (p.shape === "emoji") return [p.size, p.size];
+                return [p.size * 0.65, p.size * 0.65];
+            };
+            // Pushes a particle out of the window along the shortest way and reflects its speed (p.vx / p.vy)
+            const bounceOffWindow = p => {
+                const [hx, hy] = halfExtents(p);
+                const x0 = BX - hx, x1 = BX + BW + hx, y0 = BY - hy, y1 = BY + BH + hy;
+                if (p.x <= x0 || p.x >= x1 || p.y <= y0 || p.y >= y1) return;
+                const e = p.bounce || 0.6;
+                const dl = p.x - x0, dr = x1 - p.x, dt = p.y - y0, db = y1 - p.y, m = Math.min(dl, dr, dt, db);
+                if (m === dt) { p.y = y0; if (p.vy > 0) p.vy = -p.vy * e; p.vx *= 0.97; }          // lands on top
+                else if (m === db) { p.y = y1; if (p.vy < 0) p.vy = -p.vy * e; }                     // hits the underside
+                else if (m === dl) { p.x = x0; if (p.vx > 0) p.vx = -p.vx * e; }                     // left side
+                else { p.x = x1; if (p.vx < 0) p.vx = -p.vx * e; }                                   // right side
+            };
+            // Boing ball (circle) against the window (rectangle)
+            const bounceBallOffWindow = p => {
+                const cx = Math.max(BX, Math.min(p.x, BX + BW)), cy = Math.max(BY, Math.min(p.y, BY + BH));
+                let dx = p.x - cx, dy = p.y - cy, dist = Math.hypot(dx, dy), nx, ny;
+                if (dist >= p.r) return;
+                if (dist > 0.001) { nx = dx / dist; ny = dy / dist; p.x = cx + nx * p.r; p.y = cy + ny * p.r; }
+                else {   // centre is inside the window: leave through the nearest side
+                    const dl = p.x - BX, dr = BX + BW - p.x, dt = p.y - BY, db = BY + BH - p.y, m = Math.min(dl, dr, dt, db);
+                    if (m === dt) { nx = 0; ny = -1; p.y = BY - p.r; }
+                    else if (m === db) { nx = 0; ny = 1; p.y = BY + BH + p.r; }
+                    else if (m === dl) { nx = -1; ny = 0; p.x = BX - p.r; }
+                    else { nx = 1; ny = 0; p.x = BX + BW + p.r; }
+                }
+                const vn = p.vx * nx + p.vy * ny;
+                if (vn >= 0) return;
+                if (ny < -0.6) { p.vy = -p.hop * rand(0.78, 1.18); p.squash = 1; }                  // hops on top like on the floor
+                else { p.vx -= 1.92 * vn * nx; p.vy -= 1.92 * vn * ny; p.squash = Math.max(p.squash, 0.6); }
+                p.spinV = rand(-0.06, 0.06);
+            };
+
             const FRAME_MS = 1000 / 30, FRAME_TOLERANCE = 4;
             function frame(now) {
                 if (now - last < FRAME_MS - FRAME_TOLERANCE) { requestAnimationFrame(frame); return; }
                 const dt = Math.min(now - last, 100) / 16.67;
                 last = now;
                 const elapsed = now - start;
+                const solid = windowSolid(elapsed);
                 const spawnRuns = Math.max(1, Math.round(dt));   // spawn rates were tuned per 60 Hz frame
                 ctx.clearRect(0, 0, W, H);
 
@@ -3116,19 +3175,37 @@ ${t.issueSectionSuggestDesc}
                     const p = particles[i];
                     if (p.kind === "boing") {
                         p.age += dt;
-                        if (p.age >= p.maxAge || p.x < -p.r * 3 || p.x > W + p.r * 3) { particles.splice(i, 1); continue; }
+                        if (p.age >= p.maxAge) { particles.splice(i, 1); continue; }
                         p.vy += p.g * dt;
                         p.x += p.vx * dt;
                         p.y += p.vy * dt;
-                        if (p.y > floorY - p.r) { p.y = floorY - p.r; p.vy = -(calm ? 3.4 : 11); }
-                        p.spin += p.vx * 0.02 * dt;
+                        if (solid) bounceBallOffWindow(p);
+                        // bounce off the side edges once the ball has entered the screen
+                        if (!p.entered && p.x > p.r && p.x < W - p.r) p.entered = true;
+                        if (p.entered) {
+                            if (p.x < p.r) { p.x = p.r; p.vx = Math.abs(p.vx); p.spinV = rand(-0.05, 0.05); }
+                            else if (p.x > W - p.r) { p.x = W - p.r; p.vx = -Math.abs(p.vx); p.spinV = rand(-0.05, 0.05); }
+                        } else if (p.x < -p.r * 4 || p.x > W + p.r * 4) { particles.splice(i, 1); continue; }
+                        // every hop is a little different: height, spin direction, sometimes a big jump or a sideways kick
+                        if (p.y > p.floor - p.r && p.vy > 0) {
+                            p.y = p.floor - p.r;
+                            p.vy = -p.hop * rand(0.78, 1.18) * (Math.random() < 0.12 ? 1.45 : 1);
+                            p.squash = 1;
+                            if (Math.random() < 0.5) p.spinV = rand(-0.06, 0.06);
+                            if (Math.random() < 0.25) p.vx *= rand(0.6, 1.4) * (Math.random() < 0.15 ? -1 : 1);
+                        }
+                        p.spin += (p.vx * 0.02 + p.spinV) * dt;
+                        p.squash = Math.max(0, p.squash - 0.09 * dt);
+                        const stretch = Math.min(0.16, Math.abs(p.vy) * 0.011);
+                        const sx = 1 + p.squash * 0.28 - stretch * 0.5, sy = 1 - p.squash * 0.22 + stretch;
                         const a = Math.min(1, p.age / 25, (p.maxAge - p.age) / 40);
-                        ctx.globalAlpha = 0.28 * a * Math.max(0.2, 1 - (floorY - p.y) / H);
+                        const height = Math.max(0, p.floor - p.r - p.y);
+                        ctx.globalAlpha = 0.3 * a * Math.max(0.15, 1 - height / (H * 0.6));
                         ctx.fillStyle = "#000000";
                         ctx.beginPath();
-                        ctx.ellipse(p.x + p.r * 0.4, floorY + 4, p.r * 0.9, p.r * 0.2, 0, 0, Math.PI * 2);
+                        ctx.ellipse(p.x + p.r * 0.35, p.floor + 4, p.r * (0.95 - Math.min(0.4, height / 600)) * (1 + p.squash * 0.2), p.r * 0.2, 0, 0, Math.PI * 2);
                         ctx.fill();
-                        drawBoing(p.x, p.y, p.r, p.spin, a);
+                        drawBoing(p.x, p.y, p.r, p.spin, a, p.tilt, p.lon, p.lat, sx, sy);
                         ctx.globalAlpha = 1;
                         continue;
                     }
@@ -3142,6 +3219,17 @@ ${t.issueSectionSuggestDesc}
                         if (p.kind === "bubble") {
                             p.y -= p.rise * dt;
                             p.x += Math.sin(p.age * p.swayFreq + p.phase) * p.sway * dt;
+                            if (solid) {
+                                const x0 = BX - p.size, x1 = BX + BW + p.size, y0 = BY - p.size, y1 = BY + BH + p.size;
+                                if (p.x > x0 && p.x < x1 && p.y > y0 && p.y < y1) {
+                                    const m = Math.min(p.x - x0, x1 - p.x, p.y - y0, y1 - p.y);
+                                    if (m === y1 - p.y) { p.y = y1; p.rise = -Math.abs(p.rise) * 0.7; }
+                                    else if (m === p.y - y0) { p.y = y0; p.rise = Math.abs(p.rise) * 0.7; }
+                                    else if (m === p.x - x0) p.x = x0;
+                                    else p.x = x1;
+                                }
+                            }
+                            if (p.rise < p.riseBase) p.rise = Math.min(p.riseBase, p.rise + 0.02 * dt);
                             ctx.globalAlpha = 0.18 * fade;
                             ctx.beginPath();
                             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
@@ -3179,6 +3267,7 @@ ${t.issueSectionSuggestDesc}
                         p.x += p.vx * dt;
                     }
                     p.y += p.vy * dt;
+                    if (solid) bounceOffWindow(p);
                     p.life -= p.decay * dt;
                     if (p.kind === "spark" && p.crackle && !p.popped && p.life < 0.35) {
                         p.popped = true;
