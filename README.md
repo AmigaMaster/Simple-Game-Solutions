@@ -7,9 +7,11 @@
               ( The Raw Elegance of Text )
 ```
 
+[**🌐 Open Official Website**](https://amigamaster.github.io/Simple-Game-Solutions/) – Interactive web interface with search filters, chapters, and progress tracking.
+
 Game solutions written in an easy-to-read and easy-to-write plain text format, using Markdown for text formatting.
 
-[![LastCommit](https://img.shields.io/github/last-commit/AmigaMaster/Simple-Game-Solutions?color=%2329C83D)](https://shields.io/) [![Hits](https://github.com/AmigaMaster/github-profile-views-counter/raw/master/svg/profile/badge.svg)](https://github.com/AmigaMaster/github-profile-views-counter)
+[![Website](https://img.shields.io/badge/Website-Live-29C83D?style=flat-square&logo=google-chrome&logoColor=white)](https://amigamaster.github.io/Simple-Game-Solutions/) [![LastCommit](https://img.shields.io/github/last-commit/AmigaMaster/Simple-Game-Solutions?color=%2329C83D)](https://shields.io/) [![Hits](https://github.com/AmigaMaster/github-profile-views-counter/raw/master/svg/profile/badge.svg)](https://github.com/AmigaMaster/github-profile-views-counter)
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -63,7 +65,7 @@ You can always download the latest version as a [ZIP file](https://github.com/Am
 
 You can clone this repository to your local machine using the following link:
 
-``` Text
+```text
 https://github.com/AmigaMaster/Simple-Game-Solutions.git
 ```
 
@@ -83,23 +85,22 @@ On Windows, we recommend using TortoiseGit, which integrates into the Windows gr
 
 #### 1.3.2. MacOS, Linux, Unix
 
-Use the package manager provided by your OS distribution to install GIT. Then clone the repository to a directory of your choice:
+Use your system's package manager to install Git, then run:
 
-1. Open a terminal and change to a folder of your choice (e.g., your home directory):  
-   `cd ~`
-
-2. Clone the repository:  
-   `git clone https://github.com/AmigaMaster/Simple-Game-Solutions.git`
+```bash
+cd ~
+git clone https://github.com/AmigaMaster/Simple-Game-Solutions.git
+```
 
 ## 2. Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to modify.
 
-Please refer to the documentation below for detailed guidelines on how to write guides.
+Please refer to the [Documentation](#5-documentation) section below for detailed style guides and instructions on how to write solutions.
 
 ## 3. License
 
-Authors may choose any license for their solutions, including Creative Commons licenses. Please check individual solution files for specific license information.
+Authors may choose any license for their solutions, including Creative Commons licenses. Please check individual solution files for specific license details.
 
 ## 4. Acknowledgments
 
@@ -140,7 +141,7 @@ The most prominent example is the [Universal Hint System (UHS)](http://www.uhs-h
 
 However, using the UHS format for a complete traditional walkthrough is cumbersome. Writing content requires a Windows-only UHS editor, there is no open web interface for hint files, and all publications require manual approval by the UHS developers—making it unsuitable for our open workflow.
 
-An open-source implementation of the UHS reader is available at [OpenUHS](http://freshmeat.sourceforge.net/projects/openuhs).
+An open-source implementation of the UHS reader is available at [OpenUHS](https://sourceforge.net/projects/openuhs).
 
 ### 5.2. Philosophy of Simple Game Solutions
 
@@ -148,9 +149,7 @@ The core principles behind this project:
 
 #### 5.2.1. File Format
 
-Technology changes rapidly, but text-based files remain universally accessible without requiring specialized tools or software.
-
-By using Markdown as a markup language, text files can be rendered into attractive output formats while retaining readability in plain text form. Markdown is designed to be as easy to read and write as possible, building on established text conventions.
+Technology changes rapidly, but plain text remains universally accessible without specialized software. By leveraging Markdown, text files render into polished outputs while retaining good readability in raw view.
 
 Above all, readability comes first: a Markdown file should always be fully readable in a raw text view.
 
@@ -170,21 +169,22 @@ If you already have a favorite text editor, stick with it. If you are looking fo
 
 For Markdown editing, we recommend these extensions:
 
-  [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)  
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 
-  [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+- [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
 
 ### 6.2. Learn using Markdown (Optional)
 
-If you want to incorporate text formatting or headers, check out a Markdown guide such as [GitHub Markdown Guides](https://guides.github.com/features/mastering-markdown/). Alternatively, open any existing `.md` file in the Simple-Game-Solutions repository and click the `Raw` button to inspect how Markdown looks in plain text.
+Consult the [GitHub Markdown Guide](https://guides.github.com/features/mastering-markdown/) or inspect any `.md` file in this repository by clicking 
+the `Raw` button.
 
-*Markdown is very easy to learn*—even GitHub-flavored Markdown features fewer than a dozen basic elements.
+*Markdown is very easy to learn* — even GitHub-flavored Markdown features fewer than a dozen basic elements.
 
-If you prefer **not** to use Markdown, a standard plain text file works perfectly fine.
+If you prefer standard plain text without formatting, `.txt` files work as well.
 
 ### 6.3. Keep the Content Simple
 
-You do not need to over-explain actions. Focus strictly on complex or ambiguous interactions using simple command phrases:
+You do not need to over-explain actions. Focus on simple actions using simple command phrases:
 
 - WALK TO edge of the cliff
 - USE flashlight with darkness
@@ -202,9 +202,7 @@ If you establish a specific style for certain elements (such as highlighting inv
 
 ### 6.5. Single Text File
 
-Write your walkthrough in a single text file. While the solution can reference external assets (such as images for maps, puzzles, or save games), the core guide itself must not be split across multiple text documents.
-
-This preserves seamless searchability without requiring you to open multiple files.
+Write your walkthrough in a single core text file. External assets (like maps, puzzle graphics or save games) can be referenced, but the guide itself must not be split across multiple text documents.
 
 ### 6.6. Choose a File Name and Extension
 
@@ -212,34 +210,14 @@ Use the following naming convention:
 
 `[Game Title]-(Description)-(Language code).[extension]`
 
-**Game Title:**  
-Required: Yes
+- **Game Title:** Required (use full title).
+- **Description:** Optional (e.g., `map_mars`, `puzzle_stonedisc`).
+- **Language Code:** Optional unless language-dependent (e.g., `DE`, `EN` based on [ISDCF](https://www.isdcf.com/registry/languages)).
+- **Extension:** `.md` for Markdown or `.txt` for plain text.
 
-Use the complete game title where possible.
+**Examples:**
 
-**Description:**  
-Required: No
-
-An optional parameter used only when attaching auxiliary files like maps or puzzle graphics. Use short descriptive labels such as `map_mars` or `puzzle_stonedisc`.
-
-**Language Code:**  
-Required: Only if the file is language-dependent.
-
-Omit this code if the content is language-independent. Currently, we have the following languages in our solutions:
-
-| Code | Language |
-| ---- | -------- |
-| DE   | German   |
-| EN   | English  |
-
-More languages codes can be found on [ISDCF](https://www.isdcf.com/registry/languages)
-
-**Extension:**  
-Please use `.md` for Markdown files or `.txt` for plain text files.
-
-**File Name Examples:**
-
-``` text
+```text
 Indiana Jones and the Fate of Atlantis-EN.md
 The Longest Journey-DE.md
 Zak McKracken and the Alien Mindbenders-EN.txt
@@ -248,7 +226,7 @@ Zak McKracken and the Alien Mindbenders-map_mars.png
 
 ## 7. Tips and Tricks
 
-Tips gathered from writing initial solutions to ensure Markdown formatting remains plain-text friendly:
+Tips gathered from writing initial solutions to ensure Markdown formatting remains plain-text friendly.
 
 ### 7.1. Inserting Web Links
 
