@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://amigamaster.github.io/Simple-Game-Solutions/</loc>
-    <lastmod>2026-11-16T00:19:26+01:00</lastmod>
+    <lastmod>2026-11-17T00:02:12+01:00</lastmod>
   </url>
   <url>
     <loc>https://amigamaster.github.io/Simple-Game-Solutions/?file=0-9%2F%5E_%5E-EN.md</loc>
@@ -2011,6 +2011,10 @@
   <url>
     <loc>https://amigamaster.github.io/Simple-Game-Solutions/?file=S%2FStately%20Groan-EN.md</loc>
     <lastmod>2026-09-05T00:55:29+02:00</lastmod>
+  </url>
+  <url>
+    <loc>https://amigamaster.github.io/Simple-Game-Solutions/?file=S%2FSteeplejack-EN.md</loc>
+    <lastmod>2026-11-17T00:02:12+01:00</lastmod>
   </url>
   <url>
     <loc>https://amigamaster.github.io/Simple-Game-Solutions/?file=S%2FStellar%20Mess%20-%20The%20Princess%20Conundrum-EN.md</loc>

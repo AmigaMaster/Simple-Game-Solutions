@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 606,
-    "total_words": 701951,
-    "total_actions": 86022
+    "total_files": 607,
+    "total_words": 702125,
+    "total_actions": 86046
   },
   "name": "solutions",
   "type": "directory",
@@ -5144,6 +5144,16 @@
           "status": "new",
           "words": 800,
           "actions": 97
+        },
+        {
+          "name": "Steeplejack-EN",
+          "type": "file",
+          "path": "S/Steeplejack-EN.md",
+          "last_modified": "2026-11-17T00:02:12+01:00",
+          "created": "2026-11-17T00:02:12+01:00",
+          "status": "new",
+          "words": 174,
+          "actions": 24
         },
         {
           "name": "Stellar Mess - The Princess Conundrum-EN",
