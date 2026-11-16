@@ -990,6 +990,18 @@
         let searchSelectedIndex = -1;
         let searchBlurTimeout = null;
         let isRestoringScroll = false;
+
+        // "Reduce motion" (system setting): scroll jumps directly instead of animating. The query is evaluated on every
+        // call, so a changed setting takes effect immediately.
+        const reducedMotionQuery = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+        function prefersReducedMotion() {
+            return !!(reducedMotionQuery && reducedMotionQuery.matches);
+        }
+
+        function smoothScrollBehavior() {
+            return prefersReducedMotion() ? "auto" : "smooth";
+        }
+
         let flushScrollPosition = () => {};
         let targetPercentToRestore = null;
         let currentWelcomeTab = 'home';
@@ -2139,7 +2151,7 @@ ${t.issueSectionSuggestDesc}
                     const heading = document.getElementById(targetId);
                     if (heading) {
                         heading.scrollIntoView({
-                            behavior: "smooth",
+                            behavior: smoothScrollBehavior(),
                             block: "start"
                         });
                         if (window.innerWidth < 650) {
@@ -2201,7 +2213,7 @@ ${t.issueSectionSuggestDesc}
                     clearContentFilter();
 
                     setTimeout(() => {
-                        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+                        targetEl.scrollIntoView({ behavior: smoothScrollBehavior(), block: "start" });
                         targetEl.classList.add("bg-emerald-900/60", "transition-colors", "duration-1000");
                         setTimeout(() => {
                             targetEl.classList.remove("bg-emerald-900/60");
@@ -2983,7 +2995,7 @@ ${t.issueSectionSuggestDesc}
             // With "reduce motion" enabled in the system the show is calmer (slow confetti only, no cannons / fireworks)
             // instead of being skipped completely
             if (!isCelebrationEnabled()) return;
-            const calm = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+            const calm = prefersReducedMotion();
             if (document.getElementById("celebrationCanvas")) return;
             const canvas = document.createElement("canvas");
             canvas.id = "celebrationCanvas";
@@ -3654,7 +3666,7 @@ ${t.issueSectionSuggestDesc}
             if (mr.height > vr.height - 20) delta = mr.top - vr.top - 8;
             else if (mr.bottom > vr.bottom - 8) delta = mr.bottom - vr.bottom + 12;
             else if (mr.top < vr.top + 4) delta = mr.top - vr.top - 8;
-            if (Math.abs(delta) >= 1) viewer.scrollBy({ top: delta, behavior: smooth ? "smooth" : "auto" });
+            if (Math.abs(delta) >= 1) viewer.scrollBy({ top: delta, behavior: smooth ? smoothScrollBehavior() : "auto" });
         }
 
         // Scrolls to a chapter's highlighted line with the least movement; the heading is brought along when both fit
@@ -3670,7 +3682,7 @@ ${t.issueSectionSuggestDesc}
             else if (mr.top < vr.top + 4) delta = mr.top - vr.top - 8;
             // heading above the visible area after that movement, but heading and line fit together: include the heading
             if (hr.top - delta < vr.top && (mr.bottom - hr.top) <= vr.height - 20) delta = hr.top - vr.top - 8;
-            if (Math.abs(delta) >= 1) viewer.scrollBy({ top: delta, behavior: "smooth" });
+            if (Math.abs(delta) >= 1) viewer.scrollBy({ top: delta, behavior: smoothScrollBehavior() });
         }
 
         // Brings newly revealed steps into view with the least possible movement
@@ -3684,7 +3696,7 @@ ${t.issueSectionSuggestDesc}
             if (lr.bottom - fr.top > vr.height - 16) delta = fr.top - vr.top - 8;
             else if (lr.bottom > vr.bottom) delta = lr.bottom - vr.bottom + 12;
             else if (fr.top < vr.top) delta = fr.top - vr.top - 8;
-            if (delta !== 0) viewer.scrollBy({ top: delta, behavior: "smooth" });
+            if (delta !== 0) viewer.scrollBy({ top: delta, behavior: smoothScrollBehavior() });
         }
 
         // The heading the reader is currently looking at: the first heading inside the visible area, otherwise
@@ -3886,7 +3898,7 @@ ${t.issueSectionSuggestDesc}
                 setTimeout(() => {
                     const targetEl = findAnchorTarget(window.location.hash);
                     if (targetEl) {
-                        targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+                        targetEl.scrollIntoView({ behavior: smoothScrollBehavior(), block: "start" });
                     }
                     isRestoringScroll = false;
                 }, 150);
@@ -4143,7 +4155,7 @@ ${t.issueSectionSuggestDesc}
                     parentDetails = parentDetails.parentElement ? parentDetails.parentElement.closest("details") : null;
                 }
                 setTimeout(() => {
-                    targetRow.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                    targetRow.scrollIntoView({ block: 'nearest', behavior: smoothScrollBehavior() });
                 }, 50);
             }
         }
@@ -4361,7 +4373,7 @@ ${t.issueSectionSuggestDesc}
                     const activeItem = tocContainer.querySelector(`[data-target-id="${headings[firstActiveIdx].id}"]`);
                     if (activeItem) {
                         const tocRow = activeItem.closest('.group\\/toc') || activeItem;
-                        tocRow.scrollIntoView({ behavior: "smooth", block: "center" });
+                        tocRow.scrollIntoView({ behavior: smoothScrollBehavior(), block: "center" });
                     }
                 }
             }
