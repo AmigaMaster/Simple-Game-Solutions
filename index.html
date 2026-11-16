@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
     <title>Simple Game Solutions | Interactive Adventure Game Walkthroughs & Guides</title>
     <meta name="description" content="Discover interactive video game walkthroughs, guides, and solutions for classic adventure games with chapter search and reading progress tracking.">
     <meta name="keywords" content="walkthrough, game solution, adventure games, point and click, guide, gaming tips">
@@ -997,11 +997,9 @@
         function prefersReducedMotion() {
             return !!(reducedMotionQuery && reducedMotionQuery.matches);
         }
-
         function smoothScrollBehavior() {
             return prefersReducedMotion() ? "auto" : "smooth";
         }
-
         let flushScrollPosition = () => {};
         let targetPercentToRestore = null;
         let currentWelcomeTab = 'home';
