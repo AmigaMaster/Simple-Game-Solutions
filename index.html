@@ -203,6 +203,21 @@
                             <option value="150">150 %</option>
                         </select>
                     </div>
+                    <div>
+                        <button type="button"
+                                id="celebrationSwitch"
+                                role="switch"
+                                aria-checked="true"
+                                onclick="toggleCelebrationSetting();"
+                                class="w-full flex items-center justify-between gap-3 bg-gray-950 hover:bg-gray-900 border border-gray-600 focus:outline-none focus:border-emerald-500 rounded-xl px-3 py-2.5 min-h-[44px] cursor-pointer transition-colors">
+                            <span class="text-sm sm:text-xs font-medium text-gray-200 text-left" data-i18n="celebrationSettingLabel">Gewinn-Animation</span>
+                            
+                            <!-- Visueller Toggle-Switch -->
+                            <span id="celebrationSwitchTrack" class="relative inline-flex h-6 w-11 shrink-0 items-center rounded-full bg-emerald-600 transition-colors duration-200">
+                                <span id="celebrationSwitchThumb" class="inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform duration-200 translate-x-6"></span>
+                            </span>
+                        </button>
+                    </div>
                     <div class="border-t border-gray-700 pt-2 flex flex-col gap-1 -mx-1">
                     <button onclick="exportSettings();" class="group w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                         <span class="hover-wiggle inline-block transition-transform">💾</span> <span data-i18n="exportBtn">Export</span>
@@ -460,6 +475,9 @@
                 copyChapterLinkTitle: "Kapitel-Link kopieren",
                 fontZoomTitle: "Schriftgröße anpassen",
                 fontSizeLabel: "Schriftgröße",
+                celebrationSettingLabel: "Gewinn-Animation",
+                optionEnabled: "Aktiviert",
+                optionDisabled: "Deaktiviert",
                 markAllRead: "Alle als gelesen markieren",
                 badgeNew: "Neu",
                 badgeUpdated: "Aktualisiert",
@@ -574,6 +592,9 @@
                 copyChapterLinkTitle: "Copy chapter link",
                 fontZoomTitle: "Adjust font size",
                 fontSizeLabel: "Font size",
+                celebrationSettingLabel: "Victory animation",
+                optionEnabled: "Enabled",
+                optionDisabled: "Disabled",
                 markAllRead: "Mark all as read",
                 badgeNew: "New",
                 badgeUpdated: "Updated",
@@ -847,6 +868,7 @@
                     document.getElementById("langSelect").value = currentLang;
                     setLanguage(currentLang);
                     initZoom();
+                    initCelebrationSetting();
                     updateHomeBadge();
                     loadTreeScope();
 
@@ -905,6 +927,53 @@
                 }
                 sel.value = String(percent);
             }
+        }
+
+        // Celebration animation setting
+        const CELEBRATION_KEY = "sgs_celebration_enabled";
+
+        function isCelebrationEnabled() {
+            return lsGet(CELEBRATION_KEY) !== "0";
+        }
+
+        function updateCelebrationSwitchUI() {
+            const enabled = isCelebrationEnabled();
+            const btn = document.getElementById("celebrationSwitch");
+            const track = document.getElementById("celebrationSwitchTrack");
+            const thumb = document.getElementById("celebrationSwitchThumb");
+
+            if (!btn || !track || !thumb) return;
+
+            btn.setAttribute("aria-checked", String(enabled));
+
+            // Track-Farbe umschalten (Grün = An, Dunkelgrau = Aus)
+            track.classList.toggle("bg-emerald-600", enabled);
+            track.classList.toggle("bg-gray-700", !enabled);
+
+            // Knopf-Position verschieben
+            thumb.classList.toggle("translate-x-6", enabled);
+            thumb.classList.toggle("translate-x-1", !enabled);
+        }
+
+        function initCelebrationSetting() {
+            updateCelebrationSwitchUI();
+        }
+
+        function toggleCelebrationSetting() {
+            const nextState = !isCelebrationEnabled();
+            if (nextState) {
+                lsRemove(CELEBRATION_KEY);
+            } else {
+                lsSet(CELEBRATION_KEY, "0");
+                // Laufende Animation sofort abbrechen, falls vorhanden
+                if (typeof stopCelebration === "function") {
+                    stopCelebration();
+                } else {
+                    const existingCanvas = document.getElementById("celebrationCanvas");
+                    if (existingCanvas) existingCanvas.remove();
+                }
+            }
+            updateCelebrationSwitchUI();
         }
 
         // --- SECTION 2: GLOBAL STATE VARIABLES ---
@@ -1607,6 +1676,7 @@ ${t.issueSectionSuggestDesc}
         async function init() {
             setLanguage(currentLang);
             initZoom();
+            initCelebrationSetting();
             initEventDelegation();
             try {
                 const response = await fetch("structure.json");
@@ -2862,6 +2932,7 @@ ${t.issueSectionSuggestDesc}
         function launchCelebration() {
             // With "reduce motion" enabled in the system the show is calmer (slow confetti only, no cannons / fireworks)
             // instead of being skipped completely
+            if (!isCelebrationEnabled()) return;
             const calm = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
             if (document.getElementById("celebrationCanvas")) return;
             const canvas = document.createElement("canvas");
