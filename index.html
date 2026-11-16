@@ -4271,6 +4271,7 @@ ${t.issueSectionSuggestDesc}
             let lastExecutionTime = 0;
             const updateInterval = 333;
             let scrollEndTimeout = null;
+            let lastFirstActiveIdx = null;
 
             function updateScrollPosition(forced = false) {
                 const scrollTop = contentViewer.scrollTop;
@@ -4351,8 +4352,8 @@ ${t.issueSectionSuggestDesc}
                 });
 
                 const firstActiveIdx = Array.from(activeIndices)[0];
-                if (firstActiveIdx !== undefined && firstActiveIdx !== window._lastFirstActiveIdx) {
-                    window._lastFirstActiveIdx = firstActiveIdx;
+                if (firstActiveIdx !== undefined && firstActiveIdx !== lastFirstActiveIdx) {
+                    lastFirstActiveIdx = firstActiveIdx;
                     const activeItem = tocContainer.querySelector(`[data-target-id="${headings[firstActiveIdx].id}"]`);
                     if (activeItem) {
                         const tocRow = activeItem.closest('.group\\/toc') || activeItem;
