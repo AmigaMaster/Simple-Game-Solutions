@@ -985,6 +985,7 @@
         let searchSelectedIndex = -1;
         let searchBlurTimeout = null;
         let isRestoringScroll = false;
+        let flushScrollPosition = () => {};
         let targetPercentToRestore = null;
         let currentWelcomeTab = 'home';
         let scrollPercentBeforeFilter = null;
@@ -1657,6 +1658,7 @@ ${t.issueSectionSuggestDesc}
 
         // Reset application state back to home/welcome view
         function goHome(isHistoryNav = false) {
+            flushScrollPosition();
             currentFilePath = null;
             scrollPercentBeforeFilter = null;
             lsRemove("sgs_last_file");
@@ -2604,6 +2606,7 @@ ${t.issueSectionSuggestDesc}
 
         async function loadFile(filePath, isExternal = false, isHistoryNav = false) {
             // Only the most recent call may update the UI (prevents slow responses overwriting newer ones)
+            flushScrollPosition();
             const myToken = ++loadToken;
             closeGameStatusPopup();
 
@@ -4271,6 +4274,7 @@ ${t.issueSectionSuggestDesc}
             let lastExecutionTime = 0;
             const updateInterval = 333;
             let scrollEndTimeout = null;
+            let scrollDirty = false;
             let lastFirstActiveIdx = null;
 
             function updateScrollPosition(forced = false) {
@@ -4279,11 +4283,6 @@ ${t.issueSectionSuggestDesc}
                 const clientHeight = contentViewer.clientHeight;
                 const maxScroll = scrollHeight - clientHeight;
                 const percent = maxScroll > 0 ? Math.min(100, Math.max(0, (scrollTop / maxScroll) * 100)) : 0;
-
-                // Save current scroll progress percentage to localStorage if not actively restoring
-                if (currentFilePath && !isRestoringScroll) {
-                    lsSet(`sgs_scroll_percent_${currentFilePath}`, percent.toFixed(2));
-                }
 
                 if (scrollProgressBar) {
                     scrollProgressBar.style.width = percent + "%";
@@ -4362,18 +4361,37 @@ ${t.issueSectionSuggestDesc}
                 }
             }
 
+            function saveScrollPosition() {
+                if (!scrollDirty) return;
+                scrollDirty = false;
+                if (!currentFilePath || isRestoringScroll) return;
+                const maxScroll = contentViewer.scrollHeight - contentViewer.clientHeight;
+                const percent = maxScroll > 0 ? Math.min(100, Math.max(0, (contentViewer.scrollTop / maxScroll) * 100)) : 0;
+                const key = `sgs_scroll_percent_${currentFilePath}`;
+                const value = percent.toFixed(2);
+                if (lsGet(key) !== value) lsSet(key, value);
+            }
+            flushScrollPosition = saveScrollPosition;
+
             contentViewer.onscroll = () => {
+                scrollDirty = true;
                 updateScrollPosition(false);
 
                 // Force update after last scroll movement
                 clearTimeout(scrollEndTimeout);
                 scrollEndTimeout = setTimeout(() => {
                     updateScrollPosition(true);
+                    saveScrollPosition();
                 }, 150);
             };
 
             updateScrollPosition(true);
         }
+
+        window.addEventListener("pagehide", () => flushScrollPosition());
+        document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "hidden") flushScrollPosition();
+        });
 
         // --- SECTION 10: LAYOUT RESIZERS & OVERLAY TOGGLES ---
         const sidebar = document.getElementById("sidebar");
