@@ -469,6 +469,7 @@
                 searchPlaceholder: "Suchen (z.B. Maniac AND Ostern OR 101)...",
                 filterPlaceholder: "Inhalt filtern (z.B. Tür UND/ODER Schlüssel)...",
                 noResults: "Keine Treffer gefunden.",
+                moreResults: "… und {n} weitere – alle anzeigen",
                 linkCopied: "Link kopiert",
                 copySearchLinkTitle: "Suche-Link kopieren",
                 copyFileLinkTitle: "Lösungs-Link kopieren",
@@ -586,6 +587,7 @@
                 searchPlaceholder: "Search (e.g. maniac AND easter OR 101)...",
                 filterPlaceholder: "Filter content (e.g. door AND/OR key)...",
                 noResults: "No matching files found.",
+                moreResults: "… and {n} more – show all",
                 linkCopied: "Link copied",
                 copySearchLinkTitle: "Copy search link",
                 copyFileLinkTitle: "Copy solution link",
@@ -1760,17 +1762,23 @@ ${t.issueSectionSuggestDesc}
 
         // --- SECTION 5: GLOBAL SEARCH SYSTEM & DROPDOWN ---
         // Helper to evaluate search terms with support for AND/OR clauses
-        function matchQuery(nameLower, query) {
+        // Parses the query once and returns a function that tests a lowercase text against it
+        function compileQuery(query) {
             const q = query.trim();
-            if (!q) return true;
-            const orClauses = q.toLowerCase().split(/\b(?:or|oder)\b/);
-            return orClauses.some(clause => {
-                const cleanClause = clause.replace(/\b(?:and|und)\b/g, " ");
-                const terms = cleanClause.split(/\s+/).filter(t => t.length > 0);
-                if (terms.length === 0) return false;
-                return terms.every(term => nameLower.includes(term))
-            })
+            if (!q) return () => true;
+            const clauses = q.toLowerCase().split(/\b(?:or|oder)\b/)
+                .map(clause => clause.replace(/\b(?:and|und)\b/g, " ").split(/\s+/).filter(t => t.length > 0))
+                .filter(terms => terms.length > 0);
+            return nameLower => clauses.some(terms => terms.every(term => nameLower.includes(term)));
         }
+
+        function matchQuery(nameLower, query) {
+            return compileQuery(query)(nameLower);
+        }
+
+        // Maximum number of entries in the global search dropdown (the rest is summarized in a hint)
+        const SEARCH_DROPDOWN_LIMIT = 50;
+        let searchExpandedQuery = null;
 
         function handleSearchFocus() {
             if (searchBlurTimeout) clearTimeout(searchBlurTimeout);
@@ -1816,8 +1824,10 @@ ${t.issueSectionSuggestDesc}
                 dropdown.classList.add("hidden");
                 return
             }
+            if (searchExpandedQuery !== null && searchExpandedQuery !== q) searchExpandedQuery = null;
+            const matchesQuery = compileQuery(q);
             const matchingFiles = Array.from(fileIndex.values())
-                .filter(file => matchQuery(file.name.toLowerCase(), q));
+                .filter(file => matchesQuery(file.name.toLowerCase()));
 
             const qLower = q.toLowerCase();
             if (qLower === "4823" || qLower.includes("call edna") || qLower.includes("edna anrufen")) {
@@ -1843,17 +1853,39 @@ ${t.issueSectionSuggestDesc}
                 return
             }
             let html = "";
-            matchingFiles.forEach((file) => {
+            const shownFiles = searchExpandedQuery === q ? matchingFiles : matchingFiles.slice(0, SEARCH_DROPDOWN_LIMIT);
+            shownFiles.forEach((file) => {
                 const icon = file.isExternal ? "🌐" : "📄";
                 html += `<button type="button" data-path="${escapeHtml(file.path)}" data-external="${file.isExternal ? 'true' : 'false'}" class="search-item w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 hover:bg-gray-700 hover:text-white transition-colors border-b border-gray-700/50 last:border-b-0 flex items-center gap-2 cursor-pointer focus:outline-none">
                     <span>${icon}</span> <span class="font-medium">${escapeHtml(file.name)}</span>
                 </button>`
             });
+            if (matchingFiles.length > shownFiles.length) {
+                const more = translations[currentLang].moreResults.replace("{n}", matchingFiles.length - shownFiles.length);
+                // Part of the keyboard navigation (search-item), but opens the full list instead of a file
+                html += `<button type="button" class="search-item search-more w-full text-left px-4 py-2.5 text-xs sm:text-sm text-gray-200 italic hover:bg-gray-700 hover:text-white transition-colors border-t border-gray-700 flex items-center gap-2 cursor-pointer focus:outline-none">
+                    <span>➕</span> <span class="font-medium">${escapeHtml(more)}</span>
+                </button>`;
+            }
             dropdown.innerHTML = html;
             dropdown.scrollTop = 0;
             dropdown.classList.remove("hidden");
             positionSearchDropdown();
             searchSelectedIndex = 0;
+            updateDropdownHighlight(dropdown.querySelectorAll("button.search-item"));
+        }
+
+        // Shows ALL results for the current query (click or Enter on the "… and n more" entry)
+        function expandSearchResults() {
+            const input = document.getElementById("searchInput");
+            const dropdown = document.getElementById("searchDropdown");
+            const keepScroll = dropdown.scrollTop;
+            const firstNew = dropdown.querySelectorAll("button.search-item:not(.search-more)").length;
+            searchExpandedQuery = input.value.trim();
+            input.focus({ preventScroll: true });
+            handleGlobalSearch(input.value);
+            dropdown.scrollTop = keepScroll;
+            searchSelectedIndex = firstNew;
             updateDropdownHighlight(dropdown.querySelectorAll("button.search-item"));
         }
 
@@ -1978,6 +2010,7 @@ ${t.issueSectionSuggestDesc}
 
         // Global click listener to close search dropdown when clicking outside
         window.addEventListener("click", e => {
+            if (!e.target.isConnected) return;
             const searchContainer = document.getElementById("searchInput").parentElement;
             const dropdown = document.getElementById("searchDropdown");
             if (!searchContainer.contains(e.target) && !dropdown.contains(e.target)) {
@@ -2054,9 +2087,17 @@ ${t.issueSectionSuggestDesc}
             // 1. Search Dropdown Results Delegation
             const searchDropdown = document.getElementById("searchDropdown");
             if (searchDropdown) {
+                // Keep the focus in the search field when the "more" entry is pressed (otherwise the blur handler hides the list)
+                searchDropdown.addEventListener("mousedown", (e) => {
+                    if (e.target.closest("button.search-more")) e.preventDefault();
+                });
                 searchDropdown.addEventListener("click", (e) => {
                     const item = e.target.closest("button.search-item");
                     if (!item) return;
+                    if (item.classList.contains("search-more")) {
+                        expandSearchResults();
+                        return;
+                    }
                     const path = item.dataset.path;
                     const isExternal = item.dataset.external === "true";
                     selectSearchResult(path, isExternal);
@@ -2337,9 +2378,10 @@ ${t.issueSectionSuggestDesc}
             });
 
             const matchingSet = new Set();
+            const matchesFilter = compileQuery(filterQuery);
             allBlocks.forEach(el => {
                 const text = el.tagName === 'LI' ? getDirectText(el) : el.textContent;
-                if (matchQuery(text.toLowerCase(), filterQuery)) {
+                if (matchesFilter(text.toLowerCase())) {
                     matchingSet.add(el);
                 }
             });
@@ -3983,9 +4025,10 @@ ${t.issueSectionSuggestDesc}
                 : (treeScope === "mine" ? new Set([...markerState.favs, ...Object.keys(markerState.map)]) : null);
             const scoped = scopePaths !== null;
 
+            const matchesTreeQuery = compileQuery(query);
             function filterNode(item) {
                 const nameLower = item.name.toLowerCase();
-                const matches = matchQuery(nameLower, query);
+                const matches = matchesTreeQuery(nameLower);
                 if (item.type === "file") {
                     return (matches && (!scoped || scopePaths.has(item.path))) ? {
                         ...item
