@@ -36,6 +36,10 @@
     
     <!-- Custom Typography & Markdown Code Block Styling -->
     <style>
+        /* Fallback for browsers without dvh units (iOS before 15.4, Chrome before 108): there the Tailwind class
+           h-[100dvh] on <html> and <body> is dropped, and with overflow-hidden the layout would be cut off. */
+        html, body { height: 100vh; height: 100dvh; }
+
         .prose code::before {
             content: "" !important;
         }
