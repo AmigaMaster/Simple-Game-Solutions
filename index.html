@@ -3437,6 +3437,38 @@ ${t.issueSectionSuggestDesc}
                 p.spinV = rand(-0.06, 0.06);
             };
 
+            // Boing balls bounce off each other like billiard balls: elastic collision between two discs, the mass
+            // grows with the area, so a small ball is thrown away by a big one. Applies to the calm variant as well.
+            const bounceBoingBallsOffEachOther = () => {
+                const balls = particles.filter(q => q.kind === "boing");
+                for (let i = 0; i < balls.length; i++) {
+                    for (let j = i + 1; j < balls.length; j++) {
+                        const a = balls[i], b = balls[j];
+                        let dx = b.x - a.x, dy = b.y - a.y;
+                        const minDist = a.r + b.r;
+                        if (Math.abs(dx) >= minDist || Math.abs(dy) >= minDist) continue;
+                        let dist = Math.hypot(dx, dy);
+                        if (dist >= minDist) continue;
+                        let nx, ny;
+                        if (dist > 0.001) { nx = dx / dist; ny = dy / dist; }
+                        else { const angle = rand(0, 6.283); nx = Math.cos(angle); ny = Math.sin(angle); dist = 0; }
+                        const ma = a.r * a.r, mb = b.r * b.r;
+                        // push the balls apart, the lighter one moves further
+                        const overlap = minDist - dist;
+                        a.x -= nx * overlap * mb / (ma + mb); a.y -= ny * overlap * mb / (ma + mb);
+                        b.x += nx * overlap * ma / (ma + mb); b.y += ny * overlap * ma / (ma + mb);
+                        // only balls that move towards each other bounce
+                        const vn = (b.vx - a.vx) * nx + (b.vy - a.vy) * ny;
+                        if (vn >= 0) continue;
+                        const impulse = -(1 + 0.95) * vn / (1 / ma + 1 / mb);
+                        a.vx -= impulse / ma * nx; a.vy -= impulse / ma * ny;
+                        b.vx += impulse / mb * nx; b.vy += impulse / mb * ny;
+                        a.squash = Math.max(a.squash, 0.5); b.squash = Math.max(b.squash, 0.5);
+                        a.spinV = rand(-0.06, 0.06); b.spinV = rand(-0.06, 0.06);
+                    }
+                }
+            };
+
             const FRAME_MS = 1000 / 30, FRAME_TOLERANCE = 4;
             function frame(now) {
                 if (now - last < FRAME_MS - FRAME_TOLERANCE) { requestAnimationFrame(frame); return; }
@@ -3448,6 +3480,7 @@ ${t.issueSectionSuggestDesc}
                 ctx.clearRect(0, 0, W, H);
 
                 while (nextBoing < boingTimes.length && elapsed >= boingTimes[nextBoing]) { boing(); nextBoing++; }
+                bounceBoingBallsOffEachOther();
                 while (nextBurst < bursts.length && elapsed >= bursts[nextBurst]) {
                     burst(rand(W * 0.12, W * 0.88), rand(H * 0.12, H * 0.5));
                     nextBurst++;
