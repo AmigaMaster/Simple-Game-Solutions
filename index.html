@@ -3641,27 +3641,69 @@ ${t.issueSectionSuggestDesc}
                     if (solid) bounceOffWindow(p);
 
                     // Mouse cursor collision
+                    const getExtents = part => {
+                        if (part.kind === "spark") return [part.size, part.size];
+                        if (part.shape === "label") return [part.label.length * part.size * 0.32, part.size * 0.65];
+                        if (part.shape === "emoji") return [part.size, part.size];
+                        return [part.size * 0.65, part.size * 0.65];
+                    };
+
+                    const [hx, hy] = getExtents(p);
                     const mRadius = 15;
-                    const mdx = p.x - mouseX;
-                    const mdy = p.y - mouseY;
-                    const mDist = Math.hypot(mdx, mdy);
-                    if (mDist < mRadius + (p.size || 5) && mDist > 0.1) {
-                        const mnx = mdx / mDist;
-                        const mny = mdy / mDist;
-                        p.x = mouseX + mnx * (mRadius + (p.size || 5));
-                        p.y = mouseY + mny * (mRadius + (p.size || 5));
-                        
-                        const mvn = p.vx * mnx + p.vy * mny;
-                        if (mvn < 0) {
-                            const restitution = 0.7; // Elastizität des Abprallens
-                            p.vx -= (1 + restitution) * mvn * mnx;
-                            p.vy -= (1 + restitution) * mvn * mny;
-                            p.vx += mnx * 1.5;
-                            p.vy += mny * 1.5;
-                            if (p.kind === "confetti") {
-                                p.vr += rand(-0.2, 0.2);
+                    const dx = mouseX - p.x;
+                    const dy = mouseY - p.y;
+                    const cos = Math.cos(p.rot);
+                    const sin = Math.sin(p.rot);
+                    const localX = dx * cos + dy * sin;
+                    const localY = -dx * sin + dy * cos;
+
+                    const closestX = Math.max(-hx, Math.min(hx, localX));
+                    const closestY = Math.max(-hy, Math.min(hy, localY));
+
+                    let distX = localX - closestX;
+                    let distY = localY - closestY;
+                    let dist = Math.hypot(distX, distY);
+
+                    if (dist < mRadius) {
+                        let lnx, lny, penetration;
+
+                        if (dist > 0.001) {
+                            lnx = distX / dist;
+                            lny = distY / dist;
+                            penetration = mRadius - dist;
+                        } else {
+                            const penX = hx - Math.abs(localX);
+                            const penY = hy - Math.abs(localY);
+                            if (penX < penY) {
+                                lnx = localX >= 0 ? 1 : -1;
+                                lny = 0;
+                                penetration = mRadius + penX;
+                            } else {
+                                lnx = 0;
+                                lny = localY >= 0 ? 1 : -1;
+                                penetration = mRadius + penY;
                             }
                         }
+
+                        const nx = lnx * cos - lny * sin;
+                        const ny = lnx * sin + lny * cos;
+
+                        p.x -= nx * penetration;
+                        p.y -= ny * penetration;
+
+                        const rvx = p.vx - mouseVx;
+                        const rvy = p.vy - mouseVy;
+                        const normalVel = rvx * nx + rvy * ny;
+
+                        if (normalVel > 0) {
+                            const restitution = 0.75;
+                            p.vx -= (1 + restitution) * normalVel * nx;
+                            p.vy -= (1 + restitution) * normalVel * ny;
+                        }
+
+                        p.vx += mouseVx * 0.65 - nx * 1.5;
+                        p.vy += mouseVy * 0.65 - ny * 1.5;
+                        if (p.kind === "confetti") p.vr += rand(-0.2, 0.2);
                     }
 
                     p.life -= p.decay * dt;
