@@ -40,6 +40,12 @@
            h-[100dvh] on <html> and <body> is dropped, and with overflow-hidden the layout would be cut off. */
         html, body { height: 100vh; height: 100dvh; }
 
+        /* Content filter: the hit that was jumped to last (previous / next navigation) */
+        .search-hit-current { outline: 2px solid #34d399; outline-offset: 2px; border-radius: 0.25rem; }
+
+        /* Passage opened through a shared text link (CSS Custom Highlight API; older browsers use the selection) */
+        ::highlight(shared-text) { background-color: rgba(250, 204, 21, 0.45); color: inherit; }
+
         .prose code::before {
             content: "" !important;
         }
@@ -368,6 +374,17 @@
                 </div>
             </div>
 
+            <!-- Notice for a linked passage in still hidden spoiler steps (part of the layout: it never covers the text) -->
+            <div id="sharedPassageNotice" role="status" class="hidden shrink-0 mt-1 flex flex-wrap items-center gap-x-3 gap-y-1.5 rounded-md border border-emerald-700/50 bg-gray-800/80 px-2.5 py-1.5 text-xs text-gray-200">
+                <span class="flex-1 min-w-[12rem] leading-snug">🙈 <span data-i18n="sharedPassageHidden">Die verlinkte Textstelle liegt in noch verdeckten Schritten (Spoilermodus).</span></span>
+                <span class="flex items-center gap-1.5 ml-auto">
+                    <button type="button" onclick="revealSharedPassage();" data-i18n-title="sharedPassageRevealTitle" title="Zeigt die Textstelle und die Schritte davor in diesem Kapitel"
+                        class="min-h-[44px] sm:min-h-0 px-3 py-2 sm:px-2.5 sm:py-1 rounded-md bg-emerald-600 [@media(hover:hover)]:hover:bg-emerald-500 text-white font-semibold whitespace-nowrap cursor-pointer transition-colors"><span data-i18n="sharedPassageReveal">Textstelle aufdecken</span></button>
+                    <button type="button" onclick="hideSharedPassageNotice();" data-i18n-title="sharedPassageClose" data-i18n-aria-label="sharedPassageClose" title="Hinweis schließen" aria-label="Hinweis schließen"
+                        class="min-h-[44px] min-w-[44px] sm:min-h-0 sm:min-w-0 px-2.5 py-2 sm:px-2 sm:py-1 rounded-md border border-gray-600 text-gray-300 [@media(hover:hover)]:hover:bg-gray-700 cursor-pointer transition-colors">✕</button>
+                </span>
+            </div>
+
             <!-- Main Content Viewer Area (Markdown / Raw Text / Welcome Screen) -->
             <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 pt-2 text-sm sm:text-base leading-relaxed prose-code:text-emerald-200/80 prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-gray-700/40 prose-blockquote:border-emerald-500/30 prose-blockquote:bg-gray-800/40 prose-blockquote:text-gray-300/90"
                 id="content-viewer">
@@ -377,9 +394,11 @@
             </div>
 
             <div id="searchHitBar" class="hidden shrink-0 flex items-stretch gap-1.5 sm:gap-2 border-t border-emerald-700/50 bg-gray-900 px-1 pt-1.5 text-sm sm:text-xs" style="padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.375rem);">
-                <button type="button" onclick="revealNextSearchHit();" data-i18n-title="searchNextHitTitle" title="Nächsten Treffer aufdecken (Enter)"
+                <button type="button" id="searchHitPrev" onclick="gotoSearchHit(-1);" data-i18n-title="searchPrevHitTitle" data-i18n-aria-label="searchPrevHitTitle" title="Vorheriger Treffer (Umschalt+Enter)" aria-label="Vorheriger Treffer (Umschalt+Enter)"
+                    class="shrink-0 min-h-[44px] sm:min-h-[2.25rem] px-3.5 sm:px-3 py-2 sm:py-1.5 rounded-md bg-gray-800 [@media(hover:hover)]:hover:bg-gray-700 border border-gray-600 text-gray-200 cursor-pointer transition-colors">▲</button>
+                <button type="button" id="searchHitNext" onclick="searchBarNext();" title="Nächsten Treffer aufdecken (Enter)"
                     class="flex-1 min-w-0 min-h-[44px] sm:min-h-[2.25rem] px-2 sm:px-3 py-2 sm:py-1.5 rounded-md bg-emerald-600 [@media(hover:hover)]:hover:bg-emerald-500 text-white font-semibold whitespace-nowrap cursor-pointer transition-colors">▼ <span data-i18n="searchNextHit">Nächster Treffer</span> <span id="searchHitCount" class="font-normal opacity-80"></span></button>
-                <button type="button" onclick="revealAllSearchHits();" data-i18n-title="searchAllHitsTitle" title="Alle Treffer aufdecken"
+                <button type="button" id="searchHitAll" onclick="revealAllSearchHits();" data-i18n-title="searchAllHitsTitle" title="Alle Treffer aufdecken"
                     class="shrink-0 min-h-[44px] sm:min-h-[2.25rem] px-2 sm:px-3 py-2 sm:py-1.5 rounded-md bg-gray-800 [@media(hover:hover)]:hover:bg-gray-700 border border-gray-600 text-gray-200 whitespace-nowrap cursor-pointer transition-colors"><span data-i18n="searchAllHits">Alle anzeigen</span></button>
             </div>
 
@@ -533,6 +552,17 @@
                 spoilerBannerOffTitle: "Spoilermodus ausschalten: Lösungen wieder vollständig anzeigen",
                 searchNextHit: "Nächster Treffer",
                 searchNextHitTitle: "Nächsten Treffer aufdecken (Enter)",
+                searchNextHitNavTitle: "Nächster Treffer (Enter)",
+                searchPrevHitTitle: "Vorheriger Treffer (Umschalt+Enter)",
+                shareTextBtn: "Link zur Stelle",
+                shareTextTitle: "Link zu dieser Textstelle kopieren",
+                shareTextCopied: "Link zur Textstelle kopiert",
+                shareTextCopyFailed: "Link konnte nicht kopiert werden",
+                shareTextNotFound: "Die verlinkte Textstelle wurde nicht gefunden (vielleicht wurde die Lösung inzwischen geändert).",
+                sharedPassageHidden: "Die verlinkte Textstelle liegt in noch verdeckten Schritten (Spoilermodus).",
+                sharedPassageReveal: "Textstelle aufdecken",
+                sharedPassageRevealTitle: "Zeigt die Textstelle und die Schritte davor in diesem Kapitel",
+                sharedPassageClose: "Hinweis schließen",
                 searchAllHits: "Alle anzeigen",
                 searchAllHitsTitle: "Alle Treffer aufdecken",
                 searchChapterExpand: "Treffer dieses Kapitels aufdecken",
@@ -651,6 +681,17 @@
                 spoilerBannerOffTitle: "Turn off spoiler mode: show solutions in full again",
                 searchNextHit: "Next match",
                 searchNextHitTitle: "Reveal next match (Enter)",
+                searchNextHitNavTitle: "Next match (Enter)",
+                searchPrevHitTitle: "Previous match (Shift+Enter)",
+                shareTextBtn: "Link to passage",
+                shareTextTitle: "Copy link to this passage",
+                shareTextCopied: "Link to passage copied",
+                shareTextCopyFailed: "Could not copy the link",
+                shareTextNotFound: "The linked passage was not found (the walkthrough may have changed in the meantime).",
+                sharedPassageHidden: "The linked passage is in steps that are still hidden (spoiler mode).",
+                sharedPassageReveal: "Reveal passage",
+                sharedPassageRevealTitle: "Shows the passage and the steps before it in this chapter",
+                sharedPassageClose: "Dismiss notice",
                 searchAllHits: "Show all",
                 searchAllHitsTitle: "Reveal all matches",
                 searchChapterExpand: "Reveal this chapter's matches",
@@ -749,6 +790,7 @@
                 updateGameControls();
                 updateSpoilerButton();
                 refreshSpoilerUi();
+                refreshSearchHitBar();
                 if (structureData) {
                     filterTree(document.getElementById("searchInput").value);
                 }
@@ -1726,6 +1768,7 @@ ${t.issueSectionSuggestDesc}
                 }
 
                 if (fileParam) {
+                    pendingTextFragment = readTextFragmentParam();
                     await loadFile(fileParam, false, true);
                     if (filterParam) {
                         const filterInput = document.getElementById("contentFilterInput");
@@ -1768,6 +1811,7 @@ ${t.issueSectionSuggestDesc}
             }
 
             if (fileParam) {
+                pendingTextFragment = readTextFragmentParam();
                 await loadFile(fileParam, false, true);
                 if (filterParam) {
                     const filterInput = document.getElementById("contentFilterInput");
@@ -2237,6 +2281,57 @@ ${t.issueSectionSuggestDesc}
             searchRevealStarted = false;
         }
 
+        // --- Content filter: previous / next hit navigation ---
+        let searchNavEl = null; // the hit that was jumped to last
+
+        function clearSearchNav() {
+            document.querySelectorAll(".search-hit-current").forEach(el => el.classList.remove("search-hit-current"));
+            searchNavEl = null;
+        }
+
+        function setSearchNavEl(el) {
+            document.querySelectorAll(".search-hit-current").forEach(other => { if (other !== el) other.classList.remove("search-hit-current"); });
+            if (el) el.classList.add("search-hit-current");
+            searchNavEl = el;
+            refreshSearchHitBar();
+        }
+
+        // Hits the user can jump between: all of them, or only the revealed ones in spoiler mode
+        function navigableSearchHits() {
+            return spoilerModel ? searchHits.filter(hit => searchRevealed.has(hit)) : searchHits;
+        }
+
+        function scrollElementIntoViewer(el, fraction) {
+            const viewer = document.getElementById("content-viewer");
+            if (!viewer || !el) return;
+            const rect = el.getBoundingClientRect();
+            const top = viewer.scrollTop + (rect.top - viewer.getBoundingClientRect().top) - viewer.clientHeight * fraction;
+            viewer.scrollTo({ top: Math.max(0, top), behavior: smoothScrollBehavior() });
+        }
+
+        // step: +1 = next hit, -1 = previous hit (wraps around)
+        function gotoSearchHit(step) {
+            const list = navigableSearchHits();
+            if (list.length === 0) return;
+            let index = searchNavEl ? list.indexOf(searchNavEl) : -1;
+            if (index < 0) index = step > 0 ? 0 : list.length - 1;
+            else index = (index + step + list.length) % list.length;
+            setSearchNavEl(list[index]);
+            scrollElementIntoViewer(list[index], 0.25);
+        }
+
+        // "Next hit" button: in spoiler mode it first reveals the remaining hits, afterwards it navigates
+        function searchBarNext() {
+            if (spoilerModel && searchHits.some(hit => !searchRevealed.has(hit))) revealNextSearchHit();
+            else gotoSearchHit(1);
+        }
+
+        function refreshSearchHitBar() {
+            const total = searchHits.length;
+            const revealed = spoilerModel ? searchHits.filter(hit => searchRevealed.has(hit)).length : total;
+            updateSearchHitBar(total, revealed);
+        }
+
         function handleContentFilterKeydown(e) {
             if (e.key === "Escape") {
                 e.preventDefault();
@@ -2244,9 +2339,11 @@ ${t.issueSectionSuggestDesc}
             } else if (e.key === "Enter") {
                 flushPendingContentFilter();
                 const input = document.getElementById("contentFilterInput");
-                if (spoilerModel && input && input.value.trim() && searchHits.length > 0) {
+                if (input && input.value.trim() && searchHits.length > 0) {
                     e.preventDefault();
-                    revealNextSearchHit();
+                    // Enter = next hit (spoiler mode: reveals further hits first), Shift+Enter = previous hit
+                    if (e.shiftKey) gotoSearchHit(-1);
+                    else searchBarNext();
                 }
             }
         }
@@ -2339,6 +2436,7 @@ ${t.issueSectionSuggestDesc}
             if (q !== contentFilterQuery) {
                 contentFilterQuery = q;
                 resetSearchReveal();
+                clearSearchNav();
             }
 
             if (q.length > 0 && scrollPercentBeforeFilter === null) {
@@ -2510,7 +2608,7 @@ ${t.issueSectionSuggestDesc}
                 updateSearchChapterHeadings();
                 updateSearchHitBar(hits.length, hits.filter(hit => searchRevealed.has(hit)).length);
             } else {
-                hideSearchHitBar();
+                updateSearchHitBar(hits.length, hits.length);
             }
 
             if (typeof viewer.onscroll === 'function') {
@@ -2534,12 +2632,24 @@ ${t.issueSectionSuggestDesc}
             if (bar) bar.classList.add("hidden");
         }
 
+        // The bar is visible whenever the filter has hits: "next" reveals hits (spoiler mode) or jumps to the next hit
         function updateSearchHitBar(total, revealed) {
             const bar = document.getElementById("searchHitBar");
             if (!bar) return;
-            bar.classList.toggle("hidden", !(spoilerModel && total > revealed));
+            const tr = translations[currentLang];
+            const hasUnrevealed = spoilerModel && total > revealed;
+            bar.classList.toggle("hidden", total === 0);
+            const all = document.getElementById("searchHitAll");
+            if (all) all.classList.toggle("hidden", !hasUnrevealed);
+            const next = document.getElementById("searchHitNext");
+            if (next) next.title = hasUnrevealed ? tr.searchNextHitTitle : tr.searchNextHitNavTitle;
             const count = document.getElementById("searchHitCount");
-            if (count) count.textContent = `${revealed}/${total}`;
+            if (count) {
+                const list = navigableSearchHits();
+                const position = searchNavEl ? list.indexOf(searchNavEl) + 1 : 0;
+                // spoiler mode with hits left to reveal: revealed/total, otherwise: position/total
+                count.textContent = hasUnrevealed ? `${revealed}/${total}` : `${position > 0 ? position : "–"}/${total}`;
+            }
         }
 
         function updateSearchChapterHeadings() {
@@ -2563,6 +2673,7 @@ ${t.issueSectionSuggestDesc}
             if (!next) return;
             searchRevealed.add(next);
             rerunContentFilter();
+            setSearchNavEl(next);
             requestAnimationFrame(() => scrollToRevealed(next, next, 1));
         }
 
@@ -2572,6 +2683,7 @@ ${t.issueSectionSuggestDesc}
             if (fresh.length === 0) return;
             fresh.forEach(hit => searchRevealed.add(hit));
             rerunContentFilter();
+            setSearchNavEl(fresh[0]);
             requestAnimationFrame(() => scrollToRevealed(fresh[0], fresh[fresh.length - 1], fresh.length));
         }
 
@@ -2626,6 +2738,7 @@ ${t.issueSectionSuggestDesc}
         async function loadFile(filePath, isExternal = false, isHistoryNav = false) {
             // Only the most recent call may update the UI (prevents slow responses overwriting newer ones)
             flushScrollPosition();
+            clearSharedPassageState();
             const myToken = ++loadToken;
             closeGameStatusPopup();
 
@@ -2876,6 +2989,7 @@ ${t.issueSectionSuggestDesc}
                 list.classList.toggle("spoiler-hidden", !anyVisible);
             });
             refreshSpoilerUi();
+            syncSharedPassageNotice(false);
         }
 
         // Chevrons, tooltips and controls (also used after a language change)
@@ -3877,6 +3991,7 @@ ${t.issueSectionSuggestDesc}
                 const filterInput = document.getElementById("contentFilterInput");
                 if (filterInput && filterInput.value.trim()) handleContentFilter(filterInput.value);
             });
+            syncSharedPassageNotice(true);
         }
 
         function renderFileContent(text, filePath) {
@@ -3895,8 +4010,15 @@ ${t.issueSectionSuggestDesc}
             setupSpoilerProtection(viewer, filePath);
             setupScrollSpy(viewer, tocContainer);
 
+            // A link to a passage (?text=...) wins over the saved scroll position; if the passage cannot be shown,
+            // the normal restore below takes over
+            const sharedPassage = pendingTextFragment;
+            pendingTextFragment = null;
+
             // Restore scroll position using saved percentage after DOM rendering completes
-            if (window.location.hash) {
+            if (sharedPassage && openSharedPassage(viewer, sharedPassage)) {
+                // handled: scrolled to the passage and highlighted it
+            } else if (window.location.hash) {
                 setTimeout(() => {
                     const targetEl = findAnchorTarget(window.location.hash);
                     if (targetEl) {
@@ -4535,6 +4657,394 @@ ${t.issueSectionSuggestDesc}
 
         document.getElementById("content-viewer").addEventListener("keydown", handleSpoilerKeydown);
 
+        // --- SECTION 10b: SHARE A MARKED PASSAGE (text fragment link) ---
+        // A link looks like  index.html?file=<solution>&text=[prefix-,]start[,end][,-suffix]  (same syntax as the browser's
+        // own "#:~:text=" text fragments: pieces are percent-encoded, "," and "-" separate them). The browser's native
+        // fragment cannot be used here because the text of a solution is loaded after the page, so the page resolves
+        // the passage itself: it scrolls there and highlights it. Spaces and upper/lower case do not matter.
+        let pendingTextFragment = null;
+        let shareSelection = null; // { range, text } of the current selection while the share button is shown
+        let shareBubbleEl = null;
+        let shareScrollTimer = null;
+        let shareUpdateTimer = null;
+        let sharePointerDown = false;
+        let shareDismissedText = null;
+
+        function showToast(message) {
+            let toast = document.getElementById("appToast");
+            if (!toast) {
+                toast = document.createElement("div");
+                toast.id = "appToast";
+                toast.setAttribute("role", "status");
+                toast.setAttribute("aria-live", "polite");
+                toast.className = "fixed left-1/2 -translate-x-1/2 z-[900] max-w-[90vw] px-4 py-2.5 rounded-full bg-emerald-600 text-white text-sm font-semibold text-center shadow-lg pointer-events-none transition-opacity duration-300 opacity-0";
+                toast.style.bottom = "calc(env(safe-area-inset-bottom, 0px) + 1rem)";
+                document.body.appendChild(toast);
+            }
+            toast.textContent = message;
+            clearTimeout(showToast.timer);
+            requestAnimationFrame(() => toast.classList.remove("opacity-0"));
+            showToast.timer = setTimeout(() => toast.classList.add("opacity-0"), 3500);
+        }
+
+        // Text without whitespace and in lower case: makes matching independent of line breaks, markup and case
+        function squashText(text) {
+            let out = "";
+            for (const ch of text) {
+                if (/\s/.test(ch)) continue;
+                const lower = ch.toLowerCase();
+                out += lower.length === ch.length ? lower : ch;
+            }
+            return out;
+        }
+
+        // Buttons (the chapter link icon and its "Link copied" hint) and aria-hidden decoration (the chevrons) are not
+        // part of the text of a solution: they depend on the language and on the mode, so links never contain them
+        function isDecorativeText(node) {
+            const el = node.parentElement;
+            return !!(el && el.closest('button, [aria-hidden="true"]'));
+        }
+
+        // Text of the solution inside a range, without decoration; skipHidden leaves out what is not displayed
+        function rangeText(root, range, skipHidden) {
+            const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+            const parts = [];
+            let node;
+            while ((node = walker.nextNode())) {
+                if (!range.intersectsNode(node) || isDecorativeText(node)) continue;
+                if (skipHidden && node.parentElement.getClientRects().length === 0) continue;
+                const value = node.nodeValue;
+                const from = node === range.startContainer ? range.startOffset : 0;
+                const to = node === range.endContainer ? range.endOffset : value.length;
+                if (to > from) parts.push(value.slice(from, to));
+            }
+            return parts.join(" ");
+        }
+
+        // Squashed text of the whole solution plus, for every character, the text node and offset it came from
+        function buildTextIndex(root) {
+            const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+            const chars = [];
+            const nodes = [];
+            const offsets = [];
+            let node;
+            while ((node = walker.nextNode())) {
+                if (isDecorativeText(node)) continue;
+                const value = node.nodeValue;
+                for (let i = 0; i < value.length; i++) {
+                    const ch = value[i];
+                    if (/\s/.test(ch)) continue;
+                    const lower = ch.toLowerCase();
+                    chars.push(lower.length === 1 ? lower : ch);
+                    nodes.push(node);
+                    offsets.push(i);
+                }
+            }
+            return { text: chars.join(""), nodes, offsets };
+        }
+
+        function readTextFragmentParam() {
+            const match = window.location.search.match(/[?&]text=([^&#]*)/);
+            if (!match) return null;
+            const decode = piece => { try { return decodeURIComponent(piece); } catch (e) { return piece; } };
+            const raw = match[1].split(",");
+            let prefix = "";
+            let suffix = "";
+            if (raw.length > 1 && raw[0].endsWith("-")) prefix = decode(raw.shift().slice(0, -1));
+            if (raw.length > 1 && raw[raw.length - 1].startsWith("-")) suffix = decode(raw.pop().slice(1));
+            const start = decode(raw[0] || "");
+            const end = decode(raw[1] || "");
+            return start.trim() ? { prefix, start, end, suffix } : null;
+        }
+
+        // Finds the passage in the rendered solution; returns a Range or null
+        function findTextFragmentRange(root, fragment) {
+            const index = buildTextIndex(root);
+            const start = squashText(fragment.start);
+            const end = squashText(fragment.end);
+            const prefix = squashText(fragment.prefix);
+            const suffix = squashText(fragment.suffix);
+            if (!start) return null;
+            let from = 0;
+            let hit;
+            while ((hit = index.text.indexOf(start, from)) !== -1) {
+                from = hit + 1;
+                if (prefix && (hit < prefix.length || index.text.slice(hit - prefix.length, hit) !== prefix)) continue;
+                let last = hit + start.length;
+                if (end) {
+                    const endAt = index.text.indexOf(end, last);
+                    if (endAt === -1) break; // later starts cannot have an end either
+                    last = endAt + end.length;
+                }
+                if (suffix && index.text.slice(last, last + suffix.length) !== suffix) continue;
+                const range = document.createRange();
+                range.setStart(index.nodes[hit], index.offsets[hit]);
+                range.setEnd(index.nodes[last - 1], index.offsets[last - 1] + 1);
+                return range;
+            }
+            return null;
+        }
+
+        function isRangeVisible(range) {
+            return Array.from(range.getClientRects()).some(rect => rect.width > 0 && rect.height > 0);
+        }
+
+        function clearSharedHighlight() {
+            if (window.CSS && CSS.highlights) CSS.highlights.delete("shared-text");
+        }
+
+        // --- Linked passage in still hidden spoiler steps: a lasting notice with the option to reveal it ---
+        let sharedNotice = null;
+
+        function showSharedPassageNotice(range) {
+            sharedNotice = { range };
+            const notice = document.getElementById("sharedPassageNotice");
+            if (notice) notice.classList.remove("hidden");
+        }
+
+        function hideSharedPassageNotice() {
+            sharedNotice = null;
+            const notice = document.getElementById("sharedPassageNotice");
+            if (notice) notice.classList.add("hidden");
+        }
+
+        // New solution: forget highlight and notice of the previous one
+        function clearSharedPassageState() {
+            clearSharedHighlight();
+            hideSharedPassageNotice();
+        }
+
+        // The passage became visible by other means (steps revealed by hand, spoiler mode switched off):
+        // the notice is obsolete, the passage gets highlighted instead (and shown, if the mode was switched off)
+        function syncSharedPassageNotice(scrollThere) {
+            if (!sharedNotice) return;
+            const range = sharedNotice.range;
+            if (range.collapsed) {
+                hideSharedPassageNotice();
+                return;
+            }
+            if (!isRangeVisible(range)) return;
+            hideSharedPassageNotice();
+            highlightSharedRange(range);
+            if (scrollThere) scrollRangeIntoViewer(document.getElementById("content-viewer"), range);
+        }
+
+        function scrollRangeIntoViewer(viewer, range) {
+            const rect = range.getBoundingClientRect();
+            const top = viewer.scrollTop + (rect.top - viewer.getBoundingClientRect().top) - viewer.clientHeight * 0.3;
+            viewer.scrollTo({ top: Math.max(0, top), behavior: "auto" });
+        }
+
+        // "Reveal passage": opens the chapter(s) just far enough to show the passage, then highlights and shows it
+        function revealSharedPassage() {
+            if (!sharedNotice) return;
+            const range = sharedNotice.range;
+            hideSharedPassageNotice();
+            const elementOf = node => (node.nodeType === 1 ? node : node.parentElement);
+            revealSpoilerStep(elementOf(range.startContainer));
+            revealSpoilerStep(elementOf(range.endContainer));
+            const viewer = document.getElementById("content-viewer");
+            if (!viewer || range.collapsed || !isRangeVisible(range)) return;
+            highlightSharedRange(range);
+            requestAnimationFrame(() => scrollRangeIntoViewer(viewer, range));
+        }
+
+        function highlightSharedRange(range) {
+            clearSharedHighlight();
+            if (window.CSS && CSS.highlights && typeof Highlight !== "undefined") {
+                CSS.highlights.set("shared-text", new Highlight(range));
+            } else {
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+            }
+        }
+
+        // Scrolls to and highlights the passage. Returns false (with a hint) if that is not possible, so that the
+        // normal scroll restore can run. Passages in still hidden spoiler steps are never revealed by a link.
+        function openSharedPassage(viewer, fragment) {
+            const t = translations[currentLang];
+            const range = findTextFragmentRange(viewer, fragment);
+            if (!range) {
+                showToast(t.shareTextNotFound);
+                return false;
+            }
+            if (!isRangeVisible(range)) {
+                showSharedPassageNotice(range);
+                return false;
+            }
+            highlightSharedRange(range);
+            const scrollThere = () => scrollRangeIntoViewer(viewer, range);
+            requestAnimationFrame(() => {
+                scrollThere();
+                requestAnimationFrame(() => {
+                    scrollThere();
+                    setTimeout(() => { isRestoringScroll = false; }, 150);
+                });
+            });
+            return true;
+        }
+
+        function firstWords(text, maxChars) {
+            const words = text.split(" ");
+            let out = words[0];
+            for (let i = 1; i < words.length && (out + " " + words[i]).length <= maxChars; i++) out += " " + words[i];
+            return out;
+        }
+
+        function lastWords(text, maxChars) {
+            const words = text.split(" ");
+            let out = words[words.length - 1];
+            for (let i = words.length - 2; i >= 0 && (words[i] + " " + out).length <= maxChars; i--) out = words[i] + " " + out;
+            return out;
+        }
+
+        // Builds the link for the marked passage: the passage itself (start/end for long ones) plus as many words in
+        // front of it as needed to make it unambiguous if the same text occurs several times
+        function buildTextShareLink(range, selectedText) {
+            const viewer = document.getElementById("content-viewer");
+            if (!viewer || !currentFilePath) return null;
+            const words = selectedText.replace(/\s+/g, " ").trim();
+            if (words.length < 3) return null;
+            let startText = words;
+            let endText = "";
+            if (words.length > 100) {
+                startText = firstWords(words, 60);
+                endText = lastWords(words, 60);
+            }
+            const index = buildTextIndex(viewer);
+            const startSq = squashText(startText);
+            const before = document.createRange();
+            before.selectNodeContents(viewer);
+            before.setEnd(range.startContainer, range.startOffset);
+            const beforeRaw = rangeText(viewer, before, false);
+            const beforeText = beforeRaw.replace(/\s+/g, " ").trim();
+            const ownPosition = squashText(beforeRaw).length;
+
+            const positionsWith = prefixSq => {
+                const positions = [];
+                let at = -1;
+                while ((at = index.text.indexOf(startSq, at + 1)) !== -1) {
+                    if (!prefixSq || (at >= prefixSq.length && index.text.slice(at - prefixSq.length, at) === prefixSq)) positions.push(at);
+                }
+                return positions;
+            };
+            let prefix = "";
+            let positions = positionsWith("");
+            if (positions.length !== 1 || positions[0] !== ownPosition) {
+                const beforeWords = beforeText ? beforeText.split(" ") : [];
+                for (let n = 1; n <= Math.min(8, beforeWords.length); n++) {
+                    prefix = beforeWords.slice(-n).join(" ");
+                    positions = positionsWith(squashText(prefix));
+                    if (positions.length === 1) break;
+                }
+            }
+            const encode = piece => encodeURIComponent(piece).replace(/-/g, "%2D");
+            const value = (prefix ? encode(prefix) + "-," : "") + encode(startText) + (endText ? "," + encode(endText) : "");
+            const baseUrl = window.location.href.split("?")[0].split("#")[0];
+            return `${baseUrl}?file=${encodeURIComponent(currentFilePath)}&text=${value}`;
+        }
+
+        function hideShareBubble() {
+            if (shareBubbleEl) shareBubbleEl.classList.add("hidden");
+            shareSelection = null;
+        }
+
+        function updateShareBubble() {
+            const viewer = document.getElementById("content-viewer");
+            const selection = window.getSelection();
+            if (!viewer || !currentFilePath || !selection || selection.rangeCount === 0 || selection.isCollapsed) {
+                shareDismissedText = null;
+                hideShareBubble();
+                return;
+            }
+            const range = selection.getRangeAt(0);
+            if (!viewer.contains(range.commonAncestorContainer)) {
+                hideShareBubble();
+                return;
+            }
+            const text = rangeText(viewer, range, true).replace(/\s+/g, " ").trim();
+            // The same selection stays without the button once its link was copied
+            if (text.length < 3 || text.length > 5000 || text === shareDismissedText) {
+                hideShareBubble();
+                return;
+            }
+            shareSelection = { range: range.cloneRange(), text };
+            const t = translations[currentLang];
+            shareBubbleEl.querySelector("span").textContent = t.shareTextBtn;
+            shareBubbleEl.firstElementChild.title = t.shareTextTitle;
+            shareBubbleEl.classList.remove("hidden");
+
+            // Below the end of the selection (on touch screens a bit lower, native handles and menu sit right there);
+            // above it if there is no room below
+            // Anchor at the last line of the selection that is visible in the reading area; nothing visible: no button
+            const area = viewer.getBoundingClientRect();
+            const visibleRects = Array.from(range.getClientRects()).filter(r => r.height > 0 && r.bottom > area.top && r.top < area.bottom);
+            if (visibleRects.length === 0) {
+                shareBubbleEl.classList.add("hidden");
+                return;
+            }
+            const rect = visibleRects[visibleRects.length - 1];
+            const coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
+            const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+            const width = shareBubbleEl.offsetWidth;
+            const height = shareBubbleEl.offsetHeight;
+            let top = rect.bottom + (coarse ? 30 : 8);
+            if (top + height > viewportHeight - 8) top = Math.max(8, rect.top - height - (coarse ? 60 : 8));
+            const left = Math.min(Math.max(8, rect.right - width / 2), window.innerWidth - width - 8);
+            shareBubbleEl.style.top = `${Math.round(top)}px`;
+            shareBubbleEl.style.left = `${Math.round(left)}px`;
+        }
+
+        async function copyShareLink() {
+            const current = shareSelection;
+            hideShareBubble();
+            if (!current) return;
+            shareDismissedText = current.text;
+            const t = translations[currentLang];
+            const link = buildTextShareLink(current.range, current.text);
+            if (!link) return;
+            const ok = await copyTextToClipboard(link);
+            showToast(ok ? "🔗 " + t.shareTextCopied : t.shareTextCopyFailed);
+        }
+
+        function initTextShare() {
+            const viewer = document.getElementById("content-viewer");
+            if (!viewer) return;
+
+            shareBubbleEl = document.createElement("div");
+            shareBubbleEl.id = "shareBubble";
+            shareBubbleEl.className = "hidden fixed z-[45]";
+            shareBubbleEl.innerHTML = `<button type="button" class="flex items-center gap-1.5 px-3.5 py-2 min-h-[44px] sm:min-h-0 sm:px-3 sm:py-1.5 rounded-full bg-emerald-600 [@media(hover:hover)]:hover:bg-emerald-500 text-white text-sm sm:text-xs font-semibold shadow-lg border border-emerald-400/40 whitespace-nowrap cursor-pointer transition-colors">🔗 <span></span></button>`;
+            document.body.appendChild(shareBubbleEl);
+
+            // The selection must survive the press on the button; the action runs on pointerup (a tap would otherwise
+            // collapse the selection and hide the button before the click arrives). Keyboard: click with detail 0.
+            shareBubbleEl.addEventListener("pointerdown", e => e.preventDefault());
+            shareBubbleEl.addEventListener("mousedown", e => e.preventDefault());
+            shareBubbleEl.addEventListener("pointerup", e => { e.preventDefault(); copyShareLink(); });
+            shareBubbleEl.addEventListener("click", e => { if (e.detail === 0) copyShareLink(); });
+
+            const scheduleUpdate = () => {
+                clearTimeout(shareUpdateTimer);
+                shareUpdateTimer = setTimeout(() => { if (!sharePointerDown) updateShareBubble(); }, 180);
+            };
+            document.addEventListener("selectionchange", scheduleUpdate);
+            // While the mouse is still dragging the selection the button stays out of the way
+            viewer.addEventListener("pointerdown", () => { sharePointerDown = true; hideShareBubble(); });
+            document.addEventListener("pointerup", () => { sharePointerDown = false; scheduleUpdate(); });
+            document.addEventListener("pointercancel", () => { sharePointerDown = false; });
+            // Scrolling moves the text under the button: hide it and show it again at the new place afterwards
+            viewer.addEventListener("scroll", () => {
+                if (!shareSelection) return;
+                shareBubbleEl.classList.add("hidden");
+                clearTimeout(shareScrollTimer);
+                shareScrollTimer = setTimeout(updateShareBubble, 200);
+            }, { passive: true });
+            // A tap/click into the text dismisses the highlight of an opened link
+            viewer.addEventListener("click", clearSharedHighlight);
+        }
+
         // --- SECTION 11: INITIAL EXECUTION ON LOAD ---
         treeScope = (["favorites", "mine"].includes(lsGet("sgs_tree_scope"))) ? lsGet("sgs_tree_scope") : "all";
         updateTreeScopeUi();
@@ -4542,6 +5052,7 @@ ${t.issueSectionSuggestDesc}
         closeAllOverlays();
         applyTocForView();
         initSpoilerActionBar();
+        initTextShare();
         init();
 
     </script>
