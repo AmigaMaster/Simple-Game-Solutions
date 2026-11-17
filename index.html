@@ -146,6 +146,19 @@
         .spoiler-heading { cursor: pointer; }
         .spoiler-heading:hover { color: #6ee7b7; }
         .spoiler-chevron { display: inline-block; width: 1.1em; color: #34d399; font-size: 0.8em; }
+
+        main{padding:0!important;gap:0!important}
+        #sidebar,#toc-sidebar,main>section{border-radius:0!important;box-shadow:none!important}
+        main>section{border-width:0!important}
+        #sidebar{border-width:0 1px 0 0!important}
+        #toc-sidebar{border-width:0 0 0 1px!important}
+        #resizer-left,#resizer-right{border-radius:0!important}
+
+        *{scrollbar-color:#6b7280 transparent}
+        ::-webkit-scrollbar{width:10px;height:10px}
+        ::-webkit-scrollbar-track{background:transparent}
+        ::-webkit-scrollbar-thumb{background:#6b7280;border-radius:8px;border:2px solid transparent;background-clip:padding-box}
+        ::-webkit-scrollbar-thumb:hover{background:#9ca3af;background-clip:padding-box}
     </style>
 </head>
 
