@@ -375,7 +375,7 @@
             </div>
 
             <!-- Notice for a linked passage in still hidden spoiler steps (part of the layout: it never covers the text) -->
-            <div id="sharedPassageNotice" role="status" class="hidden shrink-0 mt-1 flex flex-wrap items-center gap-x-3 gap-y-1.5 rounded-md border border-emerald-700/50 bg-gray-800/80 px-2.5 py-1.5 text-xs text-gray-200">
+            <div id="sharedPassageNotice" role="status" class="hidden shrink-0 mt-1 flex flex-wrap items-center gap-x-3 gap-y-1.5 rounded-md border border-amber-600/60 bg-amber-900/30 px-2.5 py-1.5 text-xs text-amber-200 shadow-md">
                 <span class="flex-1 min-w-[12rem] leading-snug">🙈 <span data-i18n="sharedPassageHidden">Die verlinkte Textstelle liegt in noch verdeckten Schritten (Spoilermodus).</span></span>
                 <span class="flex items-center gap-1.5 ml-auto">
                     <button type="button" onclick="revealSharedPassage();" data-i18n-title="sharedPassageRevealTitle" title="Zeigt die Textstelle und die Schritte davor in diesem Kapitel"
@@ -1720,6 +1720,7 @@ ${t.issueSectionSuggestDesc}
         // Reset application state back to home/welcome view
         function goHome(isHistoryNav = false) {
             flushScrollPosition();
+            clearSharedPassageState();
             currentFilePath = null;
             scrollPercentBeforeFilter = null;
             lsRemove("sgs_last_file");
