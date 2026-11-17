@@ -3114,11 +3114,26 @@ ${t.issueSectionSuggestDesc}
             if (!isCelebrationEnabled()) return;
             const calm = prefersReducedMotion();
             if (document.getElementById("celebrationCanvas")) return;
+
+            // Get cursor position and speed for collision detection
+            let mouseX = -9999, mouseY = -9999;
+            let prevMouseX = -9999, prevMouseY = -9999;
+            let mouseVx = 0, mouseVy = 0;
+
+            const onMouseMove = (e) => {
+                if (prevMouseX !== -9999) {
+                    mouseVx = Math.max(-25, Math.min(25, (e.clientX - prevMouseX) * 0.5));
+                    mouseVy = Math.max(-25, Math.min(25, (e.clientY - prevMouseY) * 0.5));
+                }
+                prevMouseX = mouseX = e.clientX;
+                prevMouseY = mouseY = e.clientY;
+            };
+            window.addEventListener('mousemove', onMouseMove);
             const canvas = document.createElement("canvas");
             canvas.id = "celebrationCanvas";
             canvas.setAttribute("aria-hidden", "true");
             canvas.style.cssText = "position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:39;";
-            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);   // fewer pixels to fill = cheaper frames
+            const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
             const W = window.innerWidth, H = window.innerHeight;
             canvas.width = Math.round(W * dpr);
             canvas.height = Math.round(H * dpr);
@@ -3507,6 +3522,35 @@ ${t.issueSectionSuggestDesc}
                         p.x += p.vx * dt;
                         p.y += p.vy * dt;
                         if (solid) bounceBallOffWindow(p);
+
+                        // Boing ball collision (with movement energy)
+                        const mRadius = 12;
+                        const bdx = p.x - mouseX;
+                        const bdy = p.y - mouseY;
+                        const bDist = Math.hypot(bdx, bdy);
+                        if (bDist < p.r + mRadius && bDist > 0.1) {
+                            const bnx = bdx / bDist;
+                            const bny = bdy / bDist;
+                            p.x = mouseX + bnx * (p.r + mRadius);
+                            p.y = mouseY + bny * (p.r + mRadius);
+                            const rvx = p.vx - mouseVx;
+                            const rvy = p.vy - mouseVy;
+                            const velAlongNormal = rvx * bnx + rvy * bny;
+                            if (velAlongNormal < 0) {
+                                const restitution = 0.85; // Elastizität (0.85 = sehr sprunghaft)
+                                // Größere Bälle sind träger als kleine Bälle
+                                const massFactor = Math.max(0.4, 24 / p.r); 
+                                const impulse = -(1 + restitution) * velAlongNormal * massFactor;
+                                p.vx += impulse * bnx;
+                                p.vy += impulse * bny;
+                                const tangentX = -bny;
+                                const tangentY = bnx;
+                                const tangentialVel = (mouseVx * tangentX + mouseVy * tangentY);
+                                p.spinV += tangentialVel * 0.005;
+                                p.squash = Math.min(1, p.squash + Math.abs(velAlongNormal) * 0.08);
+                            }
+                        }
+
                         // bounce off the side edges once the ball has entered the screen
                         if (!p.entered && p.x > p.r && p.x < W - p.r) p.entered = true;
                         if (p.entered) {
@@ -3595,6 +3639,31 @@ ${t.issueSectionSuggestDesc}
                     }
                     p.y += p.vy * dt;
                     if (solid) bounceOffWindow(p);
+
+                    // Mouse cursor collision
+                    const mRadius = 15;
+                    const mdx = p.x - mouseX;
+                    const mdy = p.y - mouseY;
+                    const mDist = Math.hypot(mdx, mdy);
+                    if (mDist < mRadius + (p.size || 5) && mDist > 0.1) {
+                        const mnx = mdx / mDist;
+                        const mny = mdy / mDist;
+                        p.x = mouseX + mnx * (mRadius + (p.size || 5));
+                        p.y = mouseY + mny * (mRadius + (p.size || 5));
+                        
+                        const mvn = p.vx * mnx + p.vy * mny;
+                        if (mvn < 0) {
+                            const restitution = 0.7; // Elastizität des Abprallens
+                            p.vx -= (1 + restitution) * mvn * mnx;
+                            p.vy -= (1 + restitution) * mvn * mny;
+                            p.vx += mnx * 1.5;
+                            p.vy += mny * 1.5;
+                            if (p.kind === "confetti") {
+                                p.vr += rand(-0.2, 0.2);
+                            }
+                        }
+                    }
+
                     p.life -= p.decay * dt;
                     if (p.kind === "spark" && p.crackle && !p.popped && p.life < 0.35) {
                         p.popped = true;
@@ -3671,7 +3740,12 @@ ${t.issueSectionSuggestDesc}
                 if (elapsed >= bannerStart && elapsed <= bannerEnd) drawBanner(elapsed - bannerStart);
 
                 const spawningDone = elapsed >= Math.max(spawnEnd, bannerEnd) && nextBurst >= bursts.length && nextBoing >= boingTimes.length;
-                if ((spawningDone && particles.length === 0) || elapsed > 12000) { canvas.remove(); return; }
+                if ((spawningDone && particles.length === 0) || elapsed > 12000) {
+                    canvas.remove(); return;
+                    window.removeEventListener('mousemove', onMouseMove);
+                }
+                mouseVx *= 0.6;
+                mouseVy *= 0.6;
                 requestAnimationFrame(frame);
             }
             requestAnimationFrame(frame);
