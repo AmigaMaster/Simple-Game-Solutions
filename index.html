@@ -533,6 +533,8 @@
                 statusPlaying: "Ich spiele gerade",
                 statusDone: "Fertig",
                 tabMine: "Meine Spiele",
+                downloadRepo: "Download",
+                downloadRepoTitle: "Gesamtes Repository als ZIP-Archiv herunterladen",
                 mineFavorites: "Favoriten",
                 minePlaying: "Ich spiele gerade",
                 mineDone: "Fertig",
@@ -662,6 +664,8 @@
                 statusPlaying: "Playing now",
                 statusDone: "Finished",
                 tabMine: "My Games",
+                downloadRepo: "Download",
+                downloadRepoTitle: "Download entire repository as a ZIP archive",
                 mineFavorites: "Favorites",
                 minePlaying: "Playing now",
                 mineDone: "Finished",
@@ -1721,7 +1725,13 @@ ${t.issueSectionSuggestDesc}
                 <div class="flex flex-wrap gap-2 mb-6 border-b border-gray-700 pb-3">
                     <button onclick="renderWelcomeScreen('home')" class="${tabClass(tab !== 'mine')}">🏠 ${escapeHtml(translations[currentLang].welcomeTabHome)}</button>
                     <button onclick="renderWelcomeScreen('mine')" class="${tabClass(tab === 'mine')}">⭐ ${escapeHtml(translations[currentLang].tabMine)}</button>
+                    <a href="https://github.com/AmigaMaster/Simple-Game-Solutions/archive/refs/heads/master.zip"
+                    download="Simple-Game-Solutions-master.zip"
+                    rel="noopener noreferrer"
+                    title="${escapeHtml(translations[currentLang].downloadRepoTitle)}"
+                    class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 inline-flex items-center gap-1.5 no-underline">📦 <span>${escapeHtml(translations[currentLang].downloadRepo)}</span></a>
                 </div>`;
+
 
             listHtml += tab === 'mine' ? renderMyGamesHtml() : renderWelcomeOverviewHtml();
             listHtml += `</div>`;
