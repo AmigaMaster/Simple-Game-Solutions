@@ -374,6 +374,9 @@
                         <a id="githubHistoryLink" href="#" target="_blank" rel="noopener noreferrer" onclick="toggleReportMenu();" class="group w-full text-left px-3 py-2.5 min-h-[44px] sm:min-h-0 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                             <span class="hover-wiggle inline-block transition-transform">🕘</span> <span data-i18n="githubHistoryBtn">Änderungsverlauf</span>
                         </a>
+                        <a id="githubDownloadLink" href="#" rel="noopener noreferrer" onclick="downloadCurrentSolutionMarkdown(event);" class="group w-full text-left px-3 py-2.5 min-h-[44px] sm:min-h-0 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                            <span class="hover-wiggle inline-block transition-transform">⬇️</span> <span data-i18n="githubDownloadBtn">Als Markdown herunterladen</span>
+                        </a>
                         <div class="border-t border-gray-700 my-0.5" role="separator"></div>
                         <button onclick="openDiscussions();" class="group w-full text-left px-3 py-2.5 min-h-[44px] sm:min-h-0 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                             <span class="hover-wiggle inline-block transition-transform">💬</span> <span data-i18n="githubDiscussionsBtn">Diskutiere</span>
@@ -603,6 +606,7 @@
                 reportIssueTitle: "Mitmachen: Lösung auf GitHub bearbeiten, Änderungsverlauf ansehen, diskutieren oder Fehler melden",
                 githubEditBtn: "Auf GitHub bearbeiten",
                 githubHistoryBtn: "Änderungsverlauf",
+                githubDownloadBtn: "Als Markdown herunterladen",
                 githubHistoryTitle: "Änderungsverlauf dieser Lösung auf GitHub ansehen",
                 githubDiscussionsBtn: "Diskutiere",
                 githubIssueBtn: "Fehler melden",
@@ -734,6 +738,7 @@
                 reportIssueTitle: "Contribute: edit this walkthrough on GitHub, view its change history, start a discussion or report an issue",
                 githubEditBtn: "Edit on GitHub",
                 githubHistoryBtn: "Change history",
+                githubDownloadBtn: "Download as Markdown",
                 githubHistoryTitle: "View the change history of this walkthrough on GitHub",
                 githubDiscussionsBtn: "Discuss",
                 githubIssueBtn: "Report an error",
@@ -864,8 +869,39 @@
             if (!currentFilePath) return;
             const edit = document.getElementById("githubEditLink");
             const history = document.getElementById("githubHistoryLink");
+            const download = document.getElementById("githubDownloadLink");
             if (edit) edit.href = githubSolutionUrl("edit", currentFilePath);
             if (history) history.href = githubSolutionUrl("commits", currentFilePath);
+            if (download) {
+                download.href = githubRawSolutionUrl(currentFilePath);
+            }
+        }
+
+        async function downloadCurrentSolutionMarkdown(event) {
+            event.preventDefault();
+            toggleReportMenu();
+            if (!currentFilePath) return;
+
+            const url = githubRawSolutionUrl(currentFilePath);
+            const fileName = currentFilePath.split("/").pop() || "solution.md";
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error("HTTP " + response.status);
+                const markdownText = await response.text();
+
+                const blob = new Blob([markdownText], { type: "text/markdown;charset=utf-8" });
+                const blobUrl = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = blobUrl;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+            } catch (err) {
+                window.open(url, "_blank", "noopener,noreferrer");
+            }
         }
 
         window.addEventListener("click", e => {
@@ -1077,6 +1113,11 @@
             // kind: "edit" (GitHub web editor) or "commits" (change history of this one file)
             const encoded = path.split("/").map(encodeURIComponent).join("/");
             return `https://github.com/${GITHUB_REPO}/${kind}/${GITHUB_BRANCH}/${GITHUB_SOLUTIONS_DIR}/${encoded}`;
+        }
+
+        function githubRawSolutionUrl(path) {
+            const encoded = path.split("/").map(encodeURIComponent).join("/");
+            return `https://raw.githubusercontent.com/${GITHUB_REPO}/refs/heads/${GITHUB_BRANCH}/${GITHUB_SOLUTIONS_DIR}/${encoded}`;
         }
 
         // --- FILE INDEX (path -> node from structure.json) ---
