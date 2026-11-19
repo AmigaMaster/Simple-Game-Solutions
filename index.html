@@ -877,31 +877,35 @@
             }
         }
 
-        async function downloadCurrentSolutionMarkdown(event) {
-            event.preventDefault();
-            toggleReportMenu();
-            if (!currentFilePath) return;
+        async function downloadSolutionMarkdown(filePath) {
+            if (!filePath) return;
 
-            const url = githubRawSolutionUrl(currentFilePath);
-            const fileName = currentFilePath.split("/").pop() || "solution.md";
+            const fileName = filePath.split("/").pop() || "solution.md";
 
             try {
-                const response = await fetch(url);
+                const response = await fetch(encodeSolutionPath(filePath));
                 if (!response.ok) throw new Error("HTTP " + response.status);
                 const markdownText = await response.text();
 
-                const blob = new Blob([markdownText], { type: "text/markdown;charset=utf-8" });
+                const blob = new Blob([markdownText], { type: "application/octet-stream" });
                 const blobUrl = URL.createObjectURL(blob);
                 const a = document.createElement("a");
                 a.href = blobUrl;
                 a.download = fileName;
+                a.style.display = "none";
                 document.body.appendChild(a);
                 a.click();
                 a.remove();
                 setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
             } catch (err) {
-                window.open(url, "_blank", "noopener,noreferrer");
+                console.error("Download failed:", err);
             }
+        }
+
+        async function downloadCurrentSolutionMarkdown(event) {
+            event.preventDefault();
+            toggleReportMenu();
+            await downloadSolutionMarkdown(currentFilePath);
         }
 
         window.addEventListener("click", e => {
@@ -1665,16 +1669,19 @@ ${t.issueSectionSuggestDesc}
             const t = translations[currentLang];
             const { title, lang } = splitLangSuffix(file.name);
             const langTag = lang ? `<span class="text-[11px] font-semibold text-gray-300 border border-gray-600 bg-gray-800 rounded px-1.5 py-0.5">${escapeHtml(lang)}</span>` : "";
-            const history = withHistory
-                ? `<a href="${escapeHtml(githubSolutionUrl("commits", file.path))}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(t.githubHistoryTitle)}" class="not-prose no-underline flex items-center gap-1.5 min-h-[44px] sm:min-h-0 px-4 py-2 sm:py-1.5 border-t border-gray-700/60 rounded-b-lg text-xs sm:text-[11px] text-gray-400 hover:text-emerald-300 transition-colors">🕘 <span>${escapeHtml(t.githubHistoryBtn)}</span></a>`
+            const rawUrl = githubRawSolutionUrl(file.path);
+            const downloadAction = `<a href="${escapeHtml(rawUrl)}" data-download-path="${escapeHtml(file.path)}" title="${escapeHtml(t.githubDownloadBtn)}" class="not-prose no-underline flex items-center gap-1.5 min-h-[44px] sm:min-h-0 px-4 py-2 sm:py-1.5 text-xs sm:text-[11px] text-gray-400 hover:text-emerald-300 transition-colors cursor-pointer">⬇️ <span>${escapeHtml(t.githubDownloadBtn)}</span></a>`;
+            const historyAction = withHistory
+                ? `<a href="${escapeHtml(githubSolutionUrl("commits", file.path))}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(t.githubHistoryTitle)}" class="not-prose no-underline flex items-center gap-1.5 min-h-[44px] sm:min-h-0 px-4 py-2 sm:py-1.5 text-xs sm:text-[11px] text-gray-400 hover:text-emerald-300 transition-colors">🕘 <span>${escapeHtml(t.githubHistoryBtn)}</span></a>`
                 : "";
+            const actionsBar = `<div class="flex flex-wrap items-center justify-between gap-1 border-t border-gray-700/60 rounded-b-lg">${downloadAction}${historyAction}</div>`;
             return `<div class="bg-gray-800/60 hover:bg-gray-800 border ${borderStyle} rounded-lg transition-colors flex flex-col group min-w-0">
-                <button data-load-path="${escapeHtml(file.path)}" class="text-left p-4 flex flex-col gap-3 flex-1 min-w-0 cursor-pointer rounded-t-lg ${withHistory ? "" : "rounded-b-lg"}">
+                <button data-load-path="${escapeHtml(file.path)}" class="text-left p-4 flex flex-col gap-3 flex-1 min-w-0 cursor-pointer rounded-t-lg">
                     <span class="block font-semibold text-gray-100 text-sm sm:text-base break-words">${escapeHtml(title)}</span>
                     <span class="flex flex-wrap items-center gap-1.5 mt-auto">${langTag}${metaHtml}</span>
                     ${footerHtml}
                 </button>
-                ${history}
+                ${actionsBar}
             </div>`;
         }
 
@@ -2276,6 +2283,13 @@ ${t.issueSectionSuggestDesc}
             const contentViewer = document.getElementById("content-viewer");
             if (contentViewer) {
                 contentViewer.addEventListener("click", (e) => {
+                    const downloadLink = e.target.closest("a[data-download-path]");
+                    if (downloadLink) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        downloadSolutionMarkdown(downloadLink.dataset.downloadPath);
+                        return;
+                    }
                     const loadBtn = e.target.closest("button[data-load-path]");
                     if (loadBtn) {
                         loadFile(loadBtn.dataset.loadPath);
