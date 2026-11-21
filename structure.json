@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 611,
-    "total_words": 704783,
-    "total_actions": 86360
+    "total_files": 612,
+    "total_words": 707187,
+    "total_actions": 86650
   },
   "name": "solutions",
   "type": "directory",
@@ -5390,6 +5390,16 @@
           "status": "new",
           "words": 1751,
           "actions": 225
+        },
+        {
+          "name": "The Adventures of Tango Rio-EN",
+          "type": "file",
+          "path": "T/The Adventures of Tango Rio-EN.md",
+          "last_modified": "2026-11-22T00:33:27+01:00",
+          "created": "2026-11-22T00:33:27+01:00",
+          "status": "new",
+          "words": 2404,
+          "actions": 290
         },
         {
           "name": "The Alignment Paradox-EN",
