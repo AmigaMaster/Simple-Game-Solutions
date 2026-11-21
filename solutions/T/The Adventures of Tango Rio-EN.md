@@ -380,7 +380,7 @@
       |II |   | L |   |   |   | L |   |   |   | L |   |   | L |   |   |   |
       |I  | A |   |   |   | A |   |   |   | A |   |   |   |   |   | A |   |
   - PLAY THE RIFF
-- TAKE Lyre of Spiral Sighs (`Lyre of Spinal Sighs`)
+- TAKE Lyre of Spinal Sighs (`Lyre of Spinal Sighs`)
 
 ### 3.6. Pier
 
