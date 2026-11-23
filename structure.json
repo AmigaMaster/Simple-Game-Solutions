@@ -1,7 +1,7 @@
 {
   "stats": {
     "total_files": 612,
-    "total_words": 707187,
+    "total_words": 707202,
     "total_actions": 86650
   },
   "name": "solutions",
@@ -1631,10 +1631,10 @@
           "name": "Forge - Chapter 1 DEMO-EN",
           "type": "file",
           "path": "F/Forge - Chapter 1 DEMO-EN.md",
-          "last_modified": "2025-10-14T07:47:10+02:00",
+          "last_modified": "2026-11-24T00:09:07+01:00",
           "created": "2025-10-14T07:47:10+02:00",
-          "status": "new",
-          "words": 862,
+          "status": "updated",
+          "words": 877,
           "actions": 84
         },
         {
