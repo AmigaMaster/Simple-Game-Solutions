@@ -4,7 +4,7 @@
 |:-------:|------------|-------------------------------------------|
 |   1.0   | 04.11.2022 | Amiga Master (AmigaMaster-NG@t-online.de) |
 
-Get the game for free at the games [website](http://forgegame.com/?p=main)
+Download the free game from [archive.org](https://archive.org/details/forge-chapter-one-demo-v-1.1)
 
 ## 1. Copy Protection
 
@@ -237,3 +237,11 @@ Get the game for free at the games [website](http://forgegame.com/?p=main)
 - USE tramcar
 - >Reward "Scamp": (`d c a g e`)
 - WAIT, then USE faint light
+
+--------------------------------------------------------------------------------
+
+## 21. Video Walkthrough
+
+Forge Chapter 1 (Demo V1.1) Walkthrough (English) (PC, Win) - No Commentary
+
+[![Walkthrough](https://img.youtube.com/vi/_M_LC7I1rbw/0.jpg)](https://www.youtube.com/watch?v=_M_LC7I1rbw)
