@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 613,
-    "total_words": 708414,
-    "total_actions": 86799
+    "total_files": 614,
+    "total_words": 709135,
+    "total_actions": 86897
   },
   "name": "solutions",
   "type": "directory",
@@ -1908,6 +1908,16 @@
           "status": "updated",
           "words": 3743,
           "actions": 438
+        },
+        {
+          "name": "How They Found Silence-EN",
+          "type": "file",
+          "path": "H/How They Found Silence-EN.md",
+          "last_modified": "2026-11-26T00:02:21+01:00",
+          "created": "2026-11-26T00:02:21+01:00",
+          "status": "new",
+          "words": 721,
+          "actions": 98
         },
         {
           "name": "How We Know We're Alive-EN",
