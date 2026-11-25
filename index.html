@@ -247,6 +247,9 @@
                         </button>
                     </div>
                     <div class="border-t border-gray-700 pt-2 flex flex-col gap-1 -mx-1">
+                    <button onclick="openOnboarding();" class="group w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
+                        <span class="hover-wiggle inline-block transition-transform">❓</span> <span data-i18n="onbHelpMenu">Einführung</span>
+                    </button>
                     <button onclick="exportSettings();" class="group w-full text-left px-3 py-2.5 text-sm sm:py-1.5 sm:text-xs rounded hover:bg-gray-700 text-gray-200 hover:text-white flex items-center gap-2 cursor-pointer transition-colors">
                         <span class="hover-wiggle inline-block transition-transform">💾</span> <span data-i18n="exportBtn">Export</span>
                     </button>
@@ -483,6 +486,19 @@
             return lsSet(key, JSON.stringify(value));
         }
 
+        // Quick start for new visitors. "New" is decided here, before anything is written to the storage
+        const ONBOARDING_KEY = "sgs_onboarding_done";
+        const BACKUP_KEY = "sgs_last_backup";
+        const onboardingIsNewVisitor = (() => {
+            try {
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && key.startsWith("sgs_")) return false;
+                }
+                return true;
+            } catch (e) { return false; }
+        })();
+
         function isDesktopDevice() {
             return window.innerWidth >= 768 && window.matchMedia('(pointer: fine)').matches;
         }
@@ -597,12 +613,55 @@
                 spoilerNextChapter: "Nächstes Kapitel",
                 spoilerNext3: "+3 Schritte",
                 spoilerRest: "Rest des Kapitels",
-                exportBtn: "Export",
-                importBtn: "Import",
+                exportBtn: "Sichern",
+                importBtn: "Laden",
                 settingsMenuTitle: "Einstellungen",
                 settingsLanguageLabel: "Sprache / Language",
                 importSuccess: "Einstellungen erfolgreich importiert!",
                 importError: "Fehler beim Importieren der Datei (ungültiges Format).",
+                onbHelpMenu: "Einführung",
+                onbHelpBtn: "So funktioniert's",
+                onbHelpTitle: "Kurze Einführung und wichtige Einstellungen",
+                onbStepOf: "Schritt {n} von {total}",
+                onbSkip: "Überspringen",
+                onbBack: "Zurück",
+                onbNext: "Weiter",
+                onbDone: "Los geht's",
+                onbWelcomeTitle: "Willkommen!",
+                onbWelcomeIntro: "Hier findest du Lösungen für zahlreiche Videospiele. Das Wichtigste in Kürze:",
+                onbFeatSearch: "**Suche**: Nach Spieletiteln suchen.",
+                onbFeatMenu: "**Menü:** Alle Lösungen nach Verzeichnis. Mit ⭐ und dem Status 🎮 merkst du dir deine Spiele.",
+                onbFeatToc: "**Inhalt:** Springt direkt zu einem Kapitel.",
+                onbFeatProgress: "**Weitermachen:** Dein Lesestand wird automatisch gespeichert und wiederhergestellt.",
+                onbFeatSpoiler: "**Spoilermodus:** Zeigt Lösungen Schritt für Schritt (siehe Schritt 3).",
+                onbRestoreBtn: "Schon mal hier gewesen? Sicherung laden",
+                onbSettingsTitle: "Deine Einstellungen",
+                onbSettingsIntro: "Wähle, was dir passt. Du kannst alles später unter ⚙️ ändern.",
+                onbFontSmaller: "Schrift kleiner",
+                onbFontLarger: "Schrift größer",
+                onbFontSample: "Beispieltext: Nimm den Schlüssel und öffne die Tür.",
+                onbCelebrationHint: "Eine kleine Überraschung, wenn du im Spoilermodus das Ende einer Lösung erreichst.",
+                onbSpoilerTitle: "Spoilermodus",
+                onbSpoilerIntro: "Du suchst nur eine einzelne Stelle? Dann zeigt der Spoilermodus nur die Kapitelüberschriften. Alles andere deckst du Schritt für Schritt auf.",
+                onbSpoilerSwitchHint: "Gilt für alle Lösungen",
+                onbDemoTitle: "Probier es aus:",
+                onbDemoHeading: "Die Küche",
+                onbDemoStep1: "Nimm den Schlüssel vom Haken.",
+                onbDemoStep2: "Öffne damit die Schublade.",
+                onbDemoStep3: "Nimm die Taschenlampe.",
+                onbDemoReset: "Nochmal ausprobieren",
+                onbBarHint: "In einer Lösung liegt unten eine feste Leiste: „{a}“, „{b}“ oder „{c}“.",
+                onbSpoilerTip1: "**Kapitel antippen** klappt es auf oder zu. Dein Stand wird pro Lösung gespeichert.",
+                onbSpoilerTip2: "Im Lesebereich schaltet **🙈** den Modus ein oder aus, der **Filter** deckt Treffer einzeln auf.",
+                onbBackupTitle: "Sichern & Wiederherstellen",
+                onbBackupWhy: "**Wichtig:** Favoriten, Spielstatus, Lesefortschritt, Spoilerstand und Einstellungen werden nur in **diesem Browser** gespeichert. Löschst du die Browserdaten oder wechselst Gerät oder Browser, sind sie weg.",
+                onbBackupHow: "Sichere sie deshalb ab und zu als Datei und lege sie an einem sicheren Ort ab, z. B. in der Cloud oder per E-Mail an dich selbst. Auf einem neuen Gerät lädst du die Datei wieder.",
+                onbBackupExport: "Sicherung speichern",
+                onbBackupImport: "Sicherung laden",
+                onbBackupLast: "Letzte Sicherung: {date}",
+                onbBackupNone: "Noch keine Sicherung erstellt.",
+                onbBackupWarn: "Beim Laden werden die aktuellen Einstellungen ersetzt.",
+                onbFindAgain: "Diese Einführung findest du jederzeit unter ⚙️ → Einführung.",
                 reportIssueTitle: "Mitmachen: Lösung auf GitHub bearbeiten, Änderungsverlauf ansehen, diskutieren oder Fehler melden",
                 githubEditBtn: "Auf GitHub bearbeiten",
                 githubHistoryBtn: "Änderungsverlauf",
@@ -729,12 +788,55 @@
                 spoilerNextChapter: "Next chapter",
                 spoilerNext3: "+3 steps",
                 spoilerRest: "Rest of chapter",
-                exportBtn: "Export",
-                importBtn: "Import",
+                exportBtn: "Save",
+                importBtn: "Restore",
                 settingsMenuTitle: "Settings",
                 settingsLanguageLabel: "Language / Sprache",
                 importSuccess: "Settings successfully imported!",
                 importError: "Error importing file (invalid format).",
+                onbHelpMenu: "Quick start",
+                onbHelpBtn: "How it works",
+                onbHelpTitle: "Short introduction and important settings",
+                onbStepOf: "Step {n} of {total}",
+                onbSkip: "Skip",
+                onbBack: "Back",
+                onbNext: "Next",
+                onbDone: "Let's go",
+                onbWelcomeTitle: "Welcome!",
+                onbWelcomeIntro: "This is a collection of walkthroughs for video games. The essentials in brief:",
+                onbFeatSearch: "**Search**: Search for a game title.",
+                onbFeatMenu: "**Menu:** All walkthroughs by directory. Use ⭐ and the status 🎮 to keep track of your games.",
+                onbFeatToc: "**Contents:** Jumps straight to a chapter.",
+                onbFeatProgress: "**Continue:** Your reading position is saved and restored automatically.",
+                onbFeatSpoiler: "**Spoiler mode:** Shows walkthroughs step by step (see step 3).",
+                onbRestoreBtn: "Been here before? Load a backup",
+                onbSettingsTitle: "Your settings",
+                onbSettingsIntro: "Pick what suits you. You can change everything later under ⚙️.",
+                onbFontSmaller: "Smaller text",
+                onbFontLarger: "Larger text",
+                onbFontSample: "Sample text: Take the key and open the door.",
+                onbCelebrationHint: "A small surprise when you reach the end of a walkthrough in spoiler mode.",
+                onbSpoilerTitle: "Spoiler mode",
+                onbSpoilerIntro: "Only looking for a single spot? Spoiler mode shows just the chapter headings. You reveal everything else step by step.",
+                onbSpoilerSwitchHint: "Applies to all walkthroughs",
+                onbDemoTitle: "Try it:",
+                onbDemoHeading: "The kitchen",
+                onbDemoStep1: "Take the key from the hook.",
+                onbDemoStep2: "Use it to open the drawer.",
+                onbDemoStep3: "Take the flashlight.",
+                onbDemoReset: "Try again",
+                onbBarHint: "In a walkthrough, a fixed bar at the bottom offers “{a}”, “{b}” or “{c}”.",
+                onbSpoilerTip1: "**Tap a chapter** to open or close it. Your progress is saved per walkthrough.",
+                onbSpoilerTip2: "In the reading area, **🙈** switches the mode on or off and the **filter** reveals hits one at a time.",
+                onbBackupTitle: "Backup & restore",
+                onbBackupWhy: "**Important:** favorites, game status, reading progress, spoiler progress and settings are stored only in **this browser**. If you clear your browser data or switch device or browser, they are gone.",
+                onbBackupHow: "So save them to a file now and then and keep it somewhere safe, e.g. in the cloud or emailed to yourself. On a new device, load the file again.",
+                onbBackupExport: "Save backup",
+                onbBackupImport: "Load backup",
+                onbBackupLast: "Last backup: {date}",
+                onbBackupNone: "No backup created yet.",
+                onbBackupWarn: "Loading a backup replaces your current settings.",
+                onbFindAgain: "You can open this guide any time under ⚙️ → Quick start.",
                 reportIssueTitle: "Contribute: edit this walkthrough on GitHub, view its change history, start a discussion or report an issue",
                 githubEditBtn: "Edit on GitHub",
                 githubHistoryBtn: "Change history",
@@ -859,6 +961,11 @@
             if (dropdown) dropdown.classList.toggle("hidden");
         }
 
+        function closeSettingsMenu() {
+            const dropdown = document.getElementById("settingsDropdown");
+            if (dropdown) dropdown.classList.add("hidden");
+        }
+
         function toggleReportMenu() {
             const dropdown = document.getElementById("reportDropdown");
             if (dropdown) dropdown.classList.toggle("hidden");
@@ -923,7 +1030,8 @@
         });
 
         function exportSettings() {
-            toggleSettingsMenu();
+            closeSettingsMenu();
+            lsSet(BACKUP_KEY, new Date().toISOString());
             const data = {};
             // Only export this app's own keys (the origin is shared with other projects)
             try {
@@ -947,7 +1055,7 @@
         }
 
         function importSettings(event) {
-            toggleSettingsMenu();
+            closeSettingsMenu();
             const file = event.target.files[0];
             if (!file) return;
             const reader = new FileReader();
@@ -971,6 +1079,9 @@
                         .filter(key => key.startsWith("sgs_"))
                         .forEach(key => localStorage.removeItem(key));
                     entries.forEach(([key, value]) => localStorage.setItem(key, value));
+                    // Someone who restores a backup is not a new visitor: no quick start afterwards
+                    lsSet(ONBOARDING_KEY, "1");
+                    closeOnboarding();
                     migrateReadState();
                     alert(translations[currentLang].importSuccess || "Settings successfully imported!");
                     
@@ -1778,6 +1889,8 @@ ${t.issueSectionSuggestDesc}
                     rel="noopener noreferrer"
                     title="${escapeHtml(translations[currentLang].downloadRepoTitle)}"
                     class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 inline-flex items-center gap-1.5 no-underline">📦 <span>${escapeHtml(translations[currentLang].downloadRepo)}</span></a>
+                    <button type="button" onclick="openOnboarding();" title="${escapeHtml(translations[currentLang].onbHelpTitle)}"
+                    class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 inline-flex items-center gap-1.5 cursor-pointer">❓ <span>${escapeHtml(translations[currentLang].onbHelpBtn)}</span></button>
                 </div>`;
 
 
@@ -1856,6 +1969,7 @@ ${t.issueSectionSuggestDesc}
                     const searchInput = document.getElementById("searchInput");
                     if (searchInput && !searchParam && isDesktopDevice()) searchInput.focus();
                 }
+                maybeShowOnboarding();
             } catch (error) {
                 console.error("Error loading structure:", error);
                 document.getElementById("tree-container").innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].errorLoadingStruct}</p>`
@@ -4201,13 +4315,13 @@ ${t.issueSectionSuggestDesc}
             spoilerToastTimer = setTimeout(() => { toast.classList.add("opacity-0"); }, 2500);
         }
 
-        function toggleSpoilerMode(confirmed) {
+        function toggleSpoilerMode(confirmed, silent) {
             if (isSpoilerModeOn() && confirmed !== true) {
                 showSpoilerOffConfirm();
                 return;
             }
             if (isSpoilerModeOn()) lsRemove(SPOILER_MODE_KEY); else lsSet(SPOILER_MODE_KEY, "1");
-            if (isSpoilerModeOn()) showSpoilerToast();
+            if (isSpoilerModeOn() && !silent) showSpoilerToast();
             const viewer = document.getElementById("content-viewer");
             if (!currentFilePath || rawFileContent === null || !viewer) {
                 updateSpoilerButton();
@@ -5271,6 +5385,264 @@ ${t.issueSectionSuggestDesc}
             }, { passive: true });
             // A tap/click into the text dismisses the highlight of an opened link
             viewer.addEventListener("click", clearSharedHighlight);
+        }
+
+        // --- SECTION 10d: QUICK START FOR NEW VISITORS ---
+        const ONB_TOTAL = 4;
+        const ONB_FONT_SIZES = [80, 90, 100, 110, 120, 130, 140, 150];
+        let onbStep = 1;
+        let onbDemoCount = 0;
+        let onbPreviousFocus = null;
+
+        function maybeShowOnboarding() {
+            if (!onboardingIsNewVisitor || lsGet(ONBOARDING_KEY) !== null) return;
+            if (!lsSet(ONBOARDING_KEY, "1")) return;
+            openOnboarding();
+        }
+
+        // Escapes the text and turns **word** into bold
+        function onbRich(text) {
+            return escapeHtml(text).replace(/\*\*(.+?)\*\*/g, '<strong class="text-white">$1</strong>');
+        }
+
+        function onbCurrentFont() {
+            const v = parseInt(lsGet("sgs_font_scale") || "100", 10);
+            return v >= 50 && v <= 200 ? v : 100;
+        }
+
+        function onbBackupDateText() {
+            const raw = lsGet(BACKUP_KEY);
+            const d = raw ? new Date(raw) : null;
+            if (!d || isNaN(d.getTime())) return null;
+            return d.toLocaleDateString(currentLang === "de" ? "de-DE" : "en-US");
+        }
+
+        function onbSwitchHtml(action, label, hint, on) {
+            const track = on ? "bg-emerald-600" : "bg-gray-700";
+            const thumb = on ? "translate-x-6" : "translate-x-1";
+            return `<button type="button" role="switch" aria-checked="${on}" data-onb="${action}"
+                    class="w-full flex items-center justify-between gap-3 bg-gray-950 hover:bg-gray-900 border border-gray-600 focus:outline-none focus:border-emerald-500 rounded-xl px-3 py-2.5 min-h-[52px] text-left cursor-pointer transition-colors">
+                    <span class="min-w-0">
+                        <span class="block text-base sm:text-sm font-semibold text-gray-100">${escapeHtml(label)}</span>
+                        ${hint ? `<span class="block text-xs text-gray-400 leading-snug">${escapeHtml(hint)}</span>` : ""}
+                    </span>
+                    <span class="relative inline-flex h-6 w-11 shrink-0 items-center rounded-full ${track} transition-colors duration-200">
+                        <span class="inline-block h-4 w-4 transform rounded-full bg-white shadow transition-transform duration-200 ${thumb}"></span>
+                    </span>
+                </button>`;
+        }
+
+        function onbStepWelcomeHtml(t) {
+            const items = [["🔍", t.onbFeatSearch], ["📁", t.onbFeatMenu], ["📑", t.onbFeatToc], ["📖", t.onbFeatProgress], ["🙈", t.onbFeatSpoiler]];
+            const list = items.map(([icon, text]) =>
+                `<li class="flex gap-3 text-base sm:text-sm text-gray-300 leading-snug"><span class="text-xl leading-none w-7 text-center shrink-0" aria-hidden="true">${icon}</span><span>${onbRich(text)}</span></li>`
+            ).join("");
+            return `<p class="text-base sm:text-sm text-gray-300 mb-3 leading-snug">${escapeHtml(t.onbWelcomeIntro)}</p>
+                <ul class="space-y-3">${list}</ul>
+                <button type="button" data-onb="import"
+                    class="mt-5 w-full min-h-[48px] px-3 py-2 rounded-xl border border-gray-600 bg-gray-800 hover:bg-gray-700 text-gray-100 text-base sm:text-sm font-semibold cursor-pointer transition-colors">📂 ${escapeHtml(t.onbRestoreBtn)}</button>`;
+        }
+
+        function onbStepSettingsHtml(t) {
+            const font = onbCurrentFont();
+            const atMin = font <= ONB_FONT_SIZES[0];
+            const atMax = font >= ONB_FONT_SIZES[ONB_FONT_SIZES.length - 1];
+            const stepBtn = "min-w-[52px] min-h-[52px] rounded-xl bg-gray-950 hover:bg-gray-900 border border-gray-600 text-gray-100 text-lg font-bold cursor-pointer transition-colors disabled:opacity-40 disabled:cursor-default";
+            return `<p class="text-base sm:text-sm text-gray-300 mb-4 leading-snug">${escapeHtml(t.onbSettingsIntro)}</p>
+                <div class="space-y-4">
+                    <div>
+                        <label for="onbLang" class="block text-sm font-medium text-gray-300 mb-1.5">${escapeHtml(t.settingsLanguageLabel)}</label>
+                        <select id="onbLang" data-onb="lang" class="w-full bg-gray-950 text-gray-100 border border-gray-600 rounded-xl px-3 py-3 text-base focus:outline-none focus:border-emerald-500 cursor-pointer">
+                            <option value="de"${currentLang === "de" ? " selected" : ""}>Deutsch</option>
+                            <option value="en"${currentLang === "en" ? " selected" : ""}>English</option>
+                        </select>
+                    </div>
+                    <div>
+                        <span class="block text-sm font-medium text-gray-300 mb-1.5">${escapeHtml(t.fontSizeLabel)}</span>
+                        <div class="flex items-center gap-2">
+                            <button type="button" data-onb="fontMinus" aria-label="${escapeHtml(t.onbFontSmaller)}" class="${stepBtn}"${atMin ? " disabled" : ""}>A−</button>
+                            <div class="flex-1 text-center text-base font-semibold text-gray-100" aria-live="polite">${font} %</div>
+                            <button type="button" data-onb="fontPlus" aria-label="${escapeHtml(t.onbFontLarger)}" class="${stepBtn}"${atMax ? " disabled" : ""}>A+</button>
+                        </div>
+                        <p class="mt-2 rounded-lg bg-gray-950 border border-gray-700 px-3 py-2 text-gray-300 leading-snug" style="zoom: ${font}%">${escapeHtml(t.onbFontSample)}</p>
+                    </div>
+                    ${onbSwitchHtml("celebration", t.celebrationSettingLabel, t.onbCelebrationHint, isCelebrationEnabled())}
+                </div>`;
+        }
+
+        function onbDemoHtml(t) {
+            const n = onbDemoCount;
+            const steps = [t.onbDemoStep1, t.onbDemoStep2, t.onbDemoStep3];
+            const badge = n > 0 ? `<span class="ml-1 px-2 py-0.5 rounded-full bg-slate-500/20 text-gray-400 text-xs font-medium whitespace-nowrap">${escapeHtml(t.spoilerCountMany.replace("{r}", n).replace("{n}", steps.length))}</span>` : "";
+            let items = "";
+            for (let i = 0; i < n; i++) {
+                items += i === n - 1
+                    ? `<li class="border-l-[3px] border-emerald-400 bg-emerald-500/10 rounded-r-md px-2.5 py-1.5 text-base sm:text-sm text-gray-100">${escapeHtml(steps[i])}</li>`
+                    : `<li class="border-l-[3px] border-transparent px-2.5 py-1.5 text-base sm:text-sm text-gray-300">${escapeHtml(steps[i])}</li>`;
+            }
+            const finished = n >= steps.length;
+            return `<div class="rounded-xl border border-gray-700 bg-gray-950 p-2.5">
+                    <button type="button" data-onb="demoHeading" aria-expanded="${n > 0}" class="w-full flex items-center gap-2 text-left min-h-[44px] px-1 rounded-md cursor-pointer">
+                        <span class="text-emerald-400 w-4 text-center" aria-hidden="true">${n > 0 ? "▾" : "▸"}</span>
+                        <span class="text-base font-bold text-white">${escapeHtml(t.onbDemoHeading)}</span>${badge}
+                    </button>
+                    ${n > 0 ? `<ul class="mt-1 mb-2 space-y-1">${items}</ul>` : ""}
+                    <button type="button" data-onb="demoNext"
+                        class="mt-1 w-full min-h-[48px] px-3 py-2 rounded-lg text-base sm:text-sm font-semibold cursor-pointer transition-colors ${finished ? "bg-gray-800 hover:bg-gray-700 border border-gray-600 text-gray-100" : "bg-emerald-600 hover:bg-emerald-500 text-white"}">${escapeHtml(finished ? t.onbDemoReset : t.spoilerNextStep)}</button>
+                </div>`;
+        }
+
+        function onbStepSpoilerHtml(t) {
+            const bar = t.onbBarHint.replace("{a}", t.spoilerNextStep).replace("{b}", t.spoilerNext3).replace("{c}", t.spoilerRest);
+            const tips = [t.onbSpoilerTip1, t.onbSpoilerTip2].map(text =>
+                `<li class="flex gap-2 text-base sm:text-sm text-gray-300 leading-snug"><span class="text-emerald-400 shrink-0" aria-hidden="true">•</span><span>${onbRich(text)}</span></li>`
+            ).join("");
+            return `<p class="text-base sm:text-sm text-gray-300 mb-3 leading-snug">${escapeHtml(t.onbSpoilerIntro)}</p>
+                ${onbSwitchHtml("spoiler", "🙈 " + t.onbSpoilerTitle, t.onbSpoilerSwitchHint, isSpoilerModeOn())}
+                <p class="mt-4 mb-1.5 text-sm font-semibold text-gray-200">${escapeHtml(t.onbDemoTitle)}</p>
+                ${onbDemoHtml(t)}
+                <p class="mt-2 text-xs text-gray-400 leading-snug">${escapeHtml(bar)}</p>
+                <ul class="mt-3 space-y-2">${tips}</ul>`;
+        }
+
+        function onbStepBackupHtml(t) {
+            const date = onbBackupDateText();
+            const status = date ? t.onbBackupLast.replace("{date}", date) : t.onbBackupNone;
+            return `<div class="rounded-xl border border-emerald-600/60 bg-emerald-900/20 p-3 text-base sm:text-sm text-gray-200 leading-snug">⚠️ ${onbRich(t.onbBackupWhy)}</div>
+                <p class="mt-3 text-base sm:text-sm text-gray-300 leading-snug">${escapeHtml(t.onbBackupHow)}</p>
+                <div class="mt-4 grid gap-2">
+                    <button type="button" data-onb="export" class="w-full min-h-[52px] px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-base sm:text-sm font-semibold cursor-pointer transition-colors">💾 ${escapeHtml(t.onbBackupExport)}</button>
+                    <button type="button" data-onb="import" class="w-full min-h-[52px] px-3 py-2 rounded-xl border border-gray-600 bg-gray-800 hover:bg-gray-700 text-gray-100 text-base sm:text-sm font-semibold cursor-pointer transition-colors">📂 ${escapeHtml(t.onbBackupImport)}</button>
+                </div>
+                <p class="mt-2 text-xs text-gray-300" aria-live="polite">${escapeHtml(status)}</p>
+                <p class="mt-1 text-xs text-gray-400 leading-snug">${escapeHtml(t.onbBackupWarn)}</p>
+                <p class="mt-3 text-xs text-gray-400 leading-snug">${escapeHtml(t.onbFindAgain)}</p>`;
+        }
+
+        function renderOnboarding() {
+            const overlay = document.getElementById("onboardingOverlay");
+            if (!overlay) return;
+            const dialog = overlay.firstElementChild;
+            const t = translations[currentLang];
+            const oldBody = dialog.querySelector("#onbBody");
+            const prevScroll = oldBody ? oldBody.scrollTop : 0;
+            const sameStep = dialog.dataset.step === String(onbStep);
+            const focusedAction = overlay.contains(document.activeElement) ? document.activeElement.getAttribute("data-onb") : null;
+
+            const titles = [t.onbWelcomeTitle, t.onbSettingsTitle, t.onbSpoilerTitle, t.onbBackupTitle];
+            const icons = ["👋", "⚙️", "🙈", "💾"];
+            const bodies = [onbStepWelcomeHtml, onbStepSettingsHtml, onbStepSpoilerHtml, onbStepBackupHtml];
+            const dots = titles.map((_, i) => {
+                const cls = i + 1 === onbStep ? "w-6 bg-emerald-400" : (i + 1 < onbStep ? "w-2 bg-emerald-700" : "w-2 bg-gray-600");
+                return `<span class="h-2 rounded-full transition-all ${cls}"></span>`;
+            }).join("");
+
+            const secondaryCls = "min-h-[48px] px-4 py-2 rounded-xl border border-gray-600 bg-gray-800 hover:bg-gray-700 text-gray-100 text-base sm:text-sm font-semibold whitespace-nowrap cursor-pointer transition-colors";
+            const primaryCls = "flex-1 min-h-[48px] px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-base sm:text-sm font-semibold cursor-pointer transition-colors";
+            const left = onbStep === 1
+                ? `<button type="button" data-onb="skip" class="${secondaryCls}">${escapeHtml(t.onbSkip)}</button>`
+                : `<button type="button" data-onb="back" class="${secondaryCls}">‹ ${escapeHtml(t.onbBack)}</button>`;
+            const right = onbStep < ONB_TOTAL
+                ? `<button type="button" data-onb="next" class="${primaryCls}">${escapeHtml(t.onbNext)} ›</button>`
+                : `<button type="button" data-onb="done" class="${primaryCls}">${escapeHtml(t.onbDone)} ✓</button>`;
+
+            dialog.innerHTML = `<div class="shrink-0 flex items-center justify-between gap-3 pl-4 pr-2 pt-2">
+                    <div class="flex items-center gap-1.5" aria-hidden="true">${dots}</div>
+                    <div class="flex items-center gap-1">
+                        <span class="text-xs text-gray-400">${escapeHtml(t.onbStepOf.replace("{n}", onbStep).replace("{total}", ONB_TOTAL))}</span>
+                        <button type="button" data-onb="close" aria-label="${escapeHtml(t.close)}" title="${escapeHtml(t.close)}" class="min-w-[44px] min-h-[44px] rounded-md text-gray-400 hover:text-white hover:bg-gray-800 text-lg cursor-pointer">✕</button>
+                    </div>
+                </div>
+                <h2 id="onbTitle" tabindex="-1" class="shrink-0 px-4 pb-2 text-xl font-bold text-white focus:outline-none">${icons[onbStep - 1]} ${escapeHtml(titles[onbStep - 1])}</h2>
+                <div id="onbBody" class="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 pb-4">${bodies[onbStep - 1](t)}</div>
+                <div class="shrink-0 flex items-stretch gap-2 border-t border-gray-700 px-4 pt-3" style="padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.75rem);">${left}${right}</div>`;
+            dialog.dataset.step = String(onbStep);
+
+            if (sameStep) {
+                dialog.querySelector("#onbBody").scrollTop = prevScroll;
+                const again = focusedAction ? dialog.querySelector(`[data-onb="${focusedAction}"]`) : null;
+                if (again && !again.disabled) again.focus();
+            } else {
+                dialog.querySelector("#onbTitle").focus();
+            }
+        }
+
+        function openOnboarding() {
+            if (document.getElementById("onboardingOverlay")) return;
+            closeSettingsMenu();
+            onbStep = 1;
+            onbDemoCount = 0;
+            onbPreviousFocus = document.activeElement;
+            const overlay = document.createElement("div");
+            overlay.id = "onboardingOverlay";
+            overlay.className = "fixed inset-0 z-[1000] flex items-end sm:items-center justify-center bg-black/70 sm:p-4";
+            overlay.innerHTML = `<div role="dialog" aria-modal="true" aria-labelledby="onbTitle" class="flex flex-col w-full sm:max-w-lg rounded-t-2xl sm:rounded-2xl border border-emerald-600/60 bg-gray-900 shadow-2xl" style="max-height: 92vh; max-height: 92dvh;"></div>`;
+            overlay.addEventListener("click", onbHandleClick);
+            overlay.addEventListener("change", onbHandleChange);
+            overlay.addEventListener("keydown", onbHandleKeydown);
+            document.body.appendChild(overlay);
+            renderOnboarding();
+        }
+
+        function closeOnboarding() {
+            const overlay = document.getElementById("onboardingOverlay");
+            if (!overlay) return;
+            overlay.remove();
+            if (onbPreviousFocus && document.contains(onbPreviousFocus) && onbPreviousFocus.focus) onbPreviousFocus.focus();
+            onbPreviousFocus = null;
+        }
+
+        function onbChangeFont(direction) {
+            const current = onbCurrentFont();
+            let index = ONB_FONT_SIZES.findIndex(v => v >= current);
+            if (index === -1) index = ONB_FONT_SIZES.length - 1;
+            index = Math.min(ONB_FONT_SIZES.length - 1, Math.max(0, index + direction));
+            setZoom(ONB_FONT_SIZES[index]);
+        }
+
+        function onbToggleSpoiler() {
+            if (isSpoilerModeOn()) toggleSpoilerMode(true, true);
+            else toggleSpoilerMode(false, true);
+        }
+
+        function onbHandleClick(e) {
+            const el = e.target.closest("[data-onb]");
+            if (!el || el.disabled || el.tagName === "SELECT") return;
+            switch (el.dataset.onb) {
+                case "close": case "skip": case "done": closeOnboarding(); return;
+                case "back": if (onbStep > 1) onbStep--; break;
+                case "next": if (onbStep < ONB_TOTAL) onbStep++; break;
+                case "fontMinus": onbChangeFont(-1); break;
+                case "fontPlus": onbChangeFont(1); break;
+                case "celebration": toggleCelebrationSetting(); break;
+                case "spoiler": onbToggleSpoiler(); break;
+                case "demoHeading": onbDemoCount = onbDemoCount === 0 ? 1 : 0; break;
+                case "demoNext": onbDemoCount = onbDemoCount >= 3 ? 0 : onbDemoCount + 1; break;
+                case "export": exportSettings(); break;
+                case "import": document.getElementById("importSettingsFile").click(); return;
+                default: return;
+            }
+            renderOnboarding();
+        }
+
+        function onbHandleChange(e) {
+            if (!e.target.matches('[data-onb="lang"]')) return;
+            const lang = e.target.value;
+            if (lang !== "de" && lang !== "en") return;
+            const headerSelect = document.getElementById("langSelect");
+            if (headerSelect) headerSelect.value = lang;
+            changeLanguage(lang);
+            renderOnboarding();
+        }
+
+        function onbHandleKeydown(e) {
+            if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); closeOnboarding(); return; }
+            if (e.key !== "Tab") return;
+            const focusable = [...document.getElementById("onboardingOverlay").querySelectorAll("button:not([disabled]), select")];
+            if (focusable.length === 0) return;
+            const first = focusable[0], last = focusable[focusable.length - 1];
+            if (e.shiftKey && (document.activeElement === first || document.activeElement.id === "onbTitle")) { e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
         }
 
         // --- SECTION 11: INITIAL EXECUTION ON LOAD ---
