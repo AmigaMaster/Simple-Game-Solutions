@@ -186,7 +186,7 @@
         <div class="relative flex-1 max-w-xs sm:max-w-sm mx-0.5 sm:mx-2 flex items-center min-w-[90px] sm:min-w-[180px]">
             <input autocomplete="off"
                 class="w-full bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-2.5 sm:px-3 py-2 min-h-[40px] sm:min-h-0 sm:py-1.5 pr-14 text-base sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
-                data-i18n-placeholder="searchPlaceholder" id="searchInput" onblur="handleSearchBlur();" onfocus="handleSearchFocus();" oninput="debounceGlobalSearch(this.value);"
+                data-i18n-placeholder="searchPlaceholder" id="searchInput" onblur="handleSearchBlur();" onfocus="handleSearchFocus();" oninput="globalSearchDebounce.call(this.value);"
                 onkeydown="handleSearchInputKeydown(event);" placeholder="Suchen..." type="text">
             <button
                 class="absolute right-8 text-emerald-400 hover:text-emerald-300 text-base sm:text-xs hidden focus:outline-none cursor-pointer"
@@ -207,7 +207,7 @@
             
             <!-- Settings Dropdown Menu (Sliders Icon) -->
             <div class="relative shrink-0" id="settingsMenuContainer">
-                <button onclick="toggleSettingsMenu();" class="bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white px-3 py-2 min-h-[40px] sm:min-h-0 sm:px-2 sm:py-1.5 rounded-md text-lg sm:text-sm border border-gray-600 focus:outline-none cursor-pointer transition-colors" data-i18n-title="settingsMenuTitle" title="Einstellungen">
+                <button onclick="toggleDropdown('settingsDropdown');" class="bg-gray-700 hover:bg-gray-600 text-gray-300 hover:text-white px-3 py-2 min-h-[40px] sm:min-h-0 sm:px-2 sm:py-1.5 rounded-md text-lg sm:text-sm border border-gray-600 focus:outline-none cursor-pointer transition-colors" data-i18n-title="settingsMenuTitle" title="Einstellungen">
                     ⚙️
                 </button>
                 <div id="settingsDropdown" class="absolute top-full mt-1 right-0 bg-gray-800 border border-gray-700 rounded-xl shadow-2xl p-3 hidden flex flex-col gap-3 z-50" style="width: min(16rem, calc(100vw - 1rem));">
@@ -331,7 +331,7 @@
                 <div class="relative flex-1 min-w-[7rem]">
                     <input autocomplete="off"
                         class="w-full min-w-0 bg-gray-950 text-gray-200 border border-gray-700 rounded-md px-3 py-2 min-h-[44px] sm:min-h-0 sm:px-2.5 sm:py-1.5 pr-10 sm:pr-8 text-base sm:text-sm focus:outline-none focus:border-emerald-500 placeholder-gray-500 transition-colors"
-                        data-i18n-placeholder="filterPlaceholder" id="contentFilterInput" oninput="debounceContentFilter(this.value);"
+                        data-i18n-placeholder="filterPlaceholder" id="contentFilterInput" oninput="contentFilterDebounce.call(this.value);"
                         onkeydown="handleContentFilterKeydown(event);"
                         placeholder="Inhalt filtern..." type="text">
                     <button class="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-white text-base sm:text-xs hidden focus:outline-none cursor-pointer"
@@ -344,7 +344,7 @@
                 <button id="favoriteBtn" type="button" onclick="toggleCurrentFavorite();" aria-pressed="false"
                     class="shrink-0 bg-gray-950 hover:bg-gray-700 text-gray-400 border border-gray-700 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-2 sm:px-2.5 sm:py-1.5 text-lg sm:text-sm rounded-md cursor-pointer transition-colors flex items-center justify-center">☆</button>
                 <div class="relative shrink-0" id="statusMenuContainer">
-                    <button id="statusBtn" type="button" onclick="toggleStatusMenu();" aria-haspopup="true"
+                    <button id="statusBtn" type="button" onclick="toggleDropdown('statusDropdown');" aria-haspopup="true"
                         class="bg-gray-950 hover:bg-gray-700 text-gray-300 border border-gray-700 min-w-[44px] min-h-[44px] sm:min-w-0 sm:min-h-0 px-3 py-2 sm:px-2.5 sm:py-1.5 text-lg sm:text-sm rounded-md font-semibold cursor-pointer flex items-center justify-center gap-1.5 transition-colors">
                         <span id="statusBtnIcon">○</span>
                     </button>
@@ -486,6 +486,123 @@
             return lsSet(key, JSON.stringify(value));
         }
 
+        // --- SMALL SHARED HELPERS (used all over the page) ---
+        const $ = id => document.getElementById(id);
+
+        // Shows/hides an element given as element or id (a missing element is ignored)
+        function setHidden(target, hidden = true) {
+            const el = typeof target === "string" ? $(target) : target;
+            if (el) el.classList.toggle("hidden", hidden);
+            return el;
+        }
+
+        // Puts an element into one of two class sets (the sets must not overlap)
+        function setClassPair(el, on, onClasses, offClasses) {
+            if (!el) return;
+            el.classList.remove(...(on ? offClasses : onClasses));
+            el.classList.add(...(on ? onClasses : offClasses));
+        }
+
+        // Trimmed text of the in-document filter field ("" = no filter active)
+        function getContentFilterQuery() {
+            const input = $("contentFilterInput");
+            return input ? input.value.trim() : "";
+        }
+
+        // Clear and copy-link buttons of the search field are only shown while the field has text
+        function updateSearchButtons(hasText) {
+            setHidden("clearSearchBtn", !hasText);
+            setHidden("copySearchBtn", !hasText);
+        }
+
+        // Runs the in-document filter again (after the revealed text changed)
+        function reapplyContentFilter() {
+            if (getContentFilterQuery()) handleContentFilter($("contentFilterInput").value);
+        }
+
+        // Empties the filter field (without running a filter)
+        function resetContentFilterField() {
+            const input = $("contentFilterInput");
+            if (input) input.value = "";
+            setHidden("clearContentFilterBtn");
+        }
+
+        // Is the node inside the search field or its result list?
+        function isInsideSearch(node) {
+            return $("searchInput").parentElement.contains(node) || $("searchDropdown").contains(node);
+        }
+
+        function toggleDropdown(id) { setHidden(id, !$(id).classList.contains("hidden")); }
+        function closeDropdown(id) { setHidden(id, true); }
+
+        // Dropdown menus (container + list): a click anywhere outside of the container closes the list
+        const DROPDOWN_MENUS = [["settingsMenuContainer", "settingsDropdown"], ["reportMenuContainer", "reportDropdown"], ["statusMenuContainer", "statusDropdown"]];
+        window.addEventListener("click", e => {
+            DROPDOWN_MENUS.forEach(([containerId, dropdownId]) => {
+                const container = $(containerId);
+                if (container && $(dropdownId) && !container.contains(e.target)) closeDropdown(dropdownId);
+            });
+        });
+
+        const numberLocale = () => currentLang === "de" ? "de-DE" : "en-US";
+        const urlParams = () => new URLSearchParams(window.location.search);
+        function pageBaseUrl() { return window.location.href.split("?")[0].split("#")[0]; }
+
+        // Link to this page: query parameters (empty ones are left out) and an optional #chapter
+        function pageUrl(params = {}, hash = "") {
+            const query = Object.entries(params)
+                .filter(([, value]) => value !== "" && value !== null && value !== undefined)
+                .map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join("&");
+            return pageBaseUrl() + (query ? "?" + query : "") + (hash ? "#" + hash : "");
+        }
+
+        // Encodes every segment of a path (file names may contain #, ?, %, ' ...)
+        function encodePathSegments(path) { return path.split("/").map(encodeURIComponent).join("/"); }
+
+        function downloadBlob(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = filename;
+            a.style.display = "none";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+        }
+
+        // Debounced function with flush (run a waiting call now) and cancel (drop it)
+        function createDebouncer(run, delay = 200) {
+            let timer = null;
+            let pending = false;
+            return {
+                call(arg) { clearTimeout(timer); pending = true; timer = setTimeout(() => { pending = false; run(arg); }, delay); },
+                flush(arg) { if (!pending) return; clearTimeout(timer); pending = false; run(arg); },
+                cancel() { clearTimeout(timer); pending = false; }
+            };
+        }
+
+        // Shared behavior of modal dialogs: Escape closes, Tab stays inside, the focus returns to where it was.
+        // Returns the close function.
+        function openModal(overlay) {
+            const previousFocus = document.activeElement;
+            const close = () => {
+                overlay.remove();
+                if (previousFocus && document.contains(previousFocus) && previousFocus.focus) previousFocus.focus();
+            };
+            overlay.addEventListener("keydown", e => {
+                if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); return; }
+                if (e.key !== "Tab") return;
+                const focusable = [...overlay.querySelectorAll("button:not([disabled]), select")];
+                if (focusable.length === 0) return;
+                const index = focusable.indexOf(document.activeElement);
+                if (e.shiftKey && index <= 0) { e.preventDefault(); focusable[focusable.length - 1].focus(); }
+                else if (!e.shiftKey && index === focusable.length - 1) { e.preventDefault(); focusable[0].focus(); }
+            });
+            document.body.appendChild(overlay);
+            return close;
+        }
+
         // Quick start for new visitors. "New" is decided here, before anything is written to the storage
         const ONBOARDING_KEY = "sgs_onboarding_done";
         const BACKUP_KEY = "sgs_last_backup";
@@ -511,7 +628,6 @@
                 close: "Schließen",
                 copyFailed: "Kopieren fehlgeschlagen",
                 goHomeTitle: "Zur Startseite",
-                subtitle: "Automatische Dokumentation",
                 tocBtn: "Inhalt",
                 tocToggleTitle: "Inhaltsverzeichnis ein-/ausblenden",
                 directoriesTitle: "Verzeichnisse",
@@ -534,12 +650,8 @@
                 copySearchLinkTitle: "Suche-Link kopieren",
                 copyFileLinkTitle: "Lösungs-Link kopieren",
                 copyChapterLinkTitle: "Kapitel-Link kopieren",
-                fontZoomTitle: "Schriftgröße anpassen",
                 fontSizeLabel: "Schriftgröße",
                 celebrationSettingLabel: "Gewinn-Animation",
-                optionEnabled: "Aktiviert",
-                optionDisabled: "Deaktiviert",
-                markAllRead: "Alle als gelesen markieren",
                 badgeNew: "Neu",
                 badgeUpdated: "Aktualisiert",
                 badgeNewTitle: "Neu hinzugefügt am {date}",
@@ -686,7 +798,6 @@
                 close: "Close",
                 copyFailed: "Copy failed",
                 goHomeTitle: "Go to home page",
-                subtitle: "Automatic Documentation",
                 tocBtn: "Content",
                 tocToggleTitle: "Toggle table of contents",
                 directoriesTitle: "Directories",
@@ -709,12 +820,8 @@
                 copySearchLinkTitle: "Copy search link",
                 copyFileLinkTitle: "Copy solution link",
                 copyChapterLinkTitle: "Copy chapter link",
-                fontZoomTitle: "Adjust font size",
                 fontSizeLabel: "Font size",
                 celebrationSettingLabel: "Victory animation",
-                optionEnabled: "Enabled",
-                optionDisabled: "Disabled",
-                markAllRead: "Mark all as read",
                 badgeNew: "New",
                 badgeUpdated: "Updated",
                 badgeNewTitle: "Added on {date}",
@@ -868,43 +975,29 @@
             return "de"
         }
         let currentLang = getBrowserLanguage();
-        document.getElementById("langSelect").value = currentLang;
+        $("langSelect").value = currentLang;
+
+        // [attribute that holds the translation key, attribute to fill (null = text content)]
+        const I18N_ATTRIBUTES = [["data-i18n", null], ["data-i18n-title", "title"], ["data-i18n-aria-label", "aria-label"], ["data-i18n-placeholder", "placeholder"]];
 
         // Apply selected language translations across UI elements
         function setLanguage(lang) {
             currentLang = lang;
             lsSet("sgs_lang", lang);
             document.documentElement.lang = lang;
-            document.querySelectorAll("[data-i18n]").forEach(el => {
-                const key = el.getAttribute("data-i18n");
-                if (translations[currentLang][key]) {
-                    el.textContent = translations[currentLang][key]
-                }
-            });
-            document.querySelectorAll("[data-i18n-title]").forEach(el => {
-                const key = el.getAttribute("data-i18n-title");
-                if (translations[currentLang][key]) {
-                    el.setAttribute("title", translations[currentLang][key])
-                }
-            });
-            document.querySelectorAll("[data-i18n-aria-label]").forEach(el => {
-                const key = el.getAttribute("data-i18n-aria-label");
-                if (translations[currentLang][key]) {
-                    el.setAttribute("aria-label", translations[currentLang][key])
-                }
-            });
-            document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
-                const key = el.getAttribute("data-i18n-placeholder");
-                if (translations[currentLang][key]) {
-                    el.setAttribute("placeholder", translations[currentLang][key])
-                }
+            I18N_ATTRIBUTES.forEach(([attribute, target]) => {
+                document.querySelectorAll(`[${attribute}]`).forEach(el => {
+                    const text = translations[currentLang][el.getAttribute(attribute)];
+                    if (!text) return;
+                    if (target) el.setAttribute(target, text); else el.textContent = text;
+                });
             });
             if (!currentFilePath && structureData) {
                 renderWelcomeScreen();
             } else if (currentFilePath) {
                 // Re-render TOC and headings copy buttons dynamically to update localized tooltips & popups
-                const viewer = document.getElementById("content-viewer");
-                const tocContainer = document.getElementById("toc-container");
+                const viewer = $("content-viewer");
+                const tocContainer = $("toc-container");
                 if (viewer && tocContainer) {
                     viewer.querySelectorAll(".heading-copy-btn").forEach(btn => btn.remove());
                     viewer.querySelectorAll(HEADING_SELECTOR).forEach(h => h.classList.remove("group", "relative"));
@@ -916,14 +1009,14 @@
                 refreshSpoilerUi();
                 refreshSearchHitBar();
                 if (structureData) {
-                    filterTree(document.getElementById("searchInput").value);
+                    filterTree($("searchInput").value);
                 }
             }
         }
 
         function changeLanguage(lang) {
             // Save current tree scroll position and open folders before changing language
-            const treeContainer = document.getElementById("tree-container");
+            const treeContainer = $("tree-container");
             const treeScrollTop = treeContainer ? treeContainer.scrollTop : 0;
 
             const openFolders = new Set();
@@ -937,7 +1030,7 @@
             });
 
             setLanguage(lang);
-            handleGlobalSearch(document.getElementById("searchInput").value);
+            handleGlobalSearch($("searchInput").value);
 
             // Restore open directory paths after tree re-render
             if (openFolders.size > 0) {
@@ -956,27 +1049,16 @@
         }
 
         // --- SETTINGS & REPORT DROPDOWN MENUS ---
-        function toggleSettingsMenu() {
-            const dropdown = document.getElementById("settingsDropdown");
-            if (dropdown) dropdown.classList.toggle("hidden");
-        }
-
-        function closeSettingsMenu() {
-            const dropdown = document.getElementById("settingsDropdown");
-            if (dropdown) dropdown.classList.add("hidden");
-        }
-
         function toggleReportMenu() {
-            const dropdown = document.getElementById("reportDropdown");
-            if (dropdown) dropdown.classList.toggle("hidden");
+            toggleDropdown("reportDropdown");
             updateGithubLinks();
         }
 
         function updateGithubLinks() {
             if (!currentFilePath) return;
-            const edit = document.getElementById("githubEditLink");
-            const history = document.getElementById("githubHistoryLink");
-            const download = document.getElementById("githubDownloadLink");
+            const edit = $("githubEditLink");
+            const history = $("githubHistoryLink");
+            const download = $("githubDownloadLink");
             if (edit) edit.href = githubSolutionUrl("edit", currentFilePath);
             if (history) history.href = githubSolutionUrl("commits", currentFilePath);
             if (download) {
@@ -994,16 +1076,7 @@
                 if (!response.ok) throw new Error("HTTP " + response.status);
                 const markdownText = await response.text();
 
-                const blob = new Blob([markdownText], { type: "application/octet-stream" });
-                const blobUrl = URL.createObjectURL(blob);
-                const a = document.createElement("a");
-                a.href = blobUrl;
-                a.download = fileName;
-                a.style.display = "none";
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-                setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+                downloadBlob(new Blob([markdownText], { type: "application/octet-stream" }), fileName);
             } catch (err) {
                 console.error("Download failed:", err);
             }
@@ -1015,22 +1088,8 @@
             await downloadSolutionMarkdown(currentFilePath);
         }
 
-        window.addEventListener("click", e => {
-            const container = document.getElementById("settingsMenuContainer");
-            const dropdown = document.getElementById("settingsDropdown");
-            if (container && dropdown && !container.contains(e.target)) {
-                dropdown.classList.add("hidden");
-            }
-
-            const reportContainer = document.getElementById("reportMenuContainer");
-            const reportDropdown = document.getElementById("reportDropdown");
-            if (reportContainer && reportDropdown && !reportContainer.contains(e.target)) {
-                reportDropdown.classList.add("hidden");
-            }
-        });
-
         function exportSettings() {
-            closeSettingsMenu();
+            closeDropdown("settingsDropdown");
             lsSet(BACKUP_KEY, new Date().toISOString());
             const data = {};
             // Only export this app's own keys (the origin is shared with other projects)
@@ -1042,20 +1101,12 @@
                     }
                 }
             } catch (e) { /* storage unavailable: export stays empty */ }
-            const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
             const dateStr = new Date().toISOString().split('T')[0];
-            a.download = `simple-game-solutions-settings-${dateStr}.json`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
+            downloadBlob(new Blob([JSON.stringify(data, null, 2)], { type: "application/json" }), `simple-game-solutions-settings-${dateStr}.json`);
         }
 
         function importSettings(event) {
-            closeSettingsMenu();
+            closeDropdown("settingsDropdown");
             const file = event.target.files[0];
             if (!file) return;
             const reader = new FileReader();
@@ -1086,24 +1137,14 @@
                     alert(translations[currentLang].importSuccess || "Settings successfully imported!");
                     
                     currentLang = getBrowserLanguage();
-                    document.getElementById("langSelect").value = currentLang;
+                    $("langSelect").value = currentLang;
                     setLanguage(currentLang);
                     initZoom();
-                    initCelebrationSetting();
+                    updateCelebrationSwitchUI();
                     updateHomeBadge();
                     loadTreeScope();
 
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const fileParam = urlParams.get('file');
-                    const lastFile = getValidLastFile();
-
-                    if (fileParam) {
-                        await loadFile(fileParam, false, true);
-                    } else if (lastFile) {
-                        await loadFile(lastFile);
-                    } else {
-                        renderWelcomeScreen();
-                    }
+                    await openStartView(false);
                 } catch (err) {
                     alert(translations[currentLang].importError || "Error importing file.");
                 } finally {
@@ -1126,9 +1167,9 @@
             
             // Scaled elements: Tree, Viewer, and TOC
             const zoomVal = percent + "%";
-            const tree = document.getElementById("tree-container");
-            const viewer = document.getElementById("content-viewer");
-            const toc = document.getElementById("toc-container");
+            const tree = $("tree-container");
+            const viewer = $("content-viewer");
+            const toc = $("toc-container");
 
             [tree, viewer, toc].forEach(el => {
                 if (el) {
@@ -1137,7 +1178,7 @@
             });
 
             // Keep the settings select in sync (add an entry for values not in the list, e.g. imported ones)
-            const sel = document.getElementById("fontSizeSelect");
+            const sel = $("fontSizeSelect");
             if (sel) {
                 if (![...sel.options].some(o => o.value === String(percent))) {
                     const opt = document.createElement("option");
@@ -1150,6 +1191,10 @@
             }
         }
 
+        // Look of the on/off switches (settings menu and quick start)
+        const SWITCH_TRACK = { on: "bg-emerald-600", off: "bg-gray-700" };
+        const SWITCH_THUMB = { on: "translate-x-6", off: "translate-x-1" };
+
         // Celebration animation setting
         const CELEBRATION_KEY = "sgs_celebration_enabled";
 
@@ -1159,25 +1204,16 @@
 
         function updateCelebrationSwitchUI() {
             const enabled = isCelebrationEnabled();
-            const btn = document.getElementById("celebrationSwitch");
-            const track = document.getElementById("celebrationSwitchTrack");
-            const thumb = document.getElementById("celebrationSwitchThumb");
+            const btn = $("celebrationSwitch");
+            const track = $("celebrationSwitchTrack");
+            const thumb = $("celebrationSwitchThumb");
 
             if (!btn || !track || !thumb) return;
 
             btn.setAttribute("aria-checked", String(enabled));
 
-            // Track-Farbe umschalten (Grün = An, Dunkelgrau = Aus)
-            track.classList.toggle("bg-emerald-600", enabled);
-            track.classList.toggle("bg-gray-700", !enabled);
-
-            // Knopf-Position verschieben
-            thumb.classList.toggle("translate-x-6", enabled);
-            thumb.classList.toggle("translate-x-1", !enabled);
-        }
-
-        function initCelebrationSetting() {
-            updateCelebrationSwitchUI();
+            setClassPair(track, enabled, [SWITCH_TRACK.on], [SWITCH_TRACK.off]);
+            setClassPair(thumb, enabled, [SWITCH_THUMB.on], [SWITCH_THUMB.off]);
         }
 
         function toggleCelebrationSetting() {
@@ -1190,7 +1226,7 @@
                 if (typeof stopCelebration === "function") {
                     stopCelebration();
                 } else {
-                    const existingCanvas = document.getElementById("celebrationCanvas");
+                    const existingCanvas = $("celebrationCanvas");
                     if (existingCanvas) existingCanvas.remove();
                 }
             }
@@ -1222,17 +1258,16 @@
         // --- GITHUB LINKS: edit page and change history of a solution ---
         // path = path relative to the solutions folder, exactly as in structure.json
         const GITHUB_REPO = "AmigaMaster/Simple-Game-Solutions";
+        const GITHUB_URL = `https://github.com/${GITHUB_REPO}`;
         const GITHUB_BRANCH = "master";
         const GITHUB_SOLUTIONS_DIR = "solutions";
         function githubSolutionUrl(kind, path) {
             // kind: "edit" (GitHub web editor) or "commits" (change history of this one file)
-            const encoded = path.split("/").map(encodeURIComponent).join("/");
-            return `https://github.com/${GITHUB_REPO}/${kind}/${GITHUB_BRANCH}/${GITHUB_SOLUTIONS_DIR}/${encoded}`;
+            return `${GITHUB_URL}/${kind}/${GITHUB_BRANCH}/${GITHUB_SOLUTIONS_DIR}/${encodePathSegments(path)}`;
         }
 
         function githubRawSolutionUrl(path) {
-            const encoded = path.split("/").map(encodeURIComponent).join("/");
-            return `https://raw.githubusercontent.com/${GITHUB_REPO}/refs/heads/${GITHUB_BRANCH}/${GITHUB_SOLUTIONS_DIR}/${encoded}`;
+            return `https://raw.githubusercontent.com/${GITHUB_REPO}/refs/heads/${GITHUB_BRANCH}/${GITHUB_SOLUTIONS_DIR}/${encodePathSegments(path)}`;
         }
 
         // --- FILE INDEX (path -> node from structure.json) ---
@@ -1432,7 +1467,7 @@
         }
 
         function refreshTreeMarkers() {
-            const container = document.getElementById("tree-container");
+            const container = $("tree-container");
             if (!container) return;
             const state = getMarkerState();
             container.querySelectorAll("div[data-filepath]").forEach(row => {
@@ -1443,8 +1478,8 @@
 
         // Header buttons of the open walkthrough (star + status)
         function updateGameControls() {
-            const favBtn = document.getElementById("favoriteBtn");
-            const statusBtn = document.getElementById("statusBtn");
+            const favBtn = $("favoriteBtn");
+            const statusBtn = $("statusBtn");
             if (!favBtn || !statusBtn || !currentFilePath) return;
             const t = translations[currentLang];
 
@@ -1452,17 +1487,13 @@
             favBtn.textContent = fav ? "★" : "☆";
             favBtn.title = fav ? t.favoriteRemove : t.favoriteAdd;
             favBtn.setAttribute("aria-pressed", String(fav));
-            favBtn.classList.toggle("text-amber-400", fav);
-            favBtn.classList.toggle("text-gray-400", !fav);
+            setClassPair(favBtn, fav, ["text-amber-400"], ["text-gray-400"]);
 
             const status = getGameStatus(currentFilePath);
-            document.getElementById("statusBtnIcon").textContent = getStatusIcon(status);
+            $("statusBtnIcon").textContent = getStatusIcon(status);
             statusBtn.title = `${t.statusMenuTitle}: ${getStatusText(status)}`;
             statusBtn.setAttribute("aria-label", statusBtn.title);
-            statusBtn.classList.toggle("border-emerald-600", !!status);
-            statusBtn.classList.toggle("text-emerald-300", !!status);
-            statusBtn.classList.toggle("border-gray-700", !status);
-            statusBtn.classList.toggle("text-gray-300", !status);
+            setClassPair(statusBtn, !!status, ["border-emerald-600", "text-emerald-300"], ["border-gray-700", "text-gray-300"]);
             document.querySelectorAll("#statusDropdown [data-status-option]").forEach(btn => {
                 const active = btn.dataset.statusOption === (status || "");
                 btn.classList.toggle("bg-gray-700", active);
@@ -1495,7 +1526,7 @@
         }
 
         function rerenderTree() {
-            const input = document.getElementById("searchInput");
+            const input = $("searchInput");
             filterTree(input ? input.value : "");
         }
 
@@ -1503,12 +1534,9 @@
             document.querySelectorAll("#treeScopeBar [data-tree-scope]").forEach(btn => {
                 const active = btn.dataset.treeScope === treeScope;
                 btn.setAttribute("aria-pressed", String(active));
-                btn.classList.toggle("bg-emerald-600", active);
-                btn.classList.toggle("text-white", active);
-                btn.classList.toggle("border-emerald-500", active);
-                btn.classList.toggle("bg-gray-900", !active);
-                btn.classList.toggle("text-gray-400", !active);
-                btn.classList.toggle("border-gray-700", !active);
+                setClassPair(btn, active,
+                    ["bg-emerald-600", "text-white", "border-emerald-500"],
+                    ["bg-gray-900", "text-gray-400", "border-gray-700"]);
             });
         }
 
@@ -1578,24 +1606,10 @@
             if (currentFilePath) toggleFavorite(currentFilePath);
         }
 
-        function toggleStatusMenu() {
-            const dropdown = document.getElementById("statusDropdown");
-            if (dropdown) dropdown.classList.toggle("hidden");
-        }
-
         function setCurrentGameStatus(status) {
-            const dropdown = document.getElementById("statusDropdown");
-            if (dropdown) dropdown.classList.add("hidden");
+            closeDropdown("statusDropdown");
             if (currentFilePath) setGameStatus(currentFilePath, status || null);
         }
-
-        window.addEventListener("click", e => {
-            const container = document.getElementById("statusMenuContainer");
-            const dropdown = document.getElementById("statusDropdown");
-            if (container && dropdown && !container.contains(e.target)) {
-                dropdown.classList.add("hidden");
-            }
-        });
 
         // One row of the "My Games" tab: open button + star toggle + status cycle button
         function gameRowHtml(path, state) {
@@ -1641,7 +1655,7 @@
         }
 
         function updateHomeBadge() {
-            const badge = document.getElementById("homeUnreadBadge");
+            const badge = $("homeUnreadBadge");
             if (!badge) return;
             const count = getUnreadModifiedCount();
             if (count > 0) {
@@ -1687,7 +1701,7 @@
         function openDiscussions() {
             toggleReportMenu();
             const gameTitle = getCleanGameTitle();
-            let discUrl = "https://github.com/AmigaMaster/Simple-Game-Solutions/discussions";
+            let discUrl = `${GITHUB_URL}/discussions`;
             if (gameTitle) {
                 discUrl += `?discussions_q=${encodeURIComponent(gameTitle)}`;
             }
@@ -1703,32 +1717,17 @@
             const fileName = currentFilePath.split('/').pop().replace(/\.(md|txt)$/i, '');
             
             // Find last modified date for current file from structureData
-            let lastModStr = '';
-            if (structureData) {
-                function searchNode(node) {
-                    if (!node) return null;
-                    if (node.type === 'file' && node.path === currentFilePath) return node;
-                    if (node.children) {
-                        for (const child of node.children) {
-                            const res = searchNode(child);
-                            if (res) return res;
-                        }
-                    }
-                    return null;
-                }
-                const fNode = searchNode(structureData);
-                if (fNode && fNode.last_modified) {
-                    lastModStr = new Date(fNode.last_modified).toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' });
-                }
-            }
+            const fNode = fileIndex.get(currentFilePath);
+            const lastModStr = fNode && fNode.last_modified
+                ? new Date(fNode.last_modified).toLocaleDateString('de-DE', { year: 'numeric', month: '2-digit', day: '2-digit' })
+                : '';
 
             // Calculate current scroll percentage and generate direct jump link
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             const maxScroll = viewer ? viewer.scrollHeight - viewer.clientHeight : 0;
             const scrollPercent = maxScroll > 0 ? Math.round((viewer.scrollTop / maxScroll) * 100) : 0;
 
-            const baseUrl = window.location.href.split('?')[0].split('#')[0];
-            const issueLink = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}&scroll=${scrollPercent}`;
+            const issueLink = pageUrl({ file: currentFilePath, scroll: scrollPercent });
 
             // Get currently active chapters from Table of Contents (ignoring copy buttons / popup texts)
             const activeChapterEls = document.querySelectorAll('#toc-container > div.bg-gray-700');
@@ -1764,8 +1763,14 @@ ${t.issueSectionWhatDesc}
 ${t.issueSectionSuggestDesc}
 `;
 
-            const issueUrl = `https://github.com/AmigaMaster/Simple-Game-Solutions/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=bug`;
+            const issueUrl = `${GITHUB_URL}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=bug`;
             window.open(issueUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        function setPageMeta(title, description) {
+            document.title = title;
+            const meta = document.querySelector('meta[name="description"]');
+            if (meta) meta.setAttribute("content", description);
         }
 
         // --- SECTION 3: WELCOME SCREEN & HOME NAVIGATION ---
@@ -1776,14 +1781,19 @@ ${t.issueSectionSuggestDesc}
             return m && m[1] ? { title: m[1], lang: m[2] } : { title: name || "", lang: "" };
         }
 
+        // Tab-like buttons below the welcome header, and the small link bar of a card
+        const PILL_BASE = "px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors";
+        const PILL_IDLE = "bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700";
+        const CARD_ACTION_CLASS = "not-prose no-underline flex items-center gap-1.5 min-h-[44px] sm:min-h-0 px-4 py-2 sm:py-1.5 text-xs sm:text-[11px] text-gray-400 hover:text-emerald-300 transition-colors";
+
         function welcomeCardHtml(file, metaHtml, footerHtml, borderStyle, withHistory = false) {
             const t = translations[currentLang];
             const { title, lang } = splitLangSuffix(file.name);
             const langTag = lang ? `<span class="text-[11px] font-semibold text-gray-300 border border-gray-600 bg-gray-800 rounded px-1.5 py-0.5">${escapeHtml(lang)}</span>` : "";
             const rawUrl = githubRawSolutionUrl(file.path);
-            const downloadAction = `<a href="${escapeHtml(rawUrl)}" data-download-path="${escapeHtml(file.path)}" title="${escapeHtml(t.githubDownloadBtn)}" class="not-prose no-underline flex items-center gap-1.5 min-h-[44px] sm:min-h-0 px-4 py-2 sm:py-1.5 text-xs sm:text-[11px] text-gray-400 hover:text-emerald-300 transition-colors cursor-pointer">⬇️ <span>${escapeHtml(t.githubDownloadBtn)}</span></a>`;
+            const downloadAction = `<a href="${escapeHtml(rawUrl)}" data-download-path="${escapeHtml(file.path)}" title="${escapeHtml(t.githubDownloadBtn)}" class="${CARD_ACTION_CLASS} cursor-pointer">⬇️ <span>${escapeHtml(t.githubDownloadBtn)}</span></a>`;
             const historyAction = withHistory
-                ? `<a href="${escapeHtml(githubSolutionUrl("commits", file.path))}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(t.githubHistoryTitle)}" class="not-prose no-underline flex items-center gap-1.5 min-h-[44px] sm:min-h-0 px-4 py-2 sm:py-1.5 text-xs sm:text-[11px] text-gray-400 hover:text-emerald-300 transition-colors">🕘 <span>${escapeHtml(t.githubHistoryBtn)}</span></a>`
+                ? `<a href="${escapeHtml(githubSolutionUrl("commits", file.path))}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(t.githubHistoryTitle)}" class="${CARD_ACTION_CLASS}">🕘 <span>${escapeHtml(t.githubHistoryBtn)}</span></a>`
                 : "";
             const actionsBar = `<div class="flex flex-wrap items-center justify-between gap-1 border-t border-gray-700/60 rounded-b-lg">${downloadAction}${historyAction}</div>`;
             return `<div class="bg-gray-800/60 hover:bg-gray-800 border ${borderStyle} rounded-lg transition-colors flex flex-col group min-w-0">
@@ -1853,49 +1863,44 @@ ${t.issueSectionSuggestDesc}
             clearSpoilerModel();
             currentWelcomeTab = tab;
 
-            const readingHeader = document.getElementById("readingPaneHeader");
-            if (readingHeader) readingHeader.classList.add("hidden");
-            const filterInput = document.getElementById("contentFilterInput");
-            if (filterInput) filterInput.value = "";
-            document.getElementById("clearContentFilterBtn").classList.add("hidden");
+            setHidden("readingPaneHeader");
+            resetContentFilterField();
             rawFileContent = null;
 
             // Reset dynamic document title and meta description when returning home
-            document.title = "Simple Game Solutions | Interactive Adventure Game Walkthroughs & Guides";
-            let metaDesc = document.querySelector('meta[name="description"]');
-            if (metaDesc) {
-                metaDesc.setAttribute("content", "Discover interactive video game walkthroughs, guides, and solutions for classic adventure games with chapter search and reading progress tracking.");
-            }
+            setPageMeta("Simple Game Solutions | Interactive Adventure Game Walkthroughs & Guides",
+                "Discover interactive video game walkthroughs, guides, and solutions for classic adventure games with chapter search and reading progress tracking.");
 
             const stats = structureData.stats || { total_files: countFileObjects(structureData), total_words: 0, total_actions: 0 };
             const fileCount = stats.total_files || countFileObjects(structureData);
-            const wordCount = stats.total_words ? stats.total_words.toLocaleString(currentLang === 'de' ? 'de-DE' : 'en-US') : '0';
-            const actionCount = stats.total_actions ? stats.total_actions.toLocaleString(currentLang === 'de' ? 'de-DE' : 'en-US') : '0';
+            const wordCount = stats.total_words ? stats.total_words.toLocaleString(numberLocale()) : '0';
+            const actionCount = stats.total_actions ? stats.total_actions.toLocaleString(numberLocale()) : '0';
 
+            // Compact statistics line below the tab row (the quick start guide now explains how to use the page)
             const statsText = currentLang === 'de'
                 ? `${fileCount} Lösungen · ${wordCount} Wörter · ${actionCount} Aktionen`
                 : `${fileCount} walkthroughs · ${wordCount} words · ${actionCount} actions`;
 
-            const tabClass = active => `px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors cursor-pointer ${active ? 'bg-emerald-600 text-white shadow' : 'bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700'}`;
+            const tabClass = active => `${PILL_BASE} cursor-pointer ${active ? 'bg-emerald-600 text-white shadow' : PILL_IDLE}`;
             let listHtml = `<div class="max-w-5xl mx-auto py-4 sm:py-6 px-4">
                 <!-- Welcome Screen Tab Navigation -->
                 <div class="flex flex-wrap gap-2 mb-2 border-b border-gray-700 pb-3">
                     <button onclick="renderWelcomeScreen('home')" class="${tabClass(tab !== 'mine')}">🏠 ${escapeHtml(translations[currentLang].welcomeTabHome)}</button>
                     <button onclick="renderWelcomeScreen('mine')" class="${tabClass(tab === 'mine')}">⭐ ${escapeHtml(translations[currentLang].tabMine)}</button>
-                    <a href="https://github.com/AmigaMaster/Simple-Game-Solutions/archive/refs/heads/master.zip"
+                    <a href="${GITHUB_URL}/archive/refs/heads/${GITHUB_BRANCH}.zip"
                     download="Simple-Game-Solutions-master.zip"
                     rel="noopener noreferrer"
                     title="${escapeHtml(translations[currentLang].downloadRepoTitle)}"
-                    class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 inline-flex items-center gap-1.5 no-underline">📦 <span>${escapeHtml(translations[currentLang].downloadRepo)}</span></a>
+                    class="${PILL_BASE} ${PILL_IDLE} inline-flex items-center gap-1.5 no-underline">📦 <span>${escapeHtml(translations[currentLang].downloadRepo)}</span></a>
                     <button type="button" onclick="openOnboarding();" title="${escapeHtml(translations[currentLang].onbHelpTitle)}"
-                    class="px-4 py-2 text-xs sm:text-sm font-semibold rounded-md transition-colors bg-gray-800 text-gray-400 hover:text-white hover:bg-gray-700 inline-flex items-center gap-1.5 cursor-pointer">❓ <span>${escapeHtml(translations[currentLang].onbHelpBtn)}</span></button>
+                    class="${PILL_BASE} ${PILL_IDLE} inline-flex items-center gap-1.5 cursor-pointer">❓ <span>${escapeHtml(translations[currentLang].onbHelpBtn)}</span></button>
                 </div>
                 <p class="text-xs sm:text-sm text-gray-400 mb-5" id="welcomeStats">${escapeHtml(statsText)}</p>`;
 
 
             listHtml += tab === 'mine' ? renderMyGamesHtml() : renderWelcomeOverviewHtml();
             listHtml += `</div>`;
-            document.getElementById("content-viewer").innerHTML = listHtml;
+            $("content-viewer").innerHTML = listHtml;
             updateActiveFileInTree();
             updateSpoilerButton();
         }
@@ -1911,11 +1916,11 @@ ${t.issueSectionSuggestDesc}
                 history.pushState({}, '', window.location.pathname);
             }
             renderWelcomeScreen();
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             if (viewer) viewer.scrollTop = 0;
-            document.getElementById("toc-container").innerHTML = `<p class="text-gray-500 italic text-xs" data-i18n="noFileLoaded">${translations[currentLang].noFileLoaded}</p>`;
-            if (document.getElementById("scrollProgressBar")) {
-                document.getElementById("scrollProgressBar").style.width = "0%";
+            $("toc-container").innerHTML = `<p class="text-gray-500 italic text-xs" data-i18n="noFileLoaded">${translations[currentLang].noFileLoaded}</p>`;
+            if ($("scrollProgressBar")) {
+                $("scrollProgressBar").style.width = "0%";
             }
             updateActiveFileInTree();
             applyTocForView();
@@ -1925,7 +1930,7 @@ ${t.issueSectionSuggestDesc}
         async function init() {
             setLanguage(currentLang);
             initZoom();
-            initCelebrationSetting();
+            updateCelebrationSwitchUI();
             initEventDelegation();
             try {
                 const response = await fetch("structure.json");
@@ -1934,80 +1939,74 @@ ${t.issueSectionSuggestDesc}
                 buildFileIndex();
                 migrateReadState();
 
-                renderTree(structureData, document.getElementById("tree-container"));
+                renderTree(structureData, $("tree-container"));
                 updateHomeBadge();
 
-                const urlParams = new URLSearchParams(window.location.search);
-                const fileParam = urlParams.get('file');
-                const filterParam = urlParams.get('filter');
-                const searchParam = urlParams.get('search');
-                const lastFile = getValidLastFile();
-
-                if (searchParam) {
-                    const searchInput = document.getElementById("searchInput");
-                    if (searchInput) {
-                        searchInput.value = searchParam;
-                        handleGlobalSearch(searchParam);
-                    }
-                }
-
-                if (fileParam) {
-                    pendingTextFragment = readTextFragmentParam();
-                    await loadFile(fileParam, false, true);
-                    if (filterParam) {
-                        const filterInput = document.getElementById("contentFilterInput");
-                        if (filterInput) {
-                            filterInput.value = filterParam;
-                            handleContentFilter(filterParam);
-                        }
-                    }
-                } else if (lastFile) {
-                    await loadFile(lastFile);
-                } else {
-                    renderWelcomeScreen();
-                    const searchInput = document.getElementById("searchInput");
-                    if (searchInput && !searchParam && isDesktopDevice()) searchInput.focus();
-                }
+                const searchParam = urlParams().get('search');
+                applySearchParam(searchParam);
+                const openedFile = await openStartView();
+                const searchInput = $("searchInput");
+                if (!openedFile && searchInput && !searchParam && isDesktopDevice()) searchInput.focus();
                 maybeShowOnboarding();
             } catch (error) {
                 console.error("Error loading structure:", error);
-                document.getElementById("tree-container").innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].errorLoadingStruct}</p>`
+                $("tree-container").innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].errorLoadingStruct}</p>`
             }
+        }
+
+        // ?search=... : fills the search field and runs the search
+        function applySearchParam(searchParam) {
+            const searchInput = $("searchInput");
+            if (searchParam && searchInput) {
+                searchInput.value = searchParam;
+                handleGlobalSearch(searchParam);
+            }
+        }
+
+        // Opens the walkthrough named in the URL (?file=...) together with its in-document filter (?filter=...)
+        async function loadFileFromUrl(fileParam, filterParam) {
+            pendingTextFragment = readTextFragmentParam();
+            await loadFile(fileParam, false, true);
+            const filterInput = $("contentFilterInput");
+            if (filterParam && filterInput) {
+                filterInput.value = filterParam;
+                handleContentFilter(filterParam);
+            }
+        }
+
+        // What to show at start (and after an import): the walkthrough from the URL, otherwise the last opened one,
+        // otherwise the start page. Returns true if a walkthrough was opened.
+        async function openStartView(applyUrlExtras = true) {
+            const params = urlParams();
+            const fileParam = params.get('file');
+            const lastFile = getValidLastFile();
+            if (fileParam) {
+                if (applyUrlExtras) await loadFileFromUrl(fileParam, params.get('filter'));
+                else await loadFile(fileParam, false, true);
+                return true;
+            }
+            if (lastFile) {
+                await loadFile(lastFile);
+                return true;
+            }
+            renderWelcomeScreen();
+            return false;
         }
 
         // Handle Browser Forward / Back Navigation
         window.addEventListener('popstate', async (e) => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const fileParam = urlParams.get('file');
-            const filterParam = urlParams.get('filter');
-            const searchParam = urlParams.get('search');
-
+            const params = urlParams();
+            const searchParam = params.get('search');
             if (searchParam) {
-                const searchInput = document.getElementById("searchInput");
-                if (searchInput) {
-                    searchInput.value = searchParam;
-                    handleGlobalSearch(searchParam);
-                }
+                applySearchParam(searchParam);
             } else {
-                const searchInput = document.getElementById("searchInput");
-                if (searchInput && searchInput.value) {
-                    clearSearch();
-                }
+                const searchInput = $("searchInput");
+                if (searchInput && searchInput.value) clearSearch();
             }
 
-            if (fileParam) {
-                pendingTextFragment = readTextFragmentParam();
-                await loadFile(fileParam, false, true);
-                if (filterParam) {
-                    const filterInput = document.getElementById("contentFilterInput");
-                    if (filterInput) {
-                        filterInput.value = filterParam;
-                        handleContentFilter(filterParam);
-                    }
-                }
-            } else {
-                goHome(true);
-            }
+            const fileParam = params.get('file');
+            if (fileParam) await loadFileFromUrl(fileParam, params.get('filter'));
+            else goHome(true);
         });
 
         // --- SECTION 5: GLOBAL SEARCH SYSTEM & DROPDOWN ---
@@ -2022,17 +2021,13 @@ ${t.issueSectionSuggestDesc}
             return nameLower => clauses.some(terms => terms.every(term => nameLower.includes(term)));
         }
 
-        function matchQuery(nameLower, query) {
-            return compileQuery(query)(nameLower);
-        }
-
         // Maximum number of entries in the global search dropdown (the rest is summarized in a hint)
         const SEARCH_DROPDOWN_LIMIT = 50;
         let searchExpandedQuery = null;
 
         function handleSearchFocus() {
             if (searchBlurTimeout) clearTimeout(searchBlurTimeout);
-            const searchInput = document.getElementById("searchInput");
+            const searchInput = $("searchInput");
             if (searchInput && searchInput.value.trim().length > 0) {
                 handleGlobalSearch(searchInput.value);
             }
@@ -2040,35 +2035,18 @@ ${t.issueSectionSuggestDesc}
 
         function handleSearchBlur() {
             searchBlurTimeout = setTimeout(() => {
-                const searchContainer = document.getElementById("searchInput").parentElement;
-                const dropdown = document.getElementById("searchDropdown");
-                const active = document.activeElement;
-                if (!searchContainer.contains(active) && !dropdown.contains(active)) {
-                    dropdown.classList.add("hidden");
-                }
+                if (!isInsideSearch(document.activeElement)) closeDropdown("searchDropdown");
             }, 200);
         }
 
         function handleGlobalSearch(query) {
             searchSelectedIndex = -1;
-            const clearBtn = document.getElementById("clearSearchBtn");
-            const copyBtn = document.getElementById("copySearchBtn");
-            if (query.trim().length > 0) {
-                clearBtn.classList.remove("hidden");
-                if (copyBtn) copyBtn.classList.remove("hidden");
-            } else {
-                clearBtn.classList.add("hidden");
-                if (copyBtn) copyBtn.classList.add("hidden");
-            }
+            updateSearchButtons(query.trim().length > 0);
             filterTree(query);
-            const dropdown = document.getElementById("searchDropdown");
+            const dropdown = $("searchDropdown");
             const q = query.trim();
-            const searchInput = document.getElementById("searchInput");
-            const searchContainer = searchInput.parentElement;
-            const active = document.activeElement;
-            const isFocusedInSearch = searchContainer.contains(active) || dropdown.contains(active);
-            
-            if (!q || !structureData || !isFocusedInSearch) {
+
+            if (!q || !structureData || !isInsideSearch(document.activeElement)) {
                 dropdown.innerHTML = "";
                 dropdown.scrollTop = 0;
                 dropdown.classList.add("hidden");
@@ -2127,8 +2105,8 @@ ${t.issueSectionSuggestDesc}
 
         // Shows ALL results for the current query (click or Enter on the "… and n more" entry)
         function expandSearchResults() {
-            const input = document.getElementById("searchInput");
-            const dropdown = document.getElementById("searchDropdown");
+            const input = $("searchInput");
+            const dropdown = $("searchDropdown");
             const keepScroll = dropdown.scrollTop;
             const firstNew = dropdown.querySelectorAll("button.search-item:not(.search-more)").length;
             searchExpandedQuery = input.value.trim();
@@ -2142,49 +2120,33 @@ ${t.issueSectionSuggestDesc}
         // Highlight selected dropdown search item during keyboard navigation
         function updateDropdownHighlight(items) {
             items.forEach((item, idx) => {
-                if (idx === searchSelectedIndex) {
-                    item.classList.add("bg-gray-700", "text-white");
-                    item.classList.remove("text-gray-200");
-                    item.scrollIntoView({ block: 'nearest' });
-                } else {
-                    item.classList.remove("bg-gray-700", "text-white");
-                    item.classList.add("text-gray-200");
-                }
+                const selected = idx === searchSelectedIndex;
+                setClassPair(item, selected, ["bg-gray-700", "text-white"], ["text-gray-200"]);
+                if (selected) item.scrollIntoView({ block: 'nearest' });
             });
         }
 
         // Global search input keyboard handler (Arrows, PageUp/Down, Enter, Escape)
         function handleSearchInputKeydown(e) {
             // Fast typing + Enter: first apply the search for the complete input, then act on its first result
-            if (e.key === "Enter") flushPendingGlobalSearch();
-            const dropdown = document.getElementById("searchDropdown");
+            if (e.key === "Enter") globalSearchDebounce.flush($("searchInput").value);
+            const dropdown = $("searchDropdown");
             const items = dropdown.querySelectorAll("button.search-item");
             const pageSize = 8;
+            const last = items.length - 1;
+            const hasItems = !dropdown.classList.contains("hidden") && items.length > 0;
 
-            if (e.key === "ArrowDown") {
-                if (!dropdown.classList.contains("hidden") && items.length > 0) {
+            // Navigation keys: the new selected index (null = not a navigation key)
+            let next = null;
+            if (e.key === "ArrowDown") next = Math.min(searchSelectedIndex + 1, last);
+            else if (e.key === "ArrowUp") next = Math.max(searchSelectedIndex - 1, -1);
+            else if (e.key === "PageDown") next = searchSelectedIndex === -1 ? Math.min(pageSize - 1, last) : Math.min(searchSelectedIndex + pageSize, last);
+            else if (e.key === "PageUp") next = Math.max(searchSelectedIndex - pageSize, 0);
+
+            if (next !== null) {
+                if (hasItems) {
                     e.preventDefault();
-                    searchSelectedIndex = Math.min(searchSelectedIndex + 1, items.length - 1);
-                    updateDropdownHighlight(items);
-                }
-            } else if (e.key === "ArrowUp") {
-                if (!dropdown.classList.contains("hidden") && items.length > 0) {
-                    e.preventDefault();
-                    searchSelectedIndex = Math.max(searchSelectedIndex - 1, -1);
-                    updateDropdownHighlight(items);
-                }
-            } else if (e.key === "PageDown") {
-                if (!dropdown.classList.contains("hidden") && items.length > 0) {
-                    e.preventDefault();
-                    searchSelectedIndex = searchSelectedIndex === -1 
-                        ? Math.min(pageSize - 1, items.length - 1) 
-                        : Math.min(searchSelectedIndex + pageSize, items.length - 1);
-                    updateDropdownHighlight(items);
-                }
-            } else if (e.key === "PageUp") {
-                if (!dropdown.classList.contains("hidden") && items.length > 0) {
-                    e.preventDefault();
-                    searchSelectedIndex = Math.max(searchSelectedIndex - pageSize, 0);
+                    searchSelectedIndex = next;
                     updateDropdownHighlight(items);
                 }
             } else if (e.key === "Escape") {
@@ -2196,8 +2158,7 @@ ${t.issueSectionSuggestDesc}
                     items[searchSelectedIndex].click();
                 } else {
                     e.preventDefault();
-                    dropdown.classList.add("hidden");
-                    
+                    closeDropdown("searchDropdown");
                     if (!isSidebarOpen()) setSidebarOpen(true);
                 }
             }
@@ -2205,16 +2166,14 @@ ${t.issueSectionSuggestDesc}
 
         // Clear search input state
         function clearSearch() {
-            cancelPendingGlobalSearch();
+            globalSearchDebounce.cancel();
             searchSelectedIndex = -1;
-            const input = document.getElementById("searchInput");
+            const input = $("searchInput");
             input.value = "";
             handleGlobalSearch("");
-            document.getElementById("searchDropdown").classList.add("hidden");
-            document.getElementById("clearSearchBtn").classList.add("hidden");
-            const copyBtn = document.getElementById("copySearchBtn");
-            if (copyBtn) copyBtn.classList.add("hidden");
-            
+            closeDropdown("searchDropdown");
+            updateSearchButtons(false);
+
             setTimeout(() => {
                 if (isDesktopDevice()) input.focus();
             }, 0);
@@ -2222,15 +2181,12 @@ ${t.issueSectionSuggestDesc}
 
         // Copy a link which keeps the search field input
         async function copySearchLink() {
-            const input = document.getElementById("searchInput");
+            const input = $("searchInput");
             const searchVal = input ? input.value.trim() : "";
             if (!searchVal) return;
 
-            const baseUrl = window.location.href.split('?')[0].split('#')[0];
-            const cleanUrl = `${baseUrl}?search=${encodeURIComponent(searchVal)}`;
-
-            const ok = await copyTextToClipboard(cleanUrl);
-            const copyBtn = document.getElementById("copySearchBtn");
+            const ok = await copyTextToClipboard(pageUrl({ search: searchVal }));
+            const copyBtn = $("copySearchBtn");
             if (!copyBtn) return;
             copyBtn.textContent = ok ? "✓" : "✗";
             setTimeout(() => {
@@ -2240,17 +2196,15 @@ ${t.issueSectionSuggestDesc}
 
         // Select a search result item
         async function selectSearchResult(path, isExternal = false) {
-            cancelPendingGlobalSearch();
+            globalSearchDebounce.cancel();
             if (isExternal) {
                 window.open(path, '_blank', 'noopener,noreferrer');
             } else {
                 await loadFile(path);
             }
-            document.getElementById("searchDropdown").classList.add("hidden");
-            document.getElementById("searchInput").value = "";
-            document.getElementById("clearSearchBtn").classList.add("hidden");
-            const copyBtn = document.getElementById("copySearchBtn");
-            if (copyBtn) copyBtn.classList.add("hidden");
+            closeDropdown("searchDropdown");
+            $("searchInput").value = "";
+            updateSearchButtons(false);
             filterTree("");
             updateActiveFileInTree();
             if (window.innerWidth < 1060) {
@@ -2261,18 +2215,14 @@ ${t.issueSectionSuggestDesc}
         // Global click listener to close search dropdown when clicking outside
         window.addEventListener("click", e => {
             if (!e.target.isConnected) return;
-            const searchContainer = document.getElementById("searchInput").parentElement;
-            const dropdown = document.getElementById("searchDropdown");
-            if (!searchContainer.contains(e.target) && !dropdown.contains(e.target)) {
-                dropdown.classList.add("hidden")
-            }
+            if (!isInsideSearch(e.target)) closeDropdown("searchDropdown");
         });
 
         // Desktop (>= 640px): the result list is as wide as its content, but never narrower than the search field
         // and never wider than the space to the right edge of the window. Small screens keep the full-width list.
         function positionSearchDropdown() {
-            const dropdown = document.getElementById("searchDropdown");
-            const input = document.getElementById("searchInput");
+            const dropdown = $("searchDropdown");
+            const input = $("searchInput");
             if (!dropdown || !input) return;
             if (window.innerWidth < 640) {
                 ["left", "right", "width", "minWidth", "maxWidth"].forEach(prop => { dropdown.style[prop] = ""; });
@@ -2288,54 +2238,13 @@ ${t.issueSectionSuggestDesc}
         }
         window.addEventListener("resize", positionSearchDropdown);
 
-        let searchTimeout;
-        let globalSearchPending = false;
-        function debounceGlobalSearch(query) {
-            clearTimeout(searchTimeout);
-            globalSearchPending = true;
-            searchTimeout = setTimeout(() => {
-                globalSearchPending = false;
-                handleGlobalSearch(query);
-            }, 200);
-        }
-
-        // Runs a search that is still waiting for its debounce delay right now
-        function flushPendingGlobalSearch() {
-            if (!globalSearchPending) return;
-            clearTimeout(searchTimeout);
-            globalSearchPending = false;
-            handleGlobalSearch(document.getElementById("searchInput").value);
-        }
-
-        // Drops a search that has not run yet (field was cleared or a result was opened in the meantime)
-        function cancelPendingGlobalSearch() {
-            clearTimeout(searchTimeout);
-            globalSearchPending = false;
-        }
-
-        let filterDebounceTimer = null;
-        let contentFilterPending = false;
-        function debounceContentFilter(query) {
-            clearTimeout(filterDebounceTimer);
-            contentFilterPending = true;
-            filterDebounceTimer = setTimeout(() => {
-                contentFilterPending = false;
-                handleContentFilter(query);
-            }, 200);
-        }
-
-        // Runs a filter that is still waiting for its debounce delay right now
-        function flushPendingContentFilter() {
-            if (!contentFilterPending) return;
-            clearTimeout(filterDebounceTimer);
-            contentFilterPending = false;
-            handleContentFilter(document.getElementById("contentFilterInput").value);
-        }
+        const globalSearchDebounce = createDebouncer(handleGlobalSearch);
+        const contentFilterDebounce = createDebouncer(handleContentFilter);
 
         // --- EVENT DELEGATION INITIALIZATION ---
         function initEventDelegation() {
             // 1. Search Dropdown Results Delegation
-            const searchDropdown = document.getElementById("searchDropdown");
+            const searchDropdown = $("searchDropdown");
             if (searchDropdown) {
                 // Keep the focus in the search field when the "more" entry is pressed (otherwise the blur handler hides the list)
                 searchDropdown.addEventListener("mousedown", (e) => {
@@ -2355,7 +2264,7 @@ ${t.issueSectionSuggestDesc}
             }
 
             // 2. Directory Tree Menu Delegation
-            const treeContainer = document.getElementById("tree-container");
+            const treeContainer = $("tree-container");
             if (treeContainer) {
                 treeContainer.addEventListener("click", async (e) => {
                     const fileRow = e.target.closest("div[data-filepath]");
@@ -2371,7 +2280,7 @@ ${t.issueSectionSuggestDesc}
             }
 
             // 3. Table of Contents (TOC) Delegation
-            const tocContainer = document.getElementById("toc-container");
+            const tocContainer = $("toc-container");
             if (tocContainer) {
                 tocContainer.addEventListener("click", (e) => {
                     if (e.target.closest("button.toc-copy-btn")) return;
@@ -2379,7 +2288,7 @@ ${t.issueSectionSuggestDesc}
                     if (!tocTextBtn) return;
 
                     const targetId = tocTextBtn.dataset.targetId;
-                    const heading = document.getElementById(targetId);
+                    const heading = $(targetId);
                     if (heading) {
                         heading.scrollIntoView({
                             behavior: smoothScrollBehavior(),
@@ -2393,7 +2302,7 @@ ${t.issueSectionSuggestDesc}
             }
 
             // 4. Content Viewer Filter Click Delegation
-            const contentViewer = document.getElementById("content-viewer");
+            const contentViewer = $("content-viewer");
             if (contentViewer) {
                 contentViewer.addEventListener("click", (e) => {
                     const downloadLink = e.target.closest("a[data-download-path]");
@@ -2408,8 +2317,7 @@ ${t.issueSectionSuggestDesc}
                         loadFile(loadBtn.dataset.loadPath);
                         return;
                     }
-                    const searchBox = document.getElementById("contentFilterInput");
-                    const searching = !!searchBox && searchBox.value.trim().length > 0;
+                    const searching = getContentFilterQuery().length > 0;
                     if (searching && spoilerModel) {
                         const resultHeading = e.target.closest("h1, h2, h3, h4, h5, h6");
                         if (resultHeading && searchChapterHits.has(resultHeading) && !e.target.closest("a, button")) {
@@ -2439,9 +2347,7 @@ ${t.issueSectionSuggestDesc}
                         return;
                     }
                     if (e.target.closest('button')) return;
-                    const filterInput = document.getElementById("contentFilterInput");
-                    const isFiltered = filterInput && filterInput.value.trim().length > 0;
-                    if (!isFiltered) return;
+                    if (!searching) return;
 
                     const blockEl = e.target.closest("h1, h2, h3, h4, h5, h6, p, li, blockquote, pre");
                     if (!blockEl || blockEl.style.display === "none") return;
@@ -2494,7 +2400,7 @@ ${t.issueSectionSuggestDesc}
         }
 
         function scrollElementIntoViewer(el, fraction) {
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             if (!viewer || !el) return;
             const rect = el.getBoundingClientRect();
             const top = viewer.scrollTop + (rect.top - viewer.getBoundingClientRect().top) - viewer.clientHeight * fraction;
@@ -2529,8 +2435,8 @@ ${t.issueSectionSuggestDesc}
                 e.preventDefault();
                 clearContentFilter();
             } else if (e.key === "Enter") {
-                flushPendingContentFilter();
-                const input = document.getElementById("contentFilterInput");
+                contentFilterDebounce.flush($("contentFilterInput").value);
+                const input = $("contentFilterInput");
                 if (input && input.value.trim() && searchHits.length > 0) {
                     e.preventDefault();
                     // Enter = next hit (spoiler mode: reveals further hits first), Shift+Enter = previous hit
@@ -2617,9 +2523,9 @@ ${t.issueSectionSuggestDesc}
         }
 
         function handleContentFilter(filterQuery) {
-            const clearBtn = document.getElementById("clearContentFilterBtn");
+            const clearBtn = $("clearContentFilterBtn");
             const q = filterQuery.trim();
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             if (!viewer) return;
 
             // The filter always searches the whole solution: while it is active, spoiler protection hides nothing
@@ -2820,22 +2726,22 @@ ${t.issueSectionSuggestDesc}
         }
 
         function hideSearchHitBar() {
-            const bar = document.getElementById("searchHitBar");
+            const bar = $("searchHitBar");
             if (bar) bar.classList.add("hidden");
         }
 
         // The bar is visible whenever the filter has hits: "next" reveals hits (spoiler mode) or jumps to the next hit
         function updateSearchHitBar(total, revealed) {
-            const bar = document.getElementById("searchHitBar");
+            const bar = $("searchHitBar");
             if (!bar) return;
             const tr = translations[currentLang];
             const hasUnrevealed = spoilerModel && total > revealed;
             bar.classList.toggle("hidden", total === 0);
-            const all = document.getElementById("searchHitAll");
+            const all = $("searchHitAll");
             if (all) all.classList.toggle("hidden", !hasUnrevealed);
-            const next = document.getElementById("searchHitNext");
+            const next = $("searchHitNext");
             if (next) next.title = hasUnrevealed ? tr.searchNextHitTitle : tr.searchNextHitNavTitle;
-            const count = document.getElementById("searchHitCount");
+            const count = $("searchHitCount");
             if (count) {
                 const list = navigableSearchHits();
                 const position = searchNavEl ? list.indexOf(searchNavEl) + 1 : 0;
@@ -2855,7 +2761,7 @@ ${t.issueSectionSuggestDesc}
         }
 
         function rerunContentFilter() {
-            const input = document.getElementById("contentFilterInput");
+            const input = $("contentFilterInput");
             if (input) handleContentFilter(input.value);
         }
 
@@ -2894,12 +2800,12 @@ ${t.issueSectionSuggestDesc}
         }
 
         function clearContentFilter() {
-            const input = document.getElementById("contentFilterInput");
+            const input = $("contentFilterInput");
             input.value = "";
             handleContentFilter("");
-            document.getElementById("clearContentFilterBtn").classList.add("hidden");
+            $("clearContentFilterBtn").classList.add("hidden");
             
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             if (viewer && typeof viewer.onscroll === 'function') {
                 viewer.onscroll();
             }
@@ -2922,9 +2828,20 @@ ${t.issueSectionSuggestDesc}
             viewer.appendChild(p);
         }
 
+        // The walkthrough could not be shown: error text in the viewer and the table of contents, nothing is remembered
+        function showFileLoadError(filePath) {
+            const t = translations[currentLang];
+            rawFileContent = null;
+            isRestoringScroll = false;
+            if (lsGet("sgs_last_file") === filePath) lsRemove("sgs_last_file");
+            setHidden("readingPaneHeader");
+            showViewerError($("content-viewer"), `${t.errorLoadingFile} ${filePath}`);
+            $("toc-container").innerHTML = `<p class="text-red-400 text-xs">${t.noFileLoaded}</p>`;
+        }
+
         // Encodes every path segment (file names may contain #, ?, %, ' ...)
         function encodeSolutionPath(filePath) {
-            return "solutions/" + filePath.split("/").map(encodeURIComponent).join("/");
+            return "solutions/" + encodePathSegments(filePath);
         }
 
         async function loadFile(filePath, isExternal = false, isHistoryNav = false) {
@@ -2936,7 +2853,7 @@ ${t.issueSectionSuggestDesc}
 
             // CRITICAL TIMING FIX: If a filter is currently active, fully clear it first
             // so the cached scroll position is properly written back to the current file's localStorage before switching.
-            const filterInput = document.getElementById("contentFilterInput");
+            const filterInput = $("contentFilterInput");
             if (filterInput && filterInput.value.trim().length > 0) {
                 clearContentFilter();
                 // Await a brief animation frame to ensure DOM reflow and scroll restoration finish
@@ -2944,21 +2861,15 @@ ${t.issueSectionSuggestDesc}
                 if (myToken !== loadToken) return;
             }
 
-            const viewer = document.getElementById("content-viewer");
-            const tocContainer = document.getElementById("toc-container");
-            const scrollProgressBar = document.getElementById("scrollProgressBar");
-            const readingHeader = document.getElementById("readingPaneHeader");
+            const viewer = $("content-viewer");
+            const tocContainer = $("toc-container");
+            const scrollProgressBar = $("scrollProgressBar");
 
             // Unknown path (typo, deleted file, manipulated link): show error, remember nothing
             if (fileIndex.size > 0 && !fileIndex.has(filePath)) {
                 currentFilePath = null;
-                rawFileContent = null;
-                isRestoringScroll = false;
-                if (lsGet("sgs_last_file") === filePath) lsRemove("sgs_last_file");
-                if (readingHeader) readingHeader.classList.add("hidden");
                 if (scrollProgressBar) scrollProgressBar.style.width = "0%";
-                showViewerError(viewer, `${translations[currentLang].errorLoadingFile} ${filePath}`);
-                tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`;
+                showFileLoadError(filePath);
                 updateActiveFileInTree();
                 applyTocForView();
                 updateSpoilerButton();
@@ -2967,8 +2878,8 @@ ${t.issueSectionSuggestDesc}
 
             isRestoringScroll = true;
             scrollPercentBeforeFilter = null; 
-            const urlParams = new URLSearchParams(window.location.search);
-            const scrollParam = urlParams.get('scroll');
+            const params = urlParams();
+            const scrollParam = params.get('scroll');
 
             const rawSavedPercent = (isHistoryNav && scrollParam !== null) ? scrollParam : lsGet(`sgs_scroll_percent_${filePath}`);
             targetPercentToRestore = rawSavedPercent !== null ? parseFloat(rawSavedPercent) : null;
@@ -2977,9 +2888,7 @@ ${t.issueSectionSuggestDesc}
             applyTocForView();
 
             if (!isHistoryNav && history.pushState) {
-                const baseUrl = window.location.href.split('?')[0].split('#')[0];
-                const cleanUrl = `${baseUrl}?file=${encodeURIComponent(filePath)}`;
-                history.pushState({ file: filePath }, '', cleanUrl);
+                history.pushState({ file: filePath }, '', pageUrl({ file: filePath }));
             }
 
             updateActiveFileInTree();
@@ -2987,17 +2896,13 @@ ${t.issueSectionSuggestDesc}
             // Dynamic SEO Updates for loaded solution files
             const cleanGameTitle = getCleanGameTitle();
             if (cleanGameTitle) {
-                document.title = `${cleanGameTitle} - Walkthrough & Guide | Simple Game Solutions`;
-                let metaDesc = document.querySelector('meta[name="description"]');
-                if (metaDesc) {
-                    metaDesc.setAttribute("content", `Comprehensive walkthrough, solutions, and hints for ${cleanGameTitle} on Simple Game Solutions.`);
-                }
+                setPageMeta(`${cleanGameTitle} - Walkthrough & Guide | Simple Game Solutions`,
+                    `Comprehensive walkthrough, solutions, and hints for ${cleanGameTitle} on Simple Game Solutions.`);
             }
 
-            if (readingHeader) readingHeader.classList.remove("hidden");
+            setHidden("readingPaneHeader", false);
             updateGameControls();
-            if (filterInput) filterInput.value = "";
-            document.getElementById("clearContentFilterBtn").classList.add("hidden");
+            resetContentFilterField();
 
             if (scrollProgressBar) scrollProgressBar.style.width = "0%";
             viewer.innerHTML = `<p class="text-gray-400 animate-pulse text-sm">${translations[currentLang].loadingFile}</p>`;
@@ -3022,12 +2927,7 @@ ${t.issueSectionSuggestDesc}
                 }
             } catch (error) {
                 if (myToken !== loadToken) return;
-                rawFileContent = null;
-                if (lsGet("sgs_last_file") === filePath) lsRemove("sgs_last_file");
-                if (readingHeader) readingHeader.classList.add("hidden");
-                showViewerError(viewer, `${translations[currentLang].errorLoadingFile} ${filePath}`);
-                tocContainer.innerHTML = `<p class="text-red-400 text-xs">${translations[currentLang].noFileLoaded}</p>`;
-                isRestoringScroll = false;
+                showFileLoadError(filePath);
             }
         }
 
@@ -3175,7 +3075,7 @@ ${t.issueSectionSuggestDesc}
                 });
             });
             // Lists without any visible item disappear completely (deepest lists first)
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             Array.from(viewer.querySelectorAll("ul, ol")).reverse().forEach(list => {
                 const anyVisible = Array.from(list.children).some(child => !child.classList.contains("spoiler-hidden"));
                 list.classList.toggle("spoiler-hidden", !anyVisible);
@@ -3187,7 +3087,7 @@ ${t.issueSectionSuggestDesc}
         // Chevrons, tooltips and controls (also used after a language change)
         function refreshSpoilerUi() {
             updateChapterHeadings();
-            renderChapterControls();
+            updateSpoilerActionBar();
         }
 
         function updateChapterHeadings() {
@@ -3209,16 +3109,6 @@ ${t.issueSectionSuggestDesc}
                 }
                 chapter.heading.title = open ? tr.spoilerCollapseTitle : tr.spoilerExpandTitle;
             });
-        }
-
-        function topLevelOf(viewer, el) {
-            let node = el;
-            while (node.parentElement && node.parentElement !== viewer) node = node.parentElement;
-            return node;
-        }
-
-        function renderChapterControls() {
-            updateSpoilerActionBar();
         }
 
         function pickSpoilerBarChapter() {
@@ -3256,6 +3146,19 @@ ${t.issueSectionSuggestDesc}
             return index + 1;
         }
 
+        // Makes a chapter (and optionally one of its steps) the "current" one: the action bar and the highlight refer to it
+        function focusSpoilerChapter(index, stepIndex = -1) {
+            spoilerBarForcedIndex = index;
+            spoilerLatestChapter = index;
+            spoilerLatestStepIndex = stepIndex;
+        }
+
+        // Brings freshly revealed steps into view, then makes sure the highlighted line is fully visible
+        function scrollAfterReveal(firstEl, lastEl, count) {
+            requestAnimationFrame(() => scrollToRevealed(firstEl, lastEl, count));
+            setTimeout(() => scrollHighlightIntoView(false), 500);
+        }
+
         // After "Next chapter" the target counts as the current chapter until the reader scrolls or taps
         // in the text themselves (the heading may be unable to reach the middle of the screen near the end)
         let spoilerBarForcedIndex = -1;
@@ -3266,20 +3169,11 @@ ${t.issueSectionSuggestDesc}
             const targetIndex = nextSpoilerChapterIndex(index);
             const target = m && m.chapters[targetIndex];
             if (!target) return;
-            spoilerBarForcedIndex = targetIndex;
-            if (target.steps.length > 0) {
-                // Closed: show its first action. Already (partly or fully) open: nothing to reveal, but the
-                // highlight still moves to this chapter's last revealed action.
-                if (target.revealed === 0) target.revealed = 1;
-                spoilerLatestChapter = targetIndex;
-                spoilerLatestStepIndex = -1;
-                afterSpoilerChange();
-            } else {
-                // Chapter without actions: highlight its heading
-                spoilerLatestChapter = targetIndex;
-                spoilerLatestStepIndex = -1;
-                afterSpoilerChange();
-            }
+            focusSpoilerChapter(targetIndex);
+            // Closed: show its first action. Already (partly or fully) open: nothing to reveal, but the highlight
+            // still moves to this chapter's last revealed action. A chapter without actions highlights its heading.
+            if (target.steps.length > 0 && target.revealed === 0) target.revealed = 1;
+            afterSpoilerChange();
             // Scroll only as far as needed so that the highlighted line is completely visible
             // (heading included if it fits), exactly like revealing a normal next step
             const markEl = target.steps.length > 0 ? target.steps[target.revealed - 1] : target.heading;
@@ -3304,7 +3198,7 @@ ${t.issueSectionSuggestDesc}
             // instead of being skipped completely
             if (!isCelebrationEnabled()) return;
             const calm = prefersReducedMotion();
-            if (document.getElementById("celebrationCanvas")) return;
+            if ($("celebrationCanvas")) return;
 
             // Get cursor position and speed for collision detection
             let mouseX = -9999, mouseY = -9999;
@@ -3986,9 +3880,9 @@ ${t.issueSectionSuggestDesc}
 
         let spoilerBarKey = "";
         function updateSpoilerActionBar() {
-            const bar = document.getElementById("spoilerActionBar");
+            const bar = $("spoilerActionBar");
             if (!bar) return;
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             const m = spoilerModel;
             const active = !!(m && viewer && currentFilePath && m.path === currentFilePath && !viewer.classList.contains("spoiler-searching"));
             const pick = active ? pickSpoilerBarChapter() : null;
@@ -4013,30 +3907,27 @@ ${t.issueSectionSuggestDesc}
                 const progress = chapterMode
                     ? tr.spoilerBarDone
                     : tr.spoilerBarProgress.replace("{n}", String(chapter.revealed)).replace("{total}", String(total));
-                document.getElementById("spoilerActionInfo").textContent = finished
+                $("spoilerActionInfo").textContent = finished
                     ? tr.spoilerFinishedInfo
                     : (title ? title + " · " + progress : progress);
-                const nextBtn = document.getElementById("spoilerActionNext");
+                const nextBtn = $("spoilerActionNext");
                 nextBtn.dataset.spoilerAction = finished ? "finished" : (chapterMode ? "chapter" : "next");
                 nextBtn.textContent = finished ? "🎉 " + tr.spoilerFinishedButton : "▼ " + (chapterMode ? tr.spoilerNextChapter : tr.spoilerNextStep);
-                nextBtn.classList.toggle("bg-emerald-600", !finished);
-                nextBtn.classList.toggle("hover:bg-emerald-500", !finished);
-                nextBtn.classList.toggle("text-white", !finished);
-                nextBtn.classList.toggle("bg-amber-500", finished);
-                nextBtn.classList.toggle("hover:bg-amber-400", finished);
-                nextBtn.classList.toggle("text-gray-900", finished);
-                document.getElementById("spoilerActionNext3").textContent = tr.spoilerNext3;
-                document.getElementById("spoilerActionRest").textContent = tr.spoilerRest;
+                setClassPair(nextBtn, finished,
+                    ["bg-amber-500", "hover:bg-amber-400", "text-gray-900"],
+                    ["bg-emerald-600", "hover:bg-emerald-500", "text-white"]);
+                $("spoilerActionNext3").textContent = tr.spoilerNext3;
+                $("spoilerActionRest").textContent = tr.spoilerRest;
                 const manyLeft = !chapterMode && !finished && total - chapter.revealed > 1;
-                document.getElementById("spoilerActionNext3").classList.toggle("hidden", !manyLeft);
-                document.getElementById("spoilerActionRest").classList.toggle("hidden", !manyLeft);
+                $("spoilerActionNext3").classList.toggle("hidden", !manyLeft);
+                $("spoilerActionRest").classList.toggle("hidden", !manyLeft);
             }
             bar.classList.remove("hidden");
         }
 
         function initSpoilerActionBar() {
-            const bar = document.getElementById("spoilerActionBar");
-            const viewer = document.getElementById("content-viewer");
+            const bar = $("spoilerActionBar");
+            const viewer = $("content-viewer");
             if (!bar || !viewer) return;
             bar.addEventListener("click", e => {
                 const button = e.target.closest("button[data-spoiler-action]");
@@ -4057,44 +3948,37 @@ ${t.issueSectionSuggestDesc}
                     if (emptyIndex < 0) return;
                     chapterIndex = emptyIndex;
                 }
-                spoilerBarForcedIndex = chapterIndex;
-                spoilerLatestChapter = chapterIndex;
-                spoilerLatestStepIndex = stepIndex;
+                focusSpoilerChapter(chapterIndex, stepIndex);
                 applySpoilerState();
             });
         }
 
         function updateSpoilerButton() {
-            const btn = document.getElementById("spoilerBtn");
+            const btn = $("spoilerBtn");
             if (!btn) return;
             const on = isSpoilerModeOn();
             const tr = translations[currentLang];
             btn.title = on ? tr.spoilerOnTitle : tr.spoilerOffTitle;
             btn.setAttribute("aria-pressed", String(on));
-            btn.classList.toggle("bg-emerald-600", on);
-            btn.classList.toggle("border-emerald-500", on);
-            btn.classList.toggle("text-white", on);
-            btn.classList.toggle("[@media(hover:hover)]:hover:bg-emerald-500", on);
-            btn.classList.toggle("bg-gray-950", !on);
-            btn.classList.toggle("border-gray-700", !on);
-            btn.classList.toggle("text-gray-400", !on);
-            btn.classList.toggle("[@media(hover:hover)]:hover:bg-gray-700", !on);
+            setClassPair(btn, on,
+                ["bg-emerald-600", "border-emerald-500", "text-white", "[@media(hover:hover)]:hover:bg-emerald-500"],
+                ["bg-gray-950", "border-gray-700", "text-gray-400", "[@media(hover:hover)]:hover:bg-gray-700"]);
             updateSpoilerBanner(on, tr);
             updateSpoilerActionBar();
         }
 
         function updateSpoilerBanner(on, tr) {
-            const banner = document.getElementById("spoilerBanner");
+            const banner = $("spoilerBanner");
             if (!banner) return;
             const onStartPage = !currentFilePath;
             banner.classList.toggle("hidden", !onStartPage);
             const base = "shrink-0 mt-1 mb-0.5 flex items-center justify-between gap-x-3 rounded-md border px-2.5 py-1 text-xs";
             const hidden = onStartPage ? "" : "hidden ";
             banner.className = hidden + base + (on ? " border-amber-600/60 bg-amber-900/30 text-amber-200" : " border-gray-600/70 bg-gray-800/60 text-gray-300");
-            const label = document.getElementById("spoilerBannerLabel");
+            const label = $("spoilerBannerLabel");
             if (label) label.textContent = on ? tr.spoilerBannerText : tr.spoilerBannerHint;
-            const button = document.getElementById("spoilerBannerBtn");
-            const buttonText = document.getElementById("spoilerBannerBtnText");
+            const button = $("spoilerBannerBtn");
+            const buttonText = $("spoilerBannerBtnText");
             if (buttonText) buttonText.textContent = on ? tr.spoilerBannerOff : tr.spoilerBannerOn;
             if (button) {
                 button.title = on ? tr.spoilerBannerOffTitle : tr.spoilerOffTitle;
@@ -4108,35 +3992,36 @@ ${t.issueSectionSuggestDesc}
         function afterSpoilerChange() {
             saveSpoilerState();
             applySpoilerState();
-            const filterInput = document.getElementById("contentFilterInput");
-            if (filterInput && filterInput.value.trim()) handleContentFilter(filterInput.value);
+            reapplyContentFilter();
+        }
+
+        // How far the reading area has to scroll so that the element (rect mr) is completely visible (0 = nothing)
+        function scrollDeltaToShow(mr, vr) {
+            if (mr.height > vr.height - 20) return mr.top - vr.top - 8;
+            if (mr.bottom > vr.bottom - 8) return mr.bottom - vr.bottom + 12;
+            if (mr.top < vr.top + 4) return mr.top - vr.top - 8;
+            return 0;
         }
 
         // Makes sure the highlighted line is completely inside the visible reading area
         function scrollHighlightIntoView(smooth) {
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             const mark = viewer && viewer.querySelector(".spoiler-latest");
             if (!mark) return;
             const vr = viewer.getBoundingClientRect();
             const mr = mark.getBoundingClientRect();
-            let delta = 0;
-            if (mr.height > vr.height - 20) delta = mr.top - vr.top - 8;
-            else if (mr.bottom > vr.bottom - 8) delta = mr.bottom - vr.bottom + 12;
-            else if (mr.top < vr.top + 4) delta = mr.top - vr.top - 8;
+            const delta = scrollDeltaToShow(mr, vr);
             if (Math.abs(delta) >= 1) viewer.scrollBy({ top: delta, behavior: smooth ? smoothScrollBehavior() : "auto" });
         }
 
         // Scrolls to a chapter's highlighted line with the least movement; the heading is brought along when both fit
         function scrollChapterTargetIntoView(headingEl, markEl) {
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             if (!viewer || !markEl) return;
             const vr = viewer.getBoundingClientRect();
             const mr = markEl.getBoundingClientRect();
             const hr = (headingEl || markEl).getBoundingClientRect();
-            let delta = 0;
-            if (mr.height > vr.height - 20) delta = mr.top - vr.top - 8;
-            else if (mr.bottom > vr.bottom - 8) delta = mr.bottom - vr.bottom + 12;
-            else if (mr.top < vr.top + 4) delta = mr.top - vr.top - 8;
+            let delta = scrollDeltaToShow(mr, vr);
             // heading above the visible area after that movement, but heading and line fit together: include the heading
             if (hr.top - delta < vr.top && (mr.bottom - hr.top) <= vr.height - 20) delta = hr.top - vr.top - 8;
             if (Math.abs(delta) >= 1) viewer.scrollBy({ top: delta, behavior: smoothScrollBehavior() });
@@ -4144,7 +4029,7 @@ ${t.issueSectionSuggestDesc}
 
         // Brings newly revealed steps into view with the least possible movement
         function scrollToRevealed(firstEl, lastEl, count) {
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             if (!viewer || !firstEl || !lastEl) return;
             const vr = viewer.getBoundingClientRect();
             const fr = firstEl.getBoundingClientRect();
@@ -4190,10 +4075,7 @@ ${t.issueSectionSuggestDesc}
             spoilerBarForcedIndex = index;
             afterSpoilerChange();
             maybeCelebrateSpoilerEnd();
-            if (opening) {
-                requestAnimationFrame(() => scrollToRevealed(chapter.steps[0], chapter.steps[0], 1));
-                setTimeout(() => scrollHighlightIntoView(false), 500);
-            }
+            if (opening) scrollAfterReveal(chapter.steps[0], chapter.steps[0], 1);
         }
 
         function spoilerChapterAction(index, action) {
@@ -4210,15 +4092,12 @@ ${t.issueSectionSuggestDesc}
             else if (action === "rest") chapter.revealed = length;
             else return;
             if (chapter.revealed === before) return;
-            spoilerLatestChapter = index;
-            spoilerLatestStepIndex = -1;
-            spoilerBarForcedIndex = index;
+            focusSpoilerChapter(index);
             const firstEl = chapter.steps[before];
             const lastEl = chapter.steps[chapter.revealed - 1];
             afterSpoilerChange();
             maybeCelebrateSpoilerEnd();
-            requestAnimationFrame(() => scrollToRevealed(firstEl, lastEl, chapter.revealed - before));
-            setTimeout(() => scrollHighlightIntoView(false), 500);
+            scrollAfterReveal(firstEl, lastEl, chapter.revealed - before);
         }
 
         // Makes sure a step is visible (used when a search result inside a still closed chapter is opened):
@@ -4232,9 +4111,7 @@ ${t.issueSectionSuggestDesc}
                 if (index === -1) continue;
                 if (chapter.revealed <= index) {
                     chapter.revealed = index + 1;
-                    spoilerLatestChapter = m.chapters.indexOf(chapter);
-                    spoilerLatestStepIndex = -1;
-                    spoilerBarForcedIndex = spoilerLatestChapter;
+                    focusSpoilerChapter(m.chapters.indexOf(chapter));
                     afterSpoilerChange();
                 }
                 return;
@@ -4246,8 +4123,7 @@ ${t.issueSectionSuggestDesc}
             const heading = e.target.closest ? e.target.closest("[data-spoiler-chapter]") : null;
             if (!heading || e.target !== heading) return;
             e.preventDefault();
-            const filterBox = document.getElementById("contentFilterInput");
-            if (spoilerModel && filterBox && filterBox.value.trim()) {
+            if (spoilerModel && getContentFilterQuery()) {
                 toggleSearchChapter(heading);
                 return;
             }
@@ -4256,9 +4132,8 @@ ${t.issueSectionSuggestDesc}
 
         // Turning the protection on or off keeps the reader at the chapter currently in view
         function showSpoilerOffConfirm() {
-            if (document.getElementById("spoilerOffDialog")) return;
+            if ($("spoilerOffDialog")) return;
             const t = translations[currentLang];
-            const previousFocus = document.activeElement;
             const overlay = document.createElement("div");
             overlay.id = "spoilerOffDialog";
             overlay.className = "fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/60";
@@ -4271,10 +4146,7 @@ ${t.issueSectionSuggestDesc}
                     <button type="button" data-act="confirm" class="px-4 py-3 sm:px-3 sm:py-2 rounded-md bg-emerald-600 text-white text-base sm:text-sm font-semibold hover:bg-emerald-500 cursor-pointer transition-colors">${escapeHtml(t.spoilerOffConfirmOk)}</button>
                 </div>
             </div>`;
-            const close = () => {
-                overlay.remove();
-                if (previousFocus && document.contains(previousFocus) && previousFocus.focus) previousFocus.focus();
-            };
+            const close = openModal(overlay);
             overlay.addEventListener("click", e => {
                 if (e.target === overlay) { close(); return; }
                 const act = e.target.closest("[data-act]");
@@ -4282,36 +4154,11 @@ ${t.issueSectionSuggestDesc}
                 close();
                 if (act.dataset.act === "confirm") toggleSpoilerMode(true);
             });
-            overlay.addEventListener("keydown", e => {
-                if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); close(); return; }
-                if (e.key === "Tab") { // keep focus inside the dialog
-                    const buttons = overlay.querySelectorAll("button");
-                    const first = buttons[0], last = buttons[buttons.length - 1];
-                    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-                    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-                }
-            });
-            document.body.appendChild(overlay);
             overlay.querySelector('[data-act="cancel"]').focus(); // safe default: keep the mode on
         }
 
-        let spoilerToastTimer = null;
         function showSpoilerToast() {
-            const t = translations[currentLang];
-            let toast = document.getElementById("spoilerToast");
-            if (!toast) {
-                toast = document.createElement("div");
-                toast.id = "spoilerToast";
-                toast.setAttribute("role", "status");
-                toast.setAttribute("aria-live", "polite");
-                toast.className = "fixed left-1/2 -translate-x-1/2 z-[900] max-w-[90vw] px-4 py-2.5 rounded-full bg-emerald-600 text-white text-sm font-semibold text-center shadow-lg pointer-events-none transition-opacity duration-300 opacity-0";
-                toast.style.bottom = "calc(env(safe-area-inset-bottom, 0px) + 1rem)";
-                document.body.appendChild(toast);
-            }
-            toast.textContent = "🙈 " + t.spoilerToastOn;
-            clearTimeout(spoilerToastTimer);
-            requestAnimationFrame(() => { toast.classList.remove("opacity-0"); });
-            spoilerToastTimer = setTimeout(() => { toast.classList.add("opacity-0"); }, 2500);
+            showToast("🙈 " + translations[currentLang].spoilerToastOn, { id: "spoilerToast", duration: 2500 });
         }
 
         function toggleSpoilerMode(confirmed, silent) {
@@ -4321,7 +4168,7 @@ ${t.issueSectionSuggestDesc}
             }
             if (isSpoilerModeOn()) lsRemove(SPOILER_MODE_KEY); else lsSet(SPOILER_MODE_KEY, "1");
             if (isSpoilerModeOn() && !silent) showSpoilerToast();
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             if (!currentFilePath || rawFileContent === null || !viewer) {
                 updateSpoilerButton();
                 return;
@@ -4329,15 +4176,14 @@ ${t.issueSectionSuggestDesc}
             withStableScroll(viewer, () => {
                 setupSpoilerProtection(viewer, currentFilePath);
                 resetSearchReveal();
-                const filterInput = document.getElementById("contentFilterInput");
-                if (filterInput && filterInput.value.trim()) handleContentFilter(filterInput.value);
+                reapplyContentFilter();
             });
             syncSharedPassageNotice(true);
         }
 
         function renderFileContent(text, filePath) {
-            const viewer = document.getElementById("content-viewer");
-            const tocContainer = document.getElementById("toc-container");
+            const viewer = $("content-viewer");
+            const tocContainer = $("toc-container");
 
             if (filePath.endsWith(".md") && typeof marked !== "undefined" && typeof DOMPurify !== "undefined") {
                 // Markdown may contain raw HTML (pull requests!): always sanitize before inserting
@@ -4493,12 +4339,18 @@ ${t.issueSectionSuggestDesc}
                 className: "file-copy-btn inline-flex items-center ml-2 opacity-70 sm:opacity-0 sm:group-hover/tree:opacity-100 transition-opacity text-emerald-400 hover:text-emerald-300 text-sm cursor-pointer focus:outline-none align-middle relative shrink-0",
                 popupClassName: COPY_POPUP_LEFT,
                 title: translations[currentLang].copyFileLinkTitle,
-                getUrl: () => {
-                    const baseUrl = window.location.href.split('?')[0].split('#')[0];
-                    return `${baseUrl}?file=${encodeURIComponent(filePath)}`;
-                }
+                getUrl: () => pageUrl({ file: filePath })
             });
         }
+
+        const TREE_ROW_ACTIVE = "flex items-center justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors break-words group/tree";
+        const TREE_ROW_IDLE = "flex items-center justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words group/tree";
+        const treeRowClass = active => active ? TREE_ROW_ACTIVE : TREE_ROW_IDLE;
+
+        // Table of contents rows: indentation by heading level, highlighted while the chapter is on screen
+        const TOC_INDENT = { H1: "pl-1", H2: "pl-2", H3: "pl-4", H4: "pl-6", H5: "pl-8", H6: "pl-10" };
+        const tocRowClass = (indent, active) => `flex items-start justify-between w-full py-1.5 px-2 rounded ${active ? "bg-gray-700 text-white font-medium" : "hover:bg-gray-700 text-gray-300 hover:text-white"} transition-colors break-words scroll-m-2 ${indent} cursor-pointer group/toc`;
+        const tocIndentOf = item => Array.from(item.classList).find(c => c.startsWith("pl-")) || "pl-1";
 
         function renderTree(node, container, filterQuery = "") {
             container.innerHTML = "";
@@ -4567,9 +4419,7 @@ ${t.issueSectionSuggestDesc}
                     const isActive = (item.path === currentFilePath);
                     const fileRow = document.createElement("div");
                     fileRow.dataset.filepath = item.path;
-                    fileRow.className = isActive 
-                        ? "flex items-center justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors break-words group/tree"
-                        : "flex items-center justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words group/tree";
+                    fileRow.className = treeRowClass(isActive);
 
                     const fileLink = document.createElement("div");
                     fileLink.className = "flex-1 text-left cursor-pointer break-words";
@@ -4593,24 +4443,20 @@ ${t.issueSectionSuggestDesc}
 
         function filterTree(query) {
             if (structureData) {
-                renderTree(structureData, document.getElementById("tree-container"), query)
+                renderTree(structureData, $("tree-container"), query)
             }
         }
 
         function updateActiveFileInTree() {
-            const container = document.getElementById("tree-container");
+            const container = $("tree-container");
             if (!container) return;
 
             let targetRow = null;
 
             container.querySelectorAll("div[data-filepath]").forEach(row => {
                 const isActive = (row.dataset.filepath === currentFilePath);
-                if (isActive) {
-                    row.className = "flex items-center justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors break-words group/tree";
-                    targetRow = row;
-                } else {
-                    row.className = "flex items-center justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words group/tree";
-                }
+                row.className = treeRowClass(isActive);
+                if (isActive) targetRow = row;
             });
 
             if (targetRow) {
@@ -4632,20 +4478,12 @@ ${t.issueSectionSuggestDesc}
                 popupClassName: isToc ? COPY_POPUP_LEFT : COPY_POPUP_RIGHT,
                 title: translations[currentLang].copyChapterLinkTitle,
                 getUrl: () => {
-                    const baseUrl = window.location.href.split('?')[0].split('#')[0];
-                    const filterInput = document.getElementById("contentFilterInput");
-                    const filterVal = filterInput ? filterInput.value.trim() : "";
-                    const searchInput = document.getElementById("searchInput");
-                    const searchVal = searchInput ? searchInput.value.trim() : "";
-
-                    let cleanUrl = `${baseUrl}?file=${encodeURIComponent(currentFilePath)}`;
-                    if (filterVal) {
-                        cleanUrl += `&filter=${encodeURIComponent(filterVal)}`;
-                    }
-                    if (searchVal) {
-                        cleanUrl += `&search=${encodeURIComponent(searchVal)}`;
-                    }
-                    return cleanUrl + `#${headingId}`;
+                    const searchInput = $("searchInput");
+                    return pageUrl({
+                        file: currentFilePath,
+                        filter: getContentFilterQuery(),
+                        search: searchInput ? searchInput.value.trim() : ""
+                    }, headingId);
                 }
             });
         }
@@ -4670,7 +4508,7 @@ ${t.issueSectionSuggestDesc}
             const base = slugifyHeading(text) || `heading-${index}`;
             let candidate = base;
             let n = 2;
-            while (usedIds.has(candidate) || document.getElementById(candidate)) {
+            while (usedIds.has(candidate) || $(candidate)) {
                 candidate = `${base}-${n++}`;
             }
             usedIds.add(candidate);
@@ -4680,11 +4518,11 @@ ${t.issueSectionSuggestDesc}
         // Finds the chapter a URL hash points to (only inside the document viewer).
         // Also resolves old index-based links (#heading-7) that were shared before slug IDs existed.
         function findAnchorTarget(rawHash) {
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             let id = String(rawHash).replace(/^#/, "");
             try { id = decodeURIComponent(id); } catch (e) { /* keep raw value */ }
             if (!id) return null;
-            let el = document.getElementById(id);
+            let el = $(id);
             if (el && !viewer.contains(el)) el = null;
             if (!el) {
                 const legacy = /^heading-(\d+)$/.exec(id);
@@ -4727,15 +4565,8 @@ ${t.issueSectionSuggestDesc}
                     }
                 }
 
-                let indentClass = "pl-1";
-                if (heading.tagName === "H2") indentClass = "pl-2";
-                if (heading.tagName === "H3") indentClass = "pl-4";
-                if (heading.tagName === "H4") indentClass = "pl-6";
-                if (heading.tagName === "H5") indentClass = "pl-8";
-                if (heading.tagName === "H6") indentClass = "pl-10";
-
                 const tocItem = document.createElement("div");
-                tocItem.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words scroll-m-2 ${indentClass} cursor-pointer group/toc`;
+                tocItem.className = tocRowClass(TOC_INDENT[heading.tagName] || "pl-1", false);
 
                 const tocTextBtn = document.createElement("div");
                 tocTextBtn.className = "flex-1 text-left cursor-pointer break-words";
@@ -4751,7 +4582,7 @@ ${t.issueSectionSuggestDesc}
         }
 
         function setupScrollSpy(contentViewer, tocContainer) {
-            const scrollProgressBar = document.getElementById("scrollProgressBar");
+            const scrollProgressBar = $("scrollProgressBar");
 
             let lastExecutionTime = 0;
             const updateInterval = 333;
@@ -4776,16 +4607,12 @@ ${t.issueSectionSuggestDesc}
                 }
                 lastExecutionTime = now;
 
-                const filterInput = document.getElementById("contentFilterInput");
-                const isFiltered = filterInput && filterInput.value.trim().length > 0;
+                const isFiltered = getContentFilterQuery().length > 0;
                 const tocItems = tocContainer.children;
 
                 if (isFiltered) {
                     if (tocItems) {
-                        Array.from(tocItems).forEach((item) => {
-                            const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
-                            item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words scroll-m-2 ${baseIndentClass} cursor-pointer group/toc`;
-                        });
+                        Array.from(tocItems).forEach(item => { item.className = tocRowClass(tocIndentOf(item), false); });
                     }
                     return;
                 }
@@ -4823,13 +4650,7 @@ ${t.issueSectionSuggestDesc}
                 }
 
                 Array.from(tocItems).forEach((item, idx) => {
-                    const baseIndentClass = Array.from(item.classList).find(c => c.startsWith('pl-')) || 'pl-1';
-                    
-                    if (activeIndices.has(idx)) {
-                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded bg-gray-700 text-white font-medium transition-colors break-words scroll-m-2 ${baseIndentClass} cursor-pointer group/toc`;
-                    } else {
-                        item.className = `flex items-start justify-between w-full py-1.5 px-2 rounded hover:bg-gray-700 text-gray-300 hover:text-white transition-colors break-words scroll-m-2 ${baseIndentClass} cursor-pointer group/toc`;
-                    }
+                    item.className = tocRowClass(tocIndentOf(item), activeIndices.has(idx));
                 });
 
                 const firstActiveIdx = Array.from(activeIndices)[0];
@@ -4876,9 +4697,9 @@ ${t.issueSectionSuggestDesc}
         });
 
         // --- SECTION 10: LAYOUT RESIZERS & OVERLAY TOGGLES ---
-        const sidebar = document.getElementById("sidebar");
-        const tocSidebar = document.getElementById("toc-sidebar");
-        const resizerLeft = document.getElementById("resizer-left");
+        const sidebar = $("sidebar");
+        const tocSidebar = $("toc-sidebar");
+        const resizerLeft = $("resizer-left");
         
         function setupResizer(handle, getWidth, setWidth) {
             if (!handle) return;
@@ -4908,7 +4729,7 @@ ${t.issueSectionSuggestDesc}
             () => sidebar.getBoundingClientRect().width,
             (startWidth, dx) => sidebar.style.setProperty("--sb-w", `${clampWidth(startWidth + dx, 180, 600)}px`));
 
-        const resizerRight = document.getElementById("resizer-right");
+        const resizerRight = $("resizer-right");
         setupResizer(resizerRight,
             () => tocSidebar.getBoundingClientRect().width,
             (startWidth, dx) => tocSidebar.style.setProperty("--toc-w", `${clampWidth(startWidth - dx, 180, 450)}px`));
@@ -4922,6 +4743,12 @@ ${t.issueSectionSuggestDesc}
                 : !sidebar.classList.contains("panel-collapsed");
         }
 
+        // Docked panel (desktop): collapsed together with its resize handle
+        function setPanelCollapsed(panel, resizer, collapsed) {
+            panel.classList.toggle("panel-collapsed", collapsed);
+            if (resizer) resizer.classList.toggle("panel-collapsed", collapsed);
+        }
+
         function setSidebarOpen(open) {
             if (window.innerWidth < 1060) {
                 if (open) {
@@ -4931,8 +4758,7 @@ ${t.issueSectionSuggestDesc}
                     closeAllOverlays();
                 }
             } else {
-                sidebar.classList.toggle("panel-collapsed", !open);
-                if (resizerLeft) resizerLeft.classList.toggle("panel-collapsed", !open);
+                setPanelCollapsed(sidebar, resizerLeft, !open);
             }
         }
 
@@ -4952,8 +4778,7 @@ ${t.issueSectionSuggestDesc}
                 }
             } else {
                 tocUserOpen = open;
-                tocSidebar.classList.toggle("panel-collapsed", !open);
-                if (resizerRight) resizerRight.classList.toggle("panel-collapsed", !open);
+                setPanelCollapsed(tocSidebar, resizerRight, !open);
             }
         }
 
@@ -4962,9 +4787,7 @@ ${t.issueSectionSuggestDesc}
         function applyTocForView() {
             const hasFile = !!currentFilePath;
             if (window.innerWidth >= 650) {
-                const open = hasFile && tocUserOpen;
-                tocSidebar.classList.toggle("panel-collapsed", !open);
-                if (resizerRight) resizerRight.classList.toggle("panel-collapsed", !open);
+                setPanelCollapsed(tocSidebar, resizerRight, !(hasFile && tocUserOpen));
             } else if (!hasFile) {
                 tocSidebar.classList.add("translate-x-full");
             }
@@ -4996,7 +4819,7 @@ ${t.issueSectionSuggestDesc}
         ["(min-width: 1060px)", "(min-width: 650px)"].forEach(query =>
             window.matchMedia(query).addEventListener("change", () => { closeAllOverlays(); applyTocForView(); }));
 
-        document.getElementById("content-viewer").addEventListener("keydown", handleSpoilerKeydown);
+        $("content-viewer").addEventListener("keydown", handleSpoilerKeydown);
 
         // --- SECTION 10b: SHARE A MARKED PASSAGE (text fragment link) ---
         // A link looks like  index.html?file=<solution>&text=[prefix-,]start[,end][,-suffix]  (same syntax as the browser's
@@ -5011,11 +4834,12 @@ ${t.issueSectionSuggestDesc}
         let sharePointerDown = false;
         let shareDismissedText = null;
 
-        function showToast(message) {
-            let toast = document.getElementById("appToast");
+        const toastTimers = {};
+        function showToast(message, { id = "appToast", duration = 3500 } = {}) {
+            let toast = $(id);
             if (!toast) {
                 toast = document.createElement("div");
-                toast.id = "appToast";
+                toast.id = id;
                 toast.setAttribute("role", "status");
                 toast.setAttribute("aria-live", "polite");
                 toast.className = "fixed left-1/2 -translate-x-1/2 z-[900] max-w-[90vw] px-4 py-2.5 rounded-full bg-emerald-600 text-white text-sm font-semibold text-center shadow-lg pointer-events-none transition-opacity duration-300 opacity-0";
@@ -5023,9 +4847,9 @@ ${t.issueSectionSuggestDesc}
                 document.body.appendChild(toast);
             }
             toast.textContent = message;
-            clearTimeout(showToast.timer);
+            clearTimeout(toastTimers[id]);
             requestAnimationFrame(() => toast.classList.remove("opacity-0"));
-            showToast.timer = setTimeout(() => toast.classList.add("opacity-0"), 3500);
+            toastTimers[id] = setTimeout(() => toast.classList.add("opacity-0"), duration);
         }
 
         // Text without whitespace and in lower case: makes matching independent of line breaks, markup and case
@@ -5139,13 +4963,13 @@ ${t.issueSectionSuggestDesc}
 
         function showSharedPassageNotice(range) {
             sharedNotice = { range };
-            const notice = document.getElementById("sharedPassageNotice");
+            const notice = $("sharedPassageNotice");
             if (notice) notice.classList.remove("hidden");
         }
 
         function hideSharedPassageNotice() {
             sharedNotice = null;
-            const notice = document.getElementById("sharedPassageNotice");
+            const notice = $("sharedPassageNotice");
             if (notice) notice.classList.add("hidden");
         }
 
@@ -5167,7 +4991,7 @@ ${t.issueSectionSuggestDesc}
             if (!isRangeVisible(range)) return;
             hideSharedPassageNotice();
             highlightSharedRange(range);
-            if (scrollThere) scrollRangeIntoViewer(document.getElementById("content-viewer"), range);
+            if (scrollThere) scrollRangeIntoViewer($("content-viewer"), range);
         }
 
         function scrollRangeIntoViewer(viewer, range) {
@@ -5184,7 +5008,7 @@ ${t.issueSectionSuggestDesc}
             const elementOf = node => (node.nodeType === 1 ? node : node.parentElement);
             revealSpoilerStep(elementOf(range.startContainer));
             revealSpoilerStep(elementOf(range.endContainer));
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             if (!viewer || range.collapsed || !isRangeVisible(range)) return;
             highlightSharedRange(range);
             requestAnimationFrame(() => scrollRangeIntoViewer(viewer, range));
@@ -5243,7 +5067,7 @@ ${t.issueSectionSuggestDesc}
         // Builds the link for the marked passage: the passage itself (start/end for long ones) plus as many words in
         // front of it as needed to make it unambiguous if the same text occurs several times
         function buildTextShareLink(range, selectedText) {
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             if (!viewer || !currentFilePath) return null;
             const words = selectedText.replace(/\s+/g, " ").trim();
             if (words.length < 3) return null;
@@ -5292,7 +5116,7 @@ ${t.issueSectionSuggestDesc}
         }
 
         function updateShareBubble() {
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             const selection = window.getSelection();
             if (!viewer || !currentFilePath || !selection || selection.rangeCount === 0 || selection.isCollapsed) {
                 shareDismissedText = null;
@@ -5350,7 +5174,7 @@ ${t.issueSectionSuggestDesc}
         }
 
         function initTextShare() {
-            const viewer = document.getElementById("content-viewer");
+            const viewer = $("content-viewer");
             if (!viewer) return;
 
             shareBubbleEl = document.createElement("div");
@@ -5391,7 +5215,7 @@ ${t.issueSectionSuggestDesc}
         const ONB_FONT_SIZES = [80, 90, 100, 110, 120, 130, 140, 150];
         let onbStep = 1;
         let onbDemoCount = 0;
-        let onbPreviousFocus = null;
+        let onbClose = null;
 
         function maybeShowOnboarding() {
             if (!onboardingIsNewVisitor || lsGet(ONBOARDING_KEY) !== null) return;
@@ -5413,12 +5237,12 @@ ${t.issueSectionSuggestDesc}
             const raw = lsGet(BACKUP_KEY);
             const d = raw ? new Date(raw) : null;
             if (!d || isNaN(d.getTime())) return null;
-            return d.toLocaleDateString(currentLang === "de" ? "de-DE" : "en-US");
+            return d.toLocaleDateString(numberLocale());
         }
 
         function onbSwitchHtml(action, label, hint, on) {
-            const track = on ? "bg-emerald-600" : "bg-gray-700";
-            const thumb = on ? "translate-x-6" : "translate-x-1";
+            const track = on ? SWITCH_TRACK.on : SWITCH_TRACK.off;
+            const thumb = on ? SWITCH_THUMB.on : SWITCH_THUMB.off;
             return `<button type="button" role="switch" aria-checked="${on}" data-onb="${action}"
                     class="w-full flex items-center justify-between gap-3 bg-gray-950 hover:bg-gray-900 border border-gray-600 focus:outline-none focus:border-emerald-500 rounded-xl px-3 py-2.5 min-h-[52px] text-left cursor-pointer transition-colors">
                     <span class="min-w-0">
@@ -5519,7 +5343,7 @@ ${t.issueSectionSuggestDesc}
         }
 
         function renderOnboarding() {
-            const overlay = document.getElementById("onboardingOverlay");
+            const overlay = $("onboardingOverlay");
             if (!overlay) return;
             const dialog = overlay.firstElementChild;
             const t = translations[currentLang];
@@ -5567,28 +5391,24 @@ ${t.issueSectionSuggestDesc}
         }
 
         function openOnboarding() {
-            if (document.getElementById("onboardingOverlay")) return;
-            closeSettingsMenu();
+            if ($("onboardingOverlay")) return;
+            closeDropdown("settingsDropdown");
             onbStep = 1;
             onbDemoCount = 0;
-            onbPreviousFocus = document.activeElement;
             const overlay = document.createElement("div");
             overlay.id = "onboardingOverlay";
             overlay.className = "fixed inset-0 z-[1000] flex items-end sm:items-center justify-center bg-black/70 sm:p-4";
             overlay.innerHTML = `<div role="dialog" aria-modal="true" aria-labelledby="onbTitle" class="flex flex-col w-full sm:max-w-lg rounded-t-2xl sm:rounded-2xl border border-emerald-600/60 bg-gray-900 shadow-2xl" style="max-height: 92vh; max-height: 92dvh;"></div>`;
             overlay.addEventListener("click", onbHandleClick);
             overlay.addEventListener("change", onbHandleChange);
-            overlay.addEventListener("keydown", onbHandleKeydown);
-            document.body.appendChild(overlay);
+            onbClose = openModal(overlay);
             renderOnboarding();
         }
 
         function closeOnboarding() {
-            const overlay = document.getElementById("onboardingOverlay");
-            if (!overlay) return;
-            overlay.remove();
-            if (onbPreviousFocus && document.contains(onbPreviousFocus) && onbPreviousFocus.focus) onbPreviousFocus.focus();
-            onbPreviousFocus = null;
+            if (!onbClose || !$("onboardingOverlay")) return;
+            onbClose();
+            onbClose = null;
         }
 
         function onbChangeFont(direction) {
@@ -5618,7 +5438,7 @@ ${t.issueSectionSuggestDesc}
                 case "demoHeading": onbDemoCount = onbDemoCount === 0 ? 1 : 0; break;
                 case "demoNext": onbDemoCount = onbDemoCount >= 3 ? 0 : onbDemoCount + 1; break;
                 case "export": exportSettings(); break;
-                case "import": document.getElementById("importSettingsFile").click(); return;
+                case "import": $("importSettingsFile").click(); return;
                 default: return;
             }
             renderOnboarding();
@@ -5628,20 +5448,10 @@ ${t.issueSectionSuggestDesc}
             if (!e.target.matches('[data-onb="lang"]')) return;
             const lang = e.target.value;
             if (lang !== "de" && lang !== "en") return;
-            const headerSelect = document.getElementById("langSelect");
+            const headerSelect = $("langSelect");
             if (headerSelect) headerSelect.value = lang;
             changeLanguage(lang);
             renderOnboarding();
-        }
-
-        function onbHandleKeydown(e) {
-            if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); closeOnboarding(); return; }
-            if (e.key !== "Tab") return;
-            const focusable = [...document.getElementById("onboardingOverlay").querySelectorAll("button:not([disabled]), select")];
-            if (focusable.length === 0) return;
-            const first = focusable[0], last = focusable[focusable.length - 1];
-            if (e.shiftKey && (document.activeElement === first || document.activeElement.id === "onbTitle")) { e.preventDefault(); last.focus(); }
-            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
         }
 
         // --- SECTION 11: INITIAL EXECUTION ON LOAD ---
