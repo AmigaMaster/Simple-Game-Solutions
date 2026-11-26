@@ -1,8 +1,8 @@
 {
   "stats": {
-    "total_files": 614,
-    "total_words": 709135,
-    "total_actions": 86897
+    "total_files": 615,
+    "total_words": 709363,
+    "total_actions": 86935
   },
   "name": "solutions",
   "type": "directory",
@@ -11,6 +11,16 @@
       "name": "0-9",
       "type": "directory",
       "children": [
+        {
+          "name": "!-EN",
+          "type": "file",
+          "path": "0-9/!-EN.md",
+          "last_modified": "2026-11-27T00:26:22+01:00",
+          "created": "2026-11-27T00:26:22+01:00",
+          "status": "new",
+          "words": 228,
+          "actions": 38
+        },
         {
           "name": "1 1-2 Ritter - Auf der Suche nach der hinreißenden Herzelinde-DE",
           "type": "file",
