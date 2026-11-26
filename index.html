@@ -117,14 +117,14 @@
         #searchDropdown { scrollbar-gutter: stable; }
 
         /* Spoiler protection: steps that are not revealed yet, collapsible chapter headings */
-        #content-viewer:not(.spoiler-searching) .spoiler-hidden { display: none !important; }
+        :is(#content-viewer:not(.spoiler-searching), .spoiler-demo) .spoiler-hidden { display: none !important; }
         /* The most recently revealed action of each open chapter */
-        #content-viewer:not(.spoiler-searching) .spoiler-latest {
+        :is(#content-viewer:not(.spoiler-searching), .spoiler-demo) .spoiler-latest {
             box-shadow: inset 3px 0 0 #34d399;
             background: rgba(16, 185, 129, 0.12);
             border-radius: 0 0.375rem 0.375rem 0;
         }
-        #content-viewer:not(.spoiler-searching) :is(h1, h2, h3, h4, h5, h6).spoiler-latest {
+        :is(#content-viewer:not(.spoiler-searching), .spoiler-demo) :is(h1, h2, h3, h4, h5, h6).spoiler-latest {
             margin-left: -0.5rem;
             padding-left: 0.5rem;
         }
@@ -405,7 +405,7 @@
             </div>
 
             <!-- Main Content Viewer Area (Markdown / Raw Text / Welcome Screen) -->
-            <div class="prose prose-invert max-w-none flex-1 overflow-y-auto pr-2 pt-2 text-sm sm:text-base leading-relaxed prose-code:text-emerald-200/80 prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-gray-700/40 prose-blockquote:border-emerald-500/30 prose-blockquote:bg-gray-800/40 prose-blockquote:text-gray-300/90"
+            <div class="flex-1 overflow-y-auto pr-2 pt-2"
                 id="content-viewer">
                 <div class="text-center text-gray-500 py-20">
                     <p class="text-base sm:text-lg" data-i18n="welcomeMessage">Wähle oben über die Suche oder links im Menü eine Lösung aus.</p>
@@ -424,9 +424,9 @@
             <div id="spoilerActionBar" class="hidden shrink-0 border-t border-emerald-700/50 bg-gray-900 px-1 pt-1.5" style="padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.375rem);">
                 <div id="spoilerActionInfo" class="text-[11px] sm:text-xs text-gray-400 truncate mb-1 px-0.5"></div>
                 <div class="flex items-stretch gap-1.5 sm:gap-2">
-                    <button type="button" id="spoilerActionNext" data-spoiler-action="next" class="flex-1 min-w-0 min-h-[44px] sm:min-h-0 px-2 sm:px-3 py-2 sm:py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white text-sm sm:text-xs font-semibold leading-tight cursor-pointer transition-colors"></button>
-                    <button type="button" id="spoilerActionNext3" data-spoiler-action="next3" class="min-h-[44px] sm:min-h-0 px-2 sm:px-3 py-2 sm:py-1.5 rounded-md bg-gray-800 hover:bg-gray-700 border border-gray-600 text-gray-200 text-sm sm:text-xs leading-tight cursor-pointer transition-colors"></button>
-                    <button type="button" id="spoilerActionRest" data-spoiler-action="rest" class="min-h-[44px] sm:min-h-0 px-2 sm:px-3 py-2 sm:py-1.5 rounded-md bg-gray-800 hover:bg-gray-700 border border-gray-600 text-gray-200 text-sm sm:text-xs leading-tight cursor-pointer transition-colors"></button>
+                    <button type="button" id="spoilerActionNext" data-spoiler-action="next"></button>
+                    <button type="button" id="spoilerActionNext3" data-spoiler-action="next3"></button>
+                    <button type="button" id="spoilerActionRest" data-spoiler-action="rest"></button>
                 </div>
             </div>
         </section>
@@ -488,6 +488,17 @@
 
         // --- SMALL SHARED HELPERS (used all over the page) ---
         const $ = id => document.getElementById(id);
+
+        // Look of a rendered walkthrough (the reading area and the demo of the quick start) ...
+        const PROSE_CLASS = "prose prose-invert max-w-none text-sm sm:text-base leading-relaxed prose-code:text-emerald-200/80 prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:border prose-code:border-gray-700/40 prose-blockquote:border-emerald-500/30 prose-blockquote:bg-gray-800/40 prose-blockquote:text-gray-300/90";
+        // ... and of the buttons of the spoiler action bar (the real one and the one in the demo)
+        const SPOILER_BAR_BUTTON = "min-h-[44px] sm:min-h-0 px-2 sm:px-3 py-2 sm:py-1.5 rounded-md text-sm sm:text-xs leading-tight cursor-pointer transition-colors";
+        const SPOILER_BAR_PRIMARY = "flex-1 min-w-0 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold";
+        const SPOILER_BAR_SECONDARY = "bg-gray-800 hover:bg-gray-700 border border-gray-600 text-gray-200";
+        $("content-viewer").classList.add(...PROSE_CLASS.split(" "));
+        $("spoilerActionNext").className = `${SPOILER_BAR_BUTTON} ${SPOILER_BAR_PRIMARY}`;
+        $("spoilerActionNext3").className = `${SPOILER_BAR_BUTTON} ${SPOILER_BAR_SECONDARY}`;
+        $("spoilerActionRest").className = `${SPOILER_BAR_BUTTON} ${SPOILER_BAR_SECONDARY}`;
 
         // Shows/hides an element given as element or id (a missing element is ignored)
         function setHidden(target, hidden = true) {
@@ -757,12 +768,10 @@
                 onbSpoilerIntro: "Du suchst nur eine einzelne Stelle? Dann zeigt der Spoilermodus nur die Kapitelüberschriften. Alles andere deckst du Schritt für Schritt auf.",
                 onbSpoilerSwitchHint: "Gilt für alle Lösungen",
                 onbDemoTitle: "Probier es aus:",
-                onbDemoHeading: "Die Küche",
-                onbDemoStep1: "Nimm den Schlüssel vom Haken.",
-                onbDemoStep2: "Öffne damit die Schublade.",
-                onbDemoStep3: "Nimm die Taschenlampe.",
+                onbDemoMarkdown: "## Die Küche\n\n- NIMM Schlüssel (`Schlüssel`)\n- BENUTZE `Schlüssel` mit Schublade\n- NIMM Taschenlampe (`Taschenlampe`)\n- BENUTZE `Taschenlampe` mit dunkler Vorratsraum\n- NIMM Konserve (`Konserve`)\n- BENUTZE `Konserve` mit Dosenöffner\n- ÖFFNE Hintertür\n- VERLASSE durch Hintertür\n",
+                onbDemoTapHint: "Tippe auf die Überschrift, um das Kapitel zu öffnen.",
                 onbDemoReset: "Nochmal ausprobieren",
-                onbBarHint: "In einer Lösung liegt unten eine feste Leiste: „{a}“, „{b}“ oder „{c}“.",
+                onbDemoBarNote: "Diese Leiste liegt in jeder Lösung unten am Bildschirmrand.",
                 onbSpoilerTip1: "**Kapitel antippen** klappt es auf oder zu. Dein Stand wird pro Lösung gespeichert.",
                 onbSpoilerTip2: "Im Lesebereich schaltet **🙈** den Modus ein oder aus, der **Filter** deckt Treffer einzeln auf.",
                 onbBackupTitle: "Sichern & Wiederherstellen",
@@ -927,12 +936,10 @@
                 onbSpoilerIntro: "Only looking for a single spot? Spoiler mode shows just the chapter headings. You reveal everything else step by step.",
                 onbSpoilerSwitchHint: "Applies to all walkthroughs",
                 onbDemoTitle: "Try it:",
-                onbDemoHeading: "The kitchen",
-                onbDemoStep1: "Take the key from the hook.",
-                onbDemoStep2: "Use it to open the drawer.",
-                onbDemoStep3: "Take the flashlight.",
+                onbDemoMarkdown: "## The kitchen\n\n- PICK UP key (`Key`)\n- USE `Key` on drawer\n- PICK UP flashlight (`Flashlight`)\n- USE `Flashlight` on dark pantry\n- PICK UP can `Can`)\n- USE `Can` on can opener\n- OPEN back door \n- EXIT through back door\n",
+                onbDemoTapHint: "Tap the heading to open the chapter.",
                 onbDemoReset: "Try again",
-                onbBarHint: "In a walkthrough, a fixed bar at the bottom offers “{a}”, “{b}” or “{c}”.",
+                onbDemoBarNote: "This bar sits at the bottom of every walkthrough.",
                 onbSpoilerTip1: "**Tap a chapter** to open or close it. Your progress is saved per walkthrough.",
                 onbSpoilerTip2: "In the reading area, **🙈** switches the mode on or off and the **filter** reveals hits one at a time.",
                 onbBackupTitle: "Backup & restore",
@@ -4181,17 +4188,22 @@ ${t.issueSectionSuggestDesc}
             syncSharedPassageNotice(true);
         }
 
+        // .txt files, or fallback when a CDN script is blocked: shown as plain text, never as HTML
+        function plainTextHtml(text) {
+            return `<pre class="whitespace-pre-wrap font-mono text-xs sm:text-sm bg-gray-950 p-4 rounded">${escapeHtml(text)}</pre>`;
+        }
+
+        // Markdown may contain raw HTML (pull requests!): always sanitize before inserting
+        function markdownToSafeHtml(text) {
+            if (typeof marked === "undefined" || typeof DOMPurify === "undefined") return plainTextHtml(text);
+            return DOMPurify.sanitize(marked.parse(text));
+        }
+
         function renderFileContent(text, filePath) {
             const viewer = $("content-viewer");
             const tocContainer = $("toc-container");
 
-            if (filePath.endsWith(".md") && typeof marked !== "undefined" && typeof DOMPurify !== "undefined") {
-                // Markdown may contain raw HTML (pull requests!): always sanitize before inserting
-                viewer.innerHTML = DOMPurify.sanitize(marked.parse(text));
-            } else {
-                // .txt files, or fallback when a CDN script is blocked: show as plain text, never as HTML
-                viewer.innerHTML = `<pre class="whitespace-pre-wrap font-mono text-xs sm:text-sm bg-gray-950 p-4 rounded">${escapeHtml(text)}</pre>`;
-            }
+            viewer.innerHTML = filePath.endsWith(".md") ? markdownToSafeHtml(text) : plainTextHtml(text);
             postProcessViewer(viewer);
             generateToc(viewer, tocContainer);
             setupSpoilerProtection(viewer, filePath);
@@ -5215,6 +5227,7 @@ ${t.issueSectionSuggestDesc}
         const ONB_FONT_SIZES = [80, 90, 100, 110, 120, 130, 140, 150];
         let onbStep = 1;
         let onbDemoCount = 0;
+        let onbDemoTotal = 0;
         let onbClose = null;
 
         function maybeShowOnboarding() {
@@ -5293,30 +5306,55 @@ ${t.issueSectionSuggestDesc}
                 </div>`;
         }
 
+        // A tiny walkthrough rendered exactly like a real one: markdown -> sanitized HTML, the same spoiler decorations
+        // (chapter heading, hidden steps, highlighted latest step) and the same action bar
         function onbDemoHtml(t) {
-            const n = onbDemoCount;
-            const steps = [t.onbDemoStep1, t.onbDemoStep2, t.onbDemoStep3];
-            const badge = n > 0 ? `<span class="ml-1 px-2 py-0.5 rounded-full bg-slate-500/20 text-gray-400 text-xs font-medium whitespace-nowrap">${escapeHtml(t.spoilerCountMany.replace("{r}", n).replace("{n}", steps.length))}</span>` : "";
-            let items = "";
-            for (let i = 0; i < n; i++) {
-                items += i === n - 1
-                    ? `<li class="border-l-[3px] border-emerald-400 bg-emerald-500/10 rounded-r-md px-2.5 py-1.5 text-base sm:text-sm text-gray-100">${escapeHtml(steps[i])}</li>`
-                    : `<li class="border-l-[3px] border-transparent px-2.5 py-1.5 text-base sm:text-sm text-gray-300">${escapeHtml(steps[i])}</li>`;
-            }
+            const box = document.createElement("div");
+            box.className = `spoiler-demo ${PROSE_CLASS} rounded-xl border border-gray-700 bg-gray-950 px-3 py-1`;
+            box.innerHTML = markdownToSafeHtml(t.onbDemoMarkdown);
+            const heading = box.querySelector("h2");
+            const steps = [...box.querySelectorAll("li")];
+            onbDemoTotal = steps.length;
+            if (!heading || steps.length === 0) return box.outerHTML;
+
+            const n = Math.min(onbDemoCount, steps.length);
+            const open = n > 0;
+            const title = heading.textContent.trim();
+            heading.classList.add("spoiler-heading");
+            heading.setAttribute("data-onb", "demoHeading");
+            heading.setAttribute("role", "button");
+            heading.setAttribute("tabindex", "0");
+            heading.setAttribute("aria-expanded", String(open));
+            heading.title = open ? t.spoilerCollapseTitle : t.spoilerExpandTitle;
+            if (open) heading.setAttribute("data-spoiler-count", t.spoilerCountMany.replace("{r}", String(n)).replace("{n}", String(steps.length)));
+            const chevron = document.createElement("span");
+            chevron.className = "spoiler-chevron";
+            chevron.setAttribute("aria-hidden", "true");
+            chevron.textContent = open ? "▾" : "▸";
+            heading.prepend(chevron);
+            steps.forEach((li, i) => {
+                li.classList.toggle("spoiler-hidden", i >= n);
+                li.classList.toggle("spoiler-latest", i === n - 1);
+            });
+            box.querySelector("ul").classList.toggle("spoiler-hidden", !open);
+
+            if (!open) return box.outerHTML + `<p class="mt-2 text-xs text-gray-400 leading-snug">${escapeHtml(t.onbDemoTapHint)}</p>`;
+
             const finished = n >= steps.length;
-            return `<div class="rounded-xl border border-gray-700 bg-gray-950 p-2.5">
-                    <button type="button" data-onb="demoHeading" aria-expanded="${n > 0}" class="w-full flex items-center gap-2 text-left min-h-[44px] px-1 rounded-md cursor-pointer">
-                        <span class="text-emerald-400 w-4 text-center" aria-hidden="true">${n > 0 ? "▾" : "▸"}</span>
-                        <span class="text-base font-bold text-white">${escapeHtml(t.onbDemoHeading)}</span>${badge}
-                    </button>
-                    ${n > 0 ? `<ul class="mt-1 mb-2 space-y-1">${items}</ul>` : ""}
-                    <button type="button" data-onb="demoNext"
-                        class="mt-1 w-full min-h-[48px] px-3 py-2 rounded-lg text-base sm:text-sm font-semibold cursor-pointer transition-colors ${finished ? "bg-gray-800 hover:bg-gray-700 border border-gray-600 text-gray-100" : "bg-emerald-600 hover:bg-emerald-500 text-white"}">${escapeHtml(finished ? t.onbDemoReset : t.spoilerNextStep)}</button>
+            const manyLeft = steps.length - n > 1;
+            const button = (action, classes, label) => `<button type="button" data-onb="${action}" class="${SPOILER_BAR_BUTTON} ${classes}">${escapeHtml(label)}</button>`;
+            const buttons = finished
+                ? button("demoReset", `flex-1 min-w-0 ${SPOILER_BAR_SECONDARY}`, "↺ " + t.onbDemoReset)
+                : button("demoNext", SPOILER_BAR_PRIMARY, "▼ " + t.spoilerNextStep)
+                    + (manyLeft ? button("demoNext3", SPOILER_BAR_SECONDARY, t.spoilerNext3) + button("demoRest", SPOILER_BAR_SECONDARY, t.spoilerRest) : "");
+            const info = `${title} · ${t.spoilerBarProgress.replace("{n}", String(n)).replace("{total}", String(steps.length))}`;
+            return box.outerHTML + `<div class="mt-2 rounded-xl border border-emerald-700/50 bg-gray-900 px-1.5 py-1.5">
+                    <div class="text-[11px] sm:text-xs text-gray-400 truncate mb-1 px-0.5">${escapeHtml(info)}</div>
+                    <div class="flex items-stretch gap-1.5 sm:gap-2">${buttons}</div>
                 </div>`;
         }
 
         function onbStepSpoilerHtml(t) {
-            const bar = t.onbBarHint.replace("{a}", t.spoilerNextStep).replace("{b}", t.spoilerNext3).replace("{c}", t.spoilerRest);
             const tips = [t.onbSpoilerTip1, t.onbSpoilerTip2].map(text =>
                 `<li class="flex gap-2 text-base sm:text-sm text-gray-300 leading-snug"><span class="text-emerald-400 shrink-0" aria-hidden="true">•</span><span>${onbRich(text)}</span></li>`
             ).join("");
@@ -5324,7 +5362,7 @@ ${t.issueSectionSuggestDesc}
                 ${onbSwitchHtml("spoiler", "🙈 " + t.onbSpoilerTitle, t.onbSpoilerSwitchHint, isSpoilerModeOn())}
                 <p class="mt-4 mb-1.5 text-sm font-semibold text-gray-200">${escapeHtml(t.onbDemoTitle)}</p>
                 ${onbDemoHtml(t)}
-                <p class="mt-2 text-xs text-gray-400 leading-snug">${escapeHtml(bar)}</p>
+                <p class="mt-2 text-xs text-gray-400 leading-snug">${escapeHtml(t.onbDemoBarNote)}</p>
                 <ul class="mt-3 space-y-2">${tips}</ul>`;
         }
 
@@ -5401,6 +5439,13 @@ ${t.issueSectionSuggestDesc}
             overlay.innerHTML = `<div role="dialog" aria-modal="true" aria-labelledby="onbTitle" class="flex flex-col w-full sm:max-w-lg rounded-t-2xl sm:rounded-2xl border border-emerald-600/60 bg-gray-900 shadow-2xl" style="max-height: 92vh; max-height: 92dvh;"></div>`;
             overlay.addEventListener("click", onbHandleClick);
             overlay.addEventListener("change", onbHandleChange);
+            // The demo's chapter heading is a button: Enter / Space open and close it
+            overlay.addEventListener("keydown", e => {
+                if ((e.key === "Enter" || e.key === " ") && e.target.matches('[data-onb="demoHeading"]')) {
+                    e.preventDefault();
+                    e.target.click();
+                }
+            });
             onbClose = openModal(overlay);
             renderOnboarding();
         }
@@ -5436,7 +5481,10 @@ ${t.issueSectionSuggestDesc}
                 case "celebration": toggleCelebrationSetting(); break;
                 case "spoiler": onbToggleSpoiler(); break;
                 case "demoHeading": onbDemoCount = onbDemoCount === 0 ? 1 : 0; break;
-                case "demoNext": onbDemoCount = onbDemoCount >= 3 ? 0 : onbDemoCount + 1; break;
+                case "demoNext": onbDemoCount = Math.min(onbDemoCount + 1, onbDemoTotal); break;
+                case "demoNext3": onbDemoCount = Math.min(onbDemoCount + 3, onbDemoTotal); break;
+                case "demoRest": onbDemoCount = onbDemoTotal; break;
+                case "demoReset": onbDemoCount = 0; break;
                 case "export": exportSettings(); break;
                 case "import": $("importSettingsFile").click(); return;
                 default: return;
